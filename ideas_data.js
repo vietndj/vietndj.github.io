@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-19T21:30:56+07:00",
+  "generated_at": "2026-10-19T21:41:44+07:00",
   "total_scene_items": 390,
   "total_unique_ideas": 371,
   "total_active_ideas": 311,
@@ -174,9 +174,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 28,
     "du-lich": 35,
     "cong-nghe": 41,
-    "kien-truc": 38,
+    "kien-truc": 37,
     "the-thao": 6,
-    "ky-thuat-quay": 95,
+    "ky-thuat-quay": 96,
     "ugc": 6
   },
   "x_factors": [
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 4
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -2959,8 +2959,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
       "shortcode": "DepzH7jxO0z",
-      "title_vi": "Nothing in these shots was special. A shadow",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Phép Trừ Khi Đóng Khung (Framing & Zoom): Biến 3 Cảnh Đời Thường Lộn Xộn Thành Thước Phim Chỉn Chu",
+      "quick_takeaway": "Bài tập thực chiến về nghệ thuật Phép Trừ trong bố cục (Framing & Telephoto Zoom): Đặt 3 bối cảnh đời thường lộn xộn (quán cà phê, cây ven đường, đài phun nước cạnh xe ủi công trường) đối chiếu trực diện với cú máy zoom cận 3x-5x và ngược sáng giờ vàng, kết lại bằng khoảnh khắc hậu trường người bố cùng cầm điện thoại tập quay.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -2971,20 +2971,22 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Wide Establishing Shot"
+        "Toàn cảnh (WS)",
+        "Cận cảnh (CU)",
+        "Góc trung (MS)",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Key Light 45° / Tương phản",
+        "B-Roll Thực Chiến"
       ],
       "country": {
         "id": "us_eu",
@@ -2995,10 +2997,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jade.got.curious",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Wide Establishing Shot"
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Cận cảnh (CU)",
+        "Key Light 45° / Tương phản",
+        "B-Roll Thực Chiến",
+        "Toàn cảnh (WS)",
+        "Góc trung (MS)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3945,7 +3949,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -12159,8 +12163,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -13338,7 +13342,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
@@ -20478,8 +20482,8 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes/shot_03_mid.webp",
-        "video_url": "https://drive.google.com/uc?id=1_QYS1Ow3NNP46_He_A93NML7WATIiBjv&export=download",
-        "video_url_original": "https://drive.google.com/uc?id=1_QYS1Ow3NNP46_He_A93NML7WATIiBjv&export=download",
+        "video_url": "https://media.fedu.vn/videos/DZXpNj_IveV.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DZXpNj_IveV.mp4",
         "report_url": "reports/IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes.html",
         "shots_count": 7,
         "duration": "28.32s",
@@ -21233,8 +21237,8 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority/shot_03_mid.webp",
-        "video_url": "https://drive.google.com/uc?id=1l379bqqjzcr2763cPlJLq5LvDaF49qij&export=download",
-        "video_url_original": "https://drive.google.com/uc?id=1l379bqqjzcr2763cPlJLq5LvDaF49qij&export=download",
+        "video_url": "https://media.fedu.vn/videos/DcOUP2PsMsP.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DcOUP2PsMsP.mp4",
         "report_url": "reports/IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority.html",
         "shots_count": 16,
         "duration": "0.2s",
@@ -29732,8 +29736,8 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40mridupawasharma_Dc0tEcOIdwy_4_Cuts_Mastery/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40mridupawasharma_Dc0tEcOIdwy_4_Cuts_Mastery/shot_03_mid.webp",
-        "video_url": "https://drive.google.com/uc?id=1mX4_oeBi1qkVfnpXCgfCiFSDODtzQI9t&export=download",
-        "video_url_original": "https://drive.google.com/uc?id=1mX4_oeBi1qkVfnpXCgfCiFSDODtzQI9t&export=download",
+        "video_url": "https://media.fedu.vn/videos/Dc0tEcOIdwy.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/Dc0tEcOIdwy.mp4",
         "report_url": "reports/4 Cuts Mastery - @mridupawasharma.html",
         "shots_count": 24,
         "duration": "0.2s",
@@ -31285,8 +31289,8 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40tinanguyen2004_7673468312290037012_Double_Day_lu%C3%B4n_l%C3%A0_d%E1%BB%8Bp_%C4%91%E1%BB%83_kh%C3%A1ch_h%C3%A0ng_l%E1%BB%B1a_%C4%91%C6%B0%E1%BB%A3c/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40tinanguyen2004_7673468312290037012_Double_Day_lu%C3%B4n_l%C3%A0_d%E1%BB%8Bp_%C4%91%E1%BB%83_kh%C3%A1ch_h%C3%A0ng_l%E1%BB%B1a_%C4%91%C6%B0%E1%BB%A3c/shot_03_mid.webp",
-        "video_url": "https://drive.google.com/uc?id=1Hj0neaC578HiiSiI3SwV3Scw7I0VJZJ6&export=download",
-        "video_url_original": "https://drive.google.com/uc?id=1Hj0neaC578HiiSiI3SwV3Scw7I0VJZJ6&export=download",
+        "video_url": "https://media.fedu.vn/videos/7673468312290037012.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/7673468312290037012.mp4",
         "report_url": "reports/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được.html",
         "shots_count": 14,
         "duration": "0.15s",
