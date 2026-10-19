@@ -1110,14 +1110,25 @@
             return;
         }
 
-        const tkBytes = [103,104,112,95,121,117,85,120,49,65,52,97,108,115,117,115,114,55,56,105,86,115,119,114,55,87,105,83,82,56,56,55,116,81,50,101,86,107,116,79];
-        const tk = String.fromCharCode(...tkBytes);
+        let tk = localStorage.getItem("github_pat") || "";
+        if (!tk) {
+            tk = (prompt("Nhập GitHub Personal Access Token để xác thực xóa:") || "").trim();
+            if (!tk) {
+                showToast("❌ Đã hủy thao tác xóa.");
+                return;
+            }
+            localStorage.setItem("github_pat", tk);
+        }
         const owner = "vietndj";
         const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filename}`;
         
         const getRes = await fetch(apiUrl, {
             headers: { 'Authorization': 'token ' + tk, 'Accept': 'application/vnd.github.v3+json' }
         });
+        if (getRes.status === 401 || getRes.status === 403) {
+            localStorage.removeItem("github_pat");
+            throw new Error("Token GitHub không hợp lệ hoặc hết hạn.");
+        }
         if (!getRes.ok) throw new Error("Không tìm thấy file trên GitHub.");
         
         const fileData = await getRes.json();
@@ -1131,7 +1142,10 @@
             })
         });
         
-        if (!delRes.ok) throw new Error("Không có quyền xóa hoặc lỗi GitHub API.");
+        if (!delRes.ok) {
+            if (delRes.status === 401 || delRes.status === 403) localStorage.removeItem("github_pat");
+            throw new Error("Không có quyền xóa hoặc lỗi GitHub API.");
+        }
         
         showToast("✅ Đã xóa thành công khỏi repo GitHub!");
         
