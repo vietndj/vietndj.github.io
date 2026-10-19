@@ -1,1325 +1,2383 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phân Tích Đạo Diễn: Joe Rogan & Elon Musk Podcast | Master Breakdown</title>
-<style>
-@font-face {
-  font-family: 'SVN-Acta';
-  src: url('data:,') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SVN-Acta';
-  src: url('data:,') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'GT America';
-  src: url('data:,') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'GT America';
-  src: url('data:,') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Rogan &amp; Elon Musk Podcast</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-:root {
-  --bg-primary: #0a0c10;
-  --bg-surface: #12161f;
-  --bg-card: #181e2b;
-  --border-color: #262f42;
-  --text-main: #e2e8f0;
-  --text-muted: #94a3b8;
-  --accent-gold: #f59e0b;
-  --accent-amber: #d97706;
-  --accent-cyan: #06b6d4;
-  --accent-green: #10b981;
-  --accent-rose: #f43f5e;
-  --font-serif: 'SVN-Acta', Georgia, serif;
-  --font-sans: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-main);
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  padding-bottom: 80px;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Header Banner */
-.header-hero {
-  background: linear-gradient(180deg, #141b29 0%, #0a0c10 100%);
-  border-bottom: 1px solid var(--border-color);
-  padding: 40px 24px 30px;
-  text-align: center;
-  position: relative;
-}
-.badge-tag {
-  display: inline-block;
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--accent-gold);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.header-title {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  line-height: 1.25;
-  margin-bottom: 12px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.header-subtitle {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  max-width: 760px;
-  margin: 0 auto 20px;
-}
-.meta-chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-.chip {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  padding: 6px 14px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.chip b { color: var(--text-main); }
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
 
-/* Layout Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px 16px;
-}
+        a { text-decoration: none; color: inherit; }
 
-/* Sticky Video Player Box */
-.player-container {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 32px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-.player-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 18px;
-  background: var(--bg-card);
-  border-bottom: 1px solid var(--border-color);
-  font-size: 0.85rem;
-}
-.player-wrapper {
-  position: relative;
-  background: #000;
-  display: flex;
-  justify-content: center;
-}
-video {
-  width: 100%;
-  max-height: 540px;
-  display: block;
-}
-.player-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  background: var(--bg-surface);
-  gap: 10px;
-  border-top: 1px solid var(--border-color);
-}
-.speed-buttons {
-  display: flex;
-  gap: 6px;
-}
-.speed-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.speed-btn.active, .speed-btn:hover {
-  background: var(--accent-amber);
-  color: #fff;
-  border-color: var(--accent-amber);
-}
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
 
-/* Jump Menu / Drawer Bar */
-.jump-bar {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 12px 4px 16px;
-  margin-bottom: 24px;
-  scrollbar-width: thin;
-}
-.jump-pill {
-  flex-shrink: 0;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.jump-pill:hover, .jump-pill.active {
-  background: var(--accent-amber);
-  color: #fff;
-  border-color: var(--accent-amber);
-}
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
 
-/* Shot Breakdown Cards */
-.shot-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  margin-bottom: 32px;
-  overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
-}
-.shot-card:hover {
-  border-color: rgba(245, 158, 11, 0.4);
-}
-.shot-card-header {
-  padding: 18px 24px;
-  background: var(--bg-card);
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-.shot-num-badge {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: bold;
-  background: var(--accent-gold);
-  color: #000;
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-.shot-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  color: #fff;
-  font-weight: bold;
-  flex: 1;
-  min-width: 260px;
-}
-.shot-timestamp {
-  color: var(--accent-cyan);
-  font-size: 0.85rem;
-  font-weight: bold;
-  background: rgba(6, 182, 212, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(6, 182, 212, 0.2);
-}
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* Gallery Keyframes Start - Mid - End */
-.shot-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  padding: 20px 24px 10px;
-}
-@media (max-width: 768px) {
-  .shot-gallery { grid-template-columns: 1fr; }
-}
-.frame-box {
-  background: #000;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  position: relative;
-  cursor: pointer;
-}
-.frame-box img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s;
-}
-.frame-box:hover img {
-  transform: scale(1.03);
-}
-.frame-label {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background: rgba(0, 0, 0, 0.75);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: bold;
-  padding: 2px 8px;
-  border-radius: 4px;
-  backdrop-filter: blur(4px);
-}
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
 
-/* Shot Content Body */
-.shot-body {
-  padding: 16px 24px 24px;
-}
-.reason-box {
-  background: rgba(245, 158, 11, 0.08);
-  border-left: 4px solid var(--accent-gold);
-  padding: 12px 16px;
-  border-radius: 0 8px 8px 0;
-  margin-bottom: 16px;
-  font-size: 0.92rem;
-  color: #fef08a;
-}
-.action-box {
-  color: var(--text-main);
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-}
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* 2-Way Evaluation Grid */
-.eval-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-@media (max-width: 640px) {
-  .eval-grid { grid-template-columns: 1fr; }
-}
-.eval-box {
-  padding: 14px 16px;
-  border-radius: 10px;
-  font-size: 0.88rem;
-}
-.eval-good {
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.eval-good h4 {
-  color: var(--accent-green);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.eval-bad {
-  background: rgba(244, 63, 94, 0.08);
-  border: 1px solid rgba(244, 63, 94, 0.25);
-}
-.eval-bad h4 {
-  color: var(--accent-rose);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-/* Takeaway Box */
-.takeaway-box {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  padding: 14px 18px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-.takeaway-box b { color: var(--accent-gold); }
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
 
-/* Technical Spec Bar */
-.tech-spec-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-.tech-spec-item {
-  background: var(--bg-primary);
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-}
-.tech-spec-item b { color: var(--text-main); }
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
 
-/* Lightbox Modal */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.92);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-.modal-content {
-  max-width: 90vw;
-  max-height: 85vh;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-}
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 40px 20px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  border-top: 1px solid var(--border-color);
-  margin-top: 40px;
-}
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
 
-.player-box { position: relative !important; }
-.player-box video { cursor: pointer; }
-.player-fs-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    display: inline-flex;
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
+
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
+
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
+
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
+
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
+
+        .meta-dot {
+            opacity: 0.5;
+        }
+
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
+
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
+
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
+
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
+
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
+
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
+
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
+
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
+
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
+
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
+
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
+
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
+
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
+
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
+
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
+
+
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+/* === EDIT INLINE FEATURE === */
+.edit-fab {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--cl-radius-full);
+    background: var(--cl-card);
+    border: 1px solid var(--cl-line-strong);
+    display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-family: var(--font-ui, sans-serif);
-    font-size: 11.5px;
-    font-weight: 600;
+    justify-content: center;
     cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.2s ease;
+    font-size: 18px;
+    transition: all 0.2s var(--apple-ease);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.player-fs-btn:hover {
-    background: #1a73e8;
-    border-color: #1a73e8;
-    transform: scale(1.04);
-}
-.fs-ctrl-btn {
-    background: #fffbeb !important;
-    color: #b45309 !important;
-    border-color: #fef3c7 !important;
-    font-weight: 700 !important;
-}
-.fs-ctrl-btn:hover {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border-color: #fcd34d !important;
+.edit-fab:hover {
+    border-color: var(--cl-accent);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.15);
+    transform: scale(1.05);
 }
 
-</style>
-<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+.edit-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 300;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
+}
+.edit-modal-backdrop.open {
+    display: flex;
+}
+
+.edit-modal {
+    background: var(--cl-card);
+    border-radius: var(--cl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: editSlideIn 0.3s var(--apple-spring);
+}
+
+@keyframes editSlideIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.edit-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cl-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit-modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cl-text-base);
+    margin: 0;
+}
+.edit-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--cl-text-muted);
+    line-height: 1;
+}
+
+.edit-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.edit-field label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-muted);
+}
+.edit-field select,
+.edit-field input,
+.edit-field textarea {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-sm);
+    background: var(--cl-card);
+    color: var(--cl-text-body);
+    transition: border-color 0.2s;
+    width: 100%;
+}
+.edit-field select:focus,
+.edit-field input:focus,
+.edit-field textarea:focus {
+    outline: none;
+    border-color: var(--cl-accent);
+    box-shadow: 0 0 0 3px var(--cl-accent-tint);
+}
+.edit-field textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+.edit-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-save-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--cl-accent);
+    color: white;
+    border: none;
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-save-btn:hover { opacity: 0.9; }
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edit-cancel-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--cl-text-muted);
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+}
+
+.edit-status {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: var(--cl-radius-sm);
+    display: none;
+}
+.edit-status.success {
+    display: block;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.edit-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.edit-pw-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.edit-pw-field label { min-width: fit-content; }
+.edit-pw-field input {
+    max-width: 120px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 1024px) {
+    .edit-fab {
+        top: auto;
+        bottom: 20px;
+        right: 16px;
+    }
+}
+    </style>
 </head>
 <body>
 
-<header class="header-hero">
-  <div class="badge-tag">🎬 Cinematic Director Breakdown • Studio Masterclass</div>
-  <h1 class="header-title">Joe Rogan & Elon Musk Podcast</h1>
-  <p class="header-subtitle">Phân tích toàn diện ngôn ngữ điện ảnh, bố cục đa góc máy (Multi-Cam Setup), kỹ thuật ánh sáng Studio Low-Key và nhịp dựng đối thoại triệu view.</p>
-  <div class="meta-chips">
-    <div class="chip">Host: <b>Joe Rogan</b></div>
-    <div class="chip">Guest: <b>Elon Musk</b></div>
-    <div class="chip">Kênh: <b>@StartupTM</b></div>
-    <div class="chip">Độ phân giải: <b>1080p / 720p HD</b></div>
-    <div class="chip">Tổng phân cảnh: <b>12 Visual Beats</b></div>
-    <div class="chip">Tiêu chuẩn: <b>SVN-Acta & GT America</b></div>
-  </div>
-</header>
-
-<main class="container">
-
-  <!-- Sticky Video Player -->
-  <section class="player-container">
-    <div class="player-header">
-      <span>📹 <b>Trình Phát Video Khảo Sát Đạo Diễn</b></span>
-      <span style="color: var(--text-muted);">Format: H.264 MP4 720p</span>
+<div class="app-container">
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <video id="mainPlayer" data-yt-config="enablejsapi=1" src="" controls autoplay muted playsinline preload="auto" loop style="width:100%;aspect-ratio:9/16;border-radius:12px;background:#000;"></video>
+        </div>
+        <div class="video-controls">
+            <div class="speed-row">
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
+            </div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
+            </div>
+            <div id="shotStatusTag">Sẵn sàng</div>
+        </div>
     </div>
-    <div class="player-wrapper">
-      <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">Kỹ Thuật Quay Dựng &amp; Điện Ảnh</span> <span class="badge badge-alt">Chỉn Chu (Cinematic)</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/creator/" target="_blank" rel="noopener">Joe Rogan &amp; Elon Musk Podcast</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/creator/" target="_blank" class="creator-link">@creator ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">12 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">2.50s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
+            </div>
+        </header>
+
+        
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">[Nhịp 1 - Mở màn: Cold Open &amp; Hook Ngang Tầm Mắt: Thiết Lập Vị Thế Đối Thoại Trực Diện] ➔ [Nhịp 2 - Triển khai: Socratic Interrogation Shot: Góc Máy Hạ Thấp Tôn Vẻ Uy Quyền Phản Biện] ➔ [Nhịp 3 - Cao trào &amp; Kết: Resolution &amp; The Unbroken Dialogue: Nhịp Dựng Thoát Ly Đầy Dư Vị]</div>
+        </section>
+
+        <div class="overview-card">
+            ⚡ Cold Open &amp; Hook Ngang Tầm Mắt: Thiết Lập Vị Thế Đối Thoại Trực Diện ➔ Resolution &amp; The Unbroken Dialogue: Nhịp Dựng Thoát Ly Đầy Dư Vị
+        </div>
+
+        
+
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (12)</button>
+            </div>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
+        </div>
+
+        <div id="storyboardView">
+            
+        <div class="shot-card" id="shot-card-1">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 01')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_start.webp" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Cold Open &amp; Hook Ngang Tầm Mắt: Thiết Lập Vị Thế Đối Thoại Trực Diện</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-2">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 02')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_02_start.webp" alt="SHOT 02" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 02</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Khẩu Độ Nông f/2.0 Nén Không Gian: Tập Trung Tối Đa Vào Khẩu Hình</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-3">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 03')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_03_start.webp" alt="SHOT 03" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 03</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Guest Close-Up &amp; Rim-Light Tách Lớp: Khắc Họa Chân Dung Elon Musk</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-4">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 04')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_04_start.webp" alt="SHOT 04" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 04</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Active Listening Reaction Cut: Duy Trì Nhịp Thở và Sự Thấu Cảm Phi Ngôn Ngữ</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-5">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 05')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_05_start.webp" alt="SHOT 05" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 05</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">The Micro-Pause &amp; Cognitive Framing: Tận Dụng Khoảng Lặng Trí Tuệ</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-6">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 06')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_06_start.webp" alt="SHOT 06" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 06</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Deep Dive Tech Exposition: Ngôn Ngữ Hình Thể &amp; Diễn Biến Cảm Xúc</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-7">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 07')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_07_start.webp" alt="SHOT 07" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 07</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Socratic Interrogation Shot: Góc Máy Hạ Thấp Tôn Vẻ Uy Quyền Phản Biện</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-8">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 08')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_08_start.webp" alt="SHOT 08" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 08</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Shared Humor &amp; Tension Release: Phá Vỡ Áp Lực Bằng Nụ Cười Đồng Điệu</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-9">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 09')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_09_start.webp" alt="SHOT 09" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 09</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Acoustic Architecture &amp; Spatial Depth: Phân Tích Thiết Kế Phim Trường</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-10">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 10')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_10_start.webp" alt="SHOT 10" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 10</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">High-Stakes AI Speculation: Ánh Nhìn Trực Diện Đầy Trăn Trở Tương Lai</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-11">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 11')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_11_start.webp" alt="SHOT 11" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 11</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Consciousness &amp; Simulation Thesis: Triết Học Về Bản Thể Thực Tại</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-12">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 12')">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_12_start.webp" alt="SHOT 12" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 12</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Resolution &amp; The Unbroken Dialogue: Nhịp Dựng Thoát Ly Đầy Dư Vị</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+        </div>
+
+        <div id="gridView">
+            
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 01')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_start.webp" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_start.webp', 'SHOT 01 • Cold Open &amp; Hook Ngang Tầm Mắt: Thiết Lập Vị Thế Đối Thoại Trực Diện')">⊕</button>
+            </div>
+            <div class="grid-title">Cold Open &amp; Hook Ngang Tầm Mắt: Thiết Lậ</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 02')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_02_start.webp" alt="SHOT 02" loading="lazy" />
+                <span class="grid-num">SHOT 02</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_02_start.webp', 'SHOT 02 • Khẩu Độ Nông f/2.0 Nén Không Gian: Tập Trung Tối Đa Vào Khẩu Hình')">⊕</button>
+            </div>
+            <div class="grid-title">Khẩu Độ Nông f/2.0 Nén Không Gian: Tập T</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 03')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_03_start.webp" alt="SHOT 03" loading="lazy" />
+                <span class="grid-num">SHOT 03</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_03_start.webp', 'SHOT 03 • Guest Close-Up &amp; Rim-Light Tách Lớp: Khắc Họa Chân Dung Elon Musk')">⊕</button>
+            </div>
+            <div class="grid-title">Guest Close-Up &amp; Rim-Light Tách Lớp: Khắ</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 04')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_04_start.webp" alt="SHOT 04" loading="lazy" />
+                <span class="grid-num">SHOT 04</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_04_start.webp', 'SHOT 04 • Active Listening Reaction Cut: Duy Trì Nhịp Thở và Sự Thấu Cảm Phi Ngôn Ngữ')">⊕</button>
+            </div>
+            <div class="grid-title">Active Listening Reaction Cut: Duy Trì N</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 05')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_05_start.webp" alt="SHOT 05" loading="lazy" />
+                <span class="grid-num">SHOT 05</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_05_start.webp', 'SHOT 05 • The Micro-Pause &amp; Cognitive Framing: Tận Dụng Khoảng Lặng Trí Tuệ')">⊕</button>
+            </div>
+            <div class="grid-title">The Micro-Pause &amp; Cognitive Framing: Tận</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 06')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_06_start.webp" alt="SHOT 06" loading="lazy" />
+                <span class="grid-num">SHOT 06</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_06_start.webp', 'SHOT 06 • Deep Dive Tech Exposition: Ngôn Ngữ Hình Thể &amp; Diễn Biến Cảm Xúc')">⊕</button>
+            </div>
+            <div class="grid-title">Deep Dive Tech Exposition: Ngôn Ngữ Hình</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 07')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_07_start.webp" alt="SHOT 07" loading="lazy" />
+                <span class="grid-num">SHOT 07</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_07_start.webp', 'SHOT 07 • Socratic Interrogation Shot: Góc Máy Hạ Thấp Tôn Vẻ Uy Quyền Phản Biện')">⊕</button>
+            </div>
+            <div class="grid-title">Socratic Interrogation Shot: Góc Máy Hạ </div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 08')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_08_start.webp" alt="SHOT 08" loading="lazy" />
+                <span class="grid-num">SHOT 08</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_08_start.webp', 'SHOT 08 • Shared Humor &amp; Tension Release: Phá Vỡ Áp Lực Bằng Nụ Cười Đồng Điệu')">⊕</button>
+            </div>
+            <div class="grid-title">Shared Humor &amp; Tension Release: Phá Vỡ Á</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 09')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_09_start.webp" alt="SHOT 09" loading="lazy" />
+                <span class="grid-num">SHOT 09</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_09_start.webp', 'SHOT 09 • Acoustic Architecture &amp; Spatial Depth: Phân Tích Thiết Kế Phim Trường')">⊕</button>
+            </div>
+            <div class="grid-title">Acoustic Architecture &amp; Spatial Depth: P</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 10')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_10_start.webp" alt="SHOT 10" loading="lazy" />
+                <span class="grid-num">SHOT 10</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_10_start.webp', 'SHOT 10 • High-Stakes AI Speculation: Ánh Nhìn Trực Diện Đầy Trăn Trở Tương Lai')">⊕</button>
+            </div>
+            <div class="grid-title">High-Stakes AI Speculation: Ánh Nhìn Trự</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 11')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_11_start.webp" alt="SHOT 11" loading="lazy" />
+                <span class="grid-num">SHOT 11</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_11_start.webp', 'SHOT 11 • Consciousness &amp; Simulation Thesis: Triết Học Về Bản Thể Thực Tại')">⊕</button>
+            </div>
+            <div class="grid-title">Consciousness &amp; Simulation Thesis: Triết</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 12')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_12_start.webp" alt="SHOT 12" loading="lazy" />
+                <span class="grid-num">SHOT 12</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_12_start.webp', 'SHOT 12 • Resolution &amp; The Unbroken Dialogue: Nhịp Dựng Thoát Ly Đầy Dư Vị')">⊕</button>
+            </div>
+            <div class="grid-title">Resolution &amp; The Unbroken Dialogue: Nhịp</div>
+        </div>
+        </div>
     </div>
-    <div class="player-controls">
-      <div class="speed-buttons">
-        <button class="speed-btn" onclick="setSpeed(0.25)">0.25x (Phân tích nét)</button>
-        <button class="speed-btn" onclick="setSpeed(0.5)">0.5x (Slow-mo)</button>
-        <button class="speed-btn active" onclick="setSpeed(1.0)">1.0x (Chuẩn)</button>
-        <button class="speed-btn" onclick="setSpeed(1.5)">1.5x</button>
-      </div>
-      <div style="font-size: 0.8rem; color: var(--text-muted);">
-        Phím tắt: <b>Space</b> (Play/Pause) • <b>J/L</b> (Tua ±5s)
-      </div>
-    </div>
-  </section>
-
-  <!-- Jump Bar -->
-  <nav class="jump-bar">
-    <a class="jump-pill" href="#shot-01">Beat 01: Medium</a>
-    <a class="jump-pill" href="#shot-02">Beat 02: Close-Up</a>
-    <a class="jump-pill" href="#shot-03">Beat 03: Medium</a>
-    <a class="jump-pill" href="#shot-04">Beat 04: Medium</a>
-    <a class="jump-pill" href="#shot-05">Beat 05: Close-Up</a>
-    <a class="jump-pill" href="#shot-06">Beat 06: Medium</a>
-    <a class="jump-pill" href="#shot-07">Beat 07: Medium</a>
-    <a class="jump-pill" href="#shot-08">Beat 08: Close-Up</a>
-    <a class="jump-pill" href="#shot-09">Beat 09: Medium</a>
-    <a class="jump-pill" href="#shot-10">Beat 10: Tight</a>
-    <a class="jump-pill" href="#shot-11">Beat 11: Tight</a>
-    <a class="jump-pill" href="#shot-12">Beat 12: Medium</a>
-  </nav>
-
-  <!-- Shot Breakdown List -->
-  <div class="shots-list">
-
-    <!-- Shot 01 -->
-    <article class="shot-card" id="shot-01">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 01 / 12</span>
-        <h3 class="shot-card-title">Cold Open & Hook Ngang Tầm Mắt: Thiết Lập Vị Thế Đối Thoại Trực Diện</h3>
-        <span class="shot-timestamp">⏱ 00:00:02 - 00:00:18</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_01_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_start.webp" alt="Shot 01 Start" loading="lazy">
-          <span class="frame-label">START (00:00:02)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_01_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_mid.webp" alt="Shot 01 Mid" loading="lazy">
-          <span class="frame-label">MID (00:00:10)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_01_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_end.webp" alt="Shot 01 End" loading="lazy">
-          <span class="frame-label">END (00:00:18)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Góc máy ngang tầm mắt (Eye-Level) kết hợp cự ly cận vừa (Medium Close-Up) loại bỏ hoàn toàn khoảng cách ước lệ, buộc người xem thâm nhập ngay vào luồng tư duy của Joe Rogan.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan đeo tai nghe Audio-Technica studio, ngồi trước micro Shure SM7B, mở màn podcast với câu hỏi gợi mở đầy khiêu khích trí tuệ.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Ánh sáng Key-light từ góc 45 độ làm nổi bật cấu trúc khối sọ và biểu cảm chân thực; phông nền lam gỗ dọc tối màu tạo đường dẫn thị giác thanh lịch và chiều sâu tách biệt.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Khoảng cách mic Shure SM7B che khuất một phần ngực và cằm của chủ thể nếu góc máy không được căn chỉnh bù trừ góc nhìn.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Với video phỏng vấn / podcast, hãy luôn khóa góc mắt chủ thể ở 1/3 trên khung hình và dùng Key-light mềm để tạo vẻ uy tín, chân thực tuyệt đối.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up (MCU)</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level Straight</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm f/2.0 Portrait Lens</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Low-Key 3-Point Studio + Warm Amber Sconce Accents</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Hard Cut (0.0s) - Direct Dialogue Switch</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>19.1</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>30.6</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 02 -->
-    <article class="shot-card" id="shot-02">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 02 / 12</span>
-        <h3 class="shot-card-title">Khẩu Độ Nông f/2.0 Nén Không Gian: Tập Trung Tối Đa Vào Khẩu Hình</h3>
-        <span class="shot-timestamp">⏱ 00:00:22 - 00:00:42</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_02_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_02_start.webp" alt="Shot 02 Start" loading="lazy">
-          <span class="frame-label">START (00:00:22)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_02_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_02_mid.webp" alt="Shot 02 Mid" loading="lazy">
-          <span class="frame-label">MID (00:00:32)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_02_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_02_end.webp" alt="Shot 02 End" loading="lazy">
-          <span class="frame-label">END (00:00:42)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Việc mở khẩu lớn xóa mờ hoàn toàn các chi tiết hậu cảnh giúp người xem không bị phân tâm, neo chặt thị giác vào cử động môi và nhãn quang của Host.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan nghiêng người về phía trước, tăng cường áp lực đối thoại và điều chỉnh âm sắc giọng nói qua cự ly mic gần.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Đèn vòm đồng thau nền tạo hai điểm sáng Bokeh ấm áp cân xứng, phá vỡ sự u tối của hậu cảnh tối màu.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Phần viền tai nghe màu đen dễ bị nuốt chửng vào nền tối nếu thiếu đèn ven (Rim light / Hair light) hỗ trợ ở phía sau đỉnh đầu.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Luôn bổ sung một nguồn sáng Rim Light nhẹ tách biệt tóc/tai nghe khỏi phông nền màu tối để giữ cấu trúc hình khối 3D.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Close-Up (CU)</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Slight Low Angle (5°)</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm Prime</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Rembrandt Studio Key Light + Warm Dome Background Light</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Dialogue Reaction Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>20.5</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>31.1</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 03 -->
-    <article class="shot-card" id="shot-03">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 03 / 12</span>
-        <h3 class="shot-card-title">Guest Close-Up & Rim-Light Tách Lớp: Khắc Họa Chân Dung Elon Musk</h3>
-        <span class="shot-timestamp">⏱ 00:00:46 - 00:01:08</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_03_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_03_start.webp" alt="Shot 03 Start" loading="lazy">
-          <span class="frame-label">START (00:00:46)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_03_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_03_mid.webp" alt="Shot 03 Mid" loading="lazy">
-          <span class="frame-label">MID (00:00:58)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_03_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_03_end.webp" alt="Shot 03 End" loading="lazy">
-          <span class="frame-label">END (00:01:08)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Ánh sáng ven tóc (Rim light) sắc nét kết hợp đèn nền đồng thau làm nổi bật hình thể và biểu cảm tư duy đặc trưng của Elon Musk.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk xuất hiện trong khung hình với áo thun in hoạ tiết hình học, mỉm cười nhẹ và chuẩn bị phản biện luận điểm.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Bố cục 1/3 chuẩn mực (Rule of Thirds), không gian nhìn (Look Room) hướng sang trái tạo thế đối trọng hoàn hảo với góc nhìn của Joe Rogan.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Mảng hoa văn áo phông của khách mời có độ tương phản cao đôi khi thu hút mắt người xem trước khi họ chú ý đến nét mặt.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Khuyên khách mời mặc trang phục màu đơn sắc, tối giản họa tiết để gương mặt luôn là tâm điểm thị giác số 1.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up (MCU)</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level Profile-3/4</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm f/1.8</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Softbox Key + Subtle Cool Rim Light + Amber Wall Fixture</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Reverse Angle Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>20.7</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>32.0</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 04 -->
-    <article class="shot-card" id="shot-04">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 04 / 12</span>
-        <h3 class="shot-card-title">Active Listening Reaction Cut: Duy Trì Nhịp Thở và Sự Thấu Cảm Phi Ngôn Ngữ</h3>
-        <span class="shot-timestamp">⏱ 00:01:15 - 00:01:38</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_04_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_04_start.webp" alt="Shot 04 Start" loading="lazy">
-          <span class="frame-label">START (00:01:15)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_04_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_04_mid.webp" alt="Shot 04 Mid" loading="lazy">
-          <span class="frame-label">MID (00:01:25)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_04_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_04_end.webp" alt="Shot 04 End" loading="lazy">
-          <span class="frame-label">END (00:01:38)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Cắt cảnh phản hồi (Reaction Cut) đúng khoảnh khắc khách mời nhấn nhá giúp khán giả cảm nhận được sức nặng và độ nghiêm túc của câu chuyện.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan gật đầu nhẹ, ánh mắt tập trung cao độ, lắng nghe mà không ngắt lời Elon Musk.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Cắt cảnh giữ vững trục 180 độ (180-Degree Rule), đảm bảo tính liên tục không gian và hướng nhìn tự nhiên của người xem.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Thời lượng giữ Reaction shot quá dài (>4s) khi chủ thể không nói có thể làm loãng nhịp độ nếu câu thoại của khách mời đang dồn dập.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Reaction cut lý tưởng chỉ nên kéo dài 1.5 - 2.5 giây ngay tại điểm nhấn cảm xúc hoặc mấu chốt của luận điểm.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up (Reaction)</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Low-Key Ambient + Warm Accent Sconces</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>L-Cut (Audio leads video switch)</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>20.7</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>31.8</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 05 -->
-    <article class="shot-card" id="shot-05">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 05 / 12</span>
-        <h3 class="shot-card-title">The Micro-Pause & Cognitive Framing: Tận Dụng Khoảng Lặng Trí Tuệ</h3>
-        <span class="shot-timestamp">⏱ 00:01:45 - 00:02:10</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_05_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_05_start.webp" alt="Shot 05 Start" loading="lazy">
-          <span class="frame-label">START (00:01:45)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_05_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_05_mid.webp" alt="Shot 05 Mid" loading="lazy">
-          <span class="frame-label">MID (00:01:58)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_05_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_05_end.webp" alt="Shot 05 End" loading="lazy">
-          <span class="frame-label">END (00:02:10)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Khung hình cận cảnh giữ trọn khoảng lặng 3 giây khi Elon Musk suy ngẫm tạo nên kịch tính điện ảnh và chiều sâu tư duy.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk hướng mắt nhìn xuống suy ngẫm, micro Shure SM7B thu trọn từng hơi thở và ngữ điệu chậm rãi.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Độ tương phản ánh sáng tạo khối trên gò má và trán; nhãn quang có đốm sáng Catchlight chứng minh nguồn sáng Key-light kích thước lớn.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Góc cản của cánh tay đòn micro (Boom arm) hơi dày chiếm một góc dưới khung hình.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Đừng vội cắt máy khi nhân vật im lặng suy nghĩ; khoảng lặng (dramatic pause) chính là vàng trong nghệ thuật phỏng vấn đỉnh cao.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Close-Up Dramatic</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>105mm Macro/Telephoto</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Directional Soft Key Light + Ambient Spill</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Natural Breath Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>19.8</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>29.0</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 06 -->
-    <article class="shot-card" id="shot-06">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 06 / 12</span>
-        <h3 class="shot-card-title">Deep Dive Tech Exposition: Ngôn Ngữ Hình Thể & Diễn Biến Cảm Xúc</h3>
-        <span class="shot-timestamp">⏱ 00:02:20 - 00:02:48</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_06_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_06_start.webp" alt="Shot 06 Start" loading="lazy">
-          <span class="frame-label">START (00:02:20)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_06_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_06_mid.webp" alt="Shot 06 Mid" loading="lazy">
-          <span class="frame-label">MID (00:02:35)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_06_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_06_end.webp" alt="Shot 06 End" loading="lazy">
-          <span class="frame-label">END (00:02:48)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Khung hình mở rộng nhẹ sang Medium Close-Up bắt trọn cử chỉ tay khi Elon Musk giải thích các khái niệm kỹ thuật phức tạp.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk vung nhẹ tay minh họa cho dòng chảy năng lượng và quy mô sản xuất hàng loạt của Tesla & SpaceX.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Cử chỉ bàn tay nằm trọn trong vùng an toàn (Action Safe Area), bổ trợ trực quan cho ngôn ngữ nói.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Chuyển động tay nhanh đôi khi bị Motion Blur nhẹ do tốc độ màn trập 1/50s (chuẩn 180-degree shutter).</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Khi quay nhân vật hay dùng cử chỉ tay biểu cảm, hãy giữ khoảng headroom và side-room vừa đủ để không bị cắt cụt bàn tay.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up with Hand Gestures</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Profile 45°</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>70mm</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Three-Point Balanced Studio Lighting</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Action Match Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>19.4</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>27.2</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 07 -->
-    <article class="shot-card" id="shot-07">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 07 / 12</span>
-        <h3 class="shot-card-title">Socratic Interrogation Shot: Góc Máy Hạ Thấp Tôn Vẻ Uy Quyền Phản Biện</h3>
-        <span class="shot-timestamp">⏱ 00:03:00 - 00:03:30</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_07_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_07_start.webp" alt="Shot 07 Start" loading="lazy">
-          <span class="frame-label">START (00:03:00)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_07_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_07_mid.webp" alt="Shot 07 Mid" loading="lazy">
-          <span class="frame-label">MID (00:03:15)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_07_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_07_end.webp" alt="Shot 07 End" loading="lazy">
-          <span class="frame-label">END (00:03:30)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Góc máy hạ thấp nhẹ 5 độ làm Joe Rogan trông vững chãi và quyền lực như một triết gia đặt câu hỏi hóc búa.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan nhíu mày, đưa ra câu hỏi phản biện về giới hạn năng lượng và độ bền của vật liệu.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Sự cân bằng hoàn hảo giữa hai đèn chùm đồng thau phía sau tạo thế cân bằng đối xứng giả (Pseudo-Symmetry).</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Màu xanh rêu của ghế sofa hậu cảnh có độ bão hòa hơi thấp, chưa tôn hết sự sang trọng của chất liệu nhung.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Đặt máy quay thấp hơn mắt chủ thể 3-5cm khi muốn tôn lên sự thâm trầm, quyết đoán và uy quyền của nhân vật.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up Low-Angle</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Low-Angle (+5° Tilt Up)</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Contrast Ratio 4:1 (Chiaroscuro Feel)</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Interrogative Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>20.9</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>32.6</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 08 -->
-    <article class="shot-card" id="shot-08">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 08 / 12</span>
-        <h3 class="shot-card-title">Shared Humor & Tension Release: Phá Vỡ Áp Lực Bằng Nụ Cười Đồng Điệu</h3>
-        <span class="shot-timestamp">⏱ 00:03:45 - 00:04:15</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_08_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_08_start.webp" alt="Shot 08 Start" loading="lazy">
-          <span class="frame-label">START (00:03:45)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_08_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_08_mid.webp" alt="Shot 08 Mid" loading="lazy">
-          <span class="frame-label">MID (00:04:00)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_08_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_08_end.webp" alt="Shot 08 End" loading="lazy">
-          <span class="frame-label">END (00:04:15)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Chuyển cảnh bắt đúng khoảnh khắc bật cười giải tỏa toàn bộ căng thẳng học thuật tích tụ trong các phân đoạn trước.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk bật cười sảng khoái trước câu bông đùa hóm hỉnh của Joe Rogan về du hành liên hành tinh.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Nụ cười rạng rỡ bắt sáng Catchlight trong mắt; nhịp cơ mặt tự nhiên 100% không gượng ép.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Khi cười người chuyển động lùi ra sau làm điểm nét nông f/1.8 bị trượt nhẹ trong tích tắc.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Khép khẩu f/2.8 hoặc bật tính năng Eye Autofocus tracking thời gian thực để tránh mất nét khi chủ thể chuyển động cảm xúc mạnh.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Close-Up Emotion Cut</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>High-Key Accent on Facial Highlight</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Laughter J-Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>20.1</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>30.9</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 09 -->
-    <article class="shot-card" id="shot-09">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 09 / 12</span>
-        <h3 class="shot-card-title">Acoustic Architecture & Spatial Depth: Phân Tích Thiết Kế Phim Trường</h3>
-        <span class="shot-timestamp">⏱ 00:04:30 - 00:05:00</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_09_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_09_start.webp" alt="Shot 09 Start" loading="lazy">
-          <span class="frame-label">START (00:04:30)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_09_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_09_mid.webp" alt="Shot 09 Mid" loading="lazy">
-          <span class="frame-label">MID (00:04:45)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_09_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_09_end.webp" alt="Shot 09 End" loading="lazy">
-          <span class="frame-label">END (00:05:00)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Cấu trúc nan gỗ sọc dọc kết hợp cây xanh và ánh đèn ấm định hình phong cách phòng thu Podcast triệu đô đẳng cấp thế giới.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Khung hình khai thác toàn bộ trường sâu của studio, thể hiện không gian ấm cúng nhưng cách âm chuyên nghiệp.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Đường dẫn phối cảnh nan gỗ dọc kéo ánh mắt hội tụ về trung tâm; tông màu tối tạo cảm giác riêng tư tuyệt đối (Intimate Atmosphere).</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Logo kênh 'Startup' ở góc trái trên có màu trắng hơi sáng, thi thoảng tranh chấp điểm nhìn với nhân vật.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Thiết kế phòng thu podcast hiện đại nên dùng gỗ lam dọc + đèn vàng ấm tán sắc để triệt tiêu dội âm và tạo background điện ảnh sang trọng.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Shot (Studio Environment Context)</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>50mm Standard</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Volumetric Atmosphere + Architectural Accent</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Contextual Establishing Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>20.5</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>32.8</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 10 -->
-    <article class="shot-card" id="shot-10">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 10 / 12</span>
-        <h3 class="shot-card-title">High-Stakes AI Speculation: Ánh Nhìn Trực Diện Đầy Trăn Trở Tương Lai</h3>
-        <span class="shot-timestamp">⏱ 00:05:15 - 00:05:45</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_10_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_10_start.webp" alt="Shot 10 Start" loading="lazy">
-          <span class="frame-label">START (00:05:15)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_10_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_10_mid.webp" alt="Shot 10 Mid" loading="lazy">
-          <span class="frame-label">MID (00:05:30)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_10_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_10_end.webp" alt="Shot 10 End" loading="lazy">
-          <span class="frame-label">END (00:05:45)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Cận cảnh cực độ (Extreme Close-Up feeling) lột tả sự nghiêm túc khi thảo luận về rủi ro trí tuệ nhân tạo AGI đối với nhân loại.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk nhìn thẳng vào ống kính/đối phương, nét mặt đăm chiêu cảnh báo về tốc độ phát triển của siêu trí tuệ nhân tạo.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Ánh sáng viền đổ bóng sắc nét nhấn mạnh các nếp nhăn suy tư quanh khóe mắt, gia tăng sức nặng lời nói.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Mảng tối bên gò má trái hơi mất chi tiết (crushed shadows) do độ tương phản môi trường cao.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Tăng cường độ đèn Fill-light mềm ở mức 20% công suất để giữ lại chi tiết vùng shadow khi bàn về các chủ đề nghiêm trọng.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Tight Close-Up (TCU)</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>135mm Cinematic Telephoto</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>High-Contrast Chiaroscuro</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Dramatic Pause Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>20.4</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>31.4</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 11 -->
-    <article class="shot-card" id="shot-11">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 11 / 12</span>
-        <h3 class="shot-card-title">Consciousness & Simulation Thesis: Triết Học Về Bản Thể Thực Tại</h3>
-        <span class="shot-timestamp">⏱ 00:06:00 - 00:06:30</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_11_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_11_start.webp" alt="Shot 11 Start" loading="lazy">
-          <span class="frame-label">START (00:06:00)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_11_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_11_mid.webp" alt="Shot 11 Mid" loading="lazy">
-          <span class="frame-label">MID (00:06:15)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_11_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_11_end.webp" alt="Shot 11 End" loading="lazy">
-          <span class="frame-label">END (00:06:30)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Khung hình cô đọng khoảnh khắc triết học đỉnh cao: Khả năng thực tại chúng ta đang sống là một thế giới mô phỏng (Simulation Theory).
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk nhấn mạnh xác suất 1 trên hàng tỷ chúng ta đang ở thực tại gốc, kết hợp với phản ứng kinh ngạc của Joe Rogan.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Góc máy thu hẹp khoảng cách tâm lý, người xem cảm giác như đang ngồi cùng bàn với hai bộ óc đại tài.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Phản xạ ánh sáng trên tròng mắt của nhân vật có hình dạng đèn Softbox vuông hơi lộ nguồn sáng nhân tạo.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Dùng đèn Softbox tròn (Octabox) hoặc Lantern để phản xạ Catchlight trong mắt tròn tự nhiên như ánh sáng mặt trời.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Tight Close-Up</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Direct Eye-Level</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Soft Key + Subtle Backlight</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Philosophical Resonance Cut</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>18.5</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>30.7</b></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Shot 12 -->
-    <article class="shot-card" id="shot-12">
-      <div class="shot-card-header">
-        <span class="shot-num-badge">BEAT 12 / 12</span>
-        <h3 class="shot-card-title">Resolution & The Unbroken Dialogue: Nhịp Dựng Thoát Ly Đầy Dư Vị</h3>
-        <span class="shot-timestamp">⏱ 00:06:45 - 00:07:15</span>
-      </div>
-
-      <div class="shot-gallery">
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_12_start.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_12_start.webp" alt="Shot 12 Start" loading="lazy">
-          <span class="frame-label">START (00:06:45)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_12_mid.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_12_mid.webp" alt="Shot 12 Mid" loading="lazy">
-          <span class="frame-label">MID (00:07:00)</span>
-        </div>
-        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_12_end.jpg')">
-          <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_12_end.webp" alt="Shot 12 End" loading="lazy">
-          <span class="frame-label">END (00:07:15)</span>
-        </div>
-      </div>
-
-      <div class="shot-body">
-        <div class="reason-box">
-          <b>💡 Tại sao hiệu quả nhất:</b> Khép lại phân đoạn đối thoại bằng góc máy trung tính, nhịp cắt chậm rãi đưa khán giả về trạng thái chiêm nghiệm sâu sắc.
-        </div>
-
-        <div class="action-box">
-          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan và Elon Musk kết thúc phân đoạn tranh biện, chuẩn bị chuyển sang chủ đề tiếp theo trong tâm thế đồng thuận cao.
-        </div>
-
-        <div class="eval-grid">
-          <div class="eval-box eval-good">
-            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
-            <p>Màu sắc studio đạt độ hòa sắc (Color Harmony) tuyệt đối giữa da người (Skin tone ~3200K) và đèn trang trí hậu cảnh.</p>
-          </div>
-          <div class="eval-box eval-bad">
-            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
-            <p>Chuyển động máy quay tĩnh 100% trong suốt thời gian dài có thể cần bổ sung Camera Slider chậm để tăng tính điện ảnh.</p>
-          </div>
-        </div>
-
-        <div class="takeaway-box">
-          <span>🎯</span>
-          <div><b>Bài Học Thực Chiến:</b> Với podcast dài, hãy kết hợp ít nhất 1 góc máy di động trượt Slider siêu êm để tạo cảm giác phim tài liệu điện ảnh mượt mà.</div>
-        </div>
-
-        <div class="tech-spec-bar">
-          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up Resolution</b></div>
-          <div class="tech-spec-item">Góc máy: <b>Eye-Level Neutral</b></div>
-          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
-          <div class="tech-spec-item">Ánh sáng: <b>Golden Hour Ambient Studio Glow</b></div>
-          <div class="tech-spec-item">Chuyển cảnh: <b>Dissolve to Next Segment</b></div>
-          <div class="tech-spec-item">Độ sáng: <b>21.0</b></div>
-          <div class="tech-spec-item">Độ tương phản: <b>33.2</b></div>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</main>
-
-<!-- Lightbox Modal -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeLightbox()">
-  <img crossorigin="anonymous" class="modal-content" id="modalImg" src="" alt="Full Resolution Keyframe">
 </div>
 
-<footer class="footer">
-  <p>© 2026 AI Video Analysis Studio • Đạo diễn & Biên tập Hình ảnh: <b>anh Việt (NOVA-CORE)</b></p>
-  <p style="margin-top: 6px; font-size: 0.75rem; color: #64748b;">Generated with SVN-Acta & GT America Typography • Chrome Headless High-Fidelity Engine</p>
-</footer>
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-head">
+            <span>MỤC LỤC (12)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
+        </div>
+        <div class="drawer-list">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.5, 'SHOT 01')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_start.webp" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">Cold Open &amp; Hook Ngang Tầm Mắt: Thiết Lập </div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(2, 0.0, 2.5, 'SHOT 02')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_02_start.webp" alt="SHOT 02" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 02</div>
+                <div class="drawer-shot-hl">Khẩu Độ Nông f/2.0 Nén Không Gian: Tập Tru</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(3, 0.0, 2.5, 'SHOT 03')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_03_start.webp" alt="SHOT 03" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 03</div>
+                <div class="drawer-shot-hl">Guest Close-Up &amp; Rim-Light Tách Lớp: Khắc </div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(4, 0.0, 2.5, 'SHOT 04')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_04_start.webp" alt="SHOT 04" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 04</div>
+                <div class="drawer-shot-hl">Active Listening Reaction Cut: Duy Trì Nhị</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(5, 0.0, 2.5, 'SHOT 05')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_05_start.webp" alt="SHOT 05" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 05</div>
+                <div class="drawer-shot-hl">The Micro-Pause &amp; Cognitive Framing: Tận D</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(6, 0.0, 2.5, 'SHOT 06')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_06_start.webp" alt="SHOT 06" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 06</div>
+                <div class="drawer-shot-hl">Deep Dive Tech Exposition: Ngôn Ngữ Hình T</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(7, 0.0, 2.5, 'SHOT 07')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_07_start.webp" alt="SHOT 07" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 07</div>
+                <div class="drawer-shot-hl">Socratic Interrogation Shot: Góc Máy Hạ Th</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(8, 0.0, 2.5, 'SHOT 08')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_08_start.webp" alt="SHOT 08" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 08</div>
+                <div class="drawer-shot-hl">Shared Humor &amp; Tension Release: Phá Vỡ Áp </div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(9, 0.0, 2.5, 'SHOT 09')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_09_start.webp" alt="SHOT 09" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 09</div>
+                <div class="drawer-shot-hl">Acoustic Architecture &amp; Spatial Depth: Phâ</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(10, 0.0, 2.5, 'SHOT 10')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_10_start.webp" alt="SHOT 10" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 10</div>
+                <div class="drawer-shot-hl">High-Stakes AI Speculation: Ánh Nhìn Trực </div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(11, 0.0, 2.5, 'SHOT 11')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_11_start.webp" alt="SHOT 11" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 11</div>
+                <div class="drawer-shot-hl">Consciousness &amp; Simulation Thesis: Triết H</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(12, 0.0, 2.5, 'SHOT 12')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_12_start.webp" alt="SHOT 12" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 12</div>
+                <div class="drawer-shot-hl">Resolution &amp; The Unbroken Dialogue: Nhịp D</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
+    </div>
+</div>
+
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
+</div>
+
+<!-- Edit Inline Feature -->
+<button class="edit-fab" onclick="openEditModal()" title="Sửa phân loại">✎</button>
+
+<div id="editModalBackdrop" class="edit-modal-backdrop" onclick="closeEditModal()">
+    <div class="edit-modal" onclick="event.stopPropagation()">
+        <div class="edit-modal-head">
+            <h3>✎ Sửa Phân Loại</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="edit-modal-body">
+            <div id="editStatus" class="edit-status"></div>
+
+            <div class="edit-field">
+                <label>Ngành nghề</label>
+                <select id="editIndustry">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="ky-thuat-quay">🎯 Bố cục / Kỹ Thuật Quay Dựng</option>
+                    <option value="thuong-hieu">💼 Xây kênh / Thương Hiệu Cá Nhân</option>
+                    <option value="kien-truc">🏛️ Góc nhà đẹp / Kiến Trúc & Không Gian</option>
+                    <option value="am-thuc">🍜 F&B / Ẩm Thực & Cafe</option>
+                    <option value="thoi-trang">👔 Thời trang & Phụ Kiện</option>
+                    <option value="spa-lam-dep">💆 Làm đẹp / Spa & Y Tế</option>
+                    <option value="du-lich">✈️ Du lịch / Phong Cách Sống</option>
+                    <option value="cong-nghe">📱 Đồ công nghệ & Thiết Bị</option>
+                    <option value="the-thao">🏃 Thể thao & Sức Khỏe</option>
+                    <option value="ugc">📱 UGC / E-Commerce & Bán Hàng</option>
+                </select>
+                <input type="text" id="editIndustryCustom" placeholder="Hoặc gõ ngành tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Kiểu quay / Phong cách</label>
+                <select id="editStyle">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="dien-anh">🎬 Chỉn Chu (B-Roll Thuần Hình / Cinematic)</option>
+                    <option value="talking-head">🗣️ Nói Trực Diện (Talking Head)</option>
+                    <option value="walk-and-talk">🚶 Walk & Talk (Vừa đi vừa nói)</option>
+                    <option value="voice-over">🎙️ Lồng Tiếng (Voice Over)</option>
+                    <option value="storytelling">📖 Kể Chuyện / Đời Thường (Storytelling)</option>
+                    <option value="chuyen-canh">⚡ Chuyển Cảnh (Transition / Montage)</option>
+                    <option value="bts">🎥 BTS / Setup Hậu Trường</option>
+                    <option value="theo-nhip-nhac">🎵 Theo nhịp nhạc</option>
+                </select>
+                <input type="text" id="editStyleCustom" placeholder="Hoặc gõ kiểu quay tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Tags kỹ thuật (phân tách bằng dấu phẩy)</label>
+                <textarea id="editTags" placeholder="VD: B-Roll Practice, Góc máy cận cảnh, Chuyển cảnh"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Mục đích / Tóm tắt (Purpose)</label>
+                <textarea id="editPurpose"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Bài học rút gọn (Quick Takeaway)</label>
+                <textarea id="editTakeaway"></textarea>
+            </div>
+
+            <div class="edit-field edit-pw-field">
+                <label>Mật khẩu</label>
+                <input type="password" id="editPassword" value="0070" placeholder="••••" autocomplete="off">
+            </div>
+        </div>
+        <div class="edit-modal-footer">
+            <button class="edit-cancel-btn" onclick="closeEditModal()">Hủy</button>
+            <button class="edit-save-btn" id="editSaveBtn" onclick="saveEdit()">Lưu thay đổi</button>
+        </div>
+    </div>
+</div>
 
 <script>
-const video = document.getElementById('mainVideo');
+// Video source resolution - try multiple paths
+const rawVideoSrc = '';
+let currentEndTime = null;
 
-function setSpeed(speed) {
-  if (video) {
-    video.playbackRate = speed;
-    document.querySelectorAll('.speed-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.textContent.includes(speed + 'x'));
-    });
-  }
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
 }
 
-function openLightbox(src) {
-  const overlay = document.getElementById('modalOverlay');
-  const img = document.getElementById('modalImg');
-  if (overlay && img) {
-    img.src = src;
-    overlay.style.display = 'flex';
-  }
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+window.isYtMuted = false;
+
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
+    player.load();
 }
 
-function closeLightbox() {
-  const overlay = document.getElementById('modalOverlay');
-  if (overlay) overlay.style.display = 'none';
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
 }
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
-    e.preventDefault();
-    if (video.paused) video.play(); else video.pause();
-  }
-  if (e.key === 'j') video.currentTime -= 5;
-  if (e.key === 'l') video.currentTime += 5;
-});
-
-function togglePlayerFullscreen() {
-    const v = document.getElementById('mainPlayer');
-    if (!v) return;
-    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        if (v.requestFullscreen) {
-            v.requestFullscreen().catch(() => {});
-        } else if (v.webkitRequestFullscreen) {
-            v.webkitRequestFullscreen();
-        } else if (v.webkitEnterFullscreen) {
-            v.webkitEnterFullscreen();
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
         }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
+    }
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
+    }
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
     } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
         }
+    }
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
+    }
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
-document.addEventListener('keydown', (e) => {
+function setSpeed(speed, btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+}
+
+function stepFrame(frames) {
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
+}
+
+function toggleMute(btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
+}
+
+function togglePlayerFullscreen() {
+    var v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+}
+
+document.addEventListener('keydown', function(e) {
     if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
         togglePlayerFullscreen();
     }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
 });
 
-</script>
+function switchView(view) {
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
+    }
+}
 
+function toggleDrawer(open) {
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function openLightbox(src, caption) {
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
+
+// === EDIT INLINE FEATURE ===
+var ENTRY_KEY = 'Joe Rogan Elon Musk Podcast - @StartupTM';
+var CLASSIFICATION_DATA = {};
+
+function openEditModal() {
+    var d = CLASSIFICATION_DATA || {};
+    var indSel = document.getElementById('editIndustry');
+    var indCust = document.getElementById('editIndustryCustom');
+    var stySel = document.getElementById('editStyle');
+    var styCust = document.getElementById('editStyleCustom');
+    
+    // Pre-fill industry (support both id and name)
+    var indId = (d.industry && d.industry.id) ? d.industry.id : '';
+    var indName = (d.industry && d.industry.name) ? d.industry.name : '';
+    indSel.value = '';
+    indCust.value = '';
+    for (var i = 0; i < indSel.options.length; i++) {
+        if (indSel.options[i].value === indId || indSel.options[i].value === indName) {
+            indSel.value = indSel.options[i].value;
+            break;
+        }
+    }
+    if (!indSel.value && indName) indCust.value = indName;
+
+    // Pre-fill style (support both id and name)
+    var styId = (d.shooting_style && d.shooting_style.id) ? d.shooting_style.id : '';
+    var styName = (d.shooting_style && d.shooting_style.name) ? d.shooting_style.name : '';
+    stySel.value = '';
+    styCust.value = '';
+    for (var j = 0; j < stySel.options.length; j++) {
+        if (stySel.options[j].value === styId || stySel.options[j].value === styName) {
+            stySel.value = stySel.options[j].value;
+            break;
+        }
+    }
+    if (!stySel.value && styName) styCust.value = styName;
+
+    // Pre-fill tags
+    document.getElementById('editTags').value = (d.tags || d.tech_tags || []).join(', ');
+    document.getElementById('editPurpose').value = d.purpose || d.logic_explanation || '';
+    document.getElementById('editTakeaway').value = d.quick_takeaway || '';
+    var pwEl = document.getElementById('editPassword');
+    if (pwEl && !pwEl.value) pwEl.value = '0070';
+
+    // Reset status
+    var st = document.getElementById('editStatus');
+    st.className = 'edit-status';
+    st.style.display = 'none';
+    document.getElementById('editSaveBtn').disabled = false;
+    document.getElementById('editSaveBtn').textContent = 'Lưu thay đổi';
+
+    document.getElementById('editModalBackdrop').classList.add('open');
+}
+
+function closeEditModal() {
+    document.getElementById('editModalBackdrop').classList.remove('open');
+}
+
+function saveEdit() {
+    var btn = document.getElementById('editSaveBtn');
+    var st = document.getElementById('editStatus');
+    var pw = document.getElementById('editPassword').value || '0070';
+
+    // Collect values
+    var indSel = document.getElementById('editIndustry').value;
+    var indCust = document.getElementById('editIndustryCustom').value.trim();
+    var industry = indCust || indSel || null;
+
+    var stySel = document.getElementById('editStyle').value;
+    var styCust = document.getElementById('editStyleCustom').value.trim();
+    var style = styCust || stySel || null;
+
+    var tags = document.getElementById('editTags').value;
+    var purpose = document.getElementById('editPurpose').value;
+    var takeaway = document.getElementById('editTakeaway').value;
+
+    var updates = {};
+    if (industry) updates.industry = industry;
+    if (style) updates.shooting_style = style;
+    if (tags) updates.tech_tags = tags;
+    if (purpose) updates.purpose = purpose;
+    if (takeaway) updates.quick_takeaway = takeaway;
+
+    if (Object.keys(updates).length === 0) {
+        st.className = 'edit-status error';
+        st.textContent = 'Chưa có thay đổi nào.';
+        st.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang lưu...';
+    st.style.display = 'none';
+
+    var payload = JSON.stringify({
+        password: pw,
+        entryKey: ENTRY_KEY,
+        updates: updates
+    });
+
+    function handleSuccess(data) {
+        st.className = 'edit-status success';
+        st.textContent = '✅ Đã lưu & Tự học thành công! (' + (data.commit || 'synced') + ')';
+        st.style.display = 'block';
+        btn.textContent = '✅ Đã lưu';
+
+        if (data.updatedEntry) {
+            CLASSIFICATION_DATA = data.updatedEntry;
+        }
+        var badges = document.querySelector('.header-badges');
+        if (badges && (updates.industry || updates.shooting_style)) {
+            var html = '';
+            var ind = (CLASSIFICATION_DATA.industry && CLASSIFICATION_DATA.industry.name) || updates.industry || '';
+            var sty = (CLASSIFICATION_DATA.shooting_style && CLASSIFICATION_DATA.shooting_style.name) || updates.shooting_style || '';
+            if (ind) html += '<span class="badge">' + ind + '</span> ';
+            if (sty) html += '<span class="badge badge-alt">' + sty + '</span>';
+            badges.innerHTML = html;
+        }
+    }
+
+    fetch('/api/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+    })
+    .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+    .then(function(result) {
+        if (result.ok && result.data.success) {
+            handleSuccess(result.data);
+        } else {
+            return fetch('https://file.fedu.vn/api/edit-classification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
+            .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+            .then(function(res2) {
+                if (res2.ok && res2.data.success) {
+                    handleSuccess(res2.data);
+                } else {
+                    st.className = 'edit-status error';
+                    st.textContent = '❌ ' + ((res2.data && res2.data.error) || (result.data && result.data.error) || 'Lỗi không xác định');
+                    st.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Lưu thay đổi';
+                }
+            });
+        }
+    })
+    .catch(function(err) {
+        fetch('https://file.fedu.vn/api/edit-classification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+        })
+        .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+        .then(function(res2) {
+            if (res2.ok && res2.data.success) {
+                handleSuccess(res2.data);
+            } else {
+                st.className = 'edit-status error';
+                st.textContent = '❌ Lỗi mạng: ' + err.message;
+                st.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Lưu thay đổi';
+            }
+        })
+        .catch(function(err2) {
+            st.className = 'edit-status error';
+            st.textContent = '❌ Lỗi mạng: ' + err2.message;
+            st.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Lưu thay đổi';
+        });
+    });
+}
+
+// Đóng modal khi bấm Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeEditModal();
+});
+</script>
 </body>
 </html>

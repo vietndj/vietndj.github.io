@@ -1,1099 +1,1855 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych & Nhịp Thở Đời Thường - @ioana_iftode</title>
-<style>
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych &amp; Nhịp Thở Đời Thường</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
+        a { text-decoration: none; color: inherit; }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
 
-:root {
-    --bg-primary: #0b0f19;
-    --bg-secondary: #111827;
-    --bg-card: #1a2234;
-    --bg-card-hover: #222d44;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-emerald: #10b981;
-    --accent-emerald-light: #34d399;
-    --accent-gold: #f59e0b;
-    --accent-blue: #38bdf8;
-    --accent-rose: #f43f5e;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --border-highlight: rgba(16, 185, 129, 0.35);
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
-    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-}
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-body {
-    font-family: 'SVN-Aeonik', sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.7;
-    font-size: 15px;
-    padding: 30px 20px 80px 20px;
-}
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
 
-.container {
-    max-width: 1040px;
-    margin: 0 auto;
-}
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
 
-/* Header Banner */
-.hero-header {
-    background: linear-gradient(135deg, #132e2b 0%, #0f172a 60%, #2a1b3d 100%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-lg);
-    padding: 38px 34px;
-    margin-bottom: 36px;
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
-}
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
 
-.hero-header::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
 
-.tag-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(245, 158, 11, 0.15);
-    border: 1px solid rgba(245, 158, 11, 0.35);
-    color: var(--accent-gold);
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-bottom: 14px;
-}
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
 
-h1 {
-    font-family: 'SVN-Acta', 'SVN-Aeonik', serif;
-    font-size: 29px;
-    font-weight: 500;
-    line-height: 1.25;
-    color: #ffffff;
-    margin-bottom: 14px;
-    letter-spacing: -0.015em;
-}
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
 
-.hero-desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    max-width: 860px;
-    margin-bottom: 24px;
-}
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
 
-.meta-bar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 14px;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid var(--border-color);
-    padding: 16px 20px;
-    border-radius: var(--radius-md);
-}
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
 
-.meta-col .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-muted);
-    font-weight: 600;
-}
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
 
-.meta-col .val {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--accent-emerald-light);
-    margin-top: 2px;
-}
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
 
-/* Section Titles */
-.section-title {
-    font-family: 'SVN-Acta', 'SVN-Aeonik', serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: #ffffff;
-    margin: 44px 0 22px 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
 
-.section-title .num {
-    font-family: 'SVN-Aeonik', sans-serif;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    background: var(--accent-emerald);
-    color: #0b0f19;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 800;
-}
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
 
-/* Cards & Content */
-.card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 24px;
-    margin-bottom: 22px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
 
-.card.highlight {
-    border-color: var(--border-highlight);
-    background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, var(--bg-secondary) 100%);
-}
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
 
-.card-title {
-    font-size: 16.5px;
-    font-weight: 700;
-    color: var(--accent-emerald-light);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        .meta-dot {
+            opacity: 0.5;
+        }
 
-.card-title.gold { color: var(--accent-gold); }
-.card-title.blue { color: var(--accent-blue); }
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
 
-p {
-    margin-bottom: 12px;
-    color: #cbd5e1;
-}
-p:last-child { margin-bottom: 0; }
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-ul, ol {
-    padding-left: 22px;
-    margin-bottom: 14px;
-    color: #cbd5e1;
-}
-li { margin-bottom: 8px; }
-strong { color: #ffffff; }
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
 
-/* Overview Grid */
-.overview-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin: 20px 0;
-}
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
 
-@media (max-width: 768px) {
-    .overview-grid { grid-template-columns: 1fr; }
-}
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
 
-.grid-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    padding: 18px;
-}
-.grid-box h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--accent-emerald-light);
-    margin-bottom: 10px;
-}
-.grid-box.gold h4 { color: var(--accent-gold); }
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
 
-/* Contact Sheet Banner */
-.contact-banner {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 16px;
-    margin: 24px 0;
-    text-align: center;
-}
-.contact-banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-.contact-banner img:hover {
-    transform: scale(1.01);
-}
-.contact-caption {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-top: 10px;
-}
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
 
-/* Table Layout */
-.custom-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 22px 0;
-    font-size: 13.5px;
-}
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
 
-.custom-table th, .custom-table td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-    vertical-align: middle;
-}
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.custom-table th {
-    background: var(--bg-card);
-    color: var(--accent-emerald-light);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 11.5px;
-    letter-spacing: 0.5px;
-}
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
 
-.custom-table tr:hover td {
-    background: rgba(255, 255, 255, 0.02);
-}
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
 
-.slide-thumb {
-    width: 220px;
-    height: auto;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
 
-.slide-thumb:hover {
-    transform: scale(1.03);
-    border-color: var(--accent-emerald);
-}
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
 
-.time-pill {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    background: rgba(56, 189, 248, 0.15);
-    color: var(--accent-blue);
-    margin-bottom: 6px;
-    cursor: pointer;
-}
-.time-pill:hover {
-    background: var(--accent-blue);
-    color: #0b0f19;
-}
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
 
-.quote-box {
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 3px solid var(--accent-gold);
-    padding: 8px 12px;
-    font-style: italic;
-    color: #e2e8f0;
-    margin: 8px 0;
-    font-size: 13px;
-    border-radius: 0 4px 4px 0;
-}
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
 
-/* Practical Mapping Grid */
-.mapping-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin: 20px 0;
-}
-@media (max-width: 768px) {
-    .mapping-grid { grid-template-columns: 1fr; }
-}
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
 
-.mapping-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-}
-.mapping-card .badge {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-gold);
-    background: rgba(245, 158, 11, 0.12);
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 8px;
-}
-.mapping-card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 6px;
-}
-.mapping-card p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-/* Callout Box */
-.callout {
-    background: rgba(16, 185, 129, 0.08);
-    border-left: 4px solid var(--accent-emerald);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: 18px 22px;
-    margin: 20px 0;
-}
-.callout.gold {
-    background: rgba(245, 158, 11, 0.08);
-    border-left-color: var(--accent-gold);
-}
-.callout-title {
-    font-weight: 700;
-    font-size: 14.5px;
-    color: #ffffff;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
 
-/* Modal Lightbox */
-.lightbox-modal {
-    display: none;
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
+
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
+
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
+
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
+
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
+
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
+
+
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+/* === EDIT INLINE FEATURE === */
+.edit-fab {
     position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(11, 15, 25, 0.94);
-    backdrop-filter: blur(8px);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.lightbox-modal.active {
-    display: flex;
-}
-.lightbox-img {
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-}
-.lightbox-caption {
-    margin-top: 14px;
-    font-size: 15px;
-    color: #f8fafc;
-    font-weight: 600;
-}
-.lightbox-close {
-    position: absolute;
-    top: 24px;
-    right: 32px;
-    color: #94a3b8;
-    font-size: 32px;
-    cursor: pointer;
-    font-weight: 300;
-}
-.lightbox-close:hover {
-    color: #ffffff;
-}
-
-/* Video Player Modal */
-.video-modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(11, 15, 25, 0.94);
-    backdrop-filter: blur(8px);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.video-modal.active {
-    display: flex;
-}
-.video-player-container {
-    position: relative;
-    max-width: 90vw;
-    max-height: 80vh;
-    background: #000;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-}
-.video-player-container video {
-    max-width: 85vw;
-    max-height: 75vh;
-    display: block;
-}
-.video-close {
-    position: absolute;
     top: 20px;
-    right: 28px;
-    color: #94a3b8;
-    font-size: 32px;
-    cursor: pointer;
-}
-.video-close:hover { color: #ffffff; }
-
-/* Footer */
-.footer {
-    margin-top: 60px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-    font-size: 12.5px;
-    color: var(--text-muted);
-}
-
-/* Print Styles */
-@media print {
-    body { background: #fff; color: #111; padding: 0; }
-    .container { max-width: 100%; border: none; padding: 0; }
-    .hero-header { background: #f8fafc; color: #111; border-color: #cbd5e1; }
-    h1 { color: #0f172a; }
-    .section-title { color: #0f172a; }
-    .card, .grid-box, .mapping-card { background: #f8fafc; border-color: #cbd5e1; color: #334155; }
-    p, li, .hero-desc { color: #334155; }
-    strong { color: #0f172a; }
-    .custom-table th { background: #f1f5f9; color: #0f172a; }
-    .custom-table td { border-color: #e2e8f0; }
-    .quote-box { background: #f1f5f9; border-color: #d97706; color: #334155; }
-    .meta-bar { background: #f1f5f9; border-color: #cbd5e1; }
-    .meta-col .val { color: #059669; }
-    .lightbox-modal, .video-modal { display: none !important; }
-}
-
-/* Author Instagram Direct Link Button */
-.author-ig-badge {
-    display: inline-flex;
+    right: 20px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--cl-radius-full);
+    background: var(--cl-card);
+    border: 1px solid var(--cl-line-strong);
+    display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s var(--apple-ease);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.edit-fab:hover {
+    border-color: var(--cl-accent);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.15);
+    transform: scale(1.05);
+}
+
+.edit-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 300;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
+}
+.edit-modal-backdrop.open {
+    display: flex;
+}
+
+.edit-modal {
+    background: var(--cl-card);
+    border-radius: var(--cl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: editSlideIn 0.3s var(--apple-spring);
+}
+
+@keyframes editSlideIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.edit-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cl-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit-modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cl-text-base);
+    margin: 0;
+}
+.edit-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--cl-text-muted);
+    line-height: 1;
+}
+
+.edit-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
     gap: 6px;
-    background: rgba(192, 132, 252, 0.12);
-    border: 1px solid rgba(192, 132, 252, 0.35);
-    color: #e879f9;
-    padding: 2px 8px 2px 6px;
-    border-radius: 6px;
-    text-decoration: none;
+}
+.edit-field label {
+    font-family: var(--font-ui);
     font-size: 12px;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    vertical-align: middle;
-}
-.author-ig-badge:hover {
-    background: linear-gradient(135deg, rgba(192, 132, 252, 0.3), rgba(244, 63, 94, 0.3));
-    border-color: #f43f5e;
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
-}
-.author-ig-badge strong {
-    color: #fff;
-}
-.author-ig-badge .ig-ext-btn {
-    background: linear-gradient(135deg, #c084fc, #f43f5e);
-    color: #0b0f17;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 2px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: all 0.15s;
-    letter-spacing: 0.2px;
-}
-.author-ig-badge:hover .ig-ext-btn {
-    background: #ffffff;
-    color: #0b0f17;
-}
-
-
-.player-box { position: relative !important; }
-.player-box video { cursor: pointer; }
-.player-fs-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-family: var(--font-ui, sans-serif);
-    font-size: 11.5px;
     font-weight: 600;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-muted);
 }
-.player-fs-btn:hover {
-    background: #1a73e8;
-    border-color: #1a73e8;
-    transform: scale(1.04);
+.edit-field select,
+.edit-field input,
+.edit-field textarea {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-sm);
+    background: var(--cl-card);
+    color: var(--cl-text-body);
+    transition: border-color 0.2s;
+    width: 100%;
 }
-.fs-ctrl-btn {
-    background: #fffbeb !important;
-    color: #b45309 !important;
-    border-color: #fef3c7 !important;
-    font-weight: 700 !important;
+.edit-field select:focus,
+.edit-field input:focus,
+.edit-field textarea:focus {
+    outline: none;
+    border-color: var(--cl-accent);
+    box-shadow: 0 0 0 3px var(--cl-accent-tint);
 }
-.fs-ctrl-btn:hover {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border-color: #fcd34d !important;
+.edit-field textarea {
+    min-height: 72px;
+    resize: vertical;
 }
 
-</style>
-<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+.edit-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-save-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--cl-accent);
+    color: white;
+    border: none;
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-save-btn:hover { opacity: 0.9; }
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edit-cancel-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--cl-text-muted);
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+}
+
+.edit-status {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: var(--cl-radius-sm);
+    display: none;
+}
+.edit-status.success {
+    display: block;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.edit-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.edit-pw-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.edit-pw-field label { min-width: fit-content; }
+.edit-pw-field input {
+    max-width: 120px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 1024px) {
+    .edit-fab {
+        top: auto;
+        bottom: 20px;
+        right: 16px;
+    }
+}
+    </style>
 </head>
 <body>
 
-<div class="container">
-
-    <!-- Header Banner -->
-    <div class="hero-header">
-        <div class="tag-badge">VISUAL STORYTELLING &bull; SLOW LIFE DIARIES</div>
-        <h1>Tokyo Slow Life Visual Diaries: Nghệ Thuật Kể Chuyện Diptych &amp; Nhịp Thở Đô Thị</h1>
-        <div class="hero-desc">
-            Phân tích chuyên sâu chuỗi 10 slide video Instagram Carousel của <b>@ioana_iftode</b> (Ioana Iftode) với phong cách nhật ký thị giác (Visual Diaries): Bố cục chia đôi Diptych (2 cảnh đối thoại), nghệ thuật bắt bóng đổ (Shadow Play), nhịp cắt tĩnh lặng theo mốc thời gian từ 05:00 sáng đến 19:00 tối tại Tokyo.
+<div class="app-container">
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/r98FmrbVUmg?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
-        <div class="meta-bar">
-            <div class="meta-col">
-                <div class="label">Tác Giả / Kênh</div>
-                <div class="val">@ioana_iftode (Ioana Iftode)</div>
+        <div class="video-controls">
+            <div class="speed-row">
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
             </div>
-            <div class="meta-col">
-                <div class="label">Định Dạng &amp; Thể Loại</div>
-                <div class="val">Instagram Carousel (10 Slides Video)</div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
             </div>
-            <div class="meta-col">
-                <div class="label">Bối Cảnh / Địa Điểm</div>
-                <div class="val">Tokyo &bull; Shinjuku Gyoen &bull; Hẻm Phố Nhật</div>
-            </div>
-            <div class="meta-col">
-                <div class="label">Phong Cách Cốt Lõi</div>
-                <div class="val">Slow Life Diary &bull; Diptych Framing &bull; Wabi-Sabi</div>
-            </div>
+            <div id="shotStatusTag">Sẵn sàng</div>
         </div>
     </div>
 
-    <!-- PHẦN 1 -->
-    <div class="section-title">
-        <span class="num">1</span>
-        Tổng Quan Cấu Trúc Kể Chuyện Thị Giác (Visual Storytelling Logic)
-    </div>
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">Xây kênh</span> <span class="badge badge-alt">Kể Chuyện</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/reel/DcYQVYJjHa-/" target="_blank" rel="noopener">Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych &amp; Nhịp Thở Đời Thường</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/ioana_iftode/" target="_blank" class="creator-link">@ioana_iftode ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">1 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">5.00s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
+            </div>
+        </header>
 
-    <div class="card highlight">
-        <div class="card-title gold">🌿 Triết Lý "Anti-Rush": Tôn Trọng Nhịp Thở Của Ánh Sáng &amp; Bóng Đổ</div>
-        <p>
-            Khác biệt hoàn toàn với xu hướng video ngắn giật gân, chuỗi Carousel của @ioana_iftode chọn cách tiếp cận <strong>Visual Diary (Nhật ký thị giác)</strong>. Mỗi slide là một lát cắt thời gian độc lập trong ngày, kết nối người xem vào hành trình sống chậm (Slow Living) tại Tokyo qua 3 trụ cột ngôn ngữ điện ảnh:
-        </p>
         
-        <div class="overview-grid">
-            <div class="grid-box">
-                <h4>1. Bố Cục Ghép Đôi Diptych (Two-Frame Dialogue)</h4>
-                <p>Nhiều slide sử dụng bố cục chia đôi màn hình (Split-Screen 50/50), đặt 2 khung hình cạnh nhau: <strong>1 Cảnh không gian lớn (Toàn/Trung) + 1 Cảnh chi tiết vi mô (Cận/Shadow/Hoa lá)</strong>. Hai hình ảnh cùng chuyển động tạo sự đối thoại thị giác sâu lắng, nhân đôi thông tin mà không cần lời thuyết minh.</p>
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">[Giai đoạn 1 • Mở màn (Hook): Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych &amp; Nhịp Thở Đời Thường] ➔ [Giai đoạn 2 • Triển khai &amp; Giữ nhịp: Chuỗi 1 nhịp cắt đan xen đa cỡ cảnh] ➔ [Giai đoạn 3 • Điểm rơi &amp; Chốt thông điệp: Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych &amp; Nhịp Thở Đời Thường]</div>
+        </section>
+
+        <div class="overview-card">
+            Phân tích nghệ thuật thị giác chuỗi 10 video Carousel: Bố cục ghép đôi Diptych 50/50, nghệ thuật bắt bóng đổ (Shadow Play), dòng thời gian 24h Routine từ 5am đến 19pm và nhịp sống Wabi-sabi Tokyo.
+        </div>
+
+        
+
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (1)</button>
             </div>
-            <div class="grid-box gold">
-                <h4>2. Dòng Thời Gian Tuyến Tính (24h Routine Timeline)</h4>
-                <p>Toàn bộ 10 slide được gắn nhãn thời gian thực tế rõ ràng: <strong>5am &rarr; 08:00 &rarr; 10:00 &rarr; 11:00 &rarr; 12:30 &rarr; 14:00 &rarr; 15:00 &rarr; 16:00 &rarr; 19:00</strong>. Cấu trúc này tạo thành một câu chuyện hoàn chỉnh về một ngày trọn vẹn tại thành phố mơ ước.</p>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
+        </div>
+
+        <div id="storyboardView">
+            
+        <div class="shot-card" id="shot-card-1">
+            <div class="shot-thumb" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+                <img src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 5.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">5.00s</span>
+                </div>
+                <h4 class="shot-headline">Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych &amp; Nhịp Thở Đời Thường</h4>
+                <p class="shot-insight">Phân tích nghệ thuật thị giác chuỗi 10 video Carousel: Bố cục ghép đôi Diptych 50/50, nghệ thuật bắt bóng đổ (Shadow Play), dòng thời gian 24h Routine từ 5am đến 19pm và nhịp sống Wabi-sabi Tokyo.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Kể Chuyện</span></div>
+                        
+                        
+                    </div>
+                    <div class="critique-good">Phân tích nghệ thuật thị giác chuỗi 10 video Carousel: Bố cục ghép đôi Diptych 50/50, nghệ thuật bắt bóng đổ (Shadow Play), dòng thời gian 24h Routine từ 5am đến 19pm và nhịp sống Wabi-sabi Tokyo.</div>
+                    
+                    <div class="shot-narrative">Truyền cảm hứng &amp; Xây dựng thương hiệu cá nhân</div>
+                </details>
             </div>
         </div>
-    </div>
+        </div>
 
-    <!-- Contact Sheet Showcase -->
-    <div class="contact-banner">
-        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_01_mid.webp" alt="Contact Sheet 10 Slides" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_01_mid.webp', 'Contact Sheet Tổng Quan 10 Slides Video Carousel - @ioana_iftode')" />
-        <div class="contact-caption">🔍 <i>Click vào ảnh để phóng to toàn màn hình bảng tổng quan 10 Slides</i></div>
-    </div>
-
-    <!-- PHẦN 2 -->
-    <div class="section-title">
-        <span class="num">2</span>
-        Bảng Bóc Tách Chi Tiết 10 Slides Video (Director Breakdown)
-    </div>
-
-    <table class="custom-table">
-        <thead>
-            <tr>
-                <th style="width: 14%;">Slide &amp; Thời Gian</th>
-                <th style="width: 26%;">Khung Hình Đại Diện</th>
-                <th style="width: 60%;">Phân Tích Kỹ Thuật Điện Ảnh &amp; Giá Trị Thị Giác</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Slide 1 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(1)">Slide 01 &bull; 4.96s</span><br>
-                    <strong>Visual Hook / Cover</strong><br>
-                    <small style="color:var(--text-muted)">Hẻm phố &amp; Hoa đỗ quyên</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_03_mid.webp" class="slide-thumb" alt="Slide 1" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_03_mid.webp', 'Slide 01: Visual Hook - moments from visual diaries, a day in tokyo (a warm day)')" />
-                </td>
-                <td>
-                    <b>Bố cục:</b> Ghép đôi Diptych 50/50. Nửa trái là hẻm phố dốc Tokyo với người mặc Kimono đi bộ; Nửa phải là bụi hoa đỗ quyên trắng muốt (White Azalea) đón nắng sớm.<br>
-                    <b>Ánh sáng &amp; Màu sắc:</b> Tone vàng ấm tự nhiên, tương phản giữa hình khối kiến trúc bê tông và sự mềm mại của hoa lá.<br>
-                    <div class="quote-box">"(moments from) visual diaries, a day in tokyo (a warm day)"</div>
-                    <b>Động tác máy:</b> Khung hình tĩnh (Locked-off Static), để gió lay nhẹ cánh hoa và người lướt qua ngã ba tạo chuyển động nội tại.
-                </td>
-            </tr>
-
-            <!-- Slide 2 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(2)">Slide 02 &bull; 6.83s</span><br>
-                    <strong>5:00 AM &bull; Bình Minh</strong><br>
-                    <small style="color:var(--text-muted)">Bóng đổ phòng ngủ</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_05_mid.webp" class="slide-thumb" alt="Slide 2" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_05_mid.webp', 'Slide 02: 5am - Shadow Play on Hotel Bedside')" />
-                </td>
-                <td>
-                    <b>Cỡ cảnh:</b> Medium Close-up (Cận vừa đầu giường ngủ).<br>
-                    <b>Kỹ thuật đắt giá:</b> Shadow Play (Nghệ thuật bóng đổ). Ánh nắng 5h sáng chiếu xuyên qua rèm cửa, in bóng lá cây nhảy múa trên đèn ngủ thủy tinh màu hổ phách và chăn gối trắng còn xáo trộn.<br>
-                    <div class="quote-box">"almost snoozed, but the light was so beautiful - i loved watching the city wake up"</div>
-                    <b>Cảm xúc:</b> Không gian riêng tư, ấm cúng và sự bình yên vô ngần khi ngắm nhìn thành phố thức giấc.
-                </td>
-            </tr>
-
-            <!-- Slide 3 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(3)">Slide 03 &bull; 8.54s</span><br>
-                    <strong>08:00 AM &bull; Bữa Sáng</strong><br>
-                    <small style="color:var(--text-muted)">Chất liệu tường &amp; Nắng gắt</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_07_mid.webp" class="slide-thumb" alt="Slide 3" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_07_mid.webp', 'Slide 03: 08:00 - Breakfast Textures and Palm Shadow')" />
-                </td>
-                <td>
-                    <b>Bố cục:</b> Diptych Tương phản sáng tối (Chiaroscuro). Nửa trái là chậu cây xanh trong vùng tối dịu mắt; Nửa phải là bậc thềm bê tông ngập nắng với bóng lá cọ đổ sắc nét.<br>
-                    <div class="quote-box">"i am not a breakfast person, but the food was delicious and the views were just beautiful!"</div>
-                    <b>Tư duy quay:</b> Khai thác chất liệu thô mộc (Rough Wall Texture) và góc nghiêng của bóng nắng buổi sáng để kể câu chuyện thời tiết rực rỡ.
-                </td>
-            </tr>
-
-            <!-- Slide 4 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(4)">Slide 04 &bull; 7.17s</span><br>
-                    <strong>10:00 AM &bull; Dạo Phố</strong><br>
-                    <small style="color:var(--text-muted)">Hẻm dốc Tokyo</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_09_mid.webp" class="slide-thumb" alt="Slide 4" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_09_mid.webp', 'Slide 04: 10:00 - Slow walks in Tokyo Alley')" />
-                </td>
-                <td>
-                    <b>Cỡ cảnh:</b> Wide Tracking Shot (Toàn cảnh đi theo nhân vật).<br>
-                    <b>Bố cục:</b> Đường dẫn Leading Lines hun hút từ con dốc, hàng rào đỏ trắng, cột điện đặc trưng Tokyo.<br>
-                    <div class="quote-box">"tokyo in the morning is always so dreamy, the plan for today was simple: slow walks and finding ice cream"</div>
-                    <b>Động tác máy:</b> Cầm tay Handheld bước theo nhịp chân thong thả của cô gái mặc váy trắng, tạo cảm giác phiêu lưu tự do.
-                </td>
-            </tr>
-
-            <!-- Slide 5 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(5)">Slide 05 &bull; 5.88s</span><br>
-                    <strong>11:00 AM &bull; Vườn Cây</strong><br>
-                    <small style="color:var(--text-muted)">Shinjuku Gyoen &amp; Cánh hoa</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_11_mid.webp" class="slide-thumb" alt="Slide 5" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_11_mid.webp', 'Slide 05: 11:00 - Shinjuku Gyoen Komorebi & Petal Carpet')" />
-                </td>
-                <td>
-                    <b>Bố cục:</b> Diptych Nhân vật &amp; Chi tiết. Nửa trái là nhân vật nữ đứng giữa vòm cây xanh ngắt rọi nắng Komorebi; Nửa phải là cận cảnh thảm cỏ rải đầy cánh hoa hồng rụng lấm tấm vạt nắng.<br>
-                    <div class="quote-box">"arrived to shinjuku-gyoen, i love this place so much"</div>
-                    <b>Màu sắc:</b> Xanh lục bảo (Emerald Green) đối chọi với sắc hồng phấn và váy trắng tinh khôi.
-                </td>
-            </tr>
-
-            <!-- Slide 6 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(6)">Slide 06 &bull; 7.21s</span><br>
-                    <strong>12:30 PM &bull; Ăn Kem</strong><br>
-                    <small style="color:var(--text-muted)">Matcha Ice Cream</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_13_mid.webp" class="slide-thumb" alt="Slide 6" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_13_mid.webp', 'Slide 06: 12:30 - Matcha Ice Cream & Canopy View')" />
-                </td>
-                <td>
-                    <b>Bố cục:</b> Diptych Trải nghiệm &amp; Không gian. Nửa trái là góc nhìn từ sau lưng nhân vật cầm cây kem matcha xanh mát bên lan can; Nửa phải là góc ngước (Low-Angle Tilt-up) lên vòm lá xanh xào xạc.<br>
-                    <div class="quote-box">"wandering around and finding one of the best matcha ice cream i've ever had, i was happy"</div>
-                    <b>Kỹ thuật:</b> Kích thích đa giác quan (Vị giác của kem mát lạnh + Thị giác của bóng râm ngày hè).
-                </td>
-            </tr>
-
-            <!-- Slide 7 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(7)">Slide 07 &bull; 7.38s</span><br>
-                    <strong>14:00 PM &bull; Vườn Đỗ Quyên</strong><br>
-                    <small style="color:var(--text-muted)">Foreground Framing</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_15_mid.webp" class="slide-thumb" alt="Slide 7" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_15_mid.webp', 'Slide 07: 14:00 - Azalea Garden Foreground Framing')" />
-                </td>
-                <td>
-                    <b>Cỡ cảnh:</b> Medium Long Shot (Toàn cảnh trung phân tầng).<br>
-                    <b>Bố cục 3 lớp:</b> Tiền cảnh (Khóm hoa đỗ quyên đỏ thắm cận ống kính làm mờ bokeh) &rarr; Trung cảnh (Cô gái váy trắng bước đi) &rarr; Hậu cảnh (Đồi hoa hồng tím và rặng thông xanh ngắt).<br>
-                    <div class="quote-box">"this beautiful garden was the best place to slow down"</div>
-                    <b>Ý nghĩa:</b> Chiều sâu 3D tuyệt mỹ, biến khung hình thành một bức tranh sơn dầu sống động.
-                </td>
-            </tr>
-
-            <!-- Slide 8 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(8)">Slide 08 &bull; 7.29s</span><br>
-                    <strong>15:00 PM &bull; Hồ Zen</strong><br>
-                    <small style="color:var(--text-muted)">Mặt nước tĩnh lặng</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_17_mid.webp" class="slide-thumb" alt="Slide 8" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_17_mid.webp', 'Slide 08: 15:00 - Zen Pond Reflection and Shadows')" />
-                </td>
-                <td>
-                    <b>Cỡ cảnh:</b> Wide Static Landscape (Toàn cảnh phong cảnh tĩnh).<br>
-                    <b>Bố cục:</b> Vườn Nhật Wabi-sabi. Nhánh cây phong uốn cong duyên dáng soi bóng xuống mặt nước trong veo, vạt cỏ ngập bóng râm xen kẽ vệt nắng xiên.<br>
-                    <div class="quote-box">"sunny days like this are so wholesome - could spend every moment noticing the light, shadows and people"</div>
-                    <b>Giá trị:</b> Vùng nghỉ thị giác (Breathing room) giúp người xem đắm chìm vào sự an yên.
-                </td>
-            </tr>
-
-            <!-- Slide 9 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(9)">Slide 09 &bull; 16:00 PM</span><br>
-                    <strong>16:00 PM &bull; Phố Chiều</strong><br>
-                    <small style="color:var(--text-muted)">Xe bưu điện Super Cub</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_19_mid.webp" class="slide-thumb" alt="Slide 9" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_19_mid.webp', 'Slide 09: 16:00 - Japan Post Courier on Super Cub')" />
-                </td>
-                <td>
-                    <b>Cỡ cảnh:</b> Eye-level Medium Shot (Cảnh trung ngang tầm mắt).<br>
-                    <b>Điểm nhấn màu sắc (Color Pop):</b> Chiếc xe Honda Super Cub màu đỏ rực của bưu tá Nhật Bản nổi bật trên nền vỉa hè gạch và cửa hàng Lawson.<br>
-                    <div class="quote-box">"spent the entire afternoon wandering the streets - couldn't have wished for more"</div>
-                    <b>Đời sống đô thị:</b> Bắt trọn khoảnh khắc chân thực của người lao động bình dị giữa lòng Tokyo hiện đại.
-                </td>
-            </tr>
-
-            <!-- Slide 10 -->
-            <tr>
-                <td>
-                    <span class="time-pill" onclick="playSlide(10)">Slide 10 &bull; 7.79s</span><br>
-                    <strong>19:00 PM &bull; Bữa Tối</strong><br>
-                    <small style="color:var(--text-muted)">Maguro Tuna Bowl</small>
-                </td>
-                <td>
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_21_mid.webp" class="slide-thumb" alt="Slide 10" onclick="openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_21_mid.webp', 'Slide 10: 19:00 - Tuna Sashimi Bowl Dinner')" />
-                </td>
-                <td>
-                    <b>Cỡ cảnh:</b> Extreme Close-up / Macro (Cận cảnh ẩm thực).<br>
-                    <b>Ánh sáng &amp; Màu sắc:</b> Ánh đèn vàng ấm 2700K (Warm Tungsten) chiếu lên thớ thịt cá ngừ đỏ tươi mọng nước, wasabi xanh và củ cải vàng.<br>
-                    <div class="quote-box">"ending the day with dinner at the hotel - i hope to be back here for this delicious tuna soon!"</div>
-                    <b>Cái kết hoàn hảo:</b> Đôi đũa gắp thức ăn tạo cảm giác ngon miệng và khép lại một ngày trọn vẹn, ấm áp.
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- PHẦN 3 -->
-    <div class="section-title">
-        <span class="num">3</span>
-        Cẩm Nang Áp Dụng Thực Chiến Cho Creator Tại Việt Nam
-    </div>
-
-    <div class="card">
-        <div class="card-title">Bộ Kịch Bản 10 Cảnh "Visual Diary" Quay Tại Hà Nội &bull; Đà Lạt &bull; Sài Gòn</div>
-        <p>Cách chuyển dịch chuẩn xác phong cách Visual Diary của @ioana_iftode vào bối cảnh Việt Nam bằng Smartphone cầm tay:</p>
-
-        <div class="mapping-grid">
-            <div class="mapping-card">
-                <span class="badge">CẢNH 1 &bull; 06:00 (COVER)</span>
-                <h4>Phố Cổ / Hẻm Nhỏ &amp; Xe Hoa</h4>
-                <p><b>Hà Nội (Phan Đình Phùng / Hàng Buồm):</b> Ghép Diptych 50/50. Nửa trái là góc máy tĩnh ngắm người đạp xe qua ngã tư vắng; Nửa phải là cận cảnh gánh hoa sen/hoa cúc đầu mùa đung đưa trong sương sớm.</p>
+        <div id="gridView">
+            
+        <div class="grid-item" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 5.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_01_mid.webp', 'SHOT 01 • Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych &amp; Nhịp Thở Đời Thường')">⊕</button>
             </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 2 &bull; 07:00 (AWAKENING)</span>
-                <h4>Bóng Nắng Cửa Sổ Phòng Ngủ / Homestay</h4>
-                <p><b>Đà Lạt / Sài Gòn:</b> Quay cận chao đèn gỗ hoặc bàn làm việc. Mở rèm voan đón ánh nắng sớm chiếu bóng lá cây trầu bà/lá bàng rung rinh trên ga trải giường trắng.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 3 &bull; 08:30 (BREAKFAST)</span>
-                <h4>Quán Cà Phê Vỉa Hè &amp; Bức Tường Vàng</h4>
-                <p><b>Hà Nội / Hội An:</b> Ghép Diptych. Nửa trái là ly cà phê phin nâu đá đang nhỏ giọt; Nửa phải là bóng lá hoa giấy in sắc nét lên mảng tường vàng cổ kính.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 4 &bull; 10:00 (STROLL)</span>
-                <h4>Dạo Bước Con Dốc / Hẻm Cổ</h4>
-                <p><b>Đà Lạt (Dốc Nhà Bò) / Sài Gòn (Cư xá 288):</b> Cầm máy đi theo sau nhân vật nữ mặc đầm lanh/linen màu be, bước thong thả xuống con dốc với rặng hoa hai bên đường.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 5 &bull; 11:30 (BOTANICAL)</span>
-                <h4>Vườn Cây &amp; Thảm Lá Rụng</h4>
-                <p><b>Vườn Bách Thảo / Thảo Cầm Viên:</b> Nửa trái là nhân vật đứng đón nắng xiên qua tán cây xà cừ cổ thụ; Nửa phải là cận cảnh thảm lá vàng rụng lấm tấm trên thảm cỏ xanh.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 6 &bull; 13:00 (TREAT BREAK)</span>
-                <h4>Thưởng Thức Kem / Nước Ép Mùa Hè</h4>
-                <p><b>Quán Kem Tràng Tiền / Cafe View Đồi:</b> Nửa trái quay cận tay cầm cây kem cốm hoặc ly matcha đá xay; Nửa phải là góc ngước lên vòm trời xanh mây trắng xào xạc lá thông.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 7 &bull; 15:00 (FLOWER GARDEN)</span>
-                <h4>Khung Hình Ẩn Hiện Qua Vòm Hoa</h4>
-                <p><b>Vườn Hoa Bãi Đá Sông Hồng / Đồi Cẩm Tú Cầu:</b> Ống kính nấp sau bụi hoa cúc vàng rực rỡ tiền cảnh, quay nhân vật bước đi chậm rãi ở trung cảnh tạo chiều sâu 3D.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 8 &bull; 16:30 (SUNSET POND)</span>
-                <h4>Mặt Hồ Hoàng Hôn &amp; Liễu Rủ</h4>
-                <p><b>Hồ Tây / Hồ Tuyền Lâm:</b> Đặt máy tĩnh tuyệt đối 4 giây ngắm mặt nước lăn tăn phản chiếu ánh hoàng hôn cam ấm và bóng cành liễu uốn lượn.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 9 &bull; 17:30 (STREET LIFE)</span>
-                <h4>Lát Cắt Đời Sống Phố Chiều</h4>
-                <p><b>Góc phố tan tầm:</b> Quay người bán bánh mì trên chiếc xe cub cũ hoặc bác xe ôm ngồi đọc báo bên quán trà đá, điểm nhấn màu sắc tự nhiên giữa phố phường nhộn nhịp.</p>
-            </div>
-
-            <div class="mapping-card">
-                <span class="badge">CẢNH 10 &bull; 19:30 (DINNER COSY)</span>
-                <h4>Bữa Tối Ấm Cúng Dưới Đèn Vàng</h4>
-                <p><b>Quán Bún Chả / Bếp Cơm Gia Đình:</b> Quay cận cảnh thớ thịt nướng xèo xèo hoặc bát phở bốc khói nghi ngút dưới ánh đèn vàng ấm, khép lại nhật ký 1 ngày tràn ngập yêu thương.</p>
-            </div>
+            <div class="grid-title">Tokyo Slow Life Visual Diaries • Nghệ Th</div>
+        </div>
         </div>
     </div>
-
-    <!-- PHẦN 4 -->
-    <div class="section-title">
-        <span class="num">4</span>
-        Quy Tắc Biên Tập Video Diptych &amp; Typography Chuẩn Tạp Chí
-    </div>
-
-    <div class="card highlight">
-        <div class="card-title gold">⚙️ Công Thức Tạo Split-Screen / Diptych Bằng Ứng Dụng Di Động (CapCut / Premiere)</div>
-        <ul>
-            <li><strong>Tỷ lệ khung hình chuẩn:</strong> Khung hình tổng thể là <strong>16:9 ngang (1920x1080)</strong> hoặc <strong>4:5 dọc (1080x1350)</strong> để tối ưu trải nghiệm vuốt ngang trên Instagram Carousel.</li>
-            <li><strong>Chia đôi màn hình (Split 50/50):</strong> Sử dụng 2 video có độ dài tương đương (5-8 giây), crop theo tỷ lệ dọc 8:9 (hoặc đặt cạnh nhau cách nhau đường line 1-2px mỏng hoặc không line).</li>
-            <li><strong>Quy tắc Font chữ Tạp chí (Editorial Typography):</strong>
-                <ul>
-                    <li>Dùng font Serif thanh lịch (như <i>SVN-Acta, Cormorant Garamond, Bodoni</i>) in nghiêng ở giữa đáy khung hình.</li>
-                    <li>Mốc thời gian (<i>5am, 08:00, 10:00...</i>): Đặt ở góc trên chính giữa hoặc góc trên trái với font Sans-serif nhẹ nhàng.</li>
-                    <li>Cỡ chữ vừa phải, màu trắng tinh khiết (`#ffffff`) có bóng mờ siêu nhẹ (Drop Shadow 20%) để đọc rõ trên mọi nền ảnh.</li>
-                </ul>
-            </li>
-            <li><strong>Tốc độ cắt cảnh &amp; Âm nhạc:</strong> Sử dụng âm thanh môi trường tự nhiên (Ambient City ASMR: tiếng gió xào xạc, tiếng chuông gió, tiếng bước chân, tiếng chim hót) lồng dưới nền nhạc Lofi / Acoustic piano du dương.</li>
-        </ul>
-    </div>
-
-    <div class="footer">
-        Báo Cáo Phân Tích Đạo Diễn &bull; Tokyo_Slow_Life_Visual_Diaries - @ioana_iftode.html &bull; Hệ thống phân tích điện ảnh tự động Google Drive
-    </div>
-
 </div>
 
-<!-- Lightbox Modal -->
-<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img crossorigin="anonymous" src="" class="lightbox-img" id="lightboxImg" alt="Enlarged Shot" />
-    <div class="lightbox-caption" id="lightboxCap"></div>
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-head">
+            <span>MỤC LỤC (1)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
+        </div>
+        <div class="drawer-list">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 5.0, 'SHOT 01')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_%40ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_01_mid.webp" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">Tokyo Slow Life Visual Diaries • Nghệ Thuậ</div>
+                <div class="drawer-shot-time">0.00s – 5.00s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
+    </div>
 </div>
 
-<!-- Video Player Modal -->
-<div class="video-modal" id="videoModal">
-    <span class="video-close" onclick="closeVideo()">&times;</span>
-    <div class="video-player-container">
-        <iframe id="mainPlayer" src="https://www.youtube.com/embed/r98FmrbVUmg?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
+</div>
+
+<!-- Edit Inline Feature -->
+<button class="edit-fab" onclick="openEditModal()" title="Sửa phân loại">✎</button>
+
+<div id="editModalBackdrop" class="edit-modal-backdrop" onclick="closeEditModal()">
+    <div class="edit-modal" onclick="event.stopPropagation()">
+        <div class="edit-modal-head">
+            <h3>✎ Sửa Phân Loại</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="edit-modal-body">
+            <div id="editStatus" class="edit-status"></div>
+
+            <div class="edit-field">
+                <label>Ngành nghề</label>
+                <select id="editIndustry">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="ky-thuat-quay">🎯 Bố cục / Kỹ Thuật Quay Dựng</option>
+                    <option value="thuong-hieu">💼 Xây kênh / Thương Hiệu Cá Nhân</option>
+                    <option value="kien-truc">🏛️ Góc nhà đẹp / Kiến Trúc & Không Gian</option>
+                    <option value="am-thuc">🍜 F&B / Ẩm Thực & Cafe</option>
+                    <option value="thoi-trang">👔 Thời trang & Phụ Kiện</option>
+                    <option value="spa-lam-dep">💆 Làm đẹp / Spa & Y Tế</option>
+                    <option value="du-lich">✈️ Du lịch / Phong Cách Sống</option>
+                    <option value="cong-nghe">📱 Đồ công nghệ & Thiết Bị</option>
+                    <option value="the-thao">🏃 Thể thao & Sức Khỏe</option>
+                    <option value="ugc">📱 UGC / E-Commerce & Bán Hàng</option>
+                </select>
+                <input type="text" id="editIndustryCustom" placeholder="Hoặc gõ ngành tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Kiểu quay / Phong cách</label>
+                <select id="editStyle">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="dien-anh">🎬 Chỉn Chu (B-Roll Thuần Hình / Cinematic)</option>
+                    <option value="talking-head">🗣️ Nói Trực Diện (Talking Head)</option>
+                    <option value="walk-and-talk">🚶 Walk & Talk (Vừa đi vừa nói)</option>
+                    <option value="voice-over">🎙️ Lồng Tiếng (Voice Over)</option>
+                    <option value="storytelling">📖 Kể Chuyện / Đời Thường (Storytelling)</option>
+                    <option value="chuyen-canh">⚡ Chuyển Cảnh (Transition / Montage)</option>
+                    <option value="bts">🎥 BTS / Setup Hậu Trường</option>
+                    <option value="theo-nhip-nhac">🎵 Theo nhịp nhạc</option>
+                </select>
+                <input type="text" id="editStyleCustom" placeholder="Hoặc gõ kiểu quay tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Tags kỹ thuật (phân tách bằng dấu phẩy)</label>
+                <textarea id="editTags" placeholder="VD: B-Roll Practice, Góc máy cận cảnh, Chuyển cảnh"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Mục đích / Tóm tắt (Purpose)</label>
+                <textarea id="editPurpose"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Bài học rút gọn (Quick Takeaway)</label>
+                <textarea id="editTakeaway"></textarea>
+            </div>
+
+            <div class="edit-field edit-pw-field">
+                <label>Mật khẩu</label>
+                <input type="password" id="editPassword" value="0070" placeholder="••••" autocomplete="off">
+            </div>
+        </div>
+        <div class="edit-modal-footer">
+            <button class="edit-cancel-btn" onclick="closeEditModal()">Hủy</button>
+            <button class="edit-save-btn" id="editSaveBtn" onclick="saveEdit()">Lưu thay đổi</button>
+        </div>
     </div>
 </div>
 
 <script>
-function openLightbox(src, caption) {
-    const modal = document.getElementById('lightboxModal');
-    const img = document.getElementById('lightboxImg');
-    const cap = document.getElementById('lightboxCap');
-    img.src = src;
-    cap.innerText = caption || '';
-    modal.classList.add('active');
+// Video source resolution - try multiple paths
+const rawVideoSrc = 'https://www.youtube.com/embed/r98FmrbVUmg';
+let currentEndTime = null;
+
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
 }
 
-function closeLightbox() {
-    document.getElementById('lightboxModal').classList.remove('active');
-}
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+window.isYtMuted = false;
 
-const slideFiles = [
-    "carousel_slides/slide_01_DcYQPFFDB2r.mp4",
-    "carousel_slides/slide_02_DcYQPq5jPuA.mp4",
-    "carousel_slides/slide_03_DcYQQBADDV6.mp4",
-    "carousel_slides/slide_04_DcYQQKMjD8u.mp4",
-    "carousel_slides/slide_05_DcYQQQIDHU7.mp4",
-    "carousel_slides/slide_06_DcYQQZKjFKz.mp4",
-    "carousel_slides/slide_07_DcYQQiLDNvs.mp4",
-    "carousel_slides/slide_08_DcYQQq0jI4C.mp4",
-    "carousel_slides/slide_09_DcYQRBGDCwA.mp4",
-    "carousel_slides/slide_10_DcYQRWEDI0M.mp4"
-];
-
-function playSlide(slideNum) {
-    if (slideNum < 1 || slideNum > 10) return;
-    const modal = document.getElementById('videoModal');
-    const player = document.getElementById('slideVideoPlayer');
-    const source = document.getElementById('videoSource');
-    
-    source.src = slideFiles[slideNum - 1];
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
     player.load();
-    modal.classList.add('active');
-    player.play().catch(e => console.log('Autoplay blocked:', e));
 }
 
-function closeVideo() {
-    const modal = document.getElementById('videoModal');
-    const player = document.getElementById('slideVideoPlayer');
-    player.pause();
-    modal.classList.remove('active');
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
+}
+
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
+        }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
+    }
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
+    }
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
+    } else {
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
+        }
+    }
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
+    }
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function setSpeed(speed, btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+}
+
+function stepFrame(frames) {
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
+}
+
+function toggleMute(btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
+}
+
+function togglePlayerFullscreen() {
+    var v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
 }
 
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeLightbox();
-        closeVideo();
-    }
-});
-
-function togglePlayerFullscreen() {
-    const v = document.getElementById('mainPlayer');
-    if (!v) return;
-    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        if (v.requestFullscreen) {
-            v.requestFullscreen().catch(() => {});
-        } else if (v.webkitRequestFullscreen) {
-            v.webkitRequestFullscreen();
-        } else if (v.webkitEnterFullscreen) {
-            v.webkitEnterFullscreen();
-        }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        }
-    }
-}
-
-document.addEventListener('keydown', (e) => {
     if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
         togglePlayerFullscreen();
     }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
 });
 
-</script>
+function switchView(view) {
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
+    }
+}
 
+function toggleDrawer(open) {
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function openLightbox(src, caption) {
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
+
+// === EDIT INLINE FEATURE ===
+var ENTRY_KEY = 'Tokyo_Slow_Life_Visual_Diaries - @ioana_iftode';
+var CLASSIFICATION_DATA = {};
+
+function openEditModal() {
+    var d = CLASSIFICATION_DATA || {};
+    var indSel = document.getElementById('editIndustry');
+    var indCust = document.getElementById('editIndustryCustom');
+    var stySel = document.getElementById('editStyle');
+    var styCust = document.getElementById('editStyleCustom');
+    
+    // Pre-fill industry (support both id and name)
+    var indId = (d.industry && d.industry.id) ? d.industry.id : '';
+    var indName = (d.industry && d.industry.name) ? d.industry.name : '';
+    indSel.value = '';
+    indCust.value = '';
+    for (var i = 0; i < indSel.options.length; i++) {
+        if (indSel.options[i].value === indId || indSel.options[i].value === indName) {
+            indSel.value = indSel.options[i].value;
+            break;
+        }
+    }
+    if (!indSel.value && indName) indCust.value = indName;
+
+    // Pre-fill style (support both id and name)
+    var styId = (d.shooting_style && d.shooting_style.id) ? d.shooting_style.id : '';
+    var styName = (d.shooting_style && d.shooting_style.name) ? d.shooting_style.name : '';
+    stySel.value = '';
+    styCust.value = '';
+    for (var j = 0; j < stySel.options.length; j++) {
+        if (stySel.options[j].value === styId || stySel.options[j].value === styName) {
+            stySel.value = stySel.options[j].value;
+            break;
+        }
+    }
+    if (!stySel.value && styName) styCust.value = styName;
+
+    // Pre-fill tags
+    document.getElementById('editTags').value = (d.tags || d.tech_tags || []).join(', ');
+    document.getElementById('editPurpose').value = d.purpose || d.logic_explanation || '';
+    document.getElementById('editTakeaway').value = d.quick_takeaway || '';
+    var pwEl = document.getElementById('editPassword');
+    if (pwEl && !pwEl.value) pwEl.value = '0070';
+
+    // Reset status
+    var st = document.getElementById('editStatus');
+    st.className = 'edit-status';
+    st.style.display = 'none';
+    document.getElementById('editSaveBtn').disabled = false;
+    document.getElementById('editSaveBtn').textContent = 'Lưu thay đổi';
+
+    document.getElementById('editModalBackdrop').classList.add('open');
+}
+
+function closeEditModal() {
+    document.getElementById('editModalBackdrop').classList.remove('open');
+}
+
+function saveEdit() {
+    var btn = document.getElementById('editSaveBtn');
+    var st = document.getElementById('editStatus');
+    var pw = document.getElementById('editPassword').value || '0070';
+
+    // Collect values
+    var indSel = document.getElementById('editIndustry').value;
+    var indCust = document.getElementById('editIndustryCustom').value.trim();
+    var industry = indCust || indSel || null;
+
+    var stySel = document.getElementById('editStyle').value;
+    var styCust = document.getElementById('editStyleCustom').value.trim();
+    var style = styCust || stySel || null;
+
+    var tags = document.getElementById('editTags').value;
+    var purpose = document.getElementById('editPurpose').value;
+    var takeaway = document.getElementById('editTakeaway').value;
+
+    var updates = {};
+    if (industry) updates.industry = industry;
+    if (style) updates.shooting_style = style;
+    if (tags) updates.tech_tags = tags;
+    if (purpose) updates.purpose = purpose;
+    if (takeaway) updates.quick_takeaway = takeaway;
+
+    if (Object.keys(updates).length === 0) {
+        st.className = 'edit-status error';
+        st.textContent = 'Chưa có thay đổi nào.';
+        st.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang lưu...';
+    st.style.display = 'none';
+
+    var payload = JSON.stringify({
+        password: pw,
+        entryKey: ENTRY_KEY,
+        updates: updates
+    });
+
+    function handleSuccess(data) {
+        st.className = 'edit-status success';
+        st.textContent = '✅ Đã lưu & Tự học thành công! (' + (data.commit || 'synced') + ')';
+        st.style.display = 'block';
+        btn.textContent = '✅ Đã lưu';
+
+        if (data.updatedEntry) {
+            CLASSIFICATION_DATA = data.updatedEntry;
+        }
+        var badges = document.querySelector('.header-badges');
+        if (badges && (updates.industry || updates.shooting_style)) {
+            var html = '';
+            var ind = (CLASSIFICATION_DATA.industry && CLASSIFICATION_DATA.industry.name) || updates.industry || '';
+            var sty = (CLASSIFICATION_DATA.shooting_style && CLASSIFICATION_DATA.shooting_style.name) || updates.shooting_style || '';
+            if (ind) html += '<span class="badge">' + ind + '</span> ';
+            if (sty) html += '<span class="badge badge-alt">' + sty + '</span>';
+            badges.innerHTML = html;
+        }
+    }
+
+    fetch('/api/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+    })
+    .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+    .then(function(result) {
+        if (result.ok && result.data.success) {
+            handleSuccess(result.data);
+        } else {
+            return fetch('https://file.fedu.vn/api/edit-classification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
+            .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+            .then(function(res2) {
+                if (res2.ok && res2.data.success) {
+                    handleSuccess(res2.data);
+                } else {
+                    st.className = 'edit-status error';
+                    st.textContent = '❌ ' + ((res2.data && res2.data.error) || (result.data && result.data.error) || 'Lỗi không xác định');
+                    st.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Lưu thay đổi';
+                }
+            });
+        }
+    })
+    .catch(function(err) {
+        fetch('https://file.fedu.vn/api/edit-classification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+        })
+        .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+        .then(function(res2) {
+            if (res2.ok && res2.data.success) {
+                handleSuccess(res2.data);
+            } else {
+                st.className = 'edit-status error';
+                st.textContent = '❌ Lỗi mạng: ' + err.message;
+                st.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Lưu thay đổi';
+            }
+        })
+        .catch(function(err2) {
+            st.className = 'edit-status error';
+            st.textContent = '❌ Lỗi mạng: ' + err2.message;
+            st.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Lưu thay đổi';
+        });
+    });
+}
+
+// Đóng modal khi bấm Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeEditModal();
+});
+</script>
 </body>
 </html>

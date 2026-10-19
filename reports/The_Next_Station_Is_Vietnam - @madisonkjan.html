@@ -1,1701 +1,2527 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Next Station Is Vietnam - @madisonkjan | Báo Cáo Phân Tích Đạo Diễn</title>
-<style>
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Next Station Is Vietnam - Hành Trình Du Lịch Điện Ảnh</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
+        a { text-decoration: none; color: inherit; }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
 
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
 
-@page {
-    size: A4 portrait;
-    margin: 10mm;
-}
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-}
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-body {
-    font-family: 'SVN-Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #1e293b;
-    background-color: #0b0f19;
-    font-size: 11px;
-    line-height: 1.45;
-}
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
 
-.report-container {
-    max-width: 960px;
-    margin: 20px auto;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-}
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
 
-@media print {
-    body { background: #fff; }
-    .report-container { max-width: 100%; margin: 0; padding: 0; box-shadow: none; }
-    .no-print { display: none !important; }
-    .page-break { page-break-after: always; }
-}
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
 
-.header-banner {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #991b1b 100%);
-    color: #ffffff;
-    padding: 20px 24px;
-    border-radius: 10px;
-    margin-bottom: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
 
-.header-badge {
-    display: inline-block;
-    background: #eab308;
-    color: #0f172a;
-    font-weight: 800;
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 3px 8px;
-    border-radius: 4px;
-    margin-bottom: 6px;
-}
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
 
-h1 {
-    font-family: 'SVN-Acta', 'SVN-Aeonik', serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: #f8fafc;
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
-}
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
 
-.header-sub {
-    font-size: 11.5px;
-    color: #cbd5e1;
-    margin-bottom: 10px;
-}
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
 
-.meta-bar {
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
+
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
+
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
+
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
+
+        .meta-dot {
+            opacity: 0.5;
+        }
+
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
+
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
+
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
+
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
+
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
+
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
+
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
+
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
+
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
+
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
+
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
+
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
+
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
+
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
+
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
+
+
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+/* === EDIT INLINE FEATURE === */
+.edit-fab {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--cl-radius-full);
+    background: var(--cl-card);
+    border: 1px solid var(--cl-line-strong);
     display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    padding-top: 8px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 10.5px;
-    color: #e2e8f0;
-}
-
-.meta-item strong {
-    color: #fbbf24;
-}
-
-.summary-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-left: 4px solid #dc2626;
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin-bottom: 16px;
-}
-
-.summary-card h2 {
-    font-family: 'SVN-Acta', serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 4px;
-}
-
-.summary-card p {
-    font-size: 11px;
-    color: #334155;
-    line-height: 1.45;
-}
-
-.overview-table-card {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    padding: 14px;
-    margin-bottom: 20px;
-}
-
-.overview-table-card h3 {
-    font-family: 'SVN-Aeonik', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: #b91c1c;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.master-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 10px;
-}
-
-.master-table th {
-    background: #f1f5f9;
-    color: #334155;
-    text-align: left;
-    padding: 6px 8px;
-    border-bottom: 1.5px solid #cbd5e1;
-    font-weight: 700;
-}
-
-.master-table td {
-    padding: 5px 8px;
-    border-bottom: 1px solid #f1f5f9;
-    color: #475569;
-}
-
-.master-table tr:nth-child(even) td {
-    background: #f8fafc;
-}
-
-.master-table tr:hover td {
-    background: #fef2f2;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s var(--apple-ease);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.edit-fab:hover {
+    border-color: var(--cl-accent);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.15);
+    transform: scale(1.05);
 }
 
-.shot-card {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    padding: 14px;
-    margin-bottom: 16px;
-    page-break-inside: avoid;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+.edit-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 300;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
+}
+.edit-modal-backdrop.open {
+    display: flex;
 }
 
-.shot-header {
+.edit-modal {
+    background: var(--cl-card);
+    border-radius: var(--cl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: editSlideIn 0.3s var(--apple-spring);
+}
+
+@keyframes editSlideIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.edit-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cl-line);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 8px;
-    border-bottom: 1.5px solid #e2e8f0;
-    margin-bottom: 10px;
 }
-
-.shot-num {
-    background: #dc2626;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-right: 8px;
-}
-
-.shot-name {
-    font-family: 'SVN-Acta', serif;
+.edit-modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
     font-weight: 700;
-    font-size: 13px;
-    color: #0f172a;
+    color: var(--cl-text-base);
+    margin: 0;
+}
+.edit-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--cl-text-muted);
+    line-height: 1;
 }
 
-.shot-tag {
-    background: #fef2f2;
-    color: #dc2626;
-    border: 1px solid #fecaca;
-    font-weight: 700;
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-right: 6px;
+.edit-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.edit-field label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-muted);
+}
+.edit-field select,
+.edit-field input,
+.edit-field textarea {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-sm);
+    background: var(--cl-card);
+    color: var(--cl-text-body);
+    transition: border-color 0.2s;
+    width: 100%;
+}
+.edit-field select:focus,
+.edit-field input:focus,
+.edit-field textarea:focus {
+    outline: none;
+    border-color: var(--cl-accent);
+    box-shadow: 0 0 0 3px var(--cl-accent-tint);
+}
+.edit-field textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+.edit-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-save-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--cl-accent);
+    color: white;
+    border: none;
+    border-radius: var(--cl-radius-full);
     cursor: pointer;
     transition: all 0.2s;
 }
-
-.shot-tag:hover {
-    background: #dc2626;
-    color: #fff;
+.edit-save-btn:hover { opacity: 0.9; }
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-.shot-type {
-    background: #f1f5f9;
-    color: #475569;
-    font-size: 9.5px;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid #e2e8f0;
-}
-
-.shot-content {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 10px;
-}
-
-.shot-left {
-    width: 36%;
-    flex-shrink: 0;
-}
-
-.shot-right {
-    width: 64%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.shot-thumb-wrapper {
-    position: relative;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #000;
-}
-
-.shot-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    display: block;
-    border-radius: 6px;
-    transition: transform 0.3s;
-}
-
-.shot-thumb:hover {
-    transform: scale(1.03);
-}
-
-.zoom-badge {
-    position: absolute;
-    bottom: 6px;
-    right: 6px;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    font-size: 8.5px;
-    padding: 2px 6px;
-    border-radius: 3px;
-}
-
-.voice-box {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
-    padding: 6px 8px;
-    border-radius: 6px;
-    margin-top: 8px;
-}
-
-.voice-icon {
-    font-size: 8.5px;
-    font-weight: 700;
-    color: #b91c1c;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-}
-
-.voice-text {
-    font-size: 10px;
-    color: #7f1d1d;
-    font-style: italic;
+.edit-cancel-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
     font-weight: 500;
-    line-height: 1.35;
-}
-
-.info-group {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 8px 10px;
-}
-
-.info-title {
-    font-size: 9.5px;
-    font-weight: 700;
-    color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 3px;
-}
-
-.info-body {
-    font-size: 10.5px;
-    color: #334155;
-    line-height: 1.4;
-}
-
-.badge-tech {
-    background: #fee2e2;
-    color: #991b1b;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 9.5px;
-    font-weight: 600;
-}
-
-.tip-group {
-    background: #fffbeb;
-    border: 1px solid #fef3c7;
-    border-left: 3px solid #f59e0b;
-    border-radius: 6px;
-    padding: 8px 10px;
-}
-
-.tip-title {
-    font-size: 9.5px;
-    font-weight: 700;
-    color: #92400e;
-    text-transform: uppercase;
-    margin-bottom: 3px;
-}
-
-.tip-body {
-    font-size: 10px;
-    color: #78350f;
-    line-height: 1.35;
-}
-
-.trans-container {
-    background: #fdf4ff;
-    border: 1px solid #f5d0fe;
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-top: 6px;
-}
-
-.trans-header {
-    font-size: 9.5px;
-    font-weight: 700;
-    color: #86198f;
-    margin-bottom: 6px;
-}
-
-.trans-img-wrapper {
-    text-align: center;
-    background: #0f172a;
-    border-radius: 6px;
-    padding: 6px;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--cl-text-muted);
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-full);
     cursor: pointer;
 }
 
-.trans-img {
-    max-width: 440px;
-    width: auto;
-    height: auto;
-    max-height: 180px;
-    object-fit: contain;
-    border-radius: 6px;
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.2s;
-}
-
-.trans-img:hover {
-    transform: scale(1.02);
-}
-
-.guide-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 14px;
-}
-
-.guide-card {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    padding: 14px;
-}
-
-.guide-card h3 {
-    font-family: 'SVN-Acta', serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: #b91c1c;
-    margin-bottom: 8px;
-}
-
-.guide-card p {
-    font-size: 10.5px;
-    color: #334155;
-    line-height: 1.45;
-    margin-bottom: 6px;
-}
-
-/* Lightbox Modal */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(11, 15, 25, 0.95);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 10px 50px rgba(0,0,0,0.8);
-}
-
-.lightbox-caption {
-    color: #fff;
+.edit-status {
+    font-family: var(--font-ui);
     font-size: 13px;
-    margin-top: 12px;
-    font-weight: 600;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-/* Video Modal */
-.video-modal {
+    padding: 8px 14px;
+    border-radius: var(--cl-radius-sm);
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(11, 15, 25, 0.95);
-    z-index: 9999;
-    justify-content: center;
+}
+.edit-status.success {
+    display: block;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.edit-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.edit-pw-field {
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
+    gap: 10px;
+}
+.edit-pw-field label { min-width: fit-content; }
+.edit-pw-field input {
+    max-width: 120px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
 }
 
-.video-modal.active {
-    display: flex;
+@media (max-width: 1024px) {
+    .edit-fab {
+        top: auto;
+        bottom: 20px;
+        right: 16px;
+    }
 }
-
-.video-modal video {
-    max-width: 85vw;
-    max-height: 80vh;
-    border-radius: 8px;
-    background: #000;
-}
-
-.video-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-/* Floating Button */
-.floating-video-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: #dc2626;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 12px;
-    padding: 10px 18px;
-    border-radius: 50px;
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s, background 0.2s;
-}
-
-.floating-video-btn:hover {
-    transform: scale(1.05);
-    background: #b91c1c;
-}
-
-/* Author Instagram Direct Link Button */
-.author-ig-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(192, 132, 252, 0.12);
-    border: 1px solid rgba(192, 132, 252, 0.35);
-    color: #e879f9;
-    padding: 2px 8px 2px 6px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 12px;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    vertical-align: middle;
-}
-.author-ig-badge:hover {
-    background: linear-gradient(135deg, rgba(192, 132, 252, 0.3), rgba(244, 63, 94, 0.3));
-    border-color: #f43f5e;
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
-}
-.author-ig-badge strong {
-    color: #fff;
-}
-.author-ig-badge .ig-ext-btn {
-    background: linear-gradient(135deg, #c084fc, #f43f5e);
-    color: #0b0f17;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 2px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: all 0.15s;
-    letter-spacing: 0.2px;
-}
-.author-ig-badge:hover .ig-ext-btn {
-    background: #ffffff;
-    color: #0b0f17;
-}
-
-
-.player-box { position: relative !important; }
-.player-box video { cursor: pointer; }
-.player-fs-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-family: var(--font-ui, sans-serif);
-    font-size: 11.5px;
-    font-weight: 600;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.2s ease;
-}
-.player-fs-btn:hover {
-    background: #1a73e8;
-    border-color: #1a73e8;
-    transform: scale(1.04);
-}
-.fs-ctrl-btn {
-    background: #fffbeb !important;
-    color: #b45309 !important;
-    border-color: #fef3c7 !important;
-    font-weight: 700 !important;
-}
-.fs-ctrl-btn:hover {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border-color: #fcd34d !important;
-}
-
-</style>
-<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+    </style>
 </head>
 <body>
 
-<div class="report-container">
-    <!-- HEADER -->
-    <div class="header-banner">
-        <div class="header-badge">DIRECTOR BREAKDOWN REPORT</div>
-        <h1>THE NEXT STATION IS VIETNAM: BÓC TÁCH KỸ THUẬT QUAY DỰNG</h1>
-        <div class="header-sub">Phân tích chuyên sâu 15 phân cảnh du lịch điện ảnh, nhịp cắt Montage theo beat nhạc và cơ chế chuyển cảnh</div>
-        <div class="meta-bar">
-            <div class="meta-item"><strong>Creator:</strong> @madisonkjan</div>
-            <div class="meta-item"><strong>Mã bài:</strong> Da7V4egSQxv</div>
-            <div class="meta-item"><strong>Thời lượng:</strong> 20.56s (15 Shots ~1.0s/shot)</div>
-            <div class="meta-item"><strong>Độ phân giải:</strong> 1276x718 (16:9 Widescreen)</div>
-            <div class="meta-item"><strong>Âm nhạc:</strong> Cinematic Beat Sync Travel Track</div>
+<div class="app-container">
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <video id="mainPlayer" data-yt-config="enablejsapi=1" src="https://media.fedu.vn/videos/The_Next_Station_Is_Vietnam%20-%20@madisonkjan.mp4" controls autoplay muted playsinline preload="auto" loop style="width:100%;aspect-ratio:9/16;border-radius:12px;background:#000;"></video>
+        </div>
+        <div class="video-controls">
+            <div class="speed-row">
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
+            </div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
+            </div>
+            <div id="shotStatusTag">Sẵn sàng</div>
         </div>
     </div>
 
-    <!-- EXECUTIVE SUMMARY -->
-    <div class="summary-card">
-        <h2>CẤU TRÚC KỂ CHUYỆN &amp; NGHỆ THUẬT DỰNG PHIM (EXECUTIVE SUMMARY)</h2>
-        <p><strong>Cốt lõi điện ảnh:</strong> Video là một bản giao hưởng hình ảnh tôn vinh vẻ đẹp đất nước và con người Việt Nam từ miền núi phía Bắc (Hà Giang, Sông Nho Quế, Hẻm Tu Sản) đến miền Trung cổ kính (Hội An, hoa đăng, phố cổ) và kỳ quan vịnh biển Hạ Long. Video kết hợp nhịp nhàng giữa <strong>Intro 4.9s tạo khoảng lặng (Breath Hook)</strong> với <strong>chuỗi 14 nhát cắt nhanh (Fast Montage ~1.0s/shot) đồng bộ hoàn hảo từng nhịp trống</strong>, mang lại trải nghiệm thị giác cuốn hút và cảm xúc tự hào bất tận.</p>
-    </div>
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">F&amp;B</span> <span class="badge badge-alt">Chỉn Chu</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/reel/Da7V4egSQxv/" target="_blank" rel="noopener">The Next Station Is Vietnam - Hành Trình Du Lịch Điện Ảnh</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/madisonkjan/" target="_blank" class="creator-link">@madisonkjan ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">15 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">2.50s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
+            </div>
+        </header>
 
-    <!-- MASTER SHOT LIST -->
-    <div class="overview-table-card">
-        <h3>BẢNG TỔNG HỢP 15 PHÂN CẢNH (MASTER SHOT LIST)</h3>
-        <table class="master-table">
-            <thead>
-                <tr>
-                    <th width="6%">Shot</th>
-                    <th width="14%">Timestamp</th>
-                    <th width="20%">Cỡ cảnh &amp; Góc máy</th>
-                    <th width="30%">Nội dung thị giác</th>
-                    <th width="30%">Kỹ thuật chuyển cảnh</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr onclick="jumpToVideo(0.00)"><td><b>01</b></td><td>0.00s - 4.88s (4.92s)</td><td>ELS Panoramic Landscape</td><td>Cờ Tổ quốc tung bay trên núi</td><td>Beat-Drop Match Cut / Scale Shift</td></tr>
-                <tr onclick="jumpToVideo(4.92)"><td><b>02</b></td><td>4.92s - 5.84s (0.96s)</td><td>WS Architectural Frontal</td><td>Cà phê Ban Công phố cổ Hội An</td><td>Motion Continuity Cut</td></tr>
-                <tr onclick="jumpToVideo(5.88)"><td><b>03</b></td><td>5.88s - 6.88s (1.04s)</td><td>Forward POV Tracking</td><td>Lướt xe máy đèo Hà Giang</td><td>Kinetic Match Cut / Leading Lines</td></tr>
-                <tr onclick="jumpToVideo(6.92)"><td><b>04</b></td><td>6.92s - 7.97s (1.08s)</td><td>MLS Cultural Portrait</td><td>Chàng trai thổi sáo Mông nương ngô</td><td>Cultural Rhythm Match</td></tr>
-                <tr onclick="jumpToVideo(8.01)"><td><b>05</b></td><td>8.01s - 9.01s (1.04s)</td><td>ECU Top-Down 45°</td><td>Chọn bưu thiếp lưu niệm vỉa hè</td><td>Tactile Memory Cut</td></tr>
-                <tr onclick="jumpToVideo(9.05)"><td><b>06</b></td><td>9.05s - 10.09s (1.08s)</td><td>MS Low Water Tracking</td><td>Thuyền nan nón lá trên sông ngọc</td><td>Mood Elevation Cut</td></tr>
-                <tr onclick="jumpToVideo(10.14)"><td><b>07</b></td><td>10.14s - 11.05s (0.96s)</td><td>Full Shot Gimbal Walk</td><td>Ngõ hoa giấy rợp nắng phố cổ</td><td>Center Frame Focus Cut</td></tr>
-                <tr onclick="jumpToVideo(11.09)"><td><b>08</b></td><td>11.09s - 13.01s (1.96s)</td><td>MCU Emotional Portrait</td><td>Nụ cười em bé gái vùng cao</td><td>Emotional Anchor Match Cut</td></tr>
-                <tr onclick="jumpToVideo(13.05)"><td><b>09</b></td><td>13.05s - 14.10s (1.08s)</td><td>Wide Low Angle Tilt-Up</td><td>Tuyến phố rợp bóng cờ đỏ sao vàng</td><td>Patriotic Color Rhythm</td></tr>
-                <tr onclick="jumpToVideo(14.14)"><td><b>10</b></td><td>14.14s - 15.22s (1.13s)</td><td>EWS Seascape Drift</td><td>Vịnh Hạ Long trùng điệp kỳ quan</td><td>Horizon Match Cut</td></tr>
-                <tr onclick="jumpToVideo(15.27)"><td><b>11</b></td><td>15.27s - 16.22s (1.00s)</td><td>Drone Aerial Extreme Wide</td><td>Flycam Hẻm Tu Sản - Sông Nho Quế</td><td>Macro-to-Micro Spatial Jump</td></tr>
-                <tr onclick="jumpToVideo(16.27)"><td><b>12</b></td><td>16.27s - 17.23s (1.00s)</td><td>High Angle 60° Down</td><td>Chợ phiên vùng cao rực rỡ thổ cẩm</td><td>Cultural Lifestyle Cut</td></tr>
-                <tr onclick="jumpToVideo(17.27)"><td><b>13</b></td><td>17.27s - 18.35s (1.13s)</td><td>MCU Night Glide</td><td>Hoa đăng đèn lồng phố cổ Hội An</td><td>Luminescence Match Cut</td></tr>
-                <tr onclick="jumpToVideo(18.39)"><td><b>14</b></td><td>18.39s - 19.44s (1.08s)</td><td>ECU High Close-Up</td><td>Chan nước dùng phở nóng bốc khói</td><td>Fluid Dynamic Action Cut</td></tr>
-                <tr onclick="jumpToVideo(19.48)"><td><b>15</b></td><td>19.48s - 20.52s (1.08s)</td><td>High Angle Waterfall</td><td>Tắm thác ngọc bích giữa rừng xanh</td><td>Nature Climax / Infinite Loop</td></tr>
-            </tbody>
-        </table>
-    </div>
+        
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">[Giai đoạn 1 • Mở màn (Hook): Mở Màn Giữ Chân (0.0s – 2.0s)] ➔ [Giai đoạn 2 • Triển khai &amp; Giữ nhịp: Chuỗi 13 nhịp cắt đan xen đa cỡ cảnh] ➔ [Giai đoạn 3 • Điểm rơi &amp; Chốt thông điệp: Cảnh Kết Chốt Nhịp (0.3s)]</div>
+        </section>
 
-    <!-- SHOT-BY-SHOT BREAKDOWN -->
-    
-    <div class="shot-card" id="shot-01">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 01</span>
-                <span class="shot-name">Cảnh 1: Lá cờ Tổ quốc trên đỉnh núi mờ sương (Intro Flag Hook)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(0.0)" title="Nhấp để xem video cảnh này">⏱️ 0.00s - 4.88s (118 frames - 4.92s)</span>
-                <span class="shot-type">ELS (Extreme Long Shot) - Landscape Panoramic</span>
-            </div>
+        <div class="overview-card">
+            Phân tích 15 phân cảnh du lịch điện ảnh Việt Nam: Kỹ thuật nhịp cắt Fast Montage đồng bộ beat nhạc, chuyển cảnh nối đường chân trời, góc quay flycam hẻm Tu Sản và nhịp thở thị giác phố cổ.
         </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_1.jpeg', 'Shot 01: Cảnh 1: Lá cờ Tổ quốc trên đỉnh núi mờ sương (Intro Flag Hook)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_2.jpeg" class="shot-thumb" alt="Shot 01" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"The next station is... Việt Nam. Nơi hành trình bắt đầu từ những dãy núi trùng điệp ngút ngàn mây..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Toàn cảnh núi non Tây Bắc hùng vĩ mờ ảo trong sương sớm. Lá cờ đỏ sao vàng tung bay kiêu hãnh trên đỉnh đồi, dòng chữ typography 'The next station is...' xuất hiện trang nhã đón đầu thị giác.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Lá cờ đỏ sao vàng tung bay trong gió nhẹ làm điểm neo thị giác trung tâm, nhịp thở tĩnh tại 4.9s tạo khoảng lặng chờ đón beat drop bùng nổ.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 2: Cut on Beat Drop (Nhát cắt đồng bộ nhịp trống dứt khoát) chuyển ngay về không gian kiến trúc phố cổ Hội An.</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Beat-Drop Match Cut / Spatial Scale Shift</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Ống kính 24mm hoặc 35mm f/5.6 - f/8 để nét sâu toàn dải, tripod chống rung tuyệt đối, khóa phơi sáng bầu trời để cờ đỏ không bị cháy sáng.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 01 (OUTGOING) ➔ SHOT 02 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_3.jpeg', 'So sánh chuyển cảnh Shot 01 sang Shot 02')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_4.jpeg" class="trans-img" alt="Transition 1 to 2" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-02">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 02</span>
-                <span class="shot-name">Cảnh 2: Quán cà phê Ban Công phố cổ Hội An (Hoi An Ancient Corner)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(4.92)" title="Nhấp để xem video cảnh này">⏱️ 4.92s - 5.84s (23 frames - 0.96s)</span>
-                <span class="shot-type">WS (Wide Shot) - Architectural Frontal View</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_5.jpeg', 'Shot 02: Cảnh 2: Quán cà phê Ban Công phố cổ Hội An (Hoi An Ancient Corner)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_6.jpeg" class="shot-thumb" alt="Shot 02" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...chạm vào những góc phố rực rỡ sắc hoa và tường vàng cổ kính..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Mặt tiền quán cà phê BANCÔNG cổ kính màu vàng đặc trưng Hội An với giàn hoa tử đằng/hoa giấy tím rủ bóng, người phụ nữ đội nón lá đẩy xe đi ngang qua khung hình.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Người phụ nữ nón lá di chuyển từ phải sang trái cắt ngang tiền cảnh tạo đường dẫn thị giác sinh động.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 3: Cut on Movement Direction (Chuyển động tiến về phía trước) trên cung đường đèo hiểm trở.</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Motion Continuity / Cultural Motif Transition</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Tiêu cự 35mm f/4.0 bắt trọn kiến trúc đối xứng, cân bằng trắng 5500K để tôn sắc vàng ấm áp của tường vôi Hội An.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 02 (OUTGOING) ➔ SHOT 03 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_7.jpeg', 'So sánh chuyển cảnh Shot 02 sang Shot 03')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_8.jpeg" class="trans-img" alt="Transition 2 to 3" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-03">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 03</span>
-                <span class="shot-name">Cảnh 3: Lướt xe trên cung đường đèo Hà Giang (Mountain Pass Ride)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(5.88)" title="Nhấp để xem video cảnh này">⏱️ 5.88s - 6.88s (25 frames - 1.04s)</span>
-                <span class="shot-type">Forward POV Tracking Shot - Dynamic Motorbike</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_9.jpeg', 'Shot 03: Cảnh 3: Lướt xe trên cung đường đèo Hà Giang (Mountain Pass Ride)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_10.jpeg" class="shot-thumb" alt="Shot 03" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...những khúc cua uốn lượn ôm trọn sườn non..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Chiếc xe máy lướt nhanh trên cung đường đèo Hà Giang uốn lượn bên vách núi đá và thung lũng ruộng bậc thang xanh ngát, phía trước là bạn đồng hành dẫn lối.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Mặt đường lướt nhanh tạo vệt chuyển động hướng tâm (Leading Lines) hút người xem lao về phía trước.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 4: Spatial Continuity (Cùng không gian đèo dốc Tây Bắc) dừng lại ở góc trung cảnh nghệ nhân thổi sáo.</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Kinetic Match Cut / Depth Rush Transition</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Gắn Action Cam hoặc Gimbal trên tay lái xe máy, set 24fps với ND filter để đạt 180° Shutter Rule tạo motion blur ven đường chân thực.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 03 (OUTGOING) ➔ SHOT 04 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_11.jpeg', 'So sánh chuyển cảnh Shot 03 sang Shot 04')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_12.jpeg" class="trans-img" alt="Transition 3 to 4" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-04">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 04</span>
-                <span class="shot-name">Cảnh 4: Tiếng sáo Mông giữa thung lũng ngô xanh (H'Mong Bamboo Flute)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(6.92)" title="Nhấp để xem video cảnh này">⏱️ 6.92s - 7.97s (26 frames - 1.08s)</span>
-                <span class="shot-type">MLS (Medium Long Shot) - Cultural Portrait</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_13.jpeg', 'Shot 04: Cảnh 4: Tiếng sáo Mông giữa thung lũng ngô xanh (H'Mong Bamboo Flute)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_14.jpeg" class="shot-thumb" alt="Shot 04" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...lắng nghe tiếng khèn tiếng sáo vang vọng giữa đại ngàn..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Chàng trai người H'Mông trong trang phục truyền thống đứng bên bờ rào đá thổi sáo trúc (sáo Mông), hậu cảnh là thung lũng nương ngô và bản làng yên bình.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Ngón tay bấm lỗ sáo và điệu bộ nghiêng người thổi nhạc tạo nhịp điệu âm nhạc thị giác.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 5: Cut on Scale & Subject (Từ người biểu diễn sang du khách trải nghiệm) chuyển về góc nhìn cận cảnh vỉa hè.</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Cultural Rhythm Cut / Action-to-Detail Match</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Tiêu cự 50mm hoặc 85mm f/2.8 xóa mờ nhẹ hậu cảnh núi non, lấy nét mắt nhân vật, ánh sáng tản tự nhiên không chói gắt.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 04 (OUTGOING) ➔ SHOT 05 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_15.jpeg', 'So sánh chuyển cảnh Shot 04 sang Shot 05')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_16.jpeg" class="trans-img" alt="Transition 4 to 5" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-05">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 05</span>
-                <span class="shot-name">Cảnh 5: Lựa chọn bưu thiếp và cờ lưu niệm (Postcard Memories)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(8.01)" title="Nhấp để xem video cảnh này">⏱️ 8.01s - 9.01s (25 frames - 1.04s)</span>
-                <span class="shot-type">ECU (Extreme Close-Up) - Top-Down Ground Angle</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_17.jpeg', 'Shot 05: Cảnh 5: Lựa chọn bưu thiếp và cờ lưu niệm (Postcard Memories)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_18.jpeg" class="shot-thumb" alt="Shot 05" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...lưu giữ từng mảnh ghép kỷ niệm trong lòng bàn tay..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Bàn tay của hai nữ du khách nước ngoài ngồi bệt trên vỉa hè cùng chọn mua những tấm bưu thiếp vẽ tay phong cảnh Việt Nam và cờ đỏ sao vàng.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Bàn tay lật giở từng tấm bưu thiếp tạo chuyển động vi mô tinh tế và cảm xúc gần gũi.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 6: Cut on Activity (Trải nghiệm du khách) sang cảnh ngồi thuyền ngắm cảnh sông nước.</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Tactile Memory Cut / Narrative Association</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Ống kính 35mm f/2.0, lấy nét chuẩn vào hoa văn bưu thiếp, tận dụng ánh sáng phản xạ từ nền gạch vỉa hè.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 05 (OUTGOING) ➔ SHOT 06 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_19.jpeg', 'So sánh chuyển cảnh Shot 05 sang Shot 06')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_20.jpeg" class="trans-img" alt="Transition 5 to 6" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-06">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 06</span>
-                <span class="shot-name">Cảnh 6: Du ngoạn thuyền nan đội nón lá trên sông ngọc (River Drift in Conical Hats)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(9.05)" title="Nhấp để xem video cảnh này">⏱️ 9.05s - 10.09s (26 frames - 1.08s)</span>
-                <span class="shot-type">MS (Medium Shot) - Low Water Tracking</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_21.jpeg', 'Shot 06: Cảnh 6: Du ngoạn thuyền nan đội nón lá trên sông ngọc (River Drift in Conical Hats)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_22.jpeg" class="shot-thumb" alt="Shot 06" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...thả mình trôi theo dòng nước ngọc bích êm đềm..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Nhóm bạn du khách quốc tế cởi trần đội nón lá thư giãn trên chiếc thuyền nan/bè tre trôi êm ả trên dòng nước xanh ngọc bích của Sông Nho Quế / Tràng An.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Chiếc thuyền rẽ nước tiến thẳng, ánh nhìn và nụ cười rạng rỡ của du khách tạo năng lượng tự do.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 7: Cut on Stroll (Chuyển từ du ngoạn sông nước sang dạo bước phố cổ).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Environment Contrast / Mood Elevation</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Đặt máy sát mặt nước trên mũi thuyền, tiêu cự 24mm bao quát cả người và vách núi đá soi bóng nước ngọc bích.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 06 (OUTGOING) ➔ SHOT 07 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_23.jpeg', 'So sánh chuyển cảnh Shot 06 sang Shot 07')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_24.jpeg" class="trans-img" alt="Transition 6 to 7" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-07">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 07</span>
-                <span class="shot-name">Cảnh 7: Dạo bước trong ngõ hoa giấy rợp nắng (Bougainvillea Alley)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(10.14)" title="Nhấp để xem video cảnh này">⏱️ 10.14s - 11.05s (23 frames - 0.96s)</span>
-                <span class="shot-type">Full Shot - Forward Gimbal Walkthrough</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_25.jpeg', 'Shot 07: Cảnh 7: Dạo bước trong ngõ hoa giấy rợp nắng (Bougainvillea Alley)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_26.jpeg" class="shot-thumb" alt="Shot 07" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...lạc bước giữa những con ngõ hoa rợp bóng nắng vàng..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Bước chân dạo qua ngõ phố cổ vắng người ngập tràn sắc hoa giấy nở rộ, những ngôi nhà mái ngói rêu phong và ánh nắng vàng mật rót xuống lòng đường.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Động tác đẩy máy (Push-in) tiến sâu vào ngõ tạo cảm giác lôi cuốn khám phá.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 8: Center Subject Match (Điểm tụ trung tâm) sang nụ cười em bé vùng cao.</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Center Frame Focus Cut / Atmosphere Transition</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Gimbal 3 trục đi bộ bước Ninja (Heel-to-toe), tiêu cự 28mm hoặc 35mm, khẩu f/4.0 bắt nét toàn dải từ hoa giấy đến nền gạch.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 07 (OUTGOING) ➔ SHOT 08 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_27.jpeg', 'So sánh chuyển cảnh Shot 07 sang Shot 08')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_28.jpeg" class="trans-img" alt="Transition 7 to 8" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-08">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 08</span>
-                <span class="shot-name">Cảnh 8: Nụ cười thiên thần của em bé H'Mông (Highland Girl Smile)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(11.09)" title="Nhấp để xem video cảnh này">⏱️ 11.09s - 13.01s (47 frames - 1.96s)</span>
-                <span class="shot-type">MCU (Medium Close-Up) - Emotional Portrait</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_29.jpeg', 'Shot 08: Cảnh 8: Nụ cười thiên thần của em bé H'Mông (Highland Girl Smile)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_30.jpeg" class="shot-thumb" alt="Shot 08" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...để rồi say đắm trước nụ cười hồn nhiên của em bé vùng cao."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Em bé gái vùng cao mặc váy thổ cẩm màu hồng xanh rực rỡ đứng bên chậu hoa cúc vạn thọ, ngước nhìn ống kính cười bẽn lẽn hồn nhiên, phía sau là dốc đèo uốn lượn và lá cờ đỏ sao vàng tung bay.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Nụ cười tỏa sáng và ánh mắt trong veo của em bé giữ chân người xem trọn vẹn 2 giây (điểm nhấn cảm xúc cao nhất video).</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 9: Flag Match Cut (Nối hình ảnh lá cờ đỏ phía sau em bé sang hàng cờ đỏ rợp phố).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Emotional Anchor Match Cut / Thematic Echo</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Ống kính 50mm f/1.8 hoặc 85mm f/2.0, hạ máy ngang tầm mắt trẻ em, lấy nét liên tục (Eye-AF), bắt sáng ven tóc tự nhiên.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 08 (OUTGOING) ➔ SHOT 09 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_31.jpeg', 'So sánh chuyển cảnh Shot 08 sang Shot 09')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_32.jpeg" class="trans-img" alt="Transition 8 to 9" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-09">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 09</span>
-                <span class="shot-name">Cảnh 9: Tuyến phố rợp bóng cờ đỏ sao vàng (Red Flag Boulevard)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(13.05)" title="Nhấp để xem video cảnh này">⏱️ 13.05s - 14.10s (26 frames - 1.08s)</span>
-                <span class="shot-type">Wide Street View - Low Angle Tilt-Up</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_33.jpeg', 'Shot 09: Cảnh 9: Tuyến phố rợp bóng cờ đỏ sao vàng (Red Flag Boulevard)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_34.jpeg" class="shot-thumb" alt="Shot 09" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"Tự hào sắc cờ đỏ tung bay khắp phố phường..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Hàng cây xanh rợp bóng cờ đỏ sao vàng bay phấp phới dọc tuyến phố sầm uất với những cửa hàng lưu niệm và người dân đi lại tấp nập.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Những dải cờ đỏ bay phần phật trong gió dẫn dắt ánh nhìn lên cao khoáng đạt.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 10: Horizon Match Cut (Nối từ đường chân trời phố xá sang đường chân trời mênh mông biển vịnh).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Patriotic Color Rhythm / Scale Expansion Cut</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Tiêu cự 24mm góc rộng, lia nhẹ theo hướng gió bay của cờ, tốc độ màn trập 1/50s để giữ độ mềm mại của vải cờ.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 09 (OUTGOING) ➔ SHOT 10 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_35.jpeg', 'So sánh chuyển cảnh Shot 09 sang Shot 10')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_36.jpeg" class="trans-img" alt="Transition 9 to 10" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-10">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 10</span>
-                <span class="shot-name">Cảnh 10: Vịnh Hạ Long kỳ quan giữa mây trời (Ha Long Bay Majesty)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(14.14)" title="Nhấp để xem video cảnh này">⏱️ 14.14s - 15.22s (27 frames - 1.13s)</span>
-                <span class="shot-type">EWS (Extreme Wide Shot) - Seascape Boat Drift</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_37.jpeg', 'Shot 10: Cảnh 10: Vịnh Hạ Long kỳ quan giữa mây trời (Ha Long Bay Majesty)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_38.jpeg" class="shot-thumb" alt="Shot 10" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...ngỡ ngàng trước kỳ quan biển trời vịnh di sản..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Mặt nước vịnh Hạ Long / Lan Hạ xanh thẳm phẳng lặng như gương, các đảo đá vôi trùng điệp sừng sững giữa trời biển bao la, một chiếc du thuyền trắng lướt êm phía xa.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Thuyền di chuyển ngang chậm rãi mang lại cảm giác tĩnh tại, kỳ vĩ vô tận.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 11: Aerial Perspective Cut (Từ mặt nước vịnh chuyển sang góc nhìn Flycam trên đỉnh núi).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Geological Wonder Cut / Horizon-to-Chasm Transition</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Kính lọc phân cực CPL để khử chói mặt nước và làm nổi bật màu xanh ngọc bích của biển vịnh, tiêu cự 50mm nén các dãy đảo đá.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 10 (OUTGOING) ➔ SHOT 11 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_39.jpeg', 'So sánh chuyển cảnh Shot 10 sang Shot 11')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_40.jpeg" class="trans-img" alt="Transition 10 to 11" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-11">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 11</span>
-                <span class="shot-name">Cảnh 11: Flycam hẻm vực Tu Sản - Sông Nho Quế (Tu San Canyon Aerial)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(15.27)" title="Nhấp để xem video cảnh này">⏱️ 15.27s - 16.22s (24 frames - 1.00s)</span>
-                <span class="shot-type">Drone Aerial Extreme Wide - Forward Push-Through</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_41.jpeg', 'Shot 11: Cảnh 11: Flycam hẻm vực Tu Sản - Sông Nho Quế (Tu San Canyon Aerial)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_42.jpeg" class="shot-thumb" alt="Shot 11" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...xuyên qua hẻm vực sâu thẳm đẹp tựa tranh thủy mặc..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Toàn cảnh hẻm vực Tu Sản - Đèo Mã Pí Lèng hùng vĩ với dòng sông Nho Quế uốn lượn sâu thẳm giữa hai sườn núi đá vôi dốc đứng ngoạn mục.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Drone bay tiến về phía trước (Forward Push) xuyên qua khe núi tạo cảm giác choáng ngợp và bứt phá.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 12: Scale Drop (Từ góc nhìn chim bay trên trời hạ thẳng xuống đời sống con người dưới chợ).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Macro-to-Micro Spatial Jump Cut</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Flycam góc rộng 24mm, bay đều tay ga tốc độ 20km/h, profile màu D-Log M để giữ chi tiết cả vùng tối hẻm núi lẫn mây trời.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 11 (OUTGOING) ➔ SHOT 12 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_43.jpeg', 'So sánh chuyển cảnh Shot 11 sang Shot 12')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_44.jpeg" class="trans-img" alt="Transition 11 to 12" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-12">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 12</span>
-                <span class="shot-name">Cảnh 12: Nhịp sống chợ phiên rực rỡ thổ cẩm (Highland Market Vibrance)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(16.27)" title="Nhấp để xem video cảnh này">⏱️ 16.27s - 17.23s (24 frames - 1.00s)</span>
-                <span class="shot-type">High Angle Medium Shot - Cultural Market</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_45.jpeg', 'Shot 12: Cảnh 12: Nhịp sống chợ phiên rực rỡ thổ cẩm (Highland Market Vibrance)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_46.jpeg" class="shot-thumb" alt="Shot 12" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...hòa vào sự mộc mạc chân phương của chợ phiên vùng cao..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Không khí náo nhiệt của phiên chợ vùng cao, các chị em phụ nữ H'Mông, Dao đỏ xúm quanh mẹt rau củ quả, chọn từng nải chuối chín vàng và đỗ que tươi.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Bàn tay chọn chuối và cử chỉ rôm rả của các bà mẹ vùng cao.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 13: Color Transition (Từ màu sắc nông sản ban ngày chuyển sang ánh sáng đèn lồng rực rỡ ban đêm).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Cultural Lifestyle Cut / Chromatic Contrast</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Tiêu cự 35mm f/2.8, đứng ngang tầm vai chụp chéo xuống, bắt trọn hoa văn thổ cẩm tinh xảo trên trang phục đồng bào.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 12 (OUTGOING) ➔ SHOT 13 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_47.jpeg', 'So sánh chuyển cảnh Shot 12 sang Shot 13')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_48.jpeg" class="trans-img" alt="Transition 12 to 13" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-13">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 13</span>
-                <span class="shot-name">Cảnh 13: Lung linh ngàn hoa đăng đèn lồng Hội An (Hoi An Lantern Magic)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(17.27)" title="Nhấp để xem video cảnh này">⏱️ 17.27s - 18.35s (27 frames - 1.13s)</span>
-                <span class="shot-type">MCU (Medium Close-Up) - Night Slow Pan</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_49.jpeg', 'Shot 13: Cảnh 13: Lung linh ngàn hoa đăng đèn lồng Hội An (Hoi An Lantern Magic)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_50.jpeg" class="shot-thumb" alt="Shot 13" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...đắm chìm trong biển đèn lồng huyền ảo khi đêm về..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Cận cảnh những chiếc đèn lồng Hội An thủ công hình quả trám, hình tròn đủ sắc đỏ, cam, vàng, xanh, trắng thắp sáng lung linh ấm áp trong đêm.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Ánh sáng đèn lồng phát quang rực rỡ lấp đầy khung hình.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 14: Sensory Shift (Từ thị giác ánh sáng đêm sang ẩm thực bốc khói).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Luminescence Match Cut / Cultural Atmosphere Cut</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Ống kính 50mm f/1.4 hoặc f/1.8 để tạo hiệu ứng bokeh bong bóng tròn trịa ở hậu cảnh, phơi sáng vừa phải giữ chi tiết hoa văn vải lụa.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 13 (OUTGOING) ➔ SHOT 14 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_51.jpeg', 'So sánh chuyển cảnh Shot 13 sang Shot 14')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_52.jpeg" class="trans-img" alt="Transition 13 to 14" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-14">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 14</span>
-                <span class="shot-name">Cảnh 14: Nước dùng phở nóng hổi bốc khói (Street Food Steaming Pho)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(18.39)" title="Nhấp để xem video cảnh này">⏱️ 18.39s - 19.44s (26 frames - 1.08s)</span>
-                <span class="shot-type">ECU (Extreme Close-Up) - Culinary Motion</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_53.jpeg', 'Shot 14: Cảnh 14: Nước dùng phở nóng hổi bốc khói (Street Food Steaming Pho)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_54.jpeg" class="shot-thumb" alt="Shot 14" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...thưởng thức tô phở nóng hổi đậm đà hồn quê..."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Bàn tay người bán hàng gắp thịt, múc muôi nước dùng sôi sùng sục chan vào tô phở/hủ tiếu nóng hổi, khói bốc nghi ngút cạnh rổ rau húng quế và lát chanh tươi.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Dòng nước dùng sôi chan vào tô phở tạo hiệu ứng kích thích vị giác cực mạnh (Appetite Hook).</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 15: Liquid-to-Liquid Match Cut (Từ dòng nước súp nóng sang làn nước thác mát lạnh bọt tung trắng xóa).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Match Action / Fluid Dynamic Cut</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Tiêu cự 50mm f/2.0 lấy nét sát vào miệng muôi chan nước dùng, đèn xiên tạo quầng khói trắng bốc lên rõ nét.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="trans-container">
-                <div class="trans-header">
-                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 14 (OUTGOING) ➔ SHOT 15 (INCOMING)</span>
-                </div>
-                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_55.jpeg', 'So sánh chuyển cảnh Shot 14 sang Shot 15')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_56.jpeg" class="trans-img" alt="Transition 14 to 15" />
-                </div>
-            </div>
-            
-    </div>
-    
-    <div class="shot-card" id="shot-15">
-        <div class="shot-header">
-            <div class="shot-title-left">
-                <span class="shot-num">SHOT 15</span>
-                <span class="shot-name">Cảnh 15: Tắm thác ngọc bích giữa rừng nguyên sinh (Wild Waterfall Climax)</span>
-            </div>
-            <div class="shot-title-right">
-                <span class="shot-tag" onclick="jumpToVideo(19.48)" title="Nhấp để xem video cảnh này">⏱️ 19.48s - 20.52s (26 frames - 1.08s)</span>
-                <span class="shot-type">High Angle Wide - Waterfall Climax</span>
-            </div>
-        </div>
-        
-        <div class="shot-content">
-            <div class="shot-left">
-                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_57.jpeg', 'Shot 15: Cảnh 15: Tắm thác ngọc bích giữa rừng nguyên sinh (Wild Waterfall Climax)')">
-                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_58.jpeg" class="shot-thumb" alt="Shot 15" />
-                    <div class="zoom-badge">🔍 Phóng to</div>
-                </div>
-                <div class="voice-box">
-                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
-                    <div class="voice-text">"...và hòa mình vào dòng thác đại ngàn nguyên sơ. Việt Nam – Nơi mỗi bước chân là một kiệt tác."</div>
-                </div>
-            </div>
-            <div class="shot-right">
-                <div class="info-group">
-                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
-                    <div class="info-body">Dòng thác nước thiên nhiên trắng xóa đổ ào ạt xuống hồ nước xanh biếc giữa rừng cây xanh ngắt, du khách đắm mình bơi lội thư giãn tận hưởng thiên nhiên thuần khiết.</div>
-                </div>
-                
-                <div class="info-group">
-                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
-                    <div class="info-body">
-                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Dòng nước thác đổ cuồn cuộn khép lại hành trình đầy năng lượng và tự do.</p>
-                        <p><strong>• Kỹ thuật Nối (In):</strong> Outro Loop (Kết thúc video, sẵn sàng lặp lại chu kỳ).</p>
-                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Nature Climax / Visual Release & Infinite Loop</span></p>
-                    </div>
-                </div>
-                
-                <div class="tip-group">
-                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
-                    <div class="tip-body">Tốc độ màn trập 1/60s hoặc 1/120s làm mịn dải nước trắng, góc máy cao bao quát toàn bộ vẻ đẹp hoang sơ của núi rừng.</div>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-    
 
-    <!-- PRACTICAL GUIDE & CHECKLIST -->
-    <div class="summary-card" style="margin-top: 24px; border-left-color: #0284c7;">
-        <h2>HƯỚNG DẪN THỰC HÀNH SETUP QUAY DỰNG THEO MẪU (PRACTICE GUIDE)</h2>
-        <p>Bảng thông số máy quay, quy tắc ánh sáng và cẩm nang dựng phim giúp bạn tái hiện trọn vẹn chất cinematic du lịch của video mẫu:</p>
         
-        <div class="guide-grid">
-            <div class="guide-card">
-                <h3>📹 1. THIẾT BỊ KHUYÊN DÙNG</h3>
-                <p><strong>• Thân máy (Camera):</strong> Sony FX30 / A6700 / A7C II, Fujifilm X-T5 / X-H2S hoặc iPhone 15/16 Pro (Blackmagic Camera App).</p>
-                <p><strong>• Ống kính (Lens):</strong> Bộ đôi Zoom đa dụng 24-70mm f/2.8 kết hợp Prime 50mm f/1.4 hoặc 85mm f/1.8 để chụp chân dung cảm xúc.</p>
-                <p><strong>• Flycam &amp; Gimbal:</strong> DJI Mini 4 Pro / Mavic 3 Pro + Gimbal DJI RS3 / RS4 mini.</p>
-                <p><strong>• Kính lọc:</strong> Polarizer (CPL) bắt buộc để quay nước biển/sông ngọc bích + Variable ND (VND) quay trời nắng gắt.</p>
-            </div>
 
-            <div class="guide-card">
-                <h3>⚙️ 2. THÔNG SỐ CÀI ĐẶT (SETTINGS)</h3>
-                <p><strong>• Frame Rate:</strong> 24 fps (chuẩn Cinematic) cho các cảnh phố xá, xe chạy; 60 fps / 120 fps cho các cảnh slow-motion (nước chan phở, nụ cười em bé, tắm thác).</p>
-                <p><strong>• Shutter Speed:</strong> Quy tắc 180° (1/50s khi quay 24fps, 1/120s khi quay 60fps) để giữ motion blur tự nhiên.</p>
-                <p><strong>• Picture Profile:</strong> Log Profile (S-Log3, F-Log2, D-Log) để giữ dải dynamic range cao nhất giữa nắng gắt và vùng tối khe núi.</p>
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (15)</button>
             </div>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
+        </div>
 
-            <div class="guide-card">
-                <h3>🎨 3. CHỈNH MÀU (COLOR GRADING)</h3>
-                <p><strong>• Tone màu chủ đạo:</strong> Warm Heritage Gold kết hợp Emerald Green (Sắc vàng Hội An ấm áp + Xanh ngọc bích Sông Nho Quế/Vịnh Hạ Long + Đỏ thắm cờ Tổ quốc).</p>
-                <p><strong>• Highlight &amp; Shadow:</strong> Nén highlight mượt mà (soft roll-off), giữ shadow sâu nhưng không bết đen chi tiết.</p>
-                <p><strong>• Film Emulation:</strong> Thêm 10-15% hạt phim 35mm (Kodak 250D) để tăng độ vintage cổ điển.</p>
+        <div id="storyboardView">
+            
+        <div class="shot-card" id="shot-card-1">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 01')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_1.webp" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
             </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 01</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
 
-            <div class="guide-card">
-                <h3>🎵 4. DỰNG PHIM &amp; SOUND DESIGN</h3>
-                <p><strong>• Beat Syncing:</strong> Đặt marker nhịp trống trên timeline. Cắt chính xác mỗi cảnh đúng 1 nhịp (0.96s - 1.13s).</p>
-                <p><strong>• Cấu trúc Hook:</strong> Giữ cảnh đầu 4.9s làm khoảng lặng trước khi dồn dập giải phóng năng lượng.</p>
-                <p><strong>• Foley Sound:</strong> Lồng ghép tiếng gió đèo, tiếng sáo trúc, tiếng nước rẽ thuyền nan, tiếng xèo xèo nước dùng để chạm đến đa giác quan.</p>
+        <div class="shot-card" id="shot-card-2">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 02')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_5.webp" alt="SHOT 02" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
             </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 02</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 02</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-3">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 03')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_10.webp" alt="SHOT 03" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 03</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 03</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-4">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 04')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_13.webp" alt="SHOT 04" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 04</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 04</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-5">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 05')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_17.webp" alt="SHOT 05" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 05</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 05</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-6">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 06')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_21.webp" alt="SHOT 06" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 06</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 06</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-7">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 07')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_25.webp" alt="SHOT 07" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 07</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 07</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-8">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 08')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_29.webp" alt="SHOT 08" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 08</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 08</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-9">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 09')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_33.webp" alt="SHOT 09" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 09</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 09</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-10">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 10')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_37.webp" alt="SHOT 10" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 10</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 10</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-11">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 11')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_41.webp" alt="SHOT 11" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 11</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 11</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-12">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 12')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_45.webp" alt="SHOT 12" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 12</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 12</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-13">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 13')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_49.webp" alt="SHOT 13" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 13</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 13</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-14">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 14')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_53.webp" alt="SHOT 14" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 14</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 14</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-15">
+            <div class="shot-thumb" onclick="playShot(0.0, 2.5, 'SHOT 15')">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_57.webp" alt="SHOT 15" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 15</span>
+                    <span class="shot-dur">2.50s</span>
+                </div>
+                <h4 class="shot-headline">Phân cảnh 15</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                </details>
+            </div>
+        </div>
+        </div>
+
+        <div id="gridView">
+            
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 01')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_1.webp" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_1.webp', 'SHOT 01 • Phân cảnh 01')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 01</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 02')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_5.webp" alt="SHOT 02" loading="lazy" />
+                <span class="grid-num">SHOT 02</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_5.webp', 'SHOT 02 • Phân cảnh 02')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 02</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 03')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_10.webp" alt="SHOT 03" loading="lazy" />
+                <span class="grid-num">SHOT 03</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_10.webp', 'SHOT 03 • Phân cảnh 03')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 03</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 04')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_13.webp" alt="SHOT 04" loading="lazy" />
+                <span class="grid-num">SHOT 04</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_13.webp', 'SHOT 04 • Phân cảnh 04')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 04</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 05')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_17.webp" alt="SHOT 05" loading="lazy" />
+                <span class="grid-num">SHOT 05</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_17.webp', 'SHOT 05 • Phân cảnh 05')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 05</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 06')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_21.webp" alt="SHOT 06" loading="lazy" />
+                <span class="grid-num">SHOT 06</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_21.webp', 'SHOT 06 • Phân cảnh 06')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 06</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 07')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_25.webp" alt="SHOT 07" loading="lazy" />
+                <span class="grid-num">SHOT 07</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_25.webp', 'SHOT 07 • Phân cảnh 07')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 07</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 08')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_29.webp" alt="SHOT 08" loading="lazy" />
+                <span class="grid-num">SHOT 08</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_29.webp', 'SHOT 08 • Phân cảnh 08')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 08</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 09')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_33.webp" alt="SHOT 09" loading="lazy" />
+                <span class="grid-num">SHOT 09</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_33.webp', 'SHOT 09 • Phân cảnh 09')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 09</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 10')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_37.webp" alt="SHOT 10" loading="lazy" />
+                <span class="grid-num">SHOT 10</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_37.webp', 'SHOT 10 • Phân cảnh 10')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 10</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 11')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_41.webp" alt="SHOT 11" loading="lazy" />
+                <span class="grid-num">SHOT 11</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_41.webp', 'SHOT 11 • Phân cảnh 11')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 11</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 12')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_45.webp" alt="SHOT 12" loading="lazy" />
+                <span class="grid-num">SHOT 12</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_45.webp', 'SHOT 12 • Phân cảnh 12')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 12</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 13')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_49.webp" alt="SHOT 13" loading="lazy" />
+                <span class="grid-num">SHOT 13</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_49.webp', 'SHOT 13 • Phân cảnh 13')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 13</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 14')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_53.webp" alt="SHOT 14" loading="lazy" />
+                <span class="grid-num">SHOT 14</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_53.webp', 'SHOT 14 • Phân cảnh 14')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 14</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(0.0, 2.5, 'SHOT 15')">
+            <div class="grid-thumb">
+                <img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_57.webp" alt="SHOT 15" loading="lazy" />
+                <span class="grid-num">SHOT 15</span>
+                <span class="grid-time">0.0s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_57.webp', 'SHOT 15 • Phân cảnh 15')">⊕</button>
+            </div>
+            <div class="grid-title">Phân cảnh 15</div>
+        </div>
         </div>
     </div>
 </div>
 
-<!-- Floating Button -->
-<div class="floating-video-btn no-print" onclick="jumpToVideo(0)">
-    ▶ Xem Video Gốc
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-head">
+            <span>MỤC LỤC (15)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
+        </div>
+        <div class="drawer-list">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.5, 'SHOT 01')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_1.webp" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">Phân cảnh 01</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(2, 0.0, 2.5, 'SHOT 02')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_5.webp" alt="SHOT 02" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 02</div>
+                <div class="drawer-shot-hl">Phân cảnh 02</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(3, 0.0, 2.5, 'SHOT 03')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_10.webp" alt="SHOT 03" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 03</div>
+                <div class="drawer-shot-hl">Phân cảnh 03</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(4, 0.0, 2.5, 'SHOT 04')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_13.webp" alt="SHOT 04" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 04</div>
+                <div class="drawer-shot-hl">Phân cảnh 04</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(5, 0.0, 2.5, 'SHOT 05')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_17.webp" alt="SHOT 05" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 05</div>
+                <div class="drawer-shot-hl">Phân cảnh 05</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(6, 0.0, 2.5, 'SHOT 06')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_21.webp" alt="SHOT 06" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 06</div>
+                <div class="drawer-shot-hl">Phân cảnh 06</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(7, 0.0, 2.5, 'SHOT 07')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_25.webp" alt="SHOT 07" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 07</div>
+                <div class="drawer-shot-hl">Phân cảnh 07</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(8, 0.0, 2.5, 'SHOT 08')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_29.webp" alt="SHOT 08" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 08</div>
+                <div class="drawer-shot-hl">Phân cảnh 08</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(9, 0.0, 2.5, 'SHOT 09')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_33.webp" alt="SHOT 09" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 09</div>
+                <div class="drawer-shot-hl">Phân cảnh 09</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(10, 0.0, 2.5, 'SHOT 10')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_37.webp" alt="SHOT 10" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 10</div>
+                <div class="drawer-shot-hl">Phân cảnh 10</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(11, 0.0, 2.5, 'SHOT 11')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_41.webp" alt="SHOT 11" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 11</div>
+                <div class="drawer-shot-hl">Phân cảnh 11</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(12, 0.0, 2.5, 'SHOT 12')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_45.webp" alt="SHOT 12" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 12</div>
+                <div class="drawer-shot-hl">Phân cảnh 12</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(13, 0.0, 2.5, 'SHOT 13')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_49.webp" alt="SHOT 13" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 13</div>
+                <div class="drawer-shot-hl">Phân cảnh 13</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(14, 0.0, 2.5, 'SHOT 14')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_53.webp" alt="SHOT 14" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 14</div>
+                <div class="drawer-shot-hl">Phân cảnh 14</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(15, 0.0, 2.5, 'SHOT 15')">
+            <div class="drawer-thumb"><img src="extracted_images/The_Next_Station_Is_Vietnam_-_madisonkjan_57.webp" alt="SHOT 15" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 15</div>
+                <div class="drawer-shot-hl">Phân cảnh 15</div>
+                <div class="drawer-shot-time">0.00s – 2.50s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
+    </div>
 </div>
 
-<!-- Lightbox Modal -->
-<div class="lightbox no-print" id="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img crossorigin="anonymous" id="lightbox-img" src="" alt="Zoom" />
-    <div class="lightbox-caption" id="lightbox-caption"></div>
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
 </div>
 
-<!-- Video Modal -->
-<div class="video-modal no-print" id="video-modal">
-    <span class="video-close" onclick="closeVideo()">&times;</span>
-    <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+<!-- Edit Inline Feature -->
+<button class="edit-fab" onclick="openEditModal()" title="Sửa phân loại">✎</button>
+
+<div id="editModalBackdrop" class="edit-modal-backdrop" onclick="closeEditModal()">
+    <div class="edit-modal" onclick="event.stopPropagation()">
+        <div class="edit-modal-head">
+            <h3>✎ Sửa Phân Loại</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="edit-modal-body">
+            <div id="editStatus" class="edit-status"></div>
+
+            <div class="edit-field">
+                <label>Ngành nghề</label>
+                <select id="editIndustry">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="ky-thuat-quay">🎯 Bố cục / Kỹ Thuật Quay Dựng</option>
+                    <option value="thuong-hieu">💼 Xây kênh / Thương Hiệu Cá Nhân</option>
+                    <option value="kien-truc">🏛️ Góc nhà đẹp / Kiến Trúc & Không Gian</option>
+                    <option value="am-thuc">🍜 F&B / Ẩm Thực & Cafe</option>
+                    <option value="thoi-trang">👔 Thời trang & Phụ Kiện</option>
+                    <option value="spa-lam-dep">💆 Làm đẹp / Spa & Y Tế</option>
+                    <option value="du-lich">✈️ Du lịch / Phong Cách Sống</option>
+                    <option value="cong-nghe">📱 Đồ công nghệ & Thiết Bị</option>
+                    <option value="the-thao">🏃 Thể thao & Sức Khỏe</option>
+                    <option value="ugc">📱 UGC / E-Commerce & Bán Hàng</option>
+                </select>
+                <input type="text" id="editIndustryCustom" placeholder="Hoặc gõ ngành tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Kiểu quay / Phong cách</label>
+                <select id="editStyle">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="dien-anh">🎬 Chỉn Chu (B-Roll Thuần Hình / Cinematic)</option>
+                    <option value="talking-head">🗣️ Nói Trực Diện (Talking Head)</option>
+                    <option value="walk-and-talk">🚶 Walk & Talk (Vừa đi vừa nói)</option>
+                    <option value="voice-over">🎙️ Lồng Tiếng (Voice Over)</option>
+                    <option value="storytelling">📖 Kể Chuyện / Đời Thường (Storytelling)</option>
+                    <option value="chuyen-canh">⚡ Chuyển Cảnh (Transition / Montage)</option>
+                    <option value="bts">🎥 BTS / Setup Hậu Trường</option>
+                    <option value="theo-nhip-nhac">🎵 Theo nhịp nhạc</option>
+                </select>
+                <input type="text" id="editStyleCustom" placeholder="Hoặc gõ kiểu quay tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Tags kỹ thuật (phân tách bằng dấu phẩy)</label>
+                <textarea id="editTags" placeholder="VD: B-Roll Practice, Góc máy cận cảnh, Chuyển cảnh"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Mục đích / Tóm tắt (Purpose)</label>
+                <textarea id="editPurpose"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Bài học rút gọn (Quick Takeaway)</label>
+                <textarea id="editTakeaway"></textarea>
+            </div>
+
+            <div class="edit-field edit-pw-field">
+                <label>Mật khẩu</label>
+                <input type="password" id="editPassword" value="0070" placeholder="••••" autocomplete="off">
+            </div>
+        </div>
+        <div class="edit-modal-footer">
+            <button class="edit-cancel-btn" onclick="closeEditModal()">Hủy</button>
+            <button class="edit-save-btn" id="editSaveBtn" onclick="saveEdit()">Lưu thay đổi</button>
+        </div>
+    </div>
 </div>
 
 <script>
-function openLightbox(src, caption) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox-caption').innerText = caption;
-    document.getElementById('lightbox').classList.add('active');
+// Video source resolution - try multiple paths
+const rawVideoSrc = 'https://media.fedu.vn/videos/The_Next_Station_Is_Vietnam%20-%20@madisonkjan.mp4';
+let currentEndTime = null;
+
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
 }
 
-function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+window.isYtMuted = false;
+
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
+    player.load();
 }
 
-function jumpToVideo(sec) {
-    const modal = document.getElementById('video-modal');
-    const vid = document.getElementById('player');
-    modal.classList.add('active');
-    vid.currentTime = sec;
-    vid.play();
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
 }
 
-function closeVideo() {
-    const modal = document.getElementById('video-modal');
-    const vid = document.getElementById('player');
-    vid.pause();
-    modal.classList.remove('active');
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
+        }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
+    }
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
+    }
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
+    } else {
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
+        }
+    }
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
+    }
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function setSpeed(speed, btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+}
+
+function stepFrame(frames) {
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
+}
+
+function toggleMute(btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
+}
+
+function togglePlayerFullscreen() {
+    var v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
 }
 
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeLightbox();
-        closeVideo();
-    }
-});
-
-function togglePlayerFullscreen() {
-    const v = document.getElementById('mainPlayer');
-    if (!v) return;
-    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        if (v.requestFullscreen) {
-            v.requestFullscreen().catch(() => {});
-        } else if (v.webkitRequestFullscreen) {
-            v.webkitRequestFullscreen();
-        } else if (v.webkitEnterFullscreen) {
-            v.webkitEnterFullscreen();
-        }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        }
-    }
-}
-
-document.addEventListener('keydown', (e) => {
     if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
         togglePlayerFullscreen();
     }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
 });
 
-</script>
+function switchView(view) {
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
+    }
+}
 
+function toggleDrawer(open) {
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function openLightbox(src, caption) {
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
+
+// === EDIT INLINE FEATURE ===
+var ENTRY_KEY = 'The_Next_Station_Is_Vietnam - @madisonkjan';
+var CLASSIFICATION_DATA = {};
+
+function openEditModal() {
+    var d = CLASSIFICATION_DATA || {};
+    var indSel = document.getElementById('editIndustry');
+    var indCust = document.getElementById('editIndustryCustom');
+    var stySel = document.getElementById('editStyle');
+    var styCust = document.getElementById('editStyleCustom');
+    
+    // Pre-fill industry (support both id and name)
+    var indId = (d.industry && d.industry.id) ? d.industry.id : '';
+    var indName = (d.industry && d.industry.name) ? d.industry.name : '';
+    indSel.value = '';
+    indCust.value = '';
+    for (var i = 0; i < indSel.options.length; i++) {
+        if (indSel.options[i].value === indId || indSel.options[i].value === indName) {
+            indSel.value = indSel.options[i].value;
+            break;
+        }
+    }
+    if (!indSel.value && indName) indCust.value = indName;
+
+    // Pre-fill style (support both id and name)
+    var styId = (d.shooting_style && d.shooting_style.id) ? d.shooting_style.id : '';
+    var styName = (d.shooting_style && d.shooting_style.name) ? d.shooting_style.name : '';
+    stySel.value = '';
+    styCust.value = '';
+    for (var j = 0; j < stySel.options.length; j++) {
+        if (stySel.options[j].value === styId || stySel.options[j].value === styName) {
+            stySel.value = stySel.options[j].value;
+            break;
+        }
+    }
+    if (!stySel.value && styName) styCust.value = styName;
+
+    // Pre-fill tags
+    document.getElementById('editTags').value = (d.tags || d.tech_tags || []).join(', ');
+    document.getElementById('editPurpose').value = d.purpose || d.logic_explanation || '';
+    document.getElementById('editTakeaway').value = d.quick_takeaway || '';
+    var pwEl = document.getElementById('editPassword');
+    if (pwEl && !pwEl.value) pwEl.value = '0070';
+
+    // Reset status
+    var st = document.getElementById('editStatus');
+    st.className = 'edit-status';
+    st.style.display = 'none';
+    document.getElementById('editSaveBtn').disabled = false;
+    document.getElementById('editSaveBtn').textContent = 'Lưu thay đổi';
+
+    document.getElementById('editModalBackdrop').classList.add('open');
+}
+
+function closeEditModal() {
+    document.getElementById('editModalBackdrop').classList.remove('open');
+}
+
+function saveEdit() {
+    var btn = document.getElementById('editSaveBtn');
+    var st = document.getElementById('editStatus');
+    var pw = document.getElementById('editPassword').value || '0070';
+
+    // Collect values
+    var indSel = document.getElementById('editIndustry').value;
+    var indCust = document.getElementById('editIndustryCustom').value.trim();
+    var industry = indCust || indSel || null;
+
+    var stySel = document.getElementById('editStyle').value;
+    var styCust = document.getElementById('editStyleCustom').value.trim();
+    var style = styCust || stySel || null;
+
+    var tags = document.getElementById('editTags').value;
+    var purpose = document.getElementById('editPurpose').value;
+    var takeaway = document.getElementById('editTakeaway').value;
+
+    var updates = {};
+    if (industry) updates.industry = industry;
+    if (style) updates.shooting_style = style;
+    if (tags) updates.tech_tags = tags;
+    if (purpose) updates.purpose = purpose;
+    if (takeaway) updates.quick_takeaway = takeaway;
+
+    if (Object.keys(updates).length === 0) {
+        st.className = 'edit-status error';
+        st.textContent = 'Chưa có thay đổi nào.';
+        st.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang lưu...';
+    st.style.display = 'none';
+
+    var payload = JSON.stringify({
+        password: pw,
+        entryKey: ENTRY_KEY,
+        updates: updates
+    });
+
+    function handleSuccess(data) {
+        st.className = 'edit-status success';
+        st.textContent = '✅ Đã lưu & Tự học thành công! (' + (data.commit || 'synced') + ')';
+        st.style.display = 'block';
+        btn.textContent = '✅ Đã lưu';
+
+        if (data.updatedEntry) {
+            CLASSIFICATION_DATA = data.updatedEntry;
+        }
+        var badges = document.querySelector('.header-badges');
+        if (badges && (updates.industry || updates.shooting_style)) {
+            var html = '';
+            var ind = (CLASSIFICATION_DATA.industry && CLASSIFICATION_DATA.industry.name) || updates.industry || '';
+            var sty = (CLASSIFICATION_DATA.shooting_style && CLASSIFICATION_DATA.shooting_style.name) || updates.shooting_style || '';
+            if (ind) html += '<span class="badge">' + ind + '</span> ';
+            if (sty) html += '<span class="badge badge-alt">' + sty + '</span>';
+            badges.innerHTML = html;
+        }
+    }
+
+    fetch('/api/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+    })
+    .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+    .then(function(result) {
+        if (result.ok && result.data.success) {
+            handleSuccess(result.data);
+        } else {
+            return fetch('https://file.fedu.vn/api/edit-classification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
+            .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+            .then(function(res2) {
+                if (res2.ok && res2.data.success) {
+                    handleSuccess(res2.data);
+                } else {
+                    st.className = 'edit-status error';
+                    st.textContent = '❌ ' + ((res2.data && res2.data.error) || (result.data && result.data.error) || 'Lỗi không xác định');
+                    st.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Lưu thay đổi';
+                }
+            });
+        }
+    })
+    .catch(function(err) {
+        fetch('https://file.fedu.vn/api/edit-classification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+        })
+        .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+        .then(function(res2) {
+            if (res2.ok && res2.data.success) {
+                handleSuccess(res2.data);
+            } else {
+                st.className = 'edit-status error';
+                st.textContent = '❌ Lỗi mạng: ' + err.message;
+                st.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Lưu thay đổi';
+            }
+        })
+        .catch(function(err2) {
+            st.className = 'edit-status error';
+            st.textContent = '❌ Lỗi mạng: ' + err2.message;
+            st.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Lưu thay đổi';
+        });
+    });
+}
+
+// Đóng modal khi bấm Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeEditModal();
+});
+</script>
 </body>
 </html>

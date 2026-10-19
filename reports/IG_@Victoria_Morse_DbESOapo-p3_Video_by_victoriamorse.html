@@ -1,1088 +1,1855 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>The Art of Authentic Voiceover Storytelling — @victoriamorse</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg-main: #ffffff;
-  --bg-sub: #f8fafc;
-  --bg-card: #ffffff;
-  --border: #e2e8f0;
-  --border-active: #2563eb;
-  --text-title: #0f172a;
-  --text-body: #334155;
-  --text-muted: #64748b;
-  --accent: #2563eb;
-  --accent-light: #eff6ff;
-  --accent-tint: rgba(37, 99, 235, 0.08);
-  --emerald: #059669;
-  --emerald-bg: #f0fdf4;
-  --amber: #d97706;
-  --amber-bg: #fffbeb;
-  --font-h: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  --font-b: 'Be Vietnam Pro', -apple-system, sans-serif;
-  --font-m: 'JetBrains Mono', monospace;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-body {
-  background: var(--bg-sub);
-  color: var(--text-body);
-  font-family: var(--font-b);
-  font-size: 14px;
-  line-height: 1.55;
-}
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-@media (min-width: 1024px) {
-  .layout {
-    display: grid;
-    grid-template-columns: 430px 1fr;
-    height: 100vh;
-    overflow: hidden;
-  }
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Authentic Voiceover Storytelling — @victoriamorse</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-/* LEFT COLUMN: STICKY PLAYER */
-.player-col {
-  background: #000;
-  border-right: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 1024px) {
-  .player-col {
-    height: 100vh;
-    overflow-y: auto;
-  }
-}
-.video-box {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9/16;
-  max-height: 46vh;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (min-width: 1024px) {
-  .video-box {
-    max-height: none;
-    width: 100%;
-    flex: 1;
-  }
-}
-video#mainVid {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.director-bar {
-  background: #0f172a;
-  color: #fff;
-  padding: 10px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  font-family: var(--font-m);
-  font-size: 11px;
-}
-.dir-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-}
-.btn-c {
-  background: #1e293b;
-  border: 1px solid #334155;
-  color: #cbd5e1;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 11px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: all 0.15s;
-}
-.btn-c:hover { background: #334155; color: #fff; }
-.btn-c.active {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  font-weight: 700;
-}
-.time-pill {
-  background: #1e293b;
-  padding: 3px 8px;
-  border-radius: 4px;
-  color: #38bdf8;
-  font-weight: 600;
-  font-size: 11.5px;
-}
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-/* RIGHT COLUMN: CONTENT */
-.content-col {
-  background: var(--bg-sub);
-  padding: 14px;
-  overflow-y: auto;
-}
-@media (min-width: 768px) {
-  .content-col {
-    padding: 22px 28px;
-  }
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* HERO CARD */
-.hero-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 18px 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 99px;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-.hero-title {
-  font-family: var(--font-h);
-  font-size: 21px;
-  font-weight: 800;
-  color: var(--text-title);
-  line-height: 1.3;
-  margin-bottom: 5px;
-}
-.hero-creator {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  margin-bottom: 14px;
-}
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 8px;
-  margin-bottom: 14px;
-}
-.stat-box {
-  background: var(--bg-sub);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 10px;
-  text-align: center;
-}
-.stat-val {
-  font-family: var(--font-h);
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--accent);
-}
-.stat-lbl {
-  font-size: 10px;
-  color: var(--text-muted);
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-.director-rules {
-  background: #fffbeb;
-  border-left: 3px solid #f59e0b;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 12.5px;
-  color: #92400e;
-  line-height: 1.5;
-}
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
 
-/* SECTION TABS NAV */
-.nav-tabs {
-  display: flex;
-  gap: 4px;
-  background: #e2e8f0;
-  padding: 4px;
-  border-radius: 9px;
-  margin-bottom: 16px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-.nav-tab-btn {
-  flex: 1;
-  background: transparent;
-  border: none;
-  padding: 8px 12px;
-  font-size: 12.5px;
-  font-weight: 700;
-  font-family: var(--font-h);
-  color: var(--text-muted);
-  border-radius: 7px;
-  cursor: pointer;
-  transition: all 0.15s;
-  text-align: center;
-  white-space: nowrap;
-}
-.nav-tab-btn.active {
-  background: #fff;
-  color: var(--text-title);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
+        a { text-decoration: none; color: inherit; }
 
-/* SECTION COMMON */
-.sec-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px 20px;
-  margin-bottom: 18px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-}
-.sec-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.sec-title {
-  font-family: var(--font-h);
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--text-title);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
 
-/* ═══ 1. BẢNG ĐẾM CẢNH (SCENE COUNTER TABLE) ═══ */
-.filter-pills {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  background: var(--bg-sub);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  font-size: 11.5px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 99px;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.filter-btn:hover {
-  background: #e2e8f0;
-  color: var(--text-title);
-}
-.filter-btn.active {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-.scene-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.scene-row {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 12px;
-  display: grid;
-  grid-template-columns: 46px 64px 54px 1fr;
-  gap: 12px;
-  align-items: center;
-  transition: all 0.15s;
-  cursor: pointer;
-}
-@media (max-width: 640px) {
-  .scene-row {
-    grid-template-columns: 42px 50px 1fr;
-    gap: 8px;
-  }
-  .scene-dur-col {
-    display: none;
-  }
-}
-.scene-row:hover {
-  border-color: #93c5fd;
-  background: #fafcff;
-}
-.scene-row.active-scene {
-  border-color: var(--accent);
-  background: var(--accent-light);
-  box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
-}
-.scene-num-badge {
-  background: var(--text-title);
-  color: #fff;
-  font-family: var(--font-m);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 6px;
-  border-radius: 6px;
-  text-align: center;
-}
-.scene-dur-col {
-  font-family: var(--font-m);
-  font-size: 10.5px;
-  color: var(--accent);
-  font-weight: 600;
-  text-align: center;
-  white-space: nowrap;
-}
-.scene-thumb-wrap {
-  position: relative;
-  width: 52px;
-  aspect-ratio: 9/16;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #000;
-  border: 1px solid var(--border);
-  flex-shrink: 0;
-}
-.scene-thumb-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.scene-desc-col {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
-}
-.scene-headline {
-  font-family: var(--font-h);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text-title);
-  line-height: 1.35;
-}
-.scene-action {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-.scene-vo-line {
-  font-size: 11.5px;
-  color: var(--accent);
-  font-style: italic;
-  margin-top: 2px;
-}
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
 
-/* ═══ 2. KỊCH BẢN NÓI (VOICE-OVER SCRIPT) ═══ */
-.vo-phase-box {
-  margin-bottom: 20px;
-}
-.phase-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: var(--font-h);
-  font-size: 12px;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-.phase-kicker.hook { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
-.phase-kicker.story { background: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
-.phase-kicker.takeaway { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
 
-.vo-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12.5px;
-  margin-bottom: 8px;
-}
-.vo-table th {
-  background: var(--bg-sub);
-  padding: 7px 10px;
-  text-align: left;
-  font-family: var(--font-h);
-  font-weight: 700;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-title);
-  font-size: 11.5px;
-}
-.vo-table td {
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--border);
-  vertical-align: top;
-}
-.vo-table tr:hover {
-  background: var(--accent-light);
-}
-.vo-time-btn {
-  background: #fff;
-  border: 1px solid var(--border);
-  font-family: var(--font-m);
-  font-size: 10px;
-  color: var(--accent);
-  font-weight: 700;
-  padding: 3px 6px;
-  border-radius: 4px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.vo-time-btn:hover {
-  background: var(--accent);
-  color: #fff;
-}
-.vo-vi-text {
-  font-weight: 600;
-  color: var(--text-title);
-  line-height: 1.5;
-}
-.vo-en-text {
-  color: var(--text-muted);
-  font-size: 11px;
-  font-style: italic;
-  margin-top: 3px;
-}
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
 
-/* ═══ 3. MEGAPROMPT LÀM LẠI KỊCH BẢN ═══ */
-.prompt-container {
-  background: #0f172a;
-  color: #f8fafc;
-  border-radius: 10px;
-  padding: 16px;
-  position: relative;
-  font-family: var(--font-m);
-  font-size: 11.5px;
-  line-height: 1.6;
-  overflow-x: auto;
-  margin-bottom: 16px;
-}
-.copy-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-family: var(--font-h);
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.15s;
-}
-.copy-btn:hover { background: #1d4ed8; }
-.copy-toast {
-  display: none;
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: #059669;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 13px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 9999;
-}
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.example-card {
-  background: var(--bg-sub);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 14px;
-  margin-bottom: 10px;
-}
-.example-head {
-  font-family: var(--font-h);
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--text-title);
-  margin-bottom: 4px;
-}
-.example-body {
-  font-size: 12px;
-  color: var(--text-body);
-  line-height: 1.5;
-}
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-/* LIGHTBOX */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.92);
-  z-index: 2000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  flex-direction: column;
-}
-.lightbox.open { display: flex; }
-.lightbox-img {
-  max-width: 90vw;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 6px;
-}
-.lightbox-cap {
-  color: #fff;
-  margin-top: 8px;
-  font-size: 12px;
-  text-align: center;
-  max-width: 500px;
-}
-.lightbox-close {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  color: #fff;
-  font-size: 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
 
-.player-box { position: relative !important; }
-.player-box video { cursor: pointer; }
-.player-fs-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    display: inline-flex;
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
+
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
+
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
+
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
+
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
+
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
+
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
+
+        .meta-dot {
+            opacity: 0.5;
+        }
+
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
+
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
+
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
+
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
+
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
+
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
+
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
+
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
+
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
+
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
+
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
+
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
+
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
+
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
+
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
+
+
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+/* === EDIT INLINE FEATURE === */
+.edit-fab {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--cl-radius-full);
+    background: var(--cl-card);
+    border: 1px solid var(--cl-line-strong);
+    display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-family: var(--font-ui, sans-serif);
-    font-size: 11.5px;
-    font-weight: 600;
+    justify-content: center;
     cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.2s ease;
+    font-size: 18px;
+    transition: all 0.2s var(--apple-ease);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.player-fs-btn:hover {
-    background: #1a73e8;
-    border-color: #1a73e8;
-    transform: scale(1.04);
-}
-.fs-ctrl-btn {
-    background: #fffbeb !important;
-    color: #b45309 !important;
-    border-color: #fef3c7 !important;
-    font-weight: 700 !important;
-}
-.fs-ctrl-btn:hover {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border-color: #fcd34d !important;
+.edit-fab:hover {
+    border-color: var(--cl-accent);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.15);
+    transform: scale(1.05);
 }
 
-</style>
-<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+.edit-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 300;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
+}
+.edit-modal-backdrop.open {
+    display: flex;
+}
+
+.edit-modal {
+    background: var(--cl-card);
+    border-radius: var(--cl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: editSlideIn 0.3s var(--apple-spring);
+}
+
+@keyframes editSlideIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.edit-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cl-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit-modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cl-text-base);
+    margin: 0;
+}
+.edit-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--cl-text-muted);
+    line-height: 1;
+}
+
+.edit-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.edit-field label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-muted);
+}
+.edit-field select,
+.edit-field input,
+.edit-field textarea {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-sm);
+    background: var(--cl-card);
+    color: var(--cl-text-body);
+    transition: border-color 0.2s;
+    width: 100%;
+}
+.edit-field select:focus,
+.edit-field input:focus,
+.edit-field textarea:focus {
+    outline: none;
+    border-color: var(--cl-accent);
+    box-shadow: 0 0 0 3px var(--cl-accent-tint);
+}
+.edit-field textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+.edit-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-save-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--cl-accent);
+    color: white;
+    border: none;
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-save-btn:hover { opacity: 0.9; }
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edit-cancel-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--cl-text-muted);
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+}
+
+.edit-status {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: var(--cl-radius-sm);
+    display: none;
+}
+.edit-status.success {
+    display: block;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.edit-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.edit-pw-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.edit-pw-field label { min-width: fit-content; }
+.edit-pw-field input {
+    max-width: 120px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 1024px) {
+    .edit-fab {
+        top: auto;
+        bottom: 20px;
+        right: 16px;
+    }
+}
+    </style>
 </head>
 <body>
-<div class="layout">
-  <!-- LEFT: STICKY DIRECTOR PLAYER -->
-  <aside class="player-col">
-    <div class="video-box">
-      <iframe id="mainPlayer" src="https://www.youtube.com/embed/OwXUkepRWyA?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
+
+<div class="app-container">
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/OwXUkepRWyA?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
+        </div>
+        <div class="video-controls">
+            <div class="speed-row">
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
+            </div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
+            </div>
+            <div id="shotStatusTag">Sẵn sàng</div>
+        </div>
     </div>
-    <div class="director-bar">
-      <div class="dir-row">
-        <button class="btn-c" onclick="togglePlay()" id="playBtn">▶ Phát</button>
-        <span class="time-pill" id="curTime">00:00.00 / 61.53s</span>
-        <button class="btn-c" onclick="toggleLoop()" id="loopBtn">🔁 Lặp: Tắt</button>
-      </div>
-      <div class="dir-row">
-        <span>Tốc độ:</span>
-        <div style="display:flex; gap:3px;">
-          <button class="btn-c" onclick="setSpeed(0.25)">0.25x</button>
-          <button class="btn-c" onclick="setSpeed(0.5)">0.5x</button>
-          <button class="btn-c active" onclick="setSpeed(1.0)">1x</button>
-          <button class="btn-c" onclick="setSpeed(1.25)">1.25x</button>
+
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">Bố cục</span> <span class="badge badge-alt">Lồng Tiếng</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/reel/DbESOapo-p3/" target="_blank" rel="noopener">The Art of Authentic Voiceover Storytelling — @victoriamorse</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/victoriamorse/" target="_blank" class="creator-link">@victoriamorse ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">1 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">5.00s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
+            </div>
+        </header>
+
+        
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">[Giai đoạn 1 • Mở màn (Hook): The Art of Authentic Voiceover Storytelling — @victoriamorse] ➔ [Giai đoạn 2 • Triển khai &amp; Giữ nhịp: Chuỗi 1 nhịp cắt đan xen đa cỡ cảnh] ➔ [Giai đoạn 3 • Điểm rơi &amp; Chốt thông điệp: The Art of Authentic Voiceover Storytelling — @victoriamorse]</div>
+        </section>
+
+        <div class="overview-card">
+            Cấu trúc Voice-Over &amp; Thao Tác Tay Nghề chuẩn mực gồm 1 cảnh trong 148.0s: Hình ảnh đối âm giàu tính điện ảnh, thiết kế âm thanh đa lớp (ASMR + BGM). Rất dễ áp dụng làm mẫu luyện tập cho ngành Bố cục.
         </div>
-        <div style="display:flex; gap:3px;">
-          <button class="btn-c" onclick="stepFrame(-1)">◀ Frame</button>
-          <button class="btn-c" onclick="stepFrame(1)">Frame ▶</button>
+
+        
+
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (1)</button>
+            </div>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
         </div>
-      </div>
+
+        <div id="storyboardView">
+            
+        <div class="shot-card" id="shot-card-1">
+            <div class="shot-thumb" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+                <img src="https://media.fedu.vn/images/IG_%40Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 5.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">5.00s</span>
+                </div>
+                <h4 class="shot-headline">The Art of Authentic Voiceover Storytelling — @victoriamorse</h4>
+                <p class="shot-insight">Tác phẩm điện ảnh ngắn gồm 74 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Lồng Tiếng</span></div>
+                        
+                        
+                    </div>
+                    <div class="critique-good">Tác phẩm điện ảnh ngắn gồm 74 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.</div>
+                    
+                    <div class="shot-narrative">Voice over</div>
+                </details>
+            </div>
+        </div>
+        </div>
+
+        <div id="gridView">
+            
+        <div class="grid-item" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_%40Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 5.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_01_mid.webp', 'SHOT 01 • The Art of Authentic Voiceover Storytelling — @victoriamorse')">⊕</button>
+            </div>
+            <div class="grid-title">The Art of Authentic Voiceover Storytell</div>
+        </div>
+        </div>
     </div>
-  </aside>
-
-  <!-- RIGHT: MAIN CONTENT -->
-  <main class="content-col">
-    <!-- HERO SUMMARY -->
-    <header class="hero-card">
-      <span class="hero-badge">🎬 Báo Cáo Phân Tích Kịch Bản &amp; Đếm Cảnh</span>
-      <h1 class="hero-title">The Art of Authentic Voiceover Storytelling</h1>
-      <p class="hero-creator">Đạo diễn: <strong>Victoria Morse (@victoriamorse)</strong> • Cựu Đạo Diễn Phim Quảng Cáo Thương Mại</p>
-      <div class="hero-stats">
-        <div class="stat-box"><div class="stat-val">69</div><div class="stat-lbl">Phân Cảnh</div></div>
-        <div class="stat-box"><div class="stat-val">61.53s</div><div class="stat-lbl">Thời Lượng</div></div>
-        <div class="stat-box"><div class="stat-val">0.89s</div><div class="stat-lbl">Nhịp Cắt TB</div></div>
-        <div class="stat-box"><div class="stat-val">Voice-Over</div><div class="stat-lbl">Chiến Lược</div></div>
-      </div>
-      <div class="director-rules">
-        <strong>💡 Triết lý kể chuyện Voice-Over từ Victoria Morse:</strong><br>
-        1. <strong>Voice-Over First:</strong> Thu âm giọng dẫn trước khi bấm nhát cắt dựng đầu tiên để định hình nhịp thở.<br>
-        2. <strong>Kịch bản là Nhật Ký:</strong> Viết tự nhiên như một mẩu voice note gửi bạn thân, không gò ép văn mẫu quảng cáo.<br>
-        3. <strong>Bản sắc con người:</strong> AI có thể tóm tắt lịch trình, nhưng không thể cảm nhận vì sao buổi sáng đó lại có ý nghĩa với bạn.<br>
-        4. <strong>Công thức 3 phần:</strong> Cú móc (Hook: 0-8s) ➔ Thân bài (Story: 9-41s) ➔ Đọng lại (Takeaway: 42-61s).
-      </div>
-    </header>
-
-    <!-- NAVIGATION TABS -->
-    <nav class="nav-tabs">
-      <button class="nav-tab-btn active" onclick="switchSection('scene-section')" id="tabBtnScene">🎬 1. Đếm Cảnh (69 Cảnh)</button>
-      <button class="nav-tab-btn" onclick="switchSection('vo-section')" id="tabBtnVo">🎙️ 2. Kịch Bản Nói</button>
-      <button class="nav-tab-btn" onclick="switchSection('prompt-section')" id="tabBtnPrompt">🪄 3. Megaprompt Làm Lại</button>
-    </nav>
-
-    <!-- ═══ PHẦN 1: BẢNG ĐẾM CẢNH (SCENE COUNTER) ═══ -->
-    <section id="scene-section" class="sec-card">
-      <div class="sec-header">
-        <h2 class="sec-title">🎬 Bảng Đếm Cảnh &amp; Nhịp Dựng B-Roll</h2>
-        <div class="filter-pills">
-          <button class="filter-btn active" onclick="filterShots('all')">Tất cả (69)</button>
-          <button class="filter-btn" onclick="filterShots('hook')">Hook (Cảnh 1-10)</button>
-          <button class="filter-btn" onclick="filterShots('story')">Story (Cảnh 11-41)</button>
-          <button class="filter-btn" onclick="filterShots('takeaway')">Takeaway (Cảnh 42-69)</button>
-        </div>
-      </div>
-      <p style="font-size:12.5px;color:var(--text-muted);margin-bottom:12px;">
-        💡 <em>Mỗi cảnh chỉ giữ 1 thumbnail đại diện duy nhất (chống trùng lặp ảnh). Nhấn vào bất kỳ cảnh nào để video tự động nhảy đến đúng thời điểm đó.</em>
-      </p>
-      <div class="scene-list" id="sceneList">
-        <!-- Rendered by JavaScript -->
-      </div>
-    </section>
-
-    <!-- ═══ PHẦN 2: KỊCH BẢN NÓI (VOICE-OVER MASTER SCRIPT) ═══ -->
-    <section id="vo-section" class="sec-card" style="display:none;">
-      <div class="sec-header">
-        <h2 class="sec-title">🎙️ Kịch Bản Lời Thoại Song Ngữ Chuẩn 3 Phần</h2>
-        <span style="font-size:12px;color:var(--text-muted);font-weight:600;">12 Khối Thoại • 61.53 Giây</span>
-      </div>
-
-      <!-- HOOK -->
-      <div class="vo-phase-box">
-        <span class="phase-kicker hook">PHẦN 1: THE HOOK (0.0s – 7.8s) — Mở màn bằng bài học xương máu</span>
-        <table class="vo-table">
-          <thead><tr><th style="width:75px;">Thời gian</th><th>Kịch bản nói (Bản dịch Tiếng Việt mộc mạc)</th><th style="width:38%;">Nguyên văn Tiếng Anh</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(0.0, 3.4)">▶ 0.0-3.4s</button></td>
-              <td><div class="vo-vi-text">Tôi kể chuyện hay hơn hẳn sau những năm tháng làm đạo diễn quảng cáo chuyên nghiệp.</div></td>
-              <td><div class="vo-en-text">I became a better storyteller after directing commercials for a living.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(3.4, 7.8)">▶ 3.4-7.8s</button></td>
-              <td><div class="vo-vi-text">Kể chuyện không phải là cố viết cho thật bóng bẩy, mà là làm sao để chạm được vào cảm xúc người nghe.</div></td>
-              <td><div class="vo-en-text">Storytelling isn't about being the best writer, it's about making people feel something.</div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- STORY -->
-      <div class="vo-phase-box">
-        <span class="phase-kicker story">PHẦN 2: THE STORY (7.8s – 41.8s) — Tự sự nhật ký &amp; Bản sắc độc bản AI không sao chép được</span>
-        <table class="vo-table">
-          <thead><tr><th style="width:75px;">Thời gian</th><th>Kịch bản nói (Bản dịch Tiếng Việt mộc mạc)</th><th style="width:38%;">Nguyên văn Tiếng Anh</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(7.8, 13.1)">▶ 7.8-13.1s</button></td>
-              <td><div class="vo-vi-text">Tôi luôn khuyên bạn hãy phát triển câu chuyện thật kỹ trước khi mở phần mềm lên bấm nhát cắt đầu tiên.</div></td>
-              <td><div class="vo-en-text">I recommend developing your story before you even start editing.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(13.1, 16.6)">▶ 13.1-16.6s</button></td>
-              <td><div class="vo-vi-text">Tôi luôn thu âm Voice-Over trước tiên, vì nó chính là chiếc móng vững chắc cho mọi thứ còn lại.</div></td>
-              <td><div class="vo-en-text">I always record my voice-overs first because it sets the foundation for everything else.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(16.6, 19.7)">▶ 16.6-19.7s</button></td>
-              <td><div class="vo-vi-text">Mọi bộ phim vĩ đại, chương trình truyền hình hay thước phim quảng cáo đều luôn bắt đầu từ một kịch bản chỉn chu.</div></td>
-              <td><div class="vo-en-text">Every great movie, TV show, or commercial starts with a script.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(19.7, 23.0)">▶ 19.7-23.0s</button></td>
-              <td><div class="vo-vi-text">Nhưng thay vì xem nó như một kịch bản gò bó, hãy nghĩ về nó như một trang nhật ký đời thường.</div></td>
-              <td><div class="vo-en-text">But instead of thinking of it as a script, think of it as a diary entry.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(23.0, 26.7)">▶ 23.0-26.7s</button></td>
-              <td><div class="vo-vi-text">Đúng là AI giúp bạn sắp xếp ý tứ rất nhanh, nhưng nó không bao giờ có thể kể được câu chuyện của chính bạn.</div></td>
-              <td><div class="vo-en-text">Yes, AI can help you organize your thoughts, but it can't tell your story.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(26.7, 34.6)">▶ 26.7-34.6s</button></td>
-              <td><div class="vo-vi-text">Claude hay ChatGPT có thể mô tả vanh vách lịch trình buổi sáng của tôi, nhưng nó không bao giờ hiểu được vì sao buổi sáng hôm đó lại có ý nghĩa với tôi, trong đầu tôi trăn trở điều gì, hay cảm xúc bên trong tôi xáo trộn ra sao.</div></td>
-              <td><div class="vo-en-text">Claude can tell my routine, but not why that morning mattered, what was on my mind, or how I was feeling.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(34.6, 41.8)">▶ 34.6-41.8s</button></td>
-              <td><div class="vo-vi-text">Bản chất mạng xã hội sinh ra là để con người kết nối với nhau. Và sự chân thật độc bản của bạn chính là thứ duy nhất không một ai, không một thuật toán nào có thể sao chép được.</div></td>
-              <td><div class="vo-en-text">Social media is for connection and authenticity is the one thing no one can copy.</div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- TAKEAWAY -->
-      <div class="vo-phase-box">
-        <span class="phase-kicker takeaway">PHẦN 3: THE TAKEAWAY (41.8s – 61.5s) — Công thức 3 câu hỏi &amp; Dư vị cảm xúc</span>
-        <table class="vo-table">
-          <thead><tr><th style="width:75px;">Thời gian</th><th>Kịch bản nói (Bản dịch Tiếng Việt mộc mạc)</th><th style="width:38%;">Nguyên văn Tiếng Anh</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(41.8, 54.1)">▶ 41.8-54.1s</button></td>
-              <td><div class="vo-vi-text">Nên lần tới khi ngồi vào bàn sáng tạo nội dung, hãy bắt đầu với 3 phần rõ ràng: 1. Cú móc (The Hook): Câu chuyện này nói về cái gì? 2. Thân bài (The Story): Hiện tại tôi đang học được bài học gì hay đang gặp thử thách nào? 3. Đọng lại (The Takeaway): Tôi thực sự am hiểu chuyên môn gì và người xem có thể soi chiếu lại bản thân thế nào?</div></td>
-              <td><div class="vo-en-text">Start with three parts: What is my story about (hook)? What am I learning or what is challenging me (story)? What am I an expert in or how can someone reflect on this (takeaway)?</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(54.1, 57.0)">▶ 54.1-57.0s</button></td>
-              <td><div class="vo-vi-text">Hãy viết kịch bản như thể bạn đang gõ tin nhắn cho một người bạn thân hay gửi một mẩu voice note ngắn ngủi.</div></td>
-              <td><div class="vo-en-text">Write it like you're texting a friend or leaving a voice note.</div></td>
-            </tr>
-            <tr>
-              <td><button class="vo-time-btn" onclick="jumpToTime(57.0, 61.5)">▶ 57.0-61.5s</button></td>
-              <td><div class="vo-vi-text">Người ta có thể quên những việc bạn làm trong ngày, nhưng họ sẽ nhớ mãi cảm xúc mà câu chuyện của bạn mang lại.</div></td>
-              <td><div class="vo-en-text">We won't remember what you did, but we'll remember how a story made us feel.</div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ═══ PHẦN 3: MEGAPROMPT LÀM LẠI KỊCH BẢN ═══ -->
-    <section id="prompt-section" class="sec-card" style="display:none;">
-      <div class="sec-header">
-        <h2 class="sec-title">🪄 Megaprompt Làm Lại Kịch Bản Thực Chiến (STU Remake)</h2>
-        <button class="copy-btn" onclick="copyMegaprompt()">📋 Sao chép Megaprompt</button>
-      </div>
-      <p style="font-size:12.5px;color:var(--text-muted);margin-bottom:12px;">
-        💡 <em>Sao chép toàn bộ Prompt dưới đây, dán vào Gemini / Claude / ChatGPT, điền thông tin ngành nghề của bạn để tạo kịch bản Voice-Over chuẩn phong cách Victoria Morse.</em>
-      </p>
-
-      <div class="prompt-container">
-        <pre id="promptCode" style="white-space:pre-wrap; font-family:var(--font-m);">
-[VAI TRÒ]:
-Bạn là Đạo diễn Biên kịch Video ngắn chuyên nghiệp theo phong cách "Authentic Voiceover & Visual Diary" của Victoria Morse. Bạn chuyên giúp các chuyên gia, chủ tiệm và người kinh doanh thực chiến chuyển thể trải nghiệm làm nghề thành kịch bản video 60 giây chạm cảm xúc, giữ chân người xem cao, không dùng từ ngữ sáo rỗng.
-
-[THÔNG TIN ĐẦU VÀO CỦA TÔI]:
-- Ngành nghề / Lĩnh vực: [ĐIỀN NGÀNH NGHỀ CỦA BẠN: Spa/Nội thất/Cafe/Thời trang/Nông sản...]
-- Sản phẩm / Dịch vụ cụ thể: [MÔ TẢ SẢN PHẨM HOẶC DỊCH VỤ CỦA BẠN]
-- Trải nghiệm / Bài học xương máu tôi nhận ra: [ĐIỀN 1 BÀI HỌC THẬT TỪ CÔNG VIỆC]
-- Khó khăn / Điều trăn trở gần đây: [ĐIỀN KHÓ KHĂN BẠN GẶP PHẢI]
-
-[CẤU TRÚC KỊCH BẢN BẮT BUỘC - 3 PHẦN]:
-
-1. THE HOOK (0s – 8s) — MỞ ĐẦU PHẢN TRỰC GIÁC:
-   - Đi thẳng vào bài học xương máu sau [X] năm làm nghề: "Tôi nhận ra điều này sau [X] năm làm nghề...".
-   - Tuyên ngôn chạm cảm xúc: Khẳng định làm nghề không phải là phô diễn kỹ xảo hay khoe khoang máy móc, mà là chạm vào cảm giác thật của khách hàng.
-   - Gợi ý B-roll (3-4 shot): Bàn làm việc, góc ánh sáng cửa sổ, cận cảnh công cụ làm nghề quen thuộc.
-
-2. THE STORY (8s – 42s) — TỰ SỰ NHẬT KÝ & BẢN SẮC ĐỘC BẢN:
-   - Viết như một trang nhật ký cá nhân (Diary Entry) hoặc voice note gửi bạn thân: nói về một buổi sáng chuẩn bị, một ca làm việc khó, một cảm giác trăn trở.
-   - So sánh với AI / máy móc: "AI có thể vẽ bản phối cảnh / tạo công thức / viết bài quảng cáo trong 10 giây, nhưng AI không thể cảm nhận được vì sao khoảnh khắc đó lại có ý nghĩa với khách hàng...".
-   - Khẳng định: Bản chất mạng xã hội là kết nối con người; sự chân thật và kinh nghiệm sống là thứ duy nhất thuật toán không sao chép được.
-   - Gợi ý B-roll (10-15 shot nhịp nhanh 0.8s-1.2s): Các thao tác tay đời thường, chi tiết sản phẩm thật, nến thơm, tách cafe, ngòi bút viết sổ, màn hình làm việc.
-
-3. THE TAKEAWAY (42s – 60s) — BÀI HỌC & CÂU CHỐT CẢM XÚC:
-   - Đúc kết công thức 3 câu hỏi cho người xem: 1. Cốt lõi của điều này là gì? 2. Bạn đang học được bài học gì từ khó khăn? 3. Giá trị thực tế người khác soi chiếu được là gì?
-   - Câu chốt cảm xúc (Emotional Punchline): "Người ta có thể quên những việc bạn làm trong ngày, nhưng họ sẽ nhớ mãi cảm xúc mà câu chuyện của bạn mang lại."
-   - Gợi ý B-roll (3-4 shot): Bàn tay gõ phím, ánh nắng cuối ngày, cử chỉ thư thái.
-
-[QUY TẮC NGÔN TỪ]:
-- Viết 100% bằng văn phong mộc mạc, gần gũi của người Việt làm nghề thực chiến.
-- TUYỆT ĐỐI KHÔNG dùng văn mẫu AI sáo rỗng: "đắm chìm", "nâng tầm", "tuyệt mỹ", "hãy cùng tôi", "tối ưu hóa vượt trội".
-- Ngắt câu ngắn gọn (mỗi câu không quá 15 từ) để khi thu âm đọc tự nhiên, êm tai.
-        </pre>
-      </div>
-
-      <h3 style="font-family:var(--font-h);font-size:14px;font-weight:800;color:var(--text-title);margin-bottom:10px;">
-        💡 3 Kịch Bản Mẫu Ánh Xạ Theo Đúng Cấu Trúc Này Cho Học Viên STU:
-      </h3>
-
-      <div class="example-card">
-        <div class="example-head">💆 Mẫu 1: Chủ Tiệm Spa &amp; Điều Trị Da Liễu</div>
-        <div class="example-body">
-          <strong>Hook (0-8s):</strong> "Tôi hiểu làn da hay hơn hẳn sau 6 năm tự tay nặn từng cồi mụn viêm cho khách. Chữa lành cho da không phải là bôi cả tá mỹ phẩm đắt tiền, mà là lắng nghe cơ thể đang muốn nói điều gì."<br>
-          <strong>Story (9-42s):</strong> "Trước khi kê bất kỳ liệu trình nào, tôi luôn ngồi hỏi khách về thói quen ăn ngủ và áp lực công việc. AI có thể phân tích ảnh chụp bề mặt da trong 3 giây, nhưng nó không biết vì sao tối hôm đó khách hàng lại khóc và mất ngủ. Sự thấu hiểu và đôi bàn tay chăm sóc là thứ không thuật toán nào thay thế được."<br>
-          <strong>Takeaway (43-60s):</strong> "Lần tới chăm sóc da, hãy tự hỏi: Da bạn đang thực sự thiếu ẩm hay đang kiệt sức? Khách hàng có thể quên tên hoạt chất, nhưng họ sẽ nhớ mãi cảm giác nhẹ nhõm khi bước ra khỏi phòng spa."
-        </div>
-      </div>
-
-      <div class="example-card">
-        <div class="example-head">🏡 Mẫu 2: Kiến Trúc Sư &amp; Thiết Kế Nội Thất</div>
-        <div class="example-body">
-          <strong>Hook (0-8s):</strong> "Tôi vẽ nhà đẹp hơn hẳn sau những lần ngồi lắng nghe tâm sự của các cặp vợ chồng trẻ. Kiến trúc không phải là vẽ cho thật lộng lẫy, mà là làm sao để mỗi khi trở về, họ thấy lòng mình bình yên."<br>
-          <strong>Story (9-42s):</strong> "Tôi luôn phác thảo thói quen sống trước khi bấm nhát chuột 3D đầu tiên. AI có thể render một căn phòng như tạp chí trong 10 giây, nhưng nó không hiểu vì sao người mẹ lại cần góc bếp nhìn thấy con đang chơi ngoài ban công. Sự chân thật trong từng góc sống là thứ không render nào sao chép được."<br>
-          <strong>Takeaway (43-60s):</strong> "Một ngôi nhà tốt bắt đầu từ 3 câu hỏi: Không gian này phục vụ ai? Thói quen nào cần được nâng đỡ? Và điều gì làm căn nhà ấm cúng? Người ta có thể quên màu sơn tường, nhưng sẽ nhớ mãi cảm giác ấm áp mỗi bữa cơm tối."
-        </div>
-      </div>
-
-      <div class="example-card">
-        <div class="example-head">☕ Mẫu 3: Chủ Quán Cafe &amp; F&amp;B Đời Thường</div>
-        <div class="example-body">
-          <strong>Hook (0-8s):</strong> "Tôi hiểu khách hàng hơn hẳn sau 4 năm đứng sau quầy pha chế mỗi sáng sớm. Một ly cafe ngon không phải là kỹ thuật latte art cầu kỳ, mà là đúng hương vị làm người ta thấy sẵn sàng cho một ngày mới."<br>
-          <strong>Story (9-42s):</strong> "Tôi luôn quan sát ánh mắt khách quen trước khi bắt đầu bấm máy xay. Công thức pha chế thì AI liệt kê ra cả trăm cách, nhưng AI không biết vì sao sáng nay vị khách bàn số 3 lại cần một ly ít đường và một góc ngồi thật yên lặng. Mạng xã hội là để kết nối; sự chăm chút mộc mạc chính là lý do khách quay lại."<br>
-          <strong>Takeaway (43-60s):</strong> "Lần tới ghé quán, hãy để ý: Món đồ uống này nói gì về tâm trạng của bạn hôm nay? Khách hàng có thể quên giá tiền của cốc nước, nhưng họ sẽ nhớ mãi sự dịu dàng của buổi sáng hôm đó."
-        </div>
-      </div>
-    </section>
-  </main>
 </div>
 
-<!-- TOAST -->
-<div class="copy-toast" id="copyToast">✓ Đã sao chép Megaprompt vào Clipboard!</div>
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-head">
+            <span>MỤC LỤC (1)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
+        </div>
+        <div class="drawer-list">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 5.0, 'SHOT 01')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_%40Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_01_mid.webp" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">The Art of Authentic Voiceover Storytellin</div>
+                <div class="drawer-shot-time">0.00s – 5.00s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
+    </div>
+</div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img crossorigin="anonymous" src="" class="lightbox-img" id="lightboxImg" onclick="event.stopPropagation()">
-  <div class="lightbox-cap" id="lightboxCap"></div>
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
+</div>
+
+<!-- Edit Inline Feature -->
+<button class="edit-fab" onclick="openEditModal()" title="Sửa phân loại">✎</button>
+
+<div id="editModalBackdrop" class="edit-modal-backdrop" onclick="closeEditModal()">
+    <div class="edit-modal" onclick="event.stopPropagation()">
+        <div class="edit-modal-head">
+            <h3>✎ Sửa Phân Loại</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="edit-modal-body">
+            <div id="editStatus" class="edit-status"></div>
+
+            <div class="edit-field">
+                <label>Ngành nghề</label>
+                <select id="editIndustry">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="ky-thuat-quay">🎯 Bố cục / Kỹ Thuật Quay Dựng</option>
+                    <option value="thuong-hieu">💼 Xây kênh / Thương Hiệu Cá Nhân</option>
+                    <option value="kien-truc">🏛️ Góc nhà đẹp / Kiến Trúc & Không Gian</option>
+                    <option value="am-thuc">🍜 F&B / Ẩm Thực & Cafe</option>
+                    <option value="thoi-trang">👔 Thời trang & Phụ Kiện</option>
+                    <option value="spa-lam-dep">💆 Làm đẹp / Spa & Y Tế</option>
+                    <option value="du-lich">✈️ Du lịch / Phong Cách Sống</option>
+                    <option value="cong-nghe">📱 Đồ công nghệ & Thiết Bị</option>
+                    <option value="the-thao">🏃 Thể thao & Sức Khỏe</option>
+                    <option value="ugc">📱 UGC / E-Commerce & Bán Hàng</option>
+                </select>
+                <input type="text" id="editIndustryCustom" placeholder="Hoặc gõ ngành tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Kiểu quay / Phong cách</label>
+                <select id="editStyle">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="dien-anh">🎬 Chỉn Chu (B-Roll Thuần Hình / Cinematic)</option>
+                    <option value="talking-head">🗣️ Nói Trực Diện (Talking Head)</option>
+                    <option value="walk-and-talk">🚶 Walk & Talk (Vừa đi vừa nói)</option>
+                    <option value="voice-over">🎙️ Lồng Tiếng (Voice Over)</option>
+                    <option value="storytelling">📖 Kể Chuyện / Đời Thường (Storytelling)</option>
+                    <option value="chuyen-canh">⚡ Chuyển Cảnh (Transition / Montage)</option>
+                    <option value="bts">🎥 BTS / Setup Hậu Trường</option>
+                    <option value="theo-nhip-nhac">🎵 Theo nhịp nhạc</option>
+                </select>
+                <input type="text" id="editStyleCustom" placeholder="Hoặc gõ kiểu quay tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Tags kỹ thuật (phân tách bằng dấu phẩy)</label>
+                <textarea id="editTags" placeholder="VD: B-Roll Practice, Góc máy cận cảnh, Chuyển cảnh"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Mục đích / Tóm tắt (Purpose)</label>
+                <textarea id="editPurpose"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Bài học rút gọn (Quick Takeaway)</label>
+                <textarea id="editTakeaway"></textarea>
+            </div>
+
+            <div class="edit-field edit-pw-field">
+                <label>Mật khẩu</label>
+                <input type="password" id="editPassword" value="0070" placeholder="••••" autocomplete="off">
+            </div>
+        </div>
+        <div class="edit-modal-footer">
+            <button class="edit-cancel-btn" onclick="closeEditModal()">Hủy</button>
+            <button class="edit-save-btn" id="editSaveBtn" onclick="saveEdit()">Lưu thay đổi</button>
+        </div>
+    </div>
 </div>
 
 <script>
-const SHOTS = [[1, 0.0, 0.37, 0.37, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_01_mid.webp", "Hook thị giác mở màn cực nhanh (0.37s): Bắt trọn góc bàn làm việc tối giản và tiêu đề 'The Art of Storytelling'", "Không gian bàn làm việc nhìn từ góc xiên (High-Angle 45°), màn hình laptop sáng mở ghi chú, tách gốm và sách nghệ thuật.", "Tôi kể chuyện hay hơn hẳn...", "I became a better...", "hook"], [2, 0.4, 1.13, 0.73, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_02_mid.webp", "Cắt cận không gian làm việc sáng tạo: Tách lớp chiều sâu qua sách Saint Laurent và bàn phím máy tính", "Cuốn sách bìa cứng 'Saint Laurent Rive Gauche' đặt trang trọng cạnh góc máy tính và cốc nước ấm.", "...sau những năm tháng làm đạo diễn quảng cáo chuyên nghiệp.", "...storyteller after directing commercials for a living.", "hook"], [3, 1.17, 1.87, 0.7, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_03_mid.webp", "Macro Typography Hook: Dòng chữ 'The art of storytelling - How I write authentic voiceovers' chiếm trọn màn hình", "Khung hình cận cảnh màn hình văn bản với phông chữ Serif thanh lịch, con trỏ nhấp nháy tại dòng tiêu đề chính.", "Một điều sâu sắc mà tôi nhận ra là...", "One thing I learned is that...", "hook"], [4, 1.9, 2.63, 0.73, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_04_mid.webp", "Đẩy nhẹ tiêu cự đặc tả từ khóa 'Voiceovers': Nhấn mạnh trọng tâm kỹ thuật thu âm giọng dẫn trước khi dựng", "Chuyển động zoom quang học nhẹ vào cụm từ 'authentic voiceovers', con trỏ rê qua từng nét chữ.", "...kể chuyện không phải là cố viết cho thật bóng bẩy...", "...storytelling isn't about being...", "hook"], [5, 2.67, 3.33, 0.66, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_05_mid.webp", "Góc toàn phẳng (Flatlay Overhead): Trải đều các yếu tố cảm hứng sống và bảng điều khiển sáng tạo", "Góc nhìn từ đỉnh đầu 90° bao quát máy tính bảng, sổ ghi chép, sách ảnh, nến thơm và tách trà hoa cúc.", "...hay làm một nhà văn xuất chúng...", "...the best writer...", "hook"], [6, 3.37, 5.43, 2.06, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_06_mid.webp", "Góc quay chuyển dịch sang thế giới Skincare (2.06s): Thể hiện nhịp sống chậm rãi và chuẩn bị buổi sáng", "Kệ gỗ trưng bày các chai tinh chất dưỡng da cao cấp (Farmacy, Sonsie, Dieux), vệt nắng sớm quét qua bề mặt chai.", "...mà là làm sao để chạm được vào cảm xúc người nghe.", "...it's about making people feel something.", "hook"], [7, 5.47, 6.0, 0.53, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_07_mid.webp", "Cận cảnh bàn tay chạm nhẹ nắp chai Farmacy: Đặc tả hành động đời thường tạo cảm giác xúc giác (Tactile)", "Bàn tay thanh mảnh mở nắp chai tinh chất Farmacy Honey Milk, ngón tay tiếp xúc với bề mặt nhám mờ.", "Nếu bạn từng xem bài hướng dẫn dựng video của tôi...", "If you watch my editing tutorial...", "hook"], [8, 6.03, 6.57, 0.54, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_08_mid.webp", "Góc ngắm 45 độ bộ 3 sản phẩm làm đẹp: Tận dụng tỷ lệ tương phản giữa chữ in thương hiệu và nền kính mờ", "Ba chai sản phẩm Sonsie Super Serum, SkinCeuticals P-Tiox và Dieux xếp lớp so le trên mặt đá vân mây.", "...tôi luôn khuyên bạn hãy hoàn thiện câu chuyện trước...", "...I recommend developing your story...", "hook"], [9, 6.6, 7.23, 0.63, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_09_mid.webp", "Đặc tả cận cảnh giọt tinh chất Honey Milk: Tôn vinh kết cấu sản phẩm sánh mịn dưới ánh nắng ấm", "Thân chai Farmacy Honey Milk 120ml với chữ in sắc nét 'LAIT AU MIEL', chất kem sánh ánh lên qua lớp thủy tinh.", "...trước khi bạn mở phần mềm lên bấm nhát cắt đầu tiên.", "...before you even start editing.", "hook"], [10, 7.27, 7.83, 0.56, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_10_mid.webp", "Cắt nhịp sang cụm từ 'Feel Something': Phụ đề chữ trắng viền mỏng nổi bật trên nền vàng mơ", "Dòng chữ 'feel something' xuất hiện ngay tâm chai dưỡng ẩm, kết hợp cử động lắc nhẹ chai.", "...phải làm họ rung động thật sự...", "...feel something...", "hook"], [11, 7.87, 9.4, 1.53, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_11_mid.webp", "Cú liaison chuyển động sang bàn làm việc: Lấy nét vào chai nước hoa 50ml trước khi lia máy", "Chai nước hoa Le Labo 50ml nắp bạc đặt cạnh sổ ghi chú, nền hậu cảnh mờ ảo ánh đèn bàn.", "Tôi luôn luôn thu âm phần Voice-Over trước tiên...", "I always record my voice-overs first...", "story"], [12, 9.43, 10.47, 1.04, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_12_mid.webp", "Màn hình hướng dẫn dựng video thực tế: Khẳng định chuyên môn đạo diễn quảng cáo chuyên nghiệp", "Màn hình máy tính hiển thị timeline dựng video chuyên nghiệp kèm tiêu đề 'how i edit my videos as a girl who used to direct commercials'.", "...bởi vì nó chính là chiếc móng vững chắc...", "...because it sets the foundation...", "story"], [13, 10.5, 11.33, 0.83, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_13_mid.webp", "Dẫn nhập bài học cốt lõi: 'Developing your story' xuất hiện trang trọng trên góc máy tính bảng", "Bàn tay cầm bút Apple Pencil chỉ vào dòng kế hoạch nội dung trên màn hình iPad.", "...cho mọi thứ còn lại trên dòng thời gian.", "...for everything else.", "story"], [14, 11.37, 12.13, 0.76, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_14_mid.webp", "Nhấn mạnh từ 'Before you start editing': Cắt dứt khoát ngăn chặn thói quen dựng bản năng", "Góc máy chuyển sang màn hình phần mềm dựng CapCut/Premiere với các track video chưa có phụ đề.", "Mọi bộ phim vĩ đại, chương trình truyền hình hay thước phim quảng cáo...", "Every great movie, TV show, or commercial...", "story"], [15, 12.17, 14.67, 2.5, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_15_mid.webp", "Khẳng định chân lý làm nghề (2.50s): Nến thơm Voluspa bập bùng thắp sáng sự tĩnh tại khi viết kịch bản", "Hũ nến thơm cao cấp Voluspa hoa văn dập nổi trên bàn đá cẩm thạch, ngọn lửa vàng nhảy múa êm dịu.", "...đều luôn bắt đầu từ một kịch bản chỉn chu.", "...starts with a script.", "story"], [16, 14.7, 16.27, 1.57, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_16_mid.webp", "Góc nghiêng cận nắp dập nổi Voluspa: Chi tiết gia công tinh xảo khẳng định tiêu chuẩn thẩm mỹ khắt khe", "Đặc tả các hoa văn nổi trên nắp hộp nến, ánh kim loại phản chiếu lấp lánh dưới góc nghiêng 30°.", "Nhưng thay vì xem nó như một kịch bản gò bó...", "But instead of thinking of it as a script...", "story"], [17, 16.3, 19.13, 2.83, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_17_mid.webp", "Cú chuyển biến tư duy then chốt (2.83s): Ghi chú Apple Notes mang tựa đề 'The art of storytelling'", "Màn hình điện thoại/laptop mở trang ghi chú Apple Notes với ngày giờ thực tế: July 21, 2026, 1:10 PM.", "...hãy nghĩ về nó như một trang nhật ký đời thường.", "...think of it as a diary entry.", "story"], [18, 19.17, 19.6, 0.43, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_18_mid.webp", "Đặc tả cận cảnh câu châm ngôn: 'Think of it as a diary entry' nổi bật giữa trang viết", "Dòng văn bản in hoa nhẹ trên nền ghi chú trắng, con chuột bôi đen cụm từ 'diary entry'.", "Đúng là AI có thể giúp bạn sắp xếp ý tứ rất gọn gàng...", "Yes, AI can help you organize your thoughts...", "story"], [19, 19.63, 20.73, 1.1, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_19_mid.webp", "Góc quay cận thiết bị làm đẹp công nghệ cao CurrentBody: Chuyển dịch nhịp nhàng giữa công việc và chăm sóc", "Hộp thiết bị CurrentBody Skin Beauty Tech Experts đặt trên khăn bông trắng muốt.", "...nhưng nó không bao giờ có thể kể được câu chuyện của chính bạn.", "...but it can't tell your story.", "story"], [20, 20.77, 21.3, 0.53, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_20_mid.webp", "Cắt góc 60 độ cận hộp CurrentBody: Khắc sâu thông điệp 'AI can help you, but it can't tell your story'", "Mặt trước bao bì CurrentBody với dòng chữ 'The Beauty Tech Experts', ánh sáng dịu nhẹ hắt ngang.", "Và có thể Claude hay ChatGPT sẽ mô tả vanh vách...", "And maybe Claude can tell people...", "story"], [21, 21.33, 21.83, 0.5, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_21_mid.webp", "Bố cục tương phản: Cuốn sách 'Surf Shack' bên bàn làm việc mộc mạc", "Bìa cuốn sách 'Surf Shack - Laid-Back Living by the Water' với gam màu xanh biển dịu mắt cạnh tách gốm.", "...thói quen buổi sáng của tôi diễn ra thế nào...", "...my morning routine...", "story"], [22, 21.87, 23.0, 1.13, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_22_mid.webp", "Lật trang nhật ký vẽ tay: Bằng chứng của những suy nghĩ riêng tư và sống động", "Cuốn sổ tay mở ra với các dòng ghi chú viết tay bằng bút mực, những nét gạch xóa và hình vẽ nguệch ngoạc.", "...nhưng AI không bao giờ hiểu được vì sao buổi sáng hôm đó lại có ý nghĩa với tôi...", "...but it can't tell them why that morning mattered...", "story"], [23, 23.03, 24.17, 1.14, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_23_mid.webp", "Đặc tả nét bút mực trên trang giấy: 'Today: A day with me' khắc họa sự chân thành", "Ngòi bút lướt nhẹ trên dòng chữ 'today: a day with me', mực đen thấm êm vào trang giấy xơ tự nhiên.", "...lúc đó trong đầu tôi đang trăn trở điều gì...", "...what was on my mind...", "story"], [24, 24.2, 24.87, 0.67, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_24_mid.webp", "Lịch trình tuần viết tay mộc mạc: Phân bổ nhịp sáng tạo từ Chủ nhật đến Thứ hai", "Trang lịch tuần kẻ tay với các ô 'slow sunday', 'mindful morning', các ghi chú công việc thực tế.", "...hay cảm xúc bên trong tôi lúc đó đã xáo trộn ra sao.", "...or how I've been feeling.", "story"], [25, 24.9, 25.5, 0.6, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_25_mid.webp", "Nhấn mạnh thông điệp cốt lõi: 'But it can't tell your story' nổi bật trên nền sổ tay", "Dòng phụ đề xuất hiện ngay trên trang nhật ký mở, khẳng định ranh giới giữa công cụ và linh hồn con người.", "Và chính cảm xúc chân thật đó mới là điều giữ chân người xem kết nối với bạn.", "And that's the part that people connect with.", "story"], [26, 25.53, 26.2, 0.67, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_26_mid.webp", "Chuyển động gấp nhẹ trang sổ: Đóng lại phần suy ngẫm để mở ra giải pháp thực chiến", "Bàn tay vuốt nhẹ mép sổ tay, ánh sáng tạt nghiêng tạo bóng đổ mềm mại trên mặt bàn gỗ.", "Chúng ta đang sống trong một thời đại mà mọi thứ dường như...", "We're in a time where everything looks...", "story"], [27, 26.23, 29.3, 3.07, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_27_mid.webp", "Giao diện Claude AI trên màn hình: Thừa nhận sức mạnh tổng hợp thông tin của công nghệ", "Cửa sổ chat Claude với câu trả lời cấu trúc rõ ràng về thói quen buổi sáng, các gạch đầu dòng chuẩn mực.", "...trông na ná nhau và nghe cũng y hệt nhau...", "...and sounds the same...", "story"], [28, 29.33, 30.7, 1.37, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_28_mid.webp", "Cận cảnh tách cafe bốc khói: Biểu tượng của khoảnh khắc tĩnh tại mà AI không thể trải nghiệm", "Tách cafe gốm men mờ đặt trên đĩa lót, một vệt khói mỏng uốn lượn trong ánh nắng sớm qua rèm.", "...nhưng bản chất mạng xã hội sinh ra là để con người kết nối với nhau...", "...but social media was built for connection...", "story"], [29, 30.73, 31.47, 0.74, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_29_mid.webp", "Góc nghiêng suy tư: Bàn tay nâng tách cafe giữa khoảng không gian tĩnh lặng", "Bàn tay cầm quai tách cafe, khung cảnh ngoài cửa sổ mờ nhòe ánh sáng ban mai nhẹ nhàng.", "...và sự chân thật độc bản của bạn chính là thứ duy nhất...", "...and your authenticity is the one thing...", "story"], [30, 31.5, 32.73, 1.23, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_30_mid.webp", "Đặc tả mặt bàn gỗ vân sồi: Những vết xước thời gian kể câu chuyện của sự bền bỉ", "Góc mặt bàn làm việc với các đường vân gỗ tự nhiên, cạnh cuốn sổ mở và bóng râm của rèm cửa.", "...mà không một ai, không một thuật toán nào có thể sao chép được.", "...no one else can copy.", "story"], [31, 32.77, 33.63, 0.86, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_31_mid.webp", "Khoảnh khắc kết nối cảm xúc: Dòng chữ 'And that's the part people connect with' xuất hiện", "Bàn tay đặt nhẹ lên cuốn sổ, ánh nắng rọi sáng phần mu bàn tay và cổ tay đeo đồng hồ tối giản.", "Nên lần tới khi bạn ngồi xuống chuẩn bị sáng tạo nội dung...", "So the next time you sit down to create...", "story"], [32, 33.67, 34.5, 0.83, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_32_mid.webp", "Cú lia nhẹ sang kệ sách: Tích lũy kiến thức qua những tựa sách kinh điển", "Kệ sách với các cuốn sách về thiết kế, nghệ thuật và phong cách sống xếp ngay ngắn theo tông màu.", "...hãy bắt đầu với 3 mảnh ghép then chốt của câu chuyện...", "...start with three parts of your story...", "story"], [33, 34.53, 35.63, 1.1, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_33_mid.webp", "Chai dầu ô-liu Flamingo Estate: Khắc họa phong cách sống hữu cơ và thẩm mỹ bao bì tinh tuyển", "Chai thủy tinh màu xanh lá sẫm Flamingo Estate Heritage Extra Virgin Olive Oil đặt trang nhã trên bàn ăn.", "...và tự hỏi: Câu chuyện này nói về điều gì? - Đó chính là cú móc (The Hook)...", "...and ask: What is my story about? - The Hook...", "story"], [34, 35.67, 36.17, 0.5, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_34_mid.webp", "Cận cảnh nhãn chai Flamingo Estate: 'California Harvest - Old Trees' tôn vinh tính nguyên bản", "Đặc tả nhãn giấy sần dập nổi chữ 'Old Trees Heritage', ánh nắng phản chiếu cạnh mép chai.", "...Nội dung cốt lõi của thước phim này là gì?...", "...What is my story about?...", "story"], [35, 36.2, 36.7, 0.5, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_35_mid.webp", "Góc nghiêng bàn ăn: Chai dầu ô-liu kết hợp đĩa gốm mộc và muối biển thô", "Chai dầu ô-liu nghiêng nhẹ cạnh đĩa gốm nung chứa muối hạt thô và nhánh hương thảo tươi.", "...câu mồi mở màn thu hút sự chú ý...", "...the hook...", "story"], [36, 36.73, 37.3, 0.57, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_36_mid.webp", "Cắt nhanh qua cuốn 'The Daily Stoic' của Ryan Holiday: Tư duy tự chủ trong kỷ nguyên thuật toán", "Cuốn sách 'The Daily Stoic' bìa đen chữ vàng đặt cạnh báo The Wall Street Journal trên bàn cafe.", "...Hiện tại tôi đang học được bài học gì mới?...", "...what am I learning right now?...", "story"], [37, 37.33, 37.87, 0.54, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_37_mid.webp", "Đặc tả tựa sách 'The Daily Stoic': Tuyên ngôn về sự kiên định trước những ồn ào mạng xã hội", "Cận cảnh chữ vàng dập chìm trên bìa sách, bàn tay lật giở một trang sách cổ điển.", "...hay tôi đang gặp phải thử thách, khó khăn nào?...", "...or what is challenging me?...", "story"], [38, 37.9, 39.07, 1.17, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_38_mid.webp", "Góc rộng toàn cảnh góc đọc sách: Không gian chữa lành và nạp lại năng lượng tư duy", "Góc sofa nệm êm ái, chiếc bàn trà tròn đặt sách, tách trà và ánh nắng xiên qua rèm cửa sổ phòng khách.", "...đó chính là phần thân câu chuyện (The Story)...", "...the story...", "story"], [39, 39.1, 39.8, 0.7, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_39_mid.webp", "Chai nước hoa Le Labo Another 13 khắc tên riêng: Đỉnh cao của tính cá nhân hóa độc bản", "Chai nước hoa Le Labo nhãn in riêng: 'Compounded: in Denver for victoriamorse on 06/04/26'.", "...tôi thực sự am hiểu và có chuyên môn sâu về điều gì?...", "...what am I an expert in?...", "story"], [40, 39.83, 40.47, 0.64, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_40_mid.webp", "Cận cảnh tia nước hoa xịt sương: Giọt sương lơ lửng bắt sáng trong không gian", "Bàn tay ấn nhẹ vòi xịt nước hoa, luồng sương mịn li ti bay ra bắt trọn ánh sáng mặt trời.", "...hay người xem có thể chiêm nghiệm được điều gì từ điều này?...", "...or how can someone reflect on this?...", "story"], [41, 40.5, 41.77, 1.27, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_41_mid.webp", "Lớp xếp đặt phụ kiện cá nhân: Mắt kính gọng đồi mồi, sổ tay và chai nước hoa Le Labo", "Bố cục Flatlay các vật phẩm tùy thân bất ly thân đặt cạnh nhau trên mặt bàn linen thô.", "...đó chính là bài học đúc kết thực chiến (The Takeaway).", "...the takeaway.", "story"], [42, 41.8, 42.8, 1.0, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_42_mid.webp", "Bắt đầu công thức 3 phần: 'Start with 3 parts of your story' - Nền tảng tư duy kịch bản", "Bàn tay xếp 3 sản phẩm thẳng hàng trên mặt đá cẩm thạch trắng, tượng trưng cho 3 phần của kịch bản.", "Vì vậy mỗi khi ngồi vào bàn chuẩn bị viết bài...", "So the next time you sit down to create...", "takeaway"], [43, 42.83, 43.47, 0.64, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_43_mid.webp", "Chai dưỡng tóc Gisou Honey Gloss: Màu vàng mật ong ấm áp mở màn phần 1 (The Hook)", "Chai dầu dưỡng tóc Gisou với ánh vàng óng ánh của mật ong tự nhiên, đặt nghiêng dưới nắng.", "...hãy chia câu chuyện làm đúng 3 phần rõ ràng...", "...start with 3 parts of your story...", "takeaway"], [44, 43.5, 44.13, 0.63, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_44_mid.webp", "Tẩy tế bào chết Remedy Body Scrub: Chất kem hạt mịn màng đại diện cho sự chân thật không gọt giũa", "Tuýp sản phẩm Remedy màu xanh lá cây đậm đặt cạnh đĩa sứ đựng chất kem tẩy tế bào chết có hạt mịn.", "...và tự đặt câu hỏi đầu tiên: Câu chuyện này thực chất nói về cái gì?...", "...and ask: What is my story about?...", "takeaway"], [45, 44.17, 44.77, 0.6, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_45_mid.webp", "Đặc tả nhãn hiệu Rhode Peptide Lip Tint: Xu hướng làm đẹp thời thượng kết nối giới trẻ", "Tuýp son dưỡng Rhode màu xám tro tối giản đặt chéo góc trên nền vải lụa trắng.", "...đó chính là chiếc móc câu giữ chân khán giả...", "...the hook...", "takeaway"], [46, 44.8, 45.97, 1.17, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_46_mid.webp", "Tập hợp bộ sản phẩm chăm sóc: Sự phong phú và trật tự của quy trình buổi sáng", "Bộ sưu tập 5 món đồ dưỡng da và tóc xếp thành hàng so le có chủ đích từ cao xuống thấp.", "...Điều thứ hai: Tôi đang tự đúc rút được bài học gì ở thời điểm này?...", "...what am I learning right now?...", "takeaway"], [47, 46.0, 46.63, 0.63, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_47_mid.webp", "Lăn khử mùi sinh học Blue Tansy: Màu xanh lam tự nhiên độc đáo đánh dấu phần 2 (The Story)", "Hũ sáp khử mùi Blue Tansy màu xanh pastel dịu mát mở nắp để lộ kết cấu sáp mịn màng.", "...hay tôi đang phải đối mặt với khó khăn, thử thách nào?...", "...or what is challenging me?...", "takeaway"], [48, 46.67, 47.17, 0.5, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_48_mid.webp", "Bàn tay thoa kem dưỡng lên mu bàn tay: Hành động chăm sóc tạo sự thân mật và tin cậy", "Bàn tay thoa đều một giọt kem trắng mỏng trên mu bàn tay, lớp kem tan dần bóng mịn dưới ánh đèn.", "...đây chính là phần xương sống của câu chuyện...", "...the story...", "takeaway"], [49, 47.2, 47.9, 0.7, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_49_mid.webp", "Chai dầu gội Everist cô đặc: Phong cách sống bền vững không dùng nước (Waterless Beauty)", "Tuýp nhôm Everist màu bạc nguyên bản đặt cạnh chiếc chìa khóa vặn tuýp kim loại cổ điển.", "...Điều thứ ba: Tôi thực sự am hiểu và có chuyên môn sâu sắc về điều gì?...", "...what am I an expert in?...", "takeaway"], [50, 47.93, 48.5, 0.57, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_50_mid.webp", "Chìa khóa kim loại vặn mép tuýp kem: Âm thanh kim loại và hình ảnh cơ học lôi cuốn", "Ngón tay xoay chiếc chìa khóa kim loại cuộn dần đáy tuýp nhôm, đẩy chất kem đậm đặc ra đầu tuýp.", "...hay bài học này giúp người khác soi chiếu lại chính mình thế nào?...", "...or how can someone reflect on this?...", "takeaway"], [51, 48.53, 48.93, 0.4, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_51_mid.webp", "Lấy nét vào đầu tuýp kem nhô ra: Chi tiết giọt dưỡng chất cô đặc dưới ánh nắng tự nhiên", "Đặc tả giọt kem dưỡng cô đặc màu vàng nhạt nhô ra ở miệng tuýp nhôm, ánh sáng chiếu xuyên qua.", "...giúp họ nhìn nhận lại cuộc sống của họ ra sao?...", "...how can someone reflect on this?...", "takeaway"], [52, 48.97, 49.67, 0.7, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_52_mid.webp", "Đĩa sứ đựng bộ sản phẩm buổi sáng: Bố cục hình tròn hoàn hảo tạo cảm giác trọn vẹn", "Chiếc đĩa gốm tròn màu be chứa gọn gàng tuýp kem, nắp chai và nhánh lá thơm trang trí.", "...đó là giá trị mang về cho khán giả.", "...the takeaway.", "takeaway"], [53, 49.7, 50.17, 0.47, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_53_mid.webp", "Nhấc sản phẩm ra khỏi đĩa: Chuyển động nhấc tay mang ý nghĩa áp dụng vào thực tế", "Bàn tay nhấc tuýp kem lên khỏi đĩa gốm, để lại chiếc bóng mờ chuyển dịch êm ái.", "Hãy viết kịch bản như thể bạn đang nhắn tin cho một người bạn thân...", "Write it like you're texting a friend...", "takeaway"], [54, 50.2, 50.63, 0.43, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_54_mid.webp", "Chuyển cảnh trở lại bàn phím máy tính: Bắt đầu quá trình hiện thực hóa ý tưởng thành văn bản", "Bàn phím Apple Magic Keyboard màu bạc trên bàn gỗ sồi, các ngón tay sẵn sàng gõ phím.", "...như đang gõ tin nhắn tâm sự với bạn...", "...like you're texting a friend...", "takeaway"], [55, 50.67, 51.53, 0.86, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_55_mid.webp", "Cận cảnh ngón tay lướt trên phím: Nhịp điệu gõ phím mô phỏng dòng suy nghĩ tuôn trào", "Góc cận các ngón tay gõ nhịp nhàng trên phím bấm, tiếng lách cách êm tai hòa quyện với voiceover.", "...hoặc như đang thu một đoạn ghi âm giọng nói ngắn ngủi.", "...or leaving a voice note.", "takeaway"], [56, 51.57, 52.2, 0.63, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_56_mid.webp", "Góc nhìn qua vai nhân vật gõ máy: Không gian làm việc cá nhân tập trung cao độ", "Khung hình từ sau lưng nhìn qua vai xuống bàn làm việc, màn hình laptop hiển thị tài liệu đang viết dở.", "...gửi voice note qua tin nhắn...", "...leaving a voice note...", "takeaway"], [57, 52.23, 52.8, 0.57, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_57_mid.webp", "Màn hình điện thoại hiển thị ứng dụng Voice Memos: Biểu tượng của sự bộc bạch chân thành", "Chiếc iPhone đặt cạnh bàn phím với sóng âm thanh màu đỏ dao động trên ứng dụng Voice Memos.", "...hãy viết tự nhiên như đang nhắn tin hay gửi voice note...", "...write it like you're texting a friend or leaving a voicenote...", "takeaway"], [58, 52.83, 53.3, 0.47, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_58_mid.webp", "Bàn tay cầm điện thoại thu âm: Tư thế thư thái, không áp lực sân khấu", "Nhân vật cầm điện thoại gần môi trong tư thế thả lỏng trên ghế bành, ánh sáng cửa sổ phủ tràn bờ vai.", "...Bởi vì thành thật mà nói...", "...because to be honest...", "takeaway"], [59, 53.33, 54.3, 0.97, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_59_mid.webp", "Chuyển bối cảnh ra quán cafe Little Owl: Mở rộng không gian sống ra đô thị sành điệu", "Góc nhìn từ ngoài bước vào quán cafe phong cách rustic modern với bảng hiệu gỗ Little Owl Coffee.", "...người ta rồi sẽ chẳng thể nhớ nổi bạn đã làm những gì đâu...", "...we won't remember what you did...", "takeaway"], [60, 54.33, 54.83, 0.5, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_60_mid.webp", "Bảng menu cafe phấn trắng Little Owl: Chi tiết thủ công tinh xảo chốn đô thị", "Bảng phấn đen viết tay tên các món nước đặc sản: Espresso, Cortado, Cold Brew, Vanilla Latte.", "...họ sẽ quên đi những chi tiết bạn đã làm...", "...we won't remember what you did...", "takeaway"], [61, 54.87, 55.4, 0.53, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_61_mid.webp", "Cận cảnh ly Cortado sóng sánh bọt sữa: Điểm chạm vị giác đỉnh cao trước khi kết bài", "Ly thủy tinh nhỏ chứa cafe Cortado hai tầng màu sắc tách biệt rõ nét: nâu đậm bên dưới, lớp sữa béo bên trên.", "...những hành động thoáng qua...", "...what you did...", "takeaway"], [62, 55.43, 56.6, 1.17, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_62_mid.webp", "Bàn tay nâng ly cafe lên thưởng thức: Khoảnh khắc trọn vẹn của sự tận hưởng cuộc sống", "Bàn tay nâng ly Cortado lên miệng, ánh mắt hướng ra khung cửa sổ ngập tràn ánh nắng.", "...nhưng điều mà họ sẽ ghi nhớ mãi mãi...", "...but we will remember...", "takeaway"], [63, 56.63, 57.2, 0.57, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_63_mid.webp", "Cú cắt nhịp trở lại bàn phím Apple: Quyết tâm hành động biến cảm xúc thành tác phẩm", "Góc cận sát các phím Space, Command và Option trên bàn phím Magic Keyboard màu bạc sạch bóng.", "...chính là cảm xúc mà câu chuyện của bạn đã đem lại cho họ.", "...how a story made us feel.", "takeaway"], [64, 57.23, 58.7, 1.47, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_64_mid.webp", "Màn hình máy tính hiển thị lịch trình xuất bản nội dung: Quy trình chuyển hóa cảm xúc thành kết quả", "Màn hình chia đôi: Một bên là kế hoạch nội dung tuần, một bên là kịch bản voiceover hoàn chỉnh.", "...chính cảm xúc ấy mới là thứ còn đọng lại...", "...how a story made us feel...", "takeaway"], [65, 58.73, 59.27, 0.54, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_65_mid.webp", "Cận cảnh dòng chữ viết tay trên sổ: 'Story made us feel' - Khóa chặt thông điệp tối hậu", "Đầu bút dạ đen gạch chân dưới cụm từ 'story made us feel' trên trang sổ tay dày dặn.", "...chạm sâu vào tâm khảm người nghe.", "...made us feel.", "takeaway"], [66, 59.3, 59.83, 0.53, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_66_mid.webp", "Góc máy lùi xa (Pull-back Reveal): Không gian phòng khách tĩnh lặng, bình yên", "Góc máy dolly lùi dần ra xa, để lộ toàn bộ không gian phòng khách ấm áp ngập tràn ánh nắng cuối chiều.", "[Giọng đọc hòa dần vào giai điệu nhạc nền]", "[Voice fades out naturally]", "takeaway"], [67, 59.87, 60.4, 0.53, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_67_mid.webp", "Chi tiết ly cafe và cuốn sổ tay đóng lại: Hoàn thành một buổi sáng sáng tạo trọn vẹn", "Cuốn sổ tay được gấp nhẹ nhàng, bên cạnh là tách cafe đã cạn và cành hoa khô trang trí.", "[Nhạc nền dâng lên với hợp âm mộc mạc ấm áp]", "[BGM swell with warm chords]", "takeaway"], [68, 60.43, 61.0, 0.57, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_68_mid.webp", "Ánh sáng hoàng hôn le lói qua rèm cửa: Tạo dư âm sâu lắng và cảm hứng dâng trào", "Bóng rèm cửa sổ lay động nhẹ trên nền tường màu kem, vệt nắng hoàng hôn cam rực rỡ thu hẹp dần.", "[Một nốt piano ngân dài vang vọng]", "[Gentle piano note resonates]", "takeaway"], [69, 61.03, 61.53, 0.5, "https://media.fedu.vn/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_69_mid.webp", "Khung hình Outro đóng dấu bản quyền: 'Victoria Morse - Director & Storyteller' trang nhã", "Màn hình chuyển dần về màu đen ấm với logo tối giản và tài khoản Instagram @victoriamorse.", "[Kết thúc video]", "[End of Video]", "takeaway"]];
+// Video source resolution - try multiple paths
+const rawVideoSrc = 'https://www.youtube.com/embed/OwXUkepRWyA';
+let currentEndTime = null;
 
-const vid = document.getElementById('mainVid');
-const playBtn = document.getElementById('playBtn');
-const loopBtn = document.getElementById('loopBtn');
-const curTimeEl = document.getElementById('curTime');
-const sceneListEl = document.getElementById('sceneList');
-
-let isLoop = false;
-let loopRange = null;
-let currentFilter = 'all';
-
-// Render Scene List
-function renderSceneList() {
-  let html = '';
-  SHOTS.forEach((s) => {
-    const [id, st, et, dur, img, hl, act, vo_vi, vo_en, phase] = s;
-    if (currentFilter !== 'all' && phase !== currentFilter) return;
-    const pId = String(id).padStart(2, '0');
-    
-    html += `
-    <div class="scene-row" id="scene-${id}" onclick="jumpToShot(${id}, ${st}, ${et})">
-      <div class="scene-num-badge">#${pId}</div>
-      <div class="scene-dur-col">${dur.toFixed(2)}s<br><span style="font-size:9.5px;color:var(--text-muted);">${st.toFixed(1)}s</span></div>
-      <div class="scene-thumb-wrap" onclick="event.stopPropagation(); openLightbox('${img}', 'Cảnh ${pId} (${st.toFixed(2)}s - ${et.toFixed(2)}s): ${hl.replace(/'/g, "\\\'")}')">
-        <img crossorigin="anonymous" src="${img}" loading="lazy" alt="Cảnh ${pId}">
-      </div>
-      <div class="scene-desc-col">
-        <div class="scene-headline">${hl}</div>
-        <div class="scene-action">${act}</div>
-        ${vo_vi ? `<div class="scene-vo-line">🎙️ "${vo_vi}"</div>` : ''}
-      </div>
-    </div>`;
-  });
-  sceneListEl.innerHTML = html;
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
 }
 
-// Filter Shots
-function filterShots(phase) {
-  currentFilter = phase;
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    if (btn.textContent.toLowerCase().includes(phase) || (phase === 'all' && btn.textContent.includes('Tất cả'))) {
-      btn.classList.add('active');
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+window.isYtMuted = false;
+
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
+    player.load();
+}
+
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
+}
+
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
+        }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
+    }
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
+    }
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
     } else {
-      btn.classList.remove('active');
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
+        }
     }
-  });
-  renderSceneList();
-}
-
-// Switch Section
-function switchSection(secId) {
-  document.getElementById('scene-section').style.display = (secId === 'scene-section') ? 'block' : 'none';
-  document.getElementById('vo-section').style.display = (secId === 'vo-section') ? 'block' : 'none';
-  document.getElementById('prompt-section').style.display = (secId === 'prompt-section') ? 'block' : 'none';
-
-  document.getElementById('tabBtnScene').classList.toggle('active', secId === 'scene-section');
-  document.getElementById('tabBtnVo').classList.toggle('active', secId === 'vo-section');
-  document.getElementById('tabBtnPrompt').classList.toggle('active', secId === 'prompt-section');
-}
-
-// Video Player Controls
-vid.addEventListener('timeupdate', () => {
-  const ct = vid.currentTime;
-  const m = Math.floor(ct / 60);
-  const s = Math.floor(ct % 60);
-  const ms = Math.floor((ct % 1) * 100);
-  curTimeEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(ms).padStart(2, '0')} / 61.53s`;
-
-  if (isLoop && loopRange && ct >= loopRange.end) {
-    vid.currentTime = loopRange.start;
-    vid.play();
-  }
-
-  // Highlight active scene
-  for (let s of SHOTS) {
-    if (ct >= s[1] && ct <= s[2]) {
-      document.querySelectorAll('.scene-row').forEach(r => r.classList.remove('active-scene'));
-      const row = document.getElementById('scene-' + s[0]);
-      if (row) {
-        row.classList.add('active-scene');
-      }
-      break;
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
     }
-  }
-});
-
-function togglePlay() {
-  if (vid.paused) {
-    vid.play();
-    playBtn.textContent = '⏸ Tạm dừng';
-  } else {
-    vid.pause();
-    playBtn.textContent = '▶ Phát';
-  }
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
-function setSpeed(sp) {
-  vid.playbackRate = sp;
-  document.querySelectorAll('.dir-row .btn-c').forEach(b => {
-    if (b.textContent.includes(sp + 'x')) b.classList.add('active');
-    else if (b.textContent.includes('x')) b.classList.remove('active');
-  });
+function setSpeed(speed, btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
 }
 
-function stepFrame(d) {
-  vid.pause();
-  playBtn.textContent = '▶ Phát';
-  vid.currentTime = Math.max(0, vid.currentTime + (d * (1 / 30)));
+function stepFrame(frames) {
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
 }
 
-function toggleLoop() {
-  isLoop = !isLoop;
-  if (isLoop) {
-    loopBtn.classList.add('active');
-    loopBtn.textContent = '🔁 Lặp: Bật';
-  } else {
-    loopBtn.classList.remove('active');
-    loopBtn.textContent = '🔁 Lặp: Tắt';
-    loopRange = null;
-  }
+function toggleMute(btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
 }
-
-function jumpToShot(id, st, et) {
-  loopRange = { start: st, end: et };
-  vid.currentTime = st;
-  vid.play();
-  playBtn.textContent = '⏸ Tạm dừng';
-  
-  const row = document.getElementById('scene-' + id);
-  if (row) {
-    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    document.querySelectorAll('.scene-row').forEach(r => r.classList.remove('active-scene'));
-    row.classList.add('active-scene');
-  }
-}
-
-function jumpToTime(st, et) {
-  loopRange = { start: st, end: et };
-  vid.currentTime = st;
-  vid.play();
-  playBtn.textContent = '⏸ Tạm dừng';
-}
-
-// Lightbox
-function openLightbox(src, cap) {
-  document.getElementById('lightboxImg').src = src;
-  document.getElementById('lightboxCap').textContent = cap || '';
-  document.getElementById('lightbox').classList.add('open');
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-}
-
-// Copy Megaprompt
-function copyMegaprompt() {
-  const code = document.getElementById('promptCode').innerText;
-  navigator.clipboard.writeText(code).then(() => {
-    const toast = document.getElementById('copyToast');
-    toast.style.display = 'block';
-    setTimeout(() => { toast.style.display = 'none'; }, 2500);
-  }).catch(() => {
-    alert('Đã sao chép prompt!');
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderSceneList();
-});
 
 function togglePlayerFullscreen() {
-    const v = document.getElementById('mainPlayer');
+    var v = document.getElementById('mainPlayer');
     if (!v) return;
     if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        if (v.requestFullscreen) {
-            v.requestFullscreen().catch(() => {});
-        } else if (v.webkitRequestFullscreen) {
-            v.webkitRequestFullscreen();
-        } else if (v.webkitEnterFullscreen) {
-            v.webkitEnterFullscreen();
-        }
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
     } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        }
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
     }
 }
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', function(e) {
     if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
         togglePlayerFullscreen();
     }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
 });
 
+function switchView(view) {
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
+    }
+}
+
+function toggleDrawer(open) {
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function openLightbox(src, caption) {
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
+
+// === EDIT INLINE FEATURE ===
+var ENTRY_KEY = 'IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse';
+var CLASSIFICATION_DATA = {};
+
+function openEditModal() {
+    var d = CLASSIFICATION_DATA || {};
+    var indSel = document.getElementById('editIndustry');
+    var indCust = document.getElementById('editIndustryCustom');
+    var stySel = document.getElementById('editStyle');
+    var styCust = document.getElementById('editStyleCustom');
+    
+    // Pre-fill industry (support both id and name)
+    var indId = (d.industry && d.industry.id) ? d.industry.id : '';
+    var indName = (d.industry && d.industry.name) ? d.industry.name : '';
+    indSel.value = '';
+    indCust.value = '';
+    for (var i = 0; i < indSel.options.length; i++) {
+        if (indSel.options[i].value === indId || indSel.options[i].value === indName) {
+            indSel.value = indSel.options[i].value;
+            break;
+        }
+    }
+    if (!indSel.value && indName) indCust.value = indName;
+
+    // Pre-fill style (support both id and name)
+    var styId = (d.shooting_style && d.shooting_style.id) ? d.shooting_style.id : '';
+    var styName = (d.shooting_style && d.shooting_style.name) ? d.shooting_style.name : '';
+    stySel.value = '';
+    styCust.value = '';
+    for (var j = 0; j < stySel.options.length; j++) {
+        if (stySel.options[j].value === styId || stySel.options[j].value === styName) {
+            stySel.value = stySel.options[j].value;
+            break;
+        }
+    }
+    if (!stySel.value && styName) styCust.value = styName;
+
+    // Pre-fill tags
+    document.getElementById('editTags').value = (d.tags || d.tech_tags || []).join(', ');
+    document.getElementById('editPurpose').value = d.purpose || d.logic_explanation || '';
+    document.getElementById('editTakeaway').value = d.quick_takeaway || '';
+    var pwEl = document.getElementById('editPassword');
+    if (pwEl && !pwEl.value) pwEl.value = '0070';
+
+    // Reset status
+    var st = document.getElementById('editStatus');
+    st.className = 'edit-status';
+    st.style.display = 'none';
+    document.getElementById('editSaveBtn').disabled = false;
+    document.getElementById('editSaveBtn').textContent = 'Lưu thay đổi';
+
+    document.getElementById('editModalBackdrop').classList.add('open');
+}
+
+function closeEditModal() {
+    document.getElementById('editModalBackdrop').classList.remove('open');
+}
+
+function saveEdit() {
+    var btn = document.getElementById('editSaveBtn');
+    var st = document.getElementById('editStatus');
+    var pw = document.getElementById('editPassword').value || '0070';
+
+    // Collect values
+    var indSel = document.getElementById('editIndustry').value;
+    var indCust = document.getElementById('editIndustryCustom').value.trim();
+    var industry = indCust || indSel || null;
+
+    var stySel = document.getElementById('editStyle').value;
+    var styCust = document.getElementById('editStyleCustom').value.trim();
+    var style = styCust || stySel || null;
+
+    var tags = document.getElementById('editTags').value;
+    var purpose = document.getElementById('editPurpose').value;
+    var takeaway = document.getElementById('editTakeaway').value;
+
+    var updates = {};
+    if (industry) updates.industry = industry;
+    if (style) updates.shooting_style = style;
+    if (tags) updates.tech_tags = tags;
+    if (purpose) updates.purpose = purpose;
+    if (takeaway) updates.quick_takeaway = takeaway;
+
+    if (Object.keys(updates).length === 0) {
+        st.className = 'edit-status error';
+        st.textContent = 'Chưa có thay đổi nào.';
+        st.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang lưu...';
+    st.style.display = 'none';
+
+    var payload = JSON.stringify({
+        password: pw,
+        entryKey: ENTRY_KEY,
+        updates: updates
+    });
+
+    function handleSuccess(data) {
+        st.className = 'edit-status success';
+        st.textContent = '✅ Đã lưu & Tự học thành công! (' + (data.commit || 'synced') + ')';
+        st.style.display = 'block';
+        btn.textContent = '✅ Đã lưu';
+
+        if (data.updatedEntry) {
+            CLASSIFICATION_DATA = data.updatedEntry;
+        }
+        var badges = document.querySelector('.header-badges');
+        if (badges && (updates.industry || updates.shooting_style)) {
+            var html = '';
+            var ind = (CLASSIFICATION_DATA.industry && CLASSIFICATION_DATA.industry.name) || updates.industry || '';
+            var sty = (CLASSIFICATION_DATA.shooting_style && CLASSIFICATION_DATA.shooting_style.name) || updates.shooting_style || '';
+            if (ind) html += '<span class="badge">' + ind + '</span> ';
+            if (sty) html += '<span class="badge badge-alt">' + sty + '</span>';
+            badges.innerHTML = html;
+        }
+    }
+
+    fetch('/api/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+    })
+    .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+    .then(function(result) {
+        if (result.ok && result.data.success) {
+            handleSuccess(result.data);
+        } else {
+            return fetch('https://file.fedu.vn/api/edit-classification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
+            .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+            .then(function(res2) {
+                if (res2.ok && res2.data.success) {
+                    handleSuccess(res2.data);
+                } else {
+                    st.className = 'edit-status error';
+                    st.textContent = '❌ ' + ((res2.data && res2.data.error) || (result.data && result.data.error) || 'Lỗi không xác định');
+                    st.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Lưu thay đổi';
+                }
+            });
+        }
+    })
+    .catch(function(err) {
+        fetch('https://file.fedu.vn/api/edit-classification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+        })
+        .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+        .then(function(res2) {
+            if (res2.ok && res2.data.success) {
+                handleSuccess(res2.data);
+            } else {
+                st.className = 'edit-status error';
+                st.textContent = '❌ Lỗi mạng: ' + err.message;
+                st.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Lưu thay đổi';
+            }
+        })
+        .catch(function(err2) {
+            st.className = 'edit-status error';
+            st.textContent = '❌ Lỗi mạng: ' + err2.message;
+            st.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Lưu thay đổi';
+        });
+    });
+}
+
+// Đóng modal khi bấm Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeEditModal();
+});
 </script>
 </body>
 </html>

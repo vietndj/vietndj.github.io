@@ -1,1973 +1,1855 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BÁO CÁO PHÂN TÍCH ĐẠO DIỄN: KỶ LUẬT THÉP &amp; BƯỚC NHẢY LƯỢNG TỬ ĐỔI ĐỜI - @colecoppolino</title>
-<style>
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Aeonik';
-    src: url('data:,') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Acta';
-    src: url('data:,') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-:root {
-    --bg-primary: #07090e;
-    --bg-secondary: #0d111a;
-    --bg-card: #141a27;
-    --bg-card-hover: #1c2436;
-    --border-color: rgba(255, 255, 255, 0.09);
-    --border-gold: rgba(245, 158, 11, 0.35);
-    --border-emerald: rgba(16, 185, 129, 0.35);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-gold: #f59e0b;
-    --accent-gold-light: #fbbf24;
-    --accent-emerald: #10b981;
-    --accent-emerald-light: #34d399;
-    --accent-blue: #38bdf8;
-    --accent-rose: #f43f5e;
-    --accent-purple: #a855f7;
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 22px;
-    --shadow-main: 0 12px 36px -8px rgba(0, 0, 0, 0.6);
-}
-
-@page {
-    size: A4 portrait;
-    margin: 10mm 10mm 10mm 10mm;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-}
-
-body {
-    font-family: 'SVN-Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.65;
-    font-size: 14.5px;
-    padding: 30px 20px 80px 20px;
-}
-
-.container {
-    max-width: 1120px;
-    margin: 0 auto;
-}
-
-/* Typography */
-h1, h2, .font-display {
-    font-family: 'SVN-Acta', 'SVN-Aeonik', serif;
-}
-
-/* Header Banner */
-.hero-header {
-    background: linear-gradient(135deg, #1e1505 0%, #0f172a 50%, #064e3b 100%);
-    border: 1px solid var(--border-gold);
-    border-radius: var(--radius-lg);
-    padding: 36px 36px;
-    margin-bottom: 36px;
-    box-shadow: var(--shadow-main);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-header::after {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: -15%;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.tag-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(245, 158, 11, 0.15);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    color: var(--accent-gold-light);
-    font-size: 11.5px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 16px;
-}
-
-h1 {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #ffffff;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
-}
-
-.hero-desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    max-width: 920px;
-    margin-bottom: 24px;
-    line-height: 1.65;
-}
-
-.meta-bar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid var(--border-color);
-    padding: 16px 20px;
-    border-radius: var(--radius-md);
-}
-
-.meta-col .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: var(--text-muted);
-    font-weight: 700;
-}
-
-.meta-col .val {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--accent-gold-light);
-    margin-top: 3px;
-}
-
-/* Section Titles */
-.section-title {
-    font-size: 21px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 44px 0 20px 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.section-title .num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    background: var(--accent-gold);
-    color: #07090e;
-    border-radius: 9px;
-    font-size: 16px;
-    font-weight: 900;
-}
-
-/* Cards & Layout */
-.card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 26px;
-    margin-bottom: 22px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-}
-
-.card.highlight {
-    border-color: var(--border-emerald);
-    background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, var(--bg-secondary) 100%);
-}
-
-.card.gold-glow {
-    border-color: var(--border-gold);
-    background: linear-gradient(180deg, rgba(245, 158, 11, 0.05) 0%, var(--bg-secondary) 100%);
-}
-
-.card-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--accent-gold-light);
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.card-title.emerald {
-    color: var(--accent-emerald-light);
-}
-
-.card-title.blue {
-    color: var(--accent-blue);
-}
-
-p {
-    margin-bottom: 12px;
-    color: #cbd5e1;
-}
-
-p:last-child {
-    margin-bottom: 0;
-}
-
-ul, ol {
-    padding-left: 22px;
-    margin-bottom: 14px;
-    color: #cbd5e1;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-strong {
-    color: #ffffff;
-}
-
-/* Callouts */
-.callout {
-    background: rgba(245, 158, 11, 0.08);
-    border-left: 4px solid var(--accent-gold);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: 16px 20px;
-    margin: 20px 0;
-}
-
-.callout.emerald {
-    background: rgba(16, 185, 129, 0.08);
-    border-left-color: var(--accent-emerald);
-}
-
-.callout.rose {
-    background: rgba(244, 63, 94, 0.08);
-    border-left-color: var(--accent-rose);
-}
-
-.callout-title {
-    font-weight: 700;
-    font-size: 14.5px;
-    color: #ffffff;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* Metrics Grid */
-.metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin: 20px 0;
-}
-
-@media (max-width: 768px) {
-    .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.metric-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    padding: 18px 16px;
-    text-align: center;
-}
-
-.metric-val {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--accent-gold);
-    font-family: 'SVN-Aeonik', monospace;
-    margin-bottom: 4px;
-}
-
-.metric-lbl {
-    font-size: 12px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
-
-/* Table Storyboard (3 Columns) */
-.storyboard-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-    margin: 20px 0;
-}
-
-.storyboard-table th {
-    background: var(--bg-card);
-    color: var(--accent-gold-light);
-    font-size: 12.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    padding: 14px 16px;
-    text-align: left;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.storyboard-table th:first-child {
-    border-top-left-radius: var(--radius-sm);
-    border-bottom-left-radius: var(--radius-sm);
-    border-left: 1px solid var(--border-color);
-    width: 22%;
-}
-
-.storyboard-table th:nth-child(2) {
-    width: 38%;
-}
-
-.storyboard-table th:last-child {
-    border-top-right-radius: var(--radius-sm);
-    border-bottom-right-radius: var(--radius-sm);
-    border-right: 1px solid var(--border-color);
-    width: 40%;
-}
-
-.storyboard-table tr {
-    background: var(--bg-secondary);
-    transition: all 0.2s ease;
-}
-
-.storyboard-table td {
-    padding: 16px;
-    vertical-align: top;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    font-size: 13.5px;
-}
-
-.storyboard-table td:first-child {
-    border-left: 1px solid var(--border-color);
-    border-top-left-radius: var(--radius-sm);
-    border-bottom-left-radius: var(--radius-sm);
-}
-
-.storyboard-table td:last-child {
-    border-right: 1px solid var(--border-color);
-    border-top-right-radius: var(--radius-sm);
-    border-bottom-right-radius: var(--radius-sm);
-}
-
-/* Shot Thumbnails & Aspect Ratio Control */
-.shot-thumb-row {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-.shot-thumb {
-    width: 100px;
-    height: 100px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
-    cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.shot-thumb:hover {
-    transform: scale(1.04);
-    border-color: var(--accent-gold);
-}
-
-.trans-img {
-    max-width: 360px;
-    width: 100%;
-    height: auto;
-    max-height: 140px;
-    object-fit: contain;
-    border-radius: 6px;
-    border: 1px solid var(--border-gold);
-    display: block;
-    margin-top: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.trans-img:hover {
-    transform: scale(1.02);
-}
-
-.time-pill {
-    display: inline-block;
-    background: rgba(245, 158, 11, 0.15);
-    color: var(--accent-gold-light);
-    border: 1px solid rgba(245, 158, 11, 0.35);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 6px;
-    transition: all 0.2s ease;
-}
-
-.time-pill:hover {
-    background: var(--accent-gold);
-    color: #07090e;
-}
-
-.text-quote {
-    display: inline-block;
-    background: rgba(56, 189, 248, 0.12);
-    color: var(--accent-blue);
-    border-left: 3px solid var(--accent-blue);
-    padding: 4px 10px;
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 0 4px 4px 0;
-    margin: 6px 0;
-}
-
-/* Script Plan Cards */
-.script-plan {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 20px;
-    margin-bottom: 16px;
-}
-
-.script-plan.plan-a {
-    border-top: 4px solid var(--accent-emerald);
-}
-
-.script-plan.plan-b {
-    border-top: 4px solid var(--accent-blue);
-}
-
-.script-plan h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.script-plan .badge {
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.script-plan.plan-a .badge {
-    background: rgba(16, 185, 129, 0.2);
-    color: var(--accent-emerald-light);
-}
-
-.script-plan.plan-b .badge {
-    background: rgba(56, 189, 248, 0.2);
-    color: var(--accent-blue);
-}
-
-/* Lightbox Modal */
-.lightbox-modal {
-    display: none;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời - @colecoppolino</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
+
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
+
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
+
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
+
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
+
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
+
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
+
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
+
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
+
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
+
+        .meta-dot {
+            opacity: 0.5;
+        }
+
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
+
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
+
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
+
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
+
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
+
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
+
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
+
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
+
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
+
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
+
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
+
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
+
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
+
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
+
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
+
+
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+/* === EDIT INLINE FEATURE === */
+.edit-fab {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(8px);
-    z-index: 99999;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.lightbox-modal.active {
-    display: flex;
-}
-
-.lightbox-img {
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: var(--radius-sm);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    object-fit: contain;
-}
-
-.lightbox-caption {
-    margin-top: 16px;
-    color: var(--text-primary);
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
-    max-width: 800px;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 24px;
-    right: 28px;
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
-    color: #ffffff;
-    font-size: 24px;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
     width: 44px;
     height: 44px;
-    border-radius: 50%;
+    border-radius: var(--cl-radius-full);
+    background: var(--cl-card);
+    border: 1px solid var(--cl-line-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease;
-}
-
-.lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* Video Modal */
-.video-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(8px);
-    z-index: 99998;
-    justify-content: center;
-    align-items: center;
-}
-
-.video-modal.active {
-    display: flex;
-}
-
-.video-modal-content {
-    position: relative;
-    max-width: 480px;
-    width: 90vw;
-    background: #000;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
-    border: 1px solid var(--border-gold);
-}
-
-.video-modal video {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.video-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
     font-size: 18px;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+    transition: all 0.2s var(--apple-ease);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.edit-fab:hover {
+    border-color: var(--cl-accent);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.15);
+    transform: scale(1.05);
 }
 
-/* Floating Video Player Button */
-.float-play-btn {
+.edit-modal-backdrop {
     position: fixed;
-    bottom: 28px;
-    right: 28px;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, #d97706 100%);
-    color: #07090e;
-    font-weight: 800;
-    font-size: 13.5px;
-    border: none;
-    border-radius: 30px;
-    padding: 12px 22px;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 300;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
+}
+.edit-modal-backdrop.open {
     display: flex;
+}
+
+.edit-modal {
+    background: var(--cl-card);
+    border-radius: var(--cl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: editSlideIn 0.3s var(--apple-spring);
+}
+
+@keyframes editSlideIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.edit-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cl-line);
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+}
+.edit-modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cl-text-base);
+    margin: 0;
+}
+.edit-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
     cursor: pointer;
-    z-index: 9990;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--cl-text-muted);
+    line-height: 1;
 }
 
-.float-play-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6);
+.edit-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
-/* Footer */
-.footer {
-    margin-top: 60px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-/* Author Instagram Direct Link Button */
-.author-ig-badge {
-    display: inline-flex;
-    align-items: center;
+.edit-field {
+    display: flex;
+    flex-direction: column;
     gap: 6px;
-    background: rgba(192, 132, 252, 0.12);
-    border: 1px solid rgba(192, 132, 252, 0.35);
-    color: #e879f9;
-    padding: 2px 8px 2px 6px;
-    border-radius: 6px;
-    text-decoration: none;
+}
+.edit-field label {
+    font-family: var(--font-ui);
     font-size: 12px;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    vertical-align: middle;
-}
-.author-ig-badge:hover {
-    background: linear-gradient(135deg, rgba(192, 132, 252, 0.3), rgba(244, 63, 94, 0.3));
-    border-color: #f43f5e;
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
-}
-.author-ig-badge strong {
-    color: #fff;
-}
-.author-ig-badge .ig-ext-btn {
-    background: linear-gradient(135deg, #c084fc, #f43f5e);
-    color: #0b0f17;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 2px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: all 0.15s;
-    letter-spacing: 0.2px;
-}
-.author-ig-badge:hover .ig-ext-btn {
-    background: #ffffff;
-    color: #0b0f17;
-}
-
-
-.player-box { position: relative !important; }
-.player-box video { cursor: pointer; }
-.player-fs-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-family: var(--font-ui, sans-serif);
-    font-size: 11.5px;
     font-weight: 600;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-muted);
 }
-.player-fs-btn:hover {
-    background: #1a73e8;
-    border-color: #1a73e8;
-    transform: scale(1.04);
+.edit-field select,
+.edit-field input,
+.edit-field textarea {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-sm);
+    background: var(--cl-card);
+    color: var(--cl-text-body);
+    transition: border-color 0.2s;
+    width: 100%;
 }
-.fs-ctrl-btn {
-    background: #fffbeb !important;
-    color: #b45309 !important;
-    border-color: #fef3c7 !important;
-    font-weight: 700 !important;
+.edit-field select:focus,
+.edit-field input:focus,
+.edit-field textarea:focus {
+    outline: none;
+    border-color: var(--cl-accent);
+    box-shadow: 0 0 0 3px var(--cl-accent-tint);
 }
-.fs-ctrl-btn:hover {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border-color: #fcd34d !important;
+.edit-field textarea {
+    min-height: 72px;
+    resize: vertical;
 }
 
-</style>
-<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+.edit-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-save-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--cl-accent);
+    color: white;
+    border: none;
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-save-btn:hover { opacity: 0.9; }
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edit-cancel-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--cl-text-muted);
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+}
+
+.edit-status {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: var(--cl-radius-sm);
+    display: none;
+}
+.edit-status.success {
+    display: block;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.edit-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.edit-pw-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.edit-pw-field label { min-width: fit-content; }
+.edit-pw-field input {
+    max-width: 120px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 1024px) {
+    .edit-fab {
+        top: auto;
+        bottom: 20px;
+        right: 16px;
+    }
+}
+    </style>
 </head>
 <body>
 
-<div class="container">
-
-    <!-- Hero Header -->
-    <div class="hero-header">
-        <div class="tag-badge">DIRECTOR BREAKDOWN &bull; MOTIVATIONAL CINEMATIC MONTAGE</div>
-        <h1>Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời</h1>
-        <div class="hero-desc">
-            Phân tích bóc tách toàn diện 30 phân cảnh (Shots) trong kiệt tác video ngắn 16 giây của <strong>@colecoppolino</strong>. Hệ thống hóa công thức cắt nhịp đập nhanh (Fast Beat Pacing ~0.53s/shot), nghệ thuật tương phản thị giác giữa "Khổ Luyện Gian Nan" &amp; "Thành Quả Lượng Tử", cùng cẩm nang sản xuất video ngắn truyền cảm hứng triệu view cho Content Creator Việt Nam.
+<div class="app-container">
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/axhLzaaWKno?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
-        <div class="meta-bar">
-            <div class="meta-col">
-                <div class="label">Tác Giả &amp; Kênh</div>
-                <div class="val">@colecoppolino &bull; Cole Coppolino</div>
+        <div class="video-controls">
+            <div class="speed-row">
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
             </div>
-            <div class="meta-col">
-                <div class="label">Thời Lượng &amp; Tốc Độ</div>
-                <div class="val">16.20s &bull; 30.0 FPS &bull; 486 Frames</div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
             </div>
-            <div class="meta-col">
-                <div class="label">Tổng Phân Cảnh</div>
-                <div class="val">30 Shots &bull; ~0.53s / Shot</div>
+            <div id="shotStatusTag">Sẵn sàng</div>
+        </div>
+    </div>
+
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">Đồ công nghệ</span> <span class="badge badge-alt">Kể Chuyện</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/reel/DcJiRCrTlG1/" target="_blank" rel="noopener">Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời - @colecoppolino</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/colecoppolino/" target="_blank" class="creator-link">@colecoppolino ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">1 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">5.00s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
             </div>
-            <div class="meta-col">
-                <div class="label">Độ Phân Giải Gốc</div>
-                <div class="val">1080 &times; 1080 (Square 1:1)</div>
+        </header>
+
+        
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">[Giai đoạn 1 • Mở màn (Hook): Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời - @colecoppolino] ➔ [Giai đoạn 2 • Triển khai &amp; Giữ nhịp: Chuỗi 1 nhịp cắt đan xen đa cỡ cảnh] ➔ [Giai đoạn 3 • Điểm rơi &amp; Chốt thông điệp: Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời - @colecoppolino]</div>
+        </section>
+
+        <div class="overview-card">
+            Phân tích cấu trúc 30 shots cắt nhịp đập thần tốc (~0.53s/shot), nghệ thuật tương phản thị giác giữa khổ luyện và thăng hoa lượng tử.
+        </div>
+
+        
+
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (1)</button>
+            </div>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
+        </div>
+
+        <div id="storyboardView">
+            
+        <div class="shot-card" id="shot-card-1">
+            <div class="shot-thumb" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+                <img src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 5.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">5.00s</span>
+                </div>
+                <h4 class="shot-headline">Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời - @colecoppolino</h4>
+                <p class="shot-insight">Phân tích cấu trúc 30 shots cắt nhịp đập thần tốc (~0.53s/shot), nghệ thuật tương phản thị giác giữa khổ luyện và thăng hoa lượng tử.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Kể Chuyện</span></div>
+                        
+                        
+                    </div>
+                    <div class="critique-good">Phân tích cấu trúc 30 shots cắt nhịp đập thần tốc (~0.53s/shot), nghệ thuật tương phản thị giác giữa khổ luyện và thăng hoa lượng tử.</div>
+                    
+                    <div class="shot-narrative">Đánh giá camera điện thoại OPPO Find X9s đa góc</div>
+                </details>
             </div>
         </div>
-    </div>
-
-    <!-- Quick Metrics -->
-    <div class="metrics-grid">
-        <div class="metric-card">
-            <div class="metric-val">30</div>
-            <div class="metric-lbl">Tổng Phân Cảnh (Shots)</div>
-        </div>
-        <div class="metric-card">
-            <div class="metric-val">0.53s</div>
-            <div class="metric-lbl">Thời Lượng Trung Bình / Shot</div>
-        </div>
-        <div class="metric-card">
-            <div class="metric-val">100%</div>
-            <div class="metric-lbl">Nhịp Cắt Trùng Beat Nhạc</div>
-        </div>
-        <div class="metric-card">
-            <div class="metric-val">2 &rarr; 1</div>
-            <div class="metric-lbl">Cấu Trúc Tương Phản Đối Lập</div>
-        </div>
-    </div>
-
-    <!-- PHẦN 1: TƯ DUY ĐẠO DIỄN CỐT LÕI -->
-    <div class="section-title">
-        <span class="num">1</span>
-        Tư Duy Đạo Diễn &amp; Cấu Trúc Nghệ Thuật Cốt Lõi
-    </div>
-
-    <div class="card highlight">
-        <div class="card-title emerald">⚡ 1. Công Thức Cắt Nhịp Đập Thần Tốc (Rapid Beat-Synced Cutting ~0.53s/shot)</div>
-        <p>
-            Video kéo dài đúng <strong>16.2 giây</strong> nhưng chứa tới <strong>30 phân cảnh riêng biệt</strong>. Hầu hết mỗi phân cảnh chỉ tồn tại đúng <strong>16 frames (0.53 giây)</strong>.
-        </p>
-        <p>
-            <strong>Tại sao cấu trúc này giữ chân người xem đạt tỷ lệ xem lại (Loop rate) cực cao?</strong><br>
-            Ở tốc độ 0.53s/shot, não bộ người xem vừa kịp nhận diện xong chủ thể thì màn hình đã chuyển sang cảnh mới. Hiện tượng này tạo ra cảm giác <em>"nghẹt thở vì thông tin thị giác"</em>, kích thích bản năng tò mò và khiến người xem buộc phải xem lại lần 2, lần 3 để chiêm ngưỡng trọn vẹn từng khung hình.
-        </p>
-    </div>
-
-    <div class="card gold-glow">
-        <div class="card-title">🎭 2. Nghệ Thuật Tương Phản Đối Lập (Visual Juxtaposition &amp; Metamorphosis)</div>
-        <p>Toàn bộ video được xây dựng dựa trên 2 cực tương phản rõ rệt:</p>
-        <ul>
-            <li>
-                <strong>Cực 1: Sự Khổ Luyện Gian Khổ &amp; Đơn Độc (Hardship &amp; Uncertainty - Shots 01 &rarr; 13):</strong><br>
-                Ngâm mặt nước đá lạnh buốt, nâng tạ trong garage tối, chạy bộ kiệt sức, gõ phím làm việc xuyên đêm, đứng thở dốc trong phòng gym. Ánh sáng chủ đạo là Low-key, Silhouette và sương mờ.
-            </li>
-            <li>
-                <strong>Cực 2: Bước Nhảy Lượng Tử &amp; Thành Quả Rực Rỡ (Quantum Leaps &amp; Triumph - Shots 14 &rarr; 30):</strong><br>
-                Cú nhảy vọt hình tượng sang bộ Tuxedo sang trọng (Shot 15), nhảy múa thăng hoa bên bờ biển (Shot 14), căn Penthouse ngắm view đêm (Shot 16), cạo râu tự tin (Shot 17), và cú đấm dũng mãnh thẳng vào ống kính (Shot 29).
-            </li>
-        </ul>
-        <div class="callout emerald">
-            <div class="callout-title">💎 Thông Điệp Triết Lý</div>
-            "Sau mỗi giai đoạn gian khổ và bất định kéo dài, luôn có một giai đoạn bạn sẽ tạo ra những bước nhảy vọt lượng tử trên mọi lĩnh vực cuộc sống. Điều kiện duy nhất: Bạn từ chối đầu hàng chính mình."
-        </div>
-    </div>
-
-    <!-- PHẦN 2: BẢNG BÓC TÁCH PHÂN CẢNH CHI TIẾT (30 SHOTS STORYBOARD) -->
-    <div class="section-title">
-        <span class="num">2</span>
-        Bảng Bóc Tách Phân Cảnh &amp; Chuyển Cảnh Chi Tiết (30 Shots Storyboard)
-    </div>
-
-    <div class="card">
-        <p style="margin-bottom:16px; color:var(--text-secondary);">
-            Click vào bất kỳ <strong>Keyframe</strong> hoặc <strong>Ảnh chuyển cảnh</strong> để phóng to toàn màn hình sắc nét. Click vào mốc thời gian <strong>[0.00s - 0.40s]</strong> để nhảy video đến đúng phân cảnh.
-        </p>
-
-        <table class="storyboard-table">
-            <thead>
-                <tr>
-                    <th>Phân Cảnh &amp; Mốc Giây</th>
-                    <th>Hình Ảnh Keyframe &amp; Chuyển Cảnh</th>
-                    <th>Bóc Tách Cỡ Cảnh &amp; Kỹ Thuật Đạo Diễn</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 01</div>
-                        <div class="time-pill" onclick="playVideoAt(0.0)">&#9654; [0.00s - 0.40s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.4s &bull; 12 frames</div>
-                        <div class="text-quote">"IT IS"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_01_mid.webp" class="shot-thumb" alt="Shot 01 Start" title="Khung đầu: 0.00s" onclick="openLightbox(this.src, 'Shot 01 (Start: 0.00s) - Extreme Close-Up (ECU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_02_mid.webp" class="shot-thumb" alt="Shot 01 Mid" title="Khung giữa: 0.20s" onclick="openLightbox(this.src, 'Shot 01 (Mid: 0.20s) - Extreme Close-Up (ECU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_03_mid.webp" class="shot-thumb" alt="Shot 01 End" title="Khung cuối: 0.40s" onclick="openLightbox(this.src, 'Shot 01 (End: 0.40s) - Extreme Close-Up (ECU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 02:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_04_mid.webp" class="trans-img" alt="Transition Shot 01 to 02" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 01 sang Shot 02')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Extreme Close-Up (ECU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc nghiêng 45° sát mặt nước &bull; Máy tĩnh (Static) - Chuyển động bọt nước tự nhiên</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng vàng ấm nội thất, highlight tia nước bắn</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Ngâm mặt & cổ vào bồn nước đá lạnh buốt buổi sáng, bọt nước tung toé ròng ròng trên tóc và râu.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Cú Hook kích thích thị giác cực mạnh (Visual Shock Hook) mở đầu video bằng sự khắc nghiệt của kỷ luật.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 02</div>
-                        <div class="time-pill" onclick="playVideoAt(0.4)">&#9654; [0.40s - 0.83s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.43s &bull; 13 frames</div>
-                        <div class="text-quote">"IT IS AN UNWRITTEN"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_05_mid.webp" class="shot-thumb" alt="Shot 02 Start" title="Khung đầu: 0.40s" onclick="openLightbox(this.src, 'Shot 02 (Start: 0.40s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_06_mid.webp" class="shot-thumb" alt="Shot 02 Mid" title="Khung giữa: 0.61s" onclick="openLightbox(this.src, 'Shot 02 (Mid: 0.61s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_07_mid.webp" class="shot-thumb" alt="Shot 02 End" title="Khung cuối: 0.83s" onclick="openLightbox(this.src, 'Shot 02 (End: 0.83s) - Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 03:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_08_mid.webp" class="trans-img" alt="Transition Shot 02 to 03" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 02 sang Shot 03')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc nghiêng 3/4 ngang ngực ngoài trời &bull; Pan nhẹ theo động tác lau mặt của nhân vật</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh nắng ban mai trực diện (Direct Morning Sunlight) rọi khối cơ bắp</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Dùng khăn bông lau khô mặt và cổ ngoài trời, khoe bờ vai săn chắc và giọt nước lấp lánh trên da.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Giải tỏa cảm giác lạnh buốt của cảnh 1, mang lại năng lượng sảng khoái và tràn đầy sức sống.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 03</div>
-                        <div class="time-pill" onclick="playVideoAt(0.83)">&#9654; [0.83s - 1.30s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.47s &bull; 14 frames</div>
-                        <div class="text-quote">"IT IS AN UNWRITTEN RULE"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_09_mid.webp" class="shot-thumb" alt="Shot 03 Start" title="Khung đầu: 0.83s" onclick="openLightbox(this.src, 'Shot 03 (Start: 0.83s) - Close-Up (CU) Macro')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_10_mid.webp" class="shot-thumb" alt="Shot 03 Mid" title="Khung giữa: 1.06s" onclick="openLightbox(this.src, 'Shot 03 (Mid: 1.06s) - Close-Up (CU) Macro')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_11_mid.webp" class="shot-thumb" alt="Shot 03 End" title="Khung cuối: 1.30s" onclick="openLightbox(this.src, 'Shot 03 (End: 1.30s) - Close-Up (CU) Macro')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 04:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_12_mid.webp" class="trans-img" alt="Transition Shot 03 to 04" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 03 sang Shot 04')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Close-Up (CU) Macro</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Top-down 60° nhìn vào lòng chảo &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh đèn bếp ấm, lòng đỏ trứng phản quang căng bóng</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đập quả trứng gà tươi vào chảo dầu nóng sôi xèo xèo, lòng đỏ trượt nhẹ trên bề mặt chảo.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Thiết lập nhịp sinh hoạt dinh dưỡng chuẩn mực (Clean Nutrition Prep) của một người sống kỷ luật.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 04</div>
-                        <div class="time-pill" onclick="playVideoAt(1.3)">&#9654; [1.30s - 1.83s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"IT IS AN UNWRITTEN RULE OF LIFE"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_13_mid.webp" class="shot-thumb" alt="Shot 04 Start" title="Khung đầu: 1.30s" onclick="openLightbox(this.src, 'Shot 04 (Start: 1.30s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_14_mid.webp" class="shot-thumb" alt="Shot 04 Mid" title="Khung giữa: 1.56s" onclick="openLightbox(this.src, 'Shot 04 (Mid: 1.56s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_15_mid.webp" class="shot-thumb" alt="Shot 04 End" title="Khung cuối: 1.83s" onclick="openLightbox(this.src, 'Shot 04 (End: 1.83s) - Medium Shot (MS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 05:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_16_mid.webp" class="trans-img" alt="Transition Shot 04 to 05" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 04 sang Shot 05')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Ngang tầm mắt trong không gian bếp sang trọng &bull; Tracking nhẹ theo độ cao của quả trứng hất lên</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng tự nhiên khuếch tán từ cửa sổ kết hợp đèn trần bếp</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Thao tác hất chảo lật trứng (Flipping eggs) điêu luyện, trứng bay bổng trên không rồi rơi chuẩn vào chảo.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Khẳng định sự thuần thục, tinh tế và chủ động trong từng hành động đời thường nhỏ nhất.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 05</div>
-                        <div class="time-pill" onclick="playVideoAt(1.83)">&#9654; [1.83s - 2.37s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"AFTER"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_17_mid.webp" class="shot-thumb" alt="Shot 05 Start" title="Khung đầu: 1.83s" onclick="openLightbox(this.src, 'Shot 05 (Start: 1.83s) - Low Medium Shot (LMS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_18_mid.webp" class="shot-thumb" alt="Shot 05 Mid" title="Khung giữa: 2.10s" onclick="openLightbox(this.src, 'Shot 05 (Mid: 2.10s) - Low Medium Shot (LMS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_19_mid.webp" class="shot-thumb" alt="Shot 05 End" title="Khung cuối: 2.37s" onclick="openLightbox(this.src, 'Shot 05 (End: 2.37s) - Low Medium Shot (LMS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 06:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_20_mid.webp" class="trans-img" alt="Transition Shot 05 to 06" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 05 sang Shot 06')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Low Medium Shot (LMS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc thấp ngang đầu gối (Low Knee-Level) &bull; Tracking ngang tốc độ cao (Fast Horizontal Pan)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng ngoài trời, hậu cảnh mờ nhòe do tốc độ (Motion blur)</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Chân chạy nước rút (Sprint running) dồn lực dọc theo bờ kè ven hồ nước với giày thể thao trắng.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Đẩy nhịp phim (Pacing Acceleration) bước vào chuỗi thử thách thể lực gắt gao.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 06</div>
-                        <div class="time-pill" onclick="playVideoAt(2.37)">&#9654; [2.37s - 2.90s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"AFTER EVERY PROLONGED"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_21_mid.webp" class="shot-thumb" alt="Shot 06 Start" title="Khung đầu: 2.37s" onclick="openLightbox(this.src, 'Shot 06 (Start: 2.37s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_22_mid.webp" class="shot-thumb" alt="Shot 06 Mid" title="Khung giữa: 2.63s" onclick="openLightbox(this.src, 'Shot 06 (Mid: 2.63s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_23_mid.webp" class="shot-thumb" alt="Shot 06 End" title="Khung cuối: 2.90s" onclick="openLightbox(this.src, 'Shot 06 (End: 2.90s) - Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 07:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_24_mid.webp" class="trans-img" alt="Transition Shot 06 to 07" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 06 sang Shot 07')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc nghiêng hông chếch lên &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Silhouette & Rim light ngược từ cửa kính garage tôn đường nét cơ thể</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Tập cuốn tạ tay đơn (Bicep curls) trong garage, cơ bắp cuồn cuộn gồng căng từng thớ thịt.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Hình tượng sự khổ luyện đơn độc trong không gian riêng tư (Silent Gym Grind).</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 07</div>
-                        <div class="time-pill" onclick="playVideoAt(2.9)">&#9654; [2.90s - 3.43s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"PERIOD"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_25_mid.webp" class="shot-thumb" alt="Shot 07 Start" title="Khung đầu: 2.90s" onclick="openLightbox(this.src, 'Shot 07 (Start: 2.90s) - Close-Up (CU) Macro')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_26_mid.webp" class="shot-thumb" alt="Shot 07 Mid" title="Khung giữa: 3.17s" onclick="openLightbox(this.src, 'Shot 07 (Mid: 3.17s) - Close-Up (CU) Macro')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_27_mid.webp" class="shot-thumb" alt="Shot 07 End" title="Khung cuối: 3.43s" onclick="openLightbox(this.src, 'Shot 07 (End: 3.43s) - Close-Up (CU) Macro')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 08:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_28_mid.webp" class="trans-img" alt="Transition Shot 07 to 08" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 07 sang Shot 08')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Close-Up (CU) Macro</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Ngang tầm miệng bình lắc Shaker &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Studio low-key, đèn viền trắng làm nổi bật dòng bột mịn rơi</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Múc muỗng bột whey/pre-workout đổ vào bình lắc ED, bột rơi xuống tạo làn khói bụi mịn màng.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Chi tiết macro bổ trợ tạo sự đa dạng cỡ cảnh (B-Roll detail) xen giữa các chuyển động mạnh.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 08</div>
-                        <div class="time-pill" onclick="playVideoAt(3.43)">&#9654; [3.43s - 3.97s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"PERIOD OF HARDSHIP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_29_mid.webp" class="shot-thumb" alt="Shot 08 Start" title="Khung đầu: 3.43s" onclick="openLightbox(this.src, 'Shot 08 (Start: 3.43s) - Full Shot (FS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_30_mid.webp" class="shot-thumb" alt="Shot 08 Mid" title="Khung giữa: 3.70s" onclick="openLightbox(this.src, 'Shot 08 (Mid: 3.70s) - Full Shot (FS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_31_mid.webp" class="shot-thumb" alt="Shot 08 End" title="Khung cuối: 3.97s" onclick="openLightbox(this.src, 'Shot 08 (End: 3.97s) - Full Shot (FS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 09:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_32_mid.webp" class="trans-img" alt="Transition Shot 08 to 09" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 08 sang Shot 09')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Full Shot (FS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Ngang tầm mắt góc 3/4 trong phòng tập gym tối &bull; Máy tĩnh (Static) tạo cảm giác cô đơn, nặng nề</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn tuýp trần chiếu rọi từ đỉnh đầu (Overhead Top Light) như sân khấu kịch</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Nhân vật gập người chống tay vào đùi, cúi đầu thở dốc sau hiệp tập tạ kiệt lực trong phòng tập tối.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Hiện thực hóa trực quan từ khóa 'Hardship' - Nỗi đau thể xác và sự kiệt quệ sau những nỗ lực cùng cực.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 09</div>
-                        <div class="time-pill" onclick="playVideoAt(3.97)">&#9654; [3.97s - 4.50s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"PERIOD OF HARDSHIP AND UNCERTAINTY"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_33_mid.webp" class="shot-thumb" alt="Shot 09 Start" title="Khung đầu: 3.97s" onclick="openLightbox(this.src, 'Shot 09 (Start: 3.97s) - Wide Shot (WS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_34_mid.webp" class="shot-thumb" alt="Shot 09 Mid" title="Khung giữa: 4.24s" onclick="openLightbox(this.src, 'Shot 09 (Mid: 4.24s) - Wide Shot (WS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_35_mid.webp" class="shot-thumb" alt="Shot 09 End" title="Khung cuối: 4.50s" onclick="openLightbox(this.src, 'Shot 09 (End: 4.50s) - Wide Shot (WS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 10:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_36_mid.webp" class="trans-img" alt="Transition Shot 09 to 10" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 09 sang Shot 10')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Wide Shot (WS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Sau lưng nhân vật (Back View / OTS) &bull; Slow Push-In nhẹ về phía nhân vật</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Bầu trời chiều u ám, ánh sáng khuếch tán trầm mặc</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đứng trên đỉnh đồi, hai tay dang rộng đón gió nhìn xuống toàn cảnh thung lũng và thành phố xa xăm.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Minh họa từ khóa 'Uncertainty' (Sự bất định) - Đứng trước không gian bao la đối diện với tương lai mù mịt.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 10</div>
-                        <div class="time-pill" onclick="playVideoAt(4.5)">&#9654; [4.50s - 5.03s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"PERIOD OF HARDSHIP AND UNCERTAINTY"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_37_mid.webp" class="shot-thumb" alt="Shot 10 Start" title="Khung đầu: 4.50s" onclick="openLightbox(this.src, 'Shot 10 (Start: 4.50s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_38_mid.webp" class="shot-thumb" alt="Shot 10 Mid" title="Khung giữa: 4.77s" onclick="openLightbox(this.src, 'Shot 10 (Mid: 4.77s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_39_mid.webp" class="shot-thumb" alt="Shot 10 End" title="Khung cuối: 5.03s" onclick="openLightbox(this.src, 'Shot 10 (End: 5.03s) - Medium Shot (MS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 11:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_40_mid.webp" class="trans-img" alt="Transition Shot 10 to 11" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 10 sang Shot 11')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc ngang thân người (Profile View) &bull; Tracking ngang song song với bước chạy</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng sương mù ban sớm ven hồ nước</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Chạy bộ bền bỉ trong bộ nỉ dài tay xanh xám, hơi thở đều đặn vượt qua chặng đường dài.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Biểu tượng của sự bền bỉ (Consistency) - Tiếp tục tiến bước ngay cả khi con đường phía trước còn chưa rõ ràng.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 11</div>
-                        <div class="time-pill" onclick="playVideoAt(5.03)">&#9654; [5.03s - 5.57s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"THERE IS GOING TO"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_41_mid.webp" class="shot-thumb" alt="Shot 11 Start" title="Khung đầu: 5.03s" onclick="openLightbox(this.src, 'Shot 11 (Start: 5.03s) - Low-Angle Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_42_mid.webp" class="shot-thumb" alt="Shot 11 Mid" title="Khung giữa: 5.30s" onclick="openLightbox(this.src, 'Shot 11 (Mid: 5.30s) - Low-Angle Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_43_mid.webp" class="shot-thumb" alt="Shot 11 End" title="Khung cuối: 5.57s" onclick="openLightbox(this.src, 'Shot 11 (End: 5.57s) - Low-Angle Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 12:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_44_mid.webp" class="trans-img" alt="Transition Shot 11 to 12" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 11 sang Shot 12')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Low-Angle Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc ngước từ dưới nhìn lên vòi hoa sen &bull; Slow tilt-up nhẹ</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Moody low-key cinematic, ánh sáng vàng ấm phản chiếu qua làn hơi nước</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đứng dưới vòi sen trong phòng tắm ngập tràn hơi nước nóng, ngửa đầu tĩnh lặng để nước gội rửa mệt mỏi.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Khoảnh khắc gột rửa tâm trí (Mind Purification) - Bước chuyển giao tâm lý trước khi bước vào giai đoạn tái sinh.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 12</div>
-                        <div class="time-pill" onclick="playVideoAt(5.57)">&#9654; [5.57s - 6.10s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"WHERE"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_45_mid.webp" class="shot-thumb" alt="Shot 12 Start" title="Khung đầu: 5.57s" onclick="openLightbox(this.src, 'Shot 12 (Start: 5.57s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_46_mid.webp" class="shot-thumb" alt="Shot 12 Mid" title="Khung giữa: 5.83s" onclick="openLightbox(this.src, 'Shot 12 (Mid: 5.83s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_47_mid.webp" class="shot-thumb" alt="Shot 12 End" title="Khung cuối: 6.10s" onclick="openLightbox(this.src, 'Shot 12 (End: 6.10s) - Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 13:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_48_mid.webp" class="trans-img" alt="Transition Shot 12 to 13" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 12 sang Shot 13')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc chéo 45° đối diện bàn làm việc &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn màn hình laptop hắt lên mặt + kính cam chống ánh sáng xanh + bình nước phát sáng</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Ngồi làm việc ban đêm trùm áo hoodie đen, đeo kính cam biohacking, gõ bàn phím laptop tập trung cao độ.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Kỷ luật trí tuệ (Mental Discipline) - Sự cày cuốc thầm lặng trong bóng đêm (Night Grinding) để tạo đột phá.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 13</div>
-                        <div class="time-pill" onclick="playVideoAt(6.1)">&#9654; [6.10s - 6.63s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"WHERE YOU"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_49_mid.webp" class="shot-thumb" alt="Shot 13 Start" title="Khung đầu: 6.10s" onclick="openLightbox(this.src, 'Shot 13 (Start: 6.10s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_50_mid.webp" class="shot-thumb" alt="Shot 13 Mid" title="Khung giữa: 6.37s" onclick="openLightbox(this.src, 'Shot 13 (Mid: 6.37s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_51_mid.webp" class="shot-thumb" alt="Shot 13 End" title="Khung cuối: 6.63s" onclick="openLightbox(this.src, 'Shot 13 (End: 6.63s) - Medium Shot (MS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 14:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_52_mid.webp" class="trans-img" alt="Transition Shot 13 to 14" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 13 sang Shot 14')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Sau lưng ngang vai (Back View) &bull; Dolly forward đi theo bước chân leo dốc</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh hoàng hôn hồng tím ấm áp chiếu rọi bờ vai</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đi bộ leo dốc đường mòn đồi núi hướng về phía chân trời, một tay đưa lên vuốt tóc ra sau gáy.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Hành trình vươn lên đỉnh cao (Ascension) - Từng bước chinh phục địa hình hiểm trở hướng về ánh sáng.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 14</div>
-                        <div class="time-pill" onclick="playVideoAt(6.63)">&#9654; [6.63s - 7.17s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"QUANTUM"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_53_mid.webp" class="shot-thumb" alt="Shot 14 Start" title="Khung đầu: 6.63s" onclick="openLightbox(this.src, 'Shot 14 (Start: 6.63s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_54_mid.webp" class="shot-thumb" alt="Shot 14 Mid" title="Khung giữa: 6.90s" onclick="openLightbox(this.src, 'Shot 14 (Mid: 6.90s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_55_mid.webp" class="shot-thumb" alt="Shot 14 End" title="Khung cuối: 7.17s" onclick="openLightbox(this.src, 'Shot 14 (End: 7.17s) - Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 15:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_56_mid.webp" class="trans-img" alt="Transition Shot 14 to 15" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 14 sang Shot 15')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc cao nhìn xuống vai và cánh tay &bull; Handheld chuyển động phóng khoáng, đồng điệu nhịp điệu</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng ban ngày rực rỡ ngoài biển khơi</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đeo tai nghe AirPods Max màu đen, nhảy múa và vận động tự do trên đỉnh đồi nhìn ra biển với nụ cười rạng rỡ.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Trạng thái dòng chảy thăng hoa (Flow State / Euphoria) - Báo hiệu điểm bùng nổ chuyển hóa năng lượng.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 15</div>
-                        <div class="time-pill" onclick="playVideoAt(7.17)">&#9654; [7.17s - 7.70s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"QUANTUM LEAPS"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_57_mid.webp" class="shot-thumb" alt="Shot 15 Start" title="Khung đầu: 7.17s" onclick="openLightbox(this.src, 'Shot 15 (Start: 7.17s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_58_mid.webp" class="shot-thumb" alt="Shot 15 Mid" title="Khung giữa: 7.44s" onclick="openLightbox(this.src, 'Shot 15 (Mid: 7.44s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_59_mid.webp" class="shot-thumb" alt="Shot 15 End" title="Khung cuối: 7.70s" onclick="openLightbox(this.src, 'Shot 15 (End: 7.70s) - Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 16:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_60_mid.webp" class="trans-img" alt="Transition Shot 15 to 16" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 15 sang Shot 16')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc nghiêng 3/4 lịch lãm &bull; Máy tĩnh vững chãi</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn chùm pha lê và đèn tường biệt thự sang trọng (Warm Luxury Ambient)</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Cú nhảy vọt hình tượng: Nhân vật xuất hiện trong bộ Tuxedo đen sang trọng, áo sơ mi trắng, đeo nơ cổ bướm, chỉnh ve áo vest.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> METAMORPHOSIS (SỰ LỘT XÁC NGOẠN MỤC) - Minh họa hoàn hảo cho 'Quantum Leaps' bằng hình ảnh quý ông thành đạt đỉnh cao.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 16</div>
-                        <div class="time-pill" onclick="playVideoAt(7.7)">&#9654; [7.70s - 8.23s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"QUANTUM LEAPS ACROSS MULTIPLE"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_61_mid.webp" class="shot-thumb" alt="Shot 16 Start" title="Khung đầu: 7.70s" onclick="openLightbox(this.src, 'Shot 16 (Start: 7.70s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_62_mid.webp" class="shot-thumb" alt="Shot 16 Mid" title="Khung giữa: 7.96s" onclick="openLightbox(this.src, 'Shot 16 (Mid: 7.96s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_63_mid.webp" class="shot-thumb" alt="Shot 16 End" title="Khung cuối: 8.23s" onclick="openLightbox(this.src, 'Shot 16 (End: 8.23s) - Medium Shot (MS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 17:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_64_mid.webp" class="trans-img" alt="Transition Shot 16 to 17" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 16 sang Shot 17')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Ngang tầm mắt trong phòng khách Penthouse &bull; Slow Push-In nhẹ</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn thanh Neon đỏ ấm (Red Neon Tube) kết hợp ánh sáng mềm</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đứng đọc tài liệu/sách ban đêm bên cửa sổ căn hộ cao cấp, cởi trần lộ cơ bắp cuồn cuộn dưới ánh sáng đỏ ma mị.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Mở rộng sang các khía cạnh khác của cuộc sống (Multiple Areas) - Sự giao thoa giữa tri thức, hình thể và phong cách sống cao cấp.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 17</div>
-                        <div class="time-pill" onclick="playVideoAt(8.23)">&#9654; [8.23s - 8.77s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"AREAS OF YOUR LIFE"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_65_mid.webp" class="shot-thumb" alt="Shot 17 Start" title="Khung đầu: 8.23s" onclick="openLightbox(this.src, 'Shot 17 (Start: 8.23s) - Extreme Close-Up (ECU) Mirror Shot')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_66_mid.webp" class="shot-thumb" alt="Shot 17 Mid" title="Khung giữa: 8.50s" onclick="openLightbox(this.src, 'Shot 17 (Mid: 8.50s) - Extreme Close-Up (ECU) Mirror Shot')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_67_mid.webp" class="shot-thumb" alt="Shot 17 End" title="Khung cuối: 8.77s" onclick="openLightbox(this.src, 'Shot 17 (End: 8.77s) - Extreme Close-Up (ECU) Mirror Shot')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 18:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_68_mid.webp" class="trans-img" alt="Transition Shot 17 to 18" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 17 sang Shot 18')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Extreme Close-Up (ECU) Mirror Shot</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc nhìn phản chiếu qua gương &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn gương trang điểm dịu nhẹ, sắc nét từng đường viền hàm</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Tỉ mỉ cạo râu/tỉa râu quai nón trước gương bằng dao cạo chuyên nghiệp, dây chuyền vàng trên cổ, ánh nhìn sắc bén.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Nghệ thuật chăm sóc bản thân (Grooming & Self-Care) - Tỉ mỉ đến từng chi tiết nhỏ nhất của diện mạo.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 18</div>
-                        <div class="time-pill" onclick="playVideoAt(8.77)">&#9654; [8.77s - 9.30s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"AREAS OF YOUR LIFE"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_69_mid.webp" class="shot-thumb" alt="Shot 18 Start" title="Khung đầu: 8.77s" onclick="openLightbox(this.src, 'Shot 18 (Start: 8.77s) - Close-Up (CU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_70_mid.webp" class="shot-thumb" alt="Shot 18 Mid" title="Khung giữa: 9.04s" onclick="openLightbox(this.src, 'Shot 18 (Mid: 9.04s) - Close-Up (CU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_71_mid.webp" class="shot-thumb" alt="Shot 18 End" title="Khung cuối: 9.30s" onclick="openLightbox(this.src, 'Shot 18 (End: 9.30s) - Close-Up (CU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 19:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_72_mid.webp" class="trans-img" alt="Transition Shot 18 to 19" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 18 sang Shot 19')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Close-Up (CU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Ngang ngực nhìn nghiêng &bull; Pan nhẹ theo động tác ngửa cổ uống nước</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Golden hour rim light bọc quanh vành mũ và bờ vai</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Uống nước từ bình thể thao đen ngoài trời sau buổi chạy, đội mũ lưỡi trai và đeo tai nghe trong ánh hoàng hôn.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Sức khỏe thể chất tối ưu (Peak Hydration & Vitality) - Nền tảng vững chắc của mọi bước nhảy vọt.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 19</div>
-                        <div class="time-pill" onclick="playVideoAt(9.3)">&#9654; [9.30s - 9.83s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"THE ONLY"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_73_mid.webp" class="shot-thumb" alt="Shot 19 Start" title="Khung đầu: 9.30s" onclick="openLightbox(this.src, 'Shot 19 (Start: 9.30s) - Long Shot (LS) Toàn cảnh')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_74_mid.webp" class="shot-thumb" alt="Shot 19 Mid" title="Khung giữa: 9.57s" onclick="openLightbox(this.src, 'Shot 19 (Mid: 9.57s) - Long Shot (LS) Toàn cảnh')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_75_mid.webp" class="shot-thumb" alt="Shot 19 End" title="Khung cuối: 9.83s" onclick="openLightbox(this.src, 'Shot 19 (End: 9.83s) - Long Shot (LS) Toàn cảnh')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 20:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_76_mid.webp" class="trans-img" alt="Transition Shot 19 to 20" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 19 sang Shot 20')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Long Shot (LS) Toàn cảnh</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc máy tầm thấp mặt đường &bull; Máy tĩnh đón nhân vật chạy qua khung hình từ xa vào gần</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh hoàng hôn vàng cam rực rỡ chiếu xuyên qua hàng cọ (Backlit Sunset)</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Chạy bộ dọc con phố biệt thự phong cách Địa Trung Hải, bóng người đổ dài trên mặt đường nhựa.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Khung cảnh đô thị điện ảnh tráng lệ - Thiết lập không gian cho điều kiện tiên quyết duy nhất.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 20</div>
-                        <div class="time-pill" onclick="playVideoAt(9.83)">&#9654; [9.83s - 10.37s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"THE ONLY REQUIREMENT"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_77_mid.webp" class="shot-thumb" alt="Shot 20 Start" title="Khung đầu: 9.83s" onclick="openLightbox(this.src, 'Shot 20 (Start: 9.83s) - Close-Up (CU) qua kính ô tô')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_78_mid.webp" class="shot-thumb" alt="Shot 20 Mid" title="Khung giữa: 10.10s" onclick="openLightbox(this.src, 'Shot 20 (Mid: 10.10s) - Close-Up (CU) qua kính ô tô')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_79_mid.webp" class="shot-thumb" alt="Shot 20 End" title="Khung cuối: 10.37s" onclick="openLightbox(this.src, 'Shot 20 (End: 10.37s) - Close-Up (CU) qua kính ô tô')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 21:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_80_mid.webp" class="trans-img" alt="Transition Shot 20 to 21" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 20 sang Shot 21')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Close-Up (CU) qua kính ô tô</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc chéo trước đầu xe nhìn qua kính lái &bull; Camera gắn cố định trên xe (Rig/Suction Mount)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng chiều tà xanh thẫm (Blue Dusk) phản chiếu vệt bóng mờ ảo</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Gương mặt cương nghị, tập trung cao độ của nhân vật khi đang lái xe ô tô qua kính chắn gió.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Sự tập trung tuyệt đối vào mục tiêu (Laser Focus) - Người cầm lái số phận của chính mình.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 21</div>
-                        <div class="time-pill" onclick="playVideoAt(10.37)">&#9654; [10.37s - 10.90s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"THAT YOU DO"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_81_mid.webp" class="shot-thumb" alt="Shot 21 Start" title="Khung đầu: 10.37s" onclick="openLightbox(this.src, 'Shot 21 (Start: 10.37s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_82_mid.webp" class="shot-thumb" alt="Shot 21 Mid" title="Khung giữa: 10.63s" onclick="openLightbox(this.src, 'Shot 21 (Mid: 10.63s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_83_mid.webp" class="shot-thumb" alt="Shot 21 End" title="Khung cuối: 10.90s" onclick="openLightbox(this.src, 'Shot 21 (End: 10.90s) - Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 22:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_84_mid.webp" class="trans-img" alt="Transition Shot 21 to 22" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 21 sang Shot 22')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Sau gáy cúi đầu &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> White High-Contrast Rim Light tạo viền sáng sắc lẹm trên nền tối</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Cúi đầu tập trung trước máy tập gym / thanh tạ trong bóng tối, viền sáng rọi lên cổ và vai áo đen.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Khoảnh khắc nén tâm lý (Psychological Tension) trước khi bước vào cuộc chiến quyết định.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 22</div>
-                        <div class="time-pill" onclick="playVideoAt(10.9)">&#9654; [10.90s - 11.70s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.8s &bull; 24 frames</div>
-                        <div class="text-quote">"GIVE UP ON YOURSELF"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_85_mid.webp" class="shot-thumb" alt="Shot 22 Start" title="Khung đầu: 10.90s" onclick="openLightbox(this.src, 'Shot 22 (Start: 10.90s) - Medium Shot (MS) Bán thân')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_86_mid.webp" class="shot-thumb" alt="Shot 22 Mid" title="Khung giữa: 11.30s" onclick="openLightbox(this.src, 'Shot 22 (Mid: 11.30s) - Medium Shot (MS) Bán thân')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_87_mid.webp" class="shot-thumb" alt="Shot 22 End" title="Khung cuối: 11.70s" onclick="openLightbox(this.src, 'Shot 22 (End: 11.70s) - Medium Shot (MS) Bán thân')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 23:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_88_mid.webp" class="trans-img" alt="Transition Shot 22 to 23" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 22 sang Shot 23')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS) Bán thân</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Trực diện ngang ngực &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng vàng ấm xuyên qua làn sương hơi nước mờ ảo (Atmospheric Haze)</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đứng trong phòng tắm hơi nghi ngút khói, đeo tai nghe, hai tay nâng lên gáy gồng toàn bộ cơ bắp cuồn cuộn.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Đỉnh cao hình thể điêu khắc - Thách thức trực tiếp suy nghĩ từ bỏ của tâm trí.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 23</div>
-                        <div class="time-pill" onclick="playVideoAt(11.7)">&#9654; [11.70s - 12.13s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.43s &bull; 13 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_89_mid.webp" class="shot-thumb" alt="Shot 23 Start" title="Khung đầu: 11.70s" onclick="openLightbox(this.src, 'Shot 23 (Start: 11.70s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_90_mid.webp" class="shot-thumb" alt="Shot 23 Mid" title="Khung giữa: 11.91s" onclick="openLightbox(this.src, 'Shot 23 (Mid: 11.91s) - Medium Shot (MS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_91_mid.webp" class="shot-thumb" alt="Shot 23 End" title="Khung cuối: 12.13s" onclick="openLightbox(this.src, 'Shot 23 (End: 12.13s) - Medium Shot (MS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 24:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_92_mid.webp" class="trans-img" alt="Transition Shot 23 to 24" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 23 sang Shot 24')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc nghiêng 45° theo cú đấm thẳng &bull; Handheld giật nhẹ theo lực đấm</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh nắng chiếu qua chấn song cửa sổ tạo hiệu ứng sọc sáng tối Chiaroscuro</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đấm bốc shadow boxing không áo dưới ánh nắng rọi qua cửa sổ garage, đấm dứt khoát vào không khí.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Hành động chiến đấu quyết liệt (Relentless Fight) - Tuyên ngôn 'Từ chối đầu hàng' bắt đầu vang lên.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 24</div>
-                        <div class="time-pill" onclick="playVideoAt(12.13)">&#9654; [12.13s - 12.77s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.63s &bull; 19 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_93_mid.webp" class="shot-thumb" alt="Shot 24 Start" title="Khung đầu: 12.13s" onclick="openLightbox(this.src, 'Shot 24 (Start: 12.13s) - Medium Shot (MS) từ sau lưng')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_94_mid.webp" class="shot-thumb" alt="Shot 24 Mid" title="Khung giữa: 12.45s" onclick="openLightbox(this.src, 'Shot 24 (Mid: 12.45s) - Medium Shot (MS) từ sau lưng')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_95_mid.webp" class="shot-thumb" alt="Shot 24 End" title="Khung cuối: 12.77s" onclick="openLightbox(this.src, 'Shot 24 (End: 12.77s) - Medium Shot (MS) từ sau lưng')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 25:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_96_mid.webp" class="trans-img" alt="Transition Shot 24 to 25" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 24 sang Shot 25')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS) từ sau lưng</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Ngang eo sau lưng &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng tự nhiên từ ngoài rọi vào garage tối làm nổi bật cơ lưng</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Nhảy dây tốc độ cao trước cửa garage, cơ lưng xô chữ V (V-taper) và cơ vai gồng cuồn cuộn theo từng nhịp nhảy.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Sự dẻo dai và kỷ luật thể chất ở mức độ thượng thừa.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 25</div>
-                        <div class="time-pill" onclick="playVideoAt(12.77)">&#9654; [12.77s - 13.30s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.53s &bull; 16 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_97_mid.webp" class="shot-thumb" alt="Shot 25 Start" title="Khung đầu: 12.77s" onclick="openLightbox(this.src, 'Shot 25 (Start: 12.77s) - Medium Full Shot (MFS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_98_mid.webp" class="shot-thumb" alt="Shot 25 Mid" title="Khung giữa: 13.04s" onclick="openLightbox(this.src, 'Shot 25 (Mid: 13.04s) - Medium Full Shot (MFS)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_99_mid.webp" class="shot-thumb" alt="Shot 25 End" title="Khung cuối: 13.30s" onclick="openLightbox(this.src, 'Shot 25 (End: 13.30s) - Medium Full Shot (MFS)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 26:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_100_mid.webp" class="trans-img" alt="Transition Shot 25 to 26" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 25 sang Shot 26')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Full Shot (MFS)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc ngang 3/4 theo bước chân &bull; Tracking mượt mà theo người chạy</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Ánh sáng ban ngày trong trẻo giữa khu phố biệt thự</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Chạy bộ ngoài trời qua các ngôi nhà đẹp, trùm mũ hoodie xám, bước chạy mạnh mẽ không ngơi nghỉ.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Sự bền bỉ ngoài thế giới thực - Bất kể thời gian hay địa điểm, kỷ luật vẫn tiếp diễn.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 26</div>
-                        <div class="time-pill" onclick="playVideoAt(13.3)">&#9654; [13.30s - 13.73s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.43s &bull; 13 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_101_mid.webp" class="shot-thumb" alt="Shot 26 Start" title="Khung đầu: 13.30s" onclick="openLightbox(this.src, 'Shot 26 (Start: 13.30s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_102_mid.webp" class="shot-thumb" alt="Shot 26 Mid" title="Khung giữa: 13.52s" onclick="openLightbox(this.src, 'Shot 26 (Mid: 13.52s) - Medium Close-Up (MCU)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_103_mid.webp" class="shot-thumb" alt="Shot 26 End" title="Khung cuối: 13.73s" onclick="openLightbox(this.src, 'Shot 26 (End: 13.73s) - Medium Close-Up (MCU)')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 27:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_104_mid.webp" class="trans-img" alt="Transition Shot 26 to 27" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 26 sang Shot 27')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Close-Up (MCU)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc thấp chếch 45° &bull; Máy tĩnh (Static)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn trần phòng gym rọi thẳng vào thớ cơ cánh tay</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Gập người kéo tạ đơn hạng nặng (Heavy dumbbell row), đội mũ len đỏ, biểu cảm nghiến răng quyết tâm vượt ngưỡng.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Vượt ngưỡng chịu đựng (Breaking Plateaus) - Chiến thắng sự mệt mỏi thể xác.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 27</div>
-                        <div class="time-pill" onclick="playVideoAt(13.73)">&#9654; [13.73s - 14.17s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.43s &bull; 13 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_105_mid.webp" class="shot-thumb" alt="Shot 27 Start" title="Khung đầu: 13.73s" onclick="openLightbox(this.src, 'Shot 27 (Start: 13.73s) - Overhead Top-Down View 90°')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_106_mid.webp" class="shot-thumb" alt="Shot 27 Mid" title="Khung giữa: 13.95s" onclick="openLightbox(this.src, 'Shot 27 (Mid: 13.95s) - Overhead Top-Down View 90°')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_107_mid.webp" class="shot-thumb" alt="Shot 27 End" title="Khung cuối: 14.17s" onclick="openLightbox(this.src, 'Shot 27 (End: 14.17s) - Overhead Top-Down View 90°')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 28:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_108_mid.webp" class="trans-img" alt="Transition Shot 27 to 28" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 27 sang Shot 28')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Overhead Top-Down View 90°</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Trực diện từ trần nhà 90° nhìn thẳng xuống &bull; Máy tĩnh trên cao (Top-down Rig)</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn sàn và đèn trần tạo vòng tròn tương phản độc đáo</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Tung cú đấm móc uy lực vào bao cát xoay, góc nhìn từ trên đỉnh đầu tạo cảm giác hình học ấn tượng.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Góc nhìn toàn cảnh của chiến binh - Đòn đánh chính xác và uy lực từ mọi góc độ.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 28</div>
-                        <div class="time-pill" onclick="playVideoAt(14.17)">&#9654; [14.17s - 15.20s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">1.03s &bull; 31 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_109_mid.webp" class="shot-thumb" alt="Shot 28 Start" title="Khung đầu: 14.17s" onclick="openLightbox(this.src, 'Shot 28 (Start: 14.17s) - Medium Shot (MS) Bán thân')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_110_mid.webp" class="shot-thumb" alt="Shot 28 Mid" title="Khung giữa: 14.68s" onclick="openLightbox(this.src, 'Shot 28 (Mid: 14.68s) - Medium Shot (MS) Bán thân')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_111_mid.webp" class="shot-thumb" alt="Shot 28 End" title="Khung cuối: 15.20s" onclick="openLightbox(this.src, 'Shot 28 (End: 15.20s) - Medium Shot (MS) Bán thân')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 29:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_112_mid.webp" class="trans-img" alt="Transition Shot 28 to 29" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 28 sang Shot 29')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Medium Shot (MS) Bán thân</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Ngang tầm ngực &bull; Slow push-in nhẹ</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Low-key dramatic boxing gym lighting</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Đứng tựa bao cát, quấn băng tay đấm bốc màu đen, trùm áo hoodie xanh oliu, ánh mắt nhìn xuống trầm ngâm đầy nội lực.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Sự chuẩn bị của một đấu sĩ trước trận chiến lớn - Trầm tĩnh, tập trung và kiên định.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 29</div>
-                        <div class="time-pill" onclick="playVideoAt(15.2)">&#9654; [15.20s - 15.70s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.5s &bull; 15 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_113_mid.webp" class="shot-thumb" alt="Shot 29 Start" title="Khung đầu: 15.20s" onclick="openLightbox(this.src, 'Shot 29 (Start: 15.20s) - Close-Up (CU) POV')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_114_mid.webp" class="shot-thumb" alt="Shot 29 Mid" title="Khung giữa: 15.45s" onclick="openLightbox(this.src, 'Shot 29 (Mid: 15.45s) - Close-Up (CU) POV')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_115_mid.webp" class="shot-thumb" alt="Shot 29 End" title="Khung cuối: 15.70s" onclick="openLightbox(this.src, 'Shot 29 (End: 15.70s) - Close-Up (CU) POV')" />
-                        </div>
-                        
-        <div style="margin-top:8px;">
-            <div style="font-size:11px; color:var(--accent-gold); font-weight:700; margin-bottom:3px;">Chuyển cảnh sang Shot 30:</div>
-            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_116_mid.webp" class="trans-img" alt="Transition Shot 29 to 30" onclick="openLightbox(this.src, 'Chuyển cảnh từ Shot 29 sang Shot 30')" />
-        </div>
-        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Close-Up (CU) POV</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Trực diện đối đầu (Point of view) &bull; Handheld giật lùi theo hướng cú đấm</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Đèn trần phòng gym nhiều nguồn sáng</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Tung cú đấm boxing trực diện thẳng về phía ống kính máy quay, thể hiện sức mạnh bùng nổ.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> Cú đấm phá vỡ mọi rào cản (Breaking the 4th Wall) - Tác động trực diện vào tâm trí người xem.</div>
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <div style="font-weight:800; font-size:15px; color:#ffffff; margin-bottom:4px;">SHOT 30</div>
-                        <div class="time-pill" onclick="playVideoAt(15.7)">&#9654; [15.70s - 16.20s]</div>
-                        <div style="font-size:12px; color:var(--text-muted);">0.5s &bull; 15 frames</div>
-                        <div class="text-quote">"REFUSE TO GIVE UP"</div>
-                    </td>
-                    <td>
-                        <div class="shot-thumb-row">
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_117_mid.webp" class="shot-thumb" alt="Shot 30 Start" title="Khung đầu: 15.70s" onclick="openLightbox(this.src, 'Shot 30 (Start: 15.70s) - Low-Angle Medium Shot (Hero Framing)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_118_mid.webp" class="shot-thumb" alt="Shot 30 Mid" title="Khung giữa: 15.95s" onclick="openLightbox(this.src, 'Shot 30 (Mid: 15.95s) - Low-Angle Medium Shot (Hero Framing)')" />
-                            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_119_mid.webp" class="shot-thumb" alt="Shot 30 End" title="Khung cuối: 16.20s" onclick="openLightbox(this.src, 'Shot 30 (End: 16.20s) - Low-Angle Medium Shot (Hero Framing)')" />
-                        </div>
-                        
-                    </td>
-                    <td>
-                        <div style="margin-bottom:6px;"><strong>Cỡ cảnh:</strong> <span style="color:var(--accent-gold); font-weight:700;">Low-Angle Medium Shot (Hero Framing)</span></div>
-                        <div style="margin-bottom:6px;"><strong>Góc &amp; Động tác:</strong> Góc ngước từ dưới lên tôn vinh chủ thể (Low-Angle Hero Shot) &bull; Máy tĩnh trang trọng, uy nghi</div>
-                        <div style="margin-bottom:6px;"><strong>Ánh sáng:</strong> Bầu trời hoàng hôn chuyển màu xanh lam & cam nhẹ, ánh sáng viền tinh tế trên bờ vai áo vest</div>
-                        <div style="margin-bottom:6px;"><strong>Nội dung:</strong> Hero shot kết màn đỉnh cao: Mặc Tuxedo đen lịch lãm, sơ mi trắng, nơ bướm đen, đứng uy nghiêm ngoài trời nhìn về tương lai với ánh mắt tự tin của người chiến thắng.</div>
-                        <div style="color:var(--accent-emerald-light); font-size:12.5px; margin-top:6px;"><strong>Ý đồ đạo diễn:</strong> CÚ ĐÓNG MÀN HOÀN HẢO: Quả ngọt của sự kiên trì - Bạn không còn là kẻ vật lộn với số phận, mà đã trở thành người làm chủ cuộc đời mình.</div>
-                    </td>
-                </tr>
-    
-            </tbody>
-        </table>
-    </div>
-
-    <!-- PHẦN 3: 2 PHƯƠNG ÁN KỊCH BẢN THỰC CHIẾN (REMAKE SCRIPTS CHO CREATOR VIỆT NAM) -->
-    <div class="section-title">
-        <span class="num">3</span>
-        Kịch Bản Mẫu Thực Chiến Cho Creator Việt Nam (2 Phương Án Remake)
-    </div>
-
-    <div class="card">
-        <!-- Phương án 1 -->
-        <div class="script-plan plan-a">
-            <h4>
-                <span>PHƯƠNG ÁN 1: CHỦ ĐỀ PHÁT TRIỂN BẢN THÂN / THỂ HÌNH &amp; KỶ LUẬT SỐNG</span>
-                <span class="badge">Niche: Fitness &amp; Self-Improvement</span>
-            </h4>
-            <p><strong>Thông điệp cốt lõi:</strong> Kỷ luật buổi sáng và sự tích lũy âm thầm tạo nên cú bứt phá ngoạn mục.</p>
-            <table class="storyboard-table" style="margin:14px 0 0 0;">
-                <thead>
-                    <tr>
-                        <th style="width:20%;">Giai Đoạn Phim</th>
-                        <th style="width:40%;">Hành Động &amp; Khung Hình (Shooting Action)</th>
-                        <th style="width:40%;">Lời Thoại Tiếng Việt (Voiceover / On-screen Text)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>HOOK (0s - 3s)<br><small>Shots 01 - 06</small></strong></td>
-                        <td>Rửa mặt nước lạnh &rarr; Cận cảnh xỏ giày chạy bộ &rarr; Pha cà phê đen đậm đặc &rarr; Chạy bộ lúc 5h sáng ngược gió.</td>
-                        <td>"Có một quy luật bất thành văn của cuộc đời mà ít ai nói cho bạn biết..."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>BUILD-UP (3s - 7s)<br><small>Shots 07 - 14</small></strong></td>
-                        <td>Gập người nâng tạ nặng thở dốc &rarr; Đứng dưới vòi sen mờ sương &rarr; Ngồi làm việc trước laptop phòng tối &rarr; Đọc sách bên bàn trà.</td>
-                        <td>"Sau chuỗi ngày dài bạn phải đối mặt với khó khăn, bế tắc và sự hoài nghi của mọi người xung quanh..."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>METAMORPHOSIS (7s - 12s)<br><small>Shots 15 - 22</small></strong></td>
-                        <td>Mặc sơ mi trắng phẳng phiu / Vest &rarr; Đeo đồng hồ sang trọng &rarr; Đứng trên tòa nhà cao tầng đón gió &rarr; Cười tự tin trước gương.</td>
-                        <td>"Luôn là giai đoạn bạn sẽ tạo ra những BƯỚC NHẢY VỌT LƯỢNG TỬ trên mọi khía cạnh cuộc sống."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CLIMAX &amp; CTA (12s - 16s)<br><small>Shots 23 - 30</small></strong></td>
-                        <td>Nhảy dây tốc độ cao &rarr; Đấm boxing trực diện &rarr; Hero shot đứng uy nghi nhìn về chân trời.</td>
-                        <td>"Điều kiện duy nhất: Bạn TUYỆT ĐỐI KHÔNG ĐƯỢC BỎ CUỘC giữa chừng."</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
-        <!-- Phương án 2 -->
-        <div class="script-plan plan-b" style="margin-top:20px;">
-            <h4>
-                <span>PHƯƠNG ÁN 2: CHỦ ĐỀ KHỞI NGHIỆP, DIGITAL NOMAD &amp; XÂY DỰNG SỰ NGHIỆP</span>
-                <span class="badge">Niche: Business, Creator &amp; Career</span>
-            </h4>
-            <p><strong>Thông điệp cốt lõi:</strong> Những đêm thức trắng và đơn độc làm việc sẽ được đền đáp xứng đáng.</p>
-            <table class="storyboard-table" style="margin:14px 0 0 0;">
-                <thead>
-                    <tr>
-                        <th style="width:20%;">Giai Đoạn Phim</th>
-                        <th style="width:40%;">Hành Động &amp; Khung Hình (Shooting Action)</th>
-                        <th style="width:40%;">Lời Thoại Tiếng Việt (Voiceover / On-screen Text)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>HOOK (0s - 3s)<br><small>Shots 01 - 06</small></strong></td>
-                        <td>Bấm chuông báo thức 5h &rarr; Rót cà phê phin &rarr; Mở laptop sáng màn hình trong phòng tối &rarr; Vẽ sơ đồ chiến lược lên sổ.</td>
-                        <td>"Đừng bao giờ đánh giá thấp sức mạnh của những ngày tháng bạn âm thầm nỗ lực một mình."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>BUILD-UP (3s - 7s)<br><small>Shots 07 - 14</small></strong></td>
-                        <td>Gõ code / viết kịch bản liên tục &rarr; Lái xe đêm muộn &rarr; Uống nước nghỉ ngơi &rarr; Đi bộ dạo phố suy ngẫm hướng đi.</td>
-                        <td>"Khi bạn kiên trì làm việc mà chưa thấy kết quả ngay lập tức, đừng vội nản lòng."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>METAMORPHOSIS (7s - 12s)<br><small>Shots 15 - 22</small></strong></td>
-                        <td>Thông báo doanh thu ting ting &rarr; Bắt tay đối tác &rarr; Làm việc tại quán cafe view biển &rarr; Ký kết hợp đồng thành công.</td>
-                        <td>"Bởi vì sau giai đoạn tích lũy lượng, chất sẽ tự khắc bùng nổ vượt ngoài sức tưởng tượng của bạn."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CLIMAX &amp; CTA (12s - 16s)<br><small>Shots 23 - 30</small></strong></td>
-                        <td>Tập gym dồn lực &rarr; Chạy bộ hoàng hôn &rarr; Hero shot nhìn ra toàn cảnh thành phố rực sáng.</td>
-                        <td>"Kiên định với mục tiêu, thành quả chắc chắn sẽ đến."</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="gridView">
+            
+        <div class="grid-item" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 5.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_01_mid.webp', 'SHOT 01 • Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời - @colecoppolino')">⊕</button>
+            </div>
+            <div class="grid-title">Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đờ</div>
         </div>
-    </div>
-
-    <!-- PHẦN 4: HƯỚNG DẪN THAO TÁC QUAY SMARTPHONE 1 MÌNH (SOLO CREATOR MASTERY) -->
-    <div class="section-title">
-        <span class="num">4</span>
-        Cẩm Nang Thao Tác Quay Smartphone Cầm Tay &amp; Tự Quay 1 Mình
-    </div>
-
-    <div class="card">
-        <div class="card-title emerald">📱 5 Bí Quyết Thực Chiến Để Đạt Chất Lượng Video Như @colecoppolino</div>
-        <ul>
-            <li>
-                <strong>1. Tự quay bằng Tripod mini + Chân đế tì vật lý:</strong> Khi quay một mình, đặt Tripod ở góc thấp (chạy bộ, nhảy dây) hoặc gắn giá hít kính (trong xe ô tô, gương phòng tắm). Dùng chế độ hẹn giờ 3s hoặc Apple Watch điều khiển bấm máy.
-            </li>
-            <li>
-                <strong>2. Khóa AF/AE Lock &amp; Hạ phơi sáng (-0.7 EV):</strong> Nhấp giữ vào điểm sáng nhất &rarr; Kéo nhẹ thanh độ sáng xuống để màu đen sâu hơn, cơ bắp nổi khối rõ nét và ánh đèn không bị lóa trắng chói mắt.
-            </li>
-            <li>
-                <strong>3. Tận dụng nguồn sáng ngược (Backlight / Rim Light):</strong> Đặt máy quay ngược hướng cửa sổ garage hoặc cửa ban công để ánh sáng bao quanh viền người (Silhouette Rim), tạo chiều sâu điện ảnh 3D.
-            </li>
-            <li>
-                <strong>4. Kỹ thuật Dồn trọng tâm (Weight Shift) cho cú đẩy Push-in:</strong> Đứng chân trước chân sau, chỉ dồn trọng tâm từ chân sau sang chân trước 15cm khi bấm quay. Khung hình sẽ êm ru tuyệt đối mà không cần dùng đến Gimbal.
-            </li>
-            <li>
-                <strong>5. Đồng bộ nhịp cắt theo BPM âm nhạc:</strong> Khi dựng trên CapCut hoặc Premiere, đánh dấu các điểm rơi nhịp trống (Beat drop / Snare) và cắt gọt mỗi shot chính xác vào đúng mốc beat (khoảng 0.4s - 0.6s).
-            </li>
-        </ul>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        Báo Cáo Phân Tích Đạo Diễn &bull; Ky_Luat_Thep_Va_Buoc_Nhay_Luong_Tu_Doi_Doi - @colecoppolino.html &bull; Đồng bộ tự động Google Drive AI Video Analysis &bull; Hệ Thống Tra Cứu Điện Ảnh
-    </div>
-
-</div>
-
-<!-- Lightbox Modal -->
-<div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <img crossorigin="anonymous" id="lightbox-img" class="lightbox-img" src="" alt="Enlarged Frame" onclick="event.stopPropagation()" />
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-</div>
-
-<!-- Video Modal -->
-<div id="video-modal" class="video-modal" onclick="closeVideoModal()">
-    <div class="video-modal-content" onclick="event.stopPropagation()">
-        <button class="video-close" onclick="closeVideoModal()">&times;</button>
-        <iframe id="mainPlayer" src="https://www.youtube.com/embed/axhLzaaWKno?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 </div>
 
-<!-- Floating Play Button -->
-<button class="float-play-btn" onclick="openFullVideo()">
-    &#9654; Xem Video Gốc
-</button>
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-head">
+            <span>MỤC LỤC (1)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
+        </div>
+        <div class="drawer-list">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 5.0, 'SHOT 01')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_%40colecoppolino_DcJiRCrTlG1/shot_01_mid.webp" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">Kỷ Luật Thép &amp; Bước Nhảy Lượng Tử Đổi Đời </div>
+                <div class="drawer-shot-time">0.00s – 5.00s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
+    </div>
+</div>
+
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
+</div>
+
+<!-- Edit Inline Feature -->
+<button class="edit-fab" onclick="openEditModal()" title="Sửa phân loại">✎</button>
+
+<div id="editModalBackdrop" class="edit-modal-backdrop" onclick="closeEditModal()">
+    <div class="edit-modal" onclick="event.stopPropagation()">
+        <div class="edit-modal-head">
+            <h3>✎ Sửa Phân Loại</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="edit-modal-body">
+            <div id="editStatus" class="edit-status"></div>
+
+            <div class="edit-field">
+                <label>Ngành nghề</label>
+                <select id="editIndustry">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="ky-thuat-quay">🎯 Bố cục / Kỹ Thuật Quay Dựng</option>
+                    <option value="thuong-hieu">💼 Xây kênh / Thương Hiệu Cá Nhân</option>
+                    <option value="kien-truc">🏛️ Góc nhà đẹp / Kiến Trúc & Không Gian</option>
+                    <option value="am-thuc">🍜 F&B / Ẩm Thực & Cafe</option>
+                    <option value="thoi-trang">👔 Thời trang & Phụ Kiện</option>
+                    <option value="spa-lam-dep">💆 Làm đẹp / Spa & Y Tế</option>
+                    <option value="du-lich">✈️ Du lịch / Phong Cách Sống</option>
+                    <option value="cong-nghe">📱 Đồ công nghệ & Thiết Bị</option>
+                    <option value="the-thao">🏃 Thể thao & Sức Khỏe</option>
+                    <option value="ugc">📱 UGC / E-Commerce & Bán Hàng</option>
+                </select>
+                <input type="text" id="editIndustryCustom" placeholder="Hoặc gõ ngành tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Kiểu quay / Phong cách</label>
+                <select id="editStyle">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="dien-anh">🎬 Chỉn Chu (B-Roll Thuần Hình / Cinematic)</option>
+                    <option value="talking-head">🗣️ Nói Trực Diện (Talking Head)</option>
+                    <option value="walk-and-talk">🚶 Walk & Talk (Vừa đi vừa nói)</option>
+                    <option value="voice-over">🎙️ Lồng Tiếng (Voice Over)</option>
+                    <option value="storytelling">📖 Kể Chuyện / Đời Thường (Storytelling)</option>
+                    <option value="chuyen-canh">⚡ Chuyển Cảnh (Transition / Montage)</option>
+                    <option value="bts">🎥 BTS / Setup Hậu Trường</option>
+                    <option value="theo-nhip-nhac">🎵 Theo nhịp nhạc</option>
+                </select>
+                <input type="text" id="editStyleCustom" placeholder="Hoặc gõ kiểu quay tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Tags kỹ thuật (phân tách bằng dấu phẩy)</label>
+                <textarea id="editTags" placeholder="VD: B-Roll Practice, Góc máy cận cảnh, Chuyển cảnh"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Mục đích / Tóm tắt (Purpose)</label>
+                <textarea id="editPurpose"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Bài học rút gọn (Quick Takeaway)</label>
+                <textarea id="editTakeaway"></textarea>
+            </div>
+
+            <div class="edit-field edit-pw-field">
+                <label>Mật khẩu</label>
+                <input type="password" id="editPassword" value="0070" placeholder="••••" autocomplete="off">
+            </div>
+        </div>
+        <div class="edit-modal-footer">
+            <button class="edit-cancel-btn" onclick="closeEditModal()">Hủy</button>
+            <button class="edit-save-btn" id="editSaveBtn" onclick="saveEdit()">Lưu thay đổi</button>
+        </div>
+    </div>
+</div>
 
 <script>
-// Lightbox functions
-function openLightbox(src, caption) {
-    const lb = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    const cap = document.getElementById('lightbox-caption');
-    img.src = src;
-    cap.innerText = caption || '';
-    lb.classList.add('active');
+// Video source resolution - try multiple paths
+const rawVideoSrc = 'https://www.youtube.com/embed/axhLzaaWKno';
+let currentEndTime = null;
+
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
 }
 
-function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+window.isYtMuted = false;
+
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
+    player.load();
 }
 
-// Video jump functions
-function playVideoAt(seconds) {
-    const modal = document.getElementById('video-modal');
-    const vid = document.getElementById('popup-video');
-    modal.classList.add('active');
-    vid.currentTime = seconds;
-    vid.play();
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
 }
 
-function openFullVideo() {
-    const modal = document.getElementById('video-modal');
-    const vid = document.getElementById('popup-video');
-    modal.classList.add('active');
-    vid.currentTime = 0;
-    vid.play();
-}
-
-function closeVideoModal() {
-    const modal = document.getElementById('video-modal');
-    const vid = document.getElementById('popup-video');
-    vid.pause();
-    modal.classList.remove('active');
-}
-
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeLightbox();
-        closeVideoModal();
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
+        }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
     }
-});
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
+    }
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
+    } else {
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
+        }
+    }
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
+    }
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function setSpeed(speed, btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+}
+
+function stepFrame(frames) {
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
+}
+
+function toggleMute(btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
+}
 
 function togglePlayerFullscreen() {
-    const v = document.getElementById('mainPlayer');
+    var v = document.getElementById('mainPlayer');
     if (!v) return;
     if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        if (v.requestFullscreen) {
-            v.requestFullscreen().catch(() => {});
-        } else if (v.webkitRequestFullscreen) {
-            v.webkitRequestFullscreen();
-        } else if (v.webkitEnterFullscreen) {
-            v.webkitEnterFullscreen();
-        }
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
     } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        }
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
     }
 }
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', function(e) {
     if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
         togglePlayerFullscreen();
     }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
 });
 
-</script>
+function switchView(view) {
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
+    }
+}
 
+function toggleDrawer(open) {
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function openLightbox(src, caption) {
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
+
+// === EDIT INLINE FEATURE ===
+var ENTRY_KEY = 'Ky_Luat_Thep_Va_Buoc_Nhay_Luong_Tu_Doi_Doi - @colecoppolino';
+var CLASSIFICATION_DATA = {};
+
+function openEditModal() {
+    var d = CLASSIFICATION_DATA || {};
+    var indSel = document.getElementById('editIndustry');
+    var indCust = document.getElementById('editIndustryCustom');
+    var stySel = document.getElementById('editStyle');
+    var styCust = document.getElementById('editStyleCustom');
+    
+    // Pre-fill industry (support both id and name)
+    var indId = (d.industry && d.industry.id) ? d.industry.id : '';
+    var indName = (d.industry && d.industry.name) ? d.industry.name : '';
+    indSel.value = '';
+    indCust.value = '';
+    for (var i = 0; i < indSel.options.length; i++) {
+        if (indSel.options[i].value === indId || indSel.options[i].value === indName) {
+            indSel.value = indSel.options[i].value;
+            break;
+        }
+    }
+    if (!indSel.value && indName) indCust.value = indName;
+
+    // Pre-fill style (support both id and name)
+    var styId = (d.shooting_style && d.shooting_style.id) ? d.shooting_style.id : '';
+    var styName = (d.shooting_style && d.shooting_style.name) ? d.shooting_style.name : '';
+    stySel.value = '';
+    styCust.value = '';
+    for (var j = 0; j < stySel.options.length; j++) {
+        if (stySel.options[j].value === styId || stySel.options[j].value === styName) {
+            stySel.value = stySel.options[j].value;
+            break;
+        }
+    }
+    if (!stySel.value && styName) styCust.value = styName;
+
+    // Pre-fill tags
+    document.getElementById('editTags').value = (d.tags || d.tech_tags || []).join(', ');
+    document.getElementById('editPurpose').value = d.purpose || d.logic_explanation || '';
+    document.getElementById('editTakeaway').value = d.quick_takeaway || '';
+    var pwEl = document.getElementById('editPassword');
+    if (pwEl && !pwEl.value) pwEl.value = '0070';
+
+    // Reset status
+    var st = document.getElementById('editStatus');
+    st.className = 'edit-status';
+    st.style.display = 'none';
+    document.getElementById('editSaveBtn').disabled = false;
+    document.getElementById('editSaveBtn').textContent = 'Lưu thay đổi';
+
+    document.getElementById('editModalBackdrop').classList.add('open');
+}
+
+function closeEditModal() {
+    document.getElementById('editModalBackdrop').classList.remove('open');
+}
+
+function saveEdit() {
+    var btn = document.getElementById('editSaveBtn');
+    var st = document.getElementById('editStatus');
+    var pw = document.getElementById('editPassword').value || '0070';
+
+    // Collect values
+    var indSel = document.getElementById('editIndustry').value;
+    var indCust = document.getElementById('editIndustryCustom').value.trim();
+    var industry = indCust || indSel || null;
+
+    var stySel = document.getElementById('editStyle').value;
+    var styCust = document.getElementById('editStyleCustom').value.trim();
+    var style = styCust || stySel || null;
+
+    var tags = document.getElementById('editTags').value;
+    var purpose = document.getElementById('editPurpose').value;
+    var takeaway = document.getElementById('editTakeaway').value;
+
+    var updates = {};
+    if (industry) updates.industry = industry;
+    if (style) updates.shooting_style = style;
+    if (tags) updates.tech_tags = tags;
+    if (purpose) updates.purpose = purpose;
+    if (takeaway) updates.quick_takeaway = takeaway;
+
+    if (Object.keys(updates).length === 0) {
+        st.className = 'edit-status error';
+        st.textContent = 'Chưa có thay đổi nào.';
+        st.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang lưu...';
+    st.style.display = 'none';
+
+    var payload = JSON.stringify({
+        password: pw,
+        entryKey: ENTRY_KEY,
+        updates: updates
+    });
+
+    function handleSuccess(data) {
+        st.className = 'edit-status success';
+        st.textContent = '✅ Đã lưu & Tự học thành công! (' + (data.commit || 'synced') + ')';
+        st.style.display = 'block';
+        btn.textContent = '✅ Đã lưu';
+
+        if (data.updatedEntry) {
+            CLASSIFICATION_DATA = data.updatedEntry;
+        }
+        var badges = document.querySelector('.header-badges');
+        if (badges && (updates.industry || updates.shooting_style)) {
+            var html = '';
+            var ind = (CLASSIFICATION_DATA.industry && CLASSIFICATION_DATA.industry.name) || updates.industry || '';
+            var sty = (CLASSIFICATION_DATA.shooting_style && CLASSIFICATION_DATA.shooting_style.name) || updates.shooting_style || '';
+            if (ind) html += '<span class="badge">' + ind + '</span> ';
+            if (sty) html += '<span class="badge badge-alt">' + sty + '</span>';
+            badges.innerHTML = html;
+        }
+    }
+
+    fetch('/api/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+    })
+    .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+    .then(function(result) {
+        if (result.ok && result.data.success) {
+            handleSuccess(result.data);
+        } else {
+            return fetch('https://file.fedu.vn/api/edit-classification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
+            .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+            .then(function(res2) {
+                if (res2.ok && res2.data.success) {
+                    handleSuccess(res2.data);
+                } else {
+                    st.className = 'edit-status error';
+                    st.textContent = '❌ ' + ((res2.data && res2.data.error) || (result.data && result.data.error) || 'Lỗi không xác định');
+                    st.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Lưu thay đổi';
+                }
+            });
+        }
+    })
+    .catch(function(err) {
+        fetch('https://file.fedu.vn/api/edit-classification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+        })
+        .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+        .then(function(res2) {
+            if (res2.ok && res2.data.success) {
+                handleSuccess(res2.data);
+            } else {
+                st.className = 'edit-status error';
+                st.textContent = '❌ Lỗi mạng: ' + err.message;
+                st.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Lưu thay đổi';
+            }
+        })
+        .catch(function(err2) {
+            st.className = 'edit-status error';
+            st.textContent = '❌ Lỗi mạng: ' + err2.message;
+            st.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Lưu thay đổi';
+        });
+    });
+}
+
+// Đóng modal khi bấm Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeEditModal();
+});
+</script>
 </body>
 </html>
