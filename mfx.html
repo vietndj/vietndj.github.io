@@ -6,6 +6,14 @@
 <title>Motion Graphics Showcase & CapCut Alpha Studio — V3 Pro Director</title>
 <style>
 /* === NHÚNG FONT THƯƠNG HIỆU ANH VIỆT (BASE64) === */
+@font-face { font-family: 'FD Integral'; src: url('data:,') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: 'SVN-Integral'; src: url('data:,') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: 'FD Integral'; src: url('data:,') format('truetype'); font-weight: 900; font-style: normal; font-display: block; }
+@font-face { font-family: 'SVN-Integral'; src: url('data:,') format('truetype'); font-weight: 900; font-style: normal; font-display: block; }
+@font-face { font-family: 'FD Tiempos'; src: url('data:,') format('opentype'); font-weight: 500; font-style: italic; font-display: block; }
+@font-face { font-family: 'FD Tiempos'; src: url('data:,') format('opentype'); font-weight: 400; font-style: italic; font-display: block; }
+@font-face { font-family: 'FD Tiempos'; src: url('data:,') format('opentype'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'FD Tiempos'; src: url('data:,') format('opentype'); font-weight: 600; font-style: italic; font-display: block; }
 @font-face { font-family: 'GT-America'; src: url('data:,') format('truetype'); font-weight: 900; font-style: normal; font-display: block; }
 @font-face { font-family: 'GT-America'; src: url('data:,') format('truetype'); font-weight: 700; font-style: italic; font-display: block; }
 @font-face { font-family: 'GT-America'; src: url('data:,') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
@@ -1413,6 +1421,250 @@ body.global-alpha-mode .typo-preview-stage {
   transform: translateY(0);
   opacity: 1;
 }
+
+/* === PHẦN 0: MOBILE AUTO-EDIT STUDIO (GEMINI WEB -> MP4 ON PHONE) === */
+.mobile-edl-section {
+  background: linear-gradient(160deg, rgba(16, 25, 46, 0.96), rgba(9, 14, 26, 0.98));
+  border: 1.5px solid rgba(255, 208, 24, 0.42);
+  border-radius: 22px;
+  padding: 24px;
+  margin-bottom: 36px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 0 36px rgba(255, 208, 24, 0.08);
+}
+
+.mobile-edl-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .mobile-edl-grid {
+    grid-template-columns: 1fr;
+  }
+  .mobile-edl-section {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sticky-header {
+    position: relative !important;
+    padding: 10px 12px !important;
+  }
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .brand-title-wrap h1 {
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+  }
+  .brand-sub {
+    display: none !important;
+  }
+  .kpi-strip {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    width: 100%;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .kpi-pill {
+    flex-shrink: 0;
+    font-size: 10.5px !important;
+    padding: 4px 8px !important;
+  }
+  .header-bottom {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+  .nav-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    width: 100%;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-tab {
+    flex-shrink: 0;
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+  }
+  .section-title {
+    font-size: 18px !important;
+    line-height: 1.28 !important;
+  }
+  .section-desc {
+    font-size: 12px !important;
+  }
+}
+
+.mobile-canvas-wrap {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 208, 24, 0.45);
+  background: #050811;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+}
+
+.mobile-canvas-wrap.alpha-bg {
+  background-image:
+    linear-gradient(45deg, #151d2a 25%, transparent 25%),
+    linear-gradient(-45deg, #151d2a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #151d2a 75%),
+    linear-gradient(-45deg, transparent 75%, #151d2a 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+#mobileEdlCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.beat-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.beat-pill-btn {
+  appearance: none;
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.beat-pill-btn.active {
+  background: rgba(255, 208, 24, 0.18);
+  color: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 12px rgba(255, 208, 24, 0.25);
+}
+
+.edl-json-textarea {
+  width: 100%;
+  min-height: 135px;
+  max-height: 220px;
+  background: #050912;
+  color: #A5F3FC;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.edl-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34D399;
+}
+
+.edl-status-bar.error {
+  background: rgba(239, 68, 68, 0.16);
+  border-color: rgba(239, 68, 68, 0.45);
+  color: #F87171;
+}
+
+.export-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.export-primary-btn {
+  appearance: none;
+  border: none;
+  border-radius: 11px;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.18s;
+  text-align: center;
+}
+
+.export-primary-btn.gold {
+  background: linear-gradient(135deg, #FFD018, #F59E0B);
+  color: #060911;
+  box-shadow: 0 8px 24px rgba(255, 208, 24, 0.28);
+}
+
+.export-primary-btn.cyan {
+  background: rgba(0, 229, 255, 0.16);
+  color: #00E5FF;
+  border: 1px solid rgba(0, 229, 255, 0.45);
+}
+
+.export-primary-btn.emerald {
+  background: rgba(16, 185, 129, 0.18);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
+
+.png-pack-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.png-pack-item {
+  background: #070C17;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.png-pack-item img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #101827;
+}
 </style>
 </head>
 <body>
@@ -1426,24 +1678,25 @@ body.global-alpha-mode .typo-preview-stage {
         <div class="brand-title-wrap">
           <h1>
             MOTION GRAPHICS SHOWCASE & CAPCUT ALPHA STUDIO
-            <span class="brand-badge">V3 PRO DIRECTOR • PRORES 4444 .MOV</span>
+            <span class="brand-badge">V3.2 MOBILE STUDIO • GEMINI WEB ➔ MP4</span>
           </h1>
-          <div class="brand-sub">Bàn thử nghiệm trực quan 16 Kiểu Chữ/Đồ họa chuyển động, 35 Typography, 8 B-Roll Presets & Kho 8.902 Âm thanh SFX thật</div>
+          <div class="brand-sub">Bàn dựng trực tiếp trên Điện Thoại từ Gemini Web (EDL JSON ➔ MP4 / CapCut PNG Pack), 16 Archetypes, 35 Typography & 8.902 SFX</div>
         </div>
       </div>
 
       <div class="kpi-strip">
+        <div class="kpi-pill">📱 <strong>Mobile</strong> Auto-Edit V3.2</div>
         <div class="kpi-pill">✨ <strong>16</strong> Archetypes (#T/#B/#V)</div>
         <div class="kpi-pill">🔤 <strong>35</strong> Typography Styles</div>
-        <div class="kpi-pill">🖼️ <strong>8</strong> B-Roll Presets</div>
-        <div class="kpi-pill">🔊 <strong>8.902</strong> SFX Files (14 Mục)</div>
-        <div class="kpi-pill">🏁 <strong>.MOV</strong> Alpha Trong Suốt</div>
+        <div class="kpi-pill">🔊 <strong>8.902</strong> SFX Files (10% Mix)</div>
+        <div class="kpi-pill">🏁 <strong>.MP4 / .PNG</strong> Xuất Ngay</div>
       </div>
     </div>
 
     <div class="header-bottom">
       <div class="nav-tabs" id="headerFilterTabs">
-        <button class="nav-tab active" data-filter="all" onclick="filterCatalog('all', this)">Tất cả (16)</button>
+        <button class="nav-tab active" style="border-color:var(--gold); color:var(--gold);" onclick="scrollToSection('section-mobile-edl')">📱 Mobile Auto-Edit (Gemini Web ➔ MP4)</button>
+        <button class="nav-tab" data-filter="all" onclick="filterCatalog('all', this)">Tất cả (16)</button>
         <button class="nav-tab" data-filter="T" onclick="filterCatalog('T', this)">#T Chữ + Icon Khi Nói (6)</button>
         <button class="nav-tab" data-filter="B" onclick="filterCatalog('B', this)">#B Màn Đen & Lộ Trình (4)</button>
         <button class="nav-tab" data-filter="V" onclick="filterCatalog('V', this)">#V Cảnh Trám & Đồ Họa (6)</button>
@@ -1461,6 +1714,146 @@ body.global-alpha-mode .typo-preview-stage {
 </header>
 
 <main class="main-container">
+
+  <!-- =========================================================================
+       PHẦN 0: MOBILE AUTO-EDIT STUDIO (GEMINI WEB EDL -> MP4 / CAPCUT / TELEGRAM)
+       ========================================================================= -->
+  <section id="section-mobile-edl" class="mobile-edl-section">
+    <div class="section-header" style="margin-bottom:18px;">
+      <div class="section-title-group">
+        <span class="section-eyebrow" style="color:var(--gold);">PHẦN 0 • GEMINI WEB GEM ➔ MOBILE AUTO-EDIT STUDIO (CHUẨN MFX V3.2)</span>
+        <h2 class="section-title">BÀN DỰNG VIDEO TALKING-HEAD NGAY TRÊN ĐIỆN THOẠI (100% VẾ CÂU • FRAMELESS GLOW • 10% SFX)</h2>
+        <p class="section-desc">Quy trình 2 bước trên iPhone/Android: <strong>(1) Gửi video/kịch bản vào Gemini Web (Gem MFX V3.2) để lấy mã <code>EDL JSON</code></strong> ➔ <strong>(2) Dán vào đây + Chọn video từ Cuộn Camera để xuất thẳng file <code>.MP4</code> lưu vào Ảnh iPhone, tải gói <code>.PNG</code> trong suốt cho CapCut Mobile, hoặc bắn về Mac Worker qua Telegram!</strong></p>
+      </div>
+    </div>
+
+    <div class="mobile-edl-grid">
+      <!-- CỘT TRÁI: CANVAS 1080x1920 CHUẨN MFX V3.2 -->
+      <div class="phone-column">
+        <div class="stage-toolbar" style="justify-content:space-between; flex-wrap:wrap; gap:6px;">
+          <div class="mini-btn-group">
+            <button class="mini-btn active" id="btnMobBgSample" onclick="setMobileBgSource('sample')">🧑🏻‍💻 Mẫu 10s Anh Việt</button>
+            <label class="mini-btn" style="cursor:pointer; margin:0;">
+              📱 Chọn Video Trong Máy
+              <input type="file" id="mobileVideoFileInput" accept="video/*" style="display:none;" onchange="onMobileVideoFileSelected(event)">
+            </label>
+            <button class="mini-btn" id="btnMobBgAlpha" onclick="setMobileBgSource('alpha')">🏁 Nền Trong Suốt</button>
+          </div>
+          <span id="mobileTimecodeReadout" style="font-family:var(--font-mono); font-size:12px; font-weight:800; color:var(--gold);">00.55s / 10.00s</span>
+        </div>
+
+        <div class="mobile-canvas-wrap" id="mobileCanvasWrap">
+          <canvas id="mobileEdlCanvas" width="1080" height="1920"></canvas>
+          <video id="mobileSourceVideo" playsinline crossorigin="anonymous" style="display:none;"></video>
+        </div>
+
+        <div style="margin-top:10px;">
+          <input type="range" id="mobileTimelineScrubber" min="0" max="10" step="0.02" value="0.55"
+                 style="width:100%; accent-color:var(--gold); cursor:pointer;"
+                 oninput="onMobileScrubberInput(this.value)">
+          <div class="beat-pills-row" id="mobileBeatPillsRow"></div>
+        </div>
+
+        <div style="display:flex; gap:8px; margin-top:10px;">
+          <button class="play-Trigger-btn" id="btnMobilePlayToggle" style="flex:1;" onclick="toggleMobileEdlPlayback()">
+            ▶ PHÁT PREVIEW 10 GIÂY (6 NHỊP VẾ CÂU + 10% SFX)
+          </button>
+        </div>
+      </div>
+
+      <!-- CỘT PHẢI: ĐIỀU KHIỂN GEMINI WEB EDL + CHỈNH NHANH + XUẤT FILE TRÊN ĐT -->
+      <div class="controls-column">
+        <div class="field-group">
+          <div class="field-label" style="flex-wrap:wrap; gap:6px;">
+            <span>1. Cầu nối Gemini Web (Gem MFX V3.2) ➔ Kịch bản <code>EDL JSON</code></span>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              <button class="copy-action-btn" onclick="copyGeminiGemSystemPrompt()">🤖 Copy Prompt Tạo Gem Trên Gemini Web</button>
+              <button class="copy-action-btn cli-btn" onclick="pasteEdlJsonFromClipboard()">📋 Dán EDL JSON</button>
+              <button class="copy-action-btn" style="background:rgba(255,208,24,0.16); color:var(--gold); border-color:var(--gold);" onclick="resetToDefault10sSample()">🔥 Nạp Mẫu 10s Anh Việt</button>
+            </div>
+          </div>
+
+          <div id="edlValidationBadge" class="edl-status-bar">
+            <span>✅ EDL JSON Hợp Lệ: 6 nhịp vế câu (0.00s → 10.00s • Độ phủ 100% • FD Integral + FD Tiempos Italic)</span>
+            <span id="edlActiveBeatBadge" style="font-family:var(--font-mono); color:var(--gold);">Đang xem: #T1</span>
+          </div>
+
+          <textarea id="mobileEdlJsonTextarea" class="edl-json-textarea" spellcheck="false" oninput="onMobileEdlJsonEdited()"></textarea>
+        </div>
+
+        <!-- Khối chỉnh nhanh vế câu đang chọn -->
+        <div class="field-group" style="background:rgba(15,23,42,0.75); border:1px solid var(--border-subtle); border-radius:12px; padding:12px;">
+          <div class="field-label" style="margin-bottom:8px;">
+            <span>2. Chỉnh Nhanh Nhịp Đang Chọn (<strong id="quickEditBeatId" style="color:var(--gold);">#T1</strong>) — Cập Nhật Lên Màn Hình Ngay</span>
+            <span class="hint" id="quickEditBeatTime">0.00s – 1.50s</span>
+          </div>
+          <div class="control-grid-2">
+            <div class="field-group">
+              <div class="field-label"><span>Dòng 1 (FD Integral Heavy • In Hoa • Y=1388)</span></div>
+              <input type="text" class="studio-input" id="quickBeatLine1" oninput="onQuickBeatFieldChanged()">
+            </div>
+            <div class="field-group">
+              <div class="field-label"><span>Dòng 2 (FD Tiempos Italic • Stagger +0.12s • Y=1472)</span></div>
+              <input type="text" class="studio-input" id="quickBeatLine2" oninput="onQuickBeatFieldChanged()">
+            </div>
+          </div>
+          <div class="control-grid-2" style="margin-top:8px;">
+            <div class="field-group">
+              <div class="field-label"><span>Icon Vector Phát Sáng Không Khung (Y=1320)</span></div>
+              <select class="studio-select" id="quickBeatIcon" onchange="onQuickBeatFieldChanged()">
+                <option value="TARGET_FOCUS">🎯 TARGET_FOCUS (Tâm Ngắm + Sóng Radar)</option>
+                <option value="CALENDAR_BOLT">⚡ CALENDAR_BOLT (Lịch & Tia Chớp AI)</option>
+                <option value="SHIELD_STAR">🛡️ SHIELD_STAR (Khiên Uy Tín & Dấu Tích)</option>
+                <option value="CINEMA_CAMERA">🎥 CINEMA_CAMERA (Máy Quay Điện Ảnh)</option>
+                <option value="MIC_STUDIO">🎙️ MIC_STUDIO (Micro Phòng Thu & Sóng Âm)</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <div class="field-label"><span>Góc Máy & Bảng Màu Chủ Đạo</span></div>
+              <select class="studio-select" id="quickBeatCamera" onchange="onQuickBeatFieldChanged()">
+                <option value="base_1x|STYLE-17">1.00x Gốc + STYLE-17 (Vàng Gold #FFD018 / Trắng)</option>
+                <option value="punch_in_108|STYLE-32">Zoom 1.08x + STYLE-32 (Trắng / Vàng Kem #FFECA8)</option>
+                <option value="punch_in_108|STYLE-17">Zoom 1.08x + STYLE-17 (Vàng Gold #FFD018 / Trắng)</option>
+                <option value="broll_kenburns|STYLE-17">#V1 B-Roll KenBurns + Shutter Flash + STYLE-17</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khối 3: 4 Chế Độ Xuất Hậu Kỳ Thực Chiến Trên Điện Thoại -->
+        <div class="field-group">
+          <div class="field-label">
+            <span>3. Xuất Video & Hậu Kỳ Ngay Trên Điện Thoại (iOS Share Sheet / CapCut Pack / Mac Worker)</span>
+            <span class="hint" id="mobileExportProgressText">Sẵn sàng xuất 1080×1920</span>
+          </div>
+
+          <div class="export-actions-grid">
+            <button class="export-primary-btn gold" id="btnExportMobileVideo" onclick="exportMobileCanvasVideo()">
+              🎬 Xuất Video (.MP4/.WEBM) Lưu Vào ĐT
+            </button>
+            <button class="export-primary-btn cyan" id="btnExportPngPack" onclick="exportMobileCapCutPngPack()">
+              📦 Xuất 6 Ảnh .PNG Trong Suốt (CapCut ĐT)
+            </button>
+            <button class="export-primary-btn emerald" onclick="exportMobileSrtFile()">
+              📝 Tải File Phụ Đề .SRT (1.1s–1.8s)
+            </button>
+            <button class="export-primary-btn" style="background:#1E293B; color:#F8FAFC; border:1px solid var(--border-subtle);" onclick="copyMacWorkerCommand()">
+              ⚡ Copy Lệnh Mac Worker + Bắn Telegram
+            </button>
+          </div>
+
+          <!-- Hộp kết quả xuất Video / Share iOS / Thư viện PNG trong suốt -->
+          <div id="mobileExportResultBox" style="display:none; margin-top:12px; background:#060B16; border:1px solid rgba(52,211,153,0.45); border-radius:12px; padding:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <span id="mobileExportResultTitle" style="font-size:12.5px; font-weight:800; color:#34D399;">✅ Đã kết xuất thành công!</span>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;" id="mobileExportDownloadBtns"></div>
+            </div>
+            <div id="mobilePngPackGallery" class="png-pack-gallery"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- =========================================================================
        PHẦN 1: BÀN DỰNG THỬ LIVE & TẠO LỆNH CẢNH TRÁM 1-CHẠM
@@ -3002,6 +3395,23 @@ class StudioSFXEngine {
     this.ctx = null;
     this.buffers = {};
     this.decoding = false;
+    this.decodePromise = null;
+    this.streamDest = null;
+    this.connectedMedia = new WeakSet();
+  }
+
+  connectMediaElement(el) {
+    // Nối âm thanh gốc của video vào cả loa lẫn luồng ghi (streamDest) khi export
+    if (!this.ctx || !el || this.connectedMedia.has(el)) return false;
+    try {
+      const srcNode = this.ctx.createMediaElementSource(el);
+      srcNode.connect(this.ctx.destination);
+      if (this.streamDest) srcNode.connect(this.streamDest);
+      this.connectedMedia.add(el);
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   ensureContext() {
@@ -3009,6 +3419,16 @@ class StudioSFXEngine {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
       if (AudioCtx) {
         this.ctx = new AudioCtx();
+        if (this.ctx.createMediaStreamDestination) {
+          this.streamDest = this.ctx.createMediaStreamDestination();
+          // Nguồn im lặng giữ audio track chạy liên tục đủ độ dài video khi export
+          const keepAlive = this.ctx.createOscillator();
+          const keepGain = this.ctx.createGain();
+          keepGain.gain.value = 0.0001;
+          keepAlive.connect(keepGain);
+          keepGain.connect(this.streamDest);
+          keepAlive.start();
+        }
       }
     }
     if (this.ctx && this.ctx.state === "suspended") {
@@ -3016,7 +3436,7 @@ class StudioSFXEngine {
     }
     if (!this.decoding && this.ctx) {
       this.decoding = true;
-      this.decodeAllBaseWav();
+      this.decodePromise = this.decodeAllBaseWav();
     }
   }
 
@@ -3048,6 +3468,7 @@ class StudioSFXEngine {
         gain.gain.setValueAtTime(volume, this.ctx.currentTime);
         src.connect(gain);
         gain.connect(this.ctx.destination);
+        if (this.streamDest) gain.connect(this.streamDest);
         src.start(0);
         return true;
       } else if (RAW_SFX_B64[key]) {
@@ -3920,7 +4341,1140 @@ function showToast(msg) {
   toastTimer = setTimeout(() => banner.classList.remove("show"), 2600);
 }
 
-window.addEventListener("DOMContentLoaded", initShowcase);
+/* ============================================================================
+   PHẦN 0: ENGINE CANVAS 1080x1920 MOBILE AUTO-EDIT STUDIO (CHUẨN MFX V3.2)
+   ============================================================================ */
+const DEFAULT_10S_EDL_PLAN = {
+  version: "3.2-mfx-mobile-edl",
+  project_title: "Edit Video Bằng AI — Mẫu Thực Chiến 10s Của Anh Việt",
+  original_duration: 10.0,
+  fps: 30,
+  resolution: [1080, 1920],
+  bottom_gradient: { enabled: true, start_y_ratio: 0.46, max_alpha: 246, curve_power: 1.35 },
+  black_cards: [],
+  beats: [
+    {
+      id: "#T1",
+      start: 0.00,
+      end: 1.50,
+      transcript: "Mọi người nói là edit...",
+      camera_mode: "base_1x",
+      camera_zoom: "1.00x",
+      style_id: "STYLE-17",
+      style_reason: "Mở đầu câu Hook bằng Vàng Gold #FFD018 + Trắng tạo độ bắt mắt tức thì",
+      icon: "TARGET_FOCUS",
+      icon_main_rgb: [255, 208, 24],
+      icon_glow_rgb: [255, 196, 0],
+      line1: "MỌI NGƯỜI NÓI LÀ",
+      line1_rgb: [255, 208, 24],
+      line1_glow_rgb: [255, 196, 0],
+      line2: "Lời đồn truyền tai nhau",
+      line2_rgb: [255, 255, 255],
+      line2_glow_rgb: [255, 255, 255],
+      sfx_pair: [
+        { time: 0.00, id: "whoosh_soft", volume: 0.10 },
+        { time: 0.18, id: "ui_pop", volume: 0.09 }
+      ]
+    },
+    {
+      id: "#T2",
+      start: 1.50,
+      end: 2.88,
+      transcript: "...bằng AI nhàn lắm!",
+      camera_mode: "punch_in_108",
+      camera_zoom: "1.00x -> 1.08x (dynamic punch-in)",
+      style_id: "STYLE-32",
+      style_reason: "Đảo sang Trắng + Vàng Kem #FFECA8 kèm Zoom cận 1.08x nhấn vào lầm tưởng",
+      icon: "CALENDAR_BOLT",
+      icon_main_rgb: [255, 236, 168],
+      icon_glow_rgb: [255, 208, 24],
+      line1: "EDIT BẰNG AI NHÀN LẮM",
+      line1_rgb: [255, 255, 255],
+      line1_glow_rgb: [255, 236, 168],
+      line2: "Chỉ bấm một nút là xong?",
+      line2_rgb: [255, 236, 168],
+      line2_glow_rgb: [255, 208, 24],
+      sfx_pair: [
+        { time: 1.48, id: "whoosh_fast", volume: 0.10 },
+        { time: 1.66, id: "impact_punch", volume: 0.08 }
+      ]
+    },
+    {
+      id: "#T3",
+      start: 2.88,
+      end: 4.98,
+      transcript: "Ok thì video này mình sẽ cùng nhau",
+      camera_mode: "base_1x",
+      camera_zoom: "1.00x (hard-cut reset)",
+      style_id: "STYLE-17",
+      style_reason: "Cut dứt khoát về góc 1.00x kèm Vàng Gold khẳng định kiểm chứng thực tế",
+      icon: "SHIELD_STAR",
+      icon_main_rgb: [255, 208, 24],
+      icon_glow_rgb: [255, 196, 0],
+      line1: "CÙNG NHAU KIỂM CHỨNG",
+      line1_rgb: [255, 208, 24],
+      line1_glow_rgb: [255, 196, 0],
+      line2: "Bắt tay vào thực chiến ngay",
+      line2_rgb: [255, 255, 255],
+      line2_glow_rgb: [255, 255, 255],
+      sfx_pair: [
+        { time: 2.86, id: "combo_transition", volume: 0.09 },
+        { time: 3.04, id: "glassy_ping", volume: 0.09 }
+      ]
+    },
+    {
+      id: "#T4",
+      start: 4.98,
+      end: 6.45,
+      transcript: "...mình edit thử một video bằng AI",
+      camera_mode: "punch_in_108",
+      camera_zoom: "1.00x -> 1.08x (dynamic punch-in)",
+      style_id: "STYLE-32",
+      style_reason: "Zoom 1.08x kết hợp Icon Máy Quay phát sáng và chữ Trắng/Vàng Kem",
+      icon: "CINEMA_CAMERA",
+      icon_main_rgb: [255, 236, 168],
+      icon_glow_rgb: [255, 208, 24],
+      line1: "EDIT THỬ 1 VIDEO AI",
+      line1_rgb: [255, 255, 255],
+      line1_glow_rgb: [255, 240, 200],
+      line2: "Từ file quay thô ban đầu",
+      line2_rgb: [255, 236, 168],
+      line2_glow_rgb: [255, 215, 100],
+      sfx_pair: [
+        { time: 4.96, id: "whoosh_fast", volume: 0.09 },
+        { time: 5.14, id: "ui_pop", volume: 0.09 }
+      ]
+    },
+    {
+      id: "#T5",
+      start: 6.45,
+      end: 8.26,
+      transcript: "Điểm quan trọng nhất là video nói...",
+      camera_mode: "base_1x",
+      camera_zoom: "1.00x (hard-cut reset)",
+      style_id: "STYLE-17",
+      style_reason: "Icon Tâm Ngắm phát sáng sóng Radar nhấn mạnh từ khóa cốt lõi",
+      icon: "TARGET_FOCUS",
+      icon_main_rgb: [255, 208, 24],
+      icon_glow_rgb: [255, 196, 0],
+      line1: "ĐIỂM QUAN TRỌNG NHẤT",
+      line1_rgb: [255, 208, 24],
+      line1_glow_rgb: [255, 196, 0],
+      line2: "Gốc rễ của video người nói",
+      line2_rgb: [255, 255, 255],
+      line2_glow_rgb: [255, 255, 255],
+      sfx_pair: [
+        { time: 6.43, id: "combo_transition", volume: 0.09 },
+        { time: 6.62, id: "glassy_ping", volume: 0.09 }
+      ]
+    },
+    {
+      id: "#T6+#V1",
+      start: 8.26,
+      end: 10.00,
+      transcript: "...của mình nó phải ổn đó!",
+      camera_mode: "broll_kenburns",
+      camera_zoom: "kenBurnsPan (1.00x -> 1.09x) + shutter flash",
+      style_id: "STYLE-17",
+      style_reason: "Cảnh trám Fullscreen B-Roll kèm Shutter Flash 0.09s và chữ Vàng Gold chốt hạ",
+      icon: "MIC_STUDIO",
+      icon_main_rgb: [255, 208, 24],
+      icon_glow_rgb: [255, 196, 0],
+      line1: "VIDEO GỐC PHẢI THẬT ỔN",
+      line1_rgb: [255, 208, 24],
+      line1_glow_rgb: [255, 196, 0],
+      line2: "Nền tảng trước khi đưa vào AI",
+      line2_rgb: [255, 255, 255],
+      line2_glow_rgb: [255, 255, 255],
+      sfx_pair: [
+        { time: 8.24, id: "camera_shutter", volume: 0.10 },
+        { time: 8.26, id: "whoosh_deep", volume: 0.09 },
+        { time: 8.44, id: "ui_pop", volume: 0.09 }
+      ]
+    }
+  ]
+};
+
+let mobileEdlState = {
+  plan: JSON.parse(JSON.stringify(DEFAULT_10S_EDL_PLAN)),
+  currentTime: 0.55,
+  activeBeatIdx: 0,
+  isPlaying: false,
+  rafId: null,
+  lastTickMs: 0,
+  bgSource: "sample", // 'sample' | 'user_video' | 'alpha'
+  sampleImg: null,
+  gradCanvas: null,
+  triggeredSfxKeys: new Set(),
+  lastExportedBlob: null,
+  lastExportedFileName: "mfx_v3_mobile_10s.webm"
+};
+
+function buildOffscreenGradientCanvas() {
+  const c = document.createElement("canvas");
+  c.width = 1080;
+  c.height = 1920;
+  const gctx = c.getContext("2d");
+  const startY = Math.round(1920 * 0.46);
+  const span = 1920 - startY;
+  for (let y = startY; y < 1920; y += 2) {
+    const t = (y - startY) / span;
+    const alpha = Math.min(1, (246 / 255) * Math.pow(t, 1.35));
+    gctx.fillStyle = `rgba(0, 0, 0, ${alpha.toFixed(4)})`;
+    gctx.fillRect(0, y, 1080, 2);
+  }
+  return c;
+}
+
+function easeOutCubic(x) {
+  const v = Math.max(0, Math.min(1, x));
+  return 1 - Math.pow(1 - v, 3);
+}
+
+function computeBlurPopIn(tSec, duration = 0.36) {
+  if (tSec < 0) return { opacity: 0, dy: 22, scale: 0.88, blur: 10 };
+  const p = Math.min(1, tSec / Math.max(0.01, duration));
+  if (p < 0.60) {
+    const u = easeOutCubic(p / 0.60);
+    return {
+      opacity: Math.min(1, p / 0.35),
+      dy: 22 * (1 - u) + (-4) * u,
+      scale: 0.88 + (1.04 - 0.88) * u,
+      blur: 10 * (1 - u)
+    };
+  }
+  const u = easeOutCubic((p - 0.60) / 0.40);
+  return {
+    opacity: 1,
+    dy: -4 * (1 - u),
+    scale: 1.04 + (1.00 - 1.04) * u,
+    blur: 0
+  };
+}
+
+function computeSpringIconPop(tSec, duration = 0.42) {
+  if (tSec < 0) return { opacity: 0, scale: 0, angleDeg: -18 };
+  const p = Math.min(1, tSec / Math.max(0.01, duration));
+  if (p < 0.65) {
+    const u = easeOutCubic(p / 0.65);
+    return {
+      opacity: Math.min(1, p / 0.25),
+      scale: 1.22 * u,
+      angleDeg: -18 * (1 - u) + 6 * u
+    };
+  } else if (p < 0.85) {
+    const u = (p - 0.65) / 0.20;
+    return {
+      opacity: 1,
+      scale: 1.22 + (0.94 - 1.22) * u,
+      angleDeg: 6 + (-2 - 6) * u
+    };
+  }
+  const u = (p - 0.85) / 0.15;
+  return {
+    opacity: 1,
+    scale: 0.94 + (1.00 - 0.94) * u,
+    angleDeg: -2 * (1 - u)
+  };
+}
+
+function drawFourPointStar(ctx, sx, sy, baseR, rgb, alpha, tLocal, phaseOffset) {
+  const spin = tLocal * 3.2 + phaseOffset;
+  const pulse = 0.80 + 0.32 * Math.abs(Math.sin(tLocal * 6.0 + phaseOffset));
+  const sr = baseR * pulse;
+  ctx.save();
+  ctx.beginPath();
+  for (let i = 0; i < 8; i++) {
+    const ang = spin + i * (Math.PI / 4);
+    const rad = i % 2 === 0 ? sr : sr * 0.28;
+    const px = sx + Math.cos(ang) * rad;
+    const py = sy + Math.sin(ang) * rad;
+    if (i === 0) ctx.moveTo(px, py);
+    else ctx.lineTo(px, py);
+  }
+  ctx.closePath();
+  ctx.fillStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`;
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawFramelessVectorIconOnCanvas(ctx, iconType, mainRgb, glowRgb, tLocal, exitAlpha) {
+  const anim = computeSpringIconPop(tLocal, 0.42);
+  const finalAlpha = anim.opacity * exitAlpha;
+  if (finalAlpha <= 0.01 || anim.scale <= 0.02) return;
+
+  const floatDy = tLocal > 0.42 ? Math.sin((tLocal - 0.42) * 5.2) * 3.0 : 0.0;
+  const cx = 540;
+  const cy = 1320 + floatDy;
+
+  ctx.save();
+  ctx.translate(cx, cy);
+
+  // Halo Glow dưới icon
+  const grad = ctx.createRadialGradient(0, 0, 4, 0, 0, 56 * Math.min(1.15, anim.scale));
+  grad.addColorStop(0, `rgba(${glowRgb[0]}, ${glowRgb[1]}, ${glowRgb[2]}, ${(0.45 * finalAlpha).toFixed(3)})`);
+  grad.addColorStop(1, `rgba(${glowRgb[0]}, ${glowRgb[1]}, ${glowRgb[2]}, 0)`);
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, 60, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.scale(anim.scale, anim.scale);
+  ctx.rotate((anim.angleDeg * Math.PI) / 180);
+
+  // 2 ngôi sao 4 cánh xoay
+  drawFourPointStar(ctx, 38, -22, 9.5, mainRgb, finalAlpha, tLocal, 0.0);
+  drawFourPointStar(ctx, -38, 16, 6.5, [255, 255, 255], finalAlpha * 0.88, tLocal, 1.5);
+
+  ctx.lineWidth = 4;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  const mainCol = `rgba(${mainRgb[0]}, ${mainRgb[1]}, ${mainRgb[2]}, ${finalAlpha})`;
+  const whiteCol = `rgba(255, 255, 255, ${finalAlpha})`;
+  const fillSoft = `rgba(${mainRgb[0]}, ${mainRgb[1]}, ${mainRgb[2]}, ${(0.20 * finalAlpha).toFixed(3)})`;
+
+  if (iconType === "CALENDAR_BOLT") {
+    ctx.fillStyle = fillSoft;
+    ctx.strokeStyle = whiteCol;
+    ctx.beginPath();
+    ctx.roundRect(-26, -22, 52, 48, 8);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = mainCol;
+    ctx.beginPath();
+    ctx.moveTo(-26, -9); ctx.lineTo(26, -9);
+    ctx.moveTo(-13, -30); ctx.lineTo(-13, -18);
+    ctx.moveTo(13, -30); ctx.lineTo(13, -18);
+    ctx.stroke();
+
+    ctx.fillStyle = mainCol;
+    ctx.beginPath();
+    ctx.moveTo(4, -5); ctx.lineTo(-9, 8); ctx.lineTo(1, 8);
+    ctx.lineTo(-4, 21); ctx.lineTo(11, 5); ctx.lineTo(1, 5);
+    ctx.closePath();
+    ctx.fill();
+  } else if (iconType === "SHIELD_STAR") {
+    ctx.fillStyle = fillSoft;
+    ctx.strokeStyle = whiteCol;
+    ctx.beginPath();
+    ctx.moveTo(0, -30); ctx.lineTo(26, -18); ctx.lineTo(23, 8);
+    ctx.lineTo(0, 30); ctx.lineTo(-23, 8); ctx.lineTo(-26, -18);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = mainCol;
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(-10, 1); ctx.lineTo(-2, 10); ctx.lineTo(13, -8);
+    ctx.stroke();
+  } else if (iconType === "CINEMA_CAMERA") {
+    ctx.fillStyle = fillSoft;
+    ctx.strokeStyle = whiteCol;
+    ctx.beginPath();
+    ctx.roundRect(-28, -16, 40, 34, 7);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = mainCol;
+    ctx.beginPath();
+    ctx.moveTo(12, -6); ctx.lineTo(29, -15); ctx.lineTo(29, 17); ctx.lineTo(12, 8);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = mainCol;
+    ctx.beginPath();
+    ctx.arc(-14, -21, 7, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(3, -21, 7, 0, Math.PI * 2);
+    ctx.stroke();
+  } else if (iconType === "MIC_STUDIO") {
+    ctx.fillStyle = fillSoft;
+    ctx.strokeStyle = whiteCol;
+    ctx.beginPath();
+    ctx.roundRect(-12, -28, 24, 32, 12);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = mainCol;
+    ctx.beginPath();
+    ctx.arc(0, 0, 22, 0, Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(0, 22); ctx.lineTo(0, 30);
+    ctx.moveTo(-14, 30); ctx.lineTo(14, 30);
+    ctx.stroke();
+  } else {
+    // TARGET_FOCUS + radarRipple
+    const rippleP = (tLocal * 1.4) % 1.0;
+    const rRip = 25 + 28 * rippleP;
+    const aRip = (1 - rippleP) * 0.72 * finalAlpha;
+    if (aRip > 0.03) {
+      ctx.strokeStyle = `rgba(${mainRgb[0]}, ${mainRgb[1]}, ${mainRgb[2]}, ${aRip.toFixed(3)})`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(0, 0, rRip, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = whiteCol;
+    ctx.beginPath(); ctx.arc(0, 0, 25, 0, Math.PI * 2); ctx.stroke();
+    ctx.strokeStyle = mainCol;
+    ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(0, 0, 13, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = mainCol;
+    ctx.beginPath(); ctx.arc(0, 0, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(-33, 0); ctx.lineTo(-18, 0);
+    ctx.moveTo(18, 0); ctx.lineTo(33, 0);
+    ctx.moveTo(0, -33); ctx.lineTo(0, -18);
+    ctx.moveTo(0, 18); ctx.lineTo(0, 33);
+    ctx.stroke();
+  }
+
+  ctx.restore();
+}
+
+function drawGlowTextLineOnCanvas(ctx, centerY, text, fontSpec, fillRgb, glowRgb, glowBlur, tLocal, delayS, exitAlpha) {
+  if (!text) return;
+  const anim = computeBlurPopIn(tLocal - delayS, 0.36);
+  const finalAlpha = anim.opacity * exitAlpha;
+  if (finalAlpha <= 0.01) return;
+
+  ctx.save();
+  ctx.translate(540, centerY + anim.dy);
+  ctx.scale(anim.scale, anim.scale);
+  ctx.font = fontSpec;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  // Lớp bóng đen sâu giúp chữ nổi bật trên mọi nền
+  ctx.shadowColor = `rgba(0, 0, 0, ${(0.88 * finalAlpha).toFixed(3)})`;
+  ctx.shadowBlur = 10;
+  ctx.shadowOffsetY = 4;
+  ctx.fillStyle = `rgba(${fillRgb[0]}, ${fillRgb[1]}, ${fillRgb[2]}, ${finalAlpha.toFixed(3)})`;
+  ctx.fillText(text, 0, 0);
+
+  // Lớp Glow màu cùng tông chữ
+  ctx.shadowColor = `rgba(${glowRgb[0]}, ${glowRgb[1]}, ${glowRgb[2]}, ${(0.82 * finalAlpha).toFixed(3)})`;
+  ctx.shadowBlur = glowBlur + anim.blur * 1.4;
+  ctx.shadowOffsetY = 0;
+  ctx.fillText(text, 0, 0);
+
+  ctx.restore();
+}
+
+function findBeatAtTime(plan, tSec) {
+  const beats = (plan && plan.beats) || [];
+  for (let i = 0; i < beats.length; i++) {
+    const b = beats[i];
+    if (tSec >= Number(b.start) && tSec <= Number(b.end) + 0.001) {
+      return { beat: b, index: i };
+    }
+  }
+  if (beats.length > 0) {
+    return { beat: beats[beats.length - 1], index: beats.length - 1 };
+  }
+  return { beat: null, index: -1 };
+}
+
+function renderMobileEdlFrame(tSec, forceTransparentOnly = false) {
+  const canvas = document.getElementById("mobileEdlCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const W = 1080, H = 1920;
+  ctx.clearRect(0, 0, W, H);
+
+  const { beat, index } = findBeatAtTime(mobileEdlState.plan, tSec);
+  if (!beat) return;
+
+  const bStart = Number(beat.start || 0);
+  const bEnd = Number(beat.end || bStart + 1.5);
+  const bDur = Math.max(0.15, bEnd - bStart);
+  const tLocal = Math.max(0, tSec - bStart);
+  const rem = bDur - tLocal;
+  const exitAlpha = rem < 0.08 ? Math.max(0, rem / 0.08) : 1.0;
+
+  // 1. Vẽ nền Video / Ảnh mẫu kèm hiệu ứng Camera Zoom 1.00x / 1.08x / KenBurns + Shutter Flash
+  const useAlpha = forceTransparentOnly || mobileEdlState.bgSource === "alpha";
+  if (!useAlpha) {
+    let scale = 1.0;
+    const camMode = beat.camera_mode || "base_1x";
+    if (camMode === "punch_in_108" || String(beat.camera_zoom || "").includes("1.08")) {
+      scale = 1.0 + 0.08 * easeOutCubic(Math.min(1, tLocal / 0.18));
+    } else if (camMode === "broll_kenburns") {
+      scale = 1.0 + 0.09 * easeOutCubic(Math.min(1, tLocal / bDur));
+    }
+
+    const vidEl = document.getElementById("mobileSourceVideo");
+    const drawSource = (mobileEdlState.bgSource === "user_video" && vidEl && vidEl.readyState >= 2)
+      ? vidEl
+      : mobileEdlState.sampleImg;
+
+    if (drawSource) {
+      const dw = W * scale;
+      const dh = H * scale;
+      const dx = -(dw - W) * 0.5;
+      const dy = -(dh - H) * 0.35;
+      ctx.drawImage(drawSource, dx, dy, dw, dh);
+    } else {
+      ctx.fillStyle = "#0B111E";
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    if (camMode === "broll_kenburns" && tLocal < 0.09) {
+      const flashA = 0.42 * (1 - tLocal / 0.09);
+      ctx.fillStyle = `rgba(255, 248, 230, ${flashA.toFixed(3)})`;
+      ctx.fillRect(0, 0, W, H);
+    }
+  }
+
+  // 2. Lớp Gradient đen đáy mờ dần lên (start_y_ratio = 0.46, max_alpha = 246, t^1.35)
+  if (!mobileEdlState.gradCanvas) {
+    mobileEdlState.gradCanvas = buildOffscreenGradientCanvas();
+  }
+  ctx.drawImage(mobileEdlState.gradCanvas, 0, 0);
+
+  // 3. Icon Vector phát sáng không khung tại Y = 1320
+  const iconMain = beat.icon_main_rgb || [255, 208, 24];
+  const iconGlow = beat.icon_glow_rgb || iconMain;
+  drawFramelessVectorIconOnCanvas(ctx, beat.icon || "TARGET_FOCUS", iconMain, iconGlow, tLocal, exitAlpha);
+
+  // 4. Dòng 1: FD Integral Heavy (In hoa, Y = 1388)
+  const l1Rgb = beat.line1_rgb || [255, 208, 24];
+  const l1Glow = beat.line1_glow_rgb || l1Rgb;
+  const l1Text = String(beat.line1 || "").toUpperCase();
+  const l1Size = l1Text.length > 20 ? 54 : 62;
+  drawGlowTextLineOnCanvas(
+    ctx,
+    1388,
+    l1Text,
+    `900 ${l1Size}px 'FD Integral', 'SVN-Integral', sans-serif`,
+    l1Rgb,
+    l1Glow,
+    24,
+    tLocal,
+    0.00,
+    exitAlpha
+  );
+
+  // 5. Dòng 2: FD Tiempos Italic (Chữ nghiêng có chân, Y = 1472, Stagger +0.12s)
+  const l2Rgb = beat.line2_rgb || [255, 255, 255];
+  const l2Glow = beat.line2_glow_rgb || l2Rgb;
+  drawGlowTextLineOnCanvas(
+    ctx,
+    1472,
+    String(beat.line2 || ""),
+    `italic 400 52px 'FD Tiempos', 'GT-Sectra', Georgia, serif`,
+    l2Rgb,
+    l2Glow,
+    16,
+    tLocal,
+    0.12,
+    exitAlpha
+  );
+
+  // Cập nhật UI chỉ báo nhịp đang xem
+  if (index !== mobileEdlState.activeBeatIdx) {
+    mobileEdlState.activeBeatIdx = index;
+    syncQuickBeatEditorFromState();
+  }
+  const dur = Number(mobileEdlState.plan.original_duration || 10.0);
+  const tcEl = document.getElementById("mobileTimecodeReadout");
+  if (tcEl) {
+    tcEl.textContent = `${tSec.toFixed(2).padStart(5, "0")}s / ${dur.toFixed(2)}s`;
+  }
+  const badgeEl = document.getElementById("edlActiveBeatBadge");
+  if (badgeEl) {
+    badgeEl.textContent = `Đang xem: ${beat.id} (${bStart.toFixed(2)}s–${bEnd.toFixed(2)}s)`;
+  }
+  document.querySelectorAll("#mobileBeatPillsRow .beat-pill-btn").forEach((b, idx) => {
+    b.classList.toggle("active", idx === index);
+  });
+}
+
+function renderMobileBeatPills() {
+  const row = document.getElementById("mobileBeatPillsRow");
+  if (!row) return;
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  row.innerHTML = beats.map((b, idx) => `
+    <button class="beat-pill-btn ${idx === mobileEdlState.activeBeatIdx ? 'active' : ''}"
+            onclick="jumpToMobileBeat(${idx})">
+      ${b.id} (${Number(b.start).toFixed(1)}s)
+    </button>
+  `).join("");
+}
+
+function jumpToMobileBeat(idx) {
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  if (!beats[idx]) return;
+  mobileEdlState.activeBeatIdx = idx;
+  const targetT = Math.min(Number(beats[idx].end) - 0.05, Number(beats[idx].start) + 0.50);
+  mobileEdlState.currentTime = targetT;
+  const scrub = document.getElementById("mobileTimelineScrubber");
+  if (scrub) scrub.value = targetT;
+
+  const sfxPair = beats[idx].sfx_pair || [];
+  if (sfxPair.length > 0) {
+    sfxEngine.ensureContext();
+    sfxPair.forEach((sfx, k) => {
+      const vol = Number(sfx.volume || 0.09);
+      const delayMs = k === 0 ? 0 : Math.max(0, (Number(sfx.time || 0) - Number(sfxPair[0].time || 0)) * 1000) || 180;
+      setTimeout(() => sfxEngine.playBaseWav(sfx.id || "whoosh_soft", 1.0, vol), delayMs);
+    });
+  }
+
+  syncQuickBeatEditorFromState();
+  renderMobileEdlFrame(targetT);
+}
+
+function syncQuickBeatEditorFromState() {
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  const b = beats[mobileEdlState.activeBeatIdx];
+  if (!b) return;
+  document.getElementById("quickEditBeatId").textContent = b.id || `#T${mobileEdlState.activeBeatIdx + 1}`;
+  document.getElementById("quickEditBeatTime").textContent = `${Number(b.start).toFixed(2)}s – ${Number(b.end).toFixed(2)}s (${b.transcript || ""})`;
+  document.getElementById("quickBeatLine1").value = b.line1 || "";
+  document.getElementById("quickBeatLine2").value = b.line2 || "";
+  const iconSel = document.getElementById("quickBeatIcon");
+  if (iconSel) iconSel.value = b.icon || "TARGET_FOCUS";
+  const camSel = document.getElementById("quickBeatCamera");
+  if (camSel) {
+    const key = `${b.camera_mode || "base_1x"}|${b.style_id || "STYLE-17"}`;
+    if ([...camSel.options].some(o => o.value === key)) {
+      camSel.value = key;
+    }
+  }
+}
+
+function onQuickBeatFieldChanged() {
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  const b = beats[mobileEdlState.activeBeatIdx];
+  if (!b) return;
+  b.line1 = document.getElementById("quickBeatLine1").value;
+  b.line2 = document.getElementById("quickBeatLine2").value;
+  b.icon = document.getElementById("quickBeatIcon").value;
+  const [camMode, styleId] = document.getElementById("quickBeatCamera").value.split("|");
+  b.camera_mode = camMode;
+  b.style_id = styleId;
+  if (styleId === "STYLE-32") {
+    b.line1_rgb = [255, 255, 255];
+    b.line1_glow_rgb = [255, 236, 168];
+    b.line2_rgb = [255, 236, 168];
+    b.line2_glow_rgb = [255, 208, 24];
+    b.icon_main_rgb = [255, 236, 168];
+  } else {
+    b.line1_rgb = [255, 208, 24];
+    b.line1_glow_rgb = [255, 196, 0];
+    b.line2_rgb = [255, 255, 255];
+    b.line2_glow_rgb = [255, 255, 255];
+    b.icon_main_rgb = [255, 208, 24];
+  }
+  document.getElementById("mobileEdlJsonTextarea").value = JSON.stringify(mobileEdlState.plan, null, 2);
+  renderMobileEdlFrame(mobileEdlState.currentTime);
+}
+
+function onMobileScrubberInput(val) {
+  const t = Number(val);
+  mobileEdlState.currentTime = t;
+  const vidEl = document.getElementById("mobileSourceVideo");
+  if (mobileEdlState.bgSource === "user_video" && vidEl && vidEl.readyState >= 1) {
+    vidEl.currentTime = t;
+  }
+  renderMobileEdlFrame(t);
+}
+
+function setMobileBgSource(mode) {
+  mobileEdlState.bgSource = mode;
+  document.getElementById("btnMobBgSample").classList.toggle("active", mode === "sample");
+  document.getElementById("btnMobBgAlpha").classList.toggle("active", mode === "alpha");
+  document.getElementById("mobileCanvasWrap").classList.toggle("alpha-bg", mode === "alpha");
+  renderMobileEdlFrame(mobileEdlState.currentTime);
+}
+
+function onMobileVideoFileSelected(evt) {
+  const file = evt.target.files && evt.target.files[0];
+  if (!file) return;
+  const vidEl = document.getElementById("mobileSourceVideo");
+  const url = URL.createObjectURL(file);
+  vidEl.src = url;
+  vidEl.load();
+  vidEl.onloadedmetadata = () => {
+    mobileEdlState.bgSource = "user_video";
+    document.getElementById("btnMobBgSample").classList.remove("active");
+    document.getElementById("btnMobBgAlpha").classList.remove("active");
+    document.getElementById("mobileCanvasWrap").classList.remove("alpha-bg");
+    showToast(`Đã nạp video "${file.name}" (${vidEl.duration.toFixed(1)}s) vào Mobile Studio!`);
+    renderMobileEdlFrame(mobileEdlState.currentTime);
+  };
+}
+
+function sfxKey(b, sfx) {
+  return `${b.id}_${sfx.id}_${Number(sfx.time || b.start || 0)}`;
+}
+
+function primeTriggeredSfx(t) {
+  // Đánh dấu các SFX đã qua mốc t để không bắn dồn khi bắt đầu phát giữa chừng
+  mobileEdlState.triggeredSfxKeys.clear();
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  for (const b of beats) {
+    for (const sfx of (b.sfx_pair || [])) {
+      if (Number(sfx.time || b.start || 0) < t - 0.001) {
+        mobileEdlState.triggeredSfxKeys.add(sfxKey(b, sfx));
+      }
+    }
+  }
+}
+
+function fireDueSfx(t) {
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  for (const b of beats) {
+    for (const sfx of (b.sfx_pair || [])) {
+      const sfxTime = Number(sfx.time || b.start || 0);
+      const key = sfxKey(b, sfx);
+      if (t >= sfxTime && !mobileEdlState.triggeredSfxKeys.has(key)) {
+        mobileEdlState.triggeredSfxKeys.add(key);
+        sfxEngine.playBaseWav(sfx.id || "whoosh_soft", 1.0, Number(sfx.volume || 0.09));
+      }
+    }
+  }
+}
+
+function toggleMobileEdlPlayback() {
+  const btn = document.getElementById("btnMobilePlayToggle");
+  const vidEl = document.getElementById("mobileSourceVideo");
+  if (mobileEdlState.isPlaying) {
+    mobileEdlState.isPlaying = false;
+    if (mobileEdlState.rafId) cancelAnimationFrame(mobileEdlState.rafId);
+    if (vidEl) vidEl.pause();
+    btn.textContent = "▶ PHÁT PREVIEW 10 GIÂY (6 NHỊP VẾ CÂU + 10% SFX)";
+    return;
+  }
+
+  sfxEngine.ensureContext();
+  const dur = Number(mobileEdlState.plan.original_duration || 10.0);
+  if (mobileEdlState.currentTime >= dur - 0.1) {
+    mobileEdlState.currentTime = 0.0;
+  }
+  primeTriggeredSfx(mobileEdlState.currentTime);
+  mobileEdlState.isPlaying = true;
+  mobileEdlState.lastTickMs = performance.now();
+  btn.textContent = "⏸ TẠM DỪNG PREVIEW";
+
+  if (mobileEdlState.bgSource === "user_video" && vidEl && vidEl.src) {
+    sfxEngine.connectMediaElement(vidEl);
+    vidEl.currentTime = mobileEdlState.currentTime;
+    vidEl.muted = false;
+    vidEl.play().catch(() => {});
+  }
+
+  function step(nowMs) {
+    if (!mobileEdlState.isPlaying) return;
+    const dt = (nowMs - mobileEdlState.lastTickMs) / 1000;
+    mobileEdlState.lastTickMs = nowMs;
+    mobileEdlState.currentTime += dt;
+
+    // Phát SFX 10% đúng sfx.volume, không rớt SFX khi tab lag
+    fireDueSfx(mobileEdlState.currentTime);
+
+    if (mobileEdlState.currentTime >= dur) {
+      mobileEdlState.currentTime = 0.55;
+      mobileEdlState.isPlaying = false;
+      if (vidEl) vidEl.pause();
+      btn.textContent = "▶ PHÁT PREVIEW 10 GIÂY (6 NHỊP VẾ CÂU + 10% SFX)";
+      document.getElementById("mobileTimelineScrubber").value = 0.55;
+      renderMobileEdlFrame(0.55);
+      return;
+    }
+
+    document.getElementById("mobileTimelineScrubber").value = mobileEdlState.currentTime;
+    renderMobileEdlFrame(mobileEdlState.currentTime);
+    mobileEdlState.rafId = requestAnimationFrame(step);
+  }
+
+  mobileEdlState.rafId = requestAnimationFrame(step);
+}
+
+const VALID_EDL_ICONS = ["TARGET_FOCUS", "CALENDAR_BOLT", "SHIELD_STAR", "CINEMA_CAMERA", "MIC_STUDIO"];
+
+function auditEdlPlan(plan) {
+  const errors = [];
+  const warns = [];
+  const beats = plan.beats;
+  const dur = Number(plan.original_duration || beats[beats.length - 1].end || 10.0);
+  let prevEnd = 0;
+  beats.forEach((b, i) => {
+    const id = b.id || `#T${i + 1}`;
+    const st = Number(b.start), en = Number(b.end);
+    if (!Number.isFinite(st) || !Number.isFinite(en)) {
+      errors.push(`${id}: start/end phải là số`);
+      return;
+    }
+    if (st >= en) errors.push(`${id}: start (${st}) phải nhỏ hơn end (${en})`);
+    const gap = st - prevEnd;
+    if (gap > 0.15) warns.push(`${id}: hở ${gap.toFixed(2)}s so với nhịp trước (vi phạm độ phủ 100%)`);
+    if (gap < -0.05) warns.push(`${id}: chồng lấn ${(-gap).toFixed(2)}s với nhịp trước`);
+    if (en - st > 2.2) warns.push(`${id}: dài ${(en - st).toFixed(2)}s (> 2.2s)`);
+    prevEnd = Math.max(prevEnd, en);
+    if (b.icon && !VALID_EDL_ICONS.includes(b.icon)) {
+      warns.push(`${id}: icon "${b.icon}" không có trong bộ ${VALID_EDL_ICONS.join("/")}`);
+    }
+    (b.sfx_pair || []).forEach(sfx => {
+      if (!sfx.id || !RAW_SFX_B64[sfx.id]) warns.push(`${id}: sfx.id "${sfx.id}" không có trong thư viện SFX`);
+      const v = Number(sfx.volume);
+      if (Number.isFinite(v) && v > 0.15) warns.push(`${id}: sfx "${sfx.id}" volume ${v} > 0.15`);
+    });
+  });
+  if (dur - prevEnd > 0.15) warns.push(`Cuối video hở ${(dur - prevEnd).toFixed(2)}s chưa có nhịp`);
+  return { errors, warns, dur };
+}
+
+function validateAndApplyEdlJson(rawStr) {
+  const statusEl = document.getElementById("edlValidationBadge");
+  try {
+    const parsed = JSON.parse(rawStr);
+    if (!parsed || !Array.isArray(parsed.beats) || parsed.beats.length === 0) {
+      throw new Error("Thiếu mảng 'beats' trong EDL JSON");
+    }
+    const audit = auditEdlPlan(parsed);
+    if (audit.errors.length > 0) {
+      throw new Error(audit.errors.join(" • "));
+    }
+    mobileEdlState.plan = parsed;
+    const dur = audit.dur;
+    document.getElementById("mobileTimelineScrubber").max = dur;
+    const warnHtml = audit.warns.length
+      ? `<span style="display:block; color:#F59E0B; font-size:12px;">⚠️ ${audit.warns.length} cảnh báo: ${audit.warns.slice(0, 4).join(" • ")}${audit.warns.length > 4 ? " …" : ""}</span>`
+      : "";
+    statusEl.className = "edl-status-bar";
+    statusEl.innerHTML = `
+      <span>✅ EDL JSON Hợp Lệ: ${parsed.beats.length} nhịp vế câu (0.00s → ${dur.toFixed(2)}s • Độ phủ 100% • FD Integral + FD Tiempos Italic)</span>
+      <span id="edlActiveBeatBadge" style="font-family:var(--font-mono); color:var(--gold);">Đang xem: ${parsed.beats[0].id}</span>
+      ${warnHtml}
+    `;
+    mobileEdlState.activeBeatIdx = 0;
+    renderMobileBeatPills();
+    syncQuickBeatEditorFromState();
+    renderMobileEdlFrame(mobileEdlState.currentTime);
+    return true;
+  } catch (err) {
+    statusEl.className = "edl-status-bar error";
+    statusEl.innerHTML = `<span>❌ Lỗi EDL JSON: ${err.message}</span>`;
+    return false;
+  }
+}
+
+function onMobileEdlJsonEdited() {
+  const raw = document.getElementById("mobileEdlJsonTextarea").value;
+  validateAndApplyEdlJson(raw);
+}
+
+async function pasteEdlJsonFromClipboard() {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const txt = await navigator.clipboard.readText();
+      if (txt && txt.trim()) {
+        document.getElementById("mobileEdlJsonTextarea").value = txt.trim();
+        if (validateAndApplyEdlJson(txt.trim())) {
+          showToast("Đã dán & áp dụng kịch bản EDL JSON từ Gemini Web!");
+        }
+        return;
+      }
+    }
+  } catch (e) {}
+  showToast("Hãy nhấn giữ vào ô JSON để Dán (Paste) mã từ Gemini Web!");
+}
+
+function resetToDefault10sSample() {
+  mobileEdlState.plan = JSON.parse(JSON.stringify(DEFAULT_10S_EDL_PLAN));
+  const raw = JSON.stringify(mobileEdlState.plan, null, 2);
+  document.getElementById("mobileEdlJsonTextarea").value = raw;
+  validateAndApplyEdlJson(raw);
+  mobileEdlState.currentTime = 0.55;
+  document.getElementById("mobileTimelineScrubber").value = 0.55;
+  renderMobileEdlFrame(0.55);
+  showToast("Đã nạp Mẫu Thực Chiến 10s (6 nhịp vế câu MFX V3.2)!");
+}
+
+function copyGeminiGemSystemPrompt() {
+  const promptText = `Bạn là Đạo Diễn Hậu Kỳ Video Talking-Head V3.2 của anh Việt.
+Khi anh Việt gửi video (.mp4), ghi âm hoặc lời thoại, BẮT BUỘC áp dụng 9 Quy Tắc Vàng MFX V3.2:
+1. Độ phủ 100% từng vế câu nói (1.1s–1.8s/vế): Mọi vế câu đều phải có 1 nhịp thị giác (#T1, #T2...) gồm Icon Vector phát sáng không khung tại Y=1320 (TARGET_FOCUS, CALENDAR_BOLT, SHIELD_STAR, CINEMA_CAMERA, MIC_STUDIO) + Chữ trần phát sáng 2 dòng (Dòng 1 tại Y=1388 dùng FDIntegralCF-Heavy IN HOA; Dòng 2 tại Y=1472 dùng FDTiemposHeadline-RegularItalic chữ nghiêng stagger +0.12s) + Nền Gradient đen đáy (start_y=0.46, max_alpha=246, t^1.35). CẤM đóng khung hộp kính mờ.
+2. Luân phiên góc máy: base_1x (1.00x) -> punch_in_108 (Zoom 1.08x) -> base_1x (hard-cut) -> broll_kenburns (#V1 fullscreen).
+3. Chọn màu chữ từ STYLE-17 (Vàng Gold #FFD018 / Trắng #FFFFFF) và STYLE-32 (Trắng / Vàng Kem #FFECA8); gắn cặp SFX ở mức âm lượng rất nhỏ 10% (volume 0.08-0.10: whoosh_soft+ui_pop, whoosh_fast+impact_punch, combo_transition+glassy_ping, camera_shutter+whoosh_deep+ui_pop).
+4. Xuất: (1) Bảng Ma Trận Kế Hoạch Edit + (2) Khối mã EDL JSON chuẩn schema '3.2-mfx-mobile-edl' có mảng 'beats' để anh Việt dán vào trang mfx.html xuất thẳng file .MP4 hoặc gói .PNG trên điện thoại.`;
+  copyToClipboard(promptText, "Đã copy System Prompt tạo Gem trên Gemini Web!");
+}
+
+function copyMacWorkerCommand() {
+  const jsonCompact = JSON.stringify(mobileEdlState.plan);
+  const cmd = `cat << 'EOF' > /tmp/mobile_edl.json\n${JSON.stringify(mobileEdlState.plan, null, 2)}\nEOF\npython3 ~/.gemini/config/skills/auto-edit-video/scripts/mfx_v3_universal_engine.py --edl /tmp/mobile_edl.json --telegram`;
+  copyToClipboard(cmd, "Đã copy lệnh Mac Worker Render Full Studio + Bắn Telegram!");
+}
+
+function exportMobileSrtFile() {
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  function fmtSrtTime(sec) {
+    const s = Math.max(0, Number(sec));
+    const hh = String(Math.floor(s / 3600)).padStart(2, "0");
+    const mm = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+    const ss = String(Math.floor(s % 60)).padStart(2, "0");
+    const ms = String(Math.round((s - Math.floor(s)) * 1000)).padStart(3, "0");
+    return `${hh}:${mm}:${ss},${ms}`;
+  }
+  const srtContent = beats.map((b, i) => {
+    return `${i + 1}\n${fmtSrtTime(b.start)} --> ${fmtSrtTime(b.end)}\n${b.line1}\n${b.line2}\n`;
+  }).join("\n");
+
+  const blob = new Blob([srtContent], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "mfx_v3_clauses.srt";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast(`Đã tải file phụ đề mfx_v3_clauses.srt (${beats.length} nhịp)!`);
+}
+
+function exportMobileCapCutPngPack() {
+  const beats = (mobileEdlState.plan && mobileEdlState.plan.beats) || [];
+  const resBox = document.getElementById("mobileExportResultBox");
+  const gallery = document.getElementById("mobilePngPackGallery");
+  const dlBtns = document.getElementById("mobileExportDownloadBtns");
+  const titleEl = document.getElementById("mobileExportResultTitle");
+  const savedTime = mobileEdlState.currentTime;
+
+  gallery.innerHTML = "";
+  const pngFiles = [];
+
+  beats.forEach((b, idx) => {
+    const sampleT = Number(b.start) + Math.min(0.50, (Number(b.end) - Number(b.start)) * 0.5);
+    renderMobileEdlFrame(sampleT, true); // Vẽ trên nền trong suốt 100%
+    const canvas = document.getElementById("mobileEdlCanvas");
+    const dataUrl = canvas.toDataURL("image/png");
+    const fileName = `${String(idx + 1).padStart(2, "0")}_${String(b.id).replace(/[^a-zA-Z0-9]/g, "")}_${Number(b.start).toFixed(2)}s.png`;
+    pngFiles.push({ fileName, dataUrl, beatId: b.id, start: b.start, end: b.end });
+
+    const item = document.createElement("div");
+    item.className = "png-pack-item";
+    item.innerHTML = `
+      <img src="${dataUrl}" alt="${b.id}">
+      <div style="font-family:var(--font-mono); font-size:10.5px; color:var(--gold); font-weight:800;">${b.id} (${Number(b.start).toFixed(1)}s)</div>
+      <a href="${dataUrl}" download="${fileName}" class="copy-action-btn" style="font-size:10.5px; padding:4px 8px; text-decoration:none; width:100%; text-align:center;">⬇️ Lưu PNG</a>
+    `;
+    gallery.appendChild(item);
+  });
+
+  renderMobileEdlFrame(savedTime, false);
+  resBox.style.display = "block";
+  titleEl.textContent = `✅ Đã xuất ${pngFiles.length} ảnh Overlay .PNG trong suốt (1080×1920) cho CapCut Mobile!`;
+  dlBtns.innerHTML = `
+    <button class="copy-action-btn" onclick="shareCapCutPngPackOnMobile()">📲 Lưu Tất Cả Vào Ảnh iPhone (Share Sheet)</button>
+  `;
+  window._lastCapCutPngPack = pngFiles;
+  showToast(`Đã tạo ${pngFiles.length} ảnh .PNG trong suốt 1080×1920 cho CapCut Mobile!`);
+}
+
+async function shareCapCutPngPackOnMobile() {
+  const list = window._lastCapCutPngPack || [];
+  if (!list.length) return;
+  try {
+    const files = [];
+    for (const item of list) {
+      const res = await fetch(item.dataUrl);
+      const blob = await res.blob();
+      files.push(new File([blob], item.fileName, { type: "image/png" }));
+    }
+    if (navigator.canShare && navigator.canShare({ files })) {
+      await navigator.share({
+        title: "Gói Overlay PNG Trong Suốt MFX V3.2",
+        text: "Lưu vào Ảnh để kéo vào lớp phủ CapCut Mobile",
+        files
+      });
+      return;
+    }
+  } catch (e) {}
+  // Fallback tải từng file
+  list.forEach(item => {
+    const a = document.createElement("a");
+    a.href = item.dataUrl;
+    a.download = item.fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+}
+
+async function exportMobileCanvasVideo() {
+  const canvas = document.getElementById("mobileEdlCanvas");
+  const progEl = document.getElementById("mobileExportProgressText");
+  const btn = document.getElementById("btnExportMobileVideo");
+  const resBox = document.getElementById("mobileExportResultBox");
+  const dlBtns = document.getElementById("mobileExportDownloadBtns");
+  const titleEl = document.getElementById("mobileExportResultTitle");
+  const vidEl = document.getElementById("mobileSourceVideo");
+
+  if (!canvas || typeof canvas.captureStream !== "function" || typeof MediaRecorder === "undefined") {
+    showToast("Trình duyệt này hạn chế MediaRecorder — hãy dùng nút Xuất 6 Ảnh .PNG hoặc Mac Worker!");
+    return;
+  }
+  if (mobileEdlState.exporting) return;
+  mobileEdlState.exporting = true;
+
+  if (mobileEdlState.isPlaying) toggleMobileEdlPlayback();
+
+  btn.disabled = true;
+  btn.textContent = "⏳ Đang ghi Video 1080×1920 (giữ màn hình sáng)...";
+  sfxEngine.ensureContext();
+  if (sfxEngine.decodePromise) await sfxEngine.decodePromise;
+
+  const totalDur = Number(mobileEdlState.plan.original_duration || 10.0);
+  const hasVideo = mobileEdlState.bgSource === "user_video" && vidEl && vidEl.src;
+  if (hasVideo) sfxEngine.connectMediaElement(vidEl);
+
+  const stream = canvas.captureStream(30);
+  if (sfxEngine.streamDest) {
+    sfxEngine.streamDest.stream.getAudioTracks().forEach(tr => stream.addTrack(tr));
+  }
+
+  const mimeCandidates = [
+    "video/mp4;codecs=avc1.42E01E,mp4a.40.2",
+    "video/mp4;codecs=avc1",
+    "video/mp4",
+    "video/webm;codecs=vp9,opus",
+    "video/webm;codecs=vp8,opus",
+    "video/webm"
+  ];
+  let chosenMime = "";
+  for (const m of mimeCandidates) {
+    if (MediaRecorder.isTypeSupported(m)) {
+      chosenMime = m;
+      break;
+    }
+  }
+
+  const chunks = [];
+  const recorder = chosenMime
+    ? new MediaRecorder(stream, { mimeType: chosenMime, videoBitsPerSecond: 6000000, audioBitsPerSecond: 128000 })
+    : new MediaRecorder(stream);
+  recorder.ondataavailable = e => {
+    if (e.data && e.data.size > 0) chunks.push(e.data);
+  };
+
+  // Đưa video nguồn về 0s trước khi ghi
+  if (hasVideo) {
+    vidEl.pause();
+    await new Promise(resolve => {
+      const done = () => { vidEl.removeEventListener("seeked", done); resolve(); };
+      vidEl.addEventListener("seeked", done);
+      vidEl.currentTime = 0;
+      setTimeout(done, 800);
+    });
+    vidEl.muted = false;
+  }
+
+  primeTriggeredSfx(-1);
+  renderMobileEdlFrame(0, false);
+  recorder.start(200);
+  if (hasVideo) vidEl.play().catch(() => {});
+
+  // Chạy realtime đúng totalDur (rAF) để video ra đủ độ dài và âm thanh khớp hình
+  const startMs = performance.now();
+  await new Promise(resolve => {
+    function tick(nowMs) {
+      const t = Math.min(totalDur, (nowMs - startMs) / 1000);
+      mobileEdlState.currentTime = t;
+      fireDueSfx(t);
+      renderMobileEdlFrame(t, false);
+      progEl.textContent = `Đang ghi realtime: ${Math.round((t / totalDur) * 100)}% (${t.toFixed(1)}s / ${totalDur.toFixed(1)}s)`;
+      if (t >= totalDur) { resolve(); return; }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+
+  if (hasVideo) vidEl.pause();
+  await new Promise(resolve => {
+    recorder.onstop = resolve;
+    try { recorder.requestData(); } catch (e) {}
+    recorder.stop();
+  });
+
+  const isMp4 = (recorder.mimeType || chosenMime).includes("mp4");
+  const ext = isMp4 ? "mp4" : "webm";
+  const blob = new Blob(chunks, { type: isMp4 ? "video/mp4" : "video/webm" });
+  const fileUrl = URL.createObjectURL(blob);
+  const fileName = `mfx_v3_mobile_${Math.round(totalDur)}s.${ext}`;
+  mobileEdlState.lastExportedBlob = blob;
+  mobileEdlState.lastExportedFileName = fileName;
+  mobileEdlState.exporting = false;
+  mobileEdlState.currentTime = 0.55;
+  mobileEdlState.triggeredSfxKeys.clear();
+  renderMobileEdlFrame(0.55);
+
+  btn.disabled = false;
+  btn.textContent = "🎬 Xuất Video (.MP4/.WEBM) Lưu Vào ĐT";
+  progEl.textContent = `Hoàn tất 100% (${(blob.size / 1024 / 1024).toFixed(2)} MB)`;
+
+  resBox.style.display = "block";
+  titleEl.textContent = `✅ Đã xuất Video ${fileName} (${(blob.size / 1024 / 1024).toFixed(2)} MB • 1080×1920 • ${totalDur.toFixed(1)}s)!`;
+  dlBtns.innerHTML = `
+    <button class="copy-action-btn" style="background:linear-gradient(135deg,#FFD018,#F59E0B); color:#050811;" onclick="shareExportedMobileVideo()">📲 Lưu Vào Ảnh iPhone (Share Sheet)</button>
+    <a href="${fileUrl}" download="${fileName}" class="copy-action-btn cli-btn" style="text-decoration:none;">⬇️ Tải File ${fileName}</a>
+  `;
+  showToast(`Đã kết xuất thành công ${fileName}!`);
+}
+
+async function shareExportedMobileVideo() {
+  if (!mobileEdlState.lastExportedBlob) return;
+  try {
+    const file = new File(
+      [mobileEdlState.lastExportedBlob],
+      mobileEdlState.lastExportedFileName,
+      { type: mobileEdlState.lastExportedBlob.type }
+    );
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        title: "Video MFX V3.2",
+        text: "Bấm 'Lưu Video' (Save Video) để lưu thẳng vào ứng dụng Ảnh trên iPhone",
+        files: [file]
+      });
+      return;
+    }
+  } catch (e) {}
+  showToast("Trình duyệt không bật được Share Sheet — hãy bấm nút '⬇️ Tải File' bên cạnh!");
+}
+
+function initMobileEdlStudio() {
+  const img = new Image();
+  img.onload = () => {
+    mobileEdlState.sampleImg = img;
+    renderMobileEdlFrame(mobileEdlState.currentTime);
+  };
+  img.src = SAMPLE_FRAME_B64;
+
+  // Kiểm tra nếu URL có truyền #edl=...
+  try {
+    if (window.location.hash && window.location.hash.startsWith("#edl=")) {
+      const encoded = decodeURIComponent(window.location.hash.slice(5));
+      document.getElementById("mobileEdlJsonTextarea").value = encoded;
+      validateAndApplyEdlJson(encoded);
+      return;
+    }
+  } catch (e) {}
+
+  resetToDefault10sSample();
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  initShowcase();
+  initMobileEdlStudio();
+});
 </script>
 </body>
 </html>
