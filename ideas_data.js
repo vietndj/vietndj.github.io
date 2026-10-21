@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-21T06:51:41+07:00",
-  "total_scene_items": 399,
-  "total_unique_ideas": 380,
-  "total_active_ideas": 320,
+  "generated_at": "2026-10-21T13:25:35+07:00",
+  "total_scene_items": 400,
+  "total_unique_ideas": 381,
+  "total_active_ideas": 321,
   "total_excluded_ideas": 60,
   "total_creators": 235,
   "shooting_styles": [
@@ -77,7 +77,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "shooting_style_stats": {
     "walk-and-talk": 8,
-    "voice-over": 12,
+    "voice-over": 13,
     "talking-head": 45,
     "storytelling": 39,
     "dien-anh": 153,
@@ -171,12 +171,12 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 8,
     "thuong-hieu": 28,
     "thoi-trang": 27,
-    "am-thuc": 30,
+    "am-thuc": 29,
     "du-lich": 35,
-    "cong-nghe": 41,
+    "cong-nghe": 42,
     "kien-truc": 42,
     "the-thao": 6,
-    "ky-thuat-quay": 97,
+    "ky-thuat-quay": 98,
     "ugc": 6
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 225,
+    "us_eu": 226,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -308,6 +308,27 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ulanzi",
+      "name": "Ulanzi",
+      "profile_url": "https://www.instagram.com/ulanzi/",
+      "video_count": 11,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40ulanzi_qFv8s_BOYA_mini_2_micro_kh%C3%B4ng_d%C3%A2y_micro_thu_%C3%A2m_micr/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@ulanzi_qFv8s_BOYA_mini_2_micro_không_dây_micro_thu_âm_micr",
+        "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
+        "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
+        "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
+        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+        "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
+        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
+        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
+        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
+        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
+        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
+      ]
+    },
+    {
       "handle": "@framebygeorge",
       "name": "Framebygeorge",
       "profile_url": "https://www.instagram.com/framebygeorge/",
@@ -325,26 +346,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
         "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
         "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
-      ]
-    },
-    {
-      "handle": "@ulanzi",
-      "name": "Ulanzi",
-      "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 10,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40ulanzi_opMhu_%C4%90%E1%BA%BF_%C4%90%E1%BB%A1_%C4%90i%E1%BB%87n_Tho%E1%BA%A1i_Nh%C3%B4m_G%E1%BA%ADp_%C4%90%C6%B0%E1%BB%A3c_%C4%90a_N%C4%83ng_C%C3%B3_T%C3%ADn/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
-        "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
-        "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
-        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-        "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
-        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
-        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
-        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
-        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
-        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
       ]
     },
     {
@@ -2986,6 +2987,83 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@ulanzi_qFv8s_BOYA_mini_2_micro_không_dây_micro_thu_âm_micr",
+      "shortcode": "IG_@ulanzi_qFv8s_BOYA_mini_2_micro_không_dây_micro_thu_âm_micr",
+      "title_vi": "BOYA mini 2 micro không dây micro thu âm micr",
+      "quick_takeaway": "Check out BOYA mini 2 Wireless Microphone AI Noise Cancelling Mic Mini Lapel Mic Vlogging Microphone for iPhone Android PC iPhone 15/16/17. Get it on Lazada now!",
+      "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "voice-over",
+        "name": "Lồng Tiếng",
+        "en_name": "Voice Over",
+        "icon": "🎙️",
+        "badge_color": "purple"
+      },
+      "industries": [
+        {
+          "id": "cong-nghe",
+          "name": "Đồ công nghệ",
+          "en_name": "Tech & Gear",
+          "icon": "📱",
+          "badge_color": "purple",
+          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "High-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Check out BOYA mini 2 Wireless Microphone AI Noise Cancelling Mic Mini Lapel Mic Vlogging Microphone for iPhone Android PC iPhone 15/16/17. Get it on Lazada now!",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "High-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Check out BOYA mini 2 Wireless Microphone AI Noise Cancelling Mic Mini Lapel Mic Vlogging Microphone for iPhone Android PC iPhone 15/16/17. Get it on Lazada now!. Phân loại vào Công Nghệ & Thiết Bị • Voice Over.",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://www.instagram.com/ulanzi/",
+      "gdrive_folder": "https://drive.google.com/open?id=1fnU9tzUdDO2wQQhQj06gRazBDKvBUln8",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40ulanzi_qFv8s_BOYA_mini_2_micro_kh%C3%B4ng_d%C3%A2y_micro_thu_%C3%A2m_micr/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ulanzi_qFv8s_BOYA_mini_2_micro_kh%C3%B4ng_d%C3%A2y_micro_thu_%C3%A2m_micr/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/qFv8s.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/qFv8s.mp4",
+        "report_url": "reports/IG_@ulanzi_qFv8s_BOYA_mini_2_micro_không_dây_micro_thu_âm_micr.html",
+        "shots_count": 48,
+        "duration": "55.1s",
+        "youtube_id": "fLEHG5D6KgU",
+        "youtube_embed": "https://www.youtube.com/embed/fLEHG5D6KgU",
+        "youtube_url": "https://youtu.be/fLEHG5D6KgU"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@100002166591390_1073399245568378_Video",
       "shortcode": "1073399245568378",
       "title_vi": "Cấu Trúc Kịch Bản 5 Nhịp Chạy Ads Dịch Vụ Spa (Detox Môi Hỏng) & Điểm Nghẽn Khung Hình Tĩnh 31s",
@@ -3158,12 +3236,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "am-thuc",
-          "name": "F&B",
-          "en_name": "Food & Beverage",
-          "icon": "🍜",
-          "badge_color": "amber",
-          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -9346,7 +9424,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -12903,8 +12981,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -14082,7 +14160,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
