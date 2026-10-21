@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kỹ Năng AI | AI Edit Video Tự Động V3.2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: '#05070c',
+            surface: '#0d111a',
+            accent: '#10b981',
+            gold: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #05070c; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-box { background: rgba(13, 17, 26, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .gradient-emerald-text { background: linear-gradient(135deg, #6ee7b7 0%, #10b981 50%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glow-border { box-shadow: 0 0 25px rgba(16, 185, 129, 0.14); }
+  </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-accent/30 selection:text-white">
+
+  <!-- Background effects -->
+  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-900/20 blur-[120px]"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-blue-900/20 blur-[100px]"></div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-6 py-16 sm:py-24 space-y-16">
+    
+    <!-- 1. HERO SECTION -->
+    <header class="text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-semibold tracking-widest uppercase mb-2">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        HẬU KỲ VIDEO TỰ ĐỘNG · ZERO-STOP V3.2
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
+        <span class="gradient-emerald-text">AI Edit</span> Video V3.2
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Biến video quay thô thành video hoàn chỉnh chỉ trong 1 lệnh. Tự động khóa tâm mặt chính giữa, phủ chữ 2 dòng phát sáng, trám B-Roll 9:16, vẽ thiết đồ khoa học 2D & trộn 8 SFX phòng thu.
+      </p>
+    </header>
+
+    <!-- 2. INSTALL SECTION (QR Code Card) -->
+    <section class="glass-box rounded-3xl p-8 sm:p-10 shadow-2xl shadow-black/50 border border-white/10 relative overflow-hidden glow-border">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
+      
+      <div class="grid sm:grid-cols-2 gap-10 items-center">
+        <div class="space-y-8">
+          <div>
+            <span class="text-xs font-mono font-bold text-accent uppercase tracking-wider">Cài đặt 1 chạm</span>
+            <h2 class="text-2xl font-bold text-white mb-2 mt-1">Cài Đặt Kỹ Năng</h2>
+            <p class="text-slate-400 text-sm">3 bước đơn giản cho người mới cài Antigravity.</p>
+          </div>
+          
+          <ul class="space-y-6 relative before:absolute before:inset-y-0 before:left-3 before:w-px before:bg-white/10">
+            <li class="relative pl-10">
+              <div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-surface border border-accent flex items-center justify-center text-xs font-bold text-accent">1</div>
+              <p class="text-slate-300 font-medium">
+                Mở ứng dụng <b>Terminal</b> trên máy (Mac: Cmd+Space → gõ Terminal) hoặc <b>kéo thả ảnh QR</b> bên cạnh vào khung chat Antigravity
+              </p>
+            </li>
+            <li class="relative pl-10">
+              <div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-surface border border-accent flex items-center justify-center text-xs font-bold text-accent">2</div>
+              <p class="text-slate-300 font-medium">
+                Bấm <b>Copy</b> lệnh bên cạnh, dán vào Terminal rồi nhấn Enter (tự động cài đặt Font, 8 SFX & FFmpeg đến khi báo <span class="text-accent font-semibold">✅ CÀI ĐẶT THÀNH CÔNG</span>)
+              </p>
+            </li>
+            <li class="relative pl-10">
+              <div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-surface border border-accent flex items-center justify-center text-xs font-bold text-accent">3</div>
+              <p class="text-slate-300 font-medium">
+                Thả video <code class="text-accent font-mono bg-accent/10 px-1.5 py-0.5 rounded text-sm">.mp4 / .mov</code> vào chat và gõ <code class="text-accent font-mono bg-accent/10 px-1.5 py-0.5 rounded text-sm">"EDIT VIDEO"</code> (hoặc dán mã <code class="text-accent font-mono bg-accent/10 px-1.5 py-0.5 rounded text-sm">EDL JSON</code>) để xuất video hoàn chỉnh
+              </p>
+            </li>
+          </ul>
+
+          <div class="p-4 bg-emerald-950/20 border border-emerald-500/20 rounded-2xl text-xs text-slate-300 space-y-1">
+            <p class="font-bold text-accent">✨ Tự động hóa môi trường 100%:</p>
+            <p>• Tự tạo môi trường ảo Python riêng (<code class="font-mono text-slate-200">~/.mfx_v3/venv</code>), không lo xung đột thư viện.</p>
+            <p>• Tích hợp sẵn 8 Font chữ Editorial tiếng Việt, 8 SFX phòng thu và bộ dựng FFmpeg.</p>
+          </div>
+        </div>
+        
+        <div class="flex flex-col items-center justify-center p-6 bg-black/40 rounded-2xl border border-white/5 gap-4">
+          <img src="assets/install/qr-aiedit.png" alt="Thẻ QR cài đặt AI Edit Video" class="w-56 rounded-xl border border-white/10 shadow-xl" />
+          <a href="assets/install/qr-aiedit.png" download="cai-dat-aiedit.png" class="px-5 py-2 rounded-full bg-white text-black text-sm font-bold hover:opacity-90 transition-opacity">⬇ Tải ảnh QR về máy</a>
+          <p class="text-xs text-slate-400 text-center">Cách 1: Tải ảnh QR → thả vào khung chat Hệ Thống AI → AI tự cài.<br>Cách 2: Copy lệnh bên dưới dán vào Terminal.</p>
+          <code id="cmd" class="block w-full text-xs font-mono text-accent bg-accent/10 p-4 rounded-xl break-all select-all text-center border border-accent/20">curl -sSL https://fedu.vn/skill/install-aiedit.sh | bash</code>
+          <button onclick="navigator.clipboard.writeText(document.getElementById('cmd').innerText).then(()=>{this.innerText='✓ Đã copy'; setTimeout(()=>this.innerText='Copy lệnh cài đặt', 2500);})" class="px-5 py-2 rounded-full bg-accent text-black text-sm font-bold hover:opacity-90 transition-opacity">Copy lệnh cài đặt</button>
+          <span class="text-xs font-mono text-slate-500 tracking-widest uppercase">Hỗ trợ macOS / Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 4 CHẾ ĐỘ HẬU KỲ CHỦ LỰC -->
+    <section class="space-y-6">
+      <div class="text-center space-y-2">
+        <h3 class="text-xl sm:text-2xl font-bold text-white">4 Chế Độ Hậu Kỳ Tích Hợp Sẵn Trong Gói</h3>
+        <p class="text-sm text-slate-400">Đóng gói tinh gọn (~1.9MB), hoạt động ngay sau khi cài đặt mà không cần cấu hình thủ công.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="glass-box rounded-2xl p-6 space-y-2 border border-white/10">
+          <div class="text-xs font-mono text-accent font-bold">MODE 01 · TALKING-HEAD MFX V3.2</div>
+          <h4 class="text-lg font-bold text-white">Khóa Tâm Mặt & Chữ Phát Sáng 2 Dòng</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Tự động dò vết cắt jump-cut và khóa tâm mặt về chính giữa khung hình. Tự động cắt chuẩn 9:16 cho cả video quay ngang, phủ nền Gradient đen đáy, Icon Vector phát sáng và chữ 2 dòng <span class="text-slate-200">FD Integral + FD Tiempos Italic</span>.
+          </p>
+        </div>
+        <div class="glass-box rounded-2xl p-6 space-y-2 border border-white/10">
+          <div class="text-xs font-mono text-accent font-bold">MODE 02 · SCIENTIFIC ATLAS 2D V2</div>
+          <h4 class="text-lg font-bold text-white">Bản Vẽ Khoa Học 2D Trên Giấy #F5F2EB</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Dành cho video Chuyên gia, Y khoa, Da liễu, Nha khoa. Tự động cân phẳng nền giấy y khoa cổ điển <code class="font-mono text-xs text-slate-200">#F5F2EB</code>, vẽ đường dẫn vuông góc <code class="font-mono text-xs text-slate-200">[1]..[4]</code> song ngữ và hộp Ghi chú lâm sàng sắc nét.
+          </p>
+        </div>
+        <div class="glass-box rounded-2xl p-6 space-y-2 border border-white/10">
+          <div class="text-xs font-mono text-accent font-bold">MODE 03 · VERTICAL SPINE MAP (MG-B02)</div>
+          <h4 class="text-lg font-bold text-white">Sơ Đồ Lộ Trình Trục Dọc X=158</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Trình bày quy trình 4 bước theo trục thẳng đứng bên trái (<code class="font-mono text-xs text-slate-200">X = 158</code>) với thanh tiến độ vàng <code class="font-mono text-xs text-slate-200">#FACC15</code> chạy dọc từng chặng và 4 thẻ ngang chuẩn Swiss Dark.
+          </p>
+        </div>
+        <div class="glass-box rounded-2xl p-6 space-y-2 border border-white/10">
+          <div class="text-xs font-mono text-accent font-bold">MODE 04 · CAPCUT ALPHA PACK & 8 SFX</div>
+          <h4 class="text-lg font-bold text-white">Xuất Kép Video .MP4 + Gói PNG CapCut</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Mỗi lần chạy tự động xuất đồng thời file <code class="font-mono text-xs text-slate-200">&lt;tên&gt;_edit_v3.mp4</code> hoàn chỉnh (đã trộn 8 SFX phòng thu ở mức 10% không đè giọng nói), bộ ảnh <code class="font-mono text-xs text-slate-200">mockups/</code> và thư mục chữ trong suốt <code class="font-mono text-xs text-slate-200">capcut_png_pack/</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. KẾT QUẢ THỰC TẾ (Results Section) -->
+    <section class="space-y-6">
+      <h3 class="text-xl font-bold text-white text-center">Kết Quả Trước / Sau</h3>
+      <div class="glass-box rounded-2xl border-white/10 overflow-hidden">
+        <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <div class="p-6 bg-red-950/10">
+            <h4 class="text-red-400 font-bold mb-4 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              Trước Khi Dùng AI Edit V3.2
+            </h4>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li>• Tốn 3–4 giờ căn chữ, tìm B-Roll và ghép SFX thủ công</li>
+              <li>• Khuôn mặt bị giật lệch vị trí qua các vết cắt jump-cut</li>
+              <li>• Video ngang 16:9 đưa vào dễ bị kéo méo hoặc tràn RAM</li>
+              <li>• AI vẽ chữ tiếng Việt trực tiếp lên ảnh hay bị sai dấu</li>
+            </ul>
+          </div>
+          <div class="p-6 bg-emerald-950/10">
+            <h4 class="text-accent font-bold mb-4 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Sau Khi Cài AI Edit V3.2
+            </h4>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li>• Xuất thẳng file <span class="text-accent font-semibold">.mp4 hoàn chỉnh</span> chỉ trong 1 lệnh Zero-Stop</li>
+              <li>• Tự động khóa cứng tâm mặt chính giữa (<span class="text-accent">Auto Face-Lock ✓</span>)</li>
+              <li>• Render 2-Pass Streaming siêu nhẹ (<span class="text-accent">&lt; 350MB RAM ✓</span>)</li>
+              <li>• Chữ tiếng Việt & Atlas 2D vẽ bằng Vector Pillow chuẩn 100%</li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-4 bg-surface border-t border-white/5 text-center">
+          <p class="text-sm font-medium text-slate-200">
+            Tốc độ xử lý: <span class="text-accent font-bold">Nhanh gấp ~10 lần dựng thủ công</span> (Bảo toàn 100% giọng gốc + SFX 10%)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CÂU LỆNH SỬ DỤNG (Prompt Pills) -->
+    <section class="space-y-6">
+      <h3 class="text-xl font-bold text-white text-center">Ví Dụ Câu Lệnh (Prompts)</h3>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"EDIT VIDEO"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Edit video này cho tôi"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"/render-v3 (kèm mã EDL JSON)"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Dựng video này kèm bản vẽ Atlas 2D ở nhịp 2"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Thêm sơ đồ lộ trình 4 bước Spine Map"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Xuất bộ ảnh PNG trong suốt cho CapCut"</span>
+      </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="pt-8 border-t border-white/10">
+      <div class="text-center mt-4 text-slate-500 text-sm">
+        &copy; 2026 Hệ Thống AI. Crafted for efficiency.
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
