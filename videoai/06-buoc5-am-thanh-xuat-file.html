@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bước 5: Âm thanh 10% &amp; Xuất file — Video AI Studio</title>
+  <link href="assets/style.css?v=20261022" rel="stylesheet"/>
+</head>
+<body data-page="buoc-5">
+  <main class="main" style="display:none">
+    <div class="content">
+
+      <!-- ========================================================
+           HERO & BẢN CHẤT
+           ======================================================== -->
+      <div class="hero">
+        <div class="kicker" style="--stage:var(--c-buoc5)">— BƯỚC 5 TRONG DÂY CHUYỀN HẬU KỲ • ÂM THANH VOICE-SAFE &amp; ĐA NỀN TẢNG</div>
+        <h1>Bước 5: Âm thanh 10% &amp; Xuất file hoàn chỉnh</h1>
+        
+        <p class="lede">
+          Âm thanh là thứ khán giả không nhìn thấy nhưng quyết định đến hơn 50% cảm xúc của một video. Một tiếng động đặt sai thời điểm hoặc âm lượng quá to sẽ phá hủy toàn bộ sự nghiêm túc của lời nói. Ngược lại, âm thanh nền tinh tế sẽ biến một đoạn nói chuyện bình thường thành một thước phim điện ảnh cuốn hút.
+        </p>
+        <p style="font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--mute); margin-bottom:0;">
+          Bước 5 là chặng về đích: hệ thống tự động kiểm soát âm lượng hiệu ứng (SFX) nhỏ giọt ở mức 10% để giữ giọng nói trong trẻo, căn chỉnh tiếng vút gió (Riser) trước vết cắt 1.25s chuẩn toán học, chạy bộ kiểm toán tự động qa_lint đạt 0 lỗi và xuất thẳng ra file MP4 sắc nét hoặc gói ProRes 4444 Alpha kéo thả vào CapCut.
+        </p>
+      </div>
+
+      <!-- ========================================================
+           TẦNG 1: WHAT • WHY • HOW (HIỂN THỊ TRÊN BỀ MẶT)
+           ======================================================== -->
+      <h2>Bản chất Bước 5 (What • Why • How)</h2>
+
+      <div class="wwh-grid">
+        <!-- WHAT -->
+        <div class="wwh-card">
+          <div class="wwh-tag what">WHAT • BẢN CHẤT</div>
+          <div class="wwh-title">Âm thanh êm ái 10% &amp; Xuất video 1 chạm</div>
+          <p class="wwh-desc">
+            Toàn bộ tiếng hiệu ứng (whoosh, pop, click, chime) được khóa cứng ở <strong>âm lượng 8% – 10% (0.08–0.10)</strong>, đóng vai trò như lớp đệm tinh tế làm nổi bật giọng nói thay vì tranh giành sự chú ý. Tiếng vút gió dẫn cảnh luôn bắt đầu trước vết cắt 1.25s và dứt khoát ngắt âm đúng điểm cắt. Hệ thống xuất ra file video <strong>MP4 1080×1920 hoàn chỉnh</strong> sẵn sàng đăng tải ngay.
+          </p>
+        </div>
+
+        <!-- WHY -->
+        <div class="wwh-card">
+          <div class="wwh-tag why">WHY • VÌ SAO LỖI?</div>
+          <div class="wwh-title">3 lỗi âm thanh phá hủy độ tin cậy của video</div>
+          <p class="wwh-desc">
+            (1) Đặt tiếng Riser sau vết cắt làm tiếng hú nổ chát chúa ngay giữa lúc người ta đang nói chuyện; (2) Âm lượng hiệu ứng quá to khiến người xem giật mình và mệt tai; (3) Gắn tiếng kịch tính vào cảnh giải thích khoa học nghe rất kệch cỡm. Khi âm thanh được kiểm soát bằng ma trận ngữ nghĩa, video giữ trọn vẻ sang trọng và chuyên nghiệp.
+          </p>
+        </div>
+
+        <!-- HOW -->
+        <div class="wwh-card">
+          <div class="wwh-tag how">HOW • CÂU LỆNH NHANH</div>
+          <div class="wwh-title">Kiểm toán lỗi &amp; Xuất file hoàn chỉnh</div>
+          <p class="wwh-desc">
+            Copy câu lệnh bên dưới dán vào Antigravity, hệ thống sẽ tự động quét lỗi bằng qa_lint rồi render video thành phẩm:
+          </p>
+          <div class="cmd-box">
+            <div class="cmd-header">
+              <span class="cmd-title">Lệnh Antigravity</span>
+              <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+            </div>
+            <pre><code>Kiểm tra lỗi bằng qa_lint, xuất video MP4 hoàn chỉnh kèm gói CapCut Alpha Pack cho video này</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           3 NGUYÊN TẮC ÂM THANH VOICE-SAFE
+           ======================================================== -->
+      <h2>3 nguyên tắc âm thanh Voice-Safe bắt buộc</h2>
+
+      <div class="stage-steps" style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; margin:24px 0;">
+        <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+          <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">01</div>
+          <div class="step-content">
+            <div class="step-name">Âm lượng nhỏ giọt 8% – 10%</div>
+            <div class="step-desc">Khóa volume trong dải 0.08–0.10. Tuyệt đối không dùng cơ chế tự dìm tiếng (Audio Ducking) vì làm âm lượng phập phồng khó chịu khi người nói lấy hơi.</div>
+          </div>
+        </div>
+
+        <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+          <div class="step-num" style="background:#fef3c7; color:#b45309;">02</div>
+          <div class="step-content">
+            <div class="step-name">Pre-Cut Riser trước 1.25s</div>
+            <div class="step-desc">Tiếng vút gió bắt buộc kích hoạt trước điểm cắt đúng 1.25s để đỉnh cao trào rơi trúng vết cắt. Cắt sạch 100% âm thanh trong 8ms ngay tại điểm chuyển cảnh.</div>
+          </div>
+        </div>
+
+        <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+          <div class="step-num" style="background:#dcfce7; color:#15803d;">03</div>
+          <div class="step-content">
+            <div class="step-name">Kiểm toán tự động 0 lỗi</div>
+            <div class="step-desc">Bộ lọc qa_lint.py quét qua toàn bộ timeline, tự động bắt sạch các lỗi Riser mồ côi, lỗi nháy mặt và lỗi gắn SFX sai ngữ cảnh trước khi cho phép render.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           ĐẦU RA THỰC TẾ (.output-showcase)
+           ======================================================== -->
+      <h2>Đầu ra thực tế của Bước 5</h2>
+      <p>
+        Video thành phẩm hoàn chỉnh xuất trực tiếp từ engine với âm thanh đa tầng Voice-Safe và hình ảnh sắc nét:
+      </p>
+
+      <div class="output-showcase">
+        <div class="showcase-header">
+          <div class="showcase-title">
+            <span>🔊 Video hoàn chỉnh xuất trực tiếp từ Engine</span>
+          </div>
+          <span class="showcase-badge">MP4 H.264 • CRF 18 • Voice-Safe 10%</span>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Video 1: Tien Nha Sy Full Showcase -->
+          <div class="showcase-card">
+            <div class="showcase-media">
+              <video src="https://kenh.fedu.vn/assets/aieditskill/tiennhasy1_2e6b5486_showcase.mp4" controls playsinline preload="metadata" poster="https://kenh.fedu.vn/assets/aieditskill/shots_after_56.jpg"></video>
+            </div>
+            <div class="showcase-card-body">
+              <div class="showcase-card-title">Thành phẩm hoàn chỉnh: Video bác sĩ nha khoa</div>
+              <p class="showcase-card-desc">Lắng nghe âm thanh nền 10%, tiếng Riser chuẩn xác trước vết cắt, tiếng chime êm ái khi hiện bản vẽ mô học, giọng nói rõ mồn một.</p>
+            </div>
+          </div>
+
+          <!-- Video 2: Sample 10s MFX V3 Final -->
+          <div class="showcase-card">
+            <div class="showcase-media">
+              <video src="https://kenh.fedu.vn/assets/aieditskill/sample_10s_mfx_v3_final.mp4" controls playsinline preload="metadata" poster="https://kenh.fedu.vn/assets/aieditskill/detail_mg1_stat_hook.jpg"></video>
+            </div>
+            <div class="showcase-card-body">
+              <div class="showcase-card-title">Mẫu 10 giây MFX V3.2 xuất sắc nét</div>
+              <p class="showcase-card-desc">Đồng bộ hoàn hảo giữa âm thanh Accent Slam, chuyển động phóng quang học và chữ phát sáng không khung nền.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Xuất Gói CapCut Alpha Pack -->
+        <div style="margin-top:24px; border:1px solid var(--line); border-radius:12px; background:#fff; padding:20px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <span style="font-size:24px;">💎</span>
+            <div>
+              <b style="font-size:16px; color:var(--ink);">Gói Xuất Kép Cho CapCut (CapCut Alpha Pack)</b>
+              <div style="font-size:13px; color:var(--mute);">Dành cho những ai muốn tự tay kéo thả và chỉnh sửa thêm trên CapCut điện thoại hoặc máy tính</div>
+            </div>
+          </div>
+          <p style="font-size:14px; color:var(--ink2); margin-bottom:12px;">
+            Hệ thống tự động xuất ra thư mục <code>capcut_alpha_pack/</code> chứa các file video định dạng <strong>ProRes 4444 (.mov) có kênh Alpha trong suốt</strong> theo đúng thứ tự mốc thời gian. Bạn chỉ cần mở dự án CapCut, thêm video gốc ở lớp dưới cùng và kéo toàn bộ các file .mov đè lên lớp trên: phụ đề, hiệu ứng chữ và âm thanh SFX tự động khớp 100% không lệch 1 khung hình.
+          </p>
+          <div style="background:var(--bg3); border:1px solid var(--line); border-radius:8px; padding:10px 14px; font-family:var(--mono); font-size:12.5px; color:var(--ink2);">
+            📁 capcut_alpha_pack/<br/>
+            ├── 01_T1_Headline_Pop.mov (ProRes 4444 Alpha + SFX)<br/>
+            ├── 02_V1_Clinical_HUD.mov (ProRes 4444 Alpha + SFX)<br/>
+            ├── 03_B1_BlackCard_Split.mov (ProRes 4444 Alpha + SFX)<br/>
+            └── 04_CTA1_FrostedGlass.mov (ProRes 4444 Alpha + SFX)
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           TẦNG 2: CHI TIẾT KỸ THUẬT (TECH DRAWER ẨN MẶC ĐỊNH)
+           ======================================================== -->
+      <details class="tech-drawer">
+        <summary>🔧 Xem chi tiết kỹ thuật: Toán học thời gian Pre-Cut Riser, bộ lọc qa_lint &amp; thông số FFMPEG</summary>
+        <div class="tech-body">
+          <h3>1. Toán học thời gian Pre-Cut cho hiệu ứng Riser</h3>
+          <p>
+            File âm thanh mẫu <code>riser_short_silk.wav</code> có cường độ âm lượng tăng dần theo hình phễu (Crescendo) và đạt đỉnh năng lượng tại mốc $+1.25\text{s}$.
+          </p>
+          <p>
+            Do đó, để đỉnh năng lượng rơi trúng vào thời điểm chuyển cảnh $t_{\text{cut}}$, thời điểm kích hoạt Riser bắt buộc phải đặt lùi về trước:
+            $$t_{\text{start}} = t_{\text{cut}} - 1.25\text{s}$$
+          </p>
+          <p>
+            Cơ chế Silence Hit triệt tiêu âm thanh thừa: Đúng tại mốc $t_{\text{cut}}$, file Riser bị cắt sạch hoàn toàn qua đường dốc hạ âm cực nhanh trong $8\text{ms}$ để nhường chỗ cho âm nhấn mới:
+            $$\text{truncate\_duration} = 1.25\text{s}, \quad \text{fade\_out} = 8\text{ms}$$
+          </p>
+          <p>
+            Tại đúng điểm cắt $t_{\text{cut}}$, âm vang sang trọng (<code>chime_warm_luxury</code> hoặc <code>sub_bass_hit_clean</code>) mới được phép kích hoạt.
+          </p>
+
+          <h3>2. Ma trận phân quyền ngữ nghĩa &amp; Ngân sách Riser</h3>
+          <table style="width:100%; font-size:13.5px; margin:14px 0;">
+            <thead>
+              <tr style="background:var(--bg3);">
+                <th>Loại Cảnh / Tâm Trạng</th>
+                <th>Cấp Phép Riser?</th>
+                <th>Lý Do Kỹ Thuật</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>clinical_photo</code> / <code>atlas_2d</code></td>
+                <td>❌ <strong>CẤM TUYỆT ĐỐI</strong></td>
+                <td>Mã lỗi <code>[FAIL-SFX-SEMANTIC]</code>. Cảnh khoa học y khoa cần sự điềm đạm, cấm dùng âm giật gân.</td>
+              </tr>
+              <tr>
+                <td>Tâm trạng giải thích, trấn an (<code>explain, reassure</code>)</td>
+                <td>❌ <strong>CẤM TUYỆT ĐỐI</strong></td>
+                <td>Gây cảm giác đe dọa người xem, phá hủy tâm lý tiếp nhận thông tin.</td>
+              </tr>
+              <tr>
+                <td>Chuyển sang Thẻ Đen (<code>#B Black Card</code>)</td>
+                <td>✓ Cho phép</td>
+                <td>Tạo nhịp thở phân cách rõ ràng giữa 2 luận điểm lớn.</td>
+              </tr>
+              <tr>
+                <td>Cú chụp cận cao trào (<code>climax_snap</code>)</td>
+                <td>✓ Cho phép</td>
+                <td>Nhấn mạnh từ khóa đắt giá nhất toàn video.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <strong>Ngân sách Riser:</strong> Toàn bộ một video không được dùng quá <strong>3 Riser</strong> (<code>max_risers &le; 3</code>). Khoảng cách tối thiểu giữa 2 lần dùng Riser liên tiếp phải đạt <strong>&ge; 22.0 giây</strong> (hoặc &ge; 8.0 giây với nhịp cao trào Climax).
+          </p>
+
+          <h3>3. Bộ kiểm toán tự động qa_lint.py</h3>
+          <p>
+            Chạy kiểm tra tự động trước khi render để đảm bảo 0 lỗi kỹ thuật:
+          </p>
+          <pre><code>python3 ~/.gemini/config/skills/render-v3/scripts/qa_lint.py --edl edl_v3.json
+
+# Danh sách các chốt chặn kiểm toán:
+# [FAIL-SFX-POSTCUT-RISER] : Bắt lỗi Riser đặt sau điểm cắt cảnh
+# [FAIL-SFX-ORPHAN-PEAK]   : Bắt lỗi đỉnh Riser nổ mồ côi giữa câu nói
+# [FAIL-SFX-SEMANTIC]      : Bắt lỗi gắn Riser vào cảnh giải phẫu hoặc trấn an
+# [FAIL-SFX-BUDGET]        : Bắt lỗi vượt quá 3 Riser trong 1 video
+# [FAIL-SFX-COOLDOWN]      : Bắt lỗi 2 Riser đặt quá gần nhau (< 22s)
+# [FAIL-AROLL-FLASH]       : Bắt lỗi cảnh người nói xuất hiện ngắn hơn 3 giây
+# [FAIL-BROLL-SLIVER]      : Bắt lỗi cảnh trám B-Roll quá ngắn (< 1.5s)</code></pre>
+
+          <h3>4. Lệnh kết xuất FFMPEG tốc độ cao &amp; Xuất ProRes 4444 Alpha</h3>
+          <pre><code># 1. Xuất thẳng video MP4 hoàn chỉnh bằng FFMPEG Universal Engine:
+python3 ~/.gemini/config/skills/render-v3/scripts/mfx_v3_universal_engine.py \
+  --edl edl_v3.json \
+  --output final_video_edit_v3.mp4
+
+# 2. Xuất gói CapCut Alpha Pack (ProRes 4444 codec yuva444p10le):
+python3 ~/.gemini/config/skills/auto-edit-video/scripts/v3_pro_director.py \
+  --plan-file v3_plan.json \
+  --export-alpha \
+  --output-dir ./capcut_pack</code></pre>
+        </div>
+      </details>
+
+    </div>
+  </main>
+
+  <script src="assets/manifest.js?v=20261022"></script>
+  <script src="assets/hub.js?v=20261022"></script>
+  <script src="assets/skill_live_data.js?v=20261022"></script>
+</body>
+</html>

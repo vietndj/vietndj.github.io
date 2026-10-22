@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 11:40:01
- * Nguồn dữ liệu: styles_db.json, motion_catalog.json, profiles.json, presets_db.json, SKILL.md
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 11:49:27
+ * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 11:40:01",
-  "last_synced_iso": "2026-10-22T11:40:01.790584",
+  "last_synced_formatted": "22/10/2026 11:49:27",
+  "last_synced_iso": "2026-10-22T11:49:27.988179",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -3541,7 +3541,7 @@ window.SKILL_LIVE_DATA = {
 };
 
 // =========================================================================
-// HÀM RENDER TỰ ĐỘNG BẢNG 35 KIỂU CHỮ XÂY KÊNH VÀO CONTAINER
+// 1. RENDER 35 KIỂU CHỮ XÂY KÊNH (#live-35-styles-table)
 // =========================================================================
 window.renderStylesGrid = function(containerId, profileFilter = 'all') {
   const container = document.getElementById(containerId);
@@ -3552,25 +3552,33 @@ window.renderStylesGrid = function(containerId, profileFilter = 'all') {
     ? styles 
     : styles.filter(s => s.profile === profileFilter || s.set === profileFilter);
     
-  let html = '<div class="styles-live-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:1rem;">';
+  let html = `
+    <div style="margin-bottom:14px; display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+      <span style="font:600 12.5px var(--sans); color:var(--mute);">Lọc theo nhóm:</span>
+      <button type="button" onclick="window.renderStylesGrid('${containerId}', 'all')" style="font:600 12px var(--sans); padding:4px 10px; border-radius:6px; border:1px solid #cbd5e1; background:${profileFilter === 'all' ? '#0f172a' : '#fff'}; color:${profileFilter === 'all' ? '#fff' : '#0f172a'}; cursor:pointer;">Tất cả (35)</button>
+      <button type="button" onclick="window.renderStylesGrid('${containerId}', 'editorial_pro')" style="font:600 12px var(--sans); padding:4px 10px; border-radius:6px; border:1px solid #cbd5e1; background:${profileFilter === 'editorial_pro' ? '#0f172a' : '#fff'}; color:${profileFilter === 'editorial_pro' ? '#fff' : '#0f172a'}; cursor:pointer;">Chuyên gia</button>
+      <button type="button" onclick="window.renderStylesGrid('${containerId}', 'lifestyle')" style="font:600 12px var(--sans); padding:4px 10px; border-radius:6px; border:1px solid #cbd5e1; background:${profileFilter === 'lifestyle' ? '#0f172a' : '#fff'}; color:${profileFilter === 'lifestyle' ? '#fff' : '#0f172a'}; cursor:pointer;">Đời sống</button>
+      <button type="button" onclick="window.renderStylesGrid('${containerId}', 'hoc_vien_youtube')" style="font:600 12px var(--sans); padding:4px 10px; border-radius:6px; border:1px solid #cbd5e1; background:${profileFilter === 'hoc_vien_youtube' ? '#0f172a' : '#fff'}; color:${profileFilter === 'hoc_vien_youtube' ? '#fff' : '#0f172a'}; cursor:pointer;">Học viên</button>
+      <button type="button" onclick="window.renderStylesGrid('${containerId}', 'case_study')" style="font:600 12px var(--sans); padding:4px 10px; border-radius:6px; border:1px solid #cbd5e1; background:${profileFilter === 'case_study' ? '#0f172a' : '#fff'}; color:${profileFilter === 'case_study' ? '#fff' : '#0f172a'}; cursor:pointer;">Case Study</button>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px;">
+  `;
   
   filtered.forEach(s => {
-    const bgGrad = s.glow ? `rgba(${s.glow}, 0.12)` : 'rgba(255,255,255,0.03)';
-    const borderColor = s.c1 || '#38bdf8';
-    
+    const borderLeftColor = s.c1 || '#0f172a';
     html += `
-      <div class="style-live-card" style="background:#111622; border:1px solid rgba(255,255,255,0.08); border-left:3px solid ${borderColor}; border-radius:12px; padding:1rem; position:relative;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-          <span style="font-family:monospace; font-size:0.75rem; color:#facc15; font-weight:700;">#${String(s.id).padStart(2, '0')}</span>
-          <span style="font-size:0.7rem; background:rgba(255,255,255,0.06); padding:2px 8px; border-radius:99px; color:#94a3b8;">${s.package_name || s.set}</span>
+      <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid ${borderLeftColor}; border-radius:10px; padding:12px 14px; box-shadow:0 1px 3px rgba(15,23,42,0.03);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="font:700 11px var(--mono); color:#b45309; background:#fef3c7; padding:2px 7px; border-radius:4px;">#${String(s.id).padStart(2, '0')}</span>
+          <span style="font:600 11.5px var(--sans); color:var(--mute);">${s.package_name || s.set}</span>
         </div>
-        <div style="min-height:56px; display:flex; flex-direction:column; justify-content:center; background:${bgGrad}; border-radius:8px; padding:0.6rem; margin-bottom:0.75rem; text-align:center;">
-          <div style="font-size:1.15rem; font-weight:800; color:${s.c1 || '#fff'}; letter-spacing:-0.02em; line-height:1.2;">${s.l1 || s.name}</div>
-          <div style="font-size:0.78rem; font-weight:500; color:${s.c2 || '#cbd5e1'}; margin-top:2px;">${s.l2 || ''}</div>
+        <div style="background:#0f172a; border-radius:8px; padding:10px 12px; margin-bottom:8px; text-align:center;">
+          <div style="font:700 17px/1.2 var(--sans); color:${s.c1 || '#fff'};">${s.l1 || s.name}</div>
+          <div style="font:500 12.5px/1.3 var(--serif); color:${s.c2 || '#cbd5e1'}; margin-top:2px;">${s.l2 || ''}</div>
         </div>
-        <div style="font-size:0.72rem; color:#64748b; font-family:monospace; line-height:1.4;">
-          <div><strong>Font 1:</strong> ${s.f1 || 'FDAeonik'}</div>
-          <div><strong>Font 2:</strong> ${s.f2 || 'SVN-Acta'}</div>
+        <div style="font:400 11.5px var(--mono); color:var(--mute); line-height:1.45;">
+          <div>Font 1: <strong style="color:var(--ink2);">${s.f1 || 'FDAeonik'}</strong></div>
+          <div>Font 2: <strong style="color:var(--ink2);">${s.f2 || 'SVN-Acta'}</strong></div>
         </div>
       </div>
     `;
@@ -3581,26 +3589,26 @@ window.renderStylesGrid = function(containerId, profileFilter = 'all') {
 };
 
 // =========================================================================
-// HÀM RENDER 16 KIỂU MOTION ARCHETYPES VÀO CONTAINER
+// 2. RENDER 16 MOTION ARCHETYPES (#live-16-motions-grid)
 // =========================================================================
 window.renderMotionsGrid = function(containerId) {
   const container = document.getElementById(containerId);
   if (!container || !window.SKILL_LIVE_DATA) return;
   
   const archetypes = window.SKILL_LIVE_DATA.motions.archetypes || [];
-  let html = '<div class="motions-live-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem;">';
+  let html = '<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px;">';
   
   archetypes.forEach(m => {
     html += `
-      <div class="motion-live-card" style="background:#111622; border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1rem;">
-        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <span style="font-family:monospace; font-size:0.75rem; color:#38bdf8; font-weight:700;">${m.id}</span>
-          <span style="font-size:0.7rem; color:#10b981; background:rgba(16,185,129,0.1); padding:2px 8px; border-radius:99px;">${m.duration_seconds || 1.2}s</span>
+      <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:14px; box-shadow:0 1px 3px rgba(15,23,42,0.03);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font:700 12px var(--mono); color:#1d4ed8; background:#eff6ff; padding:2px 8px; border-radius:4px;">${m.id}</span>
+          <span style="font:600 11.5px var(--mono); color:#15803d; background:#f0fdf4; padding:2px 7px; border-radius:4px;">${m.duration_seconds || 1.2}s</span>
         </div>
-        <div style="font-size:0.95rem; font-weight:700; color:#fff; margin-bottom:0.3rem;">${m.name}</div>
-        <div style="font-size:0.8rem; color:#94a3b8; line-height:1.45; margin-bottom:0.6rem;">${m.description}</div>
-        <div style="font-size:0.72rem; background:rgba(0,0,0,0.3); padding:4px 8px; border-radius:6px; color:#cbd5e1; font-family:monospace;">
-          🔊 <strong>SFX:</strong> ${m.recommended_sfx || 'whoosh_soft'}
+        <h4 style="font:700 15px var(--sans); color:var(--ink); margin:0 0 6px;">${m.name}</h4>
+        <p style="font:400 13px/1.45 var(--sans); color:var(--ink2); margin:0 0 10px;">${m.description}</p>
+        <div style="font:500 11.5px var(--mono); color:var(--mute); background:#f8fafc; border:1px solid #e2e8f0; padding:4px 8px; border-radius:6px;">
+          🔊 SFX: <strong style="color:#0f172a;">${m.recommended_sfx || 'whoosh_soft'}</strong>
         </div>
       </div>
     `;
@@ -3611,24 +3619,26 @@ window.renderMotionsGrid = function(containerId) {
 };
 
 // =========================================================================
-// HÀM RENDER 5 PROFILES XÂY KÊNH VÀO CONTAINER
+// 3. RENDER 5 PROFILES XÂY KÊNH (#live-5-profiles-grid)
 // =========================================================================
 window.renderProfilesGrid = function(containerId) {
   const container = document.getElementById(containerId);
   if (!container || !window.SKILL_LIVE_DATA) return;
   
   const profiles = window.SKILL_LIVE_DATA.profiles.profiles || {};
-  let html = '<div class="profiles-live-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem;">';
+  let html = '<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:16px;">';
   
   Object.values(profiles).forEach(p => {
     html += `
-      <div class="profile-live-card" style="background:#111622; border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.1rem;">
-        <div style="font-size:0.72rem; font-family:monospace; color:#facc15; margin-bottom:0.3rem;">${p.profile_id}</div>
-        <div style="font-size:1.05rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">${p.display_name}</div>
-        <div style="font-size:0.82rem; color:#94a3b8; line-height:1.45; margin-bottom:0.8rem;">${p.description}</div>
-        <div style="font-size:0.73rem; color:#cbd5e1; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.5rem; line-height:1.5;">
-          <div>🎨 <strong>Chữ chính:</strong> ${p.typography?.title?.font_family || 'FD Integral'} (${p.typography?.title?.color || '#fff'})</div>
-          <div>🎬 <strong>B-Roll:</strong> ${p.broll_frequency || 'Mỗi 3-4s'}</div>
+      <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:16px; box-shadow:0 1px 3px rgba(15,23,42,0.04);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="font:700 11px var(--mono); color:#7e22ce; background:#faf5ff; border:1px solid #e9d5ff; padding:2px 8px; border-radius:4px;">${p.profile_id}</span>
+        </div>
+        <h3 style="font:700 16px/1.3 var(--sans); color:var(--ink); margin:0 0 6px;">${p.display_name}</h3>
+        <p style="font:400 13.5px/1.5 var(--sans); color:var(--ink2); margin:0 0 12px;">${p.description}</p>
+        <div style="border-top:1px solid #f1f5f9; padding-top:10px; font:400 12px var(--sans); color:var(--mute); line-height:1.55;">
+          <div>🎨 <strong>Chữ chính:</strong> ${p.typography?.title?.font_family || 'FD Integral'} (${p.typography?.title?.color || '#FFFFFF'})</div>
+          <div>🎬 <strong>Tần suất B-Roll:</strong> ${p.broll_frequency || 'Mỗi 3-4s'}</div>
         </div>
       </div>
     `;
@@ -3639,61 +3649,26 @@ window.renderProfilesGrid = function(containerId) {
 };
 
 // =========================================================================
-// HÀM ĐÓNG MỞ NGĂN KỸ THUẬT (TECHNICAL DRAWER)
+// 4. TỰ ĐỘNG ĐIỀN DỮ LIỆU KHI TẢI TRANG (AUTO POPULATE)
 // =========================================================================
-window.toggleTechnicalDrawer = function(drawerId, btn) {
-  const drawer = document.getElementById(drawerId);
-  if (!drawer) return;
-  const isHidden = drawer.style.display === 'none' || drawer.getAttribute('data-collapsed') === 'true';
-  
-  if (isHidden) {
-    drawer.style.display = 'block';
-    drawer.setAttribute('data-collapsed', 'false');
-    if (btn) {
-      btn.setAttribute('data-orig-text', btn.innerHTML);
-      btn.innerHTML = '✕ Thu gọn ngăn kỹ thuật';
-      btn.style.borderColor = '#ef4444';
-      btn.style.color = '#ef4444';
-    }
-  } else {
-    drawer.style.display = 'none';
-    drawer.setAttribute('data-collapsed', 'true');
-    if (btn) {
-      btn.innerHTML = btn.getAttribute('data-orig-text') || '🔧 Xem cấu trúc kỹ thuật';
-      btn.style.borderColor = '';
-      btn.style.color = '';
-    }
+function autoPopulateSkillContainers() {
+  if (document.getElementById('live-5-profiles-grid')) {
+    window.renderProfilesGrid('live-5-profiles-grid');
   }
-};
+  if (document.getElementById('live-profiles-grid')) {
+    window.renderProfilesGrid('live-profiles-grid');
+  }
+  if (document.getElementById('live-35-styles-table')) {
+    window.renderStylesGrid('live-35-styles-table', 'all');
+  }
+  if (document.getElementById('live-16-motions-grid')) {
+    window.renderMotionsGrid('live-16-motions-grid');
+  }
+}
 
-// =========================================================================
-// HÀM MỞ PHÒNG STUDIO TƯƠNG TÁC (IFRAME LAZY LOADING)
-// =========================================================================
-window.openStudioFrame = function(containerId, iframeUrl, triggerBtn) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  
-  if (container.style.display === 'block') {
-    container.style.display = 'none';
-    if (triggerBtn) triggerBtn.innerHTML = triggerBtn.getAttribute('data-open-text') || '🎛️ Mở Studio ngay tại đây';
-    return;
-  }
-  
-  container.style.display = 'block';
-  if (triggerBtn) {
-    triggerBtn.setAttribute('data-open-text', triggerBtn.innerHTML);
-    triggerBtn.innerHTML = '✕ Đóng Studio';
-  }
-  
-  if (!container.querySelector('iframe')) {
-    container.innerHTML = `
-      <div style="background:#0c101a; border:1px solid rgba(56,189,248,0.3); border-radius:12px; overflow:hidden; margin-top:1rem; position:relative;">
-        <div style="background:#111622; padding:8px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <div style="font-size:0.78rem; font-family:monospace; color:#38bdf8;">🌐 Nạp trực tiếp từ: ${iframeUrl}</div>
-          <a href="${iframeUrl}" target="_blank" style="font-size:0.75rem; color:#facc15; text-decoration:none; font-weight:700;">↗ Mở tab mới toàn màn hình</a>
-        </div>
-        <iframe src="${iframeUrl}" style="width:100%; height:750px; border:none; background:#07090e;" loading="lazy"></iframe>
-      </div>
-    `;
-  }
-};
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', autoPopulateSkillContainers);
+} else {
+  autoPopulateSkillContainers();
+}
+window.addEventListener('load', autoPopulateSkillContainers);
