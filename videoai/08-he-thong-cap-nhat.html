@@ -14,21 +14,21 @@
            HERO
            ======================================================== -->
       <div class="hero">
-        <div class="kicker" style="--stage:var(--c-kynang)">— HỆ THỐNG SKILL ANTIGRAVITY &amp; TỰ ĐỘNG CẬP NHẬT</div>
+        <div class="kicker" style="--stage:var(--c-kynang)">— CƠ CHẾ ZERO-FRICTION AUTO-EVOLVE • ĐỒNG BỘ 0 MA SÁT</div>
         <h1>Danh mục Skill &amp; Tự động cập nhật</h1>
         
         <p class="lede">
-          <em>Mỗi khi anh Việt thêm, sửa hoặc xóa file trong kho kỹ năng, toàn bộ cổng thông tin videoai.fedu.vn tự động đồng bộ theo thời gian thực chỉ với 1 câu lệnh.</em>
+          <em>Không cần nhớ đường dẫn file, không cần copy ảnh hay sửa HTML thủ công. Chỉ cần nói tự nhiên "cập nhật vào skill" hoặc "đưa vào videoai" — mọi quy chuẩn, phòng Studio và ảnh thực tế tự động lên sóng.</em>
         </p>
         <p style="font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--mute); margin-bottom:0;">
-          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">22/10/2026 11:49:27</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 24 file kịch bản Python, 16 Remotion Compositions và 22 Visual Components.
+          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">22/10/2026 13:16:35</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 6 Phòng Studio tương tác, 24 file kịch bản Python, 16 Remotion Compositions và 22 Visual Components.
         </p>
 
         <!-- Khối chỉ số sống -->
         <div class="proof-grid">
           <div class="proof-item">
-            <div class="proof-num">4 Kỹ Năng Lõi</div>
-            <div class="proof-lbl">auto-edit, render-v3, motion, fedu-media-pipeline</div>
+            <div class="proof-num">4 Kỹ Năng + 6 Studio</div>
+            <div class="proof-lbl">auto-edit, render-v3, motion, fedu-media-pipeline &amp; 6 Studio HTML</div>
           </div>
           <div class="proof-item">
             <div class="proof-num">24 Scripts Python</div>
@@ -42,33 +42,82 @@
       </div>
 
       <!-- ========================================================
-           CÂU LỆNH CẬP NHẬT 1 CHẠM
+           QUY TRÌNH ZERO-FRICTION AUTO-EVOLVE (3 CÁCH CẬP NHẬT)
            ======================================================== -->
-      <h2>1. Hướng dẫn cập nhật &amp; Triển khai 1 câu lệnh</h2>
-      <p>
-        Bất cứ khi nào anh Việt thay đổi tài nguyên trong các kỹ năng, chạy 1 trong 2 câu lệnh dưới đây:
+      <h2>1. Quy trình Zero-Friction Auto-Evolve (3 cách từ tự nhiên nhất đến CLI)</h2>
+      <p style="margin-bottom:18px;">
+        Đã được gắn cứng vào mục 7 của cả <code>auto-edit-video/SKILL.md</code> và <code>motion/SKILL.md</code>:
       </p>
 
-      <div class="cmd-box">
-        <div class="cmd-header">
-          <span class="cmd-title">🔹 Đồng bộ cục bộ &amp; Sinh lại toàn bộ HTML:</span>
-          <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+      <div class="wwh-grid">
+        <div class="wwh-card" style="border:2px solid #16a34a; background:#f0fdf4;">
+          <div class="wwh-tag what" style="background:#16a34a; color:#fff;">CÁCH 1 • KHUYÊN DÙNG (0 MA SÁT)</div>
+          <div class="wwh-title">Ra lệnh tự nhiên trong cuộc trò chuyện</div>
+          <p class="wwh-desc">
+            Sau khi cùng AI chốt xong một quy chuẩn, một kiểu Logo/CTA/Phụ đề hay một phòng Studio mới, anh Việt chỉ cần nói:
+            <br/><strong><em>"cập nhật vào skill"</em></strong>, <strong><em>"đưa cái này vào videoai"</em></strong>, hoặc <strong><em>"chốt quy chuẩn này"</em></strong>.
+          </p>
+          <p class="wwh-desc" style="margin-bottom:0;">
+            AI sẽ tự động ghi vào <code>SKILL.md</code> + <code>evolution_log.json</code>, copy Studio &amp; ảnh preview, và chạy <code>sync_videoai.py --deploy</code> đẩy thẳng lên web.
+          </p>
         </div>
-        <pre><code>python3 /Users/vietmac/Documents/CODE/videoai.fedu.vn/sync_videoai.py</code></pre>
+
+        <div class="wwh-card">
+          <div class="wwh-tag why">CÁCH 2 • SỔ ĐĂNG KÝ SỐNG</div>
+          <div class="wwh-title">Thêm mục vào <code>evolution_log.json</code></div>
+          <p class="wwh-desc">
+            Mọi nội dung mới (What/Why/How, danh mục kiểu, đường dẫn ảnh <code>preview_images</code>, tên file <code>studio_file</code>, bước đích <code>step_target</code>) đều nằm gọn trong 1 file JSON duy nhất:
+          </p>
+          <pre style="font-size:11.5px; background:#f8fafc; padding:8px; border-radius:6px; overflow-x:auto;"><code>~/.gemini/config/skills/auto-edit-video/resources/evolution_log.json</code></pre>
+        </div>
+
+        <div class="wwh-card">
+          <div class="wwh-tag how">CÁCH 3 • LỆNH TERMINAL 1 CHẠM</div>
+          <div class="wwh-title">Chạy trực tiếp từ CLI bất kỳ lúc nào</div>
+          <p class="wwh-desc">
+            Tự động quét toàn bộ kho kỹ năng, sanitize Studio, copy ảnh, bơm vào các trang Bước 1..5 và deploy lên Cloudflare Worker:
+          </p>
+          <div class="cmd-box">
+            <div class="cmd-header">
+              <span class="cmd-title">Lệnh đồng bộ &amp; Deploy</span>
+              <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+            </div>
+            <pre><code>python3 /Users/vietmac/Documents/CODE/videoai.fedu.vn/sync_videoai.py --deploy</code></pre>
+          </div>
+        </div>
       </div>
 
-      <div class="cmd-box" style="margin-top:14px;">
-        <div class="cmd-header">
-          <span class="cmd-title">🚀 Đồng bộ &amp; Đẩy thẳng lên Production (videoai.fedu.vn + GitHub):</span>
-          <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+      <!-- ========================================================
+           NHẬT KÝ TIẾN HÓA TỪ EVOLUTION_LOG.JSON
+           ======================================================== -->
+      <h2 style="margin-top:36px;">2. Nhật ký tiến hóa Quy chuẩn &amp; Studio (<code>evolution_log.json</code>)</h2>
+      <p style="margin-bottom:16px;">
+        Danh sách các quy chuẩn và phòng Studio đã được tự động đóng gói, copy ảnh và gắn vào đúng trang Bước học:
+      </p>
+      
+        <div class="matrix-card" style="border-left:4px solid #f59e0b; margin-bottom:16px;">
+          <div class="matrix-header">
+            <div class="matrix-title">
+              <span>⚡ Hệ Thống Logo Thương Hiệu 2 Tầng & Outro Nền Đen Cuối Clip (BRAND 01–03 • OUTRO 01–03)</span>
+            </div>
+            <span class="matrix-badge editorial">2026-10-22 • Đích: buoc-4</span>
+          </div>
+          <p style="font-size:14.5px; color:var(--ink2); margin:0 0 10px;">Nhận diện thương hiệu chia 2 tầng: <strong>Logo Nhỏ trên đỉnh khi đang phát clip</strong> (BRAND 01•02•03 tại Headroom Y=58..166px) và <strong>Logo To trên nền đen sau câu nói cuối</strong> (OUTRO 01•02•03, +2.8s–3.5s trên nền #050507). Outro có 2 chế độ: Mode 1 Thuần Thương Hiệu và Mode 2 Kèm Thẻ Vé Ưu Đãi + Nút Hành Động.</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:10px;">
+            <a href="05-buoc4-motion-cta.html#evo-brand-outro-2tang" style="font:700 12px var(--sans); color:#fff; background:#0f172a; padding:4px 10px; border-radius:6px; text-decoration:none;">📖 Xem trên 05-buoc4-motion-cta.html</a>
+            <button type="button" onclick="openStudioModal('studios/studio-brand-logo-outro.html', 'Hệ Thống Logo Thương Hiệu 2 Tầng & Outro Nền Đen Cuối Clip (BRAND 01–03 • OUTRO 01–03)')" style="font:700 12px var(--sans); color:#fff; background:#b45309; border:none; padding:4px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio (studio-brand-logo-outro.html)</button>
+            <a href="assets/brand_outro/brand_outro_mode1_pure.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ brand_outro_mode1_pure.jpg</a><a href="assets/brand_outro/brand_outro_mode2_cta.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ brand_outro_mode2_cta.jpg</a><a href="assets/brand_outro/brand_logo_3_archetypes_preview.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ brand_logo_3_archetypes_preview.jpg</a>
+          </div>
+          <div style="font:400 12px var(--mono); color:var(--mute);">
+            Phiên gốc: <code>24a7e7f9-83aa-4775-abe7-88287b50b1b9</code> • ID: <code>brand-outro-2tang</code>
+          </div>
         </div>
-        <pre><code>python3 /Users/vietmac/Documents/CODE/videoai.fedu.vn/sync_videoai.py --deploy</code></pre>
-      </div>
+        
 
       <!-- ========================================================
            TRẠNG THÁI 4 KỸ NĂNG LÕI
            ======================================================== -->
-      <h2 style="margin-top:36px;">2. Trạng thái 4 kỹ năng lõi đang theo dõi</h2>
+      <h2 style="margin-top:36px;">3. Trạng thái 4 kỹ năng lõi đang theo dõi</h2>
       <p style="margin-bottom:16px;">
         Được quét và trích xuất trực tiếp từ các file SKILL.md:
       </p>
@@ -81,15 +130,15 @@
             </div>
             <span class="matrix-badge sci">🟢 ACTIVE • V3.4 CORE</span>
           </div>
-          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Tự động cắt dựng video Talking-Head V3, OpenCV Mockup, B-Roll Hot-Swap & Remotion 60fps.</p>
+          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Tự động cắt dựng video Talking-Head V3, OpenCV Mockup, B-Roll Hot-Swap, Logo & Outro 2 tầng & Remotion 60fps.</p>
           <div style="font:400 12px var(--mono); color:var(--mute); margin-bottom:10px;">
-            <span>Dung lượng: <strong>20.2 KB</strong> (162 dòng)</span> • 
-            <span>Cập nhật: <strong style="color:var(--ink);">21/10/2026 20:31</strong></span>
+            <span>Dung lượng: <strong>23.0 KB</strong> (177 dòng)</span> • 
+            <span>Cập nhật: <strong style="color:var(--ink);">22/10/2026 13:08</strong></span>
           </div>
           <div style="font-size:13px; color:var(--ink2);">
             <strong>Mục chính trong SKILL.md:</strong>
             <ul style="padding-left:18px; margin-top:4px; line-height:1.5;">
-              <li style="margin-bottom:3px;">1. NGUYÊN TẮC CỐT LÕI & CHẾ ĐỘ MẶC ĐỊNH V3 KHÔNG HỎI NHIỀU (ZERO-FRICTION MFX V3.2 DEFAULT)</li><li style="margin-bottom:3px;">2. AUTO-EDIT V3: PRO TALKING-HEAD STUDIO (QUY TRÌNH 2-CHẠM)</li><li style="margin-bottom:3px;">3. THƯ VIỆN 16 KIỂU MOTION GRAPHIC CHỦ LỰC & KHO 8.902 SFX BRAIN (`v3_motion_library.py`)</li><li style="margin-bottom:3px;">4. PHONG CÁCH MỞ RỘNG (V1/V2)</li>
+              <li style="margin-bottom:3px;">1. NGUYÊN TẮC CỐT LÕI & CHẾ ĐỘ MẶC ĐỊNH V3 KHÔNG HỎI NHIỀU (ZERO-FRICTION MFX V3.2 DEFAULT)</li><li style="margin-bottom:3px;">2. AUTO-EDIT V3: PRO TALKING-HEAD STUDIO (QUY TRÌNH 2-CHẠM)</li><li style="margin-bottom:3px;">3. THƯ VIỆN 16 KIỂU MOTION GRAPHIC CHỦ LỰC & KHO 8.902 SFX BRAIN (`v3_motion_library.py`)</li><li style="margin-bottom:3px;">4. PHONG CÁCH MỞ RỘNG (V1/V2)</li><li style="margin-bottom:3px;">5. BỘ CÔNG CỤ & TÀI NGUYÊN</li>
             </ul>
           </div>
         </div>
@@ -121,15 +170,15 @@
             </div>
             <span class="matrix-badge sci">🟢 ACTIVE • 60FPS MOTION</span>
           </div>
-          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Sản xuất Motion Graphic 60fps đa phiên bản từ 3 khuôn thiết kế gốc .TSX & 10 Archetypes.</p>
+          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.</p>
           <div style="font:400 12px var(--mono); color:var(--mute); margin-bottom:10px;">
-            <span>Dung lượng: <strong>9.6 KB</strong> (119 dòng)</span> • 
-            <span>Cập nhật: <strong style="color:var(--ink);">21/10/2026 15:51</strong></span>
+            <span>Dung lượng: <strong>10.5 KB</strong> (127 dòng)</span> • 
+            <span>Cập nhật: <strong style="color:var(--ink);">22/10/2026 13:08</strong></span>
           </div>
           <div style="font-size:13px; color:var(--ink2);">
             <strong>Mục chính trong SKILL.md:</strong>
             <ul style="padding-left:18px; margin-top:4px; line-height:1.5;">
-              <li style="margin-bottom:3px;">🎯 1. BẢNG MANTRA & TÌNH HUỐNG KÍCH HOẠT</li><li style="margin-bottom:3px;">🧠 2. BỐN TRỤ CỘT TƯ DUY ĐẦU RA TỐT NHẤT (ĐÚC KẾT TỪ MOTION 01 $\rightarrow$ 05)</li><li style="margin-bottom:3px;">🏛️ 3. NĂM KHUÔN THIẾT KẾ GỐC (`.TSX` CÓ BẢNG BIẾN `TWEAKS`) — TÁI SỬ DỤNG TRONG 3 GIÂY</li><li style="margin-bottom:3px;">⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN KHI NHẬN 1 VIDEO NÓI MỚI</li>
+              <li style="margin-bottom:3px;">🎯 1. BẢNG MANTRA & TÌNH HUỐNG KÍCH HOẠT</li><li style="margin-bottom:3px;">🧠 2. BỐN TRỤ CỘT TƯ DUY ĐẦU RA TỐT NHẤT (ĐÚC KẾT TỪ MOTION 01 $\rightarrow$ 05)</li><li style="margin-bottom:3px;">🏛️ 3. NĂM KHUÔN THIẾT KẾ GỐC (`.TSX` CÓ BẢNG BIẾN `TWEAKS`) — TÁI SỬ DỤNG TRONG 3 GIÂY</li><li style="margin-bottom:3px;">⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN KHI NHẬN 1 VIDEO NÓI MỚI</li><li style="margin-bottom:3px;">🔄 7. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ 0 MA SÁT LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)</li>
             </ul>
           </div>
         </div>
@@ -149,7 +198,7 @@
           <div style="font-size:13px; color:var(--ink2);">
             <strong>Mục chính trong SKILL.md:</strong>
             <ul style="padding-left:18px; margin-top:4px; line-height:1.5;">
-              <li style="margin-bottom:3px;">1. Sơ đồ phối hợp liên hoàn</li><li style="margin-bottom:3px;">2. Bảng giao việc</li><li style="margin-bottom:3px;">3. Thứ tự bắt buộc</li><li style="margin-bottom:3px;">4. Cầu nối Hybrid Edit & Motion</li>
+              <li style="margin-bottom:3px;">1. Sơ đồ phối hợp liên hoàn</li><li style="margin-bottom:3px;">2. Bảng giao việc</li><li style="margin-bottom:3px;">3. Thứ tự bắt buộc</li><li style="margin-bottom:3px;">4. Cầu nối Hybrid Edit & Motion</li><li style="margin-bottom:3px;">5. Phối hợp CLAUDE2 viết code `.TSX`</li>
             </ul>
           </div>
         </div>
@@ -158,7 +207,7 @@
       <!-- ========================================================
            TIMELINE CÁC TẬP TIN SỬA GẦN NHẤT
            ======================================================== -->
-      <h2 style="margin-top:36px;">3. Lịch sử các tập tin vừa chỉnh sửa gần nhất</h2>
+      <h2 style="margin-top:36px;">4. Lịch sử các tập tin vừa chỉnh sửa gần nhất</h2>
       <p style="margin-bottom:14px;">
         Tự động sắp xếp theo thời gian sửa đổi (mtime) của toàn bộ kho mã nguồn:
       </p>
@@ -176,17 +225,38 @@
           <tbody>
             
         <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">compositions/VietUniversalCTA.tsx</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Remotion .TSX</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Remotion Studio 60fps</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">22/10/2026 10:47</td>
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">motion_catalog.json</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Database JSON</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Catalog + Brand 2-Tier</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">22/10/2026 13:09</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">motion/SKILL.md</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">22/10/2026 13:08</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">auto-edit-video/SKILL.md</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Auto Edit Video V3 (Talking-Head Studio)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">21/10/2026 20:31</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">22/10/2026 13:08</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">evolution_log.json</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Evolution Registry</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Auto-Evolve Hub</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">22/10/2026 13:04</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">compositions/VietUniversalCTA.tsx</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Remotion .TSX</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Remotion Studio 60fps</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">22/10/2026 10:47</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -215,13 +285,6 @@
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Render V3 (Delta Patcher & EDL Engine)</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">21/10/2026 16:05</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">motion/SKILL.md</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">21/10/2026 15:51</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -266,7 +329,7 @@
       <!-- ========================================================
            DANH MỤC SCRIPTS PYTHON
            ======================================================== -->
-      <h2 style="margin-top:36px;">4. Danh mục toàn bộ 24 kịch bản Python</h2>
+      <h2 style="margin-top:36px;">5. Danh mục toàn bộ 24 kịch bản Python</h2>
       <div style="background:#ffffff; border:1px solid var(--line); border-radius:12px; overflow-x:auto;">
         <table style="width:100%; border-collapse:collapse; text-align:left;">
           <thead>
