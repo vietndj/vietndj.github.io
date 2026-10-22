@@ -111,6 +111,17 @@ window.HUB = {
       stage: "kynang",
       icon: "🔄",
       q: "Hệ thống Skill Antigravity, Verifier tự động và đồng bộ Cloud"
+    },
+    {
+      id: "edit-video-spa",
+      file: "09-edit-video-spa.html",
+      group: "ref",
+      n: "09",
+      title: "Kỹ năng Edit Video cho Spa (V7.2)",
+      short: "Edit Video Spa",
+      stage: "buoc4",
+      icon: "🌿",
+      q: "Cẩm nang đóng gói Kỹ năng Edit Video cho Spa: Đầu vào, Mantra EDIT SPA, MCP, Cài đặt máy mới & Chuyển giao học viên"
     }
   ]
 };

@@ -1113,7 +1113,8 @@
       <p>Gồm đủ 2 tầng: <b>(1) Kiểu To Trên Nền Đen Sau Khi Kết Thúc Clip</b> (Tùy chọn Chỉ Logo Thông Tin hoặc Kèm CTA) & <b>(2) Kiểu Nhỏ Trên Đỉnh Khi Đang Phát Clip</b></p>
     </div>
     <div class="top-actions">
-      <button class="btn-top primary" onclick="replayAllAnimations()">▶ Phát Lại Đồng Bộ Tất Cả Motion</button>
+      <button class="btn-top primary" onclick="exportBrandJson()">💾 Xuất Brand.json (0 Token)</button>
+      <button class="btn-top" onclick="replayAllAnimations()">▶ Phát Lại Đồng Bộ Tất Cả Motion</button>
       <button class="btn-top" id="btn-trans-demo" onclick="playVideoToBlackOutroTransition()">🎬 Xem Chuyển Cảnh: Hết Clip ➔ Sang Nền Đen Outro</button>
       <a class="btn-top" href="./cta_3_motion_studio.html" target="_blank">🎯 Mở Studio 3 CTA ↗</a>
       <a class="btn-top" href="./studio_35_kieu_chu_va_phu_de.html" target="_blank">🎨 Mở 35 Kiểu Chữ + Phụ Đề 5B ↗</a>
@@ -1205,6 +1206,10 @@
           <button class="seg-pill-btn" id="pos-btn-right" onclick="setLogoPosition('right')">↗ Góc Phải</button>
         </div>
       </div>
+
+      <button class="btn-choose-brand" style="margin-top:6px; background:linear-gradient(135deg,#C84B31,#E86C42); color:#FFF; border-color:#FFC66E;" onclick="exportBrandJson()">
+        💾 Xuất File Brand.json (0 Token LLM)
+      </button>
     </div>
 
     <!-- RIGHT COLUMN: BOTH TIERS (TIER A: BIG BLACK OUTRO + TIER B: SMALL IN-VIDEO PILL) -->
@@ -1937,15 +1942,77 @@
       replaySmallBrands();
     }
 
+    let selectedOutroArchetype = 1;
+    let selectedSmallArchetype = 1;
+    let currentLogoPosition = 'center';
+
     function selectOutro(num) {
+      selectedOutroArchetype = num;
       [1, 2, 3].forEach(i => document.getElementById('col-outro-' + i).classList.toggle('selected-brand', i === num));
       const modeTxt = document.body.classList.contains('with-outro-cta') ? 'Kèm CTA Trên Nền Đen' : 'Chỉ Logo & TT Thương Hiệu';
       alert(`Đã chọn Kiểu Cuối Clip Trên Nền Đen: OUTRO 0${num} (${modeTxt})!`);
     }
 
     function selectSmallBrand(num) {
+      selectedSmallArchetype = num;
       [1, 2, 3].forEach(i => document.getElementById('col-brand-' + i).classList.toggle('selected-brand', i === num));
       alert(`Đã chọn Kiểu Nhỏ Trong Clip: BRAND 0${num}!`);
+    }
+
+    function exportBrandJson() {
+      const mono = document.getElementById('inp-mono').value || 'TT';
+      const name = document.getElementById('inp-name').value || 'THẮM THỎ BEAUTY';
+      const tagline = document.getElementById('inp-tagline').value || '';
+      const info1 = document.getElementById('inp-info1').value || '';
+      const info2 = document.getElementById('inp-info2').value || '';
+      const handle = document.getElementById('inp-handle').value || '@channel';
+      const badge = document.getElementById('inp-badge').value || 'OFFICIAL';
+      const ctaOffer = document.getElementById('inp-cta-offer').value || '';
+      const ctaBtn = document.getElementById('inp-cta-btn').value || '';
+      const isCtaMode = document.body.classList.contains('with-outro-cta');
+      const pos = document.body.classList.contains('pos-left') ? 'left' : (document.body.classList.contains('pos-right') ? 'right' : 'center');
+      const slug = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') || 'spa_brand';
+
+      const payload = {
+        brand_id: slug,
+        preset: "spa_clinic",
+        logo_monogram: mono,
+        brand_name: name,
+        brand_tagline: tagline,
+        brand_info_1: info1,
+        brand_info_2: info2,
+        channel_handle: handle,
+        badge_label: badge,
+        in_video_brand: {
+          archetype: "BRAND_0" + selectedSmallArchetype,
+          position: pos,
+          scale_after_2s: 0.90
+        },
+        in_video_cta: {
+          archetype: "CTA_01",
+          offer_kicker: ctaOffer,
+          button_text: ctaBtn
+        },
+        black_outro: {
+          enabled: true,
+          archetype: "OUTRO_0" + selectedOutroArchetype,
+          duration_sec: 3.0,
+          content_mode: isCtaMode ? "option_2_with_cta" : "option_1_pure_brand",
+          footer_pill: "🔔 FOLLOW KÊNH ĐỂ XEM PHÁC ĐỒ MỚI NHẤT",
+          cta_offer: ctaOffer,
+          cta_button: ctaBtn
+        }
+      };
+
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = slug + ".json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
 
     window.addEventListener('DOMContentLoaded', () => {
