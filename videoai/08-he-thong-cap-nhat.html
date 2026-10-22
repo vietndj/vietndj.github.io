@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hệ Thống Theo Dõi & Tự Động Cập Nhật — videoai.fedu.vn</title>
+  <meta name="description" content="Trang theo dõi trạng thái trực tiếp của 4 kỹ năng lõi, danh mục toàn bộ file mã nguồn và hướng dẫn câu lệnh 1 chạm để cập nhật trang web." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090e' stroke='%2338bdf8' stroke-width='2'/%3E%3Ctext x='29' y='44' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='32' letter-spacing='-1.5' fill='%23f8fafc'%3EAI%3C/text%3E%3Ccircle cx='52' cy='13' r='4.2' fill='%23ef4444'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    :root {
+      --cl-bg: #07090e;
+      --cl-tint: #0c101a;
+      --cl-card: #111622;
+      --cl-card-hover: #161d2d;
+      --cl-ink: #f8fafc;
+      --cl-ink-2: #cbd5e1;
+      --cl-muted: #94a3b8;
+      --cl-line: rgba(255, 255, 255, 0.08);
+      --cl-line-strong: rgba(56, 189, 248, 0.28);
+      --cl-accent: #38bdf8;
+      --ink-gold: #facc15;
+      --ink-emerald: #10b981;
+      --ink-coral: #f87171;
+      --ink-purple: #a855f7;
+      --font-display: 'FD Aeonik Extended', 'Be Vietnam Pro', -apple-system, sans-serif;
+      --font-sans: 'FD Aeonik', 'Be Vietnam Pro', -apple-system, sans-serif;
+      --font-serif: 'Tiempos Text', 'Newsreader', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--cl-bg); color: var(--cl-ink); font-family: var(--font-sans); line-height: 1.65; overflow-x: hidden; }
+    a { color: var(--cl-accent); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--ink-gold); }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7, 9, 14, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--cl-line);
+      padding: 0.75rem 2rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .brand-id { display: flex; align-items: center; gap: 0.85rem; }
+    .brand-monogram {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--cl-card); border: 1.5px solid var(--cl-line-strong);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 900; font-size: 0.95rem; color: #fff;
+      position: relative; text-decoration: none;
+    }
+    .brand-monogram::after {
+      content: ''; position: absolute; top: 5px; right: 5px;
+      width: 5px; height: 5px; border-radius: 50%; background: #ef4444;
+    }
+    .brand-title { font-family: var(--font-display); font-weight: 800; font-size: 0.95rem; letter-spacing: 0.04em; color: #fff; }
+    .brand-sub { font-size: 0.73rem; color: var(--cl-muted); font-family: var(--font-mono); }
+
+    .top-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .top-link {
+      font-size: 0.82rem; font-weight: 600; padding: 0.45rem 0.85rem; border-radius: 8px;
+      color: var(--cl-muted); transition: all 0.15s ease; text-decoration: none;
+    }
+    .top-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+    .top-link.on { color: #fff; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .live-status-pill {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.35rem 0.75rem; border-radius: 99px; color: var(--ink-emerald);
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--ink-emerald);
+      box-shadow: 0 0 8px var(--ink-emerald); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.7; }
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+    .hero-banner {
+      background: linear-gradient(145deg, #0d1322 0%, #07090e 100%);
+      border: 1px solid var(--cl-line-strong);
+      border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; margin-bottom: 2.5rem;
+    }
+    .hero-kicker {
+      font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+      color: var(--ink-gold); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.85rem;
+    }
+    .hero-h1 {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      font-weight: 900; line-height: 1.15; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .hero-lede {
+      font-family: var(--font-serif); font-size: 1.22rem; line-height: 1.6;
+      color: var(--cl-ink-2); margin-bottom: 1.25rem; max-width: 980px;
+    }
+    .hero-desc { font-size: 0.95rem; color: var(--cl-muted); line-height: 1.65; max-width: 980px; }
+
+    .proof-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--cl-line);
+    }
+    .proof-box {
+      background: rgba(17, 22, 34, 0.7); border: 1px solid var(--cl-line);
+      border-radius: 12px; padding: 1rem 1.15rem;
+    }
+    .proof-num { font-family: var(--font-mono); font-size: 1.65rem; font-weight: 900; color: var(--cl-accent); line-height: 1.1; }
+    .proof-lbl { font-size: 0.8rem; color: var(--cl-muted); margin-top: 0.35rem; line-height: 1.4; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 1.1rem; border-radius: 8px; font-weight: 700; font-size: 0.84rem;
+      cursor: pointer; transition: all 0.15s ease; border: none; text-decoration: none;
+    }
+    .btn-primary { background: var(--cl-accent); color: #07090e; }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-ghost { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid var(--cl-line); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+    .btn-tech { background: rgba(56, 189, 248, 0.08); color: var(--cl-accent); border: 1px solid rgba(56, 189, 248, 0.25); font-family: var(--font-mono); }
+    .btn-tech:hover { background: rgba(56, 189, 248, 0.16); border-color: var(--cl-accent); }
+
+    .tech-drawer {
+      display: none; background: #0c101a; border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px; padding: 1.25rem; margin-top: 1.25rem; animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .code-block {
+      background: #05070a; border: 1px solid var(--cl-line); border-radius: 8px;
+      padding: 0.9rem; font-family: var(--font-mono); font-size: 0.78rem;
+      color: #7dd3fc; overflow-x: auto; line-height: 1.5; margin: 0.5rem 0;
+    }
+  </style>
+  <script src="assets/skill_live_data.js"></script>
+    
+</head>
+<body data-page="he-thong-cap-nhat">
+  
+    <header class="topbar">
+      <div class="brand-id">
+        <a href="index.html" class="brand-monogram">AI</a>
+        <div>
+          <div class="brand-title">VIDEOAI.FEDU.VN</div>
+          <div class="brand-sub">Hệ Thống Kỹ Năng AI Video Edit &amp; Motion 60fps • Single-Command Pipeline</div>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <a href="index.html" class="top-link">🧭 Lộ trình 5 Bước</a><a href="07-phong-studio.html" class="top-link">🎛️ Phòng Studio (4 Hub)</a><a href="08-he-thong-cap-nhat.html" class="top-link on">🔄 Hệ Thống Cập Nhật (Live)</a><a href="aieditskill.html" class="top-link">📚 Kỹ Năng Chi Tiết (Hub)</a>
+      </nav>
+      <div class="live-status-pill">
+        <span class="live-dot"></span>
+        <span class="live-text">SKILL V3.4 LIVE</span>
+      </div>
+    </header>
+    
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero-banner" style="margin-bottom:2.5rem;">
+      <div class="hero-kicker">— SYSTEM PULSE &amp; AUTO-SYNC MONITOR</div>
+      <h1 class="hero-h1">HỆ THỐNG THEO DÕI TRẠNG THÁI &amp; ĐỒNG BỘ 1 CÂU LỆNH</h1>
+      <p class="hero-lede">
+        <em>"Mỗi khi anh Việt thêm/sửa/xóa kỹ năng, kiểu chữ, motion, profile trong kho tài nguyên, toàn bộ hệ thống web videoai.fedu.vn tự động đồng bộ theo thời gian thực."</em>
+      </p>
+      <p class="hero-desc">
+        Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink-emerald); font-family:var(--font-mono);">22/10/2026 11:40:01</strong>.
+        Đang quản lý <strong>4</strong> kỹ năng lõi, <strong>24</strong> file kịch bản Python, <strong>16</strong> Remotion Compositions và <strong>22</strong> Visual Components.
+      </p>
+    </section>
+
+    <!-- KHỐI 1: TRẠNG THÁI 4 KỸ NĂNG LÕI -->
+    <section style="margin-bottom:3rem;">
+      <div style="margin-bottom:1rem;">
+        <h2 style="font-family:var(--font-display); font-size:1.35rem; font-weight:800; color:#fff; text-transform:uppercase;">
+          1. Trạng Thái Trực Tiếp 4 Kỹ Năng Lõi
+        </h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:1.25rem;">
+        
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:14px; padding:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-gold); background:rgba(250,204,21,0.1); padding:2px 8px; border-radius:99px; font-weight:700;">V3.4 CORE</span>
+            <span style="font-size:0.75rem; color:var(--ink-emerald); font-family:var(--font-mono); font-weight:700;">🟢 ACTIVE</span>
+          </div>
+          <h3 style="font-size:1.1rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">Auto Edit Video V3 (Talking-Head Studio)</h3>
+          <p style="font-size:0.8rem; color:var(--cl-muted); line-height:1.45; margin-bottom:0.75rem;">Tự động cắt dựng video Talking-Head V3, OpenCV Mockup, B-Roll Hot-Swap & Remotion 60fps.</p>
+          <div style="font-size:0.73rem; color:var(--cl-ink-2); font-family:var(--font-mono); border-top:1px solid var(--cl-line); padding-top:0.5rem; margin-bottom:0.6rem;">
+            <div>📁 <strong>Dung lượng:</strong> 20.2 KB (162 dòng)</div>
+            <div>⏱️ <strong>Sửa gần nhất:</strong> 21/10/2026 20:31</div>
+          </div>
+          <div style="font-size:0.74rem; color:var(--cl-muted);">
+            <div style="font-weight:700; color:#fff; margin-bottom:2px;">Mục chính trong SKILL.md:</div>
+            <ul style="padding-left:1.1rem; line-height:1.4;">
+              <li style="margin-bottom:3px;">1. NGUYÊN TẮC CỐT LÕI & CHẾ ĐỘ MẶC ĐỊNH V3 KHÔNG HỎI NHIỀU (ZERO-FRICTION MFX V3.2 DEFAULT)</li><li style="margin-bottom:3px;">2. AUTO-EDIT V3: PRO TALKING-HEAD STUDIO (QUY TRÌNH 2-CHẠM)</li><li style="margin-bottom:3px;">3. THƯ VIỆN 16 KIỂU MOTION GRAPHIC CHỦ LỰC & KHO 8.902 SFX BRAIN (`v3_motion_library.py`)</li><li style="margin-bottom:3px;">4. PHONG CÁCH MỞ RỘNG (V1/V2)</li><li style="margin-bottom:3px;">5. BỘ CÔNG CỤ & TÀI NGUYÊN</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:14px; padding:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-gold); background:rgba(250,204,21,0.1); padding:2px 8px; border-radius:99px; font-weight:700;">RENDER ENGINE</span>
+            <span style="font-size:0.75rem; color:var(--ink-emerald); font-family:var(--font-mono); font-weight:700;">🟢 ACTIVE</span>
+          </div>
+          <h3 style="font-size:1.1rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">Render V3 (Delta Patcher & EDL Engine)</h3>
+          <p style="font-size:0.8rem; color:var(--cl-muted); line-height:1.45; margin-bottom:0.75rem;">Tự động tạo ảnh B-Roll 9:16 và kết xuất video .mp4 hoàn chỉnh từ khối EDL JSON không hỏi lại.</p>
+          <div style="font-size:0.73rem; color:var(--cl-ink-2); font-family:var(--font-mono); border-top:1px solid var(--cl-line); padding-top:0.5rem; margin-bottom:0.6rem;">
+            <div>📁 <strong>Dung lượng:</strong> 6.6 KB (63 dòng)</div>
+            <div>⏱️ <strong>Sửa gần nhất:</strong> 21/10/2026 16:08</div>
+          </div>
+          <div style="font-size:0.74rem; color:var(--cl-muted);">
+            <div style="font-weight:700; color:#fff; margin-bottom:2px;">Mục chính trong SKILL.md:</div>
+            <ul style="padding-left:1.1rem; line-height:1.4;">
+              <li style="margin-bottom:3px;">Quy Trình 3 Bước Tự Hành Bắt Buộc</li><li style="margin-bottom:3px;">Báo Cáo Sau Khi Xuất Xong `.mp4`</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:14px; padding:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-gold); background:rgba(250,204,21,0.1); padding:2px 8px; border-radius:99px; font-weight:700;">60FPS MOTION</span>
+            <span style="font-size:0.75rem; color:var(--ink-emerald); font-family:var(--font-mono); font-weight:700;">🟢 ACTIVE</span>
+          </div>
+          <h3 style="font-size:1.1rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">Motion Studio 60fps (Universal Archetypes)</h3>
+          <p style="font-size:0.8rem; color:var(--cl-muted); line-height:1.45; margin-bottom:0.75rem;">Sản xuất Motion Graphic 60fps đa phiên bản từ 3 khuôn thiết kế gốc .TSX & 10 Archetypes.</p>
+          <div style="font-size:0.73rem; color:var(--cl-ink-2); font-family:var(--font-mono); border-top:1px solid var(--cl-line); padding-top:0.5rem; margin-bottom:0.6rem;">
+            <div>📁 <strong>Dung lượng:</strong> 9.6 KB (119 dòng)</div>
+            <div>⏱️ <strong>Sửa gần nhất:</strong> 21/10/2026 15:51</div>
+          </div>
+          <div style="font-size:0.74rem; color:var(--cl-muted);">
+            <div style="font-weight:700; color:#fff; margin-bottom:2px;">Mục chính trong SKILL.md:</div>
+            <ul style="padding-left:1.1rem; line-height:1.4;">
+              <li style="margin-bottom:3px;">🎯 1. BẢNG MANTRA & TÌNH HUỐNG KÍCH HOẠT</li><li style="margin-bottom:3px;">🧠 2. BỐN TRỤ CỘT TƯ DUY ĐẦU RA TỐT NHẤT (ĐÚC KẾT TỪ MOTION 01 $\rightarrow$ 05)</li><li style="margin-bottom:3px;">🏛️ 3. NĂM KHUÔN THIẾT KẾ GỐC (`.TSX` CÓ BẢNG BIẾN `TWEAKS`) — TÁI SỬ DỤNG TRONG 3 GIÂY</li><li style="margin-bottom:3px;">⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN KHI NHẬN 1 VIDEO NÓI MỚI</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:14px; padding:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-gold); background:rgba(250,204,21,0.1); padding:2px 8px; border-radius:99px; font-weight:700;">PIPELINE ORCHESTRATOR</span>
+            <span style="font-size:0.75rem; color:var(--ink-emerald); font-family:var(--font-mono); font-weight:700;">🟢 ACTIVE</span>
+          </div>
+          <h3 style="font-size:1.1rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">FEDU Media Pipeline (Tổng Thể)</h3>
+          <p style="font-size:0.8rem; color:var(--cl-muted); line-height:1.45; margin-bottom:0.75rem;">Dây chuyền tổng thể sản xuất video đa tầng FEDU từ kịch bản, ảnh nhân bản đến Remotion 60fps.</p>
+          <div style="font-size:0.73rem; color:var(--cl-ink-2); font-family:var(--font-mono); border-top:1px solid var(--cl-line); padding-top:0.5rem; margin-bottom:0.6rem;">
+            <div>📁 <strong>Dung lượng:</strong> 2.8 KB (47 dòng)</div>
+            <div>⏱️ <strong>Sửa gần nhất:</strong> 20/10/2026 08:21</div>
+          </div>
+          <div style="font-size:0.74rem; color:var(--cl-muted);">
+            <div style="font-weight:700; color:#fff; margin-bottom:2px;">Mục chính trong SKILL.md:</div>
+            <ul style="padding-left:1.1rem; line-height:1.4;">
+              <li style="margin-bottom:3px;">1. Sơ đồ phối hợp liên hoàn</li><li style="margin-bottom:3px;">2. Bảng giao việc</li><li style="margin-bottom:3px;">3. Thứ tự bắt buộc</li><li style="margin-bottom:3px;">4. Cầu nối Hybrid Edit & Motion</li><li style="margin-bottom:3px;">5. Phối hợp CLAUDE2 viết code `.TSX`</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- KHỐI 2: HƯỚNG DẪN ĐỒNG BỘ 1 CÂU LỆNH -->
+    <section style="margin-bottom:3rem; background:var(--cl-card); border:1px solid var(--cl-line-strong); border-radius:16px; padding:1.75rem;">
+      <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-accent); font-weight:700; margin-bottom:0.4rem;">SINGLE-COMMAND AUTO-SYNC</div>
+      <h2 style="font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:0.6rem;">
+        2. Hướng Dẫn Cập Nhật &amp; Triển Khai 1 Câu Lệnh
+      </h2>
+      <p style="font-size:0.88rem; color:var(--cl-ink-2); line-height:1.6; margin-bottom:1rem;">
+        Bất cứ khi nào anh Việt chỉnh sửa file trong các thư mục kỹ năng, chỉ cần mở Terminal và gõ 1 câu lệnh duy nhất:
+      </p>
+
+      <div style="margin-bottom:1rem;">
+        <div style="font-size:0.8rem; font-weight:700; color:#fff; margin-bottom:0.3rem;">🔹 Cập nhật dữ liệu &amp; sinh lại web cục bộ:</div>
+        <div class="code-block">python3 /Users/vietmac/Documents/CODE/videoai.fedu.vn/sync_videoai.py</div>
+      </div>
+
+      <div style="margin-bottom:1rem;">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--ink-gold); margin-bottom:0.3rem;">🚀 Cập nhật &amp; Đẩy thẳng lên Production (videoai.fedu.vn + GitHub):</div>
+        <div class="code-block">python3 /Users/vietmac/Documents/CODE/videoai.fedu.vn/sync_videoai.py --deploy</div>
+      </div>
+
+      <div style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.2); border-radius:10px; padding:0.9rem; font-size:0.8rem; color:var(--cl-muted); line-height:1.5;">
+        💡 <strong>Cơ chế Tiết Kiệm Băng Thông Của Cloudflare Worker:</strong> File `src/index.js` tự động phục vụ các trang HTML cực nhẹ và chỉ tải video khi người dùng bấm xem. Các video nặng được proxy thông minh từ `fedu.vn` nên quá trình deploy chỉ mất chưa đầy 3 giây!
+      </div>
+    </section>
+
+    <!-- KHỐI 3: LỊCH SỬ CHỈNH SỬA GẦN NHẤT -->
+    <section style="margin-bottom:3rem;">
+      <div style="margin-bottom:1rem;">
+        <h2 style="font-family:var(--font-display); font-size:1.35rem; font-weight:800; color:#fff; text-transform:uppercase;">
+          3. Lịch Sử Các File Vừa Chỉnh Sửa Gần Nhất
+        </h2>
+        <p style="color:var(--cl-muted); font-size:0.85rem;">Tự động quét theo thời gian mtime của toàn bộ kho tài nguyên:</p>
+      </div>
+      <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:14px; overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; text-align:left;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--cl-line); background:rgba(255,255,255,0.02);">
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">TÊN TẬP TIN</th>
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">ĐỊNH DẠNG</th>
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">KỸ NĂNG</th>
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">CẬP NHẬT</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">compositions/VietUniversalCTA.tsx</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Remotion .TSX</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Remotion Studio 60fps</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">22/10/2026 10:47</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">auto-edit-video/SKILL.md</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Markdown Spec</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Auto Edit Video V3 (Talking-Head Studio)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 20:31</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">compositions/VietScientificAtlas.tsx</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Remotion .TSX</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Remotion Studio 60fps</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 17:25</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">render-v3/SKILL.md</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Markdown Spec</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Render V3 (Delta Patcher & EDL Engine)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 16:08</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/qa_lint.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Render V3 (Delta Patcher & EDL Engine)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 16:06</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/mfx_v3_universal_engine.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Render V3 (Delta Patcher & EDL Engine)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 16:05</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">motion/SKILL.md</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Markdown Spec</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Motion Studio 60fps (Universal Archetypes)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 15:51</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/mfx_v3_universal_engine.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Auto Edit Video V3 (Talking-Head Studio)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 13:43</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/edl_bootstrap.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Render V3 (Delta Patcher & EDL Engine)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 13:32</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/spine_map_mgb02.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Render V3 (Delta Patcher & EDL Engine)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 13:32</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/atlas_2d_helper.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Render V3 (Delta Patcher & EDL Engine)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 13:32</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/scientific_atlas_builder.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Auto Edit Video V3 (Talking-Head Studio)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 13:14</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">motion_catalog.json</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Database JSON</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Motion Catalog</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 12:27</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/v3_motion_library.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Auto Edit Video V3 (Talking-Head Studio)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">21/10/2026 12:07</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:var(--cl-accent);">scripts/build_motion_showcase.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:#fff;">Python Script</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-muted);">Auto Edit Video V3 (Talking-Head Studio)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald);">20/10/2026 10:25</td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- KHỐI 4: DANH MỤC FILE PYTHON -->
+    <section style="margin-bottom:3rem;">
+      <div style="margin-bottom:1rem;">
+        <h2 style="font-family:var(--font-display); font-size:1.35rem; font-weight:800; color:#fff; text-transform:uppercase;">
+          4. Danh Mục Toàn Bộ Kịch Bản Python (24 Scripts)
+        </h2>
+      </div>
+      <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:14px; overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; text-align:left;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--cl-line); background:rgba(255,255,255,0.02);">
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">SCRIPT (.PY)</th>
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">KỸ NĂNG</th>
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">CHỨC NĂNG CHÍNH</th>
+              <th style="padding:0.75rem 0.8rem; font-size:0.75rem; color:var(--cl-muted); font-family:var(--font-mono);">QUY MÔ</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">auto_edit_pipeline.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">AUTO EDIT VIDEO PIPELINE - CREATOR EDITORIAL EDITION</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">324 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">auto_lifestyle_pipeline.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">AUTO LIFESTYLE VIDEO EDITING PIPELINE (DAILY LIFE & FUN MOMENTS)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">377 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">auto_transcribe_and_edit.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">AUTO TRANSCRIBE & EDIT VIDEO (MULTI-STYLE AUTO-PILOT PIPELINE)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">434 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">beat_sheet.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">scripts/beat_sheet.py — Module Quản Lý Quy Trình Biên Tập 2 Pha (Milestone 3 / R3):</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">850 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">build_motion_showcase.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">build_motion_showcase.py</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">4902 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">generate_studio.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">Parse a standard SRT file and return a list of dictionaries.</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">316 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">mfx_v3_renderer.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">Render video hoàn chỉnh qcVD1_final.mp4 (5.04s, 1080x1920 @ 24fps):</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">652 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">mfx_v3_universal_engine.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">mfx_v3_universal_engine.py — Động Cơ Kết Xuất Video MFX V3.2 (2-Pass Low-RAM Streaming)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">1618 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">profiles.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">scripts/profiles.py - Module Quản Lý Cấu Hình Profile & Typography Lock</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">481 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">render_with_remotion.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">render_with_remotion.py — Bridge script that takes JSON config from Studio HTML</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">237 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">scientific_atlas_builder.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">Scientific Atlas Style V2 — 3 cảnh trám khoa học cho thamtho_goc.mp4.</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">311 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">semantic_phrasing.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">Semantic Phrasing Guard (Bộ Bảo Vệ Ngắt Cụm Từ Ngữ Nghĩa Tiếng Việt)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">867 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">v3_motion_library.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">scripts/v3_motion_library.py — Engine Thư Viện 16 Kiểu Motion Graphic Chủ Lực V3,</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">1983 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">v3_pro_director.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">scripts/v3_pro_director.py — Module Đạo Diễn AI V3, Delta Patcher & Batch Pipeline</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">1580 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">v3_vision_mockup.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">auto-edit-video</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">scripts/v3_vision_mockup.py — Module OpenCV Vision Analyzer & Frame Mockup Engine (Auto-Edit V3)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">1066 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">atlas_2d_helper.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">render-v3</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">atlas_2d_helper.py — Bộ Dựng Bản Vẽ Khoa Học 2D (Scientific Atlas Style V2)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">308 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">edl_bootstrap.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">render-v3</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">edl_bootstrap.py — Khởi Tạo Nhanh EDL JSON & Contact Sheet Cho Luồng Trực Tiếp Antigravity</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">277 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">mfx_v3_universal_engine.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">render-v3</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">mfx_v3_universal_engine.py — Động Cơ Kết Xuất Video MFX V3.2 (2-Pass Low-RAM Streaming)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">1597 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">qa_lint.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">render-v3</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">qa_lint.py — Deterministic Post-Plan & Pre-Render Verifier (MFX V4.0 — CLAUDE2 Council Edition)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">228 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">spine_map_mgb02.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">render-v3</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">spine_map_mgb02.py — Bộ Dựng Vertical Linear Spine Map (MG-B02 V2)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">200 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">compose_voicesafe_sfx.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">motion</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">Bước 3 — Tổng hợp SFX 4 Lớp Voice-Safe (compose_voicesafe_sfx.py)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">223 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">extract_beat_timeline.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">motion</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">Bước 1 — Bóc tách Thoại & Sóng âm (extract_beat_timeline.py)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">564 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">scaffold_motion_project.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">motion</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">scaffold_motion_project.py — Trình khởi tạo tự động dự án Motion Graphic 60fps từ Video Nói + SRT.</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">163 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--cl-line);">
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.78rem; color:#fff; font-weight:700;">verify_motion_deliverable.py</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.76rem; color:var(--cl-accent);">motion</td>
+          <td style="padding:0.6rem 0.8rem; font-size:0.78rem; color:var(--cl-ink-2);">Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic (verify_motion_deliverable.py)</td>
+          <td style="padding:0.6rem 0.8rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-muted);">369 dòng</td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

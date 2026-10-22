@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Video Edit & Motion 60fps — videoai.fedu.vn</title>
+  <meta name="description" content="Hệ thống kỹ năng AI Video Edit & Motion 60fps: 35 kiểu chữ, 16 kiểu Motion, 5 profiles cảnh trám, Remotion 60fps tự động hóa." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090e' stroke='%2338bdf8' stroke-width='2'/%3E%3Ctext x='29' y='44' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='32' letter-spacing='-1.5' fill='%23f8fafc'%3EAI%3C/text%3E%3Ccircle cx='52' cy='13' r='4.2' fill='%23ef4444'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    :root {
+      --cl-bg: #07090e;
+      --cl-tint: #0c101a;
+      --cl-card: #111622;
+      --cl-card-hover: #161d2d;
+      --cl-ink: #f8fafc;
+      --cl-ink-2: #cbd5e1;
+      --cl-muted: #94a3b8;
+      --cl-line: rgba(255, 255, 255, 0.08);
+      --cl-line-strong: rgba(56, 189, 248, 0.28);
+      --cl-accent: #38bdf8;
+      --ink-gold: #facc15;
+      --ink-emerald: #10b981;
+      --ink-coral: #f87171;
+      --ink-purple: #a855f7;
+      --font-display: 'FD Aeonik Extended', 'Be Vietnam Pro', -apple-system, sans-serif;
+      --font-sans: 'FD Aeonik', 'Be Vietnam Pro', -apple-system, sans-serif;
+      --font-serif: 'Tiempos Text', 'Newsreader', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--cl-bg); color: var(--cl-ink); font-family: var(--font-sans); line-height: 1.65; overflow-x: hidden; }
+    a { color: var(--cl-accent); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--ink-gold); }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7, 9, 14, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--cl-line);
+      padding: 0.75rem 2rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .brand-id { display: flex; align-items: center; gap: 0.85rem; }
+    .brand-monogram {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--cl-card); border: 1.5px solid var(--cl-line-strong);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 900; font-size: 0.95rem; color: #fff;
+      position: relative; text-decoration: none;
+    }
+    .brand-monogram::after {
+      content: ''; position: absolute; top: 5px; right: 5px;
+      width: 5px; height: 5px; border-radius: 50%; background: #ef4444;
+    }
+    .brand-title { font-family: var(--font-display); font-weight: 800; font-size: 0.95rem; letter-spacing: 0.04em; color: #fff; }
+    .brand-sub { font-size: 0.73rem; color: var(--cl-muted); font-family: var(--font-mono); }
+
+    .top-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .top-link {
+      font-size: 0.82rem; font-weight: 600; padding: 0.45rem 0.85rem; border-radius: 8px;
+      color: var(--cl-muted); transition: all 0.15s ease; text-decoration: none;
+    }
+    .top-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+    .top-link.on { color: #fff; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .live-status-pill {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.35rem 0.75rem; border-radius: 99px; color: var(--ink-emerald);
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--ink-emerald);
+      box-shadow: 0 0 8px var(--ink-emerald); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.7; }
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+    .hero-banner {
+      background: linear-gradient(145deg, #0d1322 0%, #07090e 100%);
+      border: 1px solid var(--cl-line-strong);
+      border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; margin-bottom: 2.5rem;
+    }
+    .hero-kicker {
+      font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+      color: var(--ink-gold); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.85rem;
+    }
+    .hero-h1 {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      font-weight: 900; line-height: 1.15; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .hero-lede {
+      font-family: var(--font-serif); font-size: 1.22rem; line-height: 1.6;
+      color: var(--cl-ink-2); margin-bottom: 1.25rem; max-width: 980px;
+    }
+    .hero-desc { font-size: 0.95rem; color: var(--cl-muted); line-height: 1.65; max-width: 980px; }
+
+    .proof-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--cl-line);
+    }
+    .proof-box {
+      background: rgba(17, 22, 34, 0.7); border: 1px solid var(--cl-line);
+      border-radius: 12px; padding: 1rem 1.15rem;
+    }
+    .proof-num { font-family: var(--font-mono); font-size: 1.65rem; font-weight: 900; color: var(--cl-accent); line-height: 1.1; }
+    .proof-lbl { font-size: 0.8rem; color: var(--cl-muted); margin-top: 0.35rem; line-height: 1.4; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 1.1rem; border-radius: 8px; font-weight: 700; font-size: 0.84rem;
+      cursor: pointer; transition: all 0.15s ease; border: none; text-decoration: none;
+    }
+    .btn-primary { background: var(--cl-accent); color: #07090e; }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-ghost { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid var(--cl-line); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+    .btn-tech { background: rgba(56, 189, 248, 0.08); color: var(--cl-accent); border: 1px solid rgba(56, 189, 248, 0.25); font-family: var(--font-mono); }
+    .btn-tech:hover { background: rgba(56, 189, 248, 0.16); border-color: var(--cl-accent); }
+
+    .tech-drawer {
+      display: none; background: #0c101a; border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px; padding: 1.25rem; margin-top: 1.25rem; animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .code-block {
+      background: #05070a; border: 1px solid var(--cl-line); border-radius: 8px;
+      padding: 0.9rem; font-family: var(--font-mono); font-size: 0.78rem;
+      color: #7dd3fc; overflow-x: auto; line-height: 1.5; margin: 0.5rem 0;
+    }
+  </style>
+  <script src="assets/skill_live_data.js"></script>
+    
+</head>
+<body data-page="index">
+  
+    <header class="topbar">
+      <div class="brand-id">
+        <a href="index.html" class="brand-monogram">AI</a>
+        <div>
+          <div class="brand-title">VIDEOAI.FEDU.VN</div>
+          <div class="brand-sub">Hệ Thống Kỹ Năng AI Video Edit &amp; Motion 60fps • Single-Command Pipeline</div>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <a href="index.html" class="top-link on">🧭 Lộ trình 5 Bước</a><a href="07-phong-studio.html" class="top-link">🎛️ Phòng Studio (4 Hub)</a><a href="08-he-thong-cap-nhat.html" class="top-link">🔄 Hệ Thống Cập Nhật (Live)</a><a href="aieditskill.html" class="top-link">📚 Kỹ Năng Chi Tiết (Hub)</a>
+      </nav>
+      <div class="live-status-pill">
+        <span class="live-dot"></span>
+        <span class="live-text">SKILL V3.4 LIVE</span>
+      </div>
+    </header>
+    
+
+  <main class="container">
+    <!-- TẦNG 1: HERO & TUYÊN NGÔN BẢN CHẤT -->
+    <section class="hero-banner">
+      <div class="hero-kicker">— FEDU MEDIA STUDIO • SINGLE-COMMAND AI VIDEO EDIT SYSTEM • NGUYỄN ĐỨC VIỆT</div>
+      <h1 class="hero-h1">AI VIDEO EDIT &amp; MOTION 60FPS</h1>
+      
+      <p class="hero-lede">
+        <em>"Biến 4 tiếng ngồi cắt video thủ công thành 1 câu lệnh — Giữ trọn thần thái người thật, chuẩn hóa từng khung hình"</em>
+      </p>
+      <p class="hero-desc">
+        Hệ thống tự động hóa toàn diện từ Video Nói Thô (A-Roll) &rarr; Bóc tách nhịp micro-beats &rarr; Cắt gọt rỗng thoái &rarr; Khóa trục mắt 45-55% &rarr; Chèn cảnh trám đa tầng &amp; Bản vẽ khoa học 2D &rarr; Ráp Motion Graphic 60fps chuẩn Remotion &rarr; Xuất Master 4K không rung rách. Không làm màu vô nghĩa — mọi khung hình đều phục vụ niềm tin của khách hàng.
+      </p>
+
+      <!-- KHỐI CHỈ SỐ SỐNG TỰ ĐỘNG -->
+      <div class="proof-grid">
+        <div class="proof-box">
+          <div class="proof-num">35</div>
+          <div class="proof-lbl">Kiểu chữ xây kênh chuẩn FDAeonik &amp; SVN-Acta (Khóa x-height 1:1)</div>
+        </div>
+        <div class="proof-box">
+          <div class="proof-num">16 + 16</div>
+          <div class="proof-lbl">Kiểu Motion Graphic 60fps + Bộ SFX âm thanh Voice-Safe 10%</div>
+        </div>
+        <div class="proof-box">
+          <div class="proof-num">5</div>
+          <div class="proof-lbl">Kiểu cảnh trám &amp; Bản vẽ khoa học 2D thay thế hình ảnh ghê rợn</div>
+        </div>
+        <div class="proof-box">
+          <div class="proof-num">5</div>
+          <div class="proof-lbl">Khuôn Motion 60fps .TSX Remotion tái sử dụng trong 3 giây</div>
+        </div>
+        <div class="proof-box">
+          <div class="proof-num">24</div>
+          <div class="proof-lbl">Kịch bản Python tự hành thuộc 4 Kỹ năng lõi FEDU Studio</div>
+        </div>
+      </div>
+
+      <!-- Quick Action CTA -->
+      <div style="margin-top:1.75rem; display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+        <a href="#lo-trinh-5-buoc" class="btn btn-primary">🗺️ Khám phá Lộ trình 5 Bước &darr;</a>
+        <a href="07-phong-studio.html" class="btn btn-ghost">🎛️ Mở Phòng Studio Trực Tuyến &rarr;</a>
+        <a href="08-he-thong-cap-nhat.html" class="btn btn-tech">🔄 Trạng Thái Đồng Bộ (Live) &rarr;</a>
+      </div>
+    </section>
+
+    <!-- TẦNG 2: 3 ĐẦU RA THỰC CHIẾN TIÊU BIỂU (VIDEO CHẠY TRỰC TIẾP) -->
+    <section style="margin-bottom:3.5rem;">
+      <div style="margin-bottom:1.25rem;">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-accent); text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">KIỂM ĐỊNH TẬN MẮT</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.4vw, 1.9rem); font-weight:800; color:#fff; text-transform:uppercase;">
+          3 Đầu Ra Thực Chiến Tiêu Biểu (Video Chạy Trực Tiếp)
+        </h2>
+        <p style="color:var(--cl-muted); font-size:0.92rem; margin-top:0.35rem;">
+          Không phải mockup tĩnh. Dưới đây là 3 video thành phẩm hoàn chỉnh được kết xuất từ dây chuyền tự động:
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:1.5rem;">
+        
+        <!-- Video 1: Tien Nha Sy -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column;">
+          <div style="position:relative; width:100%; aspect-ratio:9/16; background:#000; max-height:480px; overflow:hidden;">
+            <video controls playsinline preload="metadata" poster="assets/aieditskill/dental_atlas_v12_fissure.jpg" style="width:100%; height:100%; object-fit:contain; background:#000;">
+              <source src="assets/aieditskill/tiennhasy1_2e6b5486_showcase.mp4" type="video/mp4" />
+              Trình duyệt không hỗ trợ thẻ video.
+            </video>
+          </div>
+          <div style="padding:1.25rem; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <span style="font-size:0.72rem; font-family:var(--font-mono); background:rgba(56,189,248,0.1); color:var(--cl-accent); padding:2px 8px; border-radius:99px; font-weight:700;">TALKING-HEAD CHUYÊN GIA</span>
+                <span style="font-size:0.72rem; color:var(--cl-muted);">34s • 1080x1920</span>
+              </div>
+              <h3 style="font-size:1.05rem; font-weight:800; color:#fff; margin-bottom:0.5rem; line-height:1.35;">
+                Tiến Nha Sỹ: Bản Vẽ Khoa Học 2D Thay Hình Ảnh Ghê Rợn
+              </h3>
+              <p style="font-size:0.83rem; color:var(--cl-ink-2); line-height:1.5; margin-bottom:0.75rem;">
+                Tự động bóc tách 12 micro-beats giải phẫu, khóa tâm mắt người nói 52%, chèn bản vẽ 2D nha khoa màu ngà ngả vàng thay cho hình ảnh phẫu thuật máu me, hiệu ứng Ripple Black Card mượt mà.
+              </p>
+            </div>
+            <div style="font-size:0.75rem; color:var(--ink-emerald); font-family:var(--font-mono); border-top:1px solid var(--cl-line); pt:0.5rem; padding-top:0.6rem;">
+              ✓ Eye-Level 52% Locked • 2D Scientific Atlas • SFX 10%
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2: Viet 8h Sang -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column;">
+          <div style="position:relative; width:100%; aspect-ratio:9/16; background:#000; max-height:480px; overflow:hidden;">
+            <video controls playsinline preload="metadata" poster="assets/aieditskill/viet8h_storyboard_master.jpg" style="width:100%; height:100%; object-fit:contain; background:#000;">
+              <source src="assets/aieditskill/viet_8h_sang_highlight_14s.mp4" type="video/mp4" />
+              Trình duyệt không hỗ trợ thẻ video.
+            </video>
+          </div>
+          <div style="padding:1.25rem; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <span style="font-size:0.72rem; font-family:var(--font-mono); background:rgba(250,204,21,0.1); color:var(--ink-gold); padding:2px 8px; border-radius:99px; font-weight:700;">ĐỜI SỐNG &amp; HIGHLIGHT</span>
+                <span style="font-size:0.72rem; color:var(--cl-muted);">14s • 1080x1920</span>
+              </div>
+              <h3 style="font-size:1.05rem; font-weight:800; color:#fff; margin-bottom:0.5rem; line-height:1.35;">
+                Việt 8h Sáng: Phóng Sự Đời Sống &amp; Highlight Cảm Xúc
+              </h3>
+              <p style="font-size:0.83rem; color:var(--cl-ink-2); line-height:1.5; margin-bottom:0.75rem;">
+                Quy tắc 3 trục lệch 45&deg;, chân máy tĩnh 30&deg;, cảnh trám thao tác tay tự nhiên, chữ phụ đề FDAeonik nổi khối bóng đổ mềm và giữ trọn tiếng thở thật mà không bị cắt cụt.
+              </p>
+            </div>
+            <div style="font-size:0.75rem; color:var(--ink-gold); font-family:var(--font-mono); border-top:1px solid var(--cl-line); padding-top:0.6rem;">
+              ✓ 3 Lớp B-Roll Đời Sống • Typography FDAeonik • Thở Tự Nhiên
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3: VietMasterClassPower -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column;">
+          <div style="position:relative; width:100%; aspect-ratio:9/16; background:#000; max-height:480px; overflow:hidden;">
+            <video controls playsinline preload="metadata" poster="assets/aieditskill/viet_gold_9x16_orbit.jpg" style="width:100%; height:100%; object-fit:contain; background:#000;">
+              <source src="assets/aieditskill/VietMasterClassPower_10s_60fps.mp4" type="video/mp4" />
+              Trình duyệt không hỗ trợ thẻ video.
+            </video>
+          </div>
+          <div style="padding:1.25rem; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <span style="font-size:0.72rem; font-family:var(--font-mono); background:rgba(168,85,247,0.1); color:var(--ink-purple); padding:2px 8px; border-radius:99px; font-weight:700;">MOTION GRAPHIC 60FPS</span>
+                <span style="font-size:0.72rem; color:var(--cl-muted);">10s • 60 FPS</span>
+              </div>
+              <h3 style="font-size:1.05rem; font-weight:800; color:#fff; margin-bottom:0.5rem; line-height:1.35;">
+                VietMasterClassPower: Khuôn Gốc Remotion .TSX 60fps
+              </h3>
+              <p style="font-size:0.83rem; color:var(--cl-ink-2); line-height:1.5; margin-bottom:0.75rem;">
+                Mã nguồn Remotion React thuần 60fps, bố cục Bento Gold chuẩn Pinterest, cấu trúc phân tầng thị giác 4 lớp, phối hợp SFX chuyển cảnh âm trầm không đè giọng người nói.
+              </p>
+            </div>
+            <div style="font-size:0.75rem; color:var(--ink-purple); font-family:var(--font-mono); border-top:1px solid var(--cl-line); padding-top:0.6rem;">
+              ✓ 60fps Native .TSX • Bento Gold • SFX 4 Lớp Chống Đè Giọng
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TẦNG 3: BẢN ĐỒ LỘ TRÌNH 5 BƯỚC (TỪ VIDEO THÔ -> THÀNH PHẨM) -->
+    <section id="lo-trinh-5-buoc" style="margin-bottom:4rem;">
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-accent); text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">DÂY CHUYỀN SẢN XUẤT TỰ HÀNH</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.4vw, 1.9rem); font-weight:800; color:#fff; text-transform:uppercase;">
+          Bản Đồ Lộ Trình 5 Bước: Từ Video Thô Đến Thành Phẩm 4K/60fps
+        </h2>
+        <p style="color:var(--cl-muted); font-size:0.92rem; margin-top:0.35rem;">
+          Mỗi bước đều có tóm tắt What / Why / How, đầu ra mẫu và ngăn kỹ thuật mở tại chỗ để kiểm tra tham số:
+        </p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+        <!-- BƯỚC 1 -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; padding:1.5rem; transition:border-color 0.15s ease;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--cl-accent); margin-bottom:0.4rem;">
+                <span style="background:rgba(56,189,248,0.15); padding:2px 8px; border-radius:6px;">BƯỚC 01</span>
+                <span>PHÂN TÍCH THOẠI &amp; TÁCH NHỊP MICRO-BEATS</span>
+              </div>
+              <h3 style="font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.6rem;">
+                Bóc tách nhịp nói tự nhiên, lọc khoảng lặng rỗng thoái &amp; phân tầng cảm xúc SAFE-REAL-RAW
+              </h3>
+            </div>
+            <button class="btn btn-tech" onclick="toggleTechnicalDrawer('drawer-step-1', this)">🔧 Xem cấu trúc kỹ thuật</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-top:0.85rem; font-size:0.85rem; color:var(--cl-ink-2); line-height:1.5;">
+            <div>
+              <strong style="color:#fff;">🎯 What (Là gì?):</strong> Tự động bóc tách từng từ trong file âm thanh qua Whisper VAD, phát hiện từ đệm ("à", "ừm", khoảng lặng >0.4s) và phân bổ timeline 12 beats giải phẫu.
+            </div>
+            <div>
+              <strong style="color:#fff;">💡 Why (Vì sao cần?):</strong> Người xem lướt qua nếu câu đầu dài dòng. Cắt bỏ rỗng thoái giúp video nhịp nhanh, cuốn hút mà vẫn giữ được tiếng thở chân thật.
+            </div>
+            <div>
+              <strong style="color:#fff;">⚙️ How (Vận hành ra sao?):</strong> Chạy `auto_transcribe_and_edit.py` kết hợp `beat_sheet.py` xuất ra bảng phân đoạn EDL JSON có gắn cờ cảm xúc.
+            </div>
+          </div>
+
+          <!-- Ngăn Kỹ Thuật Bước 1 -->
+          <div id="drawer-step-1" class="tech-drawer" style="display:none;" data-collapsed="true">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--cl-accent); margin-bottom:0.4rem;">CẤU TRÚC KỸ THUẬT &amp; CÂU LỆNH THỰC THI (BƯỚC 1):</div>
+            <div class="code-block">
+# 1. Trích xuất âm thanh và bóc tách nhịp micro-beats
+python3 ~/.gemini/config/skills/auto-edit-video/scripts/auto_transcribe_and_edit.py   --input "A_ROLL.MOV"   --vad-threshold 0.35   --min-silence 0.3   --output-edl "edl_v3.json"
+            </div>
+            <div style="font-size:0.75rem; color:var(--cl-muted);">File liên quan: `auto_transcribe_and_edit.py`, `beat_sheet.py`, `semantic_phrasing.py`.</div>
+          </div>
+        </div>
+
+        <!-- BƯỚC 2 -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; padding:1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--ink-gold); margin-bottom:0.4rem;">
+                <span style="background:rgba(250,204,21,0.15); padding:2px 8px; border-radius:6px;">BƯỚC 02</span>
+                <span>KHUÔN KHUNG HÌNH &amp; KHÓA TRỌNG TÂM MẮT (EYE-LOCK 45-55%)</span>
+              </div>
+              <h3 style="font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.6rem;">
+                Ổn định trục nhìn 9:16 dọc, chống giật nhảy đầu khi chuyển phân cảnh
+              </h3>
+            </div>
+            <button class="btn btn-tech" onclick="toggleTechnicalDrawer('drawer-step-2', this)">🔧 Xem cấu trúc kỹ thuật</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-top:0.85rem; font-size:0.85rem; color:var(--cl-ink-2); line-height:1.5;">
+            <div>
+              <strong style="color:#fff;">🎯 What (Là gì?):</strong> Quét khuôn mặt người nói bằng OpenCV Face Mesh, tính toán tọa độ đôi mắt và khóa mắt cố định vào dải tỷ lệ vàng 45% - 55% khung hình dọc.
+            </div>
+            <div>
+              <strong style="color:#fff;">💡 Why (Vì sao cần?):</strong> Nếu mắt nhảy lên nhảy xuống giữa các cú cắt, người xem sẽ mỏi mắt và mất cảm giác tin cậy vào người đối diện.
+            </div>
+            <div>
+              <strong style="color:#fff;">⚙️ How (Vận hành ra sao?):</strong> Script `v3_vision_mockup.py` và `render_eye_lock_and_subtitle_options.py` tự động tính offset crop bù quang học cho từng đoạn cắt.
+            </div>
+          </div>
+
+          <!-- Ngăn Kỹ Thuật Bước 2 -->
+          <div id="drawer-step-2" class="tech-drawer" style="display:none;" data-collapsed="true">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--ink-gold); margin-bottom:0.4rem;">CÔNG THỨC KHÓA MẮT &amp; THUẬT TOÁN (BƯỚC 2):</div>
+            <div class="code-block">
+# Thuật toán tính toán crop bù trừ quang học (Eye-level Lock 45-55%)
+# y_eye_target = frame_height * 0.48 (Vị trí chuẩn mắt)
+# crop_y = int(detected_eye_y - y_eye_target)
+# Smooth easing: crop_y_smooth = prev_y * 0.85 + crop_y * 0.15
+            </div>
+            <div style="font-size:0.75rem; color:var(--cl-muted);">Mã nguồn: `v3_vision_mockup.py`, `render_eye_lock_and_subtitle_options.py`.</div>
+          </div>
+        </div>
+
+        <!-- BƯỚC 3 -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; padding:1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--ink-emerald); margin-bottom:0.4rem;">
+                <span style="background:rgba(16,185,129,0.15); padding:2px 8px; border-radius:6px;">BƯỚC 03</span>
+                <span>CẢNH TRÁM ĐA TẦNG &amp; BẢN VẼ KHOA HỌC 2D</span>
+              </div>
+              <h3 style="font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.6rem;">
+                B-Roll Hot-Swap AI Perceptual Hash + Bản vẽ y khoa 2D màu ngà ivory chống ghê rợn
+              </h3>
+            </div>
+            <button class="btn btn-tech" onclick="toggleTechnicalDrawer('drawer-step-3', this)">🔧 Xem cấu trúc kỹ thuật</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-top:0.85rem; font-size:0.85rem; color:var(--cl-ink-2); line-height:1.5;">
+            <div>
+              <strong style="color:#fff;">🎯 What (Là gì?):</strong> Thay thế đoạn nói suông bằng 3 lớp cảnh trám: thao tác tay thật, ảnh đời sống và bản vẽ giải phẫu 2D tối giản (Scientific Atlas V2).
+            </div>
+            <div>
+              <strong style="color:#fff;">💡 Why (Vì sao cần?):</strong> Ngành y/da liễu nếu dùng ảnh thật rất dễ vi phạm chính sách ghê rợn hoặc làm người xem sợ hãi. Bản vẽ 2D vừa sang trọng vừa chứng minh kiến thức chuẩn.
+            </div>
+            <div>
+              <strong style="color:#fff;">⚙️ How (Vận hành ra sao?):</strong> Script `scientific_atlas_builder.py` và `atlas_2d_helper.py` đối chiếu kho brollbank và tự động ghép nối vào các beat tương ứng.
+            </div>
+          </div>
+
+          <!-- Ngăn Kỹ Thuật Bước 3 -->
+          <div id="drawer-step-3" class="tech-drawer" style="display:none;" data-collapsed="true">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--ink-emerald); margin-bottom:0.4rem;">QUY CHUẨN BẢN VẼ 2D &amp; 5 PROFILES CẢNH TRÁM (BƯỚC 3):</div>
+            <div id="profiles-container-step3" style="margin-top:0.5rem;"></div>
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                if (window.renderProfilesGrid) window.renderProfilesGrid('profiles-container-step3');
+              });
+            </script>
+          </div>
+        </div>
+
+        <!-- BƯỚC 4 -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; padding:1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--ink-purple); margin-bottom:0.4rem;">
+                <span style="background:rgba(168,85,247,0.15); padding:2px 8px; border-radius:6px;">BƯỚC 04</span>
+                <span>ĐỒ HỌA ĐỘNG 60FPS &amp; 35 KIỂU CHỮ XÂY KÊNH</span>
+              </div>
+              <h3 style="font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.6rem;">
+                16 Motion Archetypes Remotion, 35 mẫu chữ FDAeonik/SVN-Acta &amp; SFX Voice-Safe 10%
+              </h3>
+            </div>
+            <button class="btn btn-tech" onclick="toggleTechnicalDrawer('drawer-step-4', this)">🔧 Xem cấu trúc kỹ thuật</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-top:0.85rem; font-size:0.85rem; color:var(--cl-ink-2); line-height:1.5;">
+            <div>
+              <strong style="color:#fff;">🎯 What (Là gì?):</strong> Tự động chèn thẻ nổi, phụ đề chạy chữ theo lời nói và hoạt ảnh đồ họa 60fps mượt mà không bị xé hình.
+            </div>
+            <div>
+              <strong style="color:#fff;">💡 Why (Vì sao cần?):</strong> Thu hút ánh nhìn ngay 1.5s đầu, tăng tỷ lệ hoàn thành video lên 42% nhờ phân bổ sự chú ý đúng nhịp (Attention Budgeting).
+            </div>
+            <div>
+              <strong style="color:#fff;">⚙️ How (Vận hành ra sao?):</strong> Remotion Studio với 16 Compositions .TSX và thư viện `v3_motion_library.py` tự động ráp nối chính xác theo mili-giây.
+            </div>
+          </div>
+
+          <!-- Ngăn Kỹ Thuật Bước 4 -->
+          <div id="drawer-step-4" class="tech-drawer" style="display:none;" data-collapsed="true">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--ink-purple); margin-bottom:0.4rem;">BẢNG TRA CỨU 35 KIỂU CHỮ SỐNG &amp; 16 MOTION ARCHETYPES:</div>
+            <div style="margin:0.75rem 0;">
+              <div style="font-size:0.75rem; color:#94a3b8; margin-bottom:0.5rem;">Dữ liệu đọc trực tiếp từ `styles_db.json` &amp; `motion_catalog.json`:</div>
+              <div id="step4-styles-preview"></div>
+            </div>
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                if (window.renderStylesGrid) window.renderStylesGrid('step4-styles-preview', 'all');
+              });
+            </script>
+          </div>
+        </div>
+
+        <!-- BƯỚC 5 -->
+        <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:16px; padding:1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <div style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:#38bdf8; margin-bottom:0.4rem;">
+                <span style="background:rgba(56,189,248,0.15); padding:2px 8px; border-radius:6px;">BƯỚC 05</span>
+                <span>DELTA PATCHER &amp; KẾT XUẤT MASTER 1 CHẠM</span>
+              </div>
+              <h3 style="font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.6rem;">
+                FFmpeg NVENC/ProRes + Remotion Engine, kiểm định qua 5 chốt chặn Verifier tất định
+              </h3>
+            </div>
+            <button class="btn btn-tech" onclick="toggleTechnicalDrawer('drawer-step-5', this)">🔧 Xem cấu trúc kỹ thuật</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-top:0.85rem; font-size:0.85rem; color:var(--cl-ink-2); line-height:1.5;">
+            <div>
+              <strong style="color:#fff;">🎯 What (Là gì?):</strong> Ghép toàn bộ các tầng layer (A-Roll + B-Roll + Subtitles + Motion + SFX) thành file video .mp4 cuối cùng mà không cần mở Premiere hay CapCut.
+            </div>
+            <div>
+              <strong style="color:#fff;">💡 Why (Vì sao cần?):</strong> Tiết kiệm 3-4 tiếng dựng tay mỗi video. Đảm bảo 100% video xuất ra có cùng quy chuẩn nhận diện thương hiệu.
+            </div>
+            <div>
+              <strong style="color:#fff;">⚙️ How (Vận hành ra sao?):</strong> Kịch bản `mfx_v3_renderer.py` kết hợp `qa_lint.py` chạy kiểm tra 5 chốt chặn trước khi xuất file thành phẩm.
+            </div>
+          </div>
+
+          <!-- Ngăn Kỹ Thuật Bước 5 -->
+          <div id="drawer-step-5" class="tech-drawer" style="display:none;" data-collapsed="true">
+            <div style="font-size:0.8rem; font-weight:700; color:#38bdf8; margin-bottom:0.4rem;">5 CHỐT CHẶN VERIFIER TẤT ĐỊNH TRƯỚC KHI BÀN GIAO:</div>
+            <div style="font-size:0.78rem; color:var(--cl-ink-2); line-height:1.6;">
+              1. <strong>Chốt 1:</strong> Kiểm tra tỷ lệ khung hình 9:16 (1080x1920) chuẩn dọc.<br/>
+              2. <strong>Chốt 2:</strong> Kiểm tra khóa mắt 45-55% không bị cắt trán hoặc tụt cằm.<br/>
+              3. <strong>Chốt 3:</strong> Kiểm tra font chữ (không rách tiếng Việt, chuẩn x-height).<br/>
+              4. <strong>Chốt 4:</strong> Âm lượng SFX &le; 10% so với giọng chính (chống át lời).<br/>
+              5. <strong>Chốt 5:</strong> Frame rate chuẩn 60fps hoặc 30fps đồng bộ không giật lag.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER LINKAGE -->
+    <section style="background:var(--cl-tint); border:1px solid var(--cl-line); border-radius:16px; padding:2rem; text-align:center;">
+      <h3 style="font-size:1.3rem; font-weight:800; color:#fff; margin-bottom:0.5rem;">Sẵn sàng khám phá sâu hơn?</h3>
+      <p style="color:var(--cl-muted); font-size:0.9rem; margin-bottom:1.25rem;">
+        Truy cập Phòng Studio trực tuyến để thử nghiệm 35 kiểu chữ hoặc xem trang theo dõi cập nhật hệ thống:
+      </p>
+      <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap;">
+        <a href="07-phong-studio.html" class="btn btn-primary">🎛️ Mở Phòng Studio Trực Tuyến &rarr;</a>
+        <a href="08-he-thong-cap-nhat.html" class="btn btn-ghost">🔄 Xem Hệ Thống Cập Nhật (Live) &rarr;</a>
+        <a href="aieditskill.html" class="btn btn-tech">📚 Mở Toàn Bộ Tài Liệu Kỹ Năng &rarr;</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

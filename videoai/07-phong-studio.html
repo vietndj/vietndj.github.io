@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phòng Studio Trực Tuyến — videoai.fedu.vn</title>
+  <meta name="description" content="Trung tâm điều khiển gom 4 phòng studio trực tuyến: 35 kiểu chữ & phụ đề, 3 kiểu CTA 60fps, 16 kiểu Motion và kho 5 khuôn Motion .TSX." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090e' stroke='%2338bdf8' stroke-width='2'/%3E%3Ctext x='29' y='44' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='32' letter-spacing='-1.5' fill='%23f8fafc'%3EAI%3C/text%3E%3Ccircle cx='52' cy='13' r='4.2' fill='%23ef4444'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    :root {
+      --cl-bg: #07090e;
+      --cl-tint: #0c101a;
+      --cl-card: #111622;
+      --cl-card-hover: #161d2d;
+      --cl-ink: #f8fafc;
+      --cl-ink-2: #cbd5e1;
+      --cl-muted: #94a3b8;
+      --cl-line: rgba(255, 255, 255, 0.08);
+      --cl-line-strong: rgba(56, 189, 248, 0.28);
+      --cl-accent: #38bdf8;
+      --ink-gold: #facc15;
+      --ink-emerald: #10b981;
+      --ink-coral: #f87171;
+      --ink-purple: #a855f7;
+      --font-display: 'FD Aeonik Extended', 'Be Vietnam Pro', -apple-system, sans-serif;
+      --font-sans: 'FD Aeonik', 'Be Vietnam Pro', -apple-system, sans-serif;
+      --font-serif: 'Tiempos Text', 'Newsreader', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--cl-bg); color: var(--cl-ink); font-family: var(--font-sans); line-height: 1.65; overflow-x: hidden; }
+    a { color: var(--cl-accent); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--ink-gold); }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7, 9, 14, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--cl-line);
+      padding: 0.75rem 2rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .brand-id { display: flex; align-items: center; gap: 0.85rem; }
+    .brand-monogram {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--cl-card); border: 1.5px solid var(--cl-line-strong);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 900; font-size: 0.95rem; color: #fff;
+      position: relative; text-decoration: none;
+    }
+    .brand-monogram::after {
+      content: ''; position: absolute; top: 5px; right: 5px;
+      width: 5px; height: 5px; border-radius: 50%; background: #ef4444;
+    }
+    .brand-title { font-family: var(--font-display); font-weight: 800; font-size: 0.95rem; letter-spacing: 0.04em; color: #fff; }
+    .brand-sub { font-size: 0.73rem; color: var(--cl-muted); font-family: var(--font-mono); }
+
+    .top-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .top-link {
+      font-size: 0.82rem; font-weight: 600; padding: 0.45rem 0.85rem; border-radius: 8px;
+      color: var(--cl-muted); transition: all 0.15s ease; text-decoration: none;
+    }
+    .top-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+    .top-link.on { color: #fff; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .live-status-pill {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.35rem 0.75rem; border-radius: 99px; color: var(--ink-emerald);
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--ink-emerald);
+      box-shadow: 0 0 8px var(--ink-emerald); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.7; }
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+    .hero-banner {
+      background: linear-gradient(145deg, #0d1322 0%, #07090e 100%);
+      border: 1px solid var(--cl-line-strong);
+      border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; margin-bottom: 2.5rem;
+    }
+    .hero-kicker {
+      font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+      color: var(--ink-gold); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.85rem;
+    }
+    .hero-h1 {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      font-weight: 900; line-height: 1.15; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .hero-lede {
+      font-family: var(--font-serif); font-size: 1.22rem; line-height: 1.6;
+      color: var(--cl-ink-2); margin-bottom: 1.25rem; max-width: 980px;
+    }
+    .hero-desc { font-size: 0.95rem; color: var(--cl-muted); line-height: 1.65; max-width: 980px; }
+
+    .proof-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--cl-line);
+    }
+    .proof-box {
+      background: rgba(17, 22, 34, 0.7); border: 1px solid var(--cl-line);
+      border-radius: 12px; padding: 1rem 1.15rem;
+    }
+    .proof-num { font-family: var(--font-mono); font-size: 1.65rem; font-weight: 900; color: var(--cl-accent); line-height: 1.1; }
+    .proof-lbl { font-size: 0.8rem; color: var(--cl-muted); margin-top: 0.35rem; line-height: 1.4; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 1.1rem; border-radius: 8px; font-weight: 700; font-size: 0.84rem;
+      cursor: pointer; transition: all 0.15s ease; border: none; text-decoration: none;
+    }
+    .btn-primary { background: var(--cl-accent); color: #07090e; }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-ghost { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid var(--cl-line); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+    .btn-tech { background: rgba(56, 189, 248, 0.08); color: var(--cl-accent); border: 1px solid rgba(56, 189, 248, 0.25); font-family: var(--font-mono); }
+    .btn-tech:hover { background: rgba(56, 189, 248, 0.16); border-color: var(--cl-accent); }
+
+    .tech-drawer {
+      display: none; background: #0c101a; border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px; padding: 1.25rem; margin-top: 1.25rem; animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .code-block {
+      background: #05070a; border: 1px solid var(--cl-line); border-radius: 8px;
+      padding: 0.9rem; font-family: var(--font-mono); font-size: 0.78rem;
+      color: #7dd3fc; overflow-x: auto; line-height: 1.5; margin: 0.5rem 0;
+    }
+  </style>
+  <script src="assets/skill_live_data.js"></script>
+    
+</head>
+<body data-page="phong-studio">
+  
+    <header class="topbar">
+      <div class="brand-id">
+        <a href="index.html" class="brand-monogram">AI</a>
+        <div>
+          <div class="brand-title">VIDEOAI.FEDU.VN</div>
+          <div class="brand-sub">Hệ Thống Kỹ Năng AI Video Edit &amp; Motion 60fps • Single-Command Pipeline</div>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <a href="index.html" class="top-link">🧭 Lộ trình 5 Bước</a><a href="07-phong-studio.html" class="top-link on">🎛️ Phòng Studio (4 Hub)</a><a href="08-he-thong-cap-nhat.html" class="top-link">🔄 Hệ Thống Cập Nhật (Live)</a><a href="aieditskill.html" class="top-link">📚 Kỹ Năng Chi Tiết (Hub)</a>
+      </nav>
+      <div class="live-status-pill">
+        <span class="live-dot"></span>
+        <span class="live-text">SKILL V3.4 LIVE</span>
+      </div>
+    </header>
+    
+
+  <main class="container">
+    <!-- HERO SECTION -->
+    <section class="hero-banner" style="margin-bottom:2.5rem;">
+      <div class="hero-kicker">— FEDU CONTROL CENTER • INTERACTIVE STUDIO SUITE</div>
+      <h1 class="hero-h1">TRUNG TÂM ĐIỀU KHIỂN &amp; 4 PHÒNG STUDIO TRỰC TUYẾN</h1>
+      <p class="hero-lede">
+        <em>Môi trường xem trước và tinh chỉnh trực tiếp các thành phần video trước khi kết xuất: kiểu chữ, hoạt ảnh CTA, thư viện motion và mã nguồn Remotion.</em>
+      </p>
+      <p class="hero-desc">
+        Toàn bộ các phòng Studio được thiết kế theo cơ chế lazy-loading: giao diện gọn nhẹ, khi bấm nút mới bung khung tương tác để đảm bảo tốc độ mượt mà nhất.
+      </p>
+    </section>
+
+    <!-- 4 PHÒNG STUDIO LÕI -->
+    <div style="display:flex; flex-direction:column; gap:2rem;">
+
+      <!-- STUDIO 1: 35 KIỂU CHỮ & PHỤ ĐỀ -->
+      <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:18px; padding:1.75rem;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cl-accent); font-weight:700; margin-bottom:0.3rem;">STUDIO 01 • TYPOGRAPHY &amp; SUBTITLES</div>
+            <h2 style="font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">
+              Studio 35 Kiểu Chữ Xây Kênh &amp; Bộ Chọn Phụ Đề 5A/5B/5C
+            </h2>
+            <p style="font-size:0.88rem; color:var(--cl-ink-2); max-width:850px; line-height:1.5;">
+              Xem trước tương tác 35 mẫu typography thương hiệu cho 5 nhóm ngành (Học viên, Chuyên gia, Đời sống, Case study, White text). Tích hợp bộ chọn phụ đề khóa chiều cao chữ (x-height lock FDAeonik 46px &amp; SVN-Acta 45px) trên video thật.
+            </p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.6rem;">
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(56,189,248,0.1); color:var(--cl-accent); padding:2px 8px; border-radius:99px;">35 KIỂU CHỮ HTML</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(250,204,21,0.1); color:var(--ink-gold); padding:2px 8px; border-radius:99px;">PHƯƠNG ÁN 5A / 5B / 5C</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(16,185,129,0.1); color:var(--ink-emerald); padding:2px 8px; border-radius:99px;">X-HEIGHT LOCK 1:1</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="openStudioFrame('frame-container-studio1', 'studio/studio-35-styles.html', this)">
+            🎛️ Mở Studio ngay tại đây &darr;
+          </button>
+        </div>
+        <div id="frame-container-studio1" style="display:none;"></div>
+      </div>
+
+      <!-- STUDIO 2: 3 KIỂU CTA 60FPS -->
+      <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:18px; padding:1.75rem;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-gold); font-weight:700; margin-bottom:0.3rem;">STUDIO 02 • CALL-TO-ACTION SUITE</div>
+            <h2 style="font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">
+              Studio 3 Kiểu Hoạt Ảnh CTA 60fps (Universal CTA Tweaks)
+            </h2>
+            <p style="font-size:0.88rem; color:var(--cl-ink-2); max-width:850px; line-height:1.5;">
+              3 Archetypes kêu gọi hành động (CTA-01 Chữ trượt &amp; Khung thẻ, CTA-02 Badge bento nổi, CTA-03 Con dấu ký tên) chuyển động GSAP mượt 60fps kèm live video thử nghiệm trên Lip Detox (32.75s - 41.43s) có slider chỉnh biến thời gian thực.
+            </p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.6rem;">
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(250,204,21,0.1); color:var(--ink-gold); padding:2px 8px; border-radius:99px;">60FPS GSAP</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(56,189,248,0.1); color:var(--cl-accent); padding:2px 8px; border-radius:99px;">3 UNIVERSAL ARCHETYPES</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(168,85,247,0.1); color:var(--ink-purple); padding:2px 8px; border-radius:99px;">LIVE LIP DETOX TEST</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="openStudioFrame('frame-container-studio2', 'studio/studio-cta.html', this)">
+            🎛️ Mở Studio ngay tại đây &darr;
+          </button>
+        </div>
+        <div id="frame-container-studio2" style="display:none;"></div>
+      </div>
+
+      <!-- STUDIO 3: 16 KIỂU MOTION & ALPHA PACK -->
+      <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:18px; padding:1.75rem;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-emerald); font-weight:700; margin-bottom:0.3rem;">STUDIO 03 • MOTION SHOWCASE &amp; ALPHA</div>
+            <h2 style="font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">
+              Studio 16 Kiểu Motion Graphic &amp; Alpha Pack (mfx.fedu.vn)
+            </h2>
+            <p style="font-size:0.88rem; color:var(--cl-ink-2); max-width:850px; line-height:1.5;">
+              Thư viện 16 Archetypes motion graphic kinh điển cho CapCut &amp; Remotion, đi kèm bộ gói Alpha trong suốt xuất sẵn và 17 âm thanh SFX đồng bộ tự động. Người dùng có thể kéo thả trực tiếp vào dự án.
+            </p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.6rem;">
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(16,185,129,0.1); color:var(--ink-emerald); padding:2px 8px; border-radius:99px;">16 ARCHETYPES</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(56,189,248,0.1); color:var(--cl-accent); padding:2px 8px; border-radius:99px;">KÊNH ALPHA TRONG SUỐT</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(250,204,21,0.1); color:var(--ink-gold); padding:2px 8px; border-radius:99px;">17 SFX PRESETS</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="openStudioFrame('frame-container-studio3', 'studio/studio-mfx.html', this)">
+            🎛️ Mở Studio ngay tại đây &darr;
+          </button>
+        </div>
+        <div id="frame-container-studio3" style="display:none;"></div>
+      </div>
+
+      <!-- STUDIO 4: KHO 5 KHUÔN MOTION 60FPS -->
+      <div style="background:var(--cl-card); border:1px solid var(--cl-line); border-radius:18px; padding:1.75rem;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-purple); font-weight:700; margin-bottom:0.3rem;">STUDIO 04 • REMOTION MASTER HUB</div>
+            <h2 style="font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">
+              Kho 5 Khuôn Motion 60fps Khuôn Gốc .TSX (motion00.html)
+            </h2>
+            <p style="font-size:0.88rem; color:var(--cl-ink-2); max-width:850px; line-height:1.5;">
+              Tổng hợp 11 video reference quốc tế, 12 thành phẩm 60fps thực tế và 5 khuôn thiết kế gốc .TSX Remotion (Pinterest Gold, Claude Motion Risograph, Clean V3, MasterClass Power, Semantic Era) tái sử dụng trong 3 giây.
+            </p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.6rem;">
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(168,85,247,0.1); color:var(--ink-purple); padding:2px 8px; border-radius:99px;">5 KHUÔN GỐC .TSX</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(16,185,129,0.1); color:var(--ink-emerald); padding:2px 8px; border-radius:99px;">12 THÀNH PHẨM 60FPS</span>
+              <span style="font-size:0.7rem; font-family:var(--font-mono); background:rgba(56,189,248,0.1); color:var(--cl-accent); padding:2px 8px; border-radius:99px;">11 VIDEO REFERENCES</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="openStudioFrame('frame-container-studio4', 'studio/studio-motion00.html', this)">
+            🎛️ Mở Studio ngay tại đây &darr;
+          </button>
+        </div>
+        <div id="frame-container-studio4" style="display:none;"></div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

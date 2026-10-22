@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTA Motion Graphic Studio 60fps — 3 Kiểu CTA Tổng Quát & Áp Dụng Video Detox Môi (Phụ Đề 5B)</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'FDAeonik-Med';
+      src: url('data:,') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'FDAeonik-Bold';
+      src: url('data:,') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Acta-BI';
+      src: url('data:,') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0B0D13;
+      color: #F5F2EB;
+      font-family: 'FDAeonik-Med', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 18px 24px 36px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(22, 25, 35, 0.92);
+      border: 1px solid rgba(255, 198, 110, 0.28);
+      border-radius: 16px;
+      padding: 14px 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+    }
+    .top-bar h1 {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 20px;
+      color: #FFC66E;
+      letter-spacing: -0.3px;
+    }
+    .top-bar p {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn-top {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #F5F2EB;
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-top:hover {
+      border-color: #FFC66E;
+      background: rgba(255, 198, 110, 0.16);
+    }
+    .btn-top.primary {
+      background: linear-gradient(135deg, #C84B31, #E86C42);
+      border-color: #FF9E7A;
+      color: #FFF;
+      box-shadow: 0 6px 18px rgba(200, 75, 49, 0.45);
+    }
+
+    /* MAIN LAYOUT: LEFT TWEAKS DOCK + RIGHT 3 PHONE SCREENS */
+    .workspace {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .tweaks-panel {
+      background: rgba(18, 21, 30, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: sticky;
+      top: 16px;
+    }
+    .panel-title {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 14px;
+      color: #FFC66E;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preset-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .btn-preset {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 9px;
+      padding: 8px 11px;
+      color: #E2E8F0;
+      font-size: 12px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .btn-preset.active, .btn-preset:hover {
+      background: rgba(200, 75, 49, 0.28);
+      border-color: #FFC66E;
+      color: #FFF;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .field-group label {
+      font-size: 11px;
+      color: #94A3B8;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      text-transform: uppercase;
+    }
+    .field-group input {
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: #FFF;
+      font-family: 'FDAeonik-Med', sans-serif;
+      font-size: 13px;
+      outline: none;
+    }
+    .field-group input:focus {
+      border-color: #FFC66E;
+    }
+
+    /* 3 PHONE SCREENS GRID */
+    .phones-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .phone-column {
+      background: rgba(18, 21, 30, 0.88);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.25s;
+    }
+    .phone-column.selected-cta {
+      border-color: #FFC66E;
+      box-shadow: 0 0 28px rgba(255, 198, 110, 0.25);
+    }
+    .cta-header-card {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cta-badge {
+      background: rgba(200, 75, 49, 0.28);
+      border: 1px solid #E86C42;
+      color: #FFC66E;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 11.5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .cta-title {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 15px;
+      color: #FFF;
+      width: 100%;
+    }
+    .cta-desc {
+      font-size: 12px;
+      color: #94A3B8;
+      width: 100%;
+      line-height: 1.4;
+      min-height: 34px;
+    }
+
+    /* 9:16 PHONE FRAME (324 x 576px = exact 0.30x scale of 1080x1920) */
+    .phone-viewport {
+      width: 324px;
+      height: 576px;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      background: #141312;
+      border: 4px solid #262936;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.65);
+    }
+    .phone-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* EYE-LOCK RULER INDICATOR AT Y=650PX (650 * 0.30 = 195px) */
+    .eyelock-guide {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 195px;
+      border-top: 1px dashed rgba(0, 255, 180, 0.42);
+      pointer-events: none;
+      z-index: 15;
+      display: none;
+    }
+    .eyelock-guide span {
+      background: rgba(0, 20, 15, 0.82);
+      color: #00FFB4;
+      font-size: 9px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
+    /* TOP PILL ON VIDEO */
+    .video-top-pill {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(28, 27, 26, 0.92);
+      border: 1.5px solid rgba(242, 180, 143, 0.85);
+      border-radius: 999px;
+      padding: 5px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 20;
+      white-space: nowrap;
+    }
+    .video-top-pill .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #C84B31;
+    }
+    .video-top-pill span {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 10px;
+      color: #F5F2EB;
+      letter-spacing: 0.4px;
+    }
+
+    /* ===================================================================== */
+    /* SUBTITLE PHƯƠNG ÁN 5B (FROSTED DARK EDITORIAL CARD AT Y=1586..1736PX) */
+    /* Scaled by 0.30x -> top: 475px, height: 46px                           */
+    /* ===================================================================== */
+    .sub-5b-card {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 474px;
+      min-height: 46px;
+      background: rgba(22, 20, 19, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 248, 235, 0.16);
+      border-top: 2px solid #DA5C3A;
+      border-bottom: 1.5px solid rgba(255, 220, 170, 0.28);
+      border-radius: 10px;
+      padding: 6px 10px 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 30;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.52);
+    }
+    .sub-5b-line {
+      font-family: 'FDAeonik-Med', sans-serif;
+      font-weight: 500;
+      font-size: 13.8px; /* 46px * 0.30 */
+      line-height: 16.8px; /* 56px * 0.30 */
+      color: #F5F2EB;
+      white-space: nowrap;
+    }
+    .sub-5b-kw {
+      font-family: 'SVN-Acta-BI', serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 13.5px; /* 45px * 0.30 -> exact 1:1 optical x-height lock! */
+      color: #FFC66E;
+      position: relative;
+      display: inline-block;
+      padding: 0 2px;
+    }
+    .sub-5b-kw::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 1.8px;
+      background: #E86C42;
+      border-radius: 1px;
+    }
+
+    /* PLATFORM NATIVE BOTTOM MESSAGE BUTTON BAR (REELS / TIKTOK SIMULATION) */
+    .platform-send-msg-bar {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 12px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      z-index: 25;
+      font-size: 10.5px;
+      color: #F5F2EB;
+    }
+
+    /* ===================================================================== */
+    /* KIỂU CTA 01: EDITORIAL OFFER TICKET + CURSOR CLICK & RIPPLE           */
+    /* Placed in Safe Zone Y=1080..1530px (scaled: top 325px .. 458px)       */
+    /* ===================================================================== */
+    .cta01-stage {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 326px;
+      z-index: 28;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .cta01-ticket {
+      width: 100%;
+      background: #F5F2EB;
+      color: #181716;
+      border-radius: 12px;
+      border-top: 3px solid #C84B31;
+      border-bottom: 1.5px solid #181716;
+      padding: 9px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+      position: relative;
+    }
+    .cta01-kicker {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 9.5px;
+      color: #C84B31;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .cta01-subtag {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: #181716;
+      margin-top: 2px;
+    }
+    .cta01-price-badge {
+      background: #C84B31;
+      color: #FFF;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 16px;
+      padding: 6px 11px;
+      border-radius: 8px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(200,75,49,0.45);
+    }
+    .cta01-btn-wrap {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .cta01-action-pill {
+      background: linear-gradient(135deg, #181716 0%, #2C2623 100%);
+      border: 1.5px solid #FFC66E;
+      border-radius: 999px;
+      padding: 7px 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.6);
+      position: relative;
+    }
+    .cta01-action-verb {
+      font-family: 'FDAeonik-Med', sans-serif;
+      font-size: 11px;
+      color: #F5F2EB;
+    }
+    .cta01-action-label {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 12.5px;
+      color: #FFC66E;
+    }
+    .cta01-cursor {
+      position: absolute;
+      right: 18px;
+      bottom: -14px;
+      font-size: 20px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.7));
+      z-index: 35;
+    }
+    .cta01-ripple {
+      position: absolute;
+      inset: -4px;
+      border-radius: 999px;
+      border: 2px solid #FFC66E;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .cta01-arrows {
+      display: flex;
+      gap: 10px;
+      color: #FFC66E;
+      font-size: 14px;
+      font-weight: 900;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+      margin-top: -2px;
+    }
+
+    /* ===================================================================== */
+    /* KIỂU CTA 02: FROSTED GLASS BENTO STACK & 3D FLIP BAR                  */
+    /* ===================================================================== */
+    .cta02-stage {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 324px;
+      z-index: 28;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      perspective: 700px;
+      pointer-events: none;
+    }
+    .cta02-bento-top {
+      background: rgba(22, 20, 19, 0.84);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 13px;
+      border: 1px solid rgba(255, 248, 235, 0.18);
+      border-top: 2.5px solid #DA5C3A;
+      padding: 8px 11px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+    }
+    .cta02-price-cube {
+      background: linear-gradient(135deg, #C84B31, #9A2C15);
+      border-radius: 9px;
+      padding: 5px 10px;
+      text-align: center;
+      color: #FFF;
+    }
+    .cta02-price-cube small {
+      display: block;
+      font-size: 8px;
+      letter-spacing: 0.6px;
+      opacity: 0.9;
+    }
+    .cta02-price-cube b {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 14.5px;
+    }
+    .cta02-flip-bar {
+      background: #F5F2EB;
+      color: #181716;
+      border-radius: 10px;
+      padding: 7px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.48);
+      transform-origin: top center;
+      overflow: hidden;
+      position: relative;
+    }
+    .cta02-shimmer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -60%;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, rgba(255, 198, 110, 0.65), transparent);
+      transform: skewX(-20deg);
+    }
+
+    /* ===================================================================== */
+    /* KIỂU CTA 03: LIVE MESSENGER BUBBLE PROOF & KINETIC SPOTLIGHT          */
+    /* ===================================================================== */
+    .cta03-stage {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 318px;
+      z-index: 28;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      pointer-events: none;
+    }
+    .cta03-offer-pill {
+      align-self: center;
+      background: #C84B31;
+      color: #FFF;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 10.5px;
+      padding: 4px 13px;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(200, 75, 49, 0.55);
+      letter-spacing: 0.3px;
+    }
+    .cta03-dm-user {
+      align-self: flex-end;
+      background: rgba(245, 242, 235, 0.96);
+      color: #181716;
+      padding: 7px 11px;
+      border-radius: 13px 13px 3px 13px;
+      font-size: 11px;
+      max-width: 90%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+    }
+    .cta03-dm-reply {
+      align-self: flex-start;
+      background: rgba(22, 20, 19, 0.90);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid #FFC66E;
+      color: #FFC66E;
+      padding: 6px 11px;
+      border-radius: 13px 13px 13px 3px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 10.5px;
+      max-width: 92%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.52);
+    }
+
+    .btn-choose-cta {
+      width: 100%;
+      background: rgba(255, 198, 110, 0.14);
+      border: 1.5px solid #FFC66E;
+      color: #FFC66E;
+      padding: 9px 14px;
+      border-radius: 11px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .phone-column.selected-cta .btn-choose-cta, .btn-choose-cta:hover {
+      background: #FFC66E;
+      color: #181716;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>
+      <h1>🎬 STUDIO 3 KIỂU MOTION GRAPHIC CTA TỔNG QUÁT & ÁP DỤNG VIDEO DETOX MÔI (32.75s – 41.43s)</h1>
+      <p>Đã tích hợp sẵn <b>Phụ đề Phương án 5B</b> (Thẻ Kính Tối Kẻ Chỉ • Khóa X-Height 1:1 <code>FDAeonik 46px + SVN-Acta Italic 45px</code>) & Khóa Mắt <code>Y=650px</code></p>
+    </div>
+    <div class="top-actions">
+      <button class="btn-top primary" onclick="replayAllCTAs()">▶ Phát Lại Đồng Bộ Cả 3 Motion CTA</button>
+      <button class="btn-top" id="btn-mute-toggle" onclick="toggleAudioMute()">🔊 Bật Tiếng Video</button>
+      <button class="btn-top" onclick="toggleEyeLockGuide()">👁️ Hiện/Ẩn Thước Khóa Mắt Y=650px</button>
+      <a class="btn-top" href="./studio_35_kieu_chu_va_phu_de.html" target="_blank">🎨 Mở File 35 Kiểu Chữ + Phụ Đề 5A/5B/5C ↗</a>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <!-- LEFT DOCK: UNIVERSAL TWEAKS SCHEMA FOR ANY VIDEO -->
+    <div class="tweaks-panel">
+      <div class="panel-title">
+        <span>⚙️ Bảng Biến Tweaks (Mọi Video)</span>
+        <span style="font-size:10px; background:rgba(0,255,180,0.15); color:#00FFB4; padding:2px 7px; border-radius:6px;">Universal Schema</span>
+      </div>
+
+      <div style="font-size:11.5px; color:#CBD5E1; line-height:1.45;">
+        Chọn thử <b>Preset Ngành</b> hoặc sửa chữ trực tiếp để kiểm chứng cả 3 kiểu CTA tự động thích ứng với mọi video:
+      </div>
+
+      <div class="preset-row">
+        <button class="btn-preset active" id="preset-1" onclick="loadPreset(1)">
+          💄 1. Video Hiện Tại: Detox Môi 499 Cành (32.75s–41.43s)
+        </button>
+        <button class="btn-preset" id="preset-2" onclick="loadPreset(2)">
+          🚀 2. Thử Áp Dụng: Khóa Học Xây Kênh AI & Brand
+        </button>
+        <button class="btn-preset" id="preset-3" onclick="loadPreset(3)">
+          💎 3. Thử Áp Dụng: Dịch Vụ Tư Vấn / Clinic Cao Cấp
+        </button>
+      </div>
+
+      <div class="field-group">
+        <label>1. Nhãn Mở Đầu (offerKicker):</label>
+        <input type="text" id="inp-kicker" value="ƯU ĐÃI TRONG THÁNG NÀY" oninput="syncTweaks()">
+      </div>
+      <div class="field-group">
+        <label>2. Con Số / Giá Trị Mỏ Neo (offerPriceOrValue):</label>
+        <input type="text" id="inp-price" value="499 CÀNH" oninput="syncTweaks()">
+      </div>
+      <div class="field-group">
+        <label>3. Quyền Lợi Đi Kèm (offerSubTag):</label>
+        <input type="text" id="inp-subtag" value="Khử thâm & Phục hồi nền môi tự nhiên" oninput="syncTweaks()">
+      </div>
+      <div class="field-group">
+        <label>4. Động Từ Hành Động (actionVerb):</label>
+        <input type="text" id="inp-verb" value="BẤM VÀO NÚT" oninput="syncTweaks()">
+      </div>
+      <div class="field-group">
+        <label>5. Nhãn Nút Bấm (buttonLabel):</label>
+        <input type="text" id="inp-btn" value="💬 GỬI TIN NHẮN BÊN DƯỚI" oninput="syncTweaks()">
+      </div>
+      <div class="field-group">
+        <label>6. Tin Nhắn Mẫu Khách Gửi (dmSampleUserText):</label>
+        <input type="text" id="inp-dm-user" value="Chị ơi giữ giúp em 1 suất Detox 499k tháng này ạ!" oninput="syncTweaks()">
+      </div>
+      <div class="field-group">
+        <label>7. Phản Hồi Xác Nhận (dmSampleReplyText):</label>
+        <input type="text" id="inp-dm-reply" value="✅ Đã giữ suất ưu đãi 499k • Nhận ngay hôm nay!" oninput="syncTweaks()">
+      </div>
+
+      <div style="background:rgba(255,198,110,0.1); border:1px solid rgba(255,198,110,0.3); border-radius:10px; padding:10px; font-size:11.5px; color:#F5F2EB; line-height:1.45;">
+        <b style="color:#FFC66E;">📌 Quy chuẩn thiết kế từ Skill Motion V2.1:</b><br>
+        • <b>Vùng An Toàn Khóa Mắt:</b> Toàn bộ CTA nằm ở <code>Y = 1080..1520px</code>, giữ sạch 100% gương mặt & ánh mắt chủ thể (<code>Y = 650px</code>).<br>
+        • <b>Đồng bộ Phụ đề 5B:</b> Thanh phụ đề Kính Tối Kẻ Chỉ ở <code>Y = 1586..1736px</code> khớp từng từ lời thoại.
+      </div>
+    </div>
+
+    <!-- RIGHT: 3 INTERACTIVE PHONE VIEWPORTS -->
+    <div class="phones-grid">
+
+      <!-- =============================================================== -->
+      <!-- KIỂU CTA 01: EDITORIAL OFFER TICKET & CURSOR CLICK              -->
+      <!-- =============================================================== -->
+      <div class="phone-column selected-cta" id="col-cta-1">
+        <div class="cta-header-card">
+          <span class="cta-badge">KIỂU CTA 01 • RISO_09 + PIN_08</span>
+          <span style="font-size:11px; color:#00FFB4; font-weight:700;">★ Khuyên dùng</span>
+        </div>
+        <div class="cta-title">01. Thẻ Vé Ưu Đãi Tạp Chí + Con Trỏ Click</div>
+        <div class="cta-desc">Tấm vé Editorial sang trọng bung giá <b>499 Cành</b> ➔ Nút bấm nổi + Con trỏ bay vào Click phát sóng Ripple & mũi tên chỉ thẳng xuống nút nhắn tin.</div>
+
+        <div class="phone-viewport">
+          <video class="phone-video" id="vid-1" src="./cta_segment_clean_eyelock.mp4" poster="./cta_poster_frame.jpg" playsinline muted loop autoplay></video>
+          <div class="eyelock-guide"><span>EYE-LOCK Y = 650PX (ΔY = 0.0px)</span></div>
+
+          <div class="video-top-pill"><div class="dot"></div><span id="top-pill-1">ƯU ĐÃI 499 CÀNH</span></div>
+
+          <!-- CTA 01 OVERLAY -->
+          <div class="cta01-stage" id="stage-cta1">
+            <div class="cta01-ticket" id="c1-ticket">
+              <div>
+                <div class="cta01-kicker" id="c1-kicker">✦ ƯU ĐÃI TRONG THÁNG NÀY</div>
+                <div class="cta01-subtag" id="c1-subtag">Khử thâm & Phục hồi nền môi tự nhiên</div>
+              </div>
+              <div class="cta01-price-badge" id="c1-price">499 CÀNH</div>
+            </div>
+
+            <div class="cta01-btn-wrap" id="c1-btn-wrap">
+              <div class="cta01-action-pill" id="c1-pill">
+                <span class="cta01-action-verb" id="c1-verb">BẤM VÀO NÚT</span>
+                <span class="cta01-action-label" id="c1-btn">💬 GỬI TIN NHẮN BÊN DƯỚI</span>
+                <div class="cta01-ripple" id="c1-ripple"></div>
+              </div>
+              <div class="cta01-cursor" id="c1-cursor">👆</div>
+            </div>
+
+            <div class="cta01-arrows" id="c1-arrows">
+              <span>↓</span><span>↓</span><span>↓</span>
+            </div>
+          </div>
+
+          <!-- SUBTITLE PHƯƠNG ÁN 5B -->
+          <div class="sub-5b-card">
+            <div class="sub-5b-line" id="sub1-l1">Chỉ với <span class="sub-5b-kw">499 cành</span></div>
+            <div class="sub-5b-line" id="sub1-l2">trong tháng này</div>
+          </div>
+
+          <!-- NATIVE SEND MESSAGE BAR -->
+          <div class="platform-send-msg-bar">
+            <span>💬 Gửi tin nhắn cho trang...</span>
+            <span style="color:#FFC66E; font-weight:700;">Gửi ➤</span>
+          </div>
+        </div>
+
+        <button class="btn-choose-cta" onclick="selectCTA(1)">✅ Chọn Kiểu CTA 01 (Thẻ Vé + Click)</button>
+      </div>
+
+      <!-- =============================================================== -->
+      <!-- KIỂU CTA 02: FROSTED GLASS BENTO STACK & 3D FLIP BAR            -->
+      <!-- =============================================================== -->
+      <div class="phone-column" id="col-cta-2">
+        <div class="cta-header-card">
+          <span class="cta-badge">KIỂU CTA 02 • PIN_06 + PIN_03</span>
+          <span style="font-size:11px; color:#94A3B8;">Đồng bộ Kính Tối 5B</span>
+        </div>
+        <div class="cta-title">02. Thẻ Kính Bento 3D + Thanh Lật Nam Châm</div>
+        <div class="cta-desc">Khối kính mờ <b>Frosted Glass</b> lấy nét tiêu cự <code>Rack-Focus</code> đồng bộ tuyệt đối với Phụ đề 5B ➔ Ngăn thứ 2 lật 3D quét vệt sáng chỉ xuống đáy.</div>
+
+        <div class="phone-viewport">
+          <video class="phone-video" id="vid-2" src="./cta_segment_clean_eyelock.mp4" poster="./cta_poster_frame.jpg" playsinline muted loop autoplay></video>
+          <div class="eyelock-guide"><span>EYE-LOCK Y = 650PX (ΔY = 0.0px)</span></div>
+
+          <div class="video-top-pill"><div class="dot"></div><span id="top-pill-2">ƯU ĐÃI 499 CÀNH</span></div>
+
+          <!-- CTA 02 OVERLAY -->
+          <div class="cta02-stage" id="stage-cta2">
+            <div class="cta02-bento-top" id="c2-bento">
+              <div class="cta02-price-cube">
+                <small>CHỈ VỚI</small>
+                <b id="c2-price">499 CÀNH</b>
+              </div>
+              <div>
+                <div style="font-family:'FDAeonik-Bold',sans-serif; font-size:9.5px; color:#FFC66E; letter-spacing:0.6px;" id="c2-kicker">ƯU ĐÃI TRONG THÁNG NÀY</div>
+                <div style="font-family:'SVN-Acta-BI',serif; font-style:italic; font-size:12px; color:#F5F2EB; margin-top:2px;" id="c2-subtag">Khử thâm & Phục hồi nền môi tự nhiên</div>
+              </div>
+            </div>
+
+            <div class="cta02-flip-bar" id="c2-flip">
+              <div class="cta02-shimmer" id="c2-shimmer"></div>
+              <div style="font-size:11px; font-family:'FDAeonik-Bold',sans-serif;">
+                👉 <span id="c2-verb">BẤM VÀO NÚT</span> <span style="font-family:'SVN-Acta-BI',serif; font-style:italic; color:#C84B31;" id="c2-btn">💬 GỬI TIN NHẮN BÊN DƯỚI</span>
+              </div>
+              <span style="background:#181716; color:#FFC66E; font-size:9.5px; font-family:'FDAeonik-Bold',sans-serif; padding:3px 8px; border-radius:999px;">NHẬN NGAY ↓</span>
+            </div>
+          </div>
+
+          <!-- SUBTITLE PHƯƠNG ÁN 5B -->
+          <div class="sub-5b-card">
+            <div class="sub-5b-line" id="sub2-l1">Chỉ với <span class="sub-5b-kw">499 cành</span></div>
+            <div class="sub-5b-line" id="sub2-l2">trong tháng này</div>
+          </div>
+
+          <!-- NATIVE SEND MESSAGE BAR -->
+          <div class="platform-send-msg-bar">
+            <span>💬 Gửi tin nhắn cho trang...</span>
+            <span style="color:#FFC66E; font-weight:700;">Gửi ➤</span>
+          </div>
+        </div>
+
+        <button class="btn-choose-cta" onclick="selectCTA(2)">✅ Chọn Kiểu CTA 02 (Bento Kính Tối 3D)</button>
+      </div>
+
+      <!-- =============================================================== -->
+      <!-- KIỂU CTA 03: LIVE MESSENGER BUBBLE PROOF & SPOTLIGHT            -->
+      <!-- =============================================================== -->
+      <div class="phone-column" id="col-cta-3">
+        <div class="cta-header-card">
+          <span class="cta-badge">KIỂU CTA 03 • PIN_04 + SOCIAL PROOF</span>
+          <span style="font-size:11px; color:#94A3B8;">Kích thích nhắn tin</span>
+        </div>
+        <div class="cta-title">03. Bong Bóng Tin Nhắn Thật + Xác Nhận</div>
+        <div class="cta-desc">Huy hiệu <b>Ưu đãi 499 Cành</b> ➔ Bong bóng khách nhắn tin mẫu tự gõ & Phòng khám phản hồi giữ suất ngay lập tức, thôi thúc bấm nút.</div>
+
+        <div class="phone-viewport">
+          <video class="phone-video" id="vid-3" src="./cta_segment_clean_eyelock.mp4" poster="./cta_poster_frame.jpg" playsinline muted loop autoplay></video>
+          <div class="eyelock-guide"><span>EYE-LOCK Y = 650PX (ΔY = 0.0px)</span></div>
+
+          <div class="video-top-pill"><div class="dot"></div><span id="top-pill-3">ƯU ĐÃI 499 CÀNH</span></div>
+
+          <!-- CTA 03 OVERLAY -->
+          <div class="cta03-stage" id="stage-cta3">
+            <div class="cta03-offer-pill" id="c3-pill">
+              ✦ <span id="c3-kicker">ƯU ĐÃI TRONG THÁNG NÀY</span>: <span id="c3-price">499 CÀNH</span>
+            </div>
+            <div class="cta03-dm-user" id="c3-dm-user">
+              💬 “<span id="c3-user-txt">Chị ơi giữ giúp em 1 suất Detox 499k tháng này ạ!</span>”
+            </div>
+            <div class="cta03-dm-reply" id="c3-dm-reply">
+              <span id="c3-reply-txt">✅ Đã giữ suất ưu đãi 499k • Nhận ngay hôm nay!</span>
+            </div>
+          </div>
+
+          <!-- SUBTITLE PHƯƠNG ÁN 5B -->
+          <div class="sub-5b-card">
+            <div class="sub-5b-line" id="sub3-l1">Chỉ với <span class="sub-5b-kw">499 cành</span></div>
+            <div class="sub-5b-line" id="sub3-l2">trong tháng này</div>
+          </div>
+
+          <!-- NATIVE SEND MESSAGE BAR -->
+          <div class="platform-send-msg-bar">
+            <span>💬 Gửi tin nhắn cho trang...</span>
+            <span style="color:#FFC66E; font-weight:700;">Gửi ➤</span>
+          </div>
+        </div>
+
+        <button class="btn-choose-cta" onclick="selectCTA(3)">✅ Chọn Kiểu CTA 03 (Bong Bóng Tin Nhắn)</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const PRESETS = {
+      1: {
+        kicker: "ƯU ĐÃI TRONG THÁNG NÀY",
+        price: "499 CÀNH",
+        subtag: "Khử thâm & Phục hồi nền môi tự nhiên",
+        verb: "BẤM VÀO NÚT",
+        btn: "💬 GỬI TIN NHẮN BÊN DƯỚI",
+        dmUser: "Chị ơi giữ giúp em 1 suất Detox 499k tháng này ạ!",
+        dmReply: "✅ Đã giữ suất ưu đãi 499k • Nhận ngay hôm nay!"
+      },
+      2: {
+        kicker: "QUÀ TẶNG ĐỘC QUYỀN HÔM NAY",
+        price: "MIỄN PHÍ 100%",
+        subtag: "Bộ 35 Khuôn Chữ & Motion Studio V3",
+        verb: "BẤM NGAY VÀO",
+        btn: "🔗 LINK BIO Ở BÊN DƯỚI",
+        dmUser: "Anh Việt ơi gửi em bộ công cụ AI Edit Video nhé!",
+        dmReply: "✅ Đã gửi bộ cài + Video hướng dẫn vào tin nhắn!"
+      },
+      3: {
+        kicker: "CHỈ DÀNH CHO 15 SUẤT ĐẦU TIÊN",
+        price: "GIẢM 50% VIP",
+        subtag: "Thăm khám & Phác đồ cá nhân hóa 1:1",
+        verb: "NHẤN VÀO NÚT",
+        btn: "📩 ĐẶT LỊCH TƯ VẤN NGAY",
+        dmUser: "Cho mình đăng ký lịch khám ưu đãi cuối tuần này nhé!",
+        dmReply: "✅ Chuyên gia đã xác nhận lịch hẹn ưu đãi của bạn!"
+      }
+    };
+
+    // Exact subtitle beats from 32.75s to 41.43s (relative to segment 0.00s .. 8.68s)
+    const CTA_SUB_BEATS = [
+      { start: 0.00, end: 2.35, topPill: "ƯU ĐÃI 499 CÀNH", l1: 'Chỉ với <span class="sub-5b-kw">499 cành</span>', l2: 'trong tháng này' },
+      { start: 2.35, end: 3.95, topPill: "GỬI TIN NHẮN ↓", l1: 'Các bạn <span class="sub-5b-kw">bấm vào nút</span>', l2: 'gửi tin nhắn' },
+      { start: 3.95, end: 5.55, topPill: "GỬI TIN NHẮN ↓", l1: 'ở ngay <span class="sub-5b-kw">bên dưới</span>', l2: '' },
+      { start: 5.55, end: 7.10, topPill: "NHẬN ƯU ĐÃI NGAY", l1: 'để <span class="sub-5b-kw">nhận ưu đãi</span>', l2: '' },
+      { start: 7.10, end: 9.00, topPill: "NHẬN ƯU ĐÃI NGAY", l1: 'ngay <span class="sub-5b-kw">hôm nay nhé</span>', l2: '' }
+    ];
+
+    let tl1 = null, tl2 = null, tl3 = null;
+
+    function loadPreset(id) {
+      [1, 2, 3].forEach(i => document.getElementById('preset-' + i).classList.toggle('active', i === id));
+      const p = PRESETS[id];
+      document.getElementById('inp-kicker').value = p.kicker;
+      document.getElementById('inp-price').value = p.price;
+      document.getElementById('inp-subtag').value = p.subtag;
+      document.getElementById('inp-verb').value = p.verb;
+      document.getElementById('inp-btn').value = p.btn;
+      document.getElementById('inp-dm-user').value = p.dmUser;
+      document.getElementById('inp-dm-reply').value = p.dmReply;
+      syncTweaks();
+      replayAllCTAs();
+    }
+
+    function syncTweaks() {
+      const kicker = document.getElementById('inp-kicker').value;
+      const price = document.getElementById('inp-price').value;
+      const subtag = document.getElementById('inp-subtag').value;
+      const verb = document.getElementById('inp-verb').value;
+      const btn = document.getElementById('inp-btn').value;
+      const dmUser = document.getElementById('inp-dm-user').value;
+      const dmReply = document.getElementById('inp-dm-reply').value;
+
+      // CTA 01
+      document.getElementById('c1-kicker').innerText = '✦ ' + kicker;
+      document.getElementById('c1-price').innerText = price;
+      document.getElementById('c1-subtag').innerText = subtag;
+      document.getElementById('c1-verb').innerText = verb;
+      document.getElementById('c1-btn').innerText = btn;
+
+      // CTA 02
+      document.getElementById('c2-kicker').innerText = kicker;
+      document.getElementById('c2-price').innerText = price;
+      document.getElementById('c2-subtag').innerText = subtag;
+      document.getElementById('c2-verb').innerText = verb;
+      document.getElementById('c2-btn').innerText = btn;
+
+      // CTA 03
+      document.getElementById('c3-kicker').innerText = kicker;
+      document.getElementById('c3-price').innerText = price;
+      document.getElementById('c3-user-txt').innerText = dmUser;
+      document.getElementById('c3-reply-txt').innerText = dmReply;
+    }
+
+    function buildTimelines() {
+      if (tl1) tl1.kill();
+      if (tl2) tl2.kill();
+      if (tl3) tl3.kill();
+
+      // TIMELINE CTA 01: Editorial Ticket -> Cursor Click + Ripple -> Arrow Cascade
+      tl1 = gsap.timeline({ repeat: -1, repeatDelay: 0.4 });
+      tl1.set(['#c1-ticket', '#c1-btn-wrap', '#c1-arrows'], { opacity: 0 });
+      tl1.set('#c1-cursor', { x: 45, y: 35, opacity: 0, scale: 1.2 });
+      tl1.fromTo('#c1-ticket',
+        { opacity: 0, y: 26, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.7)" },
+        0.15
+      );
+      tl1.fromTo('#c1-price',
+        { scale: 0.75 },
+        { scale: 1, duration: 0.45, ease: "elastic.out(1, 0.5)" },
+        0.35
+      );
+      // Stage 2 at 2.35s ("Các bạn bấm vào nút gửi tin nhắn")
+      tl1.fromTo('#c1-btn-wrap',
+        { opacity: 0, y: 20, scale: 0.88 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" },
+        2.30
+      );
+      tl1.to('#c1-cursor', { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, 2.65);
+      // Click press at 3.15s
+      tl1.to(['#c1-pill', '#c1-cursor'], { scale: 0.92, duration: 0.12, ease: "power2.in" }, 3.15);
+      tl1.to(['#c1-pill', '#c1-cursor'], { scale: 1.04, duration: 0.22, ease: "back.out(2)" }, 3.27);
+      tl1.fromTo('#c1-ripple',
+        { opacity: 0.95, scale: 0.95 },
+        { opacity: 0, scale: 1.22, duration: 0.65, ease: "power2.out" },
+        3.25
+      );
+      // Stage 3 at 4.0s ("ở ngay bên dưới để nhận ưu đãi ngay hôm nay nhé")
+      tl1.fromTo('#c1-arrows',
+        { opacity: 0, y: -6 },
+        { opacity: 1, y: 5, duration: 0.4, repeat: 8, yoyo: true, ease: "sine.inOut" },
+        3.80
+      );
+
+      // TIMELINE CTA 02: Frosted Glass Rack-Focus -> 3D Flip Bar -> Shimmer Sweep
+      tl2 = gsap.timeline({ repeat: -1, repeatDelay: 0.4 });
+      tl2.set(['#c2-bento', '#c2-flip'], { opacity: 0 });
+      tl2.fromTo('#c2-bento',
+        { opacity: 0, y: 28, filter: "blur(12px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" },
+        0.15
+      );
+      tl2.fromTo('#c2-flip',
+        { opacity: 0, rotationX: -70, y: -10 },
+        { opacity: 1, rotationX: 0, y: 0, duration: 0.55, ease: "back.out(1.8)" },
+        2.30
+      );
+      tl2.fromTo('#c2-shimmer',
+        { left: "-60%" },
+        { left: "130%", duration: 1.1, repeat: 3, repeatDelay: 0.6, ease: "power2.inOut" },
+        2.90
+      );
+
+      // TIMELINE CTA 03: Offer Spotlight Pill -> Customer DM Bubble -> Instant Clinic Reply
+      tl3 = gsap.timeline({ repeat: -1, repeatDelay: 0.4 });
+      tl3.set(['#c3-pill', '#c3-dm-user', '#c3-dm-reply'], { opacity: 0 });
+      tl3.fromTo('#c3-pill',
+        { opacity: 0, scale: 0.75, y: 16 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" },
+        0.15
+      );
+      tl3.fromTo('#c3-dm-user',
+        { opacity: 0, x: 30, y: 12, scale: 0.9 },
+        { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.48, ease: "back.out(1.6)" },
+        2.30
+      );
+      tl3.fromTo('#c3-dm-reply',
+        { opacity: 0, x: -30, y: 12, scale: 0.9 },
+        { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.50, ease: "back.out(1.7)" },
+        4.60
+      );
+    }
+
+    function replayAllCTAs() {
+      const vids = [document.getElementById('vid-1'), document.getElementById('vid-2'), document.getElementById('vid-3')];
+      vids.forEach(v => {
+        if (v) {
+          v.currentTime = 0;
+          v.play().catch(() => {});
+        }
+      });
+      buildTimelines();
+    }
+
+    function toggleAudioMute() {
+      const v1 = document.getElementById('vid-1');
+      const btn = document.getElementById('btn-mute-toggle');
+      if (!v1) return;
+      v1.muted = !v1.muted;
+      if (!v1.muted) {
+        v1.play();
+        btn.innerText = "🔇 Tắt Tiếng Video";
+        btn.style.borderColor = "#00FFB4";
+      } else {
+        btn.innerText = "🔊 Bật Tiếng Video";
+        btn.style.borderColor = "rgba(255,255,255,0.18)";
+      }
+    }
+
+    function toggleEyeLockGuide() {
+      document.querySelectorAll('.eyelock-guide').forEach(el => {
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+      });
+    }
+
+    function selectCTA(num) {
+      [1, 2, 3].forEach(i => {
+        document.getElementById('col-cta-' + i).classList.toggle('selected-cta', i === num);
+      });
+      const code = `CTA-0${num} + Phụ đề 5B`;
+      navigator.clipboard.writeText(code).catch(() => {});
+      alert(`Đã chọn: Kiểu CTA 0${num} (kèm Phụ đề Phương án 5B)! Anh Việt chỉ cần nhắn số "CTA 0${num}" vào khung chat để em xuất video hoàn chỉnh.`);
+    }
+
+    // Sync Subtitle Phương Án 5B with video playback time
+    setInterval(() => {
+      const v1 = document.getElementById('vid-1');
+      if (!v1) return;
+      const t = v1.currentTime || 0;
+      let b = CTA_SUB_BEATS[0];
+      for (const item of CTA_SUB_BEATS) {
+        if (t >= item.start && t < item.end) {
+          b = item;
+          break;
+        }
+      }
+      [1, 2, 3].forEach(i => {
+        const l1 = document.getElementById(`sub${i}-l1`);
+        const l2 = document.getElementById(`sub${i}-l2`);
+        const tp = document.getElementById(`top-pill-${i}`);
+        if (l1 && l1.innerHTML !== b.l1) l1.innerHTML = b.l1;
+        if (l2) {
+          l2.innerHTML = b.l2;
+          l2.style.display = b.l2 ? 'block' : 'none';
+        }
+        if (tp && tp.innerText !== b.topPill) tp.innerText = b.topPill;
+      });
+    }, 80);
+
+    window.addEventListener('DOMContentLoaded', () => {
+      syncTweaks();
+      buildTimelines();
+    });
+  </script>
+</body>
+</html>
