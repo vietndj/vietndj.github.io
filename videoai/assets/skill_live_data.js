@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 16:31:29
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 20:46:41
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 16:31:29",
-  "last_synced_iso": "2026-10-22T16:31:29.542249",
+  "last_synced_formatted": "22/10/2026 20:46:41",
+  "last_synced_iso": "2026-10-22T20:46:41.657631",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -106,7 +106,7 @@ window.SKILL_LIVE_DATA = {
         "slug": "studio-before-after-10-styles-studio.html",
         "order": 7,
         "icon": "🎛️",
-        "title": "Before/After Video Studio v2.0 — 10 Kiểu Nền × 35 Kiểu Chữ × 6 Khuôn Motion",
+        "title": "Before/After Video Studio v2.2 — 10 Kiểu Nền × 35 Kiểu Chữ × Mô Tả Nội Dung Video",
         "badge": "Auto-Detected Studio",
         "badge_class": "motion",
         "desc": "Phòng Studio tương tác tự động phát hiện từ before_after_10_styles_studio.html."
