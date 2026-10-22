@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Khuôn Số 6: VietSuiPlayLaunch20s (16:9 & 9:16 @ 60fps)</title>
+  <style>
+    :root {
+      --bg: #050714;
+      --card: #0c1026;
+      --border: rgba(129, 140, 248, 0.24);
+      --accent: #4e6bff;
+      --cyan: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 0%, #171f52 0%, #050714 65%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 28px 24px 60px;
+    }
+    .container { max-width: 1440px; margin: 0 auto; }
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(78, 107, 255, 0.18);
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      color: #c7d2fe;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn {
+      cursor: pointer;
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      background: rgba(15, 23, 58, 0.85);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.18s ease;
+    }
+    .btn:hover { background: rgba(78, 107, 255, 0.35); transform: translateY(-1px); }
+    .btn.primary {
+      background: linear-gradient(135deg, #4e6bff 0%, #7c4dff 100%);
+      border-color: transparent;
+      box-shadow: 0 8px 24px rgba(78, 107, 255, 0.4);
+    }
+    .stage-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .stage-pill {
+      cursor: pointer;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(12, 16, 38, 0.85);
+      border: 1px solid var(--border);
+      text-align: left;
+      transition: all 0.16s;
+    }
+    .stage-pill:hover, .stage-pill.active {
+      border-color: var(--cyan);
+      background: rgba(56, 189, 248, 0.14);
+    }
+    .stage-pill .st-time { font-size: 11px; color: var(--cyan); font-weight: 700; }
+    .stage-pill .st-txt { font-size: 13px; font-weight: 700; color: #fff; margin-top: 3px; }
+    .stage-pill .st-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .grid-videos {
+      display: grid;
+      grid-template-columns: 1.25fr 1.25fr 0.78fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 1100px) {
+      .grid-videos { grid-template-columns: 1fr; }
+    }
+    .vcard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+    }
+    .vcard-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .vcard-title { font-size: 14px; font-weight: 700; }
+    .vcard-tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--cyan);
+      font-weight: 700;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      background: #000;
+      display: block;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px) { .info-grid { grid-template-columns: 1fr; } }
+    .box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+    }
+    .box h3 { font-size: 16px; margin-bottom: 12px; color: #e0e7ff; }
+    pre {
+      background: #050712;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #a5b4fc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="badge">🏛️ KHUÔN GỐC .TSX SỐ 6 • VIETSUIPLAYLAUNCH20S</div>
+        <h1>Đối Chiếu Trực Quan: Mẫu Gốc Pinterest ↔ Bản AI Việt Hóa 16:9 & 9:16 (60fps)</h1>
+        <p class="sub">Giữ nguyên 100% nhạc gốc (20.03s / 1.202 frames @ 60fps), khớp từng nhịp Bass Drop & Drum Roll với 10 cụm chữ và 16 đoạn video thực tế của anh Việt.</p>
+      </div>
+      <div class="controls">
+        <button class="btn primary" onclick="syncPlayAll()">▶️ Phát Đồng Bộ Cả 3 Video (Có Nhạc)</button>
+        <button class="btn" onclick="pauseAll()">⏸️ Tạm Dừng</button>
+        <button class="btn" onclick="restartAll()">🔄 Phát Lại Từ Đầu (0.00s)</button>
+      </div>
+    </div>
+
+    <div class="stage-bar">
+      <div class="stage-pill" onclick="seekAll(0.4)">
+        <div class="st-time">STAGE 1 • 0.0s – 2.0s</div>
+        <div class="st-txt">Định nghĩa lại</div>
+        <div class="st-desc">Blur-in ngang từ tâm</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(2.8)">
+        <div class="st-time">STAGE 2 • 2.0s – 4.85s</div>
+        <div class="st-txt">Edit Video với AI</div>
+        <div class="st-desc">Chữ đặc + Viền vẽ nét & Flicker</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(5.5)">
+        <div class="st-time">STAGE 3 • 4.85s – 7.25s</div>
+        <div class="st-txt">Thiết Bị 3D • AI by Gemini</div>
+        <div class="st-desc">Bass Drop #1 & Zoom-Through</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(7.9)">
+        <div class="st-time">STAGE 4 • 7.25s – 9.05s</div>
+        <div class="st-txt">Tự động cắt / & tạo cảnh</div>
+        <div class="st-desc">2 tầng chữ + Video Trước/Sau</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(10.2)">
+        <div class="st-time">STAGE 5 • 9.05s – 11.7s</div>
+        <div class="st-txt">Style của riêng bạn</div>
+        <div class="st-txt" style="font-size:11px;color:#94a3b8;">3 Style đổi nền theo beat</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(11.95)">
+        <div class="st-time">STAGE 6A • 11.7s – 12.5s</div>
+        <div class="st-txt">M → Một lệnh</div>
+        <div class="st-desc">Giant Letter Zoom-Out</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(13.1)">
+        <div class="st-time">STAGE 6B/C • 12.5s – 15.2s</div>
+        <div class="st-txt">Tự làm toàn bộ → Bạn chỉ cần lo kiến thức</div>
+        <div class="st-desc">Bung 2 dòng + Thẻ vuông ở tâm</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(15.6)">
+        <div class="st-time">STAGE 7 • 15.2s – 17.65s</div>
+        <div class="st-txt">Dựng cơ bản có AI</div>
+        <div class="st-desc">9 cú Match-Cut theo trống dồn</div>
+      </div>
+      <div class="stage-pill" onclick="seekAll(18.6)">
+        <div class="st-time">STAGE 8 • 17.65s – 20.03s</div>
+        <div class="st-txt">offline.fedu.vn</div>
+        <div class="st-desc">Zoom-out 3D + X-Glow + Shutter</div>
+      </div>
+    </div>
+
+    <div class="grid-videos">
+      <div class="vcard">
+        <div class="vcard-head">
+          <div class="vcard-title">1. Bản AI Việt Hóa Ngang 16:9 (1920×1080 • 60fps)</div>
+          <span class="vcard-tag">Bản Chính 16:9 (Có tiếng)</span>
+        </div>
+        <video id="v169" controls playsinline preload="auto" src="../assets/suiplay_launch/VietSuiPlayLaunch_16x9_60fps.mp4"></video>
+      </div>
+
+      <div class="vcard">
+        <div class="vcard-head">
+          <div class="vcard-title">2. Mẫu Gốc Pinterest (SuiPlay 0X1 • Reference)</div>
+          <span class="vcard-tag">Video Mẫu Gốc</span>
+        </div>
+        <video id="vref" controls muted playsinline preload="auto" src="../assets/suiplay_launch/pin_1099793171536756930.mp4"></video>
+      </div>
+
+      <div class="vcard">
+        <div class="vcard-head">
+          <div class="vcard-title">3. Bản AI Việt Hóa Dọc 9:16 (1080×1920 • 60fps)</div>
+          <span class="vcard-tag">Reels / TikTok 9:16</span>
+        </div>
+        <video id="v916" controls muted playsinline preload="auto" src="../assets/suiplay_launch/VietSuiPlayLaunch_9x16_60fps.mp4"></video>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="box">
+        <h3>📝 Bảng Điền Chữ (Tweaks) Ở Đầu Khuôn VietSuiPlayLaunch20s.tsx</h3>
+        <pre>stage1Text: "Định nghĩa lại",
+stage2SolidText: "Edit Video",
+stage2OutlineText: "với AI",
+stage3ScreenTitle: "Edit Video với AI",
+stage3ScreenBadge: "AI by Gemini",
+stage4Line1: "Tự động cắt",
+stage4Line2: "& tạo cảnh",
+stage5CenterText: "Style của riêng bạn",
+stage6aGiantChar: "M",
+stage6aRestText: "ột lệnh",
+stage6bLine1: "Tự làm",
+stage6bLine2: "toàn bộ",
+stage6cLine1: "Bạn chỉ cần",
+stage6cLine2: "lo kiến thức",
+stage7CenterText: "Dựng cơ bản có AI",
+stage8DomainText: "offline.fedu.vn"</pre>
+      </div>
+      <div class="box">
+        <h3>⚡ 4 Chốt Độ Mượt 60fps Đã Khóa Cứng Trong Khuôn Số 6</h3>
+        <pre>1. Pre-Slice 60fps All-Intra (-g 1, crf 16):
+   16 đoạn video minh họa được cắt sẵn chuẩn All-Intra giúp
+   chuỗi 9 cú Match-Cut 0.25s/cảnh ở Stage 7 nhảy frame 0ms trễ.
+
+2. True Velocity-Driven SVG Directional Motion Blur:
+   Tự động kéo giãn feGaussianBlur(vx, vy) theo đạo hàm vận tốc
+   khi chữ bay ngang/dọc và tắt hoàn toàn khi chữ dừng để nét 100%.
+
+3. Khung Thiết Bị 3D Đa Lớp (14-Layer 2.5D Extrusion + Sheen):
+   Chạy 100% bằng code trong .TSX, xoay 3 trục + Zoom-Through
+   xuyên thẳng qua màn hình ở 7.10s và thu ngược về ở 17.67s.
+
+4. Responsive Dual-Aspect (16:9 & 9:16 từ 1 file .TSX duy nhất):
+   Tự động chuyển giữa Triptych 3 Khung (16:9) và Full-Screen (9:16).</pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const vids = [
+      document.getElementById("v169"),
+      document.getElementById("vref"),
+      document.getElementById("v916")
+    ];
+    // Hỗ trợ đường dẫn tương đối khi mở trực tiếp từ thư mục AI VIDEO EDIT
+    if (window.location.protocol === "file:") {
+      document.getElementById("v169").src = "VietSuiPlayLaunch_16x9_60fps.mp4";
+      document.getElementById("vref").src = "pinterest_1099793171536756930/pin_1099793171536756930.mp4";
+      document.getElementById("v916").src = "VietSuiPlayLaunch_9x16_60fps.mp4";
+    }
+    function syncPlayAll() {
+      const t = vids[0].currentTime || 0;
+      vids[0].muted = false;
+      vids[1].muted = true;
+      vids[2].muted = true;
+      vids.forEach(v => { v.currentTime = t; v.play(); });
+    }
+    function pauseAll() {
+      vids.forEach(v => v.pause());
+    }
+    function restartAll() {
+      vids.forEach(v => { v.currentTime = 0; v.play(); });
+    }
+    function seekAll(sec) {
+      vids.forEach(v => { v.currentTime = sec; v.play(); });
+    }
+  </script>
+</body>
+</html>

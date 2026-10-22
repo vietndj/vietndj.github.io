@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 20:53:12
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 20:58:50
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 20:53:12",
-  "last_synced_iso": "2026-10-22T20:53:12.238695",
+  "last_synced_formatted": "22/10/2026 20:58:50",
+  "last_synced_iso": "2026-10-22T20:58:50.494542",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -17,8 +17,8 @@ window.SKILL_LIVE_DATA = {
     "components_count": 22,
     "scripts_count": 26,
     "skills_count": 5,
-    "studios_count": 7,
-    "evolution_entries_count": 1
+    "studios_count": 8,
+    "evolution_entries_count": 2
   },
   "evolution": {
     "version": 1,
@@ -31,6 +31,16 @@ window.SKILL_LIVE_DATA = {
       "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
     ],
     "studios": [
+      {
+        "source": "suiplay_launch_motion_studio.html",
+        "slug": "studio-suiplay-launch.html",
+        "order": 0,
+        "icon": "🚀",
+        "title": "Studio Khuôn Số 6: Trailer Kinetic & 3D Portal 60fps (16:9 & 9:16)",
+        "badge": "Khuôn .TSX Số 6 • 16:9 & 9:16 • 60fps",
+        "badge_class": "motion",
+        "desc": "Đúc từ mẫu Pinterest SuiPlay 0X1 (20.03s / 1.202 frames @ 60fps): Giữ nguyên nhạc gốc, khớp 10 điểm chữ Tiếng Việt (Định nghĩa lại → Edit Video với AI → offline.fedu.vn), Khung Thiết Bị 3D 14 lớp Zoom-Through và 16 cảnh video thực tế cắt theo nhịp trống."
+      },
       {
         "source": "studio_35_kieu_chu_va_phu_de.html",
         "slug": "studio-35-kieu-chu.html",
@@ -113,6 +123,73 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "khuon-so-6-suiplay-launch-20s",
+        "date": "2026-10-22",
+        "title": "Khuôn Gốc .TSX Số 6: VietSuiPlayLaunch20s — Trailer 3D Portal & Match-Cut 60fps (Xuất Cả 16:9 & 9:16)",
+        "step_target": "buoc-4",
+        "source_thread": "22a026eb-727a-46f5-847c-626c08459a85",
+        "what": "Khuôn dựng phim tự động số 6 (<code>VietSuiPlayLaunch20s.tsx</code>, 20.03s / 1.202 frames @ 60fps) đúc từ mẫu trailer công nghệ quốc tế (Pinterest <code>1099793171536756930</code>). Tự động đồng bộ <strong>10 cụm chữ Tiếng Việt</strong> + <strong>Khung Thiết Bị 3D 14 lớp Zoom-Through</strong> + <strong>16 đoạn video thực tế</strong> (So sánh Trước/Sau & 9 cú Match-Cut 0.25s/cảnh theo nhịp trống dồn), xuất đồng thời cả 2 bản <strong>Ngang 16:9</strong> và <strong>Dọc 9:16</strong>.",
+        "why": "Khi cần video giới thiệu hệ thống/khóa học hoặc tổng hợp hàng loạt thành phẩm đã làm (Talking-head, Spa Edit, Nha khoa Atlas, AI Hook, Motion 60fps), việc kéo tay 16 video khớp từng nhịp trống 0.25s kèm thiết bị 3D xoay mở màn hình mất cả ngày. Đúc thành Khuôn .TSX số 6 giúp đổi toàn bộ 10 câu chữ và danh sách video trong 3 giây qua Bảng Điền Chữ <code>Tweaks</code>.",
+        "how_cmd": "Áp dụng khuôn số 6 VietSuiPlayLaunch20s xuất cả bản 16:9 và 9:16 với bộ chữ mới và các video minh họa vừa làm",
+        "items": [
+          {
+            "tier": "Stage 1–3 (0.0s – 7.25s) — Mở Màn & 3D Device Portal",
+            "code": "S1–S3",
+            "name": "Định nghĩa lại → Edit Video với AI (AI by Gemini)",
+            "desc": "Blur-in ngang từ tâm, vẽ nét viền SVG stroke-dashoffset, nhấp nháy tắt từng ký tự theo Riser, sau đó Khung Thiết Bị 3D 14 lớp bay lên đúng Bass Drop #1 (5.04s) và Zoom-Through xuyên qua màn hình tại 7.10s."
+          },
+          {
+            "tier": "Stage 4–5 (7.25s – 11.7s) — Showcase Trước/Sau & Đa Phong Cách",
+            "code": "S4–S5",
+            "name": "Tự động cắt & tạo cảnh → Style của riêng bạn",
+            "desc": "Chữ 2 tầng lao ngang/dọc với Directional SVG Motion Blur trên nền các video Side-by-Side Trước & Sau (Việt 8h, Thẩm Thỏ 1, Thẩm Thỏ 2 Detox Atlas, Tiến Nha Sỹ, Claude Risograph)."
+          },
+          {
+            "tier": "Stage 6 (11.7s – 15.2s) — Kinetic Typography Đỉnh Cao",
+            "code": "S6A–S6C",
+            "name": "M → Một lệnh → Tự làm toàn bộ → Bạn chỉ cần lo kiến thức",
+            "desc": "Chữ M khổng lồ (scale 15.5 -> 1) thu về tâm thành Một lệnh (kèm pill AI by Gemini), bung 2 dòng Tự làm / toàn bộ và mở Khung Thẻ Vuông Bo Góc ở chính giữa chữ."
+          },
+          {
+            "tier": "Stage 7–8 (15.2s – 20.03s) — 9 Match-Cut Drum Roll & 3D Outro",
+            "code": "S7–S8",
+            "name": "Dựng cơ bản có AI → offline.fedu.vn",
+            "desc": "9 cảnh video thực tế cắt liên thanh 0.25s/cảnh theo nhịp trống dồn (All-Intra 60fps 0ms trễ), sau đó Zoom-Out ngược về Khung Thiết Bị 3D trên nền tia sáng chữ X (X-Glow) hiện rõ offline.fedu.vn và đóng màn trập Side Shutter."
+          }
+        ],
+        "asset_dir": "suiplay_launch",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/pinterest_1099793171536756930/verify_grid_16x9.jpg",
+            "caption": "Bản Ngang 16:9 (1920×1080 @ 60fps) — Lưới kiểm định 24 mốc frame qua 8 Stages",
+            "web_src": "assets/suiplay_launch/verify_grid_16x9.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/pinterest_1099793171536756930/verify_grid_9x16.jpg",
+            "caption": "Bản Dọc 9:16 (1080×1920 @ 60fps) — Lưới kiểm định 24 mốc frame thích ứng Reels/TikTok",
+            "web_src": "assets/suiplay_launch/verify_grid_9x16.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/pinterest_1099793171536756930/key_transitions_sheet.jpg",
+            "caption": "Bảng giải phẫu 60 mốc frame chuyển tiếp của video mẫu gốc Pinterest 1099793171536756930",
+            "web_src": "assets/suiplay_launch/key_transitions_sheet.jpg"
+          }
+        ],
+        "studio_file": "suiplay_launch_motion_studio.html",
+        "studio_modes": [
+          {
+            "label": "🚀 Mở Studio Phát Đồng Bộ 3 Màn Hình (Gốc ↔ 16:9 ↔ 9:16)",
+            "query": ""
+          }
+        ],
+        "tech_specs": [
+          "Khuôn gốc: <code>remotion-studio/src/compositions/VietSuiPlayLaunch20s.tsx</code> (đã sao lưu tại <code>course_repo/assets/tsx/VietSuiPlayLaunch20s.tsx</code>).",
+          "2 Composition ID đăng ký sẵn: <code>VietSuiPlayLaunch16x9</code> (<code>1920×1080</code>, <code>60fps</code>, <code>1202 frames</code>) và <code>VietSuiPlayLaunch9x16</code> (<code>1080×1920</code>, <code>60fps</code>, <code>1202 frames</code>).",
+          "Giải pháp chống giật frame khi cắt 16 video (hội ý cùng OPUS): Pre-slice 16 đoạn video sang chuẩn <code>60fps All-Intra (-g 1, crf 16, yuv420p)</code> tại <code>public/suiplay/</code> kết hợp <code>&lt;Sequence&gt;</code> tự mount/unmount.",
+          "Directional SVG Motion Blur: Tính tự động theo vận tốc tức thời <code>stdDeviation=\"vx, vy\"</code> và tắt hoàn toàn khi chữ khóa nét."
+        ]
+      },
       {
         "id": "brand-outro-2tang",
         "date": "2026-10-22",
@@ -3629,6 +3706,14 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792677530.4511373,
+      "mtime_formatted": "22/10/2026 20:58",
+      "detail": "2 quy chuẩn • 8 studios"
+    },
+    {
       "name": "spa-edit/SKILL.md",
       "type": "Markdown Spec",
       "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
@@ -3683,14 +3768,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792649310.801881,
       "mtime_formatted": "22/10/2026 13:08",
       "detail": "177 dòng • 7 mục chính"
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792649080.1915762,
-      "mtime_formatted": "22/10/2026 13:04",
-      "detail": "1 quy chuẩn • 7 studios"
     },
     {
       "name": "compositions/VietUniversalCTA.tsx",
