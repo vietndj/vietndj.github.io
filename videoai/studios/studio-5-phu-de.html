@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>5 Kiểu Thiết Kế Phụ Đề Chuẩn Brand FDAeonik & 35 Styles DB</title>
+  <style>
+    @font-face {
+      font-family: 'FDAeonik';
+      src: url('../assets/fonts/FDAeonik-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'FDAeonik';
+      src: url('../assets/fonts/FDAeonik-Medium.ttf') format('truetype');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'FDAeonik';
+      src: url('../assets/fonts/FDAeonik-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'FDAeonik';
+      src: url('../assets/fonts/SVN-AEONIK-BLACK.TTF') format('truetype');
+      font-weight: 900;
+    }
+    @font-face {
+      font-family: 'FDIntegralCF';
+      src: url('../assets/fonts/FDIntegralCF-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'FDIntegralCF';
+      src: url('../assets/fonts/FDIntegralCF-Heavy.ttf') format('truetype');
+      font-weight: 900;
+    }
+    @font-face {
+      font-family: 'SVN-Acta';
+      src: url('../assets/fonts/SVN-Acta-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'SVN-FreightDisplay';
+      src: url('../assets/fonts/SVN-FreightDisplay-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'GT-Sectra';
+      src: url('../assets/fonts/GT-Sectra-LCGV-Display-Bold-Italic.otf') format('opentype');
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #111010;
+      color: #F5F2EB;
+      font-family: 'FDAeonik', sans-serif;
+      padding: 36px 44px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #FFF8EB;
+    }
+    .subtitle-lead {
+      font-size: 17px;
+      color: #B8B2A6;
+      margin-bottom: 28px;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFECA8;
+      margin: 30px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #2E2C2A;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: #1C1B1A;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid #2E2C2A;
+    }
+    .card.recommended {
+      border-color: #2E8B57;
+    }
+    .card.old-bad {
+      border-color: #B8332A;
+    }
+    .card-header {
+      padding: 14px 18px;
+      background: #252321;
+      border-bottom: 1px solid #33302E;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      background: #C84B31;
+      color: #FFF;
+    }
+    .card-desc {
+      font-size: 13.5px;
+      color: #CCC6BA;
+      line-height: 1.35;
+    }
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 410px;
+      background-size: cover;
+      background-position: center bottom;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 42px;
+      overflow: hidden;
+    }
+    .stage.atlas {
+      background-image: url('bg_atlas_540x960.jpg');
+    }
+    .stage.aroll {
+      background-image: url('bg_aroll_540x960.jpg');
+    }
+
+    @keyframes pillWipe {
+      0% { clip-path: inset(0 100% 0 0 round 8px); transform: scale(0.92); }
+      25% { clip-path: inset(0 0% 0 0 round 8px); transform: scale(1.04); }
+      40%, 100% { clip-path: inset(0 0% 0 0 round 8px); transform: scale(1.0); }
+    }
+
+    /* KIỂU 1: FDAeonik Editorial Pill */
+    .s1-atlas-box {
+      background: #EBE5D8;
+      border: 1.5px solid rgba(44,42,41,0.38);
+      border-left: 5px solid #C84B31;
+      border-radius: 16px;
+      padding: 13px 28px;
+      box-shadow: 0 6px 18px rgba(40,35,30,0.12);
+      text-align: center;
+      line-height: 1.16;
+      font-family: 'FDAeonik', sans-serif;
+      font-size: 27px;
+      font-weight: 500;
+      color: #1C1B1A;
+    }
+    .s1-pill {
+      display: inline-block;
+      background: #C84B31;
+      color: #FFFDF9;
+      font-weight: 700;
+      padding: 2px 11px 3px;
+      border-radius: 8px;
+      margin-left: 3px;
+      animation: pillWipe 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+
+    /* KIỂU 2: Slim Frosted Glass Capsule */
+    .s2-capsule {
+      background: rgba(24, 23, 22, 0.80);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 12px 34px 15px;
+      text-align: center;
+      line-height: 1.14;
+      font-family: 'FDAeonik', sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: #F5F2EB;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    }
+    .s2-gold {
+      font-weight: 700;
+      color: #FFD018;
+      border-bottom: 3px solid #FF9914;
+      padding-bottom: 1px;
+    }
+
+    /* KIỂU 3: MFX 35-Styles Hero Overlap (No Box) */
+    .s3-hero {
+      text-align: center;
+      line-height: 1.12;
+      font-family: 'FDAeonik', sans-serif;
+      font-size: 27px;
+      font-weight: 500;
+      color: #1C1B1A;
+    }
+    .s3-marker {
+      font-family: 'FDIntegralCF', sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+      letter-spacing: 0.4px;
+      background: linear-gradient(180deg, transparent 46%, rgba(232, 108, 66, 0.50) 46%);
+      padding: 0 6px;
+    }
+
+    /* KIỂU 4: Dual Hugging Micro-Strips */
+    .s4-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-family: 'FDAeonik', sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.08;
+    }
+    .s4-strip-dark {
+      background: #201E1D;
+      color: #F5F2EB;
+      padding: 7px 18px;
+      border-radius: 9px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .s4-row2 {
+      display: flex;
+      gap: 5px;
+    }
+    .s4-strip-accent {
+      background: #C84B31;
+      color: #FFFDF9;
+      padding: 7px 18px;
+      border-radius: 9px;
+      box-shadow: 0 4px 12px rgba(200,75,49,0.35);
+      animation: pillWipe 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+
+    /* KIỂU 5: Luxury Medical Magazine Mix (FDAeonik + SVN-Acta Italic) */
+    .s5-editorial {
+      background: #EFEAE0;
+      border-top: 2.5px solid #C84B31;
+      border-bottom: 1.5px solid rgba(44,42,41,0.35);
+      padding: 10px 32px 12px;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 1.14;
+      font-family: 'FDAeonik', sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: #1C1B1A;
+    }
+    .s5-serif {
+      font-family: 'SVN-Acta', serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 25.5px;
+      color: #C43E24;
+      border-bottom: 2px solid rgba(196,62,36,0.55);
+    }
+  </style>
+</head>
+<body>
+  <h1>BẢNG CHỌN 5 KIỂU PHỤ ĐỀ CHUẨN BRAND FDAEONIK & 35 STYLES DB</h1>
+  <p class="subtitle-lead">Đã khắc phục triệt để 3 điểm: (1) Nạp đúng 100% font <b>FDAeonik</b> chuẩn Brand • (2) Khoảng cách dòng thu hẹp từ 1.90x xuống <b>1.12x–1.16x</b> • (3) Xóa bỏ hộp gạch đen thô 255px</p>
+
+  <div class="section-title">PHẦN A: 5 KIỂU THIẾT KẾ TRÊN CẢNH ĐỒ HỌA KHOA HỌC (#F5F2EB) — "và Detox môi / sẽ sử dụng công nghệ"</div>
+  <div class="grid">
+    <div class="card recommended">
+      <div class="card-header">
+        <span class="badge" style="background:#2E8B57;">KIỂU 01 (KHUYÊN DÙNG) • FDAEONIK PILL</span>
+        <div class="card-desc"><b>FDAeonik-Medium + Bold</b> • Dòng khít 1.16x • Thẻ Giấy Kem Đậm #EBE5D8 đồng bộ trang sách + Pill Cam #C84B31 không viền đen</div>
+      </div>
+      <div class="stage atlas">
+        <div class="s1-atlas-box">
+          <div>và Detox môi</div>
+          <div>sẽ sử dụng <span class="s1-pill">công nghệ</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge" style="background:#2962FF;">KIỂU 02 • FROSTED SLIM CAPSULE</span>
+        <div class="card-desc"><b>FDAeonik-Medium + Bold</b> • Dòng khít 1.14x • Viên nang kính mờ mỏng ôm sát 2 dòng + Từ khóa Vàng Gold #FFD018 & Gạch chân</div>
+      </div>
+      <div class="stage atlas">
+        <div class="s2-capsule">
+          <div>và Detox môi</div>
+          <div>sẽ sử dụng <span class="s2-gold">công nghệ</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge" style="background:#D97706;">KIỂU 03 • MFX 35-STYLES HERO (NO BOX)</span>
+        <div class="card-desc"><b>FDAeonik-Medium + FDIntegralCF-Bold</b> • Không hộp nền • Chữ mực đen trực tiếp trên giấy + Vệt bút dạ quang Half-Marker</div>
+      </div>
+      <div class="stage atlas">
+        <div class="s3-hero">
+          <div>và Detox môi</div>
+          <div>sẽ sử dụng <span class="s3-marker">CÔNG NGHỆ</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge" style="background:#8E24AA;">KIỂU 04 • DUAL HUGGING MICRO-STRIPS</span>
+        <div class="card-desc"><b>100% FDAeonik-Bold</b> • 2 dải băng nhỏ ôm khít đúng độ dài từng dòng chữ (khe hở 4px) • Từ khóa tách Chip Cam riêng</div>
+      </div>
+      <div class="stage atlas">
+        <div class="s4-wrap">
+          <div class="s4-strip-dark">và Detox môi</div>
+          <div class="s4-row2">
+            <span class="s4-strip-dark" style="font-weight:500;">sẽ sử dụng</span>
+            <span class="s4-strip-accent">công nghệ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge" style="background:#AD1457;">KIỂU 05 • LUXURY MAGAZINE MIX (#03/#15)</span>
+        <div class="card-desc"><b>FDAeonik-Medium + SVN-Acta Bold Italic</b> • Kết hợp Sans-Serif hiện đại & Serif nghiêng sang trọng trên thẻ kẻ chỉ</div>
+      </div>
+      <div class="stage atlas">
+        <div class="s5-editorial">
+          <div>và Detox môi</div>
+          <div>sẽ sử dụng <span class="s5-serif">công nghệ</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
