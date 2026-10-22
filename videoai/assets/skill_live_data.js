@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 16:21:26
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 16:31:29
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 16:21:26",
-  "last_synced_iso": "2026-10-22T16:21:26.104088",
+  "last_synced_formatted": "22/10/2026 16:31:29",
+  "last_synced_iso": "2026-10-22T16:31:29.542249",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -17,7 +17,7 @@ window.SKILL_LIVE_DATA = {
     "components_count": 22,
     "scripts_count": 26,
     "skills_count": 5,
-    "studios_count": 6,
+    "studios_count": 7,
     "evolution_entries_count": 1
   },
   "evolution": {
@@ -100,6 +100,16 @@ window.SKILL_LIVE_DATA = {
         "badge": "5 Khuôn Gốc • Remotion React",
         "badge_class": "life",
         "desc": "Tổng hợp 11 video reference quốc tế, 12 thành phẩm 60fps thực tế và 5 khuôn thiết kế gốc .TSX Remotion (Pinterest Gold, Claude Motion Risograph, Clean V3, MasterClass Power, Semantic Era) tái sử dụng trong 3 giây."
+      },
+      {
+        "source": "before_after_10_styles_studio.html",
+        "slug": "studio-before-after-10-styles-studio.html",
+        "order": 7,
+        "icon": "🎛️",
+        "title": "Before/After Video Studio v2.0 — 10 Kiểu Nền × 35 Kiểu Chữ × 6 Khuôn Motion",
+        "badge": "Auto-Detected Studio",
+        "badge_class": "motion",
+        "desc": "Phòng Studio tương tác tự động phát hiện từ before_after_10_styles_studio.html."
       }
     ],
     "entries": [
@@ -3660,7 +3670,7 @@ window.SKILL_LIVE_DATA = {
       "skill": "Auto-Evolve Hub",
       "mtime": 1792649080.1915762,
       "mtime_formatted": "22/10/2026 13:04",
-      "detail": "1 quy chuẩn • 6 studios"
+      "detail": "1 quy chuẩn • 7 studios"
     },
     {
       "name": "compositions/VietUniversalCTA.tsx",
