@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 20:58:50
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 21:23:14
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 20:58:50",
-  "last_synced_iso": "2026-10-22T20:58:50.494542",
+  "last_synced_formatted": "22/10/2026 21:23:14",
+  "last_synced_iso": "2026-10-22T21:23:14.824369",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,8 +15,8 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 17,
     "components_count": 22,
-    "scripts_count": 26,
-    "skills_count": 5,
+    "scripts_count": 30,
+    "skills_count": 6,
     "studios_count": 8,
     "evolution_entries_count": 2
   },
@@ -322,15 +322,15 @@ window.SKILL_LIVE_DATA = {
       "badge": "60FPS MOTION",
       "desc": "Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 10737,
-      "size_formatted": "10.5 KB",
-      "lines_count": 127,
-      "mtime": 1792649320.7499917,
-      "mtime_formatted": "22/10/2026 13:08",
+      "size": 11084,
+      "size_formatted": "10.8 KB",
+      "lines_count": 128,
+      "mtime": 1792677594.3244004,
+      "mtime_formatted": "22/10/2026 20:59",
       "headers": [
         "🎯 1. BẢNG MANTRA & TÌNH HUỐNG KÍCH HOẠT",
         "🧠 2. BỐN TRỤ CỘT TƯ DUY ĐẦU RA TỐT NHẤT (ĐÚC KẾT TỪ MOTION 01 $\\rightarrow$ 05)",
-        "🏛️ 3. NĂM KHUÔN THIẾT KẾ GỐC (`.TSX` CÓ BẢNG BIẾN `TWEAKS`) — TÁI SỬ DỤNG TRONG 3 GIÂY",
+        "🏛️ 3. SÁU KHUÔN THIẾT KẾ GỐC (`.TSX` CÓ BẢNG BIẾN `TWEAKS`) — TÁI SỬ DỤNG TRONG 3 GIÂY",
         "⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN KHI NHẬN 1 VIDEO NÓI MỚI",
         "🔄 7. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ 0 MA SÁT LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)"
       ],
@@ -362,16 +362,35 @@ window.SKILL_LIVE_DATA = {
       "badge": "SPA NICHE PACK V10",
       "desc": "Gói đóng gói chuyên biệt cho chủ đề Spa/Thẩm mỹ (Gọi tự nhiên: 'Hãy edit video sau theo phong cách spa' hoặc 'EDIT SPA' — Whip-Snap Zoom 0.28s khớp nhịp lấy hơi, Logo chỉ ở CTA & Outro, Atlas 2D hội ý CLAUDE2, Trước-Sau nền trắng #F5F2EB).",
       "path": "/Users/vietmac/.gemini/config/skills/spa-edit/SKILL.md",
-      "size": 8514,
-      "size_formatted": "8.3 KB",
+      "size": 8557,
+      "size_formatted": "8.4 KB",
       "lines_count": 93,
-      "mtime": 1792677028.3834102,
-      "mtime_formatted": "22/10/2026 20:50",
+      "mtime": 1792678943.7042027,
+      "mtime_formatted": "22/10/2026 21:22",
       "headers": [
         "🗣️ 0. TÊN KỸ NĂNG & CÁCH GỌI TỰ NHIÊN (0 MA SÁT)",
         "🔥 1. BỐN NÂNG CẤP CỐT LÕI ĐÃ CẬP NHẬT TRONG BẢN `V10 MASTER`",
         "🚀 2. ĐẦU VÀO CẦN GÌ (`INPUTS`)?",
         "⚡ 3. CÁC LỆNH CHẠY TẤT ĐỊNH (`1-TURN CLI`)"
+      ],
+      "status": "ACTIVE"
+    },
+    "so-do-motion": {
+      "id": "so-do-motion",
+      "name": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "badge": "FLOWCHART 60FPS",
+      "desc": "Tạo sơ đồ giải thích quy trình 60fps kèm Phụ đề 5B, 4 lớp SFX & Lồng tiếng Khóa Vi Nhịp 4 Cổng Verifier (Mặc định: Giọng Gemini TTS; Thêm 'giọng của tôi': Lấy giọng thật qua AI Studio).",
+      "path": "/Users/vietmac/.gemini/config/skills/so-do-motion/SKILL.md",
+      "size": 7020,
+      "size_formatted": "6.9 KB",
+      "lines_count": 81,
+      "mtime": 1792678616.892709,
+      "mtime_formatted": "22/10/2026 21:16",
+      "headers": [
+        "🗣️ 0. TÊN KỸ NĂNG & CÁCH GỌI TỰ NHIÊN (2 CHẾ ĐỘ GIỌNG ĐỌC)",
+        "🏗️ 1. KIẾN TRÚC 2 BƯỚC & VÒNG LẶP TỰ HỌC 4 CỔNG VERIFIER",
+        "⚡ 2. CÁC LỆNH CLI TẤT ĐỊNH (`so_do_motion_cli.py`)",
+        "📦 3. CÀI ĐẶT 1 CHẠM CHO HỌC VIÊN ANTIGRAVITY"
       ],
       "status": "ACTIVE"
     }
@@ -3702,9 +3721,109 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792654778.1337001,
       "mtime_formatted": "22/10/2026 14:39",
       "desc": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
+    },
+    {
+      "name": "build_diagram_motion_60fps.py",
+      "skill_id": "so-do-motion",
+      "skill_name": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "size": 39027,
+      "size_formatted": "38.1 KB",
+      "lines": 834,
+      "mtime": 1792678713.129159,
+      "mtime_formatted": "22/10/2026 21:18",
+      "desc": "STEP 1: AI VIDEO EDIT WORKFLOW DIAGRAM MOTION 60FPS (NO SPEECH + THAM THO 5B SUBTITLE SYNC + 4-LAYER SFX)"
+    },
+    {
+      "name": "self_learning_voice_loop.py",
+      "skill_id": "so-do-motion",
+      "skill_name": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "size": 24652,
+      "size_formatted": "24.1 KB",
+      "lines": 599,
+      "mtime": 1792678713.1320174,
+      "mtime_formatted": "22/10/2026 21:18",
+      "desc": "STEP 2 (UPGRADED V2): GEMINI 3.8 FLASH TTS STUDIO VOICE + REAL-VOICE ACOUSTIC TRANSFER LOOP"
+    },
+    {
+      "name": "so_do_motion_cli.py",
+      "skill_id": "so-do-motion",
+      "skill_name": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "size": 12253,
+      "size_formatted": "12.0 KB",
+      "lines": 247,
+      "mtime": 1792678726.2243233,
+      "mtime_formatted": "22/10/2026 21:18",
+      "desc": "so_do_motion_cli.py — CLI ĐIỀU PHỐI KỸ NĂNG SƠ ĐỒ MOTION 60FPS (SO-DO-MOTION)"
+    },
+    {
+      "name": "verifier_4gates.py",
+      "skill_id": "so-do-motion",
+      "skill_name": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "size": 3405,
+      "size_formatted": "3.3 KB",
+      "lines": 85,
+      "mtime": 1792678657.6528642,
+      "mtime_formatted": "22/10/2026 21:17",
+      "desc": "verifier_4gates.py"
     }
   ],
   "history": [
+    {
+      "name": "spa-edit/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1792678943.7042027,
+      "mtime_formatted": "22/10/2026 21:22",
+      "detail": "93 dòng • 4 mục chính"
+    },
+    {
+      "name": "scripts/so_do_motion_cli.py",
+      "type": "Python Script",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1792678726.2243233,
+      "mtime_formatted": "22/10/2026 21:18",
+      "detail": "so_do_motion_cli.py — CLI ĐIỀU PHỐI KỸ NĂNG SƠ ĐỒ MOTION 60FPS (SO-DO-MOTION)"
+    },
+    {
+      "name": "scripts/self_learning_voice_loop.py",
+      "type": "Python Script",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1792678713.1320174,
+      "mtime_formatted": "22/10/2026 21:18",
+      "detail": "STEP 2 (UPGRADED V2): GEMINI 3.8 FLASH TTS STUDIO VOICE + REAL-VOICE ACOUSTIC TRANSFER LOOP"
+    },
+    {
+      "name": "scripts/build_diagram_motion_60fps.py",
+      "type": "Python Script",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1792678713.129159,
+      "mtime_formatted": "22/10/2026 21:18",
+      "detail": "STEP 1: AI VIDEO EDIT WORKFLOW DIAGRAM MOTION 60FPS (NO SPEECH + THAM THO 5B SUBTITLE SYNC + 4-LAYER SFX)"
+    },
+    {
+      "name": "scripts/verifier_4gates.py",
+      "type": "Python Script",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1792678657.6528642,
+      "mtime_formatted": "22/10/2026 21:17",
+      "detail": "verifier_4gates.py"
+    },
+    {
+      "name": "so-do-motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1792678616.892709,
+      "mtime_formatted": "22/10/2026 21:16",
+      "detail": "81 dòng • 4 mục chính"
+    },
+    {
+      "name": "motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792677594.3244004,
+      "mtime_formatted": "22/10/2026 20:59",
+      "detail": "128 dòng • 5 mục chính"
+    },
     {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
@@ -3712,14 +3831,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792677530.4511373,
       "mtime_formatted": "22/10/2026 20:58",
       "detail": "2 quy chuẩn • 8 studios"
-    },
-    {
-      "name": "spa-edit/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1792677028.3834102,
-      "mtime_formatted": "22/10/2026 20:50",
-      "detail": "93 dòng • 4 mục chính"
     },
     {
       "name": "compositions/VietSuiPlayLaunch20s.tsx",
@@ -3752,14 +3863,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792649346.247142,
       "mtime_formatted": "22/10/2026 13:09",
       "detail": "16 archetypes + BRAND/OUTRO 01-03"
-    },
-    {
-      "name": "motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792649320.7499917,
-      "mtime_formatted": "22/10/2026 13:08",
-      "detail": "127 dòng • 5 mục chính"
     },
     {
       "name": "auto-edit-video/SKILL.md",
@@ -3904,46 +4007,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792420389.9319584,
       "mtime_formatted": "19/10/2026 21:33",
       "detail": "Bước 3 — Tổng hợp SFX 4 Lớp Voice-Safe (compose_voicesafe_sfx.py)"
-    },
-    {
-      "name": "scripts/verify_motion_deliverable.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792420389.9314952,
-      "mtime_formatted": "19/10/2026 21:33",
-      "detail": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic (verify_motion_deliverable.py)"
-    },
-    {
-      "name": "compositions/VietCleanV3_10s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792339304.3798175,
-      "mtime_formatted": "18/10/2026 23:01",
-      "detail": "1416 dòng • Composition"
-    },
-    {
-      "name": "compositions/VietClaudeMotionRiso10s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792336208.1104136,
-      "mtime_formatted": "18/10/2026 22:10",
-      "detail": "847 dòng • Composition"
-    },
-    {
-      "name": "compositions/PinterestViet9x16.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792336060.930044,
-      "mtime_formatted": "18/10/2026 22:07",
-      "detail": "2700 dòng • Composition"
-    },
-    {
-      "name": "compositions/VietContinuity10s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792310964.923237,
-      "mtime_formatted": "18/10/2026 15:09",
-      "detail": "2119 dòng • Composition"
     }
   ]
 };

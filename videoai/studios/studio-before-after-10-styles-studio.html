@@ -413,11 +413,11 @@
       text-overflow: ellipsis;
     }
 
-    /* TWO BENTO VIDEO CARDS IN SIMULATOR */
+    /* TWO BENTO VIDEO CARDS IN SIMULATOR (CLEAN BENTO — NO WHITE STORY BOX BELOW LEFT CARD) */
     .sim-left-card {
       position: absolute;
       left: 11px;
-      top: 108px;
+      top: 212px;
       width: 138px;
       height: 258px;
       background: rgba(14, 18, 28, 0.95);
@@ -451,58 +451,6 @@
       object-fit: cover;
       filter: grayscale(100%) contrast(1.15);
       border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    /* HỘP MÔ TẢ NỘI DUNG CHÍNH TRONG VIDEO (DƯỚI KHUNG TRÁI) */
-    .sim-story-card {
-      position: absolute;
-      left: 11px;
-      top: 373px;
-      width: 138px;
-      height: 202px;
-      background: rgba(12, 17, 28, 0.94);
-      border: 1.5px solid #facc15;
-      border-radius: 10px;
-      padding: 7px 7px 7px 11px;
-      font-size: 7.4px;
-      line-height: 1.35;
-      color: #e2e8f0;
-      z-index: 10;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.55);
-    }
-    .sim-story-bar {
-      position: absolute;
-      left: 4px;
-      top: 8px;
-      bottom: 8px;
-      width: 3px;
-      border-radius: 2px;
-      background: #facc15;
-    }
-    .sim-story-kicker {
-      font-family: 'FD-Aeonik', sans-serif;
-      font-size: 6.8px;
-      font-weight: 700;
-      color: #facc15;
-      letter-spacing: 0.2px;
-      display: block;
-    }
-    .sim-story-head {
-      font-family: 'GT-Sectra', serif;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 9.2px;
-      line-height: 1.22;
-      color: #ffffff;
-      margin: 3px 0 5px 0;
-      padding-bottom: 4px;
-      border-bottom: 1px solid rgba(255,255,255,0.14);
-    }
-    .sim-story-bullet {
-      margin-top: 4px;
-      font-size: 7.1px;
-      line-height: 1.3;
     }
 
     .sim-right-card {
@@ -980,8 +928,8 @@
     <div class="brand-left">
       <div class="brand-logo">BA</div>
       <div>
-        <div class="brand-title">BEFORE / AFTER VIDEO STUDIO V2.2 — ĐÃ TÁCH THOÁNG TIÊU ĐỀ & THÊM MÔ TẢ NỘI DUNG VIDEO</div>
-        <div class="brand-sub">10 Kiểu Nền Đánh Số × 35 Kiểu Chữ Hệ Thống × Thanh Chủ Đề & Hộp Tóm Tắt Nội Dung Giữ Chân Người Xem</div>
+        <div class="brand-title">BEFORE / AFTER VIDEO STUDIO V2.3 — BỐ CỤC BENTO THOÁNG SẠCH & THANH CHỦ ĐỀ VIDEO</div>
+        <div class="brand-sub">10 Kiểu Nền Đánh Số × 35 Kiểu Chữ Hệ Thống × Khung Trái & Khung Phải Thoáng Đãng (Không Có Hộp Chữ Phụ Bên Dưới)</div>
       </div>
     </div>
     <div class="top-actions">
@@ -1032,23 +980,13 @@
             </div>
           </div>
 
-          <!-- KHUNG TRÁI: VIDEO GỐC (ĐEN TRẮNG) -->
+          <!-- KHUNG TRÁI: VIDEO GỐC (ĐEN TRẮNG, CĂN GIỮA DỌC THOÁNG SẠCH) -->
           <div class="sim-left-card" id="sim-left-card">
             <div class="sim-left-hdr" id="sim-left-hdr">
               <span id="sim-left-title">VIDEO GỐC</span>
               <span class="sim-left-dot"></span>
             </div>
             <img class="sim-left-vid" id="sim-left-vid" src="" alt="Raw Video" />
-          </div>
-
-          <!-- HỘP MÔ TẢ NỘI DUNG CHÍNH TRONG VIDEO (THAY THẾ THÔNG SỐ KỸ THUẬT KHÔ KHAN) -->
-          <div class="sim-story-card" id="sim-story-card">
-            <div class="sim-story-bar" id="sim-story-bar"></div>
-            <span class="sim-story-kicker" id="sim-story-kicker">NỘI DUNG CHÍNH TRONG VIDEO:</span>
-            <div class="sim-story-head" id="sim-story-head">Đóng Gói Vị Thế Chuyên Gia Chỉ Với 5 Phút Đi Bộ Sáng</div>
-            <div class="sim-story-bullet" id="sim-b1">01. Chủ doanh nghiệp chỉ cần chia sẻ góc nhìn thật mỗi sáng</div>
-            <div class="sim-story-bullet" id="sim-b2">02. AI tự động chuẩn hóa ánh sáng, bố cục & đồ họa sang trọng</div>
-            <div class="sim-story-bullet" id="sim-b3">03. Duy trì tần suất xuất hiện đều đặn mà không tốn ekip</div>
           </div>
 
           <!-- KHUNG PHẢI: VIDEO ĐÃ EDIT BẰNG GEMINI (ĐÃ TÁCH THOÁNG CHỮ) -->
@@ -1073,7 +1011,7 @@
       </div>
 
       <div style="font-size:11px; color:#94a3b8; text-align:center;">
-        ✅ Đã tách thoáng 100% khoảng cách chữ & bổ sung Thanh Chủ Đề + Hộp Nội Dung Video.
+        ✅ Đã bỏ khối hộp chữ bên dưới khung trái — Bố cục 2 khung Trước–Sau thoáng sạch 100%.
       </div>
     </div>
 
@@ -1081,7 +1019,7 @@
     <div class="control-column">
       <div class="tabs-header">
         <button class="tab-btn active" id="tab-btn-1" onclick="switchTab(1)">🏆 1. Chọn Nhanh 10 Phong Cách & Phân Tích Ngành Nghề</button>
-        <button class="tab-btn" id="tab-btn-2" onclick="switchTab(2)">🎛️ 2. Tự Phối (Nền × 35 Chữ × Nội Dung Chủ Đề Video)</button>
+        <button class="tab-btn" id="tab-btn-2" onclick="switchTab(2)">🎛️ 2. Tự Phối (Nền × 35 Chữ × Thanh Chủ Đề Video)</button>
         <button class="tab-btn" id="tab-btn-3" onclick="switchTab(3)">🗣️ 3. Cách Nói Tự Nhiên Với AI & Quy Chuẩn Đóng Gói</button>
       </div>
 
@@ -1092,20 +1030,14 @@
 
       <!-- TAB 2: MIX & MATCH 10 BG x 35 TYPO x TOPIC CONTENT -->
       <div class="tab-content" id="tab-2">
-        <!-- BƯỚC A: SỬA NHANH CHỦ ĐỀ & MÔ TẢ NỘI DUNG VIDEO -->
+        <!-- BƯỚC A: SỬA NHANH CHỦ ĐỀ & TIÊU ĐỀ VIDEO -->
         <div class="section-box" style="border-color:rgba(0, 229, 255, 0.4);">
           <div class="section-hdr">
-            <span style="color:#00e5ff;">🔥 BƯỚC 1: NHẬP CHỦ ĐỀ & NỘI DUNG HẤP DẪN CỦA VIDEO (GIỮ CHÂN NGƯỜI XEM)</span>
+            <span style="color:#00e5ff;">🔥 BƯỚC 1: NHẬP CHỦ ĐỀ & TIÊU ĐỀ CỦA VIDEO</span>
           </div>
-          <div class="input-row">
-            <div class="inp-group">
-              <label>Thanh Chủ Đề Video (Dưới tiêu đề chính):</label>
-              <input type="text" id="inp-topic" value="CHỦ ĐỀ VIDEO: Xây dựng hệ thống sản xuất video thương hiệu cá nhân" oninput="updateCustomText()" />
-            </div>
-            <div class="inp-group">
-              <label>Tiêu đề Hộp Nội Dung (Dưới khung Video Gốc bên trái):</label>
-              <input type="text" id="inp-story-head" value="Đóng Gói Vị Thế Chuyên Gia Chỉ Với 5 Phút Đi Bộ Sáng" oninput="updateCustomText()" />
-            </div>
+          <div class="inp-group" style="margin-top:6px;">
+            <label>Thanh Chủ Đề Video (Dưới tiêu đề chính):</label>
+            <input type="text" id="inp-topic" value="CHỦ ĐỀ VIDEO: Xây dựng hệ thống sản xuất video thương hiệu cá nhân" oninput="updateCustomText()" />
           </div>
           <div class="input-row">
             <div class="inp-group">
@@ -1650,8 +1582,7 @@
       document.getElementById('inp-h1').value = state.h1;
       document.getElementById('inp-h2').value = state.h2;
       document.getElementById('inp-topic').value = state.topic;
-      document.getElementById('inp-story-head').value = state.storyHead;
-      document.getElementById('static-img-layer').src = STYLE_IMGS[p.id] + '?v=2';
+      document.getElementById('static-img-layer').src = STYLE_IMGS[p.id] + '?v=3';
 
       updateSimulatorUI();
       triggerMotion();
@@ -1659,7 +1590,7 @@
 
     function selectBg(bgId) {
       state.bgId = bgId;
-      document.getElementById('static-img-layer').src = STYLE_IMGS[bgId] + '?v=2';
+      document.getElementById('static-img-layer').src = STYLE_IMGS[bgId] + '?v=3';
       updateSimulatorUI();
     }
 
@@ -1679,7 +1610,6 @@
       state.h1 = document.getElementById('inp-h1').value;
       state.h2 = document.getElementById('inp-h2').value;
       state.topic = document.getElementById('inp-topic').value;
-      state.storyHead = document.getElementById('inp-story-head').value;
       updateSimulatorUI();
     }
 
@@ -1759,19 +1689,6 @@
       document.getElementById('sim-pulse-dot').style.background = bgCfg.id === 3 ? '#ffeca8' : bgCfg.accent;
       document.getElementById('sim-pulse-dot').style.color = bgCfg.id === 3 ? '#ffeca8' : bgCfg.accent;
 
-      // Story Card under Left Video
-      const storyCard = document.getElementById('sim-story-card');
-      storyCard.style.background = bgCfg.isLight ? 'rgba(255,255,255,0.94)' : 'rgba(12,17,28,0.94)';
-      storyCard.style.borderColor = bgCfg.accent;
-      storyCard.style.color = bgCfg.isLight ? '#334155' : '#e2e8f0';
-      document.getElementById('sim-story-bar').style.background = bgCfg.accent;
-      document.getElementById('sim-story-kicker').style.color = bgCfg.accent;
-      document.getElementById('sim-story-head').style.color = bgCfg.isLight ? '#14222e' : '#ffffff';
-      document.getElementById('sim-story-head').textContent = state.storyHead;
-      document.getElementById('sim-b1').textContent = state.bullets[0];
-      document.getElementById('sim-b2').textContent = state.bullets[1];
-      document.getElementById('sim-b3').textContent = state.bullets[2];
-
       // Footer
       document.getElementById('sim-foot-main').style.color = bgCfg.accent;
       document.getElementById('sim-foot-note').style.color = bgCfg.isLight ? '#475569' : '#94a3b8';
@@ -1807,10 +1724,7 @@
       document.getElementById('sim-left-vid').src = c.raw;
       document.getElementById('sim-right-vid').src = c.edit;
       state.topic = c.topic;
-      state.storyHead = c.storyHead;
-      state.bullets = c.bullets;
       document.getElementById('inp-topic').value = state.topic;
-      document.getElementById('inp-story-head').value = state.storyHead;
       if (state.viewMode === 'image') setViewMode('live');
       updateSimulatorUI();
     }
