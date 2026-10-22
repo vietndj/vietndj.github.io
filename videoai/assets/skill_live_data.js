@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 21:23:14
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 21:25:19
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 21:23:14",
-  "last_synced_iso": "2026-10-22T21:23:14.824369",
+  "last_synced_formatted": "22/10/2026 21:25:19",
+  "last_synced_iso": "2026-10-22T21:25:19.684979",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -18,7 +18,7 @@ window.SKILL_LIVE_DATA = {
     "scripts_count": 30,
     "skills_count": 6,
     "studios_count": 8,
-    "evolution_entries_count": 2
+    "evolution_entries_count": 3
   },
   "evolution": {
     "version": 1,
@@ -123,6 +123,97 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "element-so-do-motion-60fps",
+        "date": "2026-10-22",
+        "title": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voiceover — Kỹ năng so-do-motion)",
+        "step_target": "buoc-4",
+        "source_thread": "e009fe7e-4b95-4ff0-82fe-245a2ba77c5d",
+        "what_title": "Sơ đồ chuyển động 60fps mở sáng theo 10 Vi Nhịp &amp; 2 Chế độ giọng đọc",
+        "what": "Một <strong>Element cốt lõi trong Edit Video &amp; Motion Graphic</strong>: biến một quy trình phức tạp (4 bước, 2 nhánh đối xứng, 10 vi nhịp) thành <strong>Sơ đồ chuyển động 60fps</strong> (<code>1080×1920</code>) kèm Phụ đề 5B và 4 lớp SFX. Hỗ trợ <strong>2 chế độ giọng đọc tự động</strong>: <strong>(1) Gọi bình thường</strong> &rarr; Tạo giọng từ <strong>Gemini TTS (<code>gemini-3.8-flash-tts</code>)</strong>; <strong>(2) Thêm &ldquo;giọng của tôi&rdquo;</strong> &rarr; Lấy giọng thật của bạn qua <strong>Google AI Studio + Real-Voice F0 Transfer</strong>.",
+        "why_title": "Giải thích quy trình phức tạp trong 20s mà không làm người xem rối mắt",
+        "why": "Nếu chỉ ngồi nói suông về quy trình 4–5 bước hoặc hiện cả tấm ảnh sơ đồ tĩnh ngay từ giây đầu, khán giả sẽ bị ngợp chữ và lướt qua. Element Sơ Đồ Motion mở sáng từng khối theo đúng nhịp lời đọc (Progressive Node Reveal), bắn tia hạt sáng dẫn mắt và nổ con số <code>~80%</code> đúng mili-giây phát âm, giúp giữ chân người xem trọn 20 giây.",
+        "how_title": "Gọi mặc định (Gemini TTS) hoặc thêm 'giọng của tôi' (AI Studio)",
+        "how_intro": "Gõ bình thường để dùng giọng Gemini TTS, hoặc thêm cụm 'giọng của tôi' để lấy giọng thật của bạn qua AI Studio:",
+        "how_cmd": "Tạo sơ đồ motion 60fps giải thích quy trình đưa AI vào edit video bằng giọng của tôi",
+        "student_install": {
+          "cmd": "curl -sSL https://fedu.vn/skill/install-so-do-motion.sh | bash",
+          "doc_url": "https://fedu.vn/skill/so-do-motion.html",
+          "desc": "Học viên dùng Antigravity trên máy cá nhân chỉ cần chạy 1 lệnh bên dưới để cài đặt trọn bộ kỹ năng so-do-motion (tự động tách riêng thư mục cấu hình ~/.so-do-motion/config.env và hồ sơ giọng cá nhân voice_profile.json, hội ý kiến trúc cùng CLAUDE2):"
+        },
+        "youtube_videos": [
+          {
+            "badge": "① VIDEO MẪU GỐC (TIKTOK)",
+            "video_id": "6xYxOScrJJQ",
+            "title": "Video Mẫu Tham Khảo (TikTok Reference)",
+            "desc": "Video mẫu gốc TikTok minh họa cách sử dụng Element Sơ đồ giải thích quy trình từng bước để dẫn dắt thị giác khán giả."
+          },
+          {
+            "badge": "② BƯỚC 1: ĐỒ HỌA 60FPS + SFX",
+            "video_id": "HdaIsC-FyqA",
+            "title": "Bản Đồ Họa Sơ Đồ 60fps + Phụ Đề 5B + 4 Lớp SFX (Không Lời)",
+            "desc": "Thành phẩm Bước 1 (1080×1920 @ 60fps, 19.50s): Sơ đồ 4 tầng mở sáng từng nhánh theo 10 Vi Nhịp, tích hợp Phụ đề 5B cách đáy sơ đồ 102px và 4 lớp SFX Studio."
+          },
+          {
+            "badge": "③ BƯỚC 2: LỒNG TIẾNG KHÓA NHỊP",
+            "video_id": "nUgeMCaA8I0",
+            "title": "Bản Hoàn Chỉnh: Lồng Tiếng AI Studio Khóa 10 Vi Nhịp (165.5Hz)",
+            "desc": "Thành phẩm Bước 2 (1080×1920 @ 60fps, 19.50s): Ghép giọng đọc lấy từ Google AI Studio (gemini-3.8-flash-tts + Màu giọng anh Việt 165.5Hz, -16 LUFS, vượt 4/4 Cổng Verifier)."
+          }
+        ],
+        "items": [
+          {
+            "tier": "2 Chế Độ Giọng Đọc Thông Minh (Phân Nhánh Tự Động Theo Câu Lệnh)",
+            "code": "MODE-1",
+            "name": "Gọi bình thường → Giọng tạo từ Gemini TTS (gemini-3.8-flash-tts)",
+            "desc": "Khi gõ 'Tạo sơ đồ motion...' hoặc 'SO DO MOTION' (không có cụm 'giọng của tôi'), hệ thống tự động gọi Gemini 3.8 Flash TTS sinh giọng đọc Studio miền Bắc điềm tĩnh, chuẩn hóa Studio Warm EQ (-16 LUFS)."
+          },
+          {
+            "tier": "2 Chế Độ Giọng Đọc Thông Minh (Phân Nhánh Tự Động Theo Câu Lệnh)",
+            "code": "MODE-2",
+            "name": "Thêm 'giọng của tôi' → Lấy giọng thật bằng AI Studio (Voice Design + F0 Transfer)",
+            "desc": "Khi thêm cụm 'giọng của tôi', hệ thống trích mẫu giọng sạch 14s từ video trong máy (hoặc ~/.so-do-motion/voice_profile.json), đo tần số cơ bản trung vị (VD: 165.5Hz) và gọi Google AI Studio kết hợp Formant-Preserving Acoustic Transfer."
+          },
+          {
+            "tier": "Vòng Lặp Tự Học 4 Cổng Kiểm Định Tất Định (verifier_4gates.py)",
+            "code": "GATE 1–2",
+            "name": "Khớp Cửa Sổ 10 Vi Nhịp & Studio Warm Mastering (-16 LUFS)",
+            "desc": "Cổng 1 ép từng câu đọc nằm gọn trong cửa sổ [start+0.06s, end-0.10s] của đúng nhịp đèn sáng trên sơ đồ. Cổng 2 lọc tần số chói >7.5kHz, nâng dải trầm ấm 160–220Hz và chuẩn hóa -16 LUFS."
+          },
+          {
+            "tier": "Vòng Lặp Tự Học 4 Cổng Kiểm Định Tất Định (verifier_4gates.py)",
+            "code": "GATE 3–4",
+            "name": "Chống Cụt Đuôi Từ (>=80ms) & Ghép 4 Lớp SFX Voice-Safe 60fps",
+            "desc": "Cổng 3 kiểm tra khoảng lặng đuôi từ >= 80ms và Peak <= -1.0 dBFS. Cổng 4 trộn giọng đọc (100%) với 4 lớp SFX (8.5%) vào video 1080×1920 @ 60fps."
+          }
+        ],
+        "asset_dir": "so_do_motion",
+        "showcase_title": "🖼️ Bảng Kiểm Định 10 Vi Nhịp 60fps • 4 Chặng Mở Sáng • Khung Phụ Đề 5B",
+        "showcase_badge": "Chuẩn E009FE7E • 1080×1920 @ 60fps • 4/4 Gates Passed",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/105eb0df-7ed0-4ed3-82b8-7a87cb371c77/ai_edit_diagram_60fps_10beats_grid.jpg",
+            "caption": "Bảng kiểm định 10 Vi Nhịp (Beats #01 → #10) từ 0.00s đến 19.50s khớp từng câu thoại và hiệu ứng mở sáng",
+            "web_src": "assets/so_do_motion/ai_edit_diagram_60fps_10beats_grid.jpg"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/105eb0df-7ed0-4ed3-82b8-7a87cb371c77/preview_v2_4steps_progression.jpg",
+            "caption": "Tiến trình 4 chặng mở sáng (Progressive Node Reveal): Sơ đồ bung mở tuần tự theo giọng đọc, không hiện tĩnh một cục",
+            "web_src": "assets/so_do_motion/preview_v2_4steps_progression.jpg"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/105eb0df-7ed0-4ed3-82b8-7a87cb371c77/preview_v2_stage2_sub5b.png",
+            "caption": "Khung hình 9:16 chuẩn: Sơ đồ 4 tầng bên trên + Hộp Phụ đề 5B khóa x-height 1:1 bên dưới (khoảng thở an toàn 102px)",
+            "web_src": "assets/so_do_motion/preview_v2_stage2_sub5b.png"
+          }
+        ],
+        "tech_specs": [
+          "Thư mục kỹ năng chuẩn: <code>~/.gemini/config/skills/so-do-motion/</code> (gồm <code>SKILL.md</code>, <code>templates/spec.example.json</code>, <code>scripts/so_do_motion_cli.py</code>, <code>build_diagram_motion_60fps.py</code>, <code>self_learning_voice_loop.py</code>, <code>verifier_4gates.py</code>).",
+          "Thư mục dữ liệu độc lập của từng học viên: <code>~/.so-do-motion/</code> (chứa <code>config.env</code> lưu <code>GEMINI_API_KEY</code> quyền <code>600</code> và <code>voice_profile.json</code> lưu tần số cơ bản <code>median_f0_hz</code> + mẫu giọng 14s, không bị mất khi cập nhật skill).",
+          "Lệnh cài đặt 1 chạm cho học viên Antigravity: <code>curl -sSL https://fedu.vn/skill/install-so-do-motion.sh | bash</code>.",
+          "Ba video minh họa thuộc Playlist YouTube <code>aivideo</code> (<code>PLJ70SzNu_fc8</code>): Mẫu TikTok (<code>6xYxOScrJJQ</code>), Bước 1 Không Lời 60fps (<code>HdaIsC-FyqA</code>), Bước 2 Có Lời Khóa Nhịp (<code>nUgeMCaA8I0</code>)."
+        ]
+      },
       {
         "id": "khuon-so-6-suiplay-launch-20s",
         "date": "2026-10-22",
@@ -3769,6 +3860,14 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792679043.120229,
+      "mtime_formatted": "22/10/2026 21:24",
+      "detail": "3 quy chuẩn • 8 studios"
+    },
+    {
       "name": "spa-edit/SKILL.md",
       "type": "Markdown Spec",
       "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
@@ -3823,14 +3922,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792677594.3244004,
       "mtime_formatted": "22/10/2026 20:59",
       "detail": "128 dòng • 5 mục chính"
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792677530.4511373,
-      "mtime_formatted": "22/10/2026 20:58",
-      "detail": "2 quy chuẩn • 8 studios"
     },
     {
       "name": "compositions/VietSuiPlayLaunch20s.tsx",
