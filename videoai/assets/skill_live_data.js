@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 11:49:27
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 13:16:35
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 11:49:27",
-  "last_synced_iso": "2026-10-22T11:49:27.988179",
+  "last_synced_formatted": "22/10/2026 13:16:35",
+  "last_synced_iso": "2026-10-22T13:16:35.290904",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -16,27 +16,199 @@ window.SKILL_LIVE_DATA = {
     "compositions_count": 16,
     "components_count": 22,
     "scripts_count": 24,
-    "skills_count": 4
+    "skills_count": 4,
+    "studios_count": 6,
+    "evolution_entries_count": 1
+  },
+  "evolution": {
+    "version": 1,
+    "_huong_dan": [
+      "SỔ ĐĂNG KÝ QUY CHUẨN SỐNG — nguồn dữ liệu duy nhất để sync_videoai.py tự bơm nội dung mới lên videoai.fedu.vn.",
+      "Thêm quy chuẩn mới = thêm 1 object vào đầu mảng 'entries' rồi chạy: videoai-sync (hoặc python3 /Users/vietmac/Documents/CODE/videoai.fedu.vn/sync_videoai.py --deploy).",
+      "step_target: dinh-dang | buoc-1 | buoc-2 | buoc-3 | buoc-4 | buoc-5 (trùng id trong public/assets/manifest.js). Có thể là chuỗi hoặc mảng.",
+      "preview_images[].src: đường dẫn tuyệt đối trên máy — script tự copy sang public/assets/<asset_dir>/.",
+      "studio_file: tên file Studio trong '/Users/vietmac/Documents/CODE/AI VIDEO EDIT/' — script tự copy sang public/studios/ (slug lấy từ mảng 'studios', không có thì tự sinh).",
+      "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
+    ],
+    "studios": [
+      {
+        "source": "studio_35_kieu_chu_va_phu_de.html",
+        "slug": "studio-35-kieu-chu.html",
+        "order": 1,
+        "icon": "🔤",
+        "title": "Studio 35 Kiểu Chữ & Phụ Đề 5A/5B/5C",
+        "badge": "35 Styles • FDAeonik & SVN-Acta",
+        "badge_class": "editorial",
+        "desc": "Thử nghiệm 35 mẫu typography thương hiệu cho 5 nhóm ngành (Học viên, Chuyên gia, Đời sống, Case study, White text). Tích hợp bộ chọn phụ đề khóa chiều cao chữ (x-height lock FDAeonik 46px & SVN-Acta 45px) trên video thật."
+      },
+      {
+        "source": "cta_3_motion_studio.html",
+        "slug": "studio-3-cta.html",
+        "order": 2,
+        "icon": "⚡",
+        "title": "Studio 3 Kiểu Hoạt Ảnh CTA 60fps",
+        "badge": "60fps GSAP • CTA 01 • 02 • 03",
+        "badge_class": "motion",
+        "desc": "3 kiểu CTA trong clip (CTA-01 Chữ trượt & Khung thẻ, CTA-02 Badge bento nổi, CTA-03 Con dấu ký tên) chuyển động GSAP 60fps, xem thử trên video thật Lip Detox (32.75s – 41.43s) với slider chỉnh biến thời gian thực."
+      },
+      {
+        "source": "subtitle_5_styles_preview.html",
+        "slug": "studio-5-phu-de.html",
+        "order": 3,
+        "icon": "📐",
+        "title": "Bảng Chọn 5 Phong Cách Phụ Đề FDAeonik",
+        "badge": "Phương án 5A • 5B • 5C",
+        "badge_class": "sci",
+        "desc": "So sánh trực quan 5 phương án căn chỉnh phụ đề tiếng Việt: Cân bằng, Thẻ chữ nhật, Chữ phát sáng, Gradient và Khóa x-height 1:1."
+      },
+      {
+        "source": null,
+        "slug": "studio-mfx.html",
+        "order": 4,
+        "icon": "🎬",
+        "title": "Studio 16 Kiểu Motion & Alpha Pack",
+        "badge": "16 Archetypes • Alpha Transparency",
+        "badge_class": "case",
+        "desc": "Thư viện 16 Archetypes motion graphic cho CapCut & Remotion, kèm gói video Alpha trong suốt xuất sẵn và 17 âm thanh SFX đồng bộ tự động."
+      },
+      {
+        "source": "brand_logo_3_motion_studio.html",
+        "slug": "studio-brand-logo-outro.html",
+        "order": 5,
+        "icon": "🏷️",
+        "title": "Studio Motion Logo Thương Hiệu & Outro Nền Đen 2 Tầng",
+        "badge": "OUTRO 01–03 • BRAND 01–03",
+        "badge_class": "life",
+        "desc": "Tầng cuối clip: 3 kiểu Logo To trên nền đen #050507 (+2.8s–3.5s) — Gold Halo Monolith, Royal Laser Frame, 3D Bento Identity Stack — với 2 chế độ Thuần Thương Hiệu / Kèm CTA Ưu Đãi. Tầng trong clip: 3 kiểu Logo Nhỏ trên đỉnh (Headroom Y=58..166px, cách xa mắt Y=650px).",
+        "modes": [
+          {
+            "label": "🏛️ Chế độ Thuần Thương Hiệu",
+            "query": ""
+          },
+          {
+            "label": "🔥 Chế độ Kèm CTA Ưu Đãi",
+            "query": "mode=cta"
+          }
+        ]
+      },
+      {
+        "source": null,
+        "slug": "studio-motion00.html",
+        "order": 6,
+        "icon": "🏛️",
+        "title": "Kho 5 Khuôn Motion 60fps Khuôn Gốc .TSX",
+        "badge": "5 Khuôn Gốc • Remotion React",
+        "badge_class": "life",
+        "desc": "Tổng hợp 11 video reference quốc tế, 12 thành phẩm 60fps thực tế và 5 khuôn thiết kế gốc .TSX Remotion (Pinterest Gold, Claude Motion Risograph, Clean V3, MasterClass Power, Semantic Era) tái sử dụng trong 3 giây."
+      }
+    ],
+    "entries": [
+      {
+        "id": "brand-outro-2tang",
+        "date": "2026-10-22",
+        "title": "Hệ Thống Logo Thương Hiệu 2 Tầng & Outro Nền Đen Cuối Clip (BRAND 01–03 • OUTRO 01–03)",
+        "step_target": "buoc-4",
+        "source_thread": "24a7e7f9-83aa-4775-abe7-88287b50b1b9",
+        "what": "Nhận diện thương hiệu chia 2 tầng: <strong>Logo Nhỏ trên đỉnh khi đang phát clip</strong> (BRAND 01•02•03 tại Headroom Y=58..166px) và <strong>Logo To trên nền đen sau câu nói cuối</strong> (OUTRO 01•02•03, +2.8s–3.5s trên nền #050507). Outro có 2 chế độ: Mode 1 Thuần Thương Hiệu và Mode 2 Kèm Thẻ Vé Ưu Đãi + Nút Hành Động.",
+        "why": "Logo đặt lung tung sẽ đè lên mặt/mắt người nói và cạnh tranh với phụ đề. Tách 2 tầng giúp clip vẫn sạch (logo nhỏ nằm trên đỉnh tóc, cách xa đường khóa mắt Y=650px), còn khoảnh khắc chốt thương hiệu/ưu đãi được dồn hết vào màn hình đen cuối — người xem không bị phân tâm khi đang nghe.",
+        "how_cmd": "Gắn logo thương hiệu BRAND-01 nhỏ trên đỉnh suốt clip, kết thúc bằng OUTRO-01 Gold Halo trên nền đen 3s, chế độ kèm CTA ưu đãi 499 nghìn",
+        "items": [
+          {
+            "tier": "Tầng cuối clip — Logo To trên nền đen #050507 (+2.8s–3.5s)",
+            "code": "OUTRO-01",
+            "name": "Gold Halo Monolith (khuyên dùng)",
+            "desc": "Quầng sáng vàng đồng nở nhẹ, vòng tròn Logo lớn 72px có 2 quỹ đạo xoay ngược chiều + huy hiệu ✓ OFFICIAL, Tên thương hiệu lớn + thẻ kính thông tin 3 dòng (Chuyên khoa • Hotline • @Handle). Đồng bộ với BRAND-01 & Phụ đề 5B."
+          },
+          {
+            "tier": "Tầng cuối clip — Logo To trên nền đen #050507 (+2.8s–3.5s)",
+            "code": "OUTRO-02",
+            "name": "Royal Laser Frame",
+            "desc": "Khung tia laser vàng đồng khóa 4 góc, ấn chương vuông lớn đóng dấu xuống tâm + 2 cánh tia đối xứng, bảng hồ sơ trên nền giấy kem #F5F2EB tương phản mạnh với nền đen. Đồng bộ với BRAND-02 & Thẻ Vé CTA 01."
+          },
+          {
+            "tier": "Tầng cuối clip — Logo To trên nền đen #050507 (+2.8s–3.5s)",
+            "code": "OUTRO-03",
+            "name": "3D Bento Identity Stack",
+            "desc": "3 khối Bento 3D lật mở liên hoàn theo trục rotateX: Khối Hero (Logo + Tên + Định vị) → Lưới 2 cột (Dịch vụ mũi nhọn • Hotline) → Thanh kênh @handle + nút + THEO DÕI KÊNH (hoặc khối CTA)."
+          },
+          {
+            "tier": "Tầng trong clip — Logo Nhỏ trên đỉnh (Headroom Y=58..166px)",
+            "code": "BRAND-01",
+            "name": "Viên thuốc kính tối + ấn xác thực ✓",
+            "desc": "Viên thuốc kính tối kẻ chỉ, ấn xác thực ✓ và vệt sáng shimmer chạy ngang."
+          },
+          {
+            "tier": "Tầng trong clip — Logo Nhỏ trên đỉnh (Headroom Y=58..166px)",
+            "code": "BRAND-02",
+            "name": "Ấn chương giấy kem + tia laser vàng",
+            "desc": "Ấn chương tạp chí nền giấy kem #F5F2EB, đường kẻ laser vàng chạy mở."
+          },
+          {
+            "tier": "Tầng trong clip — Logo Nhỏ trên đỉnh (Headroom Y=58..166px)",
+            "code": "BRAND-03",
+            "name": "Trụ guồng quay 3D lật 3 mặt",
+            "desc": "Tự lật mỗi 2.2s: Tên Brand → Chuyên môn → @Handle."
+          }
+        ],
+        "asset_dir": "brand_outro",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/24a7e7f9-83aa-4775-abe7-88287b50b1b9/brand_outro_mode1_pure.jpg",
+            "caption": "Mode 1 — Chỉ Logo To + Thông tin thương hiệu trên nền đen (không CTA)",
+            "web_src": "assets/brand_outro/brand_outro_mode1_pure.jpg"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/24a7e7f9-83aa-4775-abe7-88287b50b1b9/brand_outro_mode2_cta.jpg",
+            "caption": "Mode 2 — Logo To + Thông tin + Thẻ Vé Ưu Đãi & Nút Hành Động trên nền đen",
+            "web_src": "assets/brand_outro/brand_outro_mode2_cta.jpg"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/24a7e7f9-83aa-4775-abe7-88287b50b1b9/brand_logo_3_archetypes_preview.jpg",
+            "caption": "3 kiểu Logo Nhỏ BRAND 01 • 02 • 03 trên khung khóa mắt Y=650px",
+            "web_src": "assets/brand_outro/brand_logo_3_archetypes_preview.jpg"
+          }
+        ],
+        "studio_file": "brand_logo_3_motion_studio.html",
+        "studio_modes": [
+          {
+            "label": "🏷️ Mở Studio Logo & Outro 2 Tầng",
+            "query": ""
+          },
+          {
+            "label": "🔥 Mở thẳng chế độ Kèm CTA",
+            "query": "mode=cta"
+          }
+        ],
+        "tech_specs": [
+          "Outro nền đen <code>#050507</code>, thời lượng <code>+2.8s – 3.5s</code> ngay sau câu nói cuối; nút Studio <em>Chạy thử hết video ➔ vào nền đen</em> phát 1.8s cuối clip rồi chuyển cảnh.",
+          "Logo Nhỏ đặt trong <code>Headroom Y=58..166px</code> (khung 1080×1920), luôn cách đường khóa mắt <code>Y=650px</code> — không bao giờ đè mặt hay phụ đề.",
+          "Cặp đồng bộ khuyên dùng: <code>BRAND-01 ↔ OUTRO-01 ↔ Phụ đề 5B</code>, <code>BRAND-02 ↔ OUTRO-02 ↔ Thẻ Vé CTA 01</code>, <code>BRAND-03 ↔ OUTRO-03</code>.",
+          "Mode 2 (Kèm CTA): dưới khối thông tin bung Thẻ Vé Ưu Đãi (vd <code>499 NGHÌN</code>) + Nút Hành Động (vd <code>💬 INBOX TƯ VẤN NGAY ↓</code>).",
+          "Dữ liệu máy đọc: <code>auto-edit-video/resources/motion_catalog.json → brand_identity_2tier</code>. Studio gốc: <code>AI VIDEO EDIT/brand_logo_3_motion_studio.html</code> (hỗ trợ <code>?mode=cta</code>)."
+        ]
+      }
+    ]
   },
   "skills": {
     "auto-edit-video": {
       "id": "auto-edit-video",
       "name": "Auto Edit Video V3 (Talking-Head Studio)",
       "badge": "V3.4 CORE",
-      "desc": "Tự động cắt dựng video Talking-Head V3, OpenCV Mockup, B-Roll Hot-Swap & Remotion 60fps.",
+      "desc": "Tự động cắt dựng video Talking-Head V3, OpenCV Mockup, B-Roll Hot-Swap, Logo & Outro 2 tầng & Remotion 60fps.",
       "path": "/Users/vietmac/.gemini/config/skills/auto-edit-video/SKILL.md",
-      "size": 20650,
-      "size_formatted": "20.2 KB",
-      "lines_count": 162,
-      "mtime": 1792589477.447393,
-      "mtime_formatted": "21/10/2026 20:31",
+      "size": 23576,
+      "size_formatted": "23.0 KB",
+      "lines_count": 177,
+      "mtime": 1792649310.801881,
+      "mtime_formatted": "22/10/2026 13:08",
       "headers": [
         "1. NGUYÊN TẮC CỐT LÕI & CHẾ ĐỘ MẶC ĐỊNH V3 KHÔNG HỎI NHIỀU (ZERO-FRICTION MFX V3.2 DEFAULT)",
         "2. AUTO-EDIT V3: PRO TALKING-HEAD STUDIO (QUY TRÌNH 2-CHẠM)",
         "3. THƯ VIỆN 16 KIỂU MOTION GRAPHIC CHỦ LỰC & KHO 8.902 SFX BRAIN (`v3_motion_library.py`)",
         "4. PHONG CÁCH MỞ RỘNG (V1/V2)",
         "5. BỘ CÔNG CỤ & TÀI NGUYÊN",
-        "6. GỌI NHANH QUA MCP `viet-tools` & CẦU NỐI HYBRID"
+        "6. GỌI NHANH QUA MCP `viet-tools` & CẦU NỐI HYBRID",
+        "7. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ 0 MA SÁT LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)"
       ],
       "status": "ACTIVE"
     },
@@ -61,18 +233,19 @@ window.SKILL_LIVE_DATA = {
       "id": "motion",
       "name": "Motion Studio 60fps (Universal Archetypes)",
       "badge": "60FPS MOTION",
-      "desc": "Sản xuất Motion Graphic 60fps đa phiên bản từ 3 khuôn thiết kế gốc .TSX & 10 Archetypes.",
+      "desc": "Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 9846,
-      "size_formatted": "9.6 KB",
-      "lines_count": 119,
-      "mtime": 1792572671.2227175,
-      "mtime_formatted": "21/10/2026 15:51",
+      "size": 10737,
+      "size_formatted": "10.5 KB",
+      "lines_count": 127,
+      "mtime": 1792649320.7499917,
+      "mtime_formatted": "22/10/2026 13:08",
       "headers": [
         "🎯 1. BẢNG MANTRA & TÌNH HUỐNG KÍCH HOẠT",
         "🧠 2. BỐN TRỤ CỘT TƯ DUY ĐẦU RA TỐT NHẤT (ĐÚC KẾT TỪ MOTION 01 $\\rightarrow$ 05)",
         "🏛️ 3. NĂM KHUÔN THIẾT KẾ GỐC (`.TSX` CÓ BẢNG BIẾN `TWEAKS`) — TÁI SỬ DỤNG TRONG 3 GIÂY",
-        "⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN KHI NHẬN 1 VIDEO NÓI MỚI"
+        "⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN KHI NHẬN 1 VIDEO NÓI MỚI",
+        "🔄 7. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ 0 MA SÁT LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)"
       ],
       "status": "ACTIVE"
     },
@@ -2054,7 +2227,104 @@ window.SKILL_LIVE_DATA = {
         ],
         "capcut_alpha_ready": true
       }
-    ]
+    ],
+    "brand_identity_2tier": {
+      "version": "1.0-24a7e7f9",
+      "source_thread": "24a7e7f9-83aa-4775-abe7-88287b50b1b9",
+      "studio_file": "brand_logo_3_motion_studio.html",
+      "studio_web_slug": "studios/studio-brand-logo-outro.html",
+      "in_clip_tier": {
+        "zone": "Headroom Y=58..166px (canvas 1080x1920), eye_lock_line Y=650px",
+        "rule": "Nằm gọn phía trên đỉnh tóc chủ thể, cách xa đường khóa mắt Y=650px, không bao giờ che mặt hay cạnh tranh với phụ đề.",
+        "archetypes": [
+          {
+            "id": "BRAND-01",
+            "name": "Obsidian Verified Pill",
+            "vi_name": "Viên thuốc kính tối kẻ chỉ + ấn xác thực ✓ + shimmer",
+            "paired_outro": "OUTRO-01",
+            "paired_subtitle": "5B",
+            "description": "Viên thuốc kính tối kẻ chỉ mảnh, ấn xác thực ✓ và vệt sáng shimmer chạy ngang định kỳ."
+          },
+          {
+            "id": "BRAND-02",
+            "name": "Editorial Paper Crest",
+            "vi_name": "Ấn chương tạp chí giấy kem #F5F2EB + đường kẻ laser vàng",
+            "paired_outro": "OUTRO-02",
+            "paired_cta": "CTA-01",
+            "description": "Ấn chương tạp chí nền giấy kem #F5F2EB tương phản cao, đường kẻ laser vàng chạy mở."
+          },
+          {
+            "id": "BRAND-03",
+            "name": "3D Prism Flipper",
+            "vi_name": "Trụ guồng quay 3D tự lật 3 mặt mỗi 2.2s",
+            "paired_outro": "OUTRO-03",
+            "cycle_interval_sec": 2.2,
+            "faces": [
+              "Tên Brand",
+              "Chuyên Môn",
+              "@Handle"
+            ],
+            "description": "Trụ guồng quay 3D tự lật 3 mặt mỗi 2.2s: Tên Brand ➔ Chuyên Môn ➔ @Handle."
+          }
+        ]
+      },
+      "outro_black_screen_tier": {
+        "background": "#050507",
+        "duration_sec_range": [
+          2.8,
+          3.5
+        ],
+        "placement": "Ngay sau câu nói cuối cùng của clip",
+        "modes": {
+          "mode_1_pure_brand": {
+            "id": "pure",
+            "label": "Mode 1 (Pure Brand — Chỉ Logo To + Thông tin thương hiệu)",
+            "query_param": "",
+            "preview_image": "assets/brand_outro/brand_outro_mode1_pure.jpg",
+            "description": "Chỉ hiển thị Logo To + Tên thương hiệu + Khối thông tin định vị/chuyên khoa/kênh trên nền đen #050507."
+          },
+          "mode_2_brand_cta": {
+            "id": "cta",
+            "label": "Mode 2 (Brand + CTA — Logo To + Thông tin thương hiệu + Thẻ Vé Ưu Đãi & Nút Bấm Hành Động)",
+            "query_param": "mode=cta",
+            "preview_image": "assets/brand_outro/brand_outro_mode2_cta.jpg",
+            "description": "Hiển thị Logo To + Thông tin thương hiệu kết hợp Thẻ Vé Ưu Đãi (VD: 499 NGHÌN) & Nút Bấm Hành Động (VD: 💬 INBOX TƯ VẤN NGAY ↓) trên nền đen #050507."
+          }
+        },
+        "archetypes": [
+          {
+            "id": "OUTRO-01",
+            "name": "Gold Halo Monolith",
+            "recommended": true,
+            "sync_with": [
+              "BRAND-01",
+              "Subtitle 5B"
+            ],
+            "logo_size_px": 72,
+            "description": "Quầng sáng vàng đồng nở nhẹ, vòng tròn Logo lớn 72px có 2 quỹ đạo xoay ngược chiều + huy hiệu ✓ OFFICIAL, Tên thương hiệu lớn + thẻ kính thông tin 3 dòng (Chuyên khoa • Hotline • @Handle)."
+          },
+          {
+            "id": "OUTRO-02",
+            "name": "Royal Laser Frame",
+            "recommended": false,
+            "sync_with": [
+              "BRAND-02",
+              "CTA-01"
+            ],
+            "description": "Khung tia laser vàng đồng khóa 4 góc, ấn chương vuông lớn đóng dấu xuống tâm + 2 cánh tia đối xứng, bảng hồ sơ trên nền giấy kem #F5F2EB tương phản mạnh với nền đen."
+          },
+          {
+            "id": "OUTRO-03",
+            "name": "3D Bento Identity Stack",
+            "recommended": false,
+            "sync_with": [
+              "BRAND-03"
+            ],
+            "description": "3 khối Bento 3D lật mở liên hoàn theo trục rotateX: Khối Hero (Logo + Tên + Định vị) ➔ Lưới 2 cột (Dịch vụ mũi nhọn • Hotline) ➔ Thanh kênh @handle + nút + THEO DÕI KÊNH (hoặc khối CTA)."
+          }
+        ]
+      }
+    }
   },
   "profiles": {
     "profiles": {
@@ -3298,20 +3568,44 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "motion_catalog.json",
+      "type": "Database JSON",
+      "skill": "Motion Catalog + Brand 2-Tier",
+      "mtime": 1792649346.247142,
+      "mtime_formatted": "22/10/2026 13:09",
+      "detail": "16 archetypes + BRAND/OUTRO 01-03"
+    },
+    {
+      "name": "motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792649320.7499917,
+      "mtime_formatted": "22/10/2026 13:08",
+      "detail": "127 dòng • 5 mục chính"
+    },
+    {
+      "name": "auto-edit-video/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
+      "mtime": 1792649310.801881,
+      "mtime_formatted": "22/10/2026 13:08",
+      "detail": "177 dòng • 7 mục chính"
+    },
+    {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792649080.1915762,
+      "mtime_formatted": "22/10/2026 13:04",
+      "detail": "1 quy chuẩn • 6 studios"
+    },
+    {
       "name": "compositions/VietUniversalCTA.tsx",
       "type": "Remotion .TSX",
       "skill": "Remotion Studio 60fps",
       "mtime": 1792640862.648815,
       "mtime_formatted": "22/10/2026 10:47",
       "detail": "431 dòng • Composition"
-    },
-    {
-      "name": "auto-edit-video/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792589477.447393,
-      "mtime_formatted": "21/10/2026 20:31",
-      "detail": "162 dòng • 6 mục chính"
     },
     {
       "name": "compositions/VietScientificAtlas.tsx",
@@ -3344,14 +3638,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792573554.1729004,
       "mtime_formatted": "21/10/2026 16:05",
       "detail": "mfx_v3_universal_engine.py — Động Cơ Kết Xuất Video MFX V3.2 (2-Pass Low-RAM Streaming)"
-    },
-    {
-      "name": "motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792572671.2227175,
-      "mtime_formatted": "21/10/2026 15:51",
-      "detail": "119 dòng • 4 mục chính"
     },
     {
       "name": "scripts/mfx_v3_universal_engine.py",
@@ -3392,14 +3678,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792563279.9291606,
       "mtime_formatted": "21/10/2026 13:14",
       "detail": "Scientific Atlas Style V2 — 3 cảnh trám khoa học cho thamtho_goc.mp4."
-    },
-    {
-      "name": "motion_catalog.json",
-      "type": "Database JSON",
-      "skill": "Motion Catalog",
-      "mtime": 1792560440.4928224,
-      "mtime_formatted": "21/10/2026 12:27",
-      "detail": "16 archetypes"
     },
     {
       "name": "scripts/v3_motion_library.py",
@@ -3528,14 +3806,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792255638.8334692,
       "mtime_formatted": "17/10/2026 23:47",
       "detail": "1906 dòng • Composition"
-    },
-    {
-      "name": "scripts/mfx_v3_renderer.py",
-      "type": "Python Script",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792252768.5798302,
-      "mtime_formatted": "17/10/2026 22:59",
-      "detail": "Render video hoàn chỉnh qcVD1_final.mp4 (5.04s, 1080x1920 @ 24fps):"
     }
   ]
 };
@@ -3599,16 +3869,19 @@ window.renderMotionsGrid = function(containerId) {
   let html = '<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px;">';
   
   archetypes.forEach(m => {
+    const sfxText = Array.isArray(m.default_sfx) ? m.default_sfx.join(', ') : (m.recommended_sfx || 'whoosh_soft');
+    const descText = m.when_to_use || m.description || (m.motion_formula && m.motion_formula.description) || '';
     html += `
       <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:14px; box-shadow:0 1px 3px rgba(15,23,42,0.03);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
           <span style="font:700 12px var(--mono); color:#1d4ed8; background:#eff6ff; padding:2px 8px; border-radius:4px;">${m.id}</span>
-          <span style="font:600 11.5px var(--mono); color:#15803d; background:#f0fdf4; padding:2px 7px; border-radius:4px;">${m.duration_seconds || 1.2}s</span>
+          <span style="font:600 11.5px var(--mono); color:#15803d; background:#f0fdf4; padding:2px 7px; border-radius:4px;">${m.group || '60fps'}</span>
         </div>
-        <h4 style="font:700 15px var(--sans); color:var(--ink); margin:0 0 6px;">${m.name}</h4>
-        <p style="font:400 13px/1.45 var(--sans); color:var(--ink2); margin:0 0 10px;">${m.description}</p>
+        <h4 style="font:700 15px var(--sans); color:var(--ink); margin:0 0 4px;">${m.vi_name || m.name}</h4>
+        <div style="font:500 11.5px var(--mono); color:var(--mute); margin-bottom:6px;">${m.name}</div>
+        <p style="font:400 13px/1.45 var(--sans); color:var(--ink2); margin:0 0 10px;">${descText}</p>
         <div style="font:500 11.5px var(--mono); color:var(--mute); background:#f8fafc; border:1px solid #e2e8f0; padding:4px 8px; border-radius:6px;">
-          🔊 SFX: <strong style="color:#0f172a;">${m.recommended_sfx || 'whoosh_soft'}</strong>
+          🔊 SFX: <strong style="color:#0f172a;">${sfxText}</strong>
         </div>
       </div>
     `;

@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand & Channel Motion Studio 60fps — Kiểu Nhỏ Trong Clip & Kiểu To Cuối Clip Trên Nền Đen</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'FDAeonik-Med';
+      src: url('data:,') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'FDAeonik-Bold';
+      src: url('data:,') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Acta-BI';
+      src: url('data:,') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #090B10;
+      color: #F5F2EB;
+      font-family: 'FDAeonik-Med', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 14px 20px 42px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(20, 23, 32, 0.96);
+      border: 1px solid rgba(255, 198, 110, 0.32);
+      border-radius: 16px;
+      padding: 13px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.52);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .top-bar h1 {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 18.5px;
+      color: #FFC66E;
+      letter-spacing: -0.3px;
+    }
+    .top-bar p {
+      font-size: 12px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .top-actions {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-top {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #F5F2EB;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-top:hover, .btn-top.active-mode {
+      border-color: #FFC66E;
+      background: rgba(255, 198, 110, 0.18);
+      color: #FFC66E;
+    }
+    .btn-top.primary {
+      background: linear-gradient(135deg, #C84B31, #E86C42);
+      border-color: #FF9E7A;
+      color: #FFF;
+      box-shadow: 0 6px 18px rgba(200, 75, 49, 0.45);
+    }
+
+    /* MAIN WORKSPACE */
+    .workspace {
+      display: grid;
+      grid-template-columns: 365px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    /* LEFT TWEAKS PANEL */
+    .tweaks-panel {
+      background: rgba(16, 19, 27, 0.97);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      position: sticky;
+      top: 12px;
+      max-height: calc(100vh - 24px);
+      overflow-y: auto;
+    }
+    .panel-title {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 13px;
+      color: #FFC66E;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preset-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .btn-preset {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px;
+      padding: 6.5px 9px;
+      color: #E2E8F0;
+      font-size: 11.5px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .btn-preset.active, .btn-preset:hover {
+      background: rgba(200, 75, 49, 0.28);
+      border-color: #FFC66E;
+      color: #FFF;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .field-group label {
+      font-size: 10px;
+      color: #94A3B8;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      text-transform: uppercase;
+    }
+    .field-group input {
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 7px;
+      padding: 6px 9px;
+      color: #FFF;
+      font-family: 'FDAeonik-Med', sans-serif;
+      font-size: 12px;
+      outline: none;
+    }
+    .field-group input:focus {
+      border-color: #FFC66E;
+    }
+    .seg-pills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+    .seg-pill-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: #CBD5E1;
+      border-radius: 7px;
+      padding: 6px 5px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 10.8px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.18s;
+    }
+    .seg-pill-btn.active {
+      background: rgba(255, 198, 110, 0.22);
+      border-color: #FFC66E;
+      color: #FFC66E;
+    }
+    .logo-upload-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .btn-upload {
+      flex: 1;
+      background: rgba(0, 255, 180, 0.12);
+      border: 1px dashed #00FFB4;
+      color: #00FFB4;
+      border-radius: 8px;
+      padding: 6px 9px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 11px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* RIGHT CONTENT AREA: 2 TIERS STACKED OR SWITCHED */
+    .right-stages-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .tier-section-box {
+      background: rgba(15, 18, 26, 0.92);
+      border: 1.5px solid rgba(255, 198, 110, 0.24);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.52);
+    }
+    .tier-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .tier-header-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tier-pill-tag {
+      background: linear-gradient(135deg, #C84B31, #E86C42);
+      color: #FFF;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.4px;
+    }
+    .tier-header-title h2 {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 17px;
+      color: #FFF;
+    }
+    .outro-mode-switcher {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .mode-switch-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.20);
+      color: #E2E8F0;
+      padding: 8px 13px;
+      border-radius: 10px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mode-switch-btn.active {
+      background: rgba(255, 198, 110, 0.20);
+      border-color: #FFC66E;
+      color: #FFC66E;
+      box-shadow: 0 0 18px rgba(255, 198, 110, 0.22);
+    }
+    .mode-switch-btn.trans-btn.active {
+      background: rgba(0, 255, 180, 0.18);
+      border-color: #00FFB4;
+      color: #00FFB4;
+    }
+
+    /* 3 PHONE SCREENS GRID */
+    .phones-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .phone-column {
+      background: rgba(20, 23, 33, 0.90);
+      border: 2px solid rgba(255, 255, 255, 0.11);
+      border-radius: 18px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.25s;
+    }
+    .phone-column.selected-brand {
+      border-color: #FFC66E;
+      box-shadow: 0 0 26px rgba(255, 198, 110, 0.22);
+    }
+    .brand-header-card {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-badge {
+      background: rgba(200, 75, 49, 0.28);
+      border: 1px solid #E86C42;
+      color: #FFC66E;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 10.5px;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .brand-title {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 13.5px;
+      color: #FFF;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brand-desc {
+      font-size: 11.2px;
+      color: #94A3B8;
+      width: 100%;
+      line-height: 1.36;
+      height: 44px;
+    }
+
+    /* 9:16 PHONE FRAME (324 x 576px = exact 0.30x scale of 1080x1920) */
+    .phone-viewport {
+      width: 324px;
+      height: 576px;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      background: #060608;
+      border: 4px solid #262936;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.68);
+    }
+    .phone-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===================================================================== */
+    /* TIER 2: FULL-SCREEN BLACK OUTRO END-CARD (SAU KHI KẾT THÚC CLIP)      */
+    /* Pure Black / Obsidian Canvas (#050507) with Big Logo + Brand Info     */
+    /* + Optional Integrated CTA Card                                        */
+    /* ===================================================================== */
+    .outro-black-canvas {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 34%, #1A1614 0%, #070709 62%, #030304 100%);
+      z-index: 36;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+      overflow: hidden;
+    }
+
+    /* Ambient Golden Glow Aura on Black Canvas */
+    .outro-aura-glow {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(255, 198, 110, 0.22) 0%, rgba(200, 75, 49, 0.10) 45%, transparent 72%);
+      filter: blur(18px);
+      pointer-events: none;
+    }
+
+    /* Custom Logo Image Handling for Both Tiers */
+    .has-custom-logo .mono-txt { display: none !important; }
+    .has-custom-logo img.custom-logo-img { display: block !important; }
+
+    /* --------------------------------------------------------------------- */
+    /* KIỂU OUTRO 01: OBSIDIAN GOLD HALO & GLASS MONOLITH (TRÊN NỀN ĐEN)     */
+    /* --------------------------------------------------------------------- */
+    .o1-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: 5;
+    }
+    .o1-logo-pedestal {
+      position: relative;
+      width: 86px;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2px;
+    }
+    .o1-orbit-ring-outer {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(255, 198, 110, 0.55);
+    }
+    .o1-orbit-ring-inner {
+      position: absolute;
+      inset: 2px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(218, 92, 58, 0.65);
+    }
+    .o1-big-emblem {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #241E1B 0%, #0E0C0B 100%);
+      border: 2.5px solid #FFC66E;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.85), 0 0 24px rgba(255, 198, 110, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .o1-big-emblem .mono-txt {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 30px;
+      color: #FFC66E;
+    }
+    .o1-big-emblem img.custom-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .o1-verified-pill {
+      position: absolute;
+      bottom: -5px;
+      background: linear-gradient(135deg, #FFC66E, #E86C42);
+      color: #181716;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 8.5px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    }
+    .o1-brand-title {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 21px;
+      color: #F5F2EB;
+      letter-spacing: 0.8px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .o1-brand-tagline {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 14.5px;
+      color: #FFC66E;
+      text-align: center;
+      margin-top: -5px;
+    }
+    .o1-divider-line {
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #DA5C3A, #FFC66E, #DA5C3A, transparent);
+      margin: 2px 0;
+    }
+    /* Brand Info Glass Card on Black */
+    .o1-info-card {
+      width: 100%;
+      background: rgba(255, 248, 235, 0.05);
+      border: 1px solid rgba(255, 198, 110, 0.24);
+      border-top: 2px solid #DA5C3A;
+      border-radius: 13px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      backdrop-filter: blur(12px);
+    }
+    .o1-info-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #E2E8F0;
+    }
+    .o1-info-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: rgba(255, 198, 110, 0.14);
+      border: 1px solid rgba(255, 198, 110, 0.35);
+      color: #FFC66E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Optional CTA Block inside Black Outro */
+    .outro-cta-block {
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 4px;
+    }
+    .with-outro-cta .outro-cta-block {
+      display: flex;
+    }
+    .outro-pure-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      background: rgba(255, 198, 110, 0.10);
+      border: 1px solid rgba(255, 198, 110, 0.32);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 10.5px;
+      color: #FFC66E;
+    }
+    .with-outro-cta .outro-pure-footer {
+      display: none;
+    }
+
+    .o-cta-ticket {
+      width: 100%;
+      background: #F5F2EB;
+      color: #181716;
+      border-radius: 11px;
+      border-top: 3px solid #C84B31;
+      padding: 8px 11px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.65);
+    }
+    .o-cta-kicker {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 9px;
+      color: #C84B31;
+      letter-spacing: 0.5px;
+    }
+    .o-cta-sub {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 11.5px;
+      color: #181716;
+    }
+    .o-cta-price {
+      background: #C84B31;
+      color: #FFF;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 14px;
+      padding: 5px 10px;
+      border-radius: 7px;
+      white-space: nowrap;
+    }
+    .o-cta-btn-pill {
+      width: 100%;
+      background: linear-gradient(135deg, #FFC66E 0%, #E89B3C 100%);
+      color: #181716;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 11.5px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(255, 198, 110, 0.35);
+      position: relative;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* KIỂU OUTRO 02: ROYAL EDITORIAL SEAL & LASER FRAME (TRÊN NỀN ĐEN)      */
+    /* --------------------------------------------------------------------- */
+    .o2-laser-frame {
+      position: absolute;
+      inset: 14px;
+      border: 1.5px solid rgba(255, 198, 110, 0.32);
+      border-radius: 18px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .o2-corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: #FFC66E;
+      border-style: solid;
+    }
+    .o2-corner.tl { top: -2px; left: -2px; border-width: 3px 0 0 3px; border-top-left-radius: 8px; }
+    .o2-corner.tr { top: -2px; right: -2px; border-width: 3px 3px 0 0; border-top-right-radius: 8px; }
+    .o2-corner.bl { bottom: -2px; left: -2px; border-width: 0 0 3px 3px; border-bottom-left-radius: 8px; }
+    .o2-corner.br { bottom: -2px; right: -2px; border-width: 0 3px 3px 0; border-bottom-right-radius: 8px; }
+
+    .o2-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+      z-index: 5;
+      padding: 0 6px;
+    }
+    .o2-crest-shield {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      background: #141210;
+      border: 2.5px solid #FFC66E;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.8), 0 0 0 4px rgba(200, 75, 49, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .o2-crest-shield .mono-txt {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 28px;
+      color: #FFC66E;
+    }
+    .o2-crest-shield img.custom-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .o2-kicker-wings {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      justify-content: center;
+    }
+    .o2-wing-line {
+      height: 1.5px;
+      width: 48px;
+      background: linear-gradient(90deg, transparent, #FFC66E);
+    }
+    .o2-wing-line.r {
+      background: linear-gradient(90deg, #FFC66E, transparent);
+    }
+    .o2-editorial-paper-ledger {
+      width: 100%;
+      background: #F5F2EB;
+      color: #181716;
+      border-radius: 12px;
+      border-top: 3.5px solid #C84B31;
+      padding: 11px 12px;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.7);
+    }
+    .o2-ledger-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      padding: 4.5px 0;
+      border-bottom: 1px dashed rgba(24,23,22,0.18);
+      color: #2C2A29;
+    }
+    .o2-ledger-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .o2-ledger-row b {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      color: #181716;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* KIỂU OUTRO 03: BENTO 3D IDENTITY STACK (TRÊN NỀN ĐEN)                 */
+    /* --------------------------------------------------------------------- */
+    .o3-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 5;
+      perspective: 700px;
+    }
+    .o3-bento-hero {
+      width: 100%;
+      background: linear-gradient(145deg, rgba(30, 27, 25, 0.96), rgba(16, 15, 14, 0.96));
+      border: 1.5px solid rgba(255, 198, 110, 0.38);
+      border-top: 3px solid #C84B31;
+      border-radius: 14px;
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.65);
+    }
+    .o3-hero-logo {
+      width: 66px;
+      height: 66px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #C84B31, #8A2510);
+      border: 2px solid #FFC66E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(200, 75, 49, 0.45);
+    }
+    .o3-hero-logo .mono-txt {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 26px;
+      color: #FFF;
+    }
+    .o3-hero-logo img.custom-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .o3-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .o3-bento-cell {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 11px;
+      padding: 9px 10px;
+    }
+    .o3-cell-lbl {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 8.5px;
+      color: #FFC66E;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    .o3-cell-val {
+      font-size: 10.8px;
+      color: #F5F2EB;
+      margin-top: 3px;
+      line-height: 1.3;
+    }
+
+    /* ===================================================================== */
+    /* TIER 1: KIỂU NHỎ TRONG VIDEO (IN-VIDEO HEADER / CORNER BRAND PILL)    */
+    /* ===================================================================== */
+    .brand-stage-anchor {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      z-index: 32;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+      transform-origin: top center;
+      transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pos-left .brand-stage-anchor { justify-content: flex-start; transform-origin: top left; }
+    .pos-center .brand-stage-anchor { justify-content: center; transform-origin: top center; }
+    .pos-right .brand-stage-anchor { justify-content: flex-end; transform-origin: top right; }
+
+    .logo-emblem-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2A2320 0%, #141210 100%);
+      border: 1.8px solid #FFC66E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.55);
+      overflow: hidden;
+    }
+    .logo-emblem-circle .mono-txt {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 13.5px;
+      color: #FFC66E;
+    }
+    .logo-emblem-circle img.custom-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    /* BRAND 01 SMALL */
+    .b1-pill-card {
+      background: rgba(22, 20, 19, 0.84);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 248, 235, 0.20);
+      border-top: 2px solid #DA5C3A;
+      border-bottom: 1.5px solid rgba(255, 198, 110, 0.42);
+      border-radius: 999px;
+      padding: 5px 13px 5px 6px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.58);
+      position: relative;
+      overflow: hidden;
+      max-width: 292px;
+    }
+    .b1-brand-name {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 11.5px;
+      color: #F5F2EB;
+    }
+    .b1-verified-seal {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FFC66E, #E86C42);
+      color: #181716;
+      font-size: 8.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .b1-badge-tag {
+      background: rgba(200, 75, 49, 0.32);
+      border: 1px solid rgba(232, 108, 66, 0.65);
+      color: #FFC66E;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 8px;
+      padding: 1px 5px;
+      border-radius: 999px;
+    }
+    .b1-sub-row {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 10.5px;
+      color: #FFC66E;
+      white-space: nowrap;
+      margin-top: 1px;
+    }
+    .b1-shimmer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -65%;
+      width: 42%;
+      background: linear-gradient(90deg, transparent, rgba(255, 220, 160, 0.38), transparent);
+      transform: skewX(-22deg);
+    }
+
+    /* BRAND 02 SMALL */
+    .b2-editorial-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 286px;
+    }
+    .b2-laser-axis {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: -8px;
+      z-index: 3;
+    }
+    .b2-laser-line {
+      flex: 1;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, #FFC66E, #C84B31);
+    }
+    .b2-laser-line.right {
+      background: linear-gradient(90deg, #C84B31, #FFC66E, transparent);
+    }
+    .b2-crest-diamond {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #181716;
+      border: 1.8px solid #FFC66E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .b2-crest-diamond .mono-txt {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: #FFC66E;
+    }
+    .b2-crest-diamond img.custom-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .b2-paper-card {
+      width: 100%;
+      background: rgba(245, 242, 235, 0.96);
+      color: #181716;
+      border-radius: 10px;
+      border-top: 2.5px solid #C84B31;
+      border-bottom: 1.5px solid #181716;
+      padding: 10px 12px 6px;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.52);
+    }
+    .b2-brand-name {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 11.5px;
+      color: #181716;
+      letter-spacing: 1px;
+    }
+    .b2-stamp {
+      background: #C84B31;
+      color: #FFF;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 7.5px;
+      padding: 1.5px 5px;
+      border-radius: 4px;
+    }
+    .b2-tagline {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      font-size: 10.5px;
+      color: #C43E24;
+      margin-top: 1px;
+    }
+
+    /* BRAND 03 SMALL */
+    .b3-dock-card {
+      background: rgba(20, 19, 18, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 198, 110, 0.30);
+      border-radius: 11px;
+      padding: 5px 11px 5px 6px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.62);
+      position: relative;
+      max-width: 294px;
+    }
+    .b3-avatar-box {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #C84B31, #8F2812);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .b3-avatar-box .mono-txt {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 13px;
+      color: #FFF;
+    }
+    .b3-avatar-box img.custom-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .b3-drum-viewport {
+      height: 32px;
+      width: 215px;
+      overflow: hidden;
+      position: relative;
+      perspective: 500px;
+    }
+    .b3-drum-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .b3-face-kicker {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 8px;
+      color: #94A3B8;
+      text-transform: uppercase;
+    }
+    .b3-face-main {
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 11.5px;
+      color: #F5F2EB;
+      white-space: nowrap;
+    }
+    .b3-face-main.italic-gold {
+      font-family: 'SVN-Acta-BI', serif;
+      font-style: italic;
+      color: #FFC66E;
+    }
+    .b3-follow-pill {
+      background: #FFC66E;
+      color: #181716;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 8.5px;
+      padding: 1.5px 6px;
+      border-radius: 999px;
+      margin-left: 4px;
+    }
+
+    /* SUBTITLE PHƯƠNG ÁN 5B */
+    .sub-5b-card {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 474px;
+      min-height: 46px;
+      background: rgba(22, 20, 19, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 248, 235, 0.16);
+      border-top: 2px solid #DA5C3A;
+      border-bottom: 1.5px solid rgba(255, 220, 170, 0.28);
+      border-radius: 10px;
+      padding: 6px 10px 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 30;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.52);
+    }
+    .sub-5b-line {
+      font-family: 'FDAeonik-Med', sans-serif;
+      font-size: 13.8px;
+      line-height: 16.8px;
+      color: #F5F2EB;
+      white-space: nowrap;
+    }
+    .sub-5b-kw {
+      font-family: 'SVN-Acta-BI', serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 13.5px;
+      color: #FFC66E;
+      position: relative;
+      display: inline-block;
+      padding: 0 2px;
+    }
+    .sub-5b-kw::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 1.8px;
+      background: #E86C42;
+    }
+    .platform-send-msg-bar {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 12px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      z-index: 25;
+      font-size: 10.5px;
+      color: #F5F2EB;
+    }
+
+    .btn-choose-brand {
+      width: 100%;
+      background: rgba(255, 198, 110, 0.14);
+      border: 1.5px solid #FFC66E;
+      color: #FFC66E;
+      padding: 8.5px 12px;
+      border-radius: 10px;
+      font-family: 'FDAeonik-Bold', sans-serif;
+      font-size: 12.2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .phone-column.selected-brand .btn-choose-brand, .btn-choose-brand:hover {
+      background: #FFC66E;
+      color: #181716;
+    }
+  </style>
+</head>
+<body class="pos-center">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>
+      <h1>🏷️ STUDIO HỆ THỐNG MOTION LOGO THƯƠNG HIỆU / KÊNH (KIỂU NHỎ TRONG CLIP & KIỂU TO CUỐI CLIP TRÊN NỀN ĐEN)</h1>
+      <p>Gồm đủ 2 tầng: <b>(1) Kiểu To Trên Nền Đen Sau Khi Kết Thúc Clip</b> (Tùy chọn Chỉ Logo Thông Tin hoặc Kèm CTA) & <b>(2) Kiểu Nhỏ Trên Đỉnh Khi Đang Phát Clip</b></p>
+    </div>
+    <div class="top-actions">
+      <button class="btn-top primary" onclick="replayAllAnimations()">▶ Phát Lại Đồng Bộ Tất Cả Motion</button>
+      <button class="btn-top" id="btn-trans-demo" onclick="playVideoToBlackOutroTransition()">🎬 Xem Chuyển Cảnh: Hết Clip ➔ Sang Nền Đen Outro</button>
+      <a class="btn-top" href="./cta_3_motion_studio.html" target="_blank">🎯 Mở Studio 3 CTA ↗</a>
+      <a class="btn-top" href="./studio_35_kieu_chu_va_phu_de.html" target="_blank">🎨 Mở 35 Kiểu Chữ + Phụ Đề 5B ↗</a>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <!-- LEFT DOCK: UNIVERSAL BRAND & OUTRO TWEAKS SCHEMA -->
+    <div class="tweaks-panel">
+      <div class="panel-title">
+        <span>⚙️ Bảng Biến Thương Hiệu & Outro</span>
+        <span style="font-size:9.5px; background:rgba(0,255,180,0.15); color:#00FFB4; padding:2px 6px; border-radius:6px;">2-Tier Schema</span>
+      </div>
+
+      <div class="preset-row">
+        <button class="btn-preset active" id="preset-1" onclick="loadBrandPreset(1)">
+          💄 1. Video Hiện Tại: Thắm Thỏ Beauty (Detox Môi)
+        </button>
+        <button class="btn-preset" id="preset-2" onclick="loadBrandPreset(2)">
+          🚀 2. Kênh Chuyên Gia: Nguyễn Việt • FEDU
+        </button>
+        <button class="btn-preset" id="preset-3" onclick="loadBrandPreset(3)">
+          🦷 3. Phòng Khám: Tiến Nha Sĩ • Implant Chuẩn Y Khoa
+        </button>
+        <button class="btn-preset" id="preset-4" onclick="loadBrandPreset(4)">
+          🔬 4. Viện Da Liễu: Dr. Derma Clinical Lab
+        </button>
+      </div>
+
+      <!-- CUSTOM LOGO UPLOAD -->
+      <div class="field-group">
+        <label>🖼️ Ảnh Logo (Áp dụng cho cả Kiểu Nhỏ & Kiểu To Nền Đen):</label>
+        <div class="logo-upload-row">
+          <label class="btn-upload" for="inp-logo-file">📁 Tải Ảnh Logo Từ Máy...</label>
+          <input type="file" id="inp-logo-file" accept="image/*" style="display:none" onchange="handleLogoUpload(event)">
+          <button class="seg-pill-btn" onclick="clearCustomLogo()" style="padding:6px 8px;">↺ Chữ</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>🖤 Tùy Chọn Màn Hình Đen Cuối Clip (Outro Mode):</label>
+        <div class="seg-pills" style="grid-template-columns: 1fr 1fr;">
+          <button class="seg-pill-btn active" id="left-mode-pure" onclick="setOutroContentMode('pure')">🏛️ Chỉ Logo + TT Thương Hiệu</button>
+          <button class="seg-pill-btn" id="left-mode-cta" onclick="setOutroContentMode('cta')">🔥 Thêm Cả CTA Trên Nền Đen</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>1. Chữ Monogram Logo (logoMonogram):</label>
+        <input type="text" id="inp-mono" value="TT" maxlength="4" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>2. Tên Thương Hiệu / Kênh (brandName):</label>
+        <input type="text" id="inp-name" value="THẮM THỎ BEAUTY" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>3. Định Vị / Slogan (brandTagline):</label>
+        <input type="text" id="inp-tagline" value="Chuyên gia Detox & Khử thâm môi" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>4. Thông Tin Cơ Sở / Dịch Vụ (brandInfo1):</label>
+        <input type="text" id="inp-info1" value="Phác đồ Khử thâm & Phục hồi nền môi Y Khoa" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>5. Địa Chỉ / Hotline Tư Vấn (brandInfo2):</label>
+        <input type="text" id="inp-info2" value="Hotline / Zalo: 0988.668.xxx • Đặt lịch 1:1" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>6. ID Kênh Chính Thức (channelHandle):</label>
+        <input type="text" id="inp-handle" value="@thamtho.beauty" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>7. Nhãn Xác Thực (badgeLabel):</label>
+        <input type="text" id="inp-badge" value="OFFICIAL" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>8. [Khi Bật CTA Nền Đen] Ưu Đãi & Giá (outroCtaOffer):</label>
+        <input type="text" id="inp-cta-offer" value="ƯU ĐÃI BUỔI DETOX ĐẦU • 499 NGHÌN" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>9. [Khi Bật CTA Nền Đen] Nút Bấm (outroCtaBtn):</label>
+        <input type="text" id="inp-cta-btn" value="💬 INBOX CHO THẮM THỎ TƯ VẤN NGAY ↓" oninput="syncAllTweaks()">
+      </div>
+      <div class="field-group">
+        <label>📐 Vị Trí Kiểu Nhỏ Trong Clip:</label>
+        <div class="seg-pills">
+          <button class="seg-pill-btn" id="pos-btn-left" onclick="setLogoPosition('left')">↖ Góc Trái</button>
+          <button class="seg-pill-btn active" id="pos-btn-center" onclick="setLogoPosition('center')">⬆ Giữa Trên</button>
+          <button class="seg-pill-btn" id="pos-btn-right" onclick="setLogoPosition('right')">↗ Góc Phải</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: BOTH TIERS (TIER A: BIG BLACK OUTRO + TIER B: SMALL IN-VIDEO PILL) -->
+    <div class="right-stages-col">
+
+      <!-- =================================================================== -->
+      <!-- KHU VỰC I: KIỂU TO Ở CUỐI SAU KHI KẾT THÚC CLIP TRÊN NỀN ĐEN        -->
+      <!-- =================================================================== -->
+      <div class="tier-section-box" id="tier-outro-section">
+        <div class="tier-header-bar">
+          <div class="tier-header-title">
+            <span class="tier-pill-tag">TẦNG 1 • CUỐI CLIP TRÊN NỀN ĐEN</span>
+            <h2>🖤 3 Kiểu Motion Logo To & Thông Tin Thương Hiệu Sau Khi Kết Thúc Clip (Full-Screen Black Outro)</h2>
+          </div>
+          <div class="outro-mode-switcher">
+            <button class="mode-switch-btn active" id="top-mode-pure" onclick="setOutroContentMode('pure')">
+              🏛️ Tùy Chọn 1: Chỉ Logo To + Thông Tin Thương Hiệu
+            </button>
+            <button class="mode-switch-btn" id="top-mode-cta" onclick="setOutroContentMode('cta')">
+              🔥 Tùy Chọn 2: Thêm Cả CTA Ưu Đãi Trên Nền Đen
+            </button>
+            <button class="mode-switch-btn trans-btn" id="top-mode-trans" onclick="playVideoToBlackOutroTransition()">
+              🎬 Chạy Thử Hết Video ➔ Vào Nền Đen
+            </button>
+          </div>
+        </div>
+
+        <div class="phones-grid">
+
+          <!-- ============================================================= -->
+          <!-- OUTRO 01: OBSIDIAN GOLD HALO & GLASS MONOLITH                 -->
+          <!-- ============================================================= -->
+          <div class="phone-column selected-brand" id="col-outro-1">
+            <div class="brand-header-card">
+              <span class="brand-badge">OUTRO 01 • GOLD HALO MONOLITH</span>
+              <span style="font-size:10.5px; color:#00FFB4; font-weight:700;">★ Khuyên dùng</span>
+            </div>
+            <div class="brand-title">01. Hào Quang Vàng Kim + Logo Lớn & Thẻ Kính Đen</div>
+            <div class="brand-desc">Nền đen sâu <code>#050507</code> tỏa quầng sáng vàng ➔ Vòng tròn Logo lớn xoay kép + Tên thương hiệu cỡ lớn + Thẻ kính thông tin (và tùy chọn Thẻ Vé CTA).</div>
+
+            <div class="phone-viewport" id="vp-outro-1">
+              <video class="phone-video" id="vid-outro-1" src="./cta_segment_clean_eyelock.mp4" poster="./cta_poster_frame.jpg" playsinline muted></video>
+
+              <!-- FULL-SCREEN BLACK OUTRO CANVAS -->
+              <div class="outro-black-canvas" id="canvas-outro-1">
+                <div class="outro-aura-glow" id="o1-aura"></div>
+
+                <div class="o1-wrap">
+                  <!-- Big Centered Logo Pedestal -->
+                  <div class="o1-logo-pedestal" id="o1-pedestal">
+                    <div class="o1-orbit-ring-outer" id="o1-ring-out"></div>
+                    <div class="o1-orbit-ring-inner" id="o1-ring-in"></div>
+                    <div class="o1-big-emblem">
+                      <span class="mono-txt" id="o1-mono">TT</span>
+                      <img class="custom-logo-img" alt="logo">
+                    </div>
+                    <div class="o1-verified-pill">✓ <span id="o1-badge">OFFICIAL</span></div>
+                  </div>
+
+                  <!-- Big Brand Title & Tagline -->
+                  <div class="o1-brand-title" id="o1-name">THẮM THỎ BEAUTY</div>
+                  <div class="o1-brand-tagline" id="o1-tagline">Chuyên gia Detox & Khử thâm môi</div>
+                  <div class="o1-divider-line" id="o1-div"></div>
+
+                  <!-- Brand Information Card -->
+                  <div class="o1-info-card" id="o1-info">
+                    <div class="o1-info-row">
+                      <div class="o1-info-icon">✦</div>
+                      <span id="o1-info1">Phác đồ Khử thâm & Phục hồi nền môi Y Khoa</span>
+                    </div>
+                    <div class="o1-info-row">
+                      <div class="o1-info-icon">📞</div>
+                      <span id="o1-info2">Hotline / Zalo: 0988.668.xxx • Đặt lịch 1:1</span>
+                    </div>
+                    <div class="o1-info-row">
+                      <div class="o1-info-icon">🌐</div>
+                      <span>Kênh chính thức: <b style="color:#FFC66E;" id="o1-handle">@thamtho.beauty</b></span>
+                    </div>
+                  </div>
+
+                  <!-- Pure Brand Mode Footer (Hidden when CTA mode is active) -->
+                  <div class="outro-pure-footer" id="o1-pure-foot">
+                    <span>🔔 FOLLOW KÊNH ĐỂ XEM PHÁC ĐỒ MỚI NHẤT</span>
+                  </div>
+
+                  <!-- Optional CTA Block on Black Canvas -->
+                  <div class="outro-cta-block" id="o1-cta-block">
+                    <div class="o-cta-ticket">
+                      <div>
+                        <div class="o-cta-kicker" id="o1-cta-kicker">✦ ƯU ĐÃI BUỔI DETOX ĐẦU • 499 NGHÌN</div>
+                        <div class="o-cta-sub">Giữ suất trải nghiệm ngay hôm nay</div>
+                      </div>
+                      <div class="o-cta-price" id="o1-cta-price">499K</div>
+                    </div>
+                    <div class="o-cta-btn-pill" id="o1-cta-btn">💬 INBOX CHO THẮM THỎ TƯ VẤN NGAY ↓</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-choose-brand" onclick="selectOutro(1)">✅ Chọn Kiểu Cuối Clip OUTRO 01 (Hào Quang Vàng Kim)</button>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- OUTRO 02: ROYAL EDITORIAL SEAL & LASER FRAME                  -->
+          <!-- ============================================================= -->
+          <div class="phone-column" id="col-outro-2">
+            <div class="brand-header-card">
+              <span class="brand-badge">OUTRO 02 • ROYAL LASER FRAME</span>
+              <span style="font-size:10.5px; color:#94A3B8;">Tương phản Đen – Kem</span>
+            </div>
+            <div class="brand-title">02. Khung Tia Laser 4 Góc + Ấn Chương & Sổ Tạp Chí</div>
+            <div class="brand-desc">4 tia Laser chạy đóng khung viền vàng trên nền đen ➔ Ấn chương lớn đóng dấu + Thẻ hồ sơ thương hiệu giấy kem <code>#F5F2EB</code> sang trọng.</div>
+
+            <div class="phone-viewport" id="vp-outro-2">
+              <video class="phone-video" id="vid-outro-2" src="./cta_segment_clean_eyelock.mp4" poster="./cta_poster_frame.jpg" playsinline muted></video>
+
+              <!-- FULL-SCREEN BLACK OUTRO CANVAS -->
+              <div class="outro-black-canvas" id="canvas-outro-2">
+                <div class="o2-laser-frame" id="o2-frame">
+                  <div class="o2-corner tl"></div>
+                  <div class="o2-corner tr"></div>
+                  <div class="o2-corner bl"></div>
+                  <div class="o2-corner br"></div>
+                </div>
+
+                <div class="o2-wrap">
+                  <div class="o2-crest-shield" id="o2-shield">
+                    <span class="mono-txt" id="o2-mono">TT</span>
+                    <img class="custom-logo-img" alt="logo">
+                  </div>
+
+                  <div class="o2-kicker-wings" id="o2-wings">
+                    <div class="o2-wing-line"></div>
+                    <span style="font-family:'FDAeonik-Bold',sans-serif; font-size:9px; color:#FFC66E; letter-spacing:1.2px;" id="o2-badge">OFFICIAL</span>
+                    <div class="o2-wing-line r"></div>
+                  </div>
+
+                  <div class="o1-brand-title" id="o2-name">THẮM THỎ BEAUTY</div>
+                  <div class="o1-brand-tagline" id="o2-tagline">Chuyên gia Detox & Khử thâm môi</div>
+
+                  <!-- Editorial Ivory Brand Ledger on Black -->
+                  <div class="o2-editorial-paper-ledger" id="o2-ledger">
+                    <div class="o2-ledger-row">
+                      <span>CHUYÊN KHOA</span>
+                      <b id="o2-info1">Phác đồ Khử thâm & Phục hồi nền môi Y Khoa</b>
+                    </div>
+                    <div class="o2-ledger-row">
+                      <span>LIÊN HỆ</span>
+                      <b id="o2-info2">Hotline / Zalo: 0988.668.xxx • Đặt lịch 1:1</b>
+                    </div>
+                    <div class="o2-ledger-row">
+                      <span>KÊNH CHÍNH THỨC</span>
+                      <b style="color:#C84B31;" id="o2-handle">@thamtho.beauty</b>
+                    </div>
+                  </div>
+
+                  <div class="outro-pure-footer" id="o2-pure-foot">
+                    <span>✦ THƯƠNG HIỆU ĐÃ XÁC THỰC CHÍNH CHỦ ✦</span>
+                  </div>
+
+                  <!-- Optional CTA Block -->
+                  <div class="outro-cta-block" id="o2-cta-block">
+                    <div class="o-cta-ticket" style="background:rgba(28,25,23,0.95); color:#F5F2EB; border:1.5px solid #FFC66E;">
+                      <div>
+                        <div class="o-cta-kicker" style="color:#FFC66E;" id="o2-cta-kicker">✦ ƯU ĐÃI BUỔI DETOX ĐẦU • 499 NGHÌN</div>
+                        <div class="o-cta-sub" style="color:#F5F2EB;">Áp dụng cho khách đặt lịch trên kênh</div>
+                      </div>
+                      <div class="o-cta-price" id="o2-cta-price">499K</div>
+                    </div>
+                    <div class="o-cta-btn-pill" id="o2-cta-btn">💬 INBOX CHO THẮM THỎ TƯ VẤN NGAY ↓</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-choose-brand" onclick="selectOutro(2)">✅ Chọn Kiểu Cuối Clip OUTRO 02 (Khung Laser & Ấn Chương)</button>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- OUTRO 03: BENTO 3D IDENTITY GRID STACK                        -->
+          <!-- ============================================================= -->
+          <div class="phone-column" id="col-outro-3">
+            <div class="brand-header-card">
+              <span class="brand-badge">OUTRO 03 • 3D BENTO IDENTITY</span>
+              <span style="font-size:10.5px; color:#94A3B8;">Bố cục Bento 3D Hiện Đại</span>
+            </div>
+            <div class="brand-title">03. Lưới Thẻ Bento 3D Xếp Tầng Trên Nền Đen</div>
+            <div class="brand-desc">3 khối Bento 3D lật mở liên hoàn trên nền đen: <b>Khối Logo To & Định Vị</b> ➔ <b>2 Ô Bento Chuyên Khoa & Liên Hệ</b> ➔ <b>Thanh Follow / CTA</b>.</div>
+
+            <div class="phone-viewport" id="vp-outro-3">
+              <video class="phone-video" id="vid-outro-3" src="./cta_segment_clean_eyelock.mp4" poster="./cta_poster_frame.jpg" playsinline muted></video>
+
+              <!-- FULL-SCREEN BLACK OUTRO CANVAS -->
+              <div class="outro-black-canvas" id="canvas-outro-3">
+                <div class="o3-wrap">
+                  <!-- Top Hero Bento Card -->
+                  <div class="o3-bento-hero" id="o3-hero">
+                    <div class="o3-hero-logo">
+                      <span class="mono-txt" id="o3-mono">TT</span>
+                      <img class="custom-logo-img" alt="logo">
+                    </div>
+                    <div>
+                      <div style="font-family:'FDAeonik-Bold',sans-serif; font-size:8.5px; color:#00FFB4; letter-spacing:0.6px;">● <span id="o3-badge">OFFICIAL</span> BRAND PROFILE</div>
+                      <div style="font-family:'FDAeonik-Bold',sans-serif; font-size:18px; color:#FFF; margin-top:2px; white-space:nowrap;" id="o3-name">THẮM THỎ BEAUTY</div>
+                      <div style="font-family:'SVN-Acta-BI',serif; font-style:italic; font-size:13px; color:#FFC66E; margin-top:1px; white-space:nowrap;" id="o3-tagline">Chuyên gia Detox & Khử thâm môi</div>
+                    </div>
+                  </div>
+
+                  <!-- Middle 2-Column Bento Info Grid -->
+                  <div class="o3-grid-2col" id="o3-grid">
+                    <div class="o3-bento-cell">
+                      <div class="o3-cell-lbl">✦ DỊCH VỤ MŨI NHỌN</div>
+                      <div class="o3-cell-val" id="o3-info1">Phác đồ Khử thâm & Phục hồi nền môi Y Khoa</div>
+                    </div>
+                    <div class="o3-bento-cell">
+                      <div class="o3-cell-lbl">📞 ĐẶT LỊCH & TƯ VẤN</div>
+                      <div class="o3-cell-val" id="o3-info2">Hotline / Zalo: 0988.668.xxx • Đặt lịch 1:1</div>
+                    </div>
+                  </div>
+
+                  <!-- Channel Handle Bento Bar -->
+                  <div class="o3-bento-cell" id="o3-channel-bar" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                    <div>
+                      <div class="o3-cell-lbl">🌐 KÊNH CHÍNH THỨC</div>
+                      <div style="font-family:'FDAeonik-Bold',sans-serif; font-size:13px; color:#FFF; margin-top:2px;" id="o3-handle">@thamtho.beauty</div>
+                    </div>
+                    <span style="background:#FFC66E; color:#181716; font-family:'FDAeonik-Bold',sans-serif; font-size:10px; padding:5px 11px; border-radius:999px;">+ THEO DÕI KÊNH</span>
+                  </div>
+
+                  <!-- Optional CTA Block -->
+                  <div class="outro-cta-block" id="o3-cta-block">
+                    <div class="o-cta-ticket">
+                      <div>
+                        <div class="o-cta-kicker" id="o3-cta-kicker">✦ ƯU ĐÃI BUỔI DETOX ĐẦU • 499 NGHÌN</div>
+                        <div class="o-cta-sub">Nhắn tin ngay để giữ suất ưu đãi</div>
+                      </div>
+                      <div class="o-cta-price" id="o3-cta-price">499K</div>
+                    </div>
+                    <div class="o-cta-btn-pill" id="o3-cta-btn">💬 INBOX CHO THẮM THỎ TƯ VẤN NGAY ↓</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-choose-brand" onclick="selectOutro(3)">✅ Chọn Kiểu Cuối Clip OUTRO 03 (Lưới Bento 3D)</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =================================================================== -->
+      <!-- KHU VỰC II: KIỂU NHỎ TRONG KHI ĐANG PHÁT CLIP (HEADROOM Y=58..178PX)-->
+      <!-- =================================================================== -->
+      <div class="tier-section-box">
+        <div class="tier-header-bar">
+          <div class="tier-header-title">
+            <span class="tier-pill-tag" style="background:rgba(255,198,110,0.2); border:1px solid #FFC66E; color:#FFC66E;">TẦNG 2 • KIỂU NHỎ TRONG CLIP</span>
+            <h2>🏷️ 3 Kiểu Motion Logo Nhỏ Trên Đỉnh Trong Khi Đang Phát Clip (Vùng Headroom An Toàn Y=58..178px)</h2>
+          </div>
+          <div class="outro-mode-switcher">
+            <button class="mode-switch-btn active" onclick="replaySmallBrands()">▶ Phát Lại 3 Kiểu Nhỏ</button>
+          </div>
+        </div>
+
+        <div class="phones-grid">
+
+          <!-- SMALL BRAND 01 -->
+          <div class="phone-column selected-brand" id="col-brand-1">
+            <div class="brand-header-card">
+              <span class="brand-badge">BRAND 01 NHỎ • PIN_06 + PIN_07</span>
+              <span style="font-size:10.5px; color:#00FFB4; font-weight:700;">★ Đồng bộ Phụ đề 5B</span>
+            </div>
+            <div class="brand-title">01. Viên Thuốc Kính Tối + Ấn Xác Thực & Shimmer</div>
+            <div class="brand-desc">Bung nhận diện ở đầu clip rồi thu gọn <code>88%</code> làm Watermark sống động phía trên đỉnh đầu chủ thể.</div>
+
+            <div class="phone-viewport">
+              <video class="phone-video" id="vid-1" src="./intro_segment_clean_eyelock.mp4" poster="./intro_poster_frame.jpg" playsinline muted loop autoplay></video>
+              <div class="brand-stage-anchor">
+                <div class="b1-pill-card" id="b1-card">
+                  <div class="b1-shimmer" id="b1-shimmer"></div>
+                  <div class="logo-emblem-circle">
+                    <span class="mono-txt" id="b1-mono">TT</span>
+                    <img class="custom-logo-img" alt="logo">
+                  </div>
+                  <div id="b1-text-col">
+                    <div style="display:flex; align-items:center; gap:5px;">
+                      <span class="b1-brand-name" id="b1-name">THẮM THỎ BEAUTY</span>
+                      <span class="b1-verified-seal" id="b1-seal">✓</span>
+                      <span class="b1-badge-tag" id="b1-badge">OFFICIAL</span>
+                    </div>
+                    <div class="b1-sub-row" id="b1-tagline">Chuyên gia Detox & Khử thâm môi</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-5b-card">
+                <div class="sub-5b-line" id="sub1-l1"><span class="sub-5b-kw">Môi thâm</span></div>
+                <div class="sub-5b-line" id="sub1-l2">do hút thuốc lâu năm</div>
+              </div>
+              <div class="platform-send-msg-bar">
+                <span>💬 Gửi tin nhắn cho trang...</span>
+                <span style="color:#FFC66E; font-weight:700;">Gửi ➤</span>
+              </div>
+            </div>
+            <button class="btn-choose-brand" onclick="selectSmallBrand(1)">✅ Chọn Kiểu Nhỏ BRAND 01</button>
+          </div>
+
+          <!-- SMALL BRAND 02 -->
+          <div class="phone-column" id="col-brand-2">
+            <div class="brand-header-card">
+              <span class="brand-badge">BRAND 02 NHỎ • RISO_09</span>
+              <span style="font-size:10.5px; color:#94A3B8;">Đồng bộ Vé CTA 01</span>
+            </div>
+            <div class="brand-title">02. Ấn Chương Tạp Chí Giấy Kem + Tia Laser Vàng</div>
+            <div class="brand-desc">Đường chỉ Laser tự vẽ từ tâm + Ấn chương Monogram & Thẻ giấy kem <code>#F5F2EB</code> viền đỏ đất.</div>
+
+            <div class="phone-viewport">
+              <video class="phone-video" id="vid-2" src="./intro_segment_clean_eyelock.mp4" poster="./intro_poster_frame.jpg" playsinline muted loop autoplay></video>
+              <div class="brand-stage-anchor">
+                <div class="b2-editorial-wrap" id="b2-wrap">
+                  <div class="b2-laser-axis">
+                    <div class="b2-laser-line left" id="b2-line-l"></div>
+                    <div class="b2-crest-diamond" id="b2-crest">
+                      <span class="mono-txt" id="b2-mono">TT</span>
+                      <img class="custom-logo-img" alt="logo">
+                    </div>
+                    <div class="b2-laser-line right" id="b2-line-r"></div>
+                  </div>
+                  <div class="b2-paper-card" id="b2-paper">
+                    <div style="display:flex; align-items:center; justify-content:center; gap:6px;">
+                      <span class="b2-brand-name" id="b2-name">THẮM THỎ BEAUTY</span>
+                      <span class="b2-stamp" id="b2-badge">OFFICIAL</span>
+                    </div>
+                    <div class="b2-tagline" id="b2-tagline">Chuyên gia Detox & Khử thâm môi</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-5b-card">
+                <div class="sub-5b-line" id="sub2-l1"><span class="sub-5b-kw">Môi thâm</span></div>
+                <div class="sub-5b-line" id="sub2-l2">do hút thuốc lâu năm</div>
+              </div>
+              <div class="platform-send-msg-bar">
+                <span>💬 Gửi tin nhắn cho trang...</span>
+                <span style="color:#FFC66E; font-weight:700;">Gửi ➤</span>
+              </div>
+            </div>
+            <button class="btn-choose-brand" onclick="selectSmallBrand(2)">✅ Chọn Kiểu Nhỏ BRAND 02</button>
+          </div>
+
+          <!-- SMALL BRAND 03 -->
+          <div class="phone-column" id="col-brand-3">
+            <div class="brand-header-card">
+              <span class="brand-badge">BRAND 03 NHỎ • 3D DRUM</span>
+              <span style="font-size:10.5px; color:#94A3B8;">Lật 3 Mặt Tự Động</span>
+            </div>
+            <div class="brand-title">03. Trụ Lật 3D: Brand ➔ Chuyên Môn ➔ @Kênh</div>
+            <div class="brand-desc">Trụ guồng quay 3D tự động lật 3 mặt thông tin mỗi <code>2.2s</code> ngay trên góc đỉnh màn hình.</div>
+
+            <div class="phone-viewport">
+              <video class="phone-video" id="vid-3" src="./intro_segment_clean_eyelock.mp4" poster="./intro_poster_frame.jpg" playsinline muted loop autoplay></video>
+              <div class="brand-stage-anchor">
+                <div class="b3-dock-card" id="b3-card">
+                  <div class="b3-avatar-box">
+                    <span class="mono-txt" id="b3-mono">TT</span>
+                    <img class="custom-logo-img" alt="logo">
+                  </div>
+                  <div class="b3-drum-viewport">
+                    <div class="b3-drum-face" id="b3-face-1">
+                      <div class="b3-face-kicker"><span style="color:#00FFB4;">●</span> <span id="b3-badge-1">OFFICIAL</span> CHANNEL</div>
+                      <div class="b3-face-main"><span id="b3-name">THẮM THỎ BEAUTY</span> <span style="color:#FFC66E;">✓</span></div>
+                    </div>
+                    <div class="b3-drum-face" id="b3-face-2">
+                      <div class="b3-face-kicker">✦ ĐỊNH VỊ CHUYÊN KHOA</div>
+                      <div class="b3-face-main italic-gold" id="b3-tagline">Chuyên gia Detox & Khử thâm môi</div>
+                    </div>
+                    <div class="b3-drum-face" id="b3-face-3">
+                      <div class="b3-face-kicker">🔍 TÌM KIẾM & FOLLOW</div>
+                      <div class="b3-face-main"><span id="b3-handle">@thamtho.beauty</span> <span class="b3-follow-pill">+ FOLLOW</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-5b-card">
+                <div class="sub-5b-line" id="sub3-l1"><span class="sub-5b-kw">Môi thâm</span></div>
+                <div class="sub-5b-line" id="sub3-l2">do hút thuốc lâu năm</div>
+              </div>
+              <div class="platform-send-msg-bar">
+                <span>💬 Gửi tin nhắn cho trang...</span>
+                <span style="color:#FFC66E; font-weight:700;">Gửi ➤</span>
+              </div>
+            </div>
+            <button class="btn-choose-brand" onclick="selectSmallBrand(3)">✅ Chọn Kiểu Nhỏ BRAND 03</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const BRAND_PRESETS = {
+      1: {
+        mono: "TT",
+        name: "THẮM THỎ BEAUTY",
+        tagline: "Chuyên gia Detox & Khử thâm môi",
+        info1: "Phác đồ Khử thâm & Phục hồi nền môi Y Khoa",
+        info2: "Hotline / Zalo: 0988.668.xxx • Đặt lịch 1:1",
+        handle: "@thamtho.beauty",
+        badge: "OFFICIAL",
+        ctaOffer: "ƯU ĐÃI BUỔI DETOX ĐẦU • 499 NGHÌN",
+        ctaBtn: "💬 INBOX CHO THẮM THỎ TƯ VẤN NGAY ↓"
+      },
+      2: {
+        mono: "NV",
+        name: "NGUYỄN VIỆT • FEDU",
+        tagline: "Hệ thống AI & Xây kênh thực chiến",
+        info1: "Đào tạo & Chuyển giao Quy trình AI Tự Động Hóa",
+        info2: "Website: fedu.vn • Cộng đồng Học viên FEDU",
+        handle: "@nguyenviet.fedu",
+        badge: "FOUNDER",
+        ctaOffer: "TẶNG BỘ KHUÔN MOTION & AUTO-EDIT V3",
+        ctaBtn: "🔗 BẤM VÀO LINK BIO NHẬN NGAY HÔM NAY ↓"
+      },
+      3: {
+        mono: "TN",
+        name: "TIẾN NHA SĨ",
+        tagline: "Cấy ghép Implant & Nha khoa chuẩn Y",
+        info1: "Chuyên khoa Phục hình Răng & Implant Không Đau",
+        info2: "Hotline: 0912.xxx.xxx • Khám & Chụp CT 3D",
+        handle: "@tiennhasi.clinic",
+        badge: "VERIFIED",
+        ctaOffer: "MIỄN PHÍ 100% CHỤP PHIM CT CONE BEAM 3D",
+        ctaBtn: "📩 ĐẶT LỊCH THĂM KHÁM CÙNG BÁC SĨ NGAY ↓"
+      },
+      4: {
+        mono: "DL",
+        name: "DR. DERMA LAB",
+        tagline: "Phác đồ Da liễu & Giải phẫu Mô học",
+        info1: "Điều trị Sắc tố & Trẻ hóa Da công nghệ cao",
+        info2: "Phòng khám Chuyên khoa Da liễu Chuẩn Quốc Tế",
+        handle: "@dr.dermalab",
+        badge: "CLINICAL",
+        ctaOffer: "ƯU ĐÃI 50% BUỔI SOI DA & PHÁC ĐỒ ĐẦU TIÊN",
+        ctaBtn: "💬 NHẮN TIN NHẬN PHÁC ĐỒ CÁ NHÂN HÓA ↓"
+      }
+    };
+
+    let tlO1 = null, tlO2 = null, tlO3 = null;
+    let tlB1 = null, tlB2 = null, tlB3 = null;
+    let transTimer = null;
+
+    function loadBrandPreset(id) {
+      [1, 2, 3, 4].forEach(i => document.getElementById('preset-' + i).classList.toggle('active', i === id));
+      const p = BRAND_PRESETS[id];
+      document.getElementById('inp-mono').value = p.mono;
+      document.getElementById('inp-name').value = p.name;
+      document.getElementById('inp-tagline').value = p.tagline;
+      document.getElementById('inp-info1').value = p.info1;
+      document.getElementById('inp-info2').value = p.info2;
+      document.getElementById('inp-handle').value = p.handle;
+      document.getElementById('inp-badge').value = p.badge;
+      document.getElementById('inp-cta-offer').value = p.ctaOffer;
+      document.getElementById('inp-cta-btn').value = p.ctaBtn;
+      syncAllTweaks();
+      replayAllAnimations();
+    }
+
+    function syncAllTweaks() {
+      const mono = document.getElementById('inp-mono').value || 'TT';
+      const name = document.getElementById('inp-name').value || 'THẮM THỎ BEAUTY';
+      const tagline = document.getElementById('inp-tagline').value || '';
+      const info1 = document.getElementById('inp-info1').value || '';
+      const info2 = document.getElementById('inp-info2').value || '';
+      const handle = document.getElementById('inp-handle').value || '@channel';
+      const badge = document.getElementById('inp-badge').value || 'OFFICIAL';
+      const ctaOffer = document.getElementById('inp-cta-offer').value || '';
+      const ctaBtn = document.getElementById('inp-cta-btn').value || '';
+
+      // Update Tier 1 (Outro Black Cards 1, 2, 3)
+      [1, 2, 3].forEach(i => {
+        const elMono = document.getElementById(`o${i}-mono`);
+        const elName = document.getElementById(`o${i}-name`);
+        const elTag = document.getElementById(`o${i}-tagline`);
+        const elInfo1 = document.getElementById(`o${i}-info1`);
+        const elInfo2 = document.getElementById(`o${i}-info2`);
+        const elHandle = document.getElementById(`o${i}-handle`);
+        const elBadge = document.getElementById(`o${i}-badge`);
+        const elKicker = document.getElementById(`o${i}-cta-kicker`);
+        const elBtn = document.getElementById(`o${i}-cta-btn`);
+        if (elMono) elMono.innerText = mono;
+        if (elName) elName.innerText = name;
+        if (elTag) elTag.innerText = tagline;
+        if (elInfo1) elInfo1.innerText = info1;
+        if (elInfo2) elInfo2.innerText = info2;
+        if (elHandle) elHandle.innerText = handle;
+        if (elBadge) elBadge.innerText = badge;
+        if (elKicker) elKicker.innerText = '✦ ' + ctaOffer;
+        if (elBtn) elBtn.innerText = ctaBtn;
+      });
+
+      // Update Tier 2 (Small In-Video Pills 1, 2, 3)
+      document.getElementById('b1-mono').innerText = mono;
+      document.getElementById('b1-name').innerText = name;
+      document.getElementById('b1-tagline').innerText = tagline;
+      document.getElementById('b1-badge').innerText = badge;
+
+      document.getElementById('b2-mono').innerText = mono;
+      document.getElementById('b2-name').innerText = name;
+      document.getElementById('b2-tagline').innerText = tagline;
+      document.getElementById('b2-badge').innerText = badge;
+
+      document.getElementById('b3-mono').innerText = mono;
+      document.getElementById('b3-name').innerText = name;
+      document.getElementById('b3-tagline').innerText = tagline;
+      document.getElementById('b3-handle').innerText = handle;
+      document.getElementById('b3-badge-1').innerText = badge;
+    }
+
+    function setOutroContentMode(mode) {
+      // mode: 'pure' (Only Logo + Brand Info) | 'cta' (Logo + Brand Info + CTA on Black)
+      const isCta = (mode === 'cta');
+      document.body.classList.toggle('with-outro-cta', isCta);
+      document.getElementById('top-mode-pure').classList.toggle('active', !isCta);
+      document.getElementById('top-mode-cta').classList.toggle('active', isCta);
+      document.getElementById('left-mode-pure').classList.toggle('active', !isCta);
+      document.getElementById('left-mode-cta').classList.toggle('active', isCta);
+      buildOutroTimelines();
+    }
+
+    function handleLogoUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const dataUri = e.target.result;
+        document.querySelectorAll('img.custom-logo-img').forEach(img => {
+          img.src = dataUri;
+        });
+        document.body.classList.add('has-custom-logo');
+        replayAllAnimations();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearCustomLogo() {
+      document.body.classList.remove('has-custom-logo');
+      document.getElementById('inp-logo-file').value = '';
+      replayAllAnimations();
+    }
+
+    function setLogoPosition(pos) {
+      document.body.classList.remove('pos-left', 'pos-center', 'pos-right');
+      document.body.classList.add('pos-' + pos);
+      ['left', 'center', 'right'].forEach(p => {
+        document.getElementById('pos-btn-' + p).classList.toggle('active', p === pos);
+      });
+      replaySmallBrands();
+    }
+
+    function buildOutroTimelines() {
+      if (tlO1) tlO1.kill();
+      if (tlO2) tlO2.kill();
+      if (tlO3) tlO3.kill();
+
+      // Make sure black canvases are visible
+      gsap.set(['#canvas-outro-1', '#canvas-outro-2', '#canvas-outro-3'], { opacity: 1, pointerEvents: 'auto' });
+
+      // =====================================================================
+      // OUTRO 01: Obsidian Gold Halo -> Big Emblem Rack-Focus -> Info Card -> CTA
+      // =====================================================================
+      tlO1 = gsap.timeline({ repeat: -1, repeatDelay: 1.2 });
+      gsap.to('#o1-ring-out', { rotation: 360, duration: 14, repeat: -1, ease: 'none' });
+      gsap.to('#o1-ring-in', { rotation: -360, duration: 10, repeat: -1, ease: 'none' });
+
+      tlO1.fromTo('#o1-aura', { scale: 0.5, opacity: 0 }, { scale: 1.15, opacity: 1, duration: 0.45, ease: 'power2.out' }, 0.01);
+      tlO1.fromTo('#o1-pedestal',
+        { scale: 1.38, opacity: 0, filter: 'blur(8px)' },
+        { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.36, ease: 'back.out(1.8)' },
+        0.02
+      );
+      tlO1.fromTo(['#o1-name', '#o1-tagline', '#o1-div'],
+        { y: 14, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.32, stagger: 0.05, ease: 'power3.out' },
+        0.10
+      );
+      tlO1.fromTo('#o1-info',
+        { y: 18, opacity: 0, scale: 0.95 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(1.6)' },
+        0.18
+      );
+      tlO1.fromTo(['#o1-pure-foot', '#o1-cta-block'],
+        { y: 16, opacity: 0, scale: 0.94 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(1.8)' },
+        0.26
+      );
+      tlO1.to('#o1-cta-btn', { scale: 1.04, duration: 0.35, yoyo: true, repeat: 8, ease: 'sine.inOut' }, 0.75);
+
+      // =====================================================================
+      // OUTRO 02: 4-Corner Laser Frame -> Royal Shield Stamp -> Ivory Ledger
+      // =====================================================================
+      tlO2 = gsap.timeline({ repeat: -1, repeatDelay: 1.2 });
+      tlO2.fromTo('#o2-frame',
+        { scale: 1.06, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.34, ease: 'power3.out' },
+        0.01
+      );
+      tlO2.fromTo('#o2-shield',
+        { scale: 1.48, opacity: 0, y: -12 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.36, ease: 'back.out(2.0)' },
+        0.03
+      );
+      tlO2.fromTo(['#o2-wings', '#o2-name', '#o2-tagline'],
+        { y: 12, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.30, stagger: 0.05, ease: 'power3.out' },
+        0.10
+      );
+      tlO2.fromTo('#o2-ledger',
+        { scaleX: 0.84, opacity: 0, y: 14 },
+        { scaleX: 1, opacity: 1, y: 0, duration: 0.36, ease: 'back.out(1.6)' },
+        0.18
+      );
+      tlO2.fromTo(['#o2-pure-foot', '#o2-cta-block'],
+        { y: 14, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.34, ease: 'back.out(1.7)' },
+        0.26
+      );
+      tlO2.to('#o2-cta-btn', { scale: 1.04, duration: 0.35, yoyo: true, repeat: 8, ease: 'sine.inOut' }, 0.75);
+
+      // =====================================================================
+      // OUTRO 03: 3D Bento Stack Cascade (Hero -> 2-Col Info -> Channel/CTA)
+      // =====================================================================
+      tlO3 = gsap.timeline({ repeat: -1, repeatDelay: 1.2 });
+      tlO3.fromTo('#o3-hero',
+        { rotationX: -40, y: -18, opacity: 0 },
+        { rotationX: 0, y: 0, opacity: 1, duration: 0.36, ease: 'back.out(1.7)' },
+        0.02
+      );
+      tlO3.fromTo('#o3-grid',
+        { rotationX: -35, y: 16, opacity: 0 },
+        { rotationX: 0, y: 0, opacity: 1, duration: 0.35, ease: 'back.out(1.6)' },
+        0.12
+      );
+      tlO3.fromTo('#o3-channel-bar',
+        { rotationX: -30, y: 16, opacity: 0 },
+        { rotationX: 0, y: 0, opacity: 1, duration: 0.34, ease: 'back.out(1.6)' },
+        0.20
+      );
+      tlO3.fromTo('#o3-cta-block',
+        { y: 16, opacity: 0, scale: 0.94 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(1.8)' },
+        0.28
+      );
+      tlO3.to('#o3-cta-btn', { scale: 1.04, duration: 0.35, yoyo: true, repeat: 8, ease: 'sine.inOut' }, 0.75);
+    }
+
+    function playVideoToBlackOutroTransition() {
+      // Plays the last 1.8s of the video clip, then slams into the Full-Screen Black Outro!
+      if (transTimer) clearTimeout(transTimer);
+      const btn = document.getElementById('top-mode-trans');
+      btn.classList.add('active');
+      btn.innerText = '⏳ Đang phát 1.8s cuối clip ➔ Vào Nền Đen...';
+
+      if (tlO1) tlO1.pause(0);
+      if (tlO2) tlO2.pause(0);
+      if (tlO3) tlO3.pause(0);
+
+      gsap.set(['#canvas-outro-1', '#canvas-outro-2', '#canvas-outro-3'], { opacity: 0 });
+      [1, 2, 3].forEach(i => {
+        const v = document.getElementById('vid-outro-' + i);
+        if (v) {
+          v.currentTime = 6.8;
+          v.play().catch(() => {});
+        }
+      });
+
+      transTimer = setTimeout(() => {
+        gsap.to(['#canvas-outro-1', '#canvas-outro-2', '#canvas-outro-3'], {
+          opacity: 1,
+          duration: 0.28,
+          ease: 'power2.out',
+          onComplete: () => {
+            buildOutroTimelines();
+            btn.classList.remove('active');
+            btn.innerText = '🎬 Chạy Thử Hết Video ➔ Vào Nền Đen';
+          }
+        });
+      }, 1800);
+    }
+
+    function buildSmallBrandTimelines() {
+      if (tlB1) tlB1.kill();
+      if (tlB2) tlB2.kill();
+      if (tlB3) tlB3.kill();
+
+      tlB1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
+      tlB1.fromTo('#b1-card', { opacity: 0, scale: 0.86, y: -12 }, { opacity: 1, scale: 1, y: 0, duration: 0.42, ease: 'back.out(1.8)' }, 0.02);
+      tlB1.fromTo('#b1-shimmer', { left: '-65%' }, { left: '135%', duration: 0.95, ease: 'power2.inOut' }, 0.45);
+      tlB1.to('#b1-card', { scale: 0.90, duration: 0.5, ease: 'power2.inOut' }, 2.30);
+      tlB1.to('#b1-card', { scale: 0.90, duration: 3.0 }, 2.80);
+
+      tlB2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
+      tlB2.fromTo(['#b2-line-l', '#b2-line-r'], { scaleX: 0 }, { scaleX: 1, duration: 0.38, ease: 'power3.out' }, 0.02);
+      tlB2.fromTo('#b2-crest', { scale: 1.45, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.40, ease: 'back.out(2.0)' }, 0.06);
+      tlB2.fromTo('#b2-paper', { scaleX: 0.72, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.40, ease: 'back.out(1.5)' }, 0.12);
+      tlB2.to('#b2-wrap', { scale: 0.90, duration: 0.5, ease: 'power2.inOut' }, 2.30);
+      tlB2.to('#b2-wrap', { scale: 0.90, duration: 3.0 }, 2.80);
+
+      tlB3 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
+      tlB3.set('#b3-face-1', { opacity: 1, rotationX: 0, y: 0 });
+      tlB3.set(['#b3-face-2', '#b3-face-3'], { opacity: 0, rotationX: -85, y: 14 });
+      tlB3.fromTo('#b3-card', { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.42, ease: 'back.out(1.8)' }, 0.02);
+      tlB3.to('#b3-face-1', { opacity: 0, rotationX: 85, y: -14, duration: 0.38 }, 2.20);
+      tlB3.to('#b3-face-2', { opacity: 1, rotationX: 0, y: 0, duration: 0.42, ease: 'back.out(1.6)' }, 2.45);
+      tlB3.to('#b3-face-2', { opacity: 0, rotationX: 85, y: -14, duration: 0.38 }, 4.50);
+      tlB3.to('#b3-face-3', { opacity: 1, rotationX: 0, y: 0, duration: 0.42, ease: 'back.out(1.6)' }, 4.75);
+      tlB3.to('#b3-card', { opacity: 1, duration: 1.8 }, 5.20);
+    }
+
+    function replaySmallBrands() {
+      [1, 2, 3].forEach(i => {
+        const v = document.getElementById('vid-' + i);
+        if (v) { v.currentTime = 0; v.play().catch(() => {}); }
+      });
+      buildSmallBrandTimelines();
+    }
+
+    function replayAllAnimations() {
+      buildOutroTimelines();
+      replaySmallBrands();
+    }
+
+    function selectOutro(num) {
+      [1, 2, 3].forEach(i => document.getElementById('col-outro-' + i).classList.toggle('selected-brand', i === num));
+      const modeTxt = document.body.classList.contains('with-outro-cta') ? 'Kèm CTA Trên Nền Đen' : 'Chỉ Logo & TT Thương Hiệu';
+      alert(`Đã chọn Kiểu Cuối Clip Trên Nền Đen: OUTRO 0${num} (${modeTxt})!`);
+    }
+
+    function selectSmallBrand(num) {
+      [1, 2, 3].forEach(i => document.getElementById('col-brand-' + i).classList.toggle('selected-brand', i === num));
+      alert(`Đã chọn Kiểu Nhỏ Trong Clip: BRAND 0${num}!`);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.location.search.includes('mode=cta')) {
+        setOutroContentMode('cta');
+      }
+      syncAllTweaks();
+      buildOutroTimelines();
+      buildSmallBrandTimelines();
+    });
+  </script>
+</body>
+</html>
