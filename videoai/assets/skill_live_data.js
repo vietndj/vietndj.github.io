@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 21:25:19
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 22:44:12
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 21:25:19",
-  "last_synced_iso": "2026-10-22T21:25:19.684979",
+  "last_synced_formatted": "22/10/2026 22:44:12",
+  "last_synced_iso": "2026-10-22T22:44:12.583675",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -18,7 +18,7 @@ window.SKILL_LIVE_DATA = {
     "scripts_count": 30,
     "skills_count": 6,
     "studios_count": 8,
-    "evolution_entries_count": 3
+    "evolution_entries_count": 4
   },
   "evolution": {
     "version": 1,
@@ -123,6 +123,71 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "spatial-camera-engine-v3-motion-physics",
+        "date": "2026-10-22",
+        "title": "Chuẩn Vật Lý Chuyển Động V3: 2.5D Spatial Camera Engine, Speed Graph 2 Pha & 4-Gate Verifier (Kỹ năng motion)",
+        "step_target": "buoc-4",
+        "source_thread": "c834f459-4d87-4611-b24e-9a566fbff574",
+        "what_title": "Xóa sổ lỗi camera lắc Math.sin — Nâng cấp 2.5D Spatial Camera Engine cho cả 6 Khuôn Motion",
+        "what": "Bộ lõi vật lý chuyển động <strong><code>spatialCameraEngine.ts</code></strong> và hệ thống <strong>4 Cổng Kiểm Định Tất Định (<code>verify_motion_deliverable.py</code>)</strong> áp dụng xuyên suốt 6 Khuôn Thiết Kế Gốc của kỹ năng <code>motion</code>: Thay thế hoàn toàn công thức <code>Math.sin(frame / 28)</code> cũ bằng <strong>Quỹ đạo 2.5D Spatial Camera</strong>, <strong>Đồ thị vận tốc 2 pha (Snap 82% + Continuous Drift 18%)</strong>, <strong>Diễn xuất so le 4 tầng (Staggered Choreography)</strong> và <strong>Velocity-Only Motion Blur (<code>blur = 0px</code> tuyệt đối khi đọc chữ/số liệu)</strong>.",
+        "why_title": "Vì sao bản cũ bị lặp chuyển động, hở bố cục và nhòe bảng số liệu?",
+        "why": "Hội ý kiến trúc cùng <strong>CLAUDE2 (Opus 5.5)</strong> chỉ ra 4 nguyên nhân gốc rễ: (1) Tài liệu cũ dạy dùng <code>Math.sin(frame / 28)</code> khiến camera nhấp nhô tại chỗ 19 chu kỳ; (2) Nội suy đều tốc hoặc nhồi mọi phần tử vào <code>localFrame = 0</code> làm chuyển động phẳng; (3) Gắn <code>blur(6px)</code> cố định theo frame làm nhòe bảng Bento suốt 17 frames; (4) Thiếu <code>-map 0:v:0 -map 1:a:0</code> khi ghép FFmpeg làm mất luồng SFX. Chuẩn V3 chặn đứng cả 4 lỗi ngay từ code và Verifier.",
+        "how_title": "Gọi tự nhiên bất kỳ khuôn nào trong 6 Khuôn Motion",
+        "how_intro": "Mọi lệnh tạo video Motion từ nay tự động kế thừa Profile tương ứng trong spatialCameraEngine.ts và chạy qua 4 cổng kiểm định:",
+        "how_cmd": "Áp dụng khuôn Pinterest 9:16 (hoặc Clean V3 / Risograph / MasterClass / Scientific Atlas / SuiPlay) cho kịch bản xây kênh kenh.fedu.vn",
+        "items": [
+          {
+            "tier": "1. Lõi Vật Lý Chuyển Động Dùng Chung (spatialCameraEngine.ts)",
+            "code": "CAMERA 2.5D",
+            "name": "Quỹ Đạo 2.5D Spatial Camera & Speed Graph 2 Pha (Snap 82% + Drift 18%)",
+            "desc": "Cấm tuyệt đối Math.sin trên camera. Pha 1 (10–18 frames đầu) đi 82% quãng đường bằng bezier [0.16, 1, 0.3, 1] hoặc spring; Pha 2 trôi tuyến tính 18% quãng đường còn lại về hướng waypoint kế tiếp."
+          },
+          {
+            "tier": "1. Lõi Vật Lý Chuyển Động Dùng Chung (spatialCameraEngine.ts)",
+            "code": "CHOREO 4-TIER",
+            "name": "Staggered Choreography & Full-Bleed SVG Geometry",
+            "desc": "Tách pha 4 tầng: Cửa chéo SVG <polygon> full-bleed (f0–28) → Hero Keyword mặt nạ 3D giữ dấu tiếng Việt (f18–34) → Viên thuốc phụ zIndex 10 (f28–45) → Pre-cue dẫn mắt (end-12f). Chữ trong dải lụa dùng <textPath>."
+          },
+          {
+            "tier": "2. Ma Trận 7 Profile Cho 6 Khuôn Thiết Kế Gốc (.TSX)",
+            "code": "7 PROFILES",
+            "name": "cleanV3 • riso • pinterest • gold • masterclass • atlas • suiplay",
+            "desc": "Mỗi khuôn mang bản sắc vật lý riêng: CleanV3 giữ rz=0° thẳng chữ; Riso tách 2 rig (Mặt thật tĩnh + Đồ họa lật trang); MasterClass đi nước cờ vua theo lưới 11%; Atlas glide học thuật blur=0px; SuiPlay xuyên tâm trục Z."
+          },
+          {
+            "tier": "3. Bốn Cổng Kiểm Định Tất Định (verify_motion_deliverable.py)",
+            "code": "GATE 0–3",
+            "name": "Static AST Lint • Audio -24dB • Sharpness Laplacian >=120 • Optical Flow >=0.45",
+            "desc": "Gate 0 chặn code có Math.sin camera; Gate 1 bắt lỗi âm thanh câm -91dB; Gate 2 đảm bảo độ nét Laplacian >= 120 tại mọi READ_WINDOWS (Bento đạt 215.7); Gate 3 đo Farneback Optical Flow."
+          }
+        ],
+        "asset_dir": "spatial_camera_v3",
+        "showcase_title": "🖼️ Nghiệm Thu Thực Tế Chuẩn V3 Trên Video Logic Xây Kênh (kenh.fedu.vn)",
+        "showcase_badge": "Chuẩn C834F459 • 2.5D Spatial Camera • 4/4 Gates Passed",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/c834f459-4d87-4611-b24e-9a566fbff574/v2_scene3_cho_vuong.jpg",
+            "caption": "Scene 3: Cửa chéo SVG <polygon> phủ kín 100% mép trái, mở xong mới bung chữ so le (Staggered Choreography)",
+            "web_src": "assets/spatial_camera_v3/v2_scene3_cho_vuong.jpg"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/c834f459-4d87-4611-b24e-9a566fbff574/v2_scene5_cong_viec_that.jpg",
+            "caption": "Scene 5: Chữ uốn cong <textPath> chạy dọc dải lụa 3D + B-roll sạch không vệt chéo + Hoa dẫn mắt không đè chữ đầu",
+            "web_src": "assets/spatial_camera_v3/v2_scene5_cong_viec_that.jpg"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/c834f459-4d87-4611-b24e-9a566fbff574/v2_scene6_bento_crisp.jpg",
+            "caption": "Scene 6: Bento Dashboard nghiêng 3D Spatial Camera sắc nét tuyệt đối (0px blur, Laplacian = 215.7)",
+            "web_src": "assets/spatial_camera_v3/v2_scene6_bento_crisp.jpg"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/c834f459-4d87-4611-b24e-9a566fbff574/v2_scene9_tat_may_la_xong.jpg",
+            "caption": "Scene 9: Cú chốt thông điệp 1 trục sắc bén 'Bấm máy là nói — tắt máy là xong !' trên nền Mint Cream",
+            "web_src": "assets/spatial_camera_v3/v2_scene9_tat_may_la_xong.jpg"
+          }
+        ]
+      },
       {
         "id": "element-so-do-motion-60fps",
         "date": "2026-10-22",
@@ -413,17 +478,17 @@ window.SKILL_LIVE_DATA = {
       "badge": "60FPS MOTION",
       "desc": "Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 11084,
-      "size_formatted": "10.8 KB",
-      "lines_count": 128,
-      "mtime": 1792677594.3244004,
-      "mtime_formatted": "22/10/2026 20:59",
+      "size": 16563,
+      "size_formatted": "16.2 KB",
+      "lines_count": 141,
+      "mtime": 1792683747.800313,
+      "mtime_formatted": "22/10/2026 22:42",
       "headers": [
         "🎯 1. BẢNG MANTRA & TÌNH HUỐNG KÍCH HOẠT",
-        "🧠 2. BỐN TRỤ CỘT TƯ DUY ĐẦU RA TỐT NHẤT (ĐÚC KẾT TỪ MOTION 01 $\\rightarrow$ 05)",
-        "🏛️ 3. SÁU KHUÔN THIẾT KẾ GỐC (`.TSX` CÓ BẢNG BIẾN `TWEAKS`) — TÁI SỬ DỤNG TRONG 3 GIÂY",
-        "⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN KHI NHẬN 1 VIDEO NÓI MỚI",
-        "🔄 7. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ 0 MA SÁT LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)"
+        "🧠 2. BỐN TRỤ CỘT TƯ DUY ĐẦU RA TỐT NHẤT (ĐÚC KẾT TỪ MOTION 01 $\\rightarrow$ 06 & CLAUDE2 OPUS 5.5)",
+        "🏛️ 3. SÁU KHUÔN THIẾT KẾ GỐC (`.TSX`) & MA TRẬN ÁP DỤNG `SPATIAL CAMERA ENGINE`",
+        "⚙️ 4. QUY TRÌNH THỰC THI 6 BƯỚC CHUẨN & 4 CỔNG KIỂM ĐỊNH (`4-GATE VERIFIER`)",
+        "🔄 5. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)"
       ],
       "status": "ACTIVE"
     },
@@ -3206,12 +3271,12 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "PinterestViet9x16.tsx",
       "kind": "composition",
-      "size": 85569,
-      "size_formatted": "83.6 KB",
-      "lines": 2700,
-      "mtime": 1792336060.930044,
-      "mtime_formatted": "18/10/2026 22:07",
-      "desc": "Remotion Composition React Component 60fps"
+      "size": 100860,
+      "size_formatted": "98.5 KB",
+      "lines": 3116,
+      "mtime": 1792681167.8635862,
+      "mtime_formatted": "22/10/2026 21:59",
+      "desc": "============================================================================"
     },
     {
       "name": "VietBrandPinterestGold.tsx",
@@ -3784,12 +3849,12 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_motion_deliverable.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 60fps (Universal Archetypes)",
-      "size": 15089,
-      "size_formatted": "14.7 KB",
-      "lines": 369,
-      "mtime": 1792420389.9314952,
-      "mtime_formatted": "19/10/2026 21:33",
-      "desc": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic (verify_motion_deliverable.py)"
+      "size": 25002,
+      "size_formatted": "24.4 KB",
+      "lines": 609,
+      "mtime": 1792683753.3209236,
+      "mtime_formatted": "22/10/2026 22:42",
+      "desc": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic V3 (verify_motion_deliverable.py)"
     },
     {
       "name": "spa_edit_cli.py",
@@ -3863,9 +3928,33 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792679043.120229,
-      "mtime_formatted": "22/10/2026 21:24",
-      "detail": "3 quy chuẩn • 8 studios"
+      "mtime": 1792683835.9113636,
+      "mtime_formatted": "22/10/2026 22:43",
+      "detail": "4 quy chuẩn • 8 studios"
+    },
+    {
+      "name": "scripts/verify_motion_deliverable.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792683753.3209236,
+      "mtime_formatted": "22/10/2026 22:42",
+      "detail": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic V3 (verify_motion_deliverable.py)"
+    },
+    {
+      "name": "motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792683747.800313,
+      "mtime_formatted": "22/10/2026 22:42",
+      "detail": "141 dòng • 5 mục chính"
+    },
+    {
+      "name": "compositions/PinterestViet9x16.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792681167.8635862,
+      "mtime_formatted": "22/10/2026 21:59",
+      "detail": "3116 dòng • Composition"
     },
     {
       "name": "spa-edit/SKILL.md",
@@ -3914,14 +4003,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792678616.892709,
       "mtime_formatted": "22/10/2026 21:16",
       "detail": "81 dòng • 4 mục chính"
-    },
-    {
-      "name": "motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792677594.3244004,
-      "mtime_formatted": "22/10/2026 20:59",
-      "detail": "128 dòng • 5 mục chính"
     },
     {
       "name": "compositions/VietSuiPlayLaunch20s.tsx",
@@ -4082,22 +4163,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792421279.6582208,
       "mtime_formatted": "19/10/2026 21:47",
       "detail": "1061 dòng • Composition"
-    },
-    {
-      "name": "scripts/extract_beat_timeline.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792420389.93253,
-      "mtime_formatted": "19/10/2026 21:33",
-      "detail": "Bước 1 — Bóc tách Thoại & Sóng âm (extract_beat_timeline.py)"
-    },
-    {
-      "name": "scripts/compose_voicesafe_sfx.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792420389.9319584,
-      "mtime_formatted": "19/10/2026 21:33",
-      "detail": "Bước 3 — Tổng hợp SFX 4 Lớp Voice-Safe (compose_voicesafe_sfx.py)"
     }
   ]
 };

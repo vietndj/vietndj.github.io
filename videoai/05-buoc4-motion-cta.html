@@ -119,6 +119,149 @@
       <!-- AUTO_EVOLUTION_START:buoc-4 -->
 
       <!-- ========================================================
+           QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (spatial-camera-engine-v3-motion-physics)
+           ======================================================== -->
+      <div class="evolution-injected-section" id="evo-spatial-camera-engine-v3-motion-physics" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <span style="font:700 11.5px var(--mono); color:#b45309; background:#fef3c7; border:1px solid #fde68a; padding:3px 10px; border-radius:999px;">
+            ⚡ QUY CHUẨN MỚI CẬP NHẬT • 2026-10-22 • CHUẨN C834F459
+          </span>
+        </div>
+        <h2 style="margin-top:6px;">Chuẩn Vật Lý Chuyển Động V3: 2.5D Spatial Camera Engine, Speed Graph 2 Pha & 4-Gate Verifier (Kỹ năng motion)</h2>
+
+        <!-- TẦNG 1: WHAT • WHY • HOW -->
+        <div class="wwh-grid">
+          <div class="wwh-card">
+            <div class="wwh-tag what">WHAT • BẢN CHẤT ELEMENT</div>
+            <div class="wwh-title">Xóa sổ lỗi camera lắc Math.sin — Nâng cấp 2.5D Spatial Camera Engine cho cả 6 Khuôn Motion</div>
+            <p class="wwh-desc">Bộ lõi vật lý chuyển động <strong><code>spatialCameraEngine.ts</code></strong> và hệ thống <strong>4 Cổng Kiểm Định Tất Định (<code>verify_motion_deliverable.py</code>)</strong> áp dụng xuyên suốt 6 Khuôn Thiết Kế Gốc của kỹ năng <code>motion</code>: Thay thế hoàn toàn công thức <code>Math.sin(frame / 28)</code> cũ bằng <strong>Quỹ đạo 2.5D Spatial Camera</strong>, <strong>Đồ thị vận tốc 2 pha (Snap 82% + Continuous Drift 18%)</strong>, <strong>Diễn xuất so le 4 tầng (Staggered Choreography)</strong> và <strong>Velocity-Only Motion Blur (<code>blur = 0px</code> tuyệt đối khi đọc chữ/số liệu)</strong>.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag why">WHY • VÌ SAO CẦN ELEMENT NÀY?</div>
+            <div class="wwh-title">Vì sao bản cũ bị lặp chuyển động, hở bố cục và nhòe bảng số liệu?</div>
+            <p class="wwh-desc">Hội ý kiến trúc cùng <strong>CLAUDE2 (Opus 5.5)</strong> chỉ ra 4 nguyên nhân gốc rễ: (1) Tài liệu cũ dạy dùng <code>Math.sin(frame / 28)</code> khiến camera nhấp nhô tại chỗ 19 chu kỳ; (2) Nội suy đều tốc hoặc nhồi mọi phần tử vào <code>localFrame = 0</code> làm chuyển động phẳng; (3) Gắn <code>blur(6px)</code> cố định theo frame làm nhòe bảng Bento suốt 17 frames; (4) Thiếu <code>-map 0:v:0 -map 1:a:0</code> khi ghép FFmpeg làm mất luồng SFX. Chuẩn V3 chặn đứng cả 4 lỗi ngay từ code và Verifier.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag how">HOW • 2 CHẾ ĐỘ GỌI TỰ NHIÊN</div>
+            <div class="wwh-title">Gọi tự nhiên bất kỳ khuôn nào trong 6 Khuôn Motion</div>
+            <p class="wwh-desc">Mọi lệnh tạo video Motion từ nay tự động kế thừa Profile tương ứng trong spatialCameraEngine.ts và chạy qua 4 cổng kiểm định:</p>
+            <div class="cmd-box">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh Antigravity</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>Áp dụng khuôn Pinterest 9:16 (hoặc Clean V3 / Risograph / MasterClass / Scientific Atlas / SuiPlay) cho kịch bản xây kênh kenh.fedu.vn</code></pre>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 1. Lõi Vật Lý Chuyển Động Dùng Chung (spatialCameraEngine.ts)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">CAMERA 2.5D</div>
+              <div class="step-content">
+                <div class="step-name">Quỹ Đạo 2.5D Spatial Camera & Speed Graph 2 Pha (Snap 82% + Drift 18%)</div>
+                <div class="step-desc">Cấm tuyệt đối Math.sin trên camera. Pha 1 (10–18 frames đầu) đi 82% quãng đường bằng bezier [0.16, 1, 0.3, 1] hoặc spring; Pha 2 trôi tuyến tính 18% quãng đường còn lại về hướng waypoint kế tiếp.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">CHOREO 4-TIER</div>
+              <div class="step-content">
+                <div class="step-name">Staggered Choreography & Full-Bleed SVG Geometry</div>
+                <div class="step-desc">Tách pha 4 tầng: Cửa chéo SVG <polygon> full-bleed (f0–28) → Hero Keyword mặt nạ 3D giữ dấu tiếng Việt (f18–34) → Viên thuốc phụ zIndex 10 (f28–45) → Pre-cue dẫn mắt (end-12f). Chữ trong dải lụa dùng <textPath>.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 2. Ma Trận 7 Profile Cho 6 Khuôn Thiết Kế Gốc (.TSX)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">7 PROFILES</div>
+              <div class="step-content">
+                <div class="step-name">cleanV3 • riso • pinterest • gold • masterclass • atlas • suiplay</div>
+                <div class="step-desc">Mỗi khuôn mang bản sắc vật lý riêng: CleanV3 giữ rz=0° thẳng chữ; Riso tách 2 rig (Mặt thật tĩnh + Đồ họa lật trang); MasterClass đi nước cờ vua theo lưới 11%; Atlas glide học thuật blur=0px; SuiPlay xuyên tâm trục Z.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 3. Bốn Cổng Kiểm Định Tất Định (verify_motion_deliverable.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">GATE 0–3</div>
+              <div class="step-content">
+                <div class="step-name">Static AST Lint • Audio -24dB • Sharpness Laplacian >=120 • Optical Flow >=0.45</div>
+                <div class="step-desc">Gate 0 chặn code có Math.sin camera; Gate 1 bắt lỗi âm thanh câm -91dB; Gate 2 đảm bảo độ nét Laplacian >= 120 tại mọi READ_WINDOWS (Bento đạt 215.7); Gate 3 đo Farneback Optical Flow.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🖼️ Nghiệm Thu Thực Tế Chuẩn V3 Trên Video Logic Xây Kênh (kenh.fedu.vn)</span>
+            </div>
+            <span class="showcase-badge">Chuẩn C834F459 • 2.5D Spatial Camera • 4/4 Gates Passed</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/spatial_camera_v3/v2_scene3_cho_vuong.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/spatial_camera_v3/v2_scene3_cho_vuong.jpg" alt="Scene 3: Cửa chéo SVG <polygon> phủ kín 100% mép trái, mở xong mới bung chữ so le (Staggered Choreography)" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Scene 3: Cửa chéo SVG <polygon> phủ kín 100% mép trái, mở xong mới bung chữ so le (Staggered Choreography)</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/spatial_camera_v3/v2_scene5_cong_viec_that.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/spatial_camera_v3/v2_scene5_cong_viec_that.jpg" alt="Scene 5: Chữ uốn cong <textPath> chạy dọc dải lụa 3D + B-roll sạch không vệt chéo + Hoa dẫn mắt không đè chữ đầu" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Scene 5: Chữ uốn cong <textPath> chạy dọc dải lụa 3D + B-roll sạch không vệt chéo + Hoa dẫn mắt không đè chữ đầu</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/spatial_camera_v3/v2_scene6_bento_crisp.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/spatial_camera_v3/v2_scene6_bento_crisp.jpg" alt="Scene 6: Bento Dashboard nghiêng 3D Spatial Camera sắc nét tuyệt đối (0px blur, Laplacian = 215.7)" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Scene 6: Bento Dashboard nghiêng 3D Spatial Camera sắc nét tuyệt đối (0px blur, Laplacian = 215.7)</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/spatial_camera_v3/v2_scene9_tat_may_la_xong.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/spatial_camera_v3/v2_scene9_tat_may_la_xong.jpg" alt="Scene 9: Cú chốt thông điệp 1 trục sắc bén 'Bấm máy là nói — tắt máy là xong !' trên nền Mint Cream" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Scene 9: Cú chốt thông điệp 1 trục sắc bén 'Bấm máy là nói — tắt máy là xong !' trên nền Mint Cream</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+      </div>
+    
+
+      <!-- ========================================================
            QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (element-so-do-motion-60fps)
            ======================================================== -->
       <div class="evolution-injected-section" id="evo-element-so-do-motion-60fps" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
