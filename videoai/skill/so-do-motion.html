@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kỹ năng Sơ Đồ Motion 60fps (So-Do-Motion V1.0) — Cẩm nang &amp; Bộ Cài Đặt Học Viên</title>
+  <link href="../videoai/assets/style.css?v=20261022" rel="stylesheet"/>
+</head>
+<body data-page="so-do-motion">
+  
+<div style="background:#0f172a; color:#f8fafc; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-family:sans-serif; font-size:13px; border-bottom:2px solid #0284c7;">
+  <div><strong>📊 FEDU SKILL REPO • ELEMENT SƠ ĐỒ MOTION 60FPS (SO-DO-MOTION V1.0)</strong></div>
+  <div style="display:flex; gap:14px; flex-wrap:wrap;">
+    <a href="https://videoai.fedu.vn/05-buoc4-motion-cta.html#evo-element-so-do-motion-60fps" style="color:#38bdf8; text-decoration:none; font-weight:700;">🌐 Xem trong Bước 4 (Motion Graphic) trên VideoAI Studio ↗</a>
+    <a href="https://fedu.vn/skill/install-so-do-motion.sh" style="color:#fbbf24; text-decoration:none; font-weight:700;">⬇ Tải Script Cài Đặt (.sh)</a>
+  </div>
+</div>
+
+<main class="main" style="display:block; max-width:1040px; margin:0 auto; padding:28px 20px;">
+  <div class="content">
+
+    <div class="hero">
+      <div class="kicker" style="--stage:var(--c-buoc4)">— ELEMENT TRONG EDIT VIDEO &amp; MOTION GRAPHIC • CHUYỂN GIAO HỌC VIÊN ANTIGRAVITY</div>
+      <h1>Kỹ năng Sơ Đồ Motion 60fps (<code>so-do-motion</code>)</h1>
+      
+      <p class="lede">
+        Biến bất kỳ quy trình, cơ chế hoạt động hay luồng công việc phức tạp nào thành một <strong>Video Sơ Đồ Chuyển Động 60fps (Explainer Flowchart 1080×1920)</strong> mở sáng từng nhánh theo đúng nhịp lời đọc, tích hợp sẵn <strong>Phụ đề 5B</strong>, <strong>4 lớp SFX Studio</strong> và <strong>2 Chế độ Giọng Đọc Thông Minh</strong>.
+      </p>
+
+      <div class="proof-grid">
+        <div class="proof-item">
+          <div class="proof-num">Gọi Bình Thường</div>
+          <div class="proof-lbl">Tự động tạo giọng đọc từ Gemini TTS (<code>gemini-3.8-flash-tts</code>) chuẩn Studio điềm tĩnh</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">+ "Giọng của tôi"</div>
+          <div class="proof-lbl">Tự động lấy giọng thật của bạn qua Google AI Studio + Real-Voice F0 Acoustic Transfer</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">4/4 Cổng Verifier</div>
+          <div class="proof-lbl">Khớp cửa sổ 10 Vi Nhịp • Chuẩn -16 LUFS • Không cụt đuôi từ • 60fps Mượt Tuyệt Đối</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         PHẦN 1: CÀI ĐẶT 1 CHẠM CHO HỌC VIÊN ANTIGRAVITY
+         ======================================================== -->
+    <h2>1. Cài đặt 1 chạm trên máy của bạn (Dành cho Học viên dùng Antigravity)</h2>
+    <p>
+      Mở ứng dụng <strong>Terminal</strong> trên máy Mac (hoặc dán thẳng vào ô chat của <strong>Antigravity</strong>) và chạy câu lệnh duy nhất bên dưới:
+    </p>
+
+    <div class="cmd-box" style="margin:16px 0 24px;">
+      <div class="cmd-header">
+        <span class="cmd-title">Lệnh cài đặt 1 chạm (macOS / Antigravity)</span>
+        <button type="button" class="copy-cmd-btn" onclick="navigator.clipboard.writeText('curl -sSL https://fedu.vn/skill/install-so-do-motion.sh | bash'); this.textContent='Đã Copy!';">Copy lệnh</button>
+      </div>
+      <pre><code>curl -sSL https://fedu.vn/skill/install-so-do-motion.sh | bash</code></pre>
+    </div>
+
+    <div class="wwh-grid">
+      <div class="wwh-card">
+        <div class="wwh-tag what">BƯỚC 1 • CÀI SKILL TỰ ĐỘNG</div>
+        <div class="wwh-title">Tách riêng Code &amp; Dữ liệu cá nhân</div>
+        <p class="wwh-desc">
+          Bộ cài đặt tự động tải kỹ năng vào <code>~/.gemini/config/skills/so-do-motion/</code> và tạo thư mục riêng <code>~/.so-do-motion/</code> (chứa <code>config.env</code> và hồ sơ giọng <code>voice_profile.json</code> của bạn để khi cập nhật skill không bao giờ bị mất cấu hình).
+        </p>
+      </div>
+
+      <div class="wwh-card">
+        <div class="wwh-tag why">BƯỚC 2 • GỌI CHẾ ĐỘ MẶC ĐỊNH</div>
+        <div class="wwh-title">Gọi bình thường &rarr; Giọng Gemini TTS</div>
+        <p class="wwh-desc">
+          Gõ tự nhiên trong Antigravity: <em>"Tạo sơ đồ motion 60fps giải thích quy trình 4 bước chăm sóc khách hàng"</em>. Hệ thống tự động dùng giọng <strong>Gemini TTS (<code>gemini-3.8-flash-tts</code>)</strong> chuẩn Studio điềm tĩnh.
+        </p>
+      </div>
+
+      <div class="wwh-card">
+        <div class="wwh-tag how">BƯỚC 3 • GỌI "GIỌNG CỦA TÔI"</div>
+        <div class="wwh-title">Thêm "giọng của tôi" &rarr; Lấy giọng qua AI Studio</div>
+        <p class="wwh-desc">
+          Gõ: <em>"Tạo sơ đồ motion 60fps giải thích quy trình... <strong>bằng giọng của tôi</strong>"</em> (kèm đường dẫn 1 video có giọng của bạn). Hệ thống tự trích 14s giọng sạch, đo tần số <code>F0</code> và lấy giọng qua Google AI Studio.
+        </p>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         PHẦN 2: 3 VIDEO MINH HỌA TRỰC TIẾP TỪ YOUTUBE PLAYLIST AIVIDEO
+         ======================================================== -->
+    <h2 style="margin-top:40px;">2. Ba Video Minh Họa Thực Tế (Playlist YouTube <code>aivideo</code>)</h2>
+    <p>
+      Đối chiếu trực quan từ <strong>① Video Mẫu Gốc (TikTok)</strong> &rarr; <strong>② Bản Đồ Họa 60fps + Phụ Đề 5B + 4 Lớp SFX (Không Lời)</strong> &rarr; <strong>③ Bản Hoàn Chỉnh Có Lời Khóa 10 Vi Nhịp (Giọng AI Studio 165.5Hz)</strong>:
+    </p>
+
+    <div class="output-showcase" style="margin-top:18px;">
+      <div class="showcase-header">
+        <div class="showcase-title">
+          <span>🎬 Trình Diễn 3 Video Dọc 9:16 (Nhúng Từ YouTube Playlist <code>PLJ70SzNu_fc8</code>)</span>
+        </div>
+        <span class="showcase-badge">1080×1920 @ 60fps • 4/4 Gates Passed</span>
+      </div>
+      <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
+        
+        <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+          <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between;">
+            <span>① VIDEO MẪU GỐC (TIKTOK)</span>
+            <a href="https://youtu.be/6xYxOScrJJQ" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:none;">YouTube ↗</a>
+          </div>
+          <div style="aspect-ratio:9/16; width:100%; background:#000;">
+            <iframe src="https://www.youtube.com/embed/6xYxOScrJJQ?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Video Mẫu Tham Khảo TikTok" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="width:100%; height:100%; border:none; display:block;"></iframe>
+          </div>
+          <div class="showcase-card-body" style="padding:12px 14px;">
+            <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); margin-bottom:6px;">Mẫu Tham Khảo TikTok: Sơ Đồ Quy Trình</div>
+            <p class="showcase-card-desc" style="margin:0; font-size:13px; color:var(--mute);">Video mẫu minh họa cách dùng Element Sơ đồ trong video ngắn để giải thích quy trình từng bước.</p>
+          </div>
+        </div>
+
+        <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+          <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between;">
+            <span>② BƯỚC 1: MOTION 60FPS + SFX</span>
+            <a href="https://youtu.be/HdaIsC-FyqA" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:none;">YouTube ↗</a>
+          </div>
+          <div style="aspect-ratio:9/16; width:100%; background:#000;">
+            <iframe src="https://www.youtube.com/embed/HdaIsC-FyqA?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Bước 1: Sơ Đồ Motion 60fps Không Lời" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="width:100%; height:100%; border:none; display:block;"></iframe>
+          </div>
+          <div class="showcase-card-body" style="padding:12px 14px;">
+            <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); margin-bottom:6px;">Bước 1: Đồ Họa 60fps + Phụ Đề 5B + 4 Lớp SFX</div>
+            <p class="showcase-card-desc" style="margin:0; font-size:13px; color:var(--mute);">Sơ đồ 4 tầng (19.50s @ 60fps) mở sáng từng nhánh qua 10 Vi Nhịp, khóa Phụ đề 5B cách đáy sơ đồ 102px.</p>
+          </div>
+        </div>
+
+        <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+          <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between;">
+            <span>③ BƯỚC 2: LỒNG TIẾNG KHÓA NHỊP</span>
+            <a href="https://youtu.be/nUgeMCaA8I0" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:none;">YouTube ↗</a>
+          </div>
+          <div style="aspect-ratio:9/16; width:100%; background:#000;">
+            <iframe src="https://www.youtube.com/embed/nUgeMCaA8I0?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Bước 2: Sơ Đồ Motion 60fps Có Lời" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="width:100%; height:100%; border:none; display:block;"></iframe>
+          </div>
+          <div class="showcase-card-body" style="padding:12px 14px;">
+            <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); margin-bottom:6px;">Bước 2: Lồng Tiếng AI Studio Khóa 10 Vi Nhịp</div>
+            <p class="showcase-card-desc" style="margin:0; font-size:13px; color:var(--mute);">Thành phẩm hoàn chỉnh ghép giọng đọc từ Google AI Studio (gemini-3.8-flash-tts + Màu giọng thật 165.5Hz, -16 LUFS).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================
+         PHẦN 3: BẢNG SO SÁNH 2 CHẾ ĐỘ GIỌNG ĐỌC & CÂU LỆNH MẪU
+         ======================================================== -->
+    <h2 style="margin-top:40px;">3. Hai Chế Độ Giọng Đọc &amp; Câu Lệnh Gọi Nhanh Trong Antigravity</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-top:16px;">
+      <div style="border:2px solid #0284c7; border-radius:12px; padding:20px; background:#f0f9ff;">
+        <div style="font:700 12px var(--mono); color:#0369a1; margin-bottom:6px;">CHẾ ĐỘ 1 • MẶC ĐỊNH (KHI GỌI BÌNH THƯỜNG)</div>
+        <h3 style="margin:0 0 10px; font:700 18px var(--sans);">Giọng Tạo Từ Gemini TTS Studio</h3>
+        <p style="font-size:14px; line-height:1.6; color:#0f172a;">
+          Khi bạn chỉ yêu cầu tạo sơ đồ motion bình thường (không có chữ <em>"giọng của tôi"</em>), hệ thống tự động gọi <strong>Gemini 3.8 Flash TTS</strong> sinh giọng đọc Studio miền Bắc điềm tĩnh, trầm ấm, khóa khớp 100% với 10 vi nhịp trên sơ đồ.
+        </p>
+        <div class="cmd-box" style="margin-top:12px;">
+          <div class="cmd-header">
+            <span class="cmd-title">Câu lệnh mẫu Chế độ 1</span>
+            <button type="button" class="copy-cmd-btn" onclick="navigator.clipboard.writeText('Tạo sơ đồ motion 60fps giải thích quy trình đưa AI vào edit video'); this.textContent='Đã Copy!';">Copy lệnh</button>
+          </div>
+          <pre><code>Tạo sơ đồ motion 60fps giải thích quy trình đưa AI vào edit video</code></pre>
+        </div>
+      </div>
+
+      <div style="border:2px solid #d97706; border-radius:12px; padding:20px; background:#fffbeb;">
+        <div style="font:700 12px var(--mono); color:#b45309; margin-bottom:6px;">CHẾ ĐỘ 2 • CÁ NHÂN HÓA (KHI THÊM "GIỌNG CỦA TÔI")</div>
+        <h3 style="margin:0 0 10px; font:700 18px var(--sans);">Lấy Giọng Của Bạn Bằng Google AI Studio</h3>
+        <p style="font-size:14px; line-height:1.6; color:#0f172a;">
+          Khi bạn thêm cụm từ <strong>"giọng của tôi"</strong>, hệ thống lấy mẫu giọng thật từ video của bạn (đăng ký 1 lần qua <code>enroll-voice</code> lưu vào <code>~/.so-do-motion/voice_profile.json</code>) và dùng <strong>Google AI Studio + Formant-Preserving F0 Transfer</strong> để tạo giọng đọc mang đúng màu giọng của bạn.
+        </p>
+        <div class="cmd-box" style="margin-top:12px;">
+          <div class="cmd-header">
+            <span class="cmd-title">Câu lệnh mẫu Chế độ 2</span>
+            <button type="button" class="copy-cmd-btn" onclick="navigator.clipboard.writeText('Tạo sơ đồ motion 60fps giải thích quy trình đưa AI vào edit video bằng giọng của tôi'); this.textContent='Đã Copy!';">Copy lệnh</button>
+          </div>
+          <pre><code>Tạo sơ đồ motion 60fps giải thích quy trình đưa AI vào edit video bằng giọng của tôi</code></pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>
