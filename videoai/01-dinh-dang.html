@@ -210,6 +210,30 @@
       </div>
 
       <!-- ========================================================
+           BẢNG TRA CỨU SỐNG 5 PROFILE (LIVE DATA)
+           ======================================================== -->
+      <h2>Bảng đối chiếu 5 Profile hệ thống (Live Data)</h2>
+      <p>
+        Dữ liệu cấu hình tự động trích xuất trực tiếp từ profiles.json trong hệ thống Antigravity:
+      </p>
+      <div id="live-5-profiles-grid" style="margin:20px 0;"></div>
+      <script>
+        (function() {
+          function loadProfiles() {
+            if (window.renderProfilesGrid) {
+              window.renderProfilesGrid('live-5-profiles-grid');
+            }
+          }
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadProfiles);
+          } else {
+            loadProfiles();
+          }
+          window.addEventListener('load', loadProfiles);
+        })();
+      </script>
+
+      <!-- ========================================================
            ĐẦU RA THỰC TẾ (.output-showcase)
            ======================================================== -->
       <h2>Đầu ra thực tế từ các định dạng</h2>

@@ -176,6 +176,21 @@
       <div id="live-35-styles-table" style="margin:20px 0;">
         <p style="color:var(--mute); font-size:14px;">Đang tải danh mục 35 kiểu chữ từ hệ thống...</p>
       </div>
+      <script>
+        (function() {
+          function loadStyles() {
+            if (window.renderStylesGrid) {
+              window.renderStylesGrid('live-35-styles-table', 'all');
+            }
+          }
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadStyles);
+          } else {
+            loadStyles();
+          }
+          window.addEventListener('load', loadStyles);
+        })();
+      </script>
 
       <!-- ========================================================
            TẦNG 2: CHI TIẾT KỸ THUẬT (TECH DRAWER ẨN MẶC ĐỊNH)
