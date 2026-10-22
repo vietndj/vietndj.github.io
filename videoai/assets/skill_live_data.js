@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 13:16:35
+ * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 14:50:07
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 13:16:35",
-  "last_synced_iso": "2026-10-22T13:16:35.290904",
+  "last_synced_formatted": "22/10/2026 14:50:07",
+  "last_synced_iso": "2026-10-22T14:50:07.738846",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,8 +15,8 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 16,
     "components_count": 22,
-    "scripts_count": 24,
-    "skills_count": 4,
+    "scripts_count": 26,
+    "skills_count": 5,
     "studios_count": 6,
     "evolution_entries_count": 1
   },
@@ -266,6 +266,23 @@ window.SKILL_LIVE_DATA = {
         "3. Thứ tự bắt buộc",
         "4. Cầu nối Hybrid Edit & Motion",
         "5. Phối hợp CLAUDE2 viết code `.TSX`"
+      ],
+      "status": "ACTIVE"
+    },
+    "spa-edit": {
+      "id": "spa-edit",
+      "name": "Kỹ năng Edit Video cho Spa (Spa-Edit V7.2)",
+      "badge": "SPA NICHE PACK",
+      "desc": "Gói đóng gói chuyên biệt cho chủ đề Spa/Thẩm mỹ (Mantra: EDIT SPA, 3 tầng JSON, mỗi cảnh trám dùng 1 lần, tiết kiệm 95% token cho học viên).",
+      "path": "/Users/vietmac/.gemini/config/skills/spa-edit/SKILL.md",
+      "size": 3261,
+      "size_formatted": "3.2 KB",
+      "lines_count": 50,
+      "mtime": 1792654734.9885042,
+      "mtime_formatted": "22/10/2026 14:38",
+      "headers": [
+        "🚀 1. ĐẦU VÀO CẦN GÌ (`INPUTS`)?",
+        "⚡ 2. BA LỆNH CHẠY TẤT ĐỊNH (`1-TURN CLI`)"
       ],
       "status": "ACTIVE"
     }
@@ -3564,9 +3581,55 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792420389.9314952,
       "mtime_formatted": "19/10/2026 21:33",
       "desc": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic (verify_motion_deliverable.py)"
+    },
+    {
+      "name": "spa_edit_cli.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V7.2)",
+      "size": 3953,
+      "size_formatted": "3.9 KB",
+      "lines": 83,
+      "mtime": 1792654773.6891718,
+      "mtime_formatted": "22/10/2026 14:39",
+      "desc": "SPA EDIT CLI V7.2 — ONE-COMMAND DETERMINISTIC PACKAGING ENGINE FOR SPA / CLINIC VIDEOS"
+    },
+    {
+      "name": "verify_6gates.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V7.2)",
+      "size": 1657,
+      "size_formatted": "1.6 KB",
+      "lines": 28,
+      "mtime": 1792654778.1337001,
+      "mtime_formatted": "22/10/2026 14:39",
+      "desc": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
     }
   ],
   "history": [
+    {
+      "name": "scripts/verify_6gates.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V7.2)",
+      "mtime": 1792654778.1337001,
+      "mtime_formatted": "22/10/2026 14:39",
+      "detail": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
+    },
+    {
+      "name": "scripts/spa_edit_cli.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V7.2)",
+      "mtime": 1792654773.6891718,
+      "mtime_formatted": "22/10/2026 14:39",
+      "detail": "SPA EDIT CLI V7.2 — ONE-COMMAND DETERMINISTIC PACKAGING ENGINE FOR SPA / CLINIC VIDEOS"
+    },
+    {
+      "name": "spa-edit/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V7.2)",
+      "mtime": 1792654734.9885042,
+      "mtime_formatted": "22/10/2026 14:38",
+      "detail": "50 dòng • 2 mục chính"
+    },
     {
       "name": "motion_catalog.json",
       "type": "Database JSON",
@@ -3782,30 +3845,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792306909.2777445,
       "mtime_formatted": "18/10/2026 14:01",
       "detail": "3058 dòng • Composition"
-    },
-    {
-      "name": "compositions/VietBrandPinterestGold.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792277438.5005329,
-      "mtime_formatted": "18/10/2026 05:50",
-      "detail": "1943 dòng • Composition"
-    },
-    {
-      "name": "compositions/PinterestMotionClone.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792257024.6956942,
-      "mtime_formatted": "18/10/2026 00:10",
-      "detail": "1846 dòng • Composition"
-    },
-    {
-      "name": "compositions/MattLouiSaaSDemo.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792255638.8334692,
-      "mtime_formatted": "17/10/2026 23:47",
-      "detail": "1906 dòng • Composition"
     }
   ]
 };
