@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-23T21:15:10+07:00",
-  "total_scene_items": 401,
-  "total_unique_ideas": 382,
-  "total_active_ideas": 322,
+  "generated_at": "2026-10-23T21:26:01+07:00",
+  "total_scene_items": 402,
+  "total_unique_ideas": 383,
+  "total_active_ideas": 323,
   "total_excluded_ideas": 60,
   "total_creators": 236,
   "shooting_styles": [
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 45,
     "storytelling": 39,
     "dien-anh": 153,
-    "chuyen-canh": 62,
+    "chuyen-canh": 63,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 41,
     "kien-truc": 42,
     "the-thao": 6,
-    "ky-thuat-quay": 99,
+    "ky-thuat-quay": 100,
     "ugc": 7
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 227,
+    "us_eu": 228,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -462,6 +462,20 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@arturbr",
+      "name": "Arturbr",
+      "profile_url": "https://www.instagram.com/arturbr/",
+      "video_count": 4,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40arturbr_DesDiSBqq-N_Every_day_feels_like_a_new_day._Except_someho/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@arturbr_DesDiSBqq-N_Every_day_feels_like_a_new_day._Except_someho",
+        "IG_@arturbr_Deb_OOxqZbl_Loop",
+        "IG_@arturbr_DdO2XLIKiXo",
+        "IG_@arturbr_DcOQSCMqho0_Personal_Cinema_Viture"
+      ]
+    },
+    {
       "handle": "@qfroost",
       "name": "Qfroost",
       "profile_url": "https://www.instagram.com/qfroost/",
@@ -541,19 +555,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
         "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
         "IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling"
-      ]
-    },
-    {
-      "handle": "@arturbr",
-      "name": "Arturbr",
-      "profile_url": "https://www.instagram.com/arturbr/",
-      "video_count": 3,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40arturbr_Deb_OOxqZbl_Loop/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@arturbr_Deb_OOxqZbl_Loop",
-        "IG_@arturbr_DdO2XLIKiXo",
-        "IG_@arturbr_DcOQSCMqho0_Personal_Cinema_Viture"
       ]
     },
     {
@@ -2998,6 +2999,79 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@arturbr_DesDiSBqq-N_Every_day_feels_like_a_new_day._Except_someho",
+      "shortcode": "DesDiSBqq-N",
+      "title_vi": "Every day feels like a new day. Except someho",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @arturbr",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@arturbr",
+        "name": "Arturbr",
+        "handle": "@arturbr",
+        "profile_url": "https://www.instagram.com/arturbr/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DesDiSBqq-N/",
+      "gdrive_folder": "https://drive.google.com/open?id=1NUDzq70ZyzBzdIFyBuljHagfu-bHtOir",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40arturbr_DesDiSBqq-N_Every_day_feels_like_a_new_day._Except_someho/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40arturbr_DesDiSBqq-N_Every_day_feels_like_a_new_day._Except_someho/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DesDiSBqq-N.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DesDiSBqq-N.mp4",
+        "report_url": "reports/IG_@arturbr_DesDiSBqq-N_Every_day_feels_like_a_new_day._Except_someho.html",
+        "shots_count": 53,
+        "duration": "23.8s",
+        "youtube_id": "d-4IVA6K00I",
+        "youtube_embed": "https://www.youtube.com/embed/d-4IVA6K00I",
+        "youtube_url": "https://youtu.be/d-4IVA6K00I"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻",
       "shortcode": "DdE2qP1o3hQ",
       "title_vi": "Huzuru evinde bulanlar 🌿🫶🏻",
@@ -4859,7 +4933,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -11517,7 +11591,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -13073,8 +13147,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
