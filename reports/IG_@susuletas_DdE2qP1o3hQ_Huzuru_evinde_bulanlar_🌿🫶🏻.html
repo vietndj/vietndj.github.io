@@ -1242,7 +1242,7 @@
 
     <div class="content-column">
         <header class="report-header">
-            <div class="header-badges"><span class="badge">STORYBOARD BREAKDOWN</span></div>
+            <div class="header-badges"><span class="badge">Kiến Trúc &amp; Không Gian Sống</span> <span class="badge badge-alt">Chỉn Chu (Cinematic)</span></div>
             <h1 class="report-title">
                 <a href="https://www.instagram.com/reel/DdE2qP1o3hQ/?vrfl=MXAwdHVsdHJxNzhsbQ==" target="_blank" rel="noopener">@susuletas - Huzuru evinde bulanlar 🌿🫶🏻</a>
             </h1>
@@ -1259,10 +1259,53 @@
         
 
         <div class="overview-card">
-            ⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.
+            Chuỗi 15 cú máy B-Roll tĩnh vật và tương tác nhẹ (~0.7s/shot) dẫn dắt thị giác đi từ ánh nắng ban ngày (cây xanh đọng sương, bóng rèm voan, bát nho xanh) sang không gian tối ấm cúng (khói nến, khói trầm, nhặt trứng cút, xem phim và chong chóng nến xoay).
         </div>
 
         
+        <div class="remake-prompt-card" id="remakePromptCard">
+            <div class="prompt-accordion-header" onclick="togglePromptAccordion(this)">
+                <div class="prompt-left">
+                    <span class="prompt-badge">CÚ MÁY STU</span>
+                    <span class="prompt-title">Ánh xạ kỹ thuật quay sang ngành nghề của bạn</span>
+                </div>
+                <div class="prompt-right">
+                    <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép</button>
+                    <div class="prompt-toggle">
+                        <span class="toggle-icon">▼</span>
+                        <span class="toggle-label">Mở xem</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-accordion-body" style="display: none;">
+                <p class="prompt-desc">Video kỹ thuật quay thuần túy (không thoại). Sao chép Prompt để AI hướng dẫn áp dụng cú máy vào quay sản phẩm thực tế.</p>
+                <div class="prompt-code-wrap">
+                    <div class="prompt-code-bar">
+                        <span>MEGA_PROMPT_TECHNIQUE_REMAKE_GEMINI.md</span>
+                        <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép Prompt</button>
+                    </div>
+                    <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Hình ảnh &amp; Chuyên gia Hướng Dẫn Thao Tác Cú Máy Thực Chiến.
+
+Tôi vừa học được kỹ thuật quay đắt giá: @susuletas - Huzuru evinde bulanlar 🌿🫶🏻.
+Video này KHÔNG CÓ LỜI THOẠI, sức hút nằm ở góc đặt máy, tiêu cự và chuyển động camera.
+
+=== QUY TẮC ===
+- CẤM BỊA KỊCH BẢN NÓI. Tôi cần hướng dẫn cầm điện thoại quay gì, lia máy hướng nào.
+- CẤM VĂN MẪU AI.
+- VĂN PHONG MỘC MẠC: Xưng mình - bạn.
+
+=== HƯỚNG DẪN ===
+Nếu tôi chưa ghi ngành, hỏi 1 câu:
+1. Làm đẹp &amp; Spa (quay kem, thao tác tay, máy soi da)
+2. Nội thất / Decor (quay lia thớ gỗ/mẫu đá sang không gian)
+3. Ẩm thực &amp; F&amp;B (quay lia quanh món ăn, đổ sốt, khói)
+4. Nông nghiệp / Sức khỏe (kiểm tra lá cây, hạt giống, bao bì)
+5. Ngành khác: [Tên nghề] + [Sản phẩm muốn quay]
+
+Sau khi chọn → xuất 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY!</div>
+                </div>
+            </div>
+        </div>
 
         <div class="toolbar">
             <div class="tab-group">
@@ -1285,19 +1328,19 @@
                     <span class="shot-num">SHOT 01</span>
                     <span class="shot-dur">1.10s</span>
                 </div>
-                <h4 class="shot-headline">Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh</h4>
-                <p class="shot-insight">Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.</p>
+                <h4 class="shot-headline">Mở Màn Tĩnh Vật Cây Xanh Đọng Sương: Hook thị giác bình yên bằng tương phản màu Đỏ - Xanh lá - Đất nung</h4>
+                <p class="shot-insight">Tận dụng giọt nước xịt sương lên lá cây và bảng màu tương phản ấm - lạnh (Đất nung + Tường xanh xám) để tạo cảm giác trong lành ngay giây đầu tiên.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Establishing Hook Shot (Góc toàn định vị bối cảnh)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Kệ cây trong nhà (Tường xanh xám)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Medium Close-Up (Góc trung cận tĩnh vật mở màn)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên tạt ngang dịu nhẹ)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Tạo điểm nhấn thị giác ngay trung tâm; ánh sáng Balanced Diffused Lighting  dẫn hướng mắt người xem hoàn hảo. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Thời lượng shot ngắn nên người xem dễ bị trôi qua nếu chi tiết chữ/đối tượng phân bổ quá sát góc viền. Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Mở màn định vị không gian và nhịp thở của toàn bộ video, thu hút sự chú ý tức thì.</div>
+                    <div class="critique-good">Tương phản màu sắc tự nhiên rất nịnh mắt giữa sắc đỏ của hoa, xanh mướt của lá, nâu cam của chậu đất nung và nền tường xanh xám lạnh; những giọt nước đọng trên lá tạo cảm giác tươi mát, sống động.</div>
+                    <div class="critique-warn">Chậu cây bên trái bị cắt lửng một nửa ở rìa khung hình và dòng chữ &#x27;My kinf of calm&#x27; bị gõ nhầm chính tả (&#x27;kinf&#x27; thay vì &#x27;kind&#x27;) lại đè thẳng lên tán lá trung tâm.</div>
+                    <div class="shot-narrative">Hai chậu cây bằng đất nung đặt cạnh nhau trước bức tường xanh xám dịu; lá cây húng chanh xanh mướt đọng giọt nước mới tưới, điểm xuyết hoa sống đời đỏ bên trái kèm dòng chữ &#x27;My kinf of calm&#x27;.</div>
                 </details>
             </div>
         </div>
@@ -1313,19 +1356,19 @@
                     <span class="shot-num">SHOT 02</span>
                     <span class="shot-dur">0.47s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Nhịp Thở Ánh Sáng Trầm Dịu: Hạ độ sáng và rung nhẹ tán lá tạo chuyển động tự nhiên cho cảnh tĩnh</h4>
+                <p class="shot-insight">Khi quay cảnh tĩnh vật (cây cối, đồ decor), hãy tạo gió nhẹ hoặc tác động khẽ vào lá để khung hình có sức sống thay vì đứng im như ảnh chụp.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Kệ cây trong nhà (Tường xanh xám)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up (Cận cảnh chuyển động lá)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Moody Low-key Natural Light (Ánh sáng tự nhiên hạ trầm)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Jump Cut / Direct Cut cùng góc máy</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Hạ phơi sáng (underexposure) giúp màu sắc trở nên trầm ấm, sâu lắng và làm nổi bật dòng chữ &#x27;My kinf of calm&#x27; ở chính giữa khung hình.</div>
+                    <div class="critique-warn">Tán lá tiền cảnh bị nhòe nét nhẹ do rung động và thiếu sáng cục bộ khiến chi tiết gân lá không còn sắc sảo như cảnh đầu.</div>
+                    <div class="shot-narrative">Góc cận hai chậu cây đất nung trong ánh sáng trầm tối hơn, tán lá xanh rung nhẹ tạo hiệu ứng chuyển động mờ nhẹ (motion blur) tự nhiên, chữ &#x27;calm&#x27; hiện rõ trắng sáng.</div>
                 </details>
             </div>
         </div>
@@ -1341,19 +1384,19 @@
                     <span class="shot-num">SHOT 03</span>
                     <span class="shot-dur">0.40s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Nghệ Thuật Bóng Đổ Rèm Voan: Bắt khoảnh khắc nắng vàng xuyên qua lớp vải bay nhẹ trên sàn gỗ</h4>
+                <p class="shot-insight">Đừng chỉ quay đồ vật, hãy quay &#x27;ánh sáng và bóng đổ&#x27; của đồ vật (như bóng rèm voan trên sàn gỗ lúc nắng chiều) để nâng tầm cảm xúc video.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sàn gỗ cạnh cửa sổ đón nắng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">High-Angle Detail Shot (Góc cao bắt bóng nắng)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Golden Hour Sunlight &amp; Shadow Play (Nắng vàng xuyên rèm tạo bóng đổ)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Khai thác xuất sắc chất liệu xuyên thấu (translucent) của vải voan kết hợp ánh nắng tạt chéo (side-backlighting) tạo đồ họa bóng đổ (shadow play) giàu chất thơ.</div>
+                    <div class="critique-warn">Bóng đen của tán cây ở sát mép dưới khung hình hơi tối và đặc, làm giảm nhẹ sự thanh thoát của mảng sàn gỗ sáng màu.</div>
+                    <div class="shot-narrative">Tấm rèm voan trắng mỏng tung bay mềm mại trong gió, ánh nắng chiều vàng rực chiếu xuyên qua tạo nên những vệt bóng đổ uốn lượn trên mặt sàn gỗ.</div>
                 </details>
             </div>
         </div>
@@ -1369,19 +1412,19 @@
                     <span class="shot-num">SHOT 04</span>
                     <span class="shot-dur">0.40s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Bố Cục Nửa Khung Hình &amp; Bóng Nắng: Đặt bát nho xanh ở 1/3 trên để nhường không gian cho bóng lá</h4>
+                <p class="shot-insight">Sử dụng khoảng trống (Negative Space) trên mặt bàn trắng làm &#x27;toan vẽ&#x27; cho bóng nắng cây lá, giúp cảnh quay đồ ăn/trái cây trông nghệ thuật hơn hẳn.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn ăn trải khăn trắng đón nắng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">High-Angle Close-Up (Góc cao cận cảnh tĩnh vật &amp; bóng đổ)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Natural Hard Sunlight with Dappled Shadows (Nắng tự nhiên tạo bóng hoa nắng)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Bố cục chia đôi thông minh: 1/3 trên rực rỡ màu sắc của nho xanh và bát gốm, 2/3 dưới là khoảng thở trắng tinh khôi được lấp đầy bằng họa tiết bóng nắng tự nhiên.</div>
+                    <div class="critique-warn">Phần chùm nho ở sát mép trên cùng bị cắt hơi sát đỉnh khung hình, làm mất đi một phần dáng tròn đầy của miệng bát.</div>
+                    <div class="shot-narrative">Bát gốm họa tiết cổ điển đựng đầy nho xanh mọng nước đặt trên mặt bàn phủ khăn trắng, phía dưới là bóng nắng lốm đốm xuyên qua tán lá và rèm ren.</div>
                 </details>
             </div>
         </div>
@@ -1397,19 +1440,19 @@
                     <span class="shot-num">SHOT 05</span>
                     <span class="shot-dur">0.40s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Xóa Phông Đa Lớp (Layered Depth): Lấy nét cụm hoa húng quế trắng trên nền bokeh bát nho vàng ấm</h4>
+                <p class="shot-insight">Phối màu đồng điệu (Xanh lá - Vàng) giữa tiền cảnh và hậu cảnh xóa phông để tạo hiệu ứng chiều sâu không gian 3D mịn màng.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn đón nắng trong nhà</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up Shallow DOF (Cận cảnh xóa phông đa lớp)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Warm Natural Sunlight (Ánh nắng tự nhiên ấm áp)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Tạo chiều sâu trường ảnh (DOF) rất đẹp nhờ đặt chậu cây ở tiền cảnh và bát nho ở hậu cảnh, đồng điệu tuyệt đối về bảng màu Vàng - Xanh lá (Analogous color harmony).</div>
+                    <div class="critique-warn">Dòng chữ &#x27;My kinf of calm&#x27; màu trắng nằm đè đúng vào chùm hoa màu trắng ở trung tâm nên bị chìm, khó đọc.</div>
+                    <div class="shot-narrative">Chậu cây thảo mộc lá nhỏ xanh mướt trong chậu vàng đang nở chùm hoa trắng ở trung tâm, phía sau xóa phông mờ ảo thấy sắc vàng xanh của bát nho.</div>
                 </details>
             </div>
         </div>
@@ -1425,19 +1468,19 @@
                     <span class="shot-num">SHOT 06</span>
                     <span class="shot-dur">0.87s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Đặc Tả Sắc Đỏ Trên Nền Trầm: Phóng cận chùm hoa nhỏ để tạo điểm bùng nổ màu sắc (Color Pop)</h4>
+                <p class="shot-insight">Dùng một chi tiết nhỏ có màu nóng rực (đỏ/cam) đặt lệch tâm (quy tắc 1/3) trên nền màu lạnh trầm để dẫn hướng mắt người xem tức thì.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Góc cây cảnh trong nhà</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Macro / Extreme Close-Up (Cận cảnh đặc tả hoa)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Soft Moody Diffused Light (Ánh sáng tán xạ trầm dịu)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Áp dụng tương phản màu bổ túc (Đỏ cam vs Xanh lá/Xanh xám) kết hợp khẩu độ lớn xóa phông giúp chùm hoa đỏ trở thành tâm điểm thị giác.</div>
+                    <div class="critique-warn">Điểm lấy nét hơi trượt nhẹ vào phần cành và lá sát hoa, khiến một vài cánh hoa đỏ ở tiền cảnh chưa đạt độ nét căng tuyệt đối.</div>
+                    <div class="shot-narrative">Góc cận đặc tả những bông hoa sống đời nhỏ màu đỏ rực bên rìa trái khung hình, nổi bật trên phông nền lá cây và tường xanh xám được xóa mờ hoàn toàn.</div>
                 </details>
             </div>
         </div>
@@ -1453,19 +1496,19 @@
                     <span class="shot-num">SHOT 07</span>
                     <span class="shot-dur">0.70s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Khoảnh Khắc Khói Nến Sau Khi Tắt: Bắt trọn làn khói trắng uốn lượn và đốm lửa tàn đỏ rực trên nền tối</h4>
+                <p class="shot-insight">Muốn quay khói (khói nến, khói trà, khói trầm) lên hình rõ đẹp nhất, bắt buộc phải đặt trước một phông nền tối (Low-key background) và có nguồn sáng tạt ngang.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn đọc sách trong phòng tối ấm</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up Detail Shot (Cận cảnh khói nến)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Rim Light (Ánh sáng nền tối tôn khói trắng)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Bố cục Low-key (nền tối) làm tôn bật hoàn hảo làn khói trắng mỏng manh và đốm than hồng nhỏ xíu ở tim nến, gợi cảm giác tĩnh lặng, thư giãn sâu.</div>
+                    <div class="critique-warn">Cốc nến phía trước bị out nét (mờ) trong khi điểm nét rơi vào cốc nến phía sau, đôi chút gây phân tán nhẹ ở tiền cảnh.</div>
+                    <div class="shot-narrative">Hai ly nến thơm hình bông hoa xanh đặt trên trang sách cũ vừa được thổi tắt, tim nến còn hồng đỏ và làn khói trắng mảnh mai bay lên trong không gian tối ấm.</div>
                 </details>
             </div>
         </div>
@@ -1481,19 +1524,19 @@
                     <span class="shot-num">SHOT 08</span>
                     <span class="shot-dur">1.23s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Điểm Chạm Con Người (Human Touch): Đưa bàn tay chăm sóc cây xanh vào khung hình kệ mây và ô giấy cam</h4>
+                <p class="shot-insight">Đan xen các cảnh có &#x27;bàn tay tương tác nhẹ&#x27; (chạm lá, cầm cốc, mở sách) vào giữa các cảnh tĩnh vật để người xem cảm nhận được sự hiện diện của chủ nhân ngôi nhà.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Góc kệ mây tre đan trong phòng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Medium Close-Up (Trung cận bàn tay tương tác với cây)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Warm Dim Indoor Lighting (Ánh sáng trong phòng trầm ấm)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Sự xuất hiện của bàn tay con người giúp chuỗi cảnh tĩnh vật có thêm hơi ấm và sự gắn kết cảm xúc; chất liệu mây tre đan và ô giấy cam tạo vibe Boho/Vintage rất ấm cúng.</div>
+                    <div class="critique-warn">Toàn bộ khung hình hơi thiếu sáng (underexposed), đặc biệt vùng góc dưới bên phải nơi bàn tay xuất hiện bị chìm vào bóng tối nên kém nổi bật.</div>
+                    <div class="shot-narrative">Bàn tay nhân vật nhẹ nhàng vuốt nhẹ tán lá xanh đặt trên kệ mây đan, phía sau là chiếc ô giấy trang trí màu cam ấm treo trên tường.</div>
                 </details>
             </div>
         </div>
@@ -1509,19 +1552,19 @@
                     <span class="shot-num">SHOT 09</span>
                     <span class="shot-dur">0.80s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Tĩnh Vật Túi Lưới Trái Cây Treo Tường: Kết hợp chất liệu sợi đan mộc mạc với ánh đèn vàng ấm áp</h4>
+                <p class="shot-insight">Treo các vật dụng mộc mạc (túi lưới trái cây, giỏ mây) lên tường trống và dùng cành lá làm tiền cảnh mờ (foreground element) để khung hình bớt đơn điệu.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Tường bếp / góc phòng ăn ấm cúng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Medium Close-Up with Foreground Leaf (Trung cận có tiền cảnh lá)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Warm Amber Lamp Light (Ánh đèn vàng hổ phách ấm áp)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Nhánh lá mảnh ở tiền cảnh rìa phải tạo khung tự nhiên (Natural Framing) và chiều sâu lớp lang; màu đỏ - cam - tím của trái cây nổi bật qua mắt lưới trắng.</div>
+                    <div class="critique-warn">Bóng đổ của túi lưới lên tường khá gắt do nguồn sáng đặt gần, và dòng chữ trắng vẫn đè ngang giữa túi lưới gây rối nhẹ.</div>
+                    <div class="shot-narrative">Chiếc túi lưới sợi cotton treo sát tường đựng đầy lựu đỏ, quýt vàng và quả sung tím dưới ánh đèn vàng ấm, điểm xuyết vài nhánh lá mảnh ở rìa phải.</div>
                 </details>
             </div>
         </div>
@@ -1537,19 +1580,19 @@
                     <span class="shot-num">SHOT 10</span>
                     <span class="shot-dur">1.07s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Sắp Đặt Góc Nghệ Thuật Đa Tầng: Phối giỏ hoa mây treo tường, tranh khung gỗ và cành lá thủy sinh</h4>
+                <p class="shot-insight">Với video dọc 9:16, hãy sắp đặt đồ decor theo trục dọc 3 tầng (Cao - Giữa - Thấp) để lấp đầy khung hình một cách cân đối mà không bị trống trải.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Góc decor tranh và giỏ hoa trong phòng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Medium Shot Vertical Composition (Trung cảnh bố cục dọc 3 tầng)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Soft Dim Ambient Light (Ánh sáng môi trường dịu trầm)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Bố cục phân tầng theo chiều dọc (Vertical Layering) cực kỳ vừa vặn với khung hình dọc 9:16: trên là giỏ hoa, giữa là tranh, dưới là lá xanh, dẫn mắt đi từ trên xuống dưới.</div>
+                    <div class="critique-warn">Ánh sáng tổng thể khá phẳng và trầm (low contrast), khiến bức tranh trong khung gỗ hơi tối và kém tách biệt với màu tường.</div>
+                    <div class="shot-narrative">Góc tường trang trí nhiều lớp gồm giỏ hoa hồng kem viền ren treo cao, khung tranh gỗ dựa tường ở giữa và chiếc lá xanh cắm lọ thủy tinh ở tiền cảnh.</div>
                 </details>
             </div>
         </div>
@@ -1565,19 +1608,19 @@
                     <span class="shot-num">SHOT 11</span>
                     <span class="shot-dur">0.70s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Khói Trầm &amp; Ánh Đèn Vàng Ấm: Đặc tả làn khói mảnh bốc lên từ chén gốm nâu đánh thức khứu giác qua hình ảnh</h4>
+                <p class="shot-insight">Sử dụng các yếu tố gợi liên tưởng khứu giác (khói trầm, nến thơm, tách cà phê bốc khói) để người xem không chỉ &#x27;nhìn&#x27; mà còn &#x27;cảm&#x27; được bầu không khí trong phòng.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn làm việc / bàn trà dưới ánh đèn vàng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up Shallow DOF (Cận cảnh chén trầm khói xóa phông)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Warm Tungsten Back-Side Light (Ánh đèn vàng chiếu tạt làm nổi khói)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Ánh sáng vàng cam (Warm Tungsten) kết hợp hậu cảnh bokeh mịn màng làm làn khói trắng uốn lượn trở nên vô cùng sống động, truyền tải trọn vẹn sự thư thái (&#x27;calm&#x27;).</div>
+                    <div class="critique-warn">Một vài vụn tro đen rơi vãi trên mặt bàn trắng ở ngay dưới đáy chén gốm hơi làm giảm sự chỉn chu, sạch sẽ của mặt bàn.</div>
+                    <div class="shot-narrative">Chén gốm nhỏ màu nâu đặt trên bàn đang tỏa làn khói trắng dịu nhẹ từ nhánh thảo mộc đốt dở, hậu cảnh mờ ấm áp với giỏ hoa khô và ống bút.</div>
                 </details>
             </div>
         </div>
@@ -1593,19 +1636,19 @@
                     <span class="shot-num">SHOT 12</span>
                     <span class="shot-dur">0.50s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Tương Tác Đời Thường Bên Ánh Nến: Bàn tay chạm vào khay trứng cút đốm trên nền sách cũ và ánh nến lung linh</h4>
+                <p class="shot-insight">Đặt một ngọn nến đang cháy ở hậu cảnh xa (background) khi quay cận cảnh đồ vật trên bàn để tạo điểm sáng Bokeh tự nhiên cực kỳ ấm cúng.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn trang trí ánh nến</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">High-Angle Close-Up (Góc cao cận cảnh bàn tay &amp; tĩnh vật)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Candlelight Warm Low-key (Ánh nến ấm áp trong phòng tối)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Sự kết hợp độc đáo giữa họa tiết đốm tự nhiên của vỏ trứng cút, trang sách in chữ cổ điển ở tiền cảnh và ngọn lửa nến bokeh tròn lung linh ở hậu cảnh.</div>
+                    <div class="critique-warn">Khay đựng trứng bằng nhựa trong suốt hơi lạc quẻ với phong cách cổ điển (vintage/rustic) của sách cũ và ánh nến (nếu thay bằng rổ mây hoặc đĩa gốm sẽ hoàn hảo hơn).</div>
+                    <div class="shot-narrative">Bàn tay nhân vật nhẹ nhàng chạm vào những quả trứng cút họa tiết đốm nâu đặt trên trang sách in chữ, phía sau là ngọn nến nhỏ cháy sáng ấm áp kèm chữ &#x27;home loving&#x27;.</div>
                 </details>
             </div>
         </div>
@@ -1621,19 +1664,19 @@
                     <span class="shot-num">SHOT 13</span>
                     <span class="shot-dur">0.40s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Macro Nụ Hoa Đọng Sương: Cô lập tuyệt đối chủ thể siêu nhỏ giữa không gian xanh mướt xóa phông</h4>
+                <p class="shot-insight">Chèn một cú máy Macro siêu cận (nụ hoa, giọt nước) vào chuỗi B-Roll để tạo khoảng lặng tinh tế, kéo người xem tập trung vào những vẻ đẹp nhỏ bé trong nhà.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Chậu cây hoa trong nhà</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Macro Shot (Siêu cận cảnh nụ hoa đọng nước)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Soft Diffused Natural Light (Ánh sáng tự nhiên dịu nhẹ)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Xóa phông (Bokeh) mịn như kem giúp cô lập hoàn toàn nụ hoa nhỏ ở trung tâm, tạo nhịp nghỉ thị giác (Visual Pause) tĩnh lặng và tinh tế.</div>
+                    <div class="critique-warn">Độ tương phản tổng thể hơi thấp do chủ thể (nụ hoa xanh) cùng tông màu với phông nền (lá xanh), thiếu một chút ánh sáng ven (rim light) để tách khối rõ hơn.</div>
+                    <div class="shot-narrative">Góc cận macro đặc tả một nụ hoa xanh nhỏ xíu đọng những giọt nước trong vắt, nổi bật hoàn toàn trên nền lá xanh thẫm mờ ảo kèm chữ &#x27;home loving&#x27;.</div>
                 </details>
             </div>
         </div>
@@ -1649,19 +1692,19 @@
                     <span class="shot-num">SHOT 14</span>
                     <span class="shot-dur">0.43s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Góc Thư Giãn Tối Tại Gia: Bố cục chéo kết nối đĩa thức ăn nóng hổi ở tiền cảnh với màn hình phim cổ điển</h4>
+                <p class="shot-insight">Khi quay cảnh xem phim/làm việc trên laptop trong video lifestyle ấm cúng, hãy chọn cảnh trên màn hình có cùng tông màu ấm (lửa, nến, hoàng hôn) để không phá vỡ mood chung.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn làm việc / bàn ăn trong phòng tối</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Medium Close-Up (Trung cận đĩa thức ăn &amp; laptop)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Screen Glow &amp; Warm Room Light (Ánh sáng màn hình kết hợp đèn phòng ấm)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut theo nhịp nhạc</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Sự đồng điệu thú vị khi cảnh phim trên màn hình laptop cũng tràn ngập ánh nến vàng, ăn nhập hoàn hảo với bầu không khí ấm cúng ngoài đời thực và đĩa đồ ăn hấp dẫn ở tiền cảnh.</div>
+                    <div class="critique-warn">Đèn nền bàn phím laptop mang sắc trắng xanh lạnh hơi đối chọi nhẹ với tông màu vàng ấm cổ điển của toàn bộ video.</div>
+                    <div class="shot-narrative">Bàn ăn tối ấm cúng với đĩa bánh Mantı rưới sốt sữa chua bơ ớt đặt ở tiền cảnh phải, phía sau là chiếc laptop đang chiếu cảnh phim có ánh nến đồng điệu với không gian phòng.</div>
                 </details>
             </div>
         </div>
@@ -1677,19 +1720,19 @@
                     <span class="shot-num">SHOT 15</span>
                     <span class="shot-dur">2.07s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Cảnh Kết Chong Chóng Nến Xoay: Khép lại video bằng chuyển động quay êm dịu và bokeh ánh nến đa tầng</h4>
+                <p class="shot-insight">Luôn dành cảnh đắt giá nhất, có chuyển động lặp lại êm dịu và ánh sáng lung linh nhất (như chong chóng nến xoay) làm cảnh kết để tạo dư âm cảm xúc và kích thích xem lặp lại (loop).</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn đọc sách thắp nến ấm cúng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up Shallow DOF Outro (Cận cảnh chong chóng nến xóa phông)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Multi-layered Candlelight Bokeh (Ánh nến đa tầng lung linh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Fade / Loop Outro</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Lựa chọn cảnh kết (Outro) hoàn hảo: vừa có chuyển động tự thân êm ái của vòng xoay ngựa vàng, vừa có chiều sâu 3 lớp ánh nến (tiền cảnh, trung cảnh, hậu cảnh bokeh) giữ chân người xem trọn đến giây cuối.</div>
+                    <div class="critique-warn">Dòng chữ &#x27;home loving&#x27; đặt chính giữa hơi đè lên chi tiết chú ngựa vàng đang xoay ở trung tâm.</div>
+                    <div class="shot-narrative">Chiếc chân nến xoay mạ vàng hình những chú ngựa nhỏ đang quay nhẹ nhàng trên chồng sách cũ nhờ hơi ấm ngọn nến, hậu cảnh rực sáng những đốm bokeh nến vàng ấm.</div>
                 </details>
             </div>
         </div>
@@ -1702,9 +1745,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
                 <span class="grid-num">SHOT 01</span>
                 <span class="grid-time">0.0s – 1.1s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_01_mid.webp', 'SHOT 01 • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_01_mid.webp', 'SHOT 01 • Mở Màn Tĩnh Vật Cây Xanh Đọng Sương: Hook thị giác bình yên bằng tương phản màu Đỏ - Xanh lá - Đất nung')">⊕</button>
             </div>
-            <div class="grid-title">Visual Hook Mở Màn: Giữ chân người xem n</div>
+            <div class="grid-title">Mở Màn Tĩnh Vật Cây Xanh Đọng Sương: Hoo</div>
         </div>
 
         <div class="grid-item" onclick="playShot(1.1, 1.53, 'SHOT 02')">
@@ -1712,9 +1755,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_02_mid.webp" alt="SHOT 02" loading="lazy" />
                 <span class="grid-num">SHOT 02</span>
                 <span class="grid-time">1.1s – 1.5s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_02_mid.webp', 'SHOT 02 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_02_mid.webp', 'SHOT 02 • Nhịp Thở Ánh Sáng Trầm Dịu: Hạ độ sáng và rung nhẹ tán lá tạo chuyển động tự nhiên cho cảnh tĩnh')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Nhịp Thở Ánh Sáng Trầm Dịu: Hạ độ sáng v</div>
         </div>
 
         <div class="grid-item" onclick="playShot(1.57, 1.93, 'SHOT 03')">
@@ -1722,9 +1765,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_03_mid.webp" alt="SHOT 03" loading="lazy" />
                 <span class="grid-num">SHOT 03</span>
                 <span class="grid-time">1.6s – 1.9s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_03_mid.webp', 'SHOT 03 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_03_mid.webp', 'SHOT 03 • Nghệ Thuật Bóng Đổ Rèm Voan: Bắt khoảnh khắc nắng vàng xuyên qua lớp vải bay nhẹ trên sàn gỗ')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Nghệ Thuật Bóng Đổ Rèm Voan: Bắt khoảnh </div>
         </div>
 
         <div class="grid-item" onclick="playShot(1.97, 2.33, 'SHOT 04')">
@@ -1732,9 +1775,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_04_mid.webp" alt="SHOT 04" loading="lazy" />
                 <span class="grid-num">SHOT 04</span>
                 <span class="grid-time">2.0s – 2.3s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_04_mid.webp', 'SHOT 04 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_04_mid.webp', 'SHOT 04 • Bố Cục Nửa Khung Hình &amp; Bóng Nắng: Đặt bát nho xanh ở 1/3 trên để nhường không gian cho bóng lá')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Bố Cục Nửa Khung Hình &amp; Bóng Nắng: Đặt b</div>
         </div>
 
         <div class="grid-item" onclick="playShot(2.37, 2.73, 'SHOT 05')">
@@ -1742,9 +1785,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_05_mid.webp" alt="SHOT 05" loading="lazy" />
                 <span class="grid-num">SHOT 05</span>
                 <span class="grid-time">2.4s – 2.7s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_05_mid.webp', 'SHOT 05 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_05_mid.webp', 'SHOT 05 • Xóa Phông Đa Lớp (Layered Depth): Lấy nét cụm hoa húng quế trắng trên nền bokeh bát nho vàng ấm')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Xóa Phông Đa Lớp (Layered Depth): Lấy né</div>
         </div>
 
         <div class="grid-item" onclick="playShot(2.77, 3.6, 'SHOT 06')">
@@ -1752,9 +1795,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_06_mid.webp" alt="SHOT 06" loading="lazy" />
                 <span class="grid-num">SHOT 06</span>
                 <span class="grid-time">2.8s – 3.6s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_06_mid.webp', 'SHOT 06 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_06_mid.webp', 'SHOT 06 • Đặc Tả Sắc Đỏ Trên Nền Trầm: Phóng cận chùm hoa nhỏ để tạo điểm bùng nổ màu sắc (Color Pop)')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Đặc Tả Sắc Đỏ Trên Nền Trầm: Phóng cận c</div>
         </div>
 
         <div class="grid-item" onclick="playShot(3.63, 4.3, 'SHOT 07')">
@@ -1762,9 +1805,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_07_mid.webp" alt="SHOT 07" loading="lazy" />
                 <span class="grid-num">SHOT 07</span>
                 <span class="grid-time">3.6s – 4.3s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_07_mid.webp', 'SHOT 07 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_07_mid.webp', 'SHOT 07 • Khoảnh Khắc Khói Nến Sau Khi Tắt: Bắt trọn làn khói trắng uốn lượn và đốm lửa tàn đỏ rực trên nền tối')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Khoảnh Khắc Khói Nến Sau Khi Tắt: Bắt tr</div>
         </div>
 
         <div class="grid-item" onclick="playShot(4.33, 5.53, 'SHOT 08')">
@@ -1772,9 +1815,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_08_mid.webp" alt="SHOT 08" loading="lazy" />
                 <span class="grid-num">SHOT 08</span>
                 <span class="grid-time">4.3s – 5.5s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_08_mid.webp', 'SHOT 08 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_08_mid.webp', 'SHOT 08 • Điểm Chạm Con Người (Human Touch): Đưa bàn tay chăm sóc cây xanh vào khung hình kệ mây và ô giấy cam')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Điểm Chạm Con Người (Human Touch): Đưa b</div>
         </div>
 
         <div class="grid-item" onclick="playShot(5.57, 6.33, 'SHOT 09')">
@@ -1782,9 +1825,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_09_mid.webp" alt="SHOT 09" loading="lazy" />
                 <span class="grid-num">SHOT 09</span>
                 <span class="grid-time">5.6s – 6.3s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_09_mid.webp', 'SHOT 09 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_09_mid.webp', 'SHOT 09 • Tĩnh Vật Túi Lưới Trái Cây Treo Tường: Kết hợp chất liệu sợi đan mộc mạc với ánh đèn vàng ấm áp')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Tĩnh Vật Túi Lưới Trái Cây Treo Tường: K</div>
         </div>
 
         <div class="grid-item" onclick="playShot(6.37, 7.4, 'SHOT 10')">
@@ -1792,9 +1835,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_10_mid.webp" alt="SHOT 10" loading="lazy" />
                 <span class="grid-num">SHOT 10</span>
                 <span class="grid-time">6.4s – 7.4s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_10_mid.webp', 'SHOT 10 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_10_mid.webp', 'SHOT 10 • Sắp Đặt Góc Nghệ Thuật Đa Tầng: Phối giỏ hoa mây treo tường, tranh khung gỗ và cành lá thủy sinh')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Sắp Đặt Góc Nghệ Thuật Đa Tầng: Phối giỏ</div>
         </div>
 
         <div class="grid-item" onclick="playShot(7.43, 8.1, 'SHOT 11')">
@@ -1802,9 +1845,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_11_mid.webp" alt="SHOT 11" loading="lazy" />
                 <span class="grid-num">SHOT 11</span>
                 <span class="grid-time">7.4s – 8.1s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_11_mid.webp', 'SHOT 11 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_11_mid.webp', 'SHOT 11 • Khói Trầm &amp; Ánh Đèn Vàng Ấm: Đặc tả làn khói mảnh bốc lên từ chén gốm nâu đánh thức khứu giác qua hình ảnh')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Khói Trầm &amp; Ánh Đèn Vàng Ấm: Đặc tả làn </div>
         </div>
 
         <div class="grid-item" onclick="playShot(8.13, 8.6, 'SHOT 12')">
@@ -1812,9 +1855,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_12_mid.webp" alt="SHOT 12" loading="lazy" />
                 <span class="grid-num">SHOT 12</span>
                 <span class="grid-time">8.1s – 8.6s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_12_mid.webp', 'SHOT 12 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_12_mid.webp', 'SHOT 12 • Tương Tác Đời Thường Bên Ánh Nến: Bàn tay chạm vào khay trứng cút đốm trên nền sách cũ và ánh nến lung linh')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Tương Tác Đời Thường Bên Ánh Nến: Bàn ta</div>
         </div>
 
         <div class="grid-item" onclick="playShot(8.63, 9.0, 'SHOT 13')">
@@ -1822,9 +1865,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_13_mid.webp" alt="SHOT 13" loading="lazy" />
                 <span class="grid-num">SHOT 13</span>
                 <span class="grid-time">8.6s – 9.0s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_13_mid.webp', 'SHOT 13 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_13_mid.webp', 'SHOT 13 • Macro Nụ Hoa Đọng Sương: Cô lập tuyệt đối chủ thể siêu nhỏ giữa không gian xanh mướt xóa phông')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Macro Nụ Hoa Đọng Sương: Cô lập tuyệt đố</div>
         </div>
 
         <div class="grid-item" onclick="playShot(9.03, 9.43, 'SHOT 14')">
@@ -1832,9 +1875,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_14_mid.webp" alt="SHOT 14" loading="lazy" />
                 <span class="grid-num">SHOT 14</span>
                 <span class="grid-time">9.0s – 9.4s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_14_mid.webp', 'SHOT 14 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_14_mid.webp', 'SHOT 14 • Góc Thư Giãn Tối Tại Gia: Bố cục chéo kết nối đĩa thức ăn nóng hổi ở tiền cảnh với màn hình phim cổ điển')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Góc Thư Giãn Tối Tại Gia: Bố cục chéo kế</div>
         </div>
 
         <div class="grid-item" onclick="playShot(9.47, 11.5, 'SHOT 15')">
@@ -1842,9 +1885,9 @@
                 <img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_15_mid.webp" alt="SHOT 15" loading="lazy" />
                 <span class="grid-num">SHOT 15</span>
                 <span class="grid-time">9.5s – 11.5s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_15_mid.webp', 'SHOT 15 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_15_mid.webp', 'SHOT 15 • Cảnh Kết Chong Chóng Nến Xoay: Khép lại video bằng chuyển động quay êm dịu và bokeh ánh nến đa tầng')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Cảnh Kết Chong Chóng Nến Xoay: Khép lại </div>
         </div>
         </div>
     </div>
@@ -1861,7 +1904,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_01_mid.webp" alt="SHOT 01" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 01</div>
-                <div class="drawer-shot-hl">Visual Hook Mở Màn: Giữ chân người xem nga</div>
+                <div class="drawer-shot-hl">Mở Màn Tĩnh Vật Cây Xanh Đọng Sương: Hook </div>
                 <div class="drawer-shot-time">0.00s – 1.07s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1871,7 +1914,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_02_mid.webp" alt="SHOT 02" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 02</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Nhịp Thở Ánh Sáng Trầm Dịu: Hạ độ sáng và </div>
                 <div class="drawer-shot-time">1.10s – 1.53s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1881,7 +1924,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_03_mid.webp" alt="SHOT 03" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 03</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Nghệ Thuật Bóng Đổ Rèm Voan: Bắt khoảnh kh</div>
                 <div class="drawer-shot-time">1.57s – 1.93s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1891,7 +1934,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_04_mid.webp" alt="SHOT 04" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 04</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Bố Cục Nửa Khung Hình &amp; Bóng Nắng: Đặt bát</div>
                 <div class="drawer-shot-time">1.97s – 2.33s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1901,7 +1944,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_05_mid.webp" alt="SHOT 05" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 05</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Xóa Phông Đa Lớp (Layered Depth): Lấy nét </div>
                 <div class="drawer-shot-time">2.37s – 2.73s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1911,7 +1954,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_06_mid.webp" alt="SHOT 06" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 06</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Đặc Tả Sắc Đỏ Trên Nền Trầm: Phóng cận chù</div>
                 <div class="drawer-shot-time">2.77s – 3.60s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1921,7 +1964,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_07_mid.webp" alt="SHOT 07" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 07</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Khoảnh Khắc Khói Nến Sau Khi Tắt: Bắt trọn</div>
                 <div class="drawer-shot-time">3.63s – 4.30s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1931,7 +1974,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_08_mid.webp" alt="SHOT 08" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 08</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Điểm Chạm Con Người (Human Touch): Đưa bàn</div>
                 <div class="drawer-shot-time">4.33s – 5.53s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1941,7 +1984,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_09_mid.webp" alt="SHOT 09" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 09</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Tĩnh Vật Túi Lưới Trái Cây Treo Tường: Kết</div>
                 <div class="drawer-shot-time">5.57s – 6.33s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1951,7 +1994,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_10_mid.webp" alt="SHOT 10" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 10</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Sắp Đặt Góc Nghệ Thuật Đa Tầng: Phối giỏ h</div>
                 <div class="drawer-shot-time">6.37s – 7.40s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1961,7 +2004,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_11_mid.webp" alt="SHOT 11" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 11</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Khói Trầm &amp; Ánh Đèn Vàng Ấm: Đặc tả làn kh</div>
                 <div class="drawer-shot-time">7.43s – 8.10s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1971,7 +2014,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_12_mid.webp" alt="SHOT 12" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 12</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Tương Tác Đời Thường Bên Ánh Nến: Bàn tay </div>
                 <div class="drawer-shot-time">8.13s – 8.60s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1981,7 +2024,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_13_mid.webp" alt="SHOT 13" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 13</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Macro Nụ Hoa Đọng Sương: Cô lập tuyệt đối </div>
                 <div class="drawer-shot-time">8.63s – 9.00s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1991,7 +2034,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_14_mid.webp" alt="SHOT 14" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 14</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Góc Thư Giãn Tối Tại Gia: Bố cục chéo kết </div>
                 <div class="drawer-shot-time">9.03s – 9.43s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -2001,7 +2044,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻/shot_15_mid.webp" alt="SHOT 15" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 15</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Cảnh Kết Chong Chóng Nến Xoay: Khép lại vi</div>
                 <div class="drawer-shot-time">9.47s – 11.50s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -2090,7 +2133,7 @@
 
 <script>
 // Video source resolution - try multiple paths
-const rawVideoSrc = 'https://media.fedu.vn/videos/DdE2qP1o3hQ.mp4';
+const rawVideoSrc = 'https://www.youtube.com/embed/w_xCCrOzF0k';
 let currentEndTime = null;
 
 function getCandidateUrls(src) {
