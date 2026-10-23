@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-23T21:44:06+07:00",
+  "generated_at": "2026-10-23T21:49:31+07:00",
   "total_scene_items": 404,
   "total_unique_ideas": 385,
   "total_active_ideas": 325,
@@ -80,8 +80,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 13,
     "talking-head": 45,
     "storytelling": 39,
-    "dien-anh": 156,
-    "chuyen-canh": 62,
+    "dien-anh": 157,
+    "chuyen-canh": 61,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -172,11 +172,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 28,
     "thoi-trang": 27,
     "am-thuc": 29,
-    "du-lich": 35,
+    "du-lich": 36,
     "cong-nghe": 41,
     "kien-truc": 43,
     "the-thao": 6,
-    "ky-thuat-quay": 101,
+    "ky-thuat-quay": 100,
     "ugc": 7
   },
   "x_factors": [
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -857,7 +857,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Meliabavi",
       "profile_url": "https://www.instagram.com/meliabavi/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40meliabavi_DSHAu2WjARf_Step_into_the_vibrant_world_of_Melia%2C_where_c/shot_01_mid.webp",
       "video_ids": [
         "IG_@meliabavi_DSHAu2WjARf_Step_into_the_vibrant_world_of_Melia,_where_c"
@@ -3013,8 +3013,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@meliabavi_DSHAu2WjARf_Step_into_the_vibrant_world_of_Melia,_where_c",
       "shortcode": "DSHAu2WjARf",
-      "title_vi": "Step into the vibrant world of Melia, where c",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "title_vi": "Bố Cục Chia Đôi Bảng Màu (Split-Screen Color Symphony): Biến Cảnh Rừng Núi & Hồ Bơi Thành Thước Phim Nghỉ Dưỡng Chỉn Chu",
+      "quick_takeaway": "Kỹ thuật kể chuyện thị giác không lời thoại bằng bố cục chia đôi màn hình trên-dưới (Top-Bottom Split Screen), đối lập giữa góc siêu cận chất liệu (Macro) và góc trung bối cảnh theo 4 gam màu chủ đạo: Lush Green, Burnt Amber, Crystal Blue và Ruby Pink.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3025,20 +3025,24 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS)",
+        "Key Light 45° / Tương phản",
+        "Góc trung (MS)",
+        "Cận cảnh (CU)",
+        "Chia đôi màn hình (Split-Screen)",
+        "Ánh sáng tự nhiên",
+        "Du lịch nghỉ dưỡng",
+        "Bố cục 1/3 & Đường dẫn mắt"
       ],
       "country": {
         "id": "us_eu",
@@ -3049,10 +3053,14 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @meliabavi",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Chia đôi màn hình (Split-Screen)",
+        "Cận cảnh (CU)",
+        "Ánh sáng tự nhiên",
+        "Du lịch nghỉ dưỡng",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Toàn cảnh (WS)",
+        "Key Light 45° / Tương phản",
+        "Góc trung (MS)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3088,15 +3096,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@byjxson_Dewpd4AAULi_Life_moves_fast,_but_the_moments_stay_fresh_w",
       "shortcode": "Dewpd4AAULi",
-      "title_vi": "Life moves fast, but the moments stay fresh w",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Kể Chuyện 1 Ngày Bằng 35 Cú Máy B-Roll Đa Lớp & Lồng Ghép Sản Phẩm Tinh Tế - @byjxson",
+      "quick_takeaway": "⚡ 01. Bố Cục Tiền Cảnh 3 Lớp: Đặt máy lùi sau mép tường, tán lá cây, bình hoa ở tiền cảnh mờ tạo chiều sâu không gian sống động. ➔ ⚡ 02. Nhịp Đan Xen Toàn - Cận (Cut-in on Action): Nối cảnh rộng sinh hoạt gia đình/làm việc với cú máy cực cận thao tác tay (tắt báo thức, pha cà phê, gập laptop) giúp mạch chuyện 35 cảnh cuốn hút không cần lời thoại. ➔ ⚡ 03. Ánh Sáng & Đặt Sản Phẩm Tinh Tế: Đánh sáng tương phản ấm-lạnh làm nổi khối tia nước/bọt xà phòng và đặt sản phẩm ở hậu cảnh mờ tự nhiên.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
@@ -3110,10 +3118,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Toàn cảnh (WS)",
+        "Key Light 45° / Tương phản",
+        "Cận cảnh (CU)",
+        "Góc trung (MS)",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Match Cut"
       ],
       "country": {
         "id": "us_eu",
@@ -3122,12 +3132,14 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @byjxson",
+      "purpose": "Mẫu thực hành quay B-Roll kể chuyện 1 ngày theo mốc giờ (6:56am – 5:00pm) kết hợp tạo chiều sâu tiền cảnh 3 lớp và lồng ghép sản phẩm tự nhiên",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Cận cảnh (CU)",
+        "Toàn cảnh (WS)",
+        "Match Cut",
+        "Key Light 45° / Tương phản",
+        "Góc trung (MS)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5109,7 +5121,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -13323,8 +13335,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -14502,7 +14514,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
