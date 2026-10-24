@@ -348,6 +348,384 @@ python3 ~/.gemini/config/skills/auto-edit-video/scripts/v3_pro_director.py \
 
       <!-- AUTO_EVOLUTION_START:dinh-dang -->
 
+      <!-- ========================================================
+           QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (ai-hook-sticker-transition-3d-peel)
+           ======================================================== -->
+      <div class="evolution-injected-section" id="evo-ai-hook-sticker-transition-3d-peel" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <span style="font:700 11.5px var(--mono); color:#b45309; background:#fef3c7; border:1px solid #fde68a; padding:3px 10px; border-radius:999px;">
+            ⚡ QUY CHUẨN MỚI CẬP NHẬT • 2026-10-24 • CHUẨN 4D4B0987
+          </span>
+        </div>
+        <h2 style="margin-top:6px;">AI Hook Preset 'sticker-transition': 3D Die-Cut Sticker Peel & Match-Cut 2.15s (Từ Mẫu Higgsfield Transitions #06)</h2>
+
+        <!-- TẦNG 1: WHAT • WHY • HOW -->
+        <div class="wwh-grid">
+          <div class="wwh-card">
+            <div class="wwh-tag what">WHAT • BẢN CHẤT ELEMENT</div>
+            <div class="wwh-title">Biến chủ thể thành miếng Sticker cắt bế 3D dán trên trụ đô thị rồi bóc cong phóng Match-Cut vào cảnh thật</div>
+            <p class="wwh-desc">Chế độ Hook mới <strong><code>sticker-transition</code></strong> (alias: <code>transitions</code>, <code>sticker-match-cut</code> — <code>2.15s</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Tái tạo chính xác hiệu ứng <strong>3D Die-Cut Sticker Peel &amp; Match-Cut</strong> từ mẫu <code>06_Sticker_Match_Cut.mp4</code> của Higgsfield Transitions. Chủ thể xuất hiện dưới dạng miếng Sticker cắt bế có viền giấy trắng dày <code>16px</code>, vân giấy mỹ thuật và vệt bóng kính <code>Glossy Specular Sheen</code> dán nghiêng 3D trên trụ bê tông công viên, sau đó tự động uốn cong bóc tách (<code>3D Cylindrical Page-Curl Peel</code>) và phóng <code>Perspective Match-Cut</code> khóa tuyệt đối vào <code>Frame_Anchor</code> (<code>SSIM = 0.99826</code>, <code>&Delta;E00 = 0.0432</code>, <code>0% Halo</code>).</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag why">WHY • VÌ SAO CẦN ELEMENT NÀY?</div>
+            <div class="wwh-title">Vì sao không dùng AI sinh lại khuôn mặt ở pha Sticker Peel?</div>
+            <p class="wwh-desc">Nếu đẩy qua mô hình khuếch tán video thông thường, mặt nhân vật khi nghiêng 3D sẽ bị biến dạng (morphing) và để lại viền trắng rác (halo) khi ghép vào frame bắt đầu nói. Engine <strong><code>sticker_transition_engine.py</code></strong> trích xuất trực tiếp chủ thể từ <code>Frame #48</code> với khử nhiễm màu biên <code>fg_decontam</code>, tạo viền cắt bế bằng <strong>Euclidean Distance Transform <code>16px</code> + 3D Bevel</strong>, giải chiếu <strong>3D Cylindrical Page-Curl</strong> và thu gọn viền trắng về <code>0%</code> trước <code>t = 1.88s</code>, giữ 100% thần thái thật.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag how">HOW • 2 CHẾ ĐỘ GỌI TỰ NHIÊN</div>
+            <div class="wwh-title">Gọi tự nhiên hoặc chạy CLI 1 chạm với preset sticker-transition</div>
+            <p class="wwh-desc">Gọi trực tiếp bằng câu tự nhiên hoặc chạy lệnh CLI của ai-hook:</p>
+            <div class="cmd-box">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh Antigravity</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>OMP_NUM_THREADS=4 python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210.MOV" --preset sticker-transition</code></pre>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="studio-launch-bar" style="margin:20px 0;">
+          <div class="studio-launch-info">
+            <b>🏷️ Studio AI Hook STICKER TRANSITION: Bóc Sticker 3D & Phóng Match-Cut (2.15s)</b>
+            <span>Chạy thử thời gian thực trên video mẫu, chuyển đổi 2 chế độ: Chỉ Logo Thương Hiệu (Mode 1) hoặc Kèm Thẻ Vé CTA Ưu Đãi (Mode 2)</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            
+            <button type="button" class="studio-launch-btn" onclick="openStudioModal('studios/studio-ai-hook-sticker-transition.html', 'AI Hook Preset 'sticker-transition': 3D Die-Cut Sticker Peel & Match-Cut 2.15s (Từ Mẫu Higgsfield Transitions #06)')">
+              <span>🎛️ Mở Studio Tương Tác</span>
+            </button>
+          </div>
+        </div>
+        
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🎬 Đối Chiếu Trực Tiếp: ① Video Mẫu Gốc Higgsfield (06_Sticker_Match_Cut.mp4) &rarr; ② Video Kết Quả Master (viet2210_sticker_transition_master.mp4)</span>
+            </div>
+            <span class="showcase-badge">Higgsfield Transitions #06 vs Master 1080×1920 • PASS 5/5 Gates</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>① VIDEO MẪU GỐC (HIGGSFIELD TRANSITIONS #06)</span>
+                <a href="studios/06_Sticker_Match_Cut.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/06_Sticker_Match_Cut.mp4" type="video/mp4">
+                  <source src="studios/06_Sticker_Match_Cut.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Mẫu Gốc: 06_Sticker_Match_Cut.mp4 (Higgsfield Transitions)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Cơ chế gốc: Chủ thể xuất hiện dưới dạng miếng Sticker cắt bế có viền giấy trắng dày (Die-Cut White Outline) dán trên trụ bê tông ngoài trời, sau đó bóc tách khỏi bề mặt phẳng và phóng Match-Cut khớp vào nhân vật thật.</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>② KẾT QUẢ MASTER: ANH VIỆT (STICKER-TRANSITION 2.15S)</span>
+                <a href="studios/viet2210_sticker_transition_master.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/viet2210_sticker_transition_master.mp4" type="video/mp4">
+                  <source src="studios/viet2210_sticker_transition_master.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Kết Quả Master: viet2210_sticker_transition_master.mp4 (1080×1920 @ 24fps)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Pha 1 (0.00–0.90s) Sticker cắt bế viền trắng 16px + Glossy Sheen trên trụ bê tông → Pha 2 (0.90–1.65s) 3D Cylindrical Page-Curl Peel + Pop-Out Match-Cut → Pha 3 (1.65–2.15s) Radial Focus Reveal khóa Frame #48 (SSIM 0.9983, ΔE00 0.043).</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 1. Ba Pha Biến Hình Sticker 3D & Match-Cut (sticker_transition_engine.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 1 (0.0–0.9s)</div>
+              <div class="step-content">
+                <div class="step-name">Die-Cut Vinyl Sticker 16px & Glossy Specular Sheen Trên Trụ Đô Thị</div>
+                <div class="step-desc">Tạo viền cắt bế trắng răng cưa mịn dày 16px (Euclidean Distance Transform + 3D Bevel + Paper Grain + Contact Shadow) kèm vệt bóng kính lướt chéo trên trụ bê tông công viên Bokeh (Disk Kernel r=16px).</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 2 (0.9–1.65s)</div>
+              <div class="step-content">
+                <div class="step-name">3D Cylindrical Page-Curl Peel & Elastic Pop-Out Match-Cut</div>
+                <div class="step-desc">Bóc cong miếng Sticker theo mặt trụ 3D từ góc trên-phải xuống dưới-trái kèm bóng đổ động dưới nếp uốn, đồng thời bật nảy đàn hồi và phóng Perspective Match-Cut (C2 Quintic Smoothstep) về tọa độ thật.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 3 (1.65–2.15s)</div>
+              <div class="step-content">
+                <div class="step-name">Zero-Halo Outline Collapse & Radial Focus Reveal Khóa Frame #48</div>
+                <div class="step-desc">Viền trắng thu gọn về 0px trước t=1.88s, hậu cảnh công viên mở nét 100% từ tâm ra biên, khóa tuyệt đối vào Frame #48 (SSIM 0.99826 >= 0.995, ΔE00 0.0432 <= 0.5) và nối thẳng sang Frame #49 (-16 LUFS).</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 2. Năm Cổng Kiểm Định Tất Định & Âm Thanh 3 Lớp (verify_sticker_transition.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">GATE G0–G4</div>
+              <div class="step-content">
+                <div class="step-name">5-Gate Deterministic Verifier & Vinyl Peel Studio SFX (48kHz)</div>
+                <div class="step-desc">Kiểm định tự động G0 (0 C1_DUP, Face SSIM 0.9947), G1 (Outline 83.2% -> 0.0%), G2 (Trajectory jerk 2.33px <= 75px, spike 1.23x), G3 (Zero Halo MAD 1.25 <= 4.0), G4 (Anchor Lock SSIM 0.9983). Phối sẵn sfx_sticker_transition_2p15s.wav.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🖼️ Bảng Kiểm Định 12 Frame Thực Tế & Bộ 6 Lớp Tài Nguyên 3D Die-Cut Sticker</span>
+            </div>
+            <span class="showcase-badge">Chuẩn 4D4B0987 • Nghiệm Thu CLAUDE2 • 5/5 Gates PASS</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/sticker_transition/qa_sticker_transition_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/sticker_transition/qa_sticker_transition_sheet.jpg" alt="Contact Sheet 12 mốc thời gian (F#00 -> F#64): Từ P1:STICKER (viền trắng 16px trên trụ bê tông) -> P2:3D-PEEL -> P3:REVEAL -> ANCHOR#48 & SPEAK#49+" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Contact Sheet 12 mốc thời gian (F#00 -> F#64): Từ P1:STICKER (viền trắng 16px trên trụ bê tông) -> P2:3D-PEEL -> P3:REVEAL -> ANCHOR#48 & SPEAK#49+</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/sticker_transition/qa_sticker_assets_preview.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/sticker_transition/qa_sticker_assets_preview.jpg" alt="Bộ 6 lớp tài nguyên SA1: Frame #48 Anchor, Subject Mask & FG Decontam, Die-Cut 16px Outline + Bevel, Sticker RGBA + Shadow, Park Disk Bokeh r=16px & 3D Urban Pillar Plate" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Bộ 6 lớp tài nguyên SA1: Frame #48 Anchor, Subject Mask & FG Decontam, Die-Cut 16px Outline + Bevel, Sticker RGBA + Shadow, Park Disk Bokeh r=16px & 3D Urban Pillar Plate</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/sticker_transition/qa_verify_sticker.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/sticker_transition/qa_verify_sticker.jpg" alt="Bảng kiểm định định lượng verify_sticker_transition.py: G1 Outline 83.2% -> 0.0%, G3 Zero Halo Tail MAD 1.254 <= 4.0, G4 Anchor Lock SSIM 0.99826" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Bảng kiểm định định lượng verify_sticker_transition.py: G1 Outline 83.2% -> 0.0%, G3 Zero Halo Tail MAD 1.254 <= 4.0, G4 Anchor Lock SSIM 0.99826</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <details class="tech-drawer" style="margin-top:18px;">
+          <summary>🔧 Xem chi tiết kỹ thuật: AI Hook Preset 'sticker-transition': 3D Die-Cut Sticker Peel & Match-Cut 2.15s (Từ Mẫu Higgsfield Transitions #06)</summary>
+          <div class="tech-body">
+            <ul style="padding-left:20px; line-height:1.6;">
+              <li style='margin-bottom:6px;'>Engine thực thi: ~/.gemini/config/skills/ai-hook/scripts/sticker_transition_engine.py (tích hợp trong ai_hook_engine.py --preset sticker-transition / transitions).</li><li style='margin-bottom:6px;'>Verifier 5 cổng: ~/.gemini/config/skills/ai-hook/scripts/verify_sticker_transition.py (--self-test đạt 6/6 cases PASS).</li><li style='margin-bottom:6px;'>Âm thanh Studio 3 lớp: ~/.gemini/config/skills/ai-hook/assets/sfx_sticker_transition_2p15s.wav (0.15s–1.25s Crisp Vinyl Sticker Slap & Peel Rip -> 1.20s–1.85s Elastic Pop-Out Whoosh -> 2.05s 55Hz Match-Cut Sub Lock; Integrated -15.0 LUFS, True Peak -1.1 dBTP).</li><li style='margin-bottom:6px;'>Video mẫu đối chiếu: ~/.gemini/config/skills/ai-hook/assets/06_Sticker_Match_Cut.mp4 & kết quả Master: /Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_sticker_transition_master.mp4.</li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    
+
+      <!-- ========================================================
+           QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (ai-hook-pantone1-katana-palette)
+           ======================================================== -->
+      <div class="evolution-injected-section" id="evo-ai-hook-pantone1-katana-palette" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <span style="font:700 11.5px var(--mono); color:#b45309; background:#fef3c7; border:1px solid #fde68a; padding:3px 10px; border-radius:999px;">
+            ⚡ QUY CHUẨN MỚI CẬP NHẬT • 2026-10-24 • CHUẨN 798F3D86
+          </span>
+        </div>
+        <h2 style="margin-top:6px;">AI Hook Preset 'pantone1': Editorial Pantone Color-Wheel & Tilted Swatch Cards Reveal 2.40s (Kỹ năng ai-hook)</h2>
+
+        <!-- TẦNG 1: WHAT • WHY • HOW -->
+        <div class="wwh-grid">
+          <div class="wwh-card">
+            <div class="wwh-tag what">WHAT • BẢN CHẤT ELEMENT</div>
+            <div class="wwh-title">Mở màn Tạp Chí Pantone Color-Wheel & 3 Thẻ Màu Nghiêng (Đen Trắng → Nhuộm Màu → Bung Nền Thật 0% Halo)</div>
+            <p class="wwh-desc">Preset thứ 5 trong kỹ năng <strong><code>ai-hook</code></strong> (mã <code>pantone1</code> / <code>katana-palette-hook</code>), tái tạo từ mẫu quốc tế <strong>Higgsfield Katana #326c512a</strong>: Trong <code>2.40s</code> đầu, chủ thể xuất hiện ở chế độ <strong>Monochrome Đen–Trắng Editorial</strong> trên nền giấy Studio <code>#F8F8F6</code> kèm chữ <code>one me.</code> và <strong>Vòng Quạt Màu Pantone xoay ở đáy</strong>; tiếp theo 2 nhịp dừng bánh xe màu bật nảy <strong>3 Thẻ Màu Pantone Nghiêng</strong> ra sau lưng (Spring Overshoot) kích hoạt sóng <strong>Radial Colorize Wave</strong> nhuộm màu thật 100%, rồi mở bung nền thật với phương trình <code>&alpha;&middot;F48 + (1-&alpha;)&middot;F48 &equiv; F48</code> đạt <strong>SSIM = 0.9977, &Delta;E00 = 0.459, 0% Halo</strong>.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag why">WHY • VÌ SAO CẦN ELEMENT NÀY?</div>
+            <div class="wwh-title">Giữ chân 3 giây đầu bằng tương phản Vô Sắc → Hữu Sắc mà không biến dạng gương mặt AI</div>
+            <p class="wwh-desc">Thay vì dùng AI sinh lại toàn bộ gương mặt gây lệch nhân dạng (Identity Drift), <code>pantone1</code> giữ <strong>100% hình thái thật của anh Việt</strong> tại <code>Frame_Anchor (#48)</code>, tách nền Guided Filter khử lem màu mép tóc, trích xuất đúng 6 mã màu HEX từ trang phục &amp; bối cảnh công viên (<code>OLIVE #5E6B45</code>, <code>BONE #ECEBE1</code>, <code>INK #1F1F23</code>, <code>CHARCOAL #453A36</code>, <code>AMBER #D88556</code>, <code>CANOPY #5E8238</code>) và kiểm định tự động qua 5 cổng <code>verify_katana_palette.py</code> (<code>G0 + K1..K4</code>).</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag how">HOW • 2 CHẾ ĐỘ GỌI TỰ NHIÊN</div>
+            <div class="wwh-title">Gọi nhanh bằng lệnh tự nhiên PANTONE1 hoặc qua Smart AI Hook Router</div>
+            <p class="wwh-desc">Gõ câu lệnh ngắn gọn bên dưới hoặc chạy ai_hook_engine.py --preset pantone1:</p>
+            <div class="cmd-box">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh Antigravity</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>PANTONE1 : /Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210.MOV</code></pre>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="studio-launch-bar" style="margin:20px 0;">
+          <div class="studio-launch-info">
+            <b>🏷️ Studio AI Hook PANTONE 1: Vòng Quạt Màu Pantone & 3 Thẻ Màu Nghiêng (2.40s)</b>
+            <span>Chạy thử thời gian thực trên video mẫu, chuyển đổi 2 chế độ: Chỉ Logo Thương Hiệu (Mode 1) hoặc Kèm Thẻ Vé CTA Ưu Đãi (Mode 2)</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            
+            <button type="button" class="studio-launch-btn" onclick="openStudioModal('studios/studio-ai-hook-pantone1.html', 'AI Hook Preset 'pantone1': Editorial Pantone Color-Wheel & Tilted Swatch Cards Reveal 2.40s (Kỹ năng ai-hook)')">
+              <span>🎛️ Mở Studio Tương Tác</span>
+            </button>
+          </div>
+        </div>
+        
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🎬 Đối Chiếu Trực Tiếp: ① Video Mẫu Tham Chiếu (Ref #326c512a) &rarr; ② Video Kết Quả Master (viet2210_katana_palette_master.mp4)</span>
+            </div>
+            <span class="showcase-badge">Higgsfield Katana #326c512a vs Master 1080×1920 • PASS 5/5 Gates</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>① VIDEO MẪU THAM CHIẾU (HIGGSFIELD KATANA #326c512a)</span>
+                <a href="https://static-public-media.higgsfield.ai/katana-presets/326c512a-ee04-417d-bb2a-faa3f2d1c6d1.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/katana_target_326c512a.mp4" type="video/mp4">
+                  <source src="https://static-public-media.higgsfield.ai/katana-presets/326c512a-ee04-417d-bb2a-faa3f2d1c6d1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Video Mẫu Gốc: Color Palette Outfit Showcase (326c512a)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Mẫu gốc từ Higgsfield Katana: Khởi đầu Monochrome B&W trên nền Studio sáng, Vòng Quạt Màu Pantone xoay ở đáy và 3 thẻ màu Pantone nghiêng bật ra sau lưng nhuộm màu chủ thể.</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>② VIDEO KẾT QUẢ MASTER (PRESET PANTONE1 • 1080×1920)</span>
+                <a href="studios/viet2210_katana_palette_master.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/viet2210_katana_palette_master.mp4" type="video/mp4">
+                  <source src="studios/viet2210_katana_palette_master.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Kết Quả Master Trên viet2210.MOV (2.40s Hook + Talk • SSIM 0.9977)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Thành phẩm thực thi bởi katana_palette_engine.py: 2 nhịp dừng quạt màu (palette 01/02 & 02/02), sóng Radial Colorize Wave khôi phục 100.8% độ bão hòa màu thật, nối thẳng vào Frame #49 không vết cắt (ΔE00 = 0.459).</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 1. Ba Pha Chuyển Động Chuẩn Tạp Chí (2.40s / 58 Frames @ 24fps)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 1 (0.0–0.65s)</div>
+              <div class="step-content">
+                <div class="step-name">Monochrome B&W Editorial + Vòng Quạt Màu Pantone Xoay</div>
+                <div class="step-desc">Chủ thể ở chế độ Đen–Trắng tương phản cao (S-curve) trên nền giấy Studio #F8F8F6, đỉnh màn hình hiện chữ 'one me.', dưới đáy là Vòng Quạt Màu Pantone (wheel_vibrant.png) quay mượt.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 2 (0.65–1.80s)</div>
+              <div class="step-content">
+                <div class="step-name">2 Nhịp Bật 3 Thẻ Màu Pantone Nghiêng + Sóng Radial Colorize Wave</div>
+                <div class="step-desc">Nhịp 1 (0.65s, palette 01/02: OLIVE/BONE/INK) và Nhịp 2 (1.20s, palette 02/02: CHARCOAL/AMBER/CANOPY) bật 3 thẻ màu nghiêng (-14°, -3°, +9°) ra sau lưng kèm sóng màu lan từ tâm ngực đưa độ bão hòa từ 1.68 lên 97.06.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 2. Khóa Điểm Đáp 0% Halo & 5 Cổng Kiểm Định Tất Định (verify_katana_palette.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 3 (1.80–2.40s)</div>
+              <div class="step-content">
+                <div class="step-name">Phương Trình α·F48 + (1-α)·F48 ≡ F48 & 5 Lớp SFX Studio (-16 LUFS)</div>
+                <div class="step-desc">Thẻ Pantone và nền giấy rút mở theo chiều sâu lộ nền công viên thật tại Frame #48 (SSIM = 0.99768 >= 0.995, ΔE00 = 0.459 <= 1.0, SeamMAD = 3.428), đồng bộ sfx_katana_palette_2p4s.wav.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🖼️ Bảng Kiểm Định 10 Mốc Frame Thực Tế & Bộ Tài Nguyên Pantone (QA Contact Sheet)</span>
+            </div>
+            <span class="showcase-badge">Chuẩn 798F3D86 • G0 + K1..K4 VERDICT: PASS • 0% Halo</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/pantone1_katana_hook/qa_katana_palette_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/pantone1_katana_hook/qa_katana_palette_sheet.jpg" alt="QA Contact Sheet 10 mốc thời gian (0.00s → 2.42s): Kiểm định tiến trình Monochrome → Palette 01/02 → Palette 02/02 → Bung nền thật Frame #48 → Nối mượt Frame #49" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">QA Contact Sheet 10 mốc thời gian (0.00s → 2.42s): Kiểm định tiến trình Monochrome → Palette 01/02 → Palette 02/02 → Bung nền thật Frame #48 → Nối mượt Frame #49</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/pantone1_katana_hook/qa_sa1_assets.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/pantone1_katana_hook/qa_sa1_assets.jpg" alt="Bộ tài nguyên SA1: Frame #48 BT.709, Alpha Mask Guided Filter khử lem mép tóc, Vòng Quạt Màu Pantone & 6 Thẻ Màu Pantone trích xuất từ trang phục/bối cảnh" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Bộ tài nguyên SA1: Frame #48 BT.709, Alpha Mask Guided Filter khử lem mép tóc, Vòng Quạt Màu Pantone & 6 Thẻ Màu Pantone trích xuất từ trang phục/bối cảnh</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <details class="tech-drawer" style="margin-top:18px;">
+          <summary>🔧 Xem chi tiết kỹ thuật: AI Hook Preset 'pantone1': Editorial Pantone Color-Wheel & Tilted Swatch Cards Reveal 2.40s (Kỹ năng ai-hook)</summary>
+          <div class="tech-body">
+            <ul style="padding-left:20px; line-height:1.6;">
+              <li style='margin-bottom:6px;'>Engine lõi: <code>~/.gemini/config/skills/ai-hook/scripts/katana_palette_engine.py</code> (tích hợp vào <code>ai_hook_engine.py --preset pantone1</code> và <code>hook_scanner.py</code>).</li><li style='margin-bottom:6px;'>Tài nguyên đóng gói sẵn: <code>~/.gemini/config/skills/ai-hook/assets/pantone1/</code> (<code>wheel_vibrant.png</code>, <code>wheel_editorial.png</code>, <code>card_p1_a..c.png</code>, <code>card_p2_a..c.png</code>) và <code>assets/sfx_katana_palette_2p4s.wav</code>.</li><li style='margin-bottom:6px;'>Bộ kiểm định 5 cổng: <code>~/.gemini/config/skills/ai-hook/scripts/verify_katana_palette.py</code> (Gate G0 Seam & Identity Lock, Gate K1 Desat-to-Color Curve, Gate K2 Wheel & Cards Presence, Gate K3 Anti-Flash, Gate K4 Audio/Duration).</li><li style='margin-bottom:6px;'>Video mẫu tham chiếu (Ref): <code>https://static-public-media.higgsfield.ai/katana-presets/326c512a-ee04-417d-bb2a-faa3f2d1c6d1.mp4</code> (<code>/Users/vietmac/Documents/CODE/AI VIDEO EDIT/higgsfield_katana/katana_target_326c512a.mp4</code>).</li><li style='margin-bottom:6px;'>Video kết quả Master: <code>/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_katana_palette_master.mp4</code> (<code>1080x1920 @ 24fps</code>, <code>SSIM = 0.99768</code>, <code>DeltaE00 = 0.459</code>).</li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    
       <!-- AUTO_EVOLUTION_END:dinh-dang -->
 
     </div>

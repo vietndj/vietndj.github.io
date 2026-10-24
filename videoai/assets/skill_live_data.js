@@ -1,24 +1,24 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 22/10/2026 22:44:12
+ * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 12:24:29
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "22/10/2026 22:44:12",
-  "last_synced_iso": "2026-10-22T22:44:12.583675",
+  "last_synced_formatted": "24/10/2026 12:24:29",
+  "last_synced_iso": "2026-10-24T12:24:29.025577",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
     "sfx_presets_count": 16,
     "profiles_count": 5,
     "presets_count": 8,
-    "compositions_count": 17,
+    "compositions_count": 18,
     "components_count": 22,
-    "scripts_count": 30,
-    "skills_count": 6,
-    "studios_count": 8,
-    "evolution_entries_count": 4
+    "scripts_count": 49,
+    "skills_count": 7,
+    "studios_count": 10,
+    "evolution_entries_count": 6
   },
   "evolution": {
     "version": 1,
@@ -31,6 +31,26 @@ window.SKILL_LIVE_DATA = {
       "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
     ],
     "studios": [
+      {
+        "source": "studio_ai_hook_sticker_transition.html",
+        "slug": "studio-ai-hook-sticker-transition.html",
+        "order": -2,
+        "icon": "🏷️",
+        "title": "Studio AI Hook STICKER TRANSITION: Bóc Sticker 3D & Phóng Match-Cut (2.15s)",
+        "badge": "AI Hook Preset: sticker-transition • Higgsfield Transitions #06",
+        "badge_class": "motion",
+        "desc": "Đối chiếu trực tiếp ① Video Mẫu Gốc Higgsfield Transitions (06_Sticker_Match_Cut.mp4) và ② Video Kết Quả Master của anh Việt (viet2210_sticker_transition_master.mp4 — SSIM 0.9983, ΔE00 0.043, 0% Halo, PASS 5/5 Gates)."
+      },
+      {
+        "source": "studio_ai_hook_pantone1.html",
+        "slug": "studio-ai-hook-pantone1.html",
+        "order": -1,
+        "icon": "🎨",
+        "title": "Studio AI Hook PANTONE 1: Vòng Quạt Màu Pantone & 3 Thẻ Màu Nghiêng (2.40s)",
+        "badge": "AI Hook Preset: pantone1 • Ref #326c512a",
+        "badge_class": "editorial",
+        "desc": "Đối chiếu trực tiếp Video Mẫu Gốc Higgsfield Katana (#326c512a) và Video Kết Quả Master của anh Việt (viet2210_katana_palette_master.mp4 — SSIM 0.9977, ΔE00 0.459, 0% Halo, PASS 5/5 Gates)."
+      },
       {
         "source": "suiplay_launch_motion_studio.html",
         "slug": "studio-suiplay-launch.html",
@@ -123,6 +143,174 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "ai-hook-sticker-transition-3d-peel",
+        "date": "2026-10-24",
+        "title": "AI Hook Preset 'sticker-transition': 3D Die-Cut Sticker Peel & Match-Cut 2.15s (Từ Mẫu Higgsfield Transitions #06)",
+        "step_target": [
+          "dinh-dang",
+          "buoc-1",
+          "buoc-4"
+        ],
+        "source_thread": "4d4b0987-6e0b-4a8c-a6f4-70410db6eaef",
+        "studio_file": "studio_ai_hook_sticker_transition.html",
+        "what_title": "Biến chủ thể thành miếng Sticker cắt bế 3D dán trên trụ đô thị rồi bóc cong phóng Match-Cut vào cảnh thật",
+        "what": "Chế độ Hook mới <strong><code>sticker-transition</code></strong> (alias: <code>transitions</code>, <code>sticker-match-cut</code> — <code>2.15s</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Tái tạo chính xác hiệu ứng <strong>3D Die-Cut Sticker Peel &amp; Match-Cut</strong> từ mẫu <code>06_Sticker_Match_Cut.mp4</code> của Higgsfield Transitions. Chủ thể xuất hiện dưới dạng miếng Sticker cắt bế có viền giấy trắng dày <code>16px</code>, vân giấy mỹ thuật và vệt bóng kính <code>Glossy Specular Sheen</code> dán nghiêng 3D trên trụ bê tông công viên, sau đó tự động uốn cong bóc tách (<code>3D Cylindrical Page-Curl Peel</code>) và phóng <code>Perspective Match-Cut</code> khóa tuyệt đối vào <code>Frame_Anchor</code> (<code>SSIM = 0.99826</code>, <code>&Delta;E00 = 0.0432</code>, <code>0% Halo</code>).",
+        "why_title": "Vì sao không dùng AI sinh lại khuôn mặt ở pha Sticker Peel?",
+        "why": "Nếu đẩy qua mô hình khuếch tán video thông thường, mặt nhân vật khi nghiêng 3D sẽ bị biến dạng (morphing) và để lại viền trắng rác (halo) khi ghép vào frame bắt đầu nói. Engine <strong><code>sticker_transition_engine.py</code></strong> trích xuất trực tiếp chủ thể từ <code>Frame #48</code> với khử nhiễm màu biên <code>fg_decontam</code>, tạo viền cắt bế bằng <strong>Euclidean Distance Transform <code>16px</code> + 3D Bevel</strong>, giải chiếu <strong>3D Cylindrical Page-Curl</strong> và thu gọn viền trắng về <code>0%</code> trước <code>t = 1.88s</code>, giữ 100% thần thái thật.",
+        "how_title": "Gọi tự nhiên hoặc chạy CLI 1 chạm với preset sticker-transition",
+        "how_intro": "Gọi trực tiếp bằng câu tự nhiên hoặc chạy lệnh CLI của ai-hook:",
+        "how_cmd": "OMP_NUM_THREADS=4 python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210.MOV\" --preset sticker-transition",
+        "local_videos_title": "🎬 Đối Chiếu Trực Tiếp: ① Video Mẫu Gốc Higgsfield (06_Sticker_Match_Cut.mp4) &rarr; ② Video Kết Quả Master (viet2210_sticker_transition_master.mp4)",
+        "local_videos_badge": "Higgsfield Transitions #06 vs Master 1080×1920 • PASS 5/5 Gates",
+        "local_videos": [
+          {
+            "src": "studios/06_Sticker_Match_Cut.mp4",
+            "fallback_url": "studios/06_Sticker_Match_Cut.mp4",
+            "badge": "① VIDEO MẪU GỐC (HIGGSFIELD TRANSITIONS #06)",
+            "title": "Mẫu Gốc: 06_Sticker_Match_Cut.mp4 (Higgsfield Transitions)",
+            "desc": "Cơ chế gốc: Chủ thể xuất hiện dưới dạng miếng Sticker cắt bế có viền giấy trắng dày (Die-Cut White Outline) dán trên trụ bê tông ngoài trời, sau đó bóc tách khỏi bề mặt phẳng và phóng Match-Cut khớp vào nhân vật thật."
+          },
+          {
+            "src": "studios/viet2210_sticker_transition_master.mp4",
+            "fallback_url": "studios/viet2210_sticker_transition_master.mp4",
+            "badge": "② KẾT QUẢ MASTER: ANH VIỆT (STICKER-TRANSITION 2.15S)",
+            "title": "Kết Quả Master: viet2210_sticker_transition_master.mp4 (1080×1920 @ 24fps)",
+            "desc": "Pha 1 (0.00–0.90s) Sticker cắt bế viền trắng 16px + Glossy Sheen trên trụ bê tông → Pha 2 (0.90–1.65s) 3D Cylindrical Page-Curl Peel + Pop-Out Match-Cut → Pha 3 (1.65–2.15s) Radial Focus Reveal khóa Frame #48 (SSIM 0.9983, ΔE00 0.043)."
+          }
+        ],
+        "items": [
+          {
+            "tier": "1. Ba Pha Biến Hình Sticker 3D & Match-Cut (sticker_transition_engine.py)",
+            "code": "PHA 1 (0.0–0.9s)",
+            "name": "Die-Cut Vinyl Sticker 16px & Glossy Specular Sheen Trên Trụ Đô Thị",
+            "desc": "Tạo viền cắt bế trắng răng cưa mịn dày 16px (Euclidean Distance Transform + 3D Bevel + Paper Grain + Contact Shadow) kèm vệt bóng kính lướt chéo trên trụ bê tông công viên Bokeh (Disk Kernel r=16px)."
+          },
+          {
+            "tier": "1. Ba Pha Biến Hình Sticker 3D & Match-Cut (sticker_transition_engine.py)",
+            "code": "PHA 2 (0.9–1.65s)",
+            "name": "3D Cylindrical Page-Curl Peel & Elastic Pop-Out Match-Cut",
+            "desc": "Bóc cong miếng Sticker theo mặt trụ 3D từ góc trên-phải xuống dưới-trái kèm bóng đổ động dưới nếp uốn, đồng thời bật nảy đàn hồi và phóng Perspective Match-Cut (C2 Quintic Smoothstep) về tọa độ thật."
+          },
+          {
+            "tier": "1. Ba Pha Biến Hình Sticker 3D & Match-Cut (sticker_transition_engine.py)",
+            "code": "PHA 3 (1.65–2.15s)",
+            "name": "Zero-Halo Outline Collapse & Radial Focus Reveal Khóa Frame #48",
+            "desc": "Viền trắng thu gọn về 0px trước t=1.88s, hậu cảnh công viên mở nét 100% từ tâm ra biên, khóa tuyệt đối vào Frame #48 (SSIM 0.99826 >= 0.995, ΔE00 0.0432 <= 0.5) và nối thẳng sang Frame #49 (-16 LUFS)."
+          },
+          {
+            "tier": "2. Năm Cổng Kiểm Định Tất Định & Âm Thanh 3 Lớp (verify_sticker_transition.py)",
+            "code": "GATE G0–G4",
+            "name": "5-Gate Deterministic Verifier & Vinyl Peel Studio SFX (48kHz)",
+            "desc": "Kiểm định tự động G0 (0 C1_DUP, Face SSIM 0.9947), G1 (Outline 83.2% -> 0.0%), G2 (Trajectory jerk 2.33px <= 75px, spike 1.23x), G3 (Zero Halo MAD 1.25 <= 4.0), G4 (Anchor Lock SSIM 0.9983). Phối sẵn sfx_sticker_transition_2p15s.wav."
+          }
+        ],
+        "asset_dir": "sticker_transition",
+        "showcase_title": "🖼️ Bảng Kiểm Định 12 Frame Thực Tế & Bộ 6 Lớp Tài Nguyên 3D Die-Cut Sticker",
+        "showcase_badge": "Chuẩn 4D4B0987 • Nghiệm Thu CLAUDE2 • 5/5 Gates PASS",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_sticker_transition_sheet.jpg",
+            "caption": "Contact Sheet 12 mốc thời gian (F#00 -> F#64): Từ P1:STICKER (viền trắng 16px trên trụ bê tông) -> P2:3D-PEEL -> P3:REVEAL -> ANCHOR#48 & SPEAK#49+",
+            "web_src": "assets/sticker_transition/qa_sticker_transition_sheet.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_sticker_assets_preview.jpg",
+            "caption": "Bộ 6 lớp tài nguyên SA1: Frame #48 Anchor, Subject Mask & FG Decontam, Die-Cut 16px Outline + Bevel, Sticker RGBA + Shadow, Park Disk Bokeh r=16px & 3D Urban Pillar Plate",
+            "web_src": "assets/sticker_transition/qa_sticker_assets_preview.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/work_sticker_transition/qa_verify_sticker.jpg",
+            "caption": "Bảng kiểm định định lượng verify_sticker_transition.py: G1 Outline 83.2% -> 0.0%, G3 Zero Halo Tail MAD 1.254 <= 4.0, G4 Anchor Lock SSIM 0.99826",
+            "web_src": "assets/sticker_transition/qa_verify_sticker.jpg"
+          }
+        ],
+        "tech_specs": [
+          "Engine thực thi: ~/.gemini/config/skills/ai-hook/scripts/sticker_transition_engine.py (tích hợp trong ai_hook_engine.py --preset sticker-transition / transitions).",
+          "Verifier 5 cổng: ~/.gemini/config/skills/ai-hook/scripts/verify_sticker_transition.py (--self-test đạt 6/6 cases PASS).",
+          "Âm thanh Studio 3 lớp: ~/.gemini/config/skills/ai-hook/assets/sfx_sticker_transition_2p15s.wav (0.15s–1.25s Crisp Vinyl Sticker Slap & Peel Rip -> 1.20s–1.85s Elastic Pop-Out Whoosh -> 2.05s 55Hz Match-Cut Sub Lock; Integrated -15.0 LUFS, True Peak -1.1 dBTP).",
+          "Video mẫu đối chiếu: ~/.gemini/config/skills/ai-hook/assets/06_Sticker_Match_Cut.mp4 & kết quả Master: /Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_sticker_transition_master.mp4."
+        ]
+      },
+      {
+        "id": "ai-hook-pantone1-katana-palette",
+        "date": "2026-10-24",
+        "title": "AI Hook Preset 'pantone1': Editorial Pantone Color-Wheel & Tilted Swatch Cards Reveal 2.40s (Kỹ năng ai-hook)",
+        "step_target": [
+          "dinh-dang",
+          "buoc-1",
+          "buoc-4"
+        ],
+        "source_thread": "798f3d86-2533-45ed-ac4a-8f9fbbf1e14e",
+        "studio_file": "studio_ai_hook_pantone1.html",
+        "what_title": "Mở màn Tạp Chí Pantone Color-Wheel & 3 Thẻ Màu Nghiêng (Đen Trắng → Nhuộm Màu → Bung Nền Thật 0% Halo)",
+        "what": "Preset thứ 5 trong kỹ năng <strong><code>ai-hook</code></strong> (mã <code>pantone1</code> / <code>katana-palette-hook</code>), tái tạo từ mẫu quốc tế <strong>Higgsfield Katana #326c512a</strong>: Trong <code>2.40s</code> đầu, chủ thể xuất hiện ở chế độ <strong>Monochrome Đen–Trắng Editorial</strong> trên nền giấy Studio <code>#F8F8F6</code> kèm chữ <code>one me.</code> và <strong>Vòng Quạt Màu Pantone xoay ở đáy</strong>; tiếp theo 2 nhịp dừng bánh xe màu bật nảy <strong>3 Thẻ Màu Pantone Nghiêng</strong> ra sau lưng (Spring Overshoot) kích hoạt sóng <strong>Radial Colorize Wave</strong> nhuộm màu thật 100%, rồi mở bung nền thật với phương trình <code>&alpha;&middot;F48 + (1-&alpha;)&middot;F48 &equiv; F48</code> đạt <strong>SSIM = 0.9977, &Delta;E00 = 0.459, 0% Halo</strong>.",
+        "why_title": "Giữ chân 3 giây đầu bằng tương phản Vô Sắc → Hữu Sắc mà không biến dạng gương mặt AI",
+        "why": "Thay vì dùng AI sinh lại toàn bộ gương mặt gây lệch nhân dạng (Identity Drift), <code>pantone1</code> giữ <strong>100% hình thái thật của anh Việt</strong> tại <code>Frame_Anchor (#48)</code>, tách nền Guided Filter khử lem màu mép tóc, trích xuất đúng 6 mã màu HEX từ trang phục &amp; bối cảnh công viên (<code>OLIVE #5E6B45</code>, <code>BONE #ECEBE1</code>, <code>INK #1F1F23</code>, <code>CHARCOAL #453A36</code>, <code>AMBER #D88556</code>, <code>CANOPY #5E8238</code>) và kiểm định tự động qua 5 cổng <code>verify_katana_palette.py</code> (<code>G0 + K1..K4</code>).",
+        "how_title": "Gọi nhanh bằng lệnh tự nhiên PANTONE1 hoặc qua Smart AI Hook Router",
+        "how_intro": "Gõ câu lệnh ngắn gọn bên dưới hoặc chạy ai_hook_engine.py --preset pantone1:",
+        "how_cmd": "PANTONE1 : /Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210.MOV",
+        "local_videos_title": "🎬 Đối Chiếu Trực Tiếp: ① Video Mẫu Tham Chiếu (Ref #326c512a) &rarr; ② Video Kết Quả Master (viet2210_katana_palette_master.mp4)",
+        "local_videos_badge": "Higgsfield Katana #326c512a vs Master 1080×1920 • PASS 5/5 Gates",
+        "local_videos": [
+          {
+            "badge": "① VIDEO MẪU THAM CHIẾU (HIGGSFIELD KATANA #326c512a)",
+            "src": "studios/katana_target_326c512a.mp4",
+            "fallback_url": "https://static-public-media.higgsfield.ai/katana-presets/326c512a-ee04-417d-bb2a-faa3f2d1c6d1.mp4",
+            "title": "Video Mẫu Gốc: Color Palette Outfit Showcase (326c512a)",
+            "desc": "Mẫu gốc từ Higgsfield Katana: Khởi đầu Monochrome B&W trên nền Studio sáng, Vòng Quạt Màu Pantone xoay ở đáy và 3 thẻ màu Pantone nghiêng bật ra sau lưng nhuộm màu chủ thể."
+          },
+          {
+            "badge": "② VIDEO KẾT QUẢ MASTER (PRESET PANTONE1 • 1080×1920)",
+            "src": "studios/viet2210_katana_palette_master.mp4",
+            "fallback_url": "studios/viet2210_katana_palette_master.mp4",
+            "title": "Kết Quả Master Trên viet2210.MOV (2.40s Hook + Talk • SSIM 0.9977)",
+            "desc": "Thành phẩm thực thi bởi katana_palette_engine.py: 2 nhịp dừng quạt màu (palette 01/02 & 02/02), sóng Radial Colorize Wave khôi phục 100.8% độ bão hòa màu thật, nối thẳng vào Frame #49 không vết cắt (ΔE00 = 0.459)."
+          }
+        ],
+        "items": [
+          {
+            "tier": "1. Ba Pha Chuyển Động Chuẩn Tạp Chí (2.40s / 58 Frames @ 24fps)",
+            "code": "PHA 1 (0.0–0.65s)",
+            "name": "Monochrome B&W Editorial + Vòng Quạt Màu Pantone Xoay",
+            "desc": "Chủ thể ở chế độ Đen–Trắng tương phản cao (S-curve) trên nền giấy Studio #F8F8F6, đỉnh màn hình hiện chữ 'one me.', dưới đáy là Vòng Quạt Màu Pantone (wheel_vibrant.png) quay mượt."
+          },
+          {
+            "tier": "1. Ba Pha Chuyển Động Chuẩn Tạp Chí (2.40s / 58 Frames @ 24fps)",
+            "code": "PHA 2 (0.65–1.80s)",
+            "name": "2 Nhịp Bật 3 Thẻ Màu Pantone Nghiêng + Sóng Radial Colorize Wave",
+            "desc": "Nhịp 1 (0.65s, palette 01/02: OLIVE/BONE/INK) và Nhịp 2 (1.20s, palette 02/02: CHARCOAL/AMBER/CANOPY) bật 3 thẻ màu nghiêng (-14°, -3°, +9°) ra sau lưng kèm sóng màu lan từ tâm ngực đưa độ bão hòa từ 1.68 lên 97.06."
+          },
+          {
+            "tier": "2. Khóa Điểm Đáp 0% Halo & 5 Cổng Kiểm Định Tất Định (verify_katana_palette.py)",
+            "code": "PHA 3 (1.80–2.40s)",
+            "name": "Phương Trình α·F48 + (1-α)·F48 ≡ F48 & 5 Lớp SFX Studio (-16 LUFS)",
+            "desc": "Thẻ Pantone và nền giấy rút mở theo chiều sâu lộ nền công viên thật tại Frame #48 (SSIM = 0.99768 >= 0.995, ΔE00 = 0.459 <= 1.0, SeamMAD = 3.428), đồng bộ sfx_katana_palette_2p4s.wav."
+          }
+        ],
+        "asset_dir": "pantone1_katana_hook",
+        "showcase_title": "🖼️ Bảng Kiểm Định 10 Mốc Frame Thực Tế & Bộ Tài Nguyên Pantone (QA Contact Sheet)",
+        "showcase_badge": "Chuẩn 798F3D86 • G0 + K1..K4 VERDICT: PASS • 0% Halo",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_katana_palette_sheet.jpg",
+            "caption": "QA Contact Sheet 10 mốc thời gian (0.00s → 2.42s): Kiểm định tiến trình Monochrome → Palette 01/02 → Palette 02/02 → Bung nền thật Frame #48 → Nối mượt Frame #49",
+            "web_src": "assets/pantone1_katana_hook/qa_katana_palette_sheet.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/work_katana_palette/qa_sa1_assets.jpg",
+            "caption": "Bộ tài nguyên SA1: Frame #48 BT.709, Alpha Mask Guided Filter khử lem mép tóc, Vòng Quạt Màu Pantone & 6 Thẻ Màu Pantone trích xuất từ trang phục/bối cảnh",
+            "web_src": "assets/pantone1_katana_hook/qa_sa1_assets.jpg"
+          }
+        ],
+        "tech_specs": [
+          "Engine lõi: <code>~/.gemini/config/skills/ai-hook/scripts/katana_palette_engine.py</code> (tích hợp vào <code>ai_hook_engine.py --preset pantone1</code> và <code>hook_scanner.py</code>).",
+          "Tài nguyên đóng gói sẵn: <code>~/.gemini/config/skills/ai-hook/assets/pantone1/</code> (<code>wheel_vibrant.png</code>, <code>wheel_editorial.png</code>, <code>card_p1_a..c.png</code>, <code>card_p2_a..c.png</code>) và <code>assets/sfx_katana_palette_2p4s.wav</code>.",
+          "Bộ kiểm định 5 cổng: <code>~/.gemini/config/skills/ai-hook/scripts/verify_katana_palette.py</code> (Gate G0 Seam & Identity Lock, Gate K1 Desat-to-Color Curve, Gate K2 Wheel & Cards Presence, Gate K3 Anti-Flash, Gate K4 Audio/Duration).",
+          "Video mẫu tham chiếu (Ref): <code>https://static-public-media.higgsfield.ai/katana-presets/326c512a-ee04-417d-bb2a-faa3f2d1c6d1.mp4</code> (<code>/Users/vietmac/Documents/CODE/AI VIDEO EDIT/higgsfield_katana/katana_target_326c512a.mp4</code>).",
+          "Video kết quả Master: <code>/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_katana_palette_master.mp4</code> (<code>1080x1920 @ 24fps</code>, <code>SSIM = 0.99768</code>, <code>DeltaE00 = 0.459</code>)."
+        ]
+      },
       {
         "id": "spatial-camera-engine-v3-motion-physics",
         "date": "2026-10-22",
@@ -439,11 +627,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "V3.4 CORE",
       "desc": "Tự động cắt dựng video Talking-Head V3, OpenCV Mockup, B-Roll Hot-Swap, Logo & Outro 2 tầng & Remotion 60fps.",
       "path": "/Users/vietmac/.gemini/config/skills/auto-edit-video/SKILL.md",
-      "size": 23576,
+      "size": 23573,
       "size_formatted": "23.0 KB",
       "lines_count": 177,
-      "mtime": 1792649310.801881,
-      "mtime_formatted": "22/10/2026 13:08",
+      "mtime": 1792742350.2682097,
+      "mtime_formatted": "23/10/2026 14:59",
       "headers": [
         "1. NGUYÊN TẮC CỐT LÕI & CHẾ ĐỘ MẶC ĐỊNH V3 KHÔNG HỎI NHIỀU (ZERO-FRICTION MFX V3.2 DEFAULT)",
         "2. AUTO-EDIT V3: PRO TALKING-HEAD STUDIO (QUY TRÌNH 2-CHẠM)",
@@ -518,11 +706,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "SPA NICHE PACK V10",
       "desc": "Gói đóng gói chuyên biệt cho chủ đề Spa/Thẩm mỹ (Gọi tự nhiên: 'Hãy edit video sau theo phong cách spa' hoặc 'EDIT SPA' — Whip-Snap Zoom 0.28s khớp nhịp lấy hơi, Logo chỉ ở CTA & Outro, Atlas 2D hội ý CLAUDE2, Trước-Sau nền trắng #F5F2EB).",
       "path": "/Users/vietmac/.gemini/config/skills/spa-edit/SKILL.md",
-      "size": 8557,
+      "size": 8567,
       "size_formatted": "8.4 KB",
       "lines_count": 93,
-      "mtime": 1792678943.7042027,
-      "mtime_formatted": "22/10/2026 21:22",
+      "mtime": 1792742189.1667032,
+      "mtime_formatted": "23/10/2026 14:56",
       "headers": [
         "🗣️ 0. TÊN KỸ NĂNG & CÁCH GỌI TỰ NHIÊN (0 MA SÁT)",
         "🔥 1. BỐN NÂNG CẤP CỐT LÕI ĐÃ CẬP NHẬT TRONG BẢN `V10 MASTER`",
@@ -547,6 +735,26 @@ window.SKILL_LIVE_DATA = {
         "🏗️ 1. KIẾN TRÚC 2 BƯỚC & VÒNG LẶP TỰ HỌC 4 CỔNG VERIFIER",
         "⚡ 2. CÁC LỆNH CLI TẤT ĐỊNH (`so_do_motion_cli.py`)",
         "📦 3. CÀI ĐẶT 1 CHẠM CHO HỌC VIÊN ANTIGRAVITY"
+      ],
+      "status": "ACTIVE"
+    },
+    "ai-hook": {
+      "id": "ai-hook",
+      "name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "badge": "AI HOOK ROUTER",
+      "desc": "Hệ thống tự động quét 3 giây đầu video gốc và kết xuất các chế độ Hook: Rooftop Jump V3, Earth Zoom V3, Through Object, Rapid Zoom, Pantone1 (2.40s) & Sticker Transition (3D Die-Cut Sticker Peel & Match-Cut 2.15s).",
+      "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
+      "size": 26594,
+      "size_formatted": "26.0 KB",
+      "lines_count": 184,
+      "mtime": 1792819300.019477,
+      "mtime_formatted": "24/10/2026 12:21",
+      "headers": [
+        "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
+        "1. Kiến Trúc 4 Chế Độ Preset Đóng Gói Sẵn (`hooks_registry.json`)",
+        "2. Lệnh CLI Thực Thi Nhanh (`hook_scanner.py` & `ai_hook_engine.py`)",
+        "3. Tài Nguyên Tự Thân Đóng Gói Trong Skill (`assets/` & `hooks_registry.json`)",
+        "4. Cổng Kiểm Định Chống Giật Tự Động & Cơ Chế Tự Học (Anti-Jitter Verifier Gate & Self-Upgrading Loop)"
       ],
       "status": "ACTIVE"
     }
@@ -3219,6 +3427,16 @@ window.SKILL_LIVE_DATA = {
       "desc": "Remotion Composition React Component 60fps"
     },
     {
+      "name": "GiaHanBookReview.tsx",
+      "kind": "composition",
+      "size": 43469,
+      "size_formatted": "42.5 KB",
+      "lines": 1537,
+      "mtime": 1792756449.4350102,
+      "mtime_formatted": "23/10/2026 18:54",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
       "name": "LifestyleVideo.tsx",
       "kind": "composition",
       "size": 3361,
@@ -3794,11 +4012,11 @@ window.SKILL_LIVE_DATA = {
       "name": "qa_lint.py",
       "skill_id": "render-v3",
       "skill_name": "Render V3 (Delta Patcher & EDL Engine)",
-      "size": 12694,
-      "size_formatted": "12.4 KB",
-      "lines": 228,
-      "mtime": 1792573612.5904448,
-      "mtime_formatted": "21/10/2026 16:06",
+      "size": 13417,
+      "size_formatted": "13.1 KB",
+      "lines": 243,
+      "mtime": 1792742210.2069106,
+      "mtime_formatted": "23/10/2026 14:56",
       "desc": "qa_lint.py — Deterministic Post-Plan & Pre-Render Verifier (MFX V4.0 — CLAUDE2 Council Edition)"
     },
     {
@@ -3849,11 +4067,11 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_motion_deliverable.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 60fps (Universal Archetypes)",
-      "size": 25002,
-      "size_formatted": "24.4 KB",
-      "lines": 609,
-      "mtime": 1792683753.3209236,
-      "mtime_formatted": "22/10/2026 22:42",
+      "size": 25462,
+      "size_formatted": "24.9 KB",
+      "lines": 619,
+      "mtime": 1792742219.5398512,
+      "mtime_formatted": "23/10/2026 14:56",
       "desc": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic V3 (verify_motion_deliverable.py)"
     },
     {
@@ -3871,11 +4089,11 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_6gates.py",
       "skill_id": "spa-edit",
       "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "size": 1657,
-      "size_formatted": "1.6 KB",
-      "lines": 28,
-      "mtime": 1792654778.1337001,
-      "mtime_formatted": "22/10/2026 14:39",
+      "size": 2365,
+      "size_formatted": "2.3 KB",
+      "lines": 40,
+      "mtime": 1792742243.7970579,
+      "mtime_formatted": "23/10/2026 14:57",
       "desc": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
     },
     {
@@ -3915,12 +4133,221 @@ window.SKILL_LIVE_DATA = {
       "name": "verifier_4gates.py",
       "skill_id": "so-do-motion",
       "skill_name": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
-      "size": 3405,
-      "size_formatted": "3.3 KB",
-      "lines": 85,
-      "mtime": 1792678657.6528642,
-      "mtime_formatted": "22/10/2026 21:17",
+      "size": 4848,
+      "size_formatted": "4.7 KB",
+      "lines": 114,
+      "mtime": 1792742212.9806004,
+      "mtime_formatted": "23/10/2026 14:56",
       "desc": "verifier_4gates.py"
+    },
+    {
+      "name": "ai_hook_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 41846,
+      "size_formatted": "40.9 KB",
+      "lines": 946,
+      "mtime": 1792819235.2177157,
+      "mtime_formatted": "24/10/2026 12:20",
+      "desc": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
+    },
+    {
+      "name": "blinds_in_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 32693,
+      "size_formatted": "31.9 KB",
+      "lines": 706,
+      "mtime": 1792800202.3285782,
+      "mtime_formatted": "24/10/2026 07:03",
+      "desc": "3D Venetian Blinds Peek-In Engine (`blinds_in_engine.py`) — `through-object-in` (2.15s Hook)"
+    },
+    {
+      "name": "build_earth_zoom_master_v3.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 37313,
+      "size_formatted": "36.4 KB",
+      "lines": 744,
+      "mtime": 1792681927.5065823,
+      "mtime_formatted": "22/10/2026 22:12",
+      "desc": "Earth Zoom master v3: ex_1 space | concentric cloud punch-through | Veo1 clear city | Veo B_flow->A | viet2210.MOV."
+    },
+    {
+      "name": "earth_zoom_master_v2.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 26812,
+      "size_formatted": "26.2 KB",
+      "lines": 664,
+      "mtime": 1792663271.6979327,
+      "mtime_formatted": "22/10/2026 17:01",
+      "desc": "Earth Zoom Master V2 Engine (`earth_zoom_master_v2.py`) — Chuẩn Hóa Từ Luồng 7ef7b16f-5b2b-46a2-bbe4-b4f587205229"
+    },
+    {
+      "name": "earth_zoom_omni_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 12140,
+      "size_formatted": "11.9 KB",
+      "lines": 259,
+      "mtime": 1792817808.6501017,
+      "mtime_formatted": "24/10/2026 11:56",
+      "desc": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
+    },
+    {
+      "name": "flycam_transition_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 40177,
+      "size_formatted": "39.2 KB",
+      "lines": 960,
+      "mtime": 1792802366.7570322,
+      "mtime_formatted": "24/10/2026 07:39",
+      "desc": "Flycam-Transition AI Hook Engine (`flycam_transition_engine.py`)"
+    },
+    {
+      "name": "giant_grab_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 39854,
+      "size_formatted": "38.9 KB",
+      "lines": 895,
+      "mtime": 1792801089.9385047,
+      "mtime_formatted": "24/10/2026 07:18",
+      "desc": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
+    },
+    {
+      "name": "hero_cam_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 28882,
+      "size_formatted": "28.2 KB",
+      "lines": 693,
+      "mtime": 1792799861.6525674,
+      "mtime_formatted": "24/10/2026 06:57",
+      "desc": "180-Degree Orbital Whip-Around + 2.5D DIBR Tail Engine (hero-cam 2.10s AI Hook)."
+    },
+    {
+      "name": "hook_scanner.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 18723,
+      "size_formatted": "18.3 KB",
+      "lines": 416,
+      "mtime": 1792819263.0194821,
+      "mtime_formatted": "24/10/2026 12:21",
+      "desc": "AI Hook Scanner (`hook_scanner.py`) — Bộ giải phẫu video đầu vào & gợi ý Hook thông minh"
+    },
+    {
+      "name": "jib_down_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 35273,
+      "size_formatted": "34.4 KB",
+      "lines": 760,
+      "mtime": 1792817975.6204822,
+      "mtime_formatted": "24/10/2026 11:59",
+      "desc": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
+    },
+    {
+      "name": "katana_palette_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 39666,
+      "size_formatted": "38.7 KB",
+      "lines": 975,
+      "mtime": 1792817821.3488367,
+      "mtime_formatted": "24/10/2026 11:57",
+      "desc": "Katana Palette Hook Engine (`katana_palette_engine.py`) — `katana-palette-hook` (2.40s Hook)"
+    },
+    {
+      "name": "point_cloud_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 39361,
+      "size_formatted": "38.4 KB",
+      "lines": 896,
+      "mtime": 1792774531.450546,
+      "mtime_formatted": "23/10/2026 23:55",
+      "desc": "3D LiDAR Matrix & Blueprint Wireframe Assembly Engine (point-cloud 2.20s AI Hook)."
+    },
+    {
+      "name": "rooftop_jump_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 18537,
+      "size_formatted": "18.1 KB",
+      "lines": 422,
+      "mtime": 1792663062.2859828,
+      "mtime_formatted": "22/10/2026 16:57",
+      "desc": "Rooftop Jump Engine (`rooftop_jump_engine.py`) — Động cơ tự động tạo hiệu ứng Nhảy Từ Đỉnh Tòa Nhà (Master V3)"
+    },
+    {
+      "name": "sticker_transition_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 32651,
+      "size_formatted": "31.9 KB",
+      "lines": 739,
+      "mtime": 1792800084.41793,
+      "mtime_formatted": "24/10/2026 07:01",
+      "desc": "3D Die-Cut Sticker Peel & Match-Cut AI Hook Engine (`sticker_transition_engine.py`)"
+    },
+    {
+      "name": "timelapse_freeze_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 35211,
+      "size_formatted": "34.4 KB",
+      "lines": 848,
+      "mtime": 1792819393.5305889,
+      "mtime_formatted": "24/10/2026 12:23",
+      "desc": "Timelapse-Freeze AI Hook Engine (`timelapse_freeze_engine.py`)"
+    },
+    {
+      "name": "verify_flycam_transition.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 62067,
+      "size_formatted": "60.6 KB",
+      "lines": 1461,
+      "mtime": 1792800392.7805753,
+      "mtime_formatted": "24/10/2026 07:06",
+      "desc": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
+    },
+    {
+      "name": "verify_katana_palette.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 34455,
+      "size_formatted": "33.6 KB",
+      "lines": 856,
+      "mtime": 1792817773.2329297,
+      "mtime_formatted": "24/10/2026 11:56",
+      "desc": "SA2 — Katana Palette Verifier (Gates G0, K1, K2, K3, K4)"
+    },
+    {
+      "name": "verify_smooth_zoom.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 26928,
+      "size_formatted": "26.3 KB",
+      "lines": 467,
+      "mtime": 1792817332.381445,
+      "mtime_formatted": "24/10/2026 11:48",
+      "desc": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
+    },
+    {
+      "name": "verify_sticker_transition.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 58062,
+      "size_formatted": "56.7 KB",
+      "lines": 1347,
+      "mtime": 1792819097.907293,
+      "mtime_formatted": "24/10/2026 12:18",
+      "desc": "SA2 — Deterministic 5-Gate Verifier (G0_COMMON + G1..G4) & Self-Test Suite"
     }
   ],
   "history": [
@@ -3928,17 +4355,201 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792683835.9113636,
-      "mtime_formatted": "22/10/2026 22:43",
-      "detail": "4 quy chuẩn • 8 studios"
+      "mtime": 1792819406.701178,
+      "mtime_formatted": "24/10/2026 12:23",
+      "detail": "6 quy chuẩn • 10 studios"
+    },
+    {
+      "name": "scripts/timelapse_freeze_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792819393.5305889,
+      "mtime_formatted": "24/10/2026 12:23",
+      "detail": "Timelapse-Freeze AI Hook Engine (`timelapse_freeze_engine.py`)"
+    },
+    {
+      "name": "ai-hook/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792819300.019477,
+      "mtime_formatted": "24/10/2026 12:21",
+      "detail": "184 dòng • 5 mục chính"
+    },
+    {
+      "name": "scripts/hook_scanner.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792819263.0194821,
+      "mtime_formatted": "24/10/2026 12:21",
+      "detail": "AI Hook Scanner (`hook_scanner.py`) — Bộ giải phẫu video đầu vào & gợi ý Hook thông minh"
+    },
+    {
+      "name": "scripts/ai_hook_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792819235.2177157,
+      "mtime_formatted": "24/10/2026 12:20",
+      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
+    },
+    {
+      "name": "scripts/verify_sticker_transition.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792819097.907293,
+      "mtime_formatted": "24/10/2026 12:18",
+      "detail": "SA2 — Deterministic 5-Gate Verifier (G0_COMMON + G1..G4) & Self-Test Suite"
+    },
+    {
+      "name": "scripts/jib_down_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792817975.6204822,
+      "mtime_formatted": "24/10/2026 11:59",
+      "detail": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
+    },
+    {
+      "name": "scripts/katana_palette_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792817821.3488367,
+      "mtime_formatted": "24/10/2026 11:57",
+      "detail": "Katana Palette Hook Engine (`katana_palette_engine.py`) — `katana-palette-hook` (2.40s Hook)"
+    },
+    {
+      "name": "scripts/earth_zoom_omni_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792817808.6501017,
+      "mtime_formatted": "24/10/2026 11:56",
+      "detail": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
+    },
+    {
+      "name": "scripts/verify_katana_palette.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792817773.2329297,
+      "mtime_formatted": "24/10/2026 11:56",
+      "detail": "SA2 — Katana Palette Verifier (Gates G0, K1, K2, K3, K4)"
+    },
+    {
+      "name": "scripts/verify_smooth_zoom.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792817332.381445,
+      "mtime_formatted": "24/10/2026 11:48",
+      "detail": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
+    },
+    {
+      "name": "scripts/flycam_transition_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792802366.7570322,
+      "mtime_formatted": "24/10/2026 07:39",
+      "detail": "Flycam-Transition AI Hook Engine (`flycam_transition_engine.py`)"
+    },
+    {
+      "name": "scripts/giant_grab_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792801089.9385047,
+      "mtime_formatted": "24/10/2026 07:18",
+      "detail": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
+    },
+    {
+      "name": "scripts/verify_flycam_transition.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792800392.7805753,
+      "mtime_formatted": "24/10/2026 07:06",
+      "detail": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
+    },
+    {
+      "name": "scripts/blinds_in_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792800202.3285782,
+      "mtime_formatted": "24/10/2026 07:03",
+      "detail": "3D Venetian Blinds Peek-In Engine (`blinds_in_engine.py`) — `through-object-in` (2.15s Hook)"
+    },
+    {
+      "name": "scripts/sticker_transition_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792800084.41793,
+      "mtime_formatted": "24/10/2026 07:01",
+      "detail": "3D Die-Cut Sticker Peel & Match-Cut AI Hook Engine (`sticker_transition_engine.py`)"
+    },
+    {
+      "name": "scripts/hero_cam_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792799861.6525674,
+      "mtime_formatted": "24/10/2026 06:57",
+      "detail": "180-Degree Orbital Whip-Around + 2.5D DIBR Tail Engine (hero-cam 2.10s AI Hook)."
+    },
+    {
+      "name": "scripts/point_cloud_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792774531.450546,
+      "mtime_formatted": "23/10/2026 23:55",
+      "detail": "3D LiDAR Matrix & Blueprint Wireframe Assembly Engine (point-cloud 2.20s AI Hook)."
+    },
+    {
+      "name": "compositions/GiaHanBookReview.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792756449.4350102,
+      "mtime_formatted": "23/10/2026 18:54",
+      "detail": "1537 dòng • Composition"
+    },
+    {
+      "name": "auto-edit-video/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
+      "mtime": 1792742350.2682097,
+      "mtime_formatted": "23/10/2026 14:59",
+      "detail": "177 dòng • 7 mục chính"
+    },
+    {
+      "name": "scripts/verify_6gates.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1792742243.7970579,
+      "mtime_formatted": "23/10/2026 14:57",
+      "detail": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
     },
     {
       "name": "scripts/verify_motion_deliverable.py",
       "type": "Python Script",
       "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792683753.3209236,
-      "mtime_formatted": "22/10/2026 22:42",
+      "mtime": 1792742219.5398512,
+      "mtime_formatted": "23/10/2026 14:56",
       "detail": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic V3 (verify_motion_deliverable.py)"
+    },
+    {
+      "name": "scripts/verifier_4gates.py",
+      "type": "Python Script",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1792742212.9806004,
+      "mtime_formatted": "23/10/2026 14:56",
+      "detail": "verifier_4gates.py"
+    },
+    {
+      "name": "scripts/qa_lint.py",
+      "type": "Python Script",
+      "skill": "Render V3 (Delta Patcher & EDL Engine)",
+      "mtime": 1792742210.2069106,
+      "mtime_formatted": "23/10/2026 14:56",
+      "detail": "qa_lint.py — Deterministic Post-Plan & Pre-Render Verifier (MFX V4.0 — CLAUDE2 Council Edition)"
+    },
+    {
+      "name": "spa-edit/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1792742189.1667032,
+      "mtime_formatted": "23/10/2026 14:56",
+      "detail": "93 dòng • 4 mục chính"
     },
     {
       "name": "motion/SKILL.md",
@@ -3949,20 +4560,20 @@ window.SKILL_LIVE_DATA = {
       "detail": "141 dòng • 5 mục chính"
     },
     {
+      "name": "scripts/build_earth_zoom_master_v3.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792681927.5065823,
+      "mtime_formatted": "22/10/2026 22:12",
+      "detail": "Earth Zoom master v3: ex_1 space | concentric cloud punch-through | Veo1 clear city | Veo B_flow->A | viet2210.MOV."
+    },
+    {
       "name": "compositions/PinterestViet9x16.tsx",
       "type": "Remotion .TSX",
       "skill": "Remotion Studio 60fps",
       "mtime": 1792681167.8635862,
       "mtime_formatted": "22/10/2026 21:59",
       "detail": "3116 dòng • Composition"
-    },
-    {
-      "name": "spa-edit/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1792678943.7042027,
-      "mtime_formatted": "22/10/2026 21:22",
-      "detail": "93 dòng • 4 mục chính"
     },
     {
       "name": "scripts/so_do_motion_cli.py",
@@ -3979,190 +4590,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792678713.1320174,
       "mtime_formatted": "22/10/2026 21:18",
       "detail": "STEP 2 (UPGRADED V2): GEMINI 3.8 FLASH TTS STUDIO VOICE + REAL-VOICE ACOUSTIC TRANSFER LOOP"
-    },
-    {
-      "name": "scripts/build_diagram_motion_60fps.py",
-      "type": "Python Script",
-      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
-      "mtime": 1792678713.129159,
-      "mtime_formatted": "22/10/2026 21:18",
-      "detail": "STEP 1: AI VIDEO EDIT WORKFLOW DIAGRAM MOTION 60FPS (NO SPEECH + THAM THO 5B SUBTITLE SYNC + 4-LAYER SFX)"
-    },
-    {
-      "name": "scripts/verifier_4gates.py",
-      "type": "Python Script",
-      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
-      "mtime": 1792678657.6528642,
-      "mtime_formatted": "22/10/2026 21:17",
-      "detail": "verifier_4gates.py"
-    },
-    {
-      "name": "so-do-motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
-      "mtime": 1792678616.892709,
-      "mtime_formatted": "22/10/2026 21:16",
-      "detail": "81 dòng • 4 mục chính"
-    },
-    {
-      "name": "compositions/VietSuiPlayLaunch20s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792676896.3981342,
-      "mtime_formatted": "22/10/2026 20:48",
-      "detail": "1574 dòng • Composition"
-    },
-    {
-      "name": "scripts/verify_6gates.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1792654778.1337001,
-      "mtime_formatted": "22/10/2026 14:39",
-      "detail": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
-    },
-    {
-      "name": "scripts/spa_edit_cli.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1792654773.6891718,
-      "mtime_formatted": "22/10/2026 14:39",
-      "detail": "SPA EDIT CLI V7.2 — ONE-COMMAND DETERMINISTIC PACKAGING ENGINE FOR SPA / CLINIC VIDEOS"
-    },
-    {
-      "name": "motion_catalog.json",
-      "type": "Database JSON",
-      "skill": "Motion Catalog + Brand 2-Tier",
-      "mtime": 1792649346.247142,
-      "mtime_formatted": "22/10/2026 13:09",
-      "detail": "16 archetypes + BRAND/OUTRO 01-03"
-    },
-    {
-      "name": "auto-edit-video/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792649310.801881,
-      "mtime_formatted": "22/10/2026 13:08",
-      "detail": "177 dòng • 7 mục chính"
-    },
-    {
-      "name": "compositions/VietUniversalCTA.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792640862.648815,
-      "mtime_formatted": "22/10/2026 10:47",
-      "detail": "431 dòng • Composition"
-    },
-    {
-      "name": "compositions/VietScientificAtlas.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792578351.8349109,
-      "mtime_formatted": "21/10/2026 17:25",
-      "detail": "584 dòng • Composition"
-    },
-    {
-      "name": "render-v3/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1792573717.9993098,
-      "mtime_formatted": "21/10/2026 16:08",
-      "detail": "63 dòng • 2 mục chính"
-    },
-    {
-      "name": "scripts/qa_lint.py",
-      "type": "Python Script",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1792573612.5904448,
-      "mtime_formatted": "21/10/2026 16:06",
-      "detail": "qa_lint.py — Deterministic Post-Plan & Pre-Render Verifier (MFX V4.0 — CLAUDE2 Council Edition)"
-    },
-    {
-      "name": "scripts/mfx_v3_universal_engine.py",
-      "type": "Python Script",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1792573554.1729004,
-      "mtime_formatted": "21/10/2026 16:05",
-      "detail": "mfx_v3_universal_engine.py — Động Cơ Kết Xuất Video MFX V3.2 (2-Pass Low-RAM Streaming)"
-    },
-    {
-      "name": "scripts/mfx_v3_universal_engine.py",
-      "type": "Python Script",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792564981.4453545,
-      "mtime_formatted": "21/10/2026 13:43",
-      "detail": "mfx_v3_universal_engine.py — Động Cơ Kết Xuất Video MFX V3.2 (2-Pass Low-RAM Streaming)"
-    },
-    {
-      "name": "scripts/edl_bootstrap.py",
-      "type": "Python Script",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1792564359.1456294,
-      "mtime_formatted": "21/10/2026 13:32",
-      "detail": "edl_bootstrap.py — Khởi Tạo Nhanh EDL JSON & Contact Sheet Cho Luồng Trực Tiếp Antigravity"
-    },
-    {
-      "name": "scripts/spine_map_mgb02.py",
-      "type": "Python Script",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1792564359.143949,
-      "mtime_formatted": "21/10/2026 13:32",
-      "detail": "spine_map_mgb02.py — Bộ Dựng Vertical Linear Spine Map (MG-B02 V2)"
-    },
-    {
-      "name": "scripts/atlas_2d_helper.py",
-      "type": "Python Script",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1792564359.1417499,
-      "mtime_formatted": "21/10/2026 13:32",
-      "detail": "atlas_2d_helper.py — Bộ Dựng Bản Vẽ Khoa Học 2D (Scientific Atlas Style V2)"
-    },
-    {
-      "name": "scripts/scientific_atlas_builder.py",
-      "type": "Python Script",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792563279.9291606,
-      "mtime_formatted": "21/10/2026 13:14",
-      "detail": "Scientific Atlas Style V2 — 3 cảnh trám khoa học cho thamtho_goc.mp4."
-    },
-    {
-      "name": "scripts/v3_motion_library.py",
-      "type": "Python Script",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792559252.5198178,
-      "mtime_formatted": "21/10/2026 12:07",
-      "detail": "scripts/v3_motion_library.py — Engine Thư Viện 16 Kiểu Motion Graphic Chủ Lực V3,"
-    },
-    {
-      "name": "scripts/build_motion_showcase.py",
-      "type": "Python Script",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792466746.620185,
-      "mtime_formatted": "20/10/2026 10:25",
-      "detail": "build_motion_showcase.py"
-    },
-    {
-      "name": "fedu-media-pipeline/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "FEDU Media Pipeline (Tổng Thể)",
-      "mtime": 1792459300.6442873,
-      "mtime_formatted": "20/10/2026 08:21",
-      "detail": "47 dòng • 5 mục chính"
-    },
-    {
-      "name": "scripts/scaffold_motion_project.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792458344.8328738,
-      "mtime_formatted": "20/10/2026 08:05",
-      "detail": "scaffold_motion_project.py — Trình khởi tạo tự động dự án Motion Graphic 60fps từ Video Nói + SRT."
-    },
-    {
-      "name": "compositions/VietMasterClassPower10s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792421279.6582208,
-      "mtime_formatted": "19/10/2026 21:47",
-      "detail": "1061 dòng • Composition"
     }
   ]
 };
