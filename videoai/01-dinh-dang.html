@@ -349,6 +349,186 @@ python3 ~/.gemini/config/skills/auto-edit-video/scripts/v3_pro_director.py \
       <!-- AUTO_EVOLUTION_START:dinh-dang -->
 
       <!-- ========================================================
+           QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (ai-hook-intermission-stage-curtain)
+           ======================================================== -->
+      <div class="evolution-injected-section" id="evo-ai-hook-intermission-stage-curtain" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <span style="font:700 11.5px var(--mono); color:#b45309; background:#fef3c7; border:1px solid #fde68a; padding:3px 10px; border-radius:999px;">
+            ⚡ QUY CHUẨN MỚI CẬP NHẬT • 2026-10-24 • CHUẨN 9BD800AB
+          </span>
+        </div>
+        <h2 style="margin-top:6px;">AI Hook Preset 'intermission': Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất 2.00s (Kỹ năng ai-hook)</h2>
+
+        <!-- TẦNG 1: WHAT • WHY • HOW -->
+        <div class="wwh-grid">
+          <div class="wwh-card">
+            <div class="wwh-tag what">WHAT • BẢN CHẤT ELEMENT</div>
+            <div class="wwh-title">Rèm nhung đỏ sân khấu 2.5D đóng kín che pha cúi lấy đà (F00..F32), kéo toạc ở đỉnh nhảy trên không (F36) và khóa Passthrough 100% từ lúc chạm đất (F48+)</div>
+            <p class="wwh-desc">Chế độ Hook mới <strong><code>intermission</code></strong> (aliases: <code>stage-curtain</code>, <code>rem-nhung</code>, <code>rem-san-khau</code>, <code>kling-52</code> &mdash; <code>2.00s</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Đóng kín <strong>Rèm nhung đỏ sân khấu 2.5D</strong> (<code>Coverage = 100.0% &ge; 98%</code>) với nếp gấp nhung 3D chiaroscuro shading, viền tua rua vàng kim và bảng hiệu điện ảnh <code>INTERMISSION &middot; ACT I &middot; GRAND STAGE</code> ở <code>F00..F32</code> để giấu hoàn toàn lúc anh Việt cúi người lấy đà; khi anh Việt bật nhảy lên đỉnh không trung (<code>F35..F36 = 1.500s</code>) và lao xuống đáp đất, hai cánh rèm kéo toạc sang 2 bên theo hàm <strong>Critically Damped (&zeta; = 1.0) / easeOutQuart clamped</strong> (<code>F33..F47</code>, <code>Zero Overshoot = 0.0px</code>) và từ <code>F48 (2.000s)</code> trở đi <strong>Passthrough 100% pixel frame gốc</strong> (<code>SSIM-Y = 0.9983 &ge; 0.995</code>, <code>PSNR-Y = 53.13 dB</code>).</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag why">WHY • VÌ SAO CẦN ELEMENT NÀY?</div>
+            <div class="wwh-title">Vì sao dùng Rèm Nhung Đỏ 2.5D mở đúng đỉnh nhảy F36 cho footage có nhịp lấy đà nhảy?</div>
+            <p class="wwh-desc">Với các clip quay cảnh nhảy đáp đất tại chỗ (như <code>footageai3.mp4</code>), giây đầu tiên nhân vật phải cúi gập người lấy đà khiến khung hình mở đầu thiếu lực. Khi đóng kín rèm nhung đỏ sân khấu ở <code>F00..F32</code> rồi kéo toạc 2 cánh rèm đúng lúc cơ thể đang bay lơ lửng ở đỉnh <code>F36</code>, người xem chỉ nhìn thấy khoảnh khắc lao từ trên không xuống tiếp đất thẳng trục tại <code>F48</code> kèm tiếng <strong>Curtain Whoosh + 42Hz Landing Sub-Bass Thud</strong> cực kỳ uy lực, sau đó giữ nguyên 100% pixel gốc và giọng nói gốc từ <code>F68 (2.833s)</code>.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag how">HOW • 2 CHẾ ĐỘ GỌI TỰ NHIÊN</div>
+            <div class="wwh-title">Gọi tự nhiên INTERMISSION / REM NHUNG hoặc chạy CLI 1 chạm với preset intermission</div>
+            <p class="wwh-desc">Gọi trực tiếp bằng câu tự nhiên ('INTERMISSION : <video>', 'REM NHUNG : <video>') hoặc chạy lệnh CLI của ai-hook:</p>
+            <div class="cmd-box">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh Antigravity</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/Users/vietmac/Documents/AItest2/footageai3.mp4" --preset intermission</code></pre>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="studio-launch-bar" style="margin:20px 0;">
+          <div class="studio-launch-info">
+            <b>🏷️ Studio AI Hook INTERMISSION: Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất (2.00s)</b>
+            <span>Chạy thử thời gian thực trên video mẫu, chuyển đổi 2 chế độ: Chỉ Logo Thương Hiệu (Mode 1) hoặc Kèm Thẻ Vé CTA Ưu Đãi (Mode 2)</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            
+            <button type="button" class="studio-launch-btn" onclick="openStudioModal('studios/studio-ai-hook-intermission.html', 'AI Hook Preset 'intermission': Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất 2.00s (Kỹ năng ai-hook)')">
+              <span>🎛️ Mở Studio Tương Tác</span>
+            </button>
+          </div>
+        </div>
+        
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🎬 Đối Chiếu Trực Tiếp: ① Video Mẫu Tham Chiếu Kling #52 (52_intermission_356a82dc.mp4) &rarr; ② Video Kết Quả Master (footageai3_intermission_web.mp4)</span>
+            </div>
+            <span class="showcase-badge">Stage Velvet Curtain 2.5D • 1080×1920 @ 24fps • PASS 6/6 CLAUDE2 Gates (SSIM-Y 0.9983)</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>① VIDEO MẪU GỐC KLING #52 (52_INTERMISSION_356A82DC.MP4)</span>
+                <a href="studios/52_intermission_356a82dc.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/52_intermission_356a82dc.mp4" type="video/mp4">
+                  <source src="studios/52_intermission_356a82dc.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Mẫu tham chiếu Higgsfield Kling R01 #52 Intermission</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Cơ chế gốc: Rèm nhung đỏ sân khấu đóng kín với chữ tiêu đề ở giữa rồi kéo mở sang hai bên để lộ ra chủ thể đang chuyển động ở trung tâm.</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>② VIDEO KẾT QUẢ MASTER (FOOTAGEAI3_INTERMISSION • PASS 6/6 GATES)</span>
+                <a href="studios/footageai3_intermission_web.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/footageai3_intermission_web.mp4" type="video/mp4">
+                  <source src="studios/footageai3_intermission_web.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Master: footageai3_intermission_master.mp4 (Đóng rèm F00..F32 → Mở ở đỉnh nhảy F36 → Khóa F48+)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Đóng kín rèm nhung đỏ 100% che pha cúi lấy đà (F00..F32), kéo toạc 2 cánh rèm Critically Damped (F33..F47, 0.0px overshoot) đúng đỉnh nhảy F36 và khóa Passthrough 100% từ F48 (SSIM-Y = 0.9983, PSNR = 53.13 dB) kèm Curtain Whoosh + 42Hz Sub-Bass Thud.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 1. Ba Pha Vật Lý & Hình Học Của Rèm Nhung Đỏ 2.5D (intermission_curtain_engine.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 1 (F00..F32)</div>
+              <div class="step-content">
+                <div class="step-name">Closed Velvet Curtain Hold (Coverage 100% >= 98%) Che Pha Cúi Lấy Đà</div>
+                <div class="step-desc">Sóng vải sin-harmonic 3 tần số kết hợp Chiaroscuro 3D shading (Ambient Occlusion + Specular Velvet Sheen), tua rua vàng kim, diềm rèm hoàng gia và biển hiệu 'INTERMISSION • ACT I • GRAND STAGE'.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 2 (F33..F47)</div>
+              <div class="step-content">
+                <div class="step-name">Critically Damped Bilateral Pull (ζ = 1.0) Kéo Toạc Ở Đỉnh Nhảy F36</div>
+                <div class="step-desc">Mở toạc 2 cánh rèm trong 15 frames (0.625s) theo hàm easeOutQuart clamped + dồn nếp vải (fabric bunching) + Directional Motion Blur ngang; thoát sạch khỏi khung tại F46..F47 với 0.0px overshoot.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 3 (F48+)</div>
+              <div class="step-content">
+                <div class="step-name">100% Pixel Passthrough Lock Từ Lúc Chạm Đất F48 & Mở Lời F68</div>
+                <div class="step-desc">Từ F48 (2.000s) trở đi copy nguyên bản 100% pixel frame gốc (alpha = 0 tuyệt đối) và giữ chuẩn ma trận màu BT.709 Full-Range (min SSIM-Y = 0.9969, mean SSIM-Y = 0.9983, PSNR-Y = 53.13 dB).</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 2. Kiểm Định 6 Cổng CLAUDE2 & Âm Thanh Sân Khấu (verify_intermission_curtain.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">6 GATES G0..G5</div>
+              <div class="step-content">
+                <div class="step-name">G0 24fps CFR • G1 Landmarks • G2 Coverage • G3 Damping • G4 SSIM-Y • G5 Voice-Safe SFX</div>
+                <div class="step-desc">Phối sẵn sfx_intermission_curtain_2s.wav (Stereo Curtain Whoosh + Cloth Rustle + 42Hz Landing Thud @ F48) với độ tương quan giọng nói gốc từ F68 đạt r = 0.999982.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🖼️ Bảng Kiểm Định 12 Keyframes R01 #52 Intermission (F00 → F68)</span>
+            </div>
+            <span class="showcase-badge">Chuẩn 9BD800AB • Hội Ý CLAUDE2 • VERDICT: PASS 6/6 GATES</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/intermission_stage_curtain/qa_footageai3_intermission_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/intermission_stage_curtain/qa_footageai3_intermission_sheet.jpg" alt="Contact Sheet 12 Keyframes (qa_footageai3_intermission_sheet.jpg): Đóng kín rèm nhung đỏ F00..F32 (Coverage 100%) → Kéo mở F33..F47 lộ đỉnh nhảy F36 → Chạm đất Passthrough 100% tại F48 (SSIM-Y 0.9983)" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Contact Sheet 12 Keyframes (qa_footageai3_intermission_sheet.jpg): Đóng kín rèm nhung đỏ F00..F32 (Coverage 100%) → Kéo mở F33..F47 lộ đỉnh nhảy F36 → Chạm đất Passthrough 100% tại F48 (SSIM-Y 0.9983)</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <details class="tech-drawer" style="margin-top:18px;">
+          <summary>🔧 Xem chi tiết kỹ thuật: AI Hook Preset 'intermission': Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất 2.00s (Kỹ năng ai-hook)</summary>
+          <div class="tech-body">
+            <ul style="padding-left:20px; line-height:1.6;">
+              <li style='margin-bottom:6px;'>Engine lõi: ~/.gemini/config/skills/ai-hook/scripts/intermission_curtain_engine.py (tích hợp trong ai_hook_engine.py --preset intermission / stage-curtain / rem-nhung và hook_scanner.py).</li><li style='margin-bottom:6px;'>Bộ kiểm định 6 cổng CLAUDE2: ~/.gemini/config/skills/ai-hook/scripts/verify_intermission_curtain.py (PASS 6/6 cổng G0..G5).</li><li style='margin-bottom:6px;'>Âm thanh Studio: ~/.gemini/config/skills/ai-hook/assets/sfx_intermission_curtain_2s.wav (Stereo Curtain Whoosh + Cloth Foley + 42Hz Sub-Bass Thud @ 2.00s, Voice-Safe 100% từ F68).</li><li style='margin-bottom:6px;'>Sản phẩm Master chuẩn: /Users/vietmac/Documents/CODE/AI VIDEO EDIT/higgsfield_kling/tier1_outputs/r01_intermission/r01_intermission_master.mp4 (Bản Web: /Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai3_intermission_web.mp4).</li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    
+
+      <!-- ========================================================
            QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (katana-tier1-batch4-archive)
            ======================================================== -->
       <div class="evolution-injected-section" id="evo-katana-tier1-batch4-archive" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
