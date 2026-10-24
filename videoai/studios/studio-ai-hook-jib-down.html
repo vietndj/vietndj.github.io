@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio AI Hook JIB-DOWN — Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt (2.30s)</title>
+<style>
+  :root {
+    --bg: #080a0f;
+    --card: #11151e;
+    --border: #232c3d;
+    --lime: #d4fe48;
+    --cyan: #38bdf8;
+    --emerald: #34d399;
+    --amber: #fbbf24;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.55;
+  }
+  .container { max-width: 1360px; margin: 0 auto; }
+  .hero {
+    background: linear-gradient(135deg, #111726 0%, #192338 100%);
+    border: 1px solid #2d3b56;
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+  }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .badge {
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .badge-lime { background: var(--lime); color: #000; }
+  .badge-cyan { background: rgba(56,189,248,0.16); color: var(--cyan); border: 1px solid rgba(56,189,248,0.4); }
+  .badge-emerald { background: rgba(52,211,153,0.16); color: var(--emerald); border: 1px solid rgba(52,211,153,0.4); }
+  h1 { margin: 0 0 8px 0; font-size: 24px; color: #fff; }
+  .sub { color: #cbd5e1; font-size: 14px; margin-bottom: 14px; }
+  .cmd-bar {
+    background: #0b0e15;
+    border: 1px solid #28344b;
+    border-left: 4px solid var(--lime);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+  }
+  .copy-btn {
+    background: var(--lime);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 12.5px;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+    margin-bottom: 22px;
+  }
+  .v-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .v-card.master { border: 1.5px solid rgba(212,254,72,0.65); }
+  .v-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid #1d2536;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .v-title { font-size: 16px; font-weight: 800; color: #fff; }
+  .player-box {
+    background: #040609;
+    aspect-ratio: 9/16;
+    max-height: 560px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+  .v-body { padding: 14px 18px; font-size: 13.5px; color: #cbd5e1; }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+    background: #0b0e15;
+    border: 1px solid #1e273a;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+  }
+  .m-lbl { color: var(--muted); font-size: 10px; text-transform: uppercase; display: block; }
+  .m-val { color: #fff; font-weight: 700; }
+  .phases {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .phase-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #0b0e15;
+    border: 1px solid #263147;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .qa-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  .qa-card img { width: 100%; height: auto; border-radius: 10px; border: 1px solid #263147; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="badges">
+      <span class="badge badge-lime">AI HOOK PRESET: JIB-DOWN (2.30S)</span>
+      <span class="badge badge-cyan">3D Veo Parallax • Auto-Trim Canopy Apex • Roll Derotation</span>
+      <span class="badge badge-emerald">VERDICT: PASS 10/10 GATES (vp 0.91–0.94 • sc 0.99–1.00 • SSIM ≥ 0.985)</span>
+    </div>
+    <h1>🏗️ Studio Đối Chiếu AI Hook <code>jib-down</code> (Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt — 2.30s)</h1>
+    <div class="sub">
+      So sánh trực tiếp 2 Case Study thực chiến của preset <strong><code>jib-down</code></strong> (<code>jib_down_engine.py</code>): <strong>① Case 1 (<code>viet2210_jib_down_master.mp4</code> — Công viên tán cây xanh)</strong> và <strong>② Case 2 (<code>footageai1_jib_down_web.mp4</code> — Khu hồ bơi, hàng cọ &amp; tòa tháp chung cư 3D Parallax)</strong>.
+    </div>
+    <div class="cmd-bar">
+      <span id="cmdText">python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/Users/vietmac/Documents/AItest2/footageai1.mp4" --preset jib-down</span>
+      <div style="display:flex; gap:8px;">
+        <button class="copy-btn" onclick="syncPlayBoth()">▶ Phát Song Song Cả 2 Video</button>
+        <button class="copy-btn" style="background:#38bdf8;" onclick="navigator.clipboard.writeText(document.getElementById('cmdText').innerText); this.innerText='✓ Đã Copy Lệnh';">Copy Lệnh CLI</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- CASE 1 VIDEO -->
+    <div class="v-card master">
+      <div class="v-head">
+        <div class="v-title">① Case 1: Công Viên Tán Cây Xanh (<code>viet2210.MOV</code>)</div>
+        <span class="badge badge-cyan">1080×1920 • SSIM 0.9923</span>
+      </div>
+      <div class="player-box">
+        <video id="vidCase1" controls loop playsinline preload="metadata" src="viet2210_jib_down_master.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Kết quả thực thi trên <code>viet2210.MOV</code> (Frame Anchor <code>#48 @ 2.04s</code>):</strong>
+        Từ vòm lá cây công viên trên cao hạ thẳng đứng mượt mà xuống ngang mắt anh Việt theo đường cong <code>16% linear + 84% easeInOutCubic</code>, phủ <code>180° Vertical Shutter Motion Blur</code> + <code>Foliage Canopy Vignette</code> và hội tụ 3-frame Optical-Flow Morph khớp <code>Frame #48</code>.
+        <div class="phases">
+          <span class="phase-pill">0.00–0.80s: Canopy Air Rush</span>
+          <span class="phase-pill">0.80–1.80s: Vertical Crane Plunge</span>
+          <span class="phase-pill">1.80–2.30s: Soft Air Cushion Lock #48</span>
+        </div>
+        <div class="metrics">
+          <div><span class="m-lbl">Vertical Purity</span><span class="m-val" style="color:var(--lime);">0.89–0.91</span></div>
+          <div><span class="m-lbl">Sign Consist.</span><span class="m-val" style="color:var(--lime);">1.00</span></div>
+          <div><span class="m-lbl">Max |Δlog(m)|</span><span class="m-val">0.30 ≤ 0.55</span></div>
+          <div><span class="m-lbl">Anchor SSIM</span><span class="m-val" style="color:var(--lime);">0.9923</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 VIDEO -->
+    <div class="v-card master">
+      <div class="v-head">
+        <div class="v-title">② Case 2: Hồ Bơi, Hàng Cọ &amp; Tòa Tháp 3D (<code>footageai1.mp4</code>)</div>
+        <span class="badge badge-lime">1080×1920 • PASS 0 EVENTS</span>
+      </div>
+      <div class="player-box">
+        <video id="vidCase2" controls loop playsinline preload="metadata" src="footageai1_jib_down_web.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Kết quả thực thi trên <code>AItest2/footageai1.mp4</code> (Frame Anchor <code>#124 @ 5.17s</code>):</strong>
+        Giữ nguyên 100% phối cảnh 3D Parallax của hai tòa tháp, ngọn cọ và mặt hồ bơi xanh biếc; tự động cắt đỉnh quỹ đạo <code>Jib-Up</code> tại <code>Frame #150/192</code> (<code>cum_y = 790.6px</code>), khử góc nghiêng camera roll về <code>0.0°</code> và phanh êm đúng nhịp anh Việt bước đi nói.
+        <div class="phases">
+          <span class="phase-pill">Apex Cut: #150/192 (790.6px)</span>
+          <span class="phase-pill">Roll Derotation: 0.0° Net</span>
+          <span class="phase-pill">SFX: Crane Whoosh + 55Hz Sub</span>
+        </div>
+        <div class="metrics">
+          <div><span class="m-lbl">Vertical Purity</span><span class="m-val" style="color:var(--lime);">0.91–0.94</span></div>
+          <div><span class="m-lbl">Sign Consist.</span><span class="m-val" style="color:var(--lime);">0.99–1.00</span></div>
+          <div><span class="m-lbl">Max |Δlog(m)|</span><span class="m-val">0.25 ≤ 0.55</span></div>
+          <div><span class="m-lbl">Anchor SSIM</span><span class="m-val" style="color:var(--lime);">0.9846</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <strong style="font-size:16px; color:#fff;">🖼️ Bảng Kiểm Định Từng Frame Hạ Cần Cẩu 3D Parallax (<code>qa_footageai1_jib_down_landing.jpg</code>)</strong>
+      <span class="badge badge-emerald">verify_jib_down.py --mode vertical-jib • VERDICT: PASS (0 events)</span>
+    </div>
+    <img src="qa_footageai1_jib_down_landing.jpg" alt="QA Landing Sheet footageai1 Jib-Down">
+  </div>
+
+  <div class="qa-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <strong style="font-size:16px; color:#fff;">🖼️ Contact Sheet Tổng Thể Case 1 &amp; Case 2 (<code>qa_footageai1_jib_down_sheet.jpg</code> &amp; <code>qa_viet2210_jib_down_sheet.jpg</code>)</strong>
+      <span class="badge badge-cyan">Nghiệm Thu CLAUDE2 • 0% Mirror Edge • 0% Ghosting</span>
+    </div>
+    <img src="qa_footageai1_jib_down_sheet.jpg" alt="QA Contact Sheet footageai1">
+    <img src="qa_viet2210_jib_down_sheet.jpg" alt="QA Contact Sheet viet2210">
+  </div>
+</div>
+
+<script>
+function syncPlayBoth() {
+  const v1 = document.getElementById('vidCase1');
+  const v2 = document.getElementById('vidCase2');
+  v1.currentTime = 0;
+  v2.currentTime = 0;
+  v1.play();
+  v2.play();
+}
+</script>
+</body>
+</html>
