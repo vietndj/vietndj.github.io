@@ -35,7 +35,7 @@
             <div class="proof-lbl">Remotion React 60fps + Logo &amp; Outro 2 Tầng + Âm thanh 10%</div>
           </div>
           <div class="proof-item">
-            <div class="proof-num">15 Phòng Studio</div>
+            <div class="proof-num">16 Phòng Studio</div>
             <div class="proof-lbl">Tương tác trực tiếp 60fps &amp; Tự động tiến hóa 0 Ma Sát</div>
           </div>
         </div>
@@ -43,13 +43,13 @@
         <!-- Thanh truy cập nhanh Studio & Trạng Thái -->
         <div class="studio-launch-bar" style="margin-top:24px; margin-bottom:0;">
           <div class="studio-launch-info">
-            <b>🎛️ 15 Phòng Studio Trực Tuyến &amp; Bảng Chọn Mẫu Tương Tác</b>
+            <b>🎛️ 16 Phòng Studio Trực Tuyến &amp; Bảng Chọn Mẫu Tương Tác</b>
             <span>Thử nghiệm 35 kiểu chữ, 3 kiểu CTA 60fps, Logo &amp; Outro nền đen 2 tầng, 5 phong cách phụ đề và Alpha Pack</span>
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
             <a href="10-bang-ai-hook.html" class="studio-launch-btn" style="background:#0284c7; border-color:#0369a1;">🎣 Bảng Tổng Hợp 20 AI Hook (Tự Động Update) &rarr;</a>
             <a href="09-edit-video-spa.html" class="studio-launch-btn" style="background:#15803d; border-color:#16a34a;">🌿 Cẩm Nang Edit Video Spa (V7.2) &rarr;</a>
-            <a href="07-phong-studio.html" class="studio-launch-btn">🎛️ Mở 15 Phòng Studio &rarr;</a>
+            <a href="07-phong-studio.html" class="studio-launch-btn">🎛️ Mở 16 Phòng Studio &rarr;</a>
             <a href="08-he-thong-cap-nhat.html" class="studio-launch-btn" style="background:#0f172a; border-color:#334155;">🔄 Cơ Chế Tự Tiến Hóa &rarr;</a>
           </div>
         </div>
@@ -64,6 +64,49 @@
       </p>
 
       
+        <div class="matrix-card" style="border:2px solid #f59e0b; background:#fffbeb; margin-bottom:20px;">
+          <div class="matrix-header">
+            <div class="matrix-title">
+              <span>🏷️ AI Hook Preset 'timelapse-freeze': Đứng Tĩnh Giữa Dòng Đời Tua Nhanh 2.00s — Đối Chiếu File Gốc & 2 Bản Demo Master (Kỹ năng ai-hook)</span>
+            </div>
+            <span class="matrix-badge editorial">MỚI CẬP NHẬT • 2026-10-24</span>
+          </div>
+          <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0 0 12px;">
+            Chế độ Hook <strong><code>timelapse-freeze</code></strong> (aliases: <code>freeze-time</code>, <code>timelapse-human</code>, <code>dong-doi-tua-nhanh</code> &mdash; <code>2.00s</code> / <code>48 frames</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Thay vì dán đè nền giả làm mất bối cảnh thật, engine giữ nguyên 100% <strong>Clean Plate công viên / hồ bơi thật</strong> đã căn chỉnh <code>KLT/RANSAC Homography</code> từ chuỗi frame trước khi nói (<code>f_idx &le; anchor_idx</code>) về hệ tọa độ <code>Frame_Anchor</code> như đặt trên tripod tĩnh; kết hợp trích xuất các bóng người di chuyển từ <code>TIMELAPSE HUMAN.mp4</code> (đã trừ <code>med_bg</code> trước khi <code>np.roll</code> và hòa sắc độ <code>CIE LAB</code> khớp môi trường thật) phủ hiệu ứng <strong>Long-Exposure EMA Streak Blur (<code>acc_t = 0.55&middot;acc_{t-1} + 0.45&middot;B_t</code>)</strong> + <strong>High-Frequency Sharpness Equalizer</strong>. Chủ thể anh Việt được tách bằng <code>rembg</code> Full+ROI + co lõi <code>2px</code> + <strong>3-Channel Color Guided Filter (<code>r=8, eps=1e-4</code>)</strong> + khử màu biên <code>pymatting.estimate_foreground_ml</code> (<code>C9_HALO ratio = 0.643&ndash;0.654 &le; 1.35</code>), sau đó áp <strong>Digital Slow Push-In <code>1.06x &rarr; 1.000x</code></strong> theo đường cong <code>Ease-Out</code> hội tụ 100% vào <code>Frame_Anchor</code> (<code>SSIM = 0.9969&ndash;0.9976 &ge; 0.99</code>) và nối nguyên bản phần nói gốc 24fps không qua nội suy quang học.
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
+            
+            <a href="assets/timelapse_freeze_v3/qa_footageai1_timelapse_freeze_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
+              <img src="assets/timelapse_freeze_v3/qa_footageai1_timelapse_freeze_sheet.jpg" alt="Case 1 (footageai1.mp4 — Anchor #120): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9969, ΔE = 1.095, C9 Halo = 0.654, PASS 0 events)" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
+              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Case 1 (footageai1.mp4 — Anchor #120): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9969, ΔE = 1.095, C9 Halo = 0.654, PASS 0 events)</div>
+            </a>
+            
+            <a href="assets/timelapse_freeze_v3/qa_viet2210_timelapse_freeze_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
+              <img src="assets/timelapse_freeze_v3/qa_viet2210_timelapse_freeze_sheet.jpg" alt="Case 2 (viet2210.MOV — Anchor #48): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9976, ΔE = 1.256, C9 Halo = 0.643, PASS 0 events)" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
+              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Case 2 (viet2210.MOV — Anchor #48): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9976, ΔE = 1.256, C9 Halo = 0.643, PASS 0 events)</div>
+            </a>
+            
+            <a href="assets/timelapse_freeze_v3/qa_mask_400pct.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
+              <img src="assets/timelapse_freeze_v3/qa_mask_400pct.jpg" alt="Kiểm định phóng đại 400% viền Mask chủ thể sau 3-Channel Guided Filter + Pymatting ML Foreground Decontamination (0% viền sáng Halo)" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
+              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Kiểm định phóng đại 400% viền Mask chủ thể sau 3-Channel Guided Filter + Pymatting ML Foreground Decontamination (0% viền sáng Halo)</div>
+            </a>
+            
+          </div>
+          <div class="cmd-box" style="margin-bottom:14px; background:#fff;">
+            <div class="cmd-header">
+              <span class="cmd-title">Lệnh gọi nhanh trong Antigravity</span>
+              <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+            </div>
+            <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/timelapse_freeze_engine.py --video "/Users/vietmac/Documents/AItest2/temp/footageai1.mp4" --output "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_timelapse_freeze_master.mp4"</code></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            
+            <a href="01-dinh-dang.html#evo-ai-hook-timelapse-freeze-v3" class="studio-launch-btn" style="background:#0f172a; border-color:#334155;">
+              📖 Xem tại trang Bước 4 &rarr;
+            </a>
+          </div>
+        </div>
+        
         <div class="matrix-card" style="border:2px solid #f59e0b; background:#fffbeb; margin-bottom:20px;">
           <div class="matrix-header">
             <div class="matrix-title">
@@ -125,39 +168,6 @@
           <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             
             <a href="01-dinh-dang.html#evo-ai-hook-display-transition-kling19" class="studio-launch-btn" style="background:#0f172a; border-color:#334155;">
-              📖 Xem tại trang Bước 4 &rarr;
-            </a>
-          </div>
-        </div>
-        
-        <div class="matrix-card" style="border:2px solid #f59e0b; background:#fffbeb; margin-bottom:20px;">
-          <div class="matrix-header">
-            <div class="matrix-title">
-              <span>🏷️ AI Hook Preset 'intermission': Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất 2.00s (Kỹ năng ai-hook)</span>
-            </div>
-            <span class="matrix-badge editorial">MỚI CẬP NHẬT • 2026-10-24</span>
-          </div>
-          <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0 0 12px;">
-            Chế độ Hook mới <strong><code>intermission</code></strong> (aliases: <code>stage-curtain</code>, <code>rem-nhung</code>, <code>rem-san-khau</code>, <code>kling-52</code> &mdash; <code>2.00s</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Đóng kín <strong>Rèm nhung đỏ sân khấu 2.5D</strong> (<code>Coverage = 100.0% &ge; 98%</code>) với nếp gấp nhung 3D chiaroscuro shading, viền tua rua vàng kim và bảng hiệu điện ảnh <code>INTERMISSION &middot; ACT I &middot; GRAND STAGE</code> ở <code>F00..F32</code> để giấu hoàn toàn lúc anh Việt cúi người lấy đà; khi anh Việt bật nhảy lên đỉnh không trung (<code>F35..F36 = 1.500s</code>) và lao xuống đáp đất, hai cánh rèm kéo toạc sang 2 bên theo hàm <strong>Critically Damped (&zeta; = 1.0) / easeOutQuart clamped</strong> (<code>F33..F47</code>, <code>Zero Overshoot = 0.0px</code>) và từ <code>F48 (2.000s)</code> trở đi <strong>Passthrough 100% pixel frame gốc</strong> (<code>SSIM-Y = 0.9983 &ge; 0.995</code>, <code>PSNR-Y = 53.13 dB</code>).
-          </p>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
-            
-            <a href="assets/intermission_stage_curtain/qa_footageai3_intermission_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
-              <img src="assets/intermission_stage_curtain/qa_footageai3_intermission_sheet.jpg" alt="Contact Sheet 12 Keyframes (qa_footageai3_intermission_sheet.jpg): Đóng kín rèm nhung đỏ F00..F32 (Coverage 100%) → Kéo mở F33..F47 lộ đỉnh nhảy F36 → Chạm đất Passthrough 100% tại F48 (SSIM-Y 0.9983)" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
-              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Contact Sheet 12 Keyframes (qa_footageai3_intermission_sheet.jpg): Đóng kín rèm nhung đỏ F00..F32 (Coverage 100%) → Kéo mở F33..F47 lộ đỉnh nhảy F36 → Chạm đất Passthrough 100% tại F48 (SSIM-Y 0.9983)</div>
-            </a>
-            
-          </div>
-          <div class="cmd-box" style="margin-bottom:14px; background:#fff;">
-            <div class="cmd-header">
-              <span class="cmd-title">Lệnh gọi nhanh trong Antigravity</span>
-              <button type="button" class="copy-cmd-btn">Copy lệnh</button>
-            </div>
-            <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/Users/vietmac/Documents/AItest2/footageai3.mp4" --preset intermission</code></pre>
-          </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            
-            <a href="01-dinh-dang.html#evo-ai-hook-intermission-stage-curtain" class="studio-launch-btn" style="background:#0f172a; border-color:#334155;">
               📖 Xem tại trang Bước 4 &rarr;
             </a>
           </div>

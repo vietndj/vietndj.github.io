@@ -247,6 +247,242 @@ for run in detect_face_runs(edl_beats):
       <!-- AUTO_EVOLUTION_START:buoc-1 -->
 
       <!-- ========================================================
+           QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (ai-hook-timelapse-freeze-v3)
+           ======================================================== -->
+      <div class="evolution-injected-section" id="evo-ai-hook-timelapse-freeze-v3" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <span style="font:700 11.5px var(--mono); color:#b45309; background:#fef3c7; border:1px solid #fde68a; padding:3px 10px; border-radius:999px;">
+            ⚡ QUY CHUẨN MỚI CẬP NHẬT • 2026-10-24 • CHUẨN 25BC1D6B
+          </span>
+        </div>
+        <h2 style="margin-top:6px;">AI Hook Preset 'timelapse-freeze': Đứng Tĩnh Giữa Dòng Đời Tua Nhanh 2.00s — Đối Chiếu File Gốc & 2 Bản Demo Master (Kỹ năng ai-hook)</h2>
+
+        <!-- TẦNG 1: WHAT • WHY • HOW -->
+        <div class="wwh-grid">
+          <div class="wwh-card">
+            <div class="wwh-tag what">WHAT • BẢN CHẤT ELEMENT</div>
+            <div class="wwh-title">Khóa Tĩnh Chủ Thể 100% Mặt Thật (3-Channel Guided Filter + Pymatting ML) → Hậu Cảnh Chống Rung KLT/RANSAC Homography + Vệt Người Long-Exposure EMA → Slow Push-In 1.06x → 1.000x Khớp Khít Anchor Frame</div>
+            <p class="wwh-desc">Chế độ Hook <strong><code>timelapse-freeze</code></strong> (aliases: <code>freeze-time</code>, <code>timelapse-human</code>, <code>dong-doi-tua-nhanh</code> &mdash; <code>2.00s</code> / <code>48 frames</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Thay vì dán đè nền giả làm mất bối cảnh thật, engine giữ nguyên 100% <strong>Clean Plate công viên / hồ bơi thật</strong> đã căn chỉnh <code>KLT/RANSAC Homography</code> từ chuỗi frame trước khi nói (<code>f_idx &le; anchor_idx</code>) về hệ tọa độ <code>Frame_Anchor</code> như đặt trên tripod tĩnh; kết hợp trích xuất các bóng người di chuyển từ <code>TIMELAPSE HUMAN.mp4</code> (đã trừ <code>med_bg</code> trước khi <code>np.roll</code> và hòa sắc độ <code>CIE LAB</code> khớp môi trường thật) phủ hiệu ứng <strong>Long-Exposure EMA Streak Blur (<code>acc_t = 0.55&middot;acc_{t-1} + 0.45&middot;B_t</code>)</strong> + <strong>High-Frequency Sharpness Equalizer</strong>. Chủ thể anh Việt được tách bằng <code>rembg</code> Full+ROI + co lõi <code>2px</code> + <strong>3-Channel Color Guided Filter (<code>r=8, eps=1e-4</code>)</strong> + khử màu biên <code>pymatting.estimate_foreground_ml</code> (<code>C9_HALO ratio = 0.643&ndash;0.654 &le; 1.35</code>), sau đó áp <strong>Digital Slow Push-In <code>1.06x &rarr; 1.000x</code></strong> theo đường cong <code>Ease-Out</code> hội tụ 100% vào <code>Frame_Anchor</code> (<code>SSIM = 0.9969&ndash;0.9976 &ge; 0.99</code>) và nối nguyên bản phần nói gốc 24fps không qua nội suy quang học.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag why">WHY • VÌ SAO CẦN ELEMENT NÀY?</div>
+            <div class="wwh-title">Vì sao phải chống rung Homography trên chính nền thật và trừ med_bg trước khi dịch chuyển lớp đám đông?</div>
+            <p class="wwh-desc">1) <strong>Giữ 100% bối cảnh thật lúc chuyển giao vào phần nói:</strong> Nếu lấy nền từ video mẫu <code>TIMELAPSE HUMAN.mp4</code>, tại giây <code>2.00s</code> khi anh Việt bắt đầu nói sẽ xảy ra cú nhảy cảnh đột ngột từ phố lạ về công viên/hồ bơi thật. Khi tạo Clean Plate và chống rung Homography từ chính các frame chờ đầu clip (<code>pre_anchor_stabilized</code>), khung hình tại <code>t=2.00s</code> khớp tuyệt đối từng pixel với frame mở lời (<code>SSIM = 0.9976</code> trên <code>viet2210.MOV</code> và <code>0.9969</code> trên <code>footageai1.mp4</code>).<br>2) <strong>Chống sụt tương phản C4_GHOST_DIP:</strong> Trừ nền tĩnh <code>med_bg</code> của <code>TIMELAPSE HUMAN.mp4</code> trước khi dịch ngang <code>np.roll</code> kết hợp <code>High-Frequency Sharpness Equalizer</code> giúp chỉ có các bóng người lướt nhanh trên đường đi bộ phía sau lưng anh Việt, giữ độ sắc nét chi tiết hậu cảnh ổn định (<code>BG_LCON min = 20.14</code>, <code>0</code> sự kiện Ghost Dip).</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag how">HOW • 2 CHẾ ĐỘ GỌI TỰ NHIÊN</div>
+            <div class="wwh-title">Gọi tự nhiên TIMELAPSE FREEZE / FREEZE TIME hoặc chạy CLI 1 chạm trên mọi video ngoài trời</div>
+            <p class="wwh-desc">Gọi trực tiếp bằng câu tự nhiên ('TIMELAPSE FREEZE : <video>', 'FREEZE TIME : <video>') hoặc chạy lệnh CLI:</p>
+            <div class="cmd-box">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh Antigravity</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/timelapse_freeze_engine.py --video "/Users/vietmac/Documents/AItest2/temp/footageai1.mp4" --output "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_timelapse_freeze_master.mp4"</code></pre>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="studio-launch-bar" style="margin:20px 0;">
+          <div class="studio-launch-info">
+            <b>🏷️ Studio AI Hook TIMELAPSE-FREEZE: Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (2.00s)</b>
+            <span>Chạy thử thời gian thực trên video mẫu, chuyển đổi 2 chế độ: Chỉ Logo Thương Hiệu (Mode 1) hoặc Kèm Thẻ Vé CTA Ưu Đãi (Mode 2)</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            
+            <button type="button" class="studio-launch-btn" onclick="openStudioModal('studios/studio-ai-hook-timelapse-freeze.html', 'AI Hook Preset 'timelapse-freeze': Đứng Tĩnh Giữa Dòng Đời Tua Nhanh 2.00s — Đối Chiếu File Gốc & 2 Bản Demo Master (Kỹ năng ai-hook)')">
+              <span>🎛️ Mở Studio Tương Tác</span>
+            </button>
+          </div>
+        </div>
+        
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🎬 Đối Chiếu Trực Tiếp Đầy Đủ 5 Video: ① Mẫu Gốc (TIMELAPSE HUMAN) &rarr; ② File Gốc &amp; ③ Demo Master Case 1 (footageai1.mp4) &rarr; ④ File Gốc &amp; ⑤ Demo Master Case 2 (viet2210.MOV)</span>
+            </div>
+            <span class="showcase-badge">Timelapse-Freeze 2.00s • 1080×1920 @ 24fps • VERDICT: PASS 100% (SSIM 0.9969–0.9976 • 0 Events)</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>① MẪU HIỆU ỨNG THAM CHIẾU GỐC (TIMELAPSE HUMAN.MP4)</span>
+                <a href="studios/timelapse_human_ref.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/timelapse_human_ref.mp4" type="video/mp4">
+                  <source src="studios/timelapse_human_ref.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Mẫu tham chiếu hiệu ứng: TIMELAPSE HUMAN.mp4 (Higgsfield Minimax Motion)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Cơ chế gốc: Chủ thể đứng tĩnh giữa trung tâm khung hình trong khi dòng người và ánh sáng xung quanh lướt nhanh tạo vệt mờ phơi sáng dài (Long-Exposure Timelapse Trail).</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>② CASE 1 — FILE GỐC CHƯA QUA HOOK (AITEST2/FOOTAGEAI1.MP4)</span>
+                <a href="studios/footageai1_orig_web.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/footageai1_orig_web.mp4" type="video/mp4">
+                  <source src="studios/footageai1_orig_web.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">File Gốc Case 1: footageai1.mp4 (Khu hồ bơi, hàng cọ & tòa tháp — Anchor Frame #120 @ 5.00s)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Video gốc quay tại hồ bơi ngoài trời (19.08s @ 24fps): Trong 5.00 giây đầu (Frame #0..#119), nhân vật đứng chờ lấy nhịp trước khi bước đi và mở lời nói tại Frame #120 (5.00s).</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>③ CASE 1 — BẢN DEMO MASTER (FOOTAGEAI1_TIMELAPSE_FREEZE • PASS 0 EVENTS)</span>
+                <a href="studios/footageai1_timelapse_freeze_web.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/footageai1_timelapse_freeze_web.mp4" type="video/mp4">
+                  <source src="studios/footageai1_timelapse_freeze_web.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Demo Master Case 1: footageai1_timelapse_freeze_master.mp4 (SSIM 0.9969 • ΔE 1.095 • C9 Halo 0.654)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Thay thế 5 giây chờ đầu bằng 2.00s Hook Timelapse-Freeze: Khóa tĩnh chủ thể tại Frame #120, hậu cảnh hồ bơi chống rung KLT/RANSAC + vệt người lướt nhanh + Slow Push-In 1.06x → 1.000x khớp khít Frame #120 kèm Clock Tick & 55Hz Sub-Drop SFX.</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>④ CASE 2 — FILE GỐC CHƯA QUA HOOK (VIET2210.MOV)</span>
+                <a href="studios/viet2210_orig_web.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/viet2210_orig_web.mp4" type="video/mp4">
+                  <source src="studios/viet2210_orig_web.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">File Gốc Case 2: viet2210.MOV (Công viên tán cây xanh — Anchor Frame #48 @ 2.04s)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Video gốc quay tại công viên (1080×1920 @ 24fps): Trong 2.04 giây đầu (Frame #0..#47), nhân vật lấy đà đứng lên trước khi mở lời nói tại Frame #48 (2.04s).</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>⑤ CASE 2 — BẢN DEMO MASTER (VIET2210_TIMELAPSE_FREEZE • SSIM 0.9976)</span>
+                <a href="studios/viet2210_timelapse_freeze_master.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/viet2210_timelapse_freeze_master.mp4" type="video/mp4">
+                  <source src="studios/viet2210_timelapse_freeze_master.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Demo Master Case 2: viet2210_timelapse_freeze_master.mp4 (SSIM 0.9976 • ΔE 1.256 • C9 Halo 0.643)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Giữ nguyên 100% Clean Plate công viên thật đã chống rung ECC Homography, tạo vệt người & xe cộ tua nhanh phía sau lưng anh Việt kèm ánh nắng quét qua tán lá, Slow Push-In 1.06x → 1.000x hội tụ 100% vào Frame #48.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 1. Bảy Chốt Chặn Kỹ Thuật CLAUDE2 Cho Preset timelapse-freeze (timelapse_freeze_engine.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">CHỐT 1 & 2</div>
+              <div class="step-content">
+                <div class="step-name">Clean Plate Hậu Cảnh Thật (KLT/RANSAC Homography) & Dòng Người Long-Exposure EMA</div>
+                <div class="step-desc">Căn chỉnh mọi frame pre-anchor về hệ tọa độ Frame_Anchor; trừ med_bg của TIMELAPSE HUMAN.mp4 trước khi dịch chuyển, hòa sắc độ CIE LAB và tích lũy EMA (0.55·acc + 0.45·B_t) kèm High-Frequency Sharpness Equalizer.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">CHỐT 3 & 4</div>
+              <div class="step-content">
+                <div class="step-name">3-Channel Color Guided Filter (r=8, eps=1e-4) + Pymatting ML Decontamination & Contact Shadow</div>
+                <div class="step-desc">Tách mask chủ thể sắc nét, khử hoàn toàn viền sáng Halo quanh tóc/vai (C9_HALO ratio = 0.643–0.654 ≤ 1.35) và giữ nguyên bóng đổ tiếp xúc dưới chân/thân.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">CHỐT 5, 6 & 7</div>
+              <div class="step-content">
+                <div class="step-name">Digital Slow Push-In 1.06x → 1.000x + Unwarped 24fps Talk + Studio Clock-Tick Sub-Drop SFX</div>
+                <div class="step-desc">Phóng nhẹ 1.06x ở 0.00s và hạ êm Ease-Out về đúng 1.000x tại 2.00s (IDR keyframe lock SSIM ≥ 0.9969), ghép nguyên bản phần nói 24fps kèm sfx_timelapse_freeze_2s.wav (22 nhịp đồng hồ tăng tốc + Crowd Whoosh + 55Hz Sub-Drop tắt sạch ở 2.00s).</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🖼️ Bảng Kiểm Định 6 Keyframes Tiến Trình Hook & Viền Mask 400% (Case 1 footageai1 & Case 2 viet2210)</span>
+            </div>
+            <span class="showcase-badge">Chuẩn 25BC1D6B • CLAUDE2 Nghiệm Thu • VERDICT: PASS 100% (0 Events)</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/timelapse_freeze_v3/qa_footageai1_timelapse_freeze_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/timelapse_freeze_v3/qa_footageai1_timelapse_freeze_sheet.jpg" alt="Case 1 (footageai1.mp4 — Anchor #120): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9969, ΔE = 1.095, C9 Halo = 0.654, PASS 0 events)" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Case 1 (footageai1.mp4 — Anchor #120): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9969, ΔE = 1.095, C9 Halo = 0.654, PASS 0 events)</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/timelapse_freeze_v3/qa_viet2210_timelapse_freeze_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/timelapse_freeze_v3/qa_viet2210_timelapse_freeze_sheet.jpg" alt="Case 2 (viet2210.MOV — Anchor #48): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9976, ΔE = 1.256, C9 Halo = 0.643, PASS 0 events)" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Case 2 (viet2210.MOV — Anchor #48): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9976, ΔE = 1.256, C9 Halo = 0.643, PASS 0 events)</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/timelapse_freeze_v3/qa_mask_400pct.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/timelapse_freeze_v3/qa_mask_400pct.jpg" alt="Kiểm định phóng đại 400% viền Mask chủ thể sau 3-Channel Guided Filter + Pymatting ML Foreground Decontamination (0% viền sáng Halo)" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Kiểm định phóng đại 400% viền Mask chủ thể sau 3-Channel Guided Filter + Pymatting ML Foreground Decontamination (0% viền sáng Halo)</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <details class="tech-drawer" style="margin-top:18px;">
+          <summary>🔧 Xem chi tiết kỹ thuật: AI Hook Preset 'timelapse-freeze': Đứng Tĩnh Giữa Dòng Đời Tua Nhanh 2.00s — Đối Chiếu File Gốc & 2 Bản Demo Master (Kỹ năng ai-hook)</summary>
+          <div class="tech-body">
+            <ul style="padding-left:20px; line-height:1.6;">
+              <li style='margin-bottom:6px;'>Engine lõi: ~/.gemini/config/skills/ai-hook/scripts/timelapse_freeze_engine.py (tự động phát hiện điểm mở lời và chạy SA1-AUTO cho mọi video đầu vào).</li><li style='margin-bottom:6px;'>Manifest Registry v3.0: ~/.gemini/config/skills/ai-hook/hooks.d/timelapse-freeze.json (tích hợp comparison_videos gồm cả File Gốc & Bản Demo Master).</li><li style='margin-bottom:6px;'>Verifier kiểm định 10 cổng: ~/.gemini/config/skills/ai-hook/scripts/verify_timelapse_hook.py (C1..C8, C9_HALO <= 1.35, C10_ANCHOR SSIM >= 0.99, C6_JPEG).</li><li style='margin-bottom:6px;'>Âm thanh Studio: ~/.gemini/config/skills/ai-hook/assets/sfx_timelapse_freeze_2s.wav (48kHz Stereo, 22 nhịp đồng hồ tăng tốc + Crowd Whoosh + 55Hz Sub-Drop tắt sạch PCM=0 tại 2.00s).</li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    
+
+      <!-- ========================================================
            QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (ai-hook-glow-trace-batch3)
            ======================================================== -->
       <div class="evolution-injected-section" id="evo-ai-hook-glow-trace-batch3" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
