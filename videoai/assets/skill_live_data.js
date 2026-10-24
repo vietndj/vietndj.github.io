@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 14:47:49
+ * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 14:51:18
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "24/10/2026 14:47:49",
-  "last_synced_iso": "2026-10-24T14:47:49.467075",
+  "last_synced_formatted": "24/10/2026 14:51:18",
+  "last_synced_iso": "2026-10-24T14:51:18.614701",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -18,7 +18,7 @@ window.SKILL_LIVE_DATA = {
     "scripts_count": 50,
     "skills_count": 7,
     "studios_count": 12,
-    "evolution_entries_count": 7
+    "evolution_entries_count": 8
   },
   "evolution": {
     "version": 1,
@@ -31,6 +31,16 @@ window.SKILL_LIVE_DATA = {
       "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
     ],
     "studios": [
+      {
+        "source": "studio_katana_batch4_archive.html",
+        "slug": "studio-katana-batch4-archive.html",
+        "order": -4,
+        "icon": "🗂️",
+        "title": "[LƯU TRỮ — CHƯA VÀO SKILL] Katana Tier 1 Batch 4: #05 Pink HUD, #01 Pantone (fa3) & #19 Pop Cutout",
+        "badge": "⚠️ CHƯA CHO VÀO SKILL • Backup KHOAI: 01dd4bdf & fda99ac3",
+        "badge_class": "case",
+        "desc": "Bản thử nghiệm lưu trữ (chưa đưa vào skill ai-hook theo đánh giá của anh Việt): 3 hiệu ứng Batch 4 trên bộ AItest2 (#05 Pink Protocol HUD fa2, #01 Color Palette fa3, #19 Pop Cutout fa1 — PASS 6/6 Gates, G0 SSIM 0.9944–0.9964). Đã backup luồng gốc lên khoai.fedu.vn/c/01dd4bdf để sau này cần thì tìm lại và đóng gói sau."
+      },
       {
         "source": "studio_ai_hook_jib_down.html",
         "slug": "studio-ai-hook-jib-down.html",
@@ -150,19 +160,90 @@ window.SKILL_LIVE_DATA = {
         "badge": "Auto-Detected Studio",
         "badge_class": "motion",
         "desc": "Phòng Studio tương tác tự động phát hiện từ before_after_10_styles_studio.html."
-      },
-      {
-        "source": "studio_katana_batch4_archive.html",
-        "slug": "studio-katana-batch4-archive.html",
-        "order": 8,
-        "icon": "🎛️",
-        "title": "Lưu Trữ Thử Nghiệm Katana Tier 1 Batch 4 (#05 Pink HUD, #01 Pantone Palette, #19 Pop Cutout) — Chưa Đưa Vào Skill",
-        "badge": "Auto-Detected Studio",
-        "badge_class": "motion",
-        "desc": "Phòng Studio tương tác tự động phát hiện từ studio_katana_batch4_archive.html."
       }
     ],
     "entries": [
+      {
+        "id": "katana-tier1-batch4-archive",
+        "date": "2026-10-24",
+        "title": "⚠️ [LƯU TRỮ THỬ NGHIỆM — CHƯA CHO VÀO SKILL] Katana Tier 1 Batch 4: #05 Pink Protocol HUD, #01 Color Palette & #19 Pop Cutout Fashion (AItest2)",
+        "step_target": [
+          "dinh-dang",
+          "buoc-1",
+          "buoc-4"
+        ],
+        "source_thread": "01dd4bdf-280b-40c1-98cb-888d0965a198",
+        "studio_file": "studio_katana_batch4_archive.html",
+        "what_title": "⚠️ Bản lưu trữ thử nghiệm Batch 4 (CHƯA ĐƯA VÀO SKILL ai-hook)",
+        "what": "Bộ 3 hiệu ứng thuộc <strong>Batch 4 — Higgsfield Katana Tier 1</strong> chạy thử nghiệm trên bộ footage <code>AItest2</code>: <strong>(1) <code>b4_10_pink_protocol</code> (#05 Pink Protocol HUD — <code>fa2</code>, <code>SSIM 0.9944</code>)</strong>, <strong>(2) <code>b4_11_color_palette</code> (#01 Color Palette Pantone — <code>fa3</code>, <code>SSIM 0.9964</code>)</strong>, và <strong>(3) <code>b4_12_pop_cutout</code> (#19 Pop Cutout Fashion <code>\"WEAR THE EDGE\"</code> — <code>fa1</code>, <code>SSIM 0.9946</code>)</strong>. Cả 3 hiệu ứng đã vượt qua 6/6 cổng kỹ thuật (<code>G0..G5</code>) nhưng <strong><span style='color:#d97706;'>CHƯA ĐƯA VÀO SKILL <code>ai-hook</code></span></strong> vì anh Việt đánh giá hiệu ứng thị giác chưa thật sự ưng ý.",
+        "why_title": "Lưu trữ kết quả trên videoai.fedu.vn & Backup luồng gốc trên khoai.fedu.vn để dùng khi cần",
+        "why": "Theo chỉ đạo của anh Việt: <em>\"Cái này chưa ổn lắm tôi không thích cái này, tuy nhiên kết quả cũng đáng để lưu lại trên videoai.fedu.vn và ghi chú vào là chưa cho vào skill, luồng gốc backup lên khoai.fedu.vn sau này nếu cần tôi sẽ tìm đến và đóng gói sau\"</em>. Toàn bộ video thành phẩm, Contact Sheet, mã nguồn <code>katana_tier1/</code> và luồng hội thoại gốc (<a href='https://khoai.fedu.vn/c/01dd4bdf' target='_blank' rel='noopener'><strong>khoai.fedu.vn/c/01dd4bdf</strong></a> &bull; nhánh Batch 4 <a href='https://khoai.fedu.vn/c/fda99ac3' target='_blank' rel='noopener'><strong>khoai.fedu.vn/c/fda99ac3</strong></a>) được bảo toàn nguyên vẹn để tra cứu và đóng gói bất cứ lúc nào.",
+        "how_title": "Truy vết luồng gốc KHOAI hoặc chạy lại script thử nghiệm cục bộ (Chưa tích hợp vào Skill)",
+        "how_intro": "Mở trực tiếp luồng gốc trên KHOAI (https://khoai.fedu.vn/c/01dd4bdf) hoặc chạy script thử nghiệm riêng tại thư mục katana_tier1:",
+        "how_cmd": "python3 \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/katana_tier1/run_batch_and_verify.py\" --batch 4",
+        "local_videos_title": "🎬 Lưu Trữ 3 Video Thử Nghiệm Batch 4 Trên Bộ Footage AItest2 (⚠️ Ghi chú: Chưa đưa vào Skill ai-hook)",
+        "local_videos_badge": "Archive Only (Not In Skill) • Backup KHOAI: /c/01dd4bdf & /c/fda99ac3",
+        "local_videos": [
+          {
+            "src": "studios/b4_10_pink_protocol_fa2_web.mp4",
+            "fallback_url": "studios/b4_10_pink_protocol_fa2_web.mp4",
+            "badge": "① [ARCHIVE] #05 PINK PROTOCOL HUD (FA2 • SSIM 0.9944)",
+            "title": "Thử nghiệm 10/12: b4_10_pink_protocol_fa2.mp4 (Chưa đưa vào Skill)",
+            "desc": "Selective Rose Garment Isolation + Cyber Target HUD ('PINK_PROTOCOL // TARGET_LOCK') trên footageai2.mp4, khóa điểm đáp Frame #64 (2.67s, G0 SSIM 0.9944, G2 Mask IoU 0.9032)."
+          },
+          {
+            "src": "studios/b4_11_color_palette_fa3_web.mp4",
+            "fallback_url": "studios/b4_11_color_palette_fa3_web.mp4",
+            "badge": "② [ARCHIVE] #01 COLOR PALETTE PANTONE (FA3 • SSIM 0.9964)",
+            "title": "Thử nghiệm 11/12: b4_11_color_palette_fa3.mp4 (Bản thử trên fa3)",
+            "desc": "Bản thử nghiệm Pantone Wheel & Tilted Swatch Cards trên footageai3.mp4 (ngồi xổm rồi đứng dậy bước tới), khóa điểm đáp Frame #68 (2.83s, G0 SSIM 0.9964, G1 ΔE 38.88)."
+          },
+          {
+            "src": "studios/b4_12_pop_cutout_fa1_web.mp4",
+            "fallback_url": "studios/b4_12_pop_cutout_fa1_web.mp4",
+            "badge": "③ [ARCHIVE] #19 POP CUTOUT FASHION (FA1 • SSIM 0.9946)",
+            "title": "Thử nghiệm 12/12: b4_12_pop_cutout_fa1.mp4 (Chưa đưa vào Skill)",
+            "desc": "Bố cục Pop-Art Đỏ–Vàng–Đen kèm đại tự 'WEAR THE EDGE' sau lưng & 3-Slice Horizontal Cutout Assembly trên footageai1.mp4, khóa Frame #58 (2.42s, G0 SSIM 0.9946, G2 Mask IoU 0.9744)."
+          }
+        ],
+        "items": [
+          {
+            "tier": "1. Trạng Thái Lưu Trữ & Liên Kết Luồng Gốc Trên KHOAI (Chưa Đóng Gói Vào Skill)",
+            "code": "NOT IN SKILL",
+            "name": "Ghi Chú Rõ: Chưa Cho Vào Skill ai-hook — Chỉ Lưu Trữ Kết Quả Tham Khảo",
+            "desc": "3 hiệu ứng Batch 4 này chưa đạt độ ưng ý về thẩm mỹ của anh Việt nên KHÔNG thêm vào bảng chọn Smart AI Hook Router của skill ai-hook."
+          },
+          {
+            "tier": "1. Trạng Thái Lưu Trữ & Liên Kết Luồng Gốc Trên KHOAI (Chưa Đóng Gói Vào Skill)",
+            "code": "KHOAI 01DD4BDF",
+            "name": "Luồng Gốc Đã Backup Lên khoai.fedu.vn/c/01dd4bdf & Nhánh /c/fda99ac3",
+            "desc": "Toàn bộ lịch sử phân tích 98 mẫu Katana, kiến trúc CLAUDE2 và mã nguồn 12 hiệu ứng Tier 1 đã được backup lên KHOAI để sau này tìm lại và đóng gói nhanh."
+          },
+          {
+            "tier": "2. Thông Số Kỹ Thuật 3 Hiệu Ứng Batch 4 Đã Lưu Trữ (katana_tier1/)",
+            "code": "B4_10 • B4_11 • B4_12",
+            "name": "#05 Pink Protocol (fa2) • #01 Color Palette (fa3) • #19 Pop Cutout (fa1)",
+            "desc": "Đạt 6/6 cổng kỹ thuật G0..G5: b4_10 (F64, SSIM 0.9944), b4_11 (F68, SSIM 0.9964), b4_12 (F58, SSIM 0.9946). Mã nguồn giữ tại /Users/vietmac/Documents/CODE/AI VIDEO EDIT/katana_tier1/."
+          }
+        ],
+        "asset_dir": "katana_batch4_archive",
+        "showcase_title": "🖼️ Bảng Contact Sheet Lưu Trữ Thử Nghiệm Batch 4 (Chưa Đưa Vào Skill)",
+        "showcase_badge": "⚠️ CHƯA CHO VÀO SKILL • Backup KHOAI: khoai.fedu.vn/c/01dd4bdf",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_katana_batch4_sheet.jpg",
+            "caption": "Contact Sheet Batch 4 (qa_katana_batch4_sheet.jpg): #05 Pink Protocol HUD (fa2), #01 Color Palette Pantone (fa3), #19 Pop Cutout Fashion (fa1) — Lưu trữ tham khảo, chưa đưa vào skill",
+            "web_src": "assets/katana_batch4_archive/qa_katana_batch4_sheet.jpg"
+          }
+        ],
+        "tech_specs": [
+          "⚠️ TRẠNG THÁI SKILL: CHƯA ĐƯA VÀO SKILL (Archive Only) — Ghi chú theo yêu cầu của anh Việt để sau này cần thì tìm lại và đóng gói sau.",
+          "🌐 Luồng gốc đã backup trên KHOAI: <a href='https://khoai.fedu.vn/c/01dd4bdf' target='_blank' rel='noopener'>https://khoai.fedu.vn/c/01dd4bdf</a> (Conversation ID: <code>01dd4bdf-280b-40c1-98cb-888d0965a198</code>).",
+          "🌐 Luồng nhánh Batch 4 trên KHOAI: <a href='https://khoai.fedu.vn/c/fda99ac3' target='_blank' rel='noopener'>https://khoai.fedu.vn/c/fda99ac3</a> (Conversation ID: <code>fda99ac3-b5e5-4aa9-8fb9-3af5af2c0c8e</code>).",
+          "📁 Mã nguồn thử nghiệm cục bộ: <code>/Users/vietmac/Documents/CODE/AI VIDEO EDIT/katana_tier1/render_katana_tier1.py</code>, <code>verify_katana_tier1.py</code>, <code>katana_tier1_plan.json</code>.",
+          "🎬 Video gốc chất lượng cao (Lossless-grade): <code>/Users/vietmac/Documents/CODE/AI VIDEO EDIT/katana_tier1/outputs/b4_10_pink_protocol_fa2.mp4</code>, <code>b4_11_color_palette_fa3.mp4</code>, <code>b4_12_pop_cutout_fa1.mp4</code>."
+        ]
+      },
       {
         "id": "ai-hook-jib-down-vertical-crane",
         "date": "2026-10-24",
@@ -4475,9 +4556,9 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792828026.0602345,
-      "mtime_formatted": "24/10/2026 14:47",
-      "detail": "7 quy chuẩn • 12 studios"
+      "mtime": 1792828250.1059515,
+      "mtime_formatted": "24/10/2026 14:50",
+      "detail": "8 quy chuẩn • 12 studios"
     },
     {
       "name": "ai-hook/SKILL.md",
