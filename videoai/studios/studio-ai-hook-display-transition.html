@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio AI Hook DISPLAY TRANSITION — Dolly-In 2.5D Xuyên Màn Hình Studio Display 9:16 (2.00s)</title>
+<style>
+  :root {
+    --bg: #080a0f;
+    --card: #11151e;
+    --border: #232c3d;
+    --lime: #d4fe48;
+    --cyan: #38bdf8;
+    --emerald: #34d399;
+    --crimson: #f43f5e;
+    --amber: #fbbf24;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.55;
+  }
+  .container { max-width: 1360px; margin: 0 auto; }
+  .hero {
+    background: linear-gradient(135deg, #0d1624 0%, #111726 60%, #16233a 100%);
+    border: 1px solid #1e3a5f;
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+  }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .badge {
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .badge-lime { background: var(--lime); color: #000; }
+  .badge-cyan { background: rgba(56,189,248,0.16); color: var(--cyan); border: 1px solid rgba(56,189,248,0.4); }
+  .badge-emerald { background: rgba(52,211,153,0.16); color: var(--emerald); border: 1px solid rgba(52,211,153,0.4); }
+  h1 { margin: 0 0 8px 0; font-size: 24px; color: #fff; }
+  .sub { color: #cbd5e1; font-size: 14px; margin-bottom: 14px; }
+  .cmd-bar {
+    background: #0b0e15;
+    border: 1px solid #28344b;
+    border-left: 4px solid var(--lime);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+  }
+  .copy-btn {
+    background: var(--lime);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 12.5px;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+    margin-bottom: 22px;
+  }
+  .v-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .v-card.master { border: 1.5px solid rgba(212,254,72,0.65); }
+  .v-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid #1d2536;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .v-title { font-size: 16px; font-weight: 800; color: #fff; }
+  .player-box {
+    background: #040609;
+    aspect-ratio: 9/16;
+    max-height: 560px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+  .v-body { padding: 14px 18px; font-size: 13.5px; color: #cbd5e1; }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+    background: #0b0e15;
+    border: 1px solid #1e273a;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+  }
+  .m-lbl { color: var(--muted); font-size: 10px; text-transform: uppercase; display: block; }
+  .m-val { color: #fff; font-weight: 700; }
+  .phases {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .phase-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #0b0e15;
+    border: 1px solid #263147;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .qa-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  .qa-card img { width: 100%; height: auto; border-radius: 10px; border: 1px solid #263147; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="badges">
+      <span class="badge badge-lime">AI HOOK PRESET: DISPLAY-TRANSITION (2.00S)</span>
+      <span class="badge badge-cyan">2.5D Homography 4K Direct Warp • Apple Studio Display 9:16 • Zero Bezel Ghosting</span>
+      <span class="badge badge-emerald">VERDICT: PASS 6/6 CLAUDE2 GATES (G0..G5 • Lossless SSIM 1.0 • MP4 SSIM-Y 0.9967)</span>
+    </div>
+    <h1>🖥️ Studio Đối Chiếu AI Hook <code>display-transition</code> (Dolly-In 2.5D Xuyên Màn Hình Studio Display — 2.00s)</h1>
+    <div class="sub">
+      Đối chiếu trực tiếp giữa <strong>① Video Mẫu Tham Chiếu Higgsfield Kling (<code>19_display_transition_4e204c1b.mp4</code> — R02 #19 Display Transition)</strong> và <strong>② Video Kết Quả Master trên <code>AItest2/footageai1.mp4</code> (<code>footageai1_display_transition_web.mp4</code> — Toàn cảnh bàn làm việc Luxury Studio phát live 4K <code>F00..F20</code>, 2.5D Homography Dolly-In xuyên màn hình <code>F21..F47</code> và khóa Passthrough 100% từ <code>F48+</code>)</strong>.
+    </div>
+    <div class="cmd-bar">
+      <span id="cmdText">python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/Users/vietmac/Documents/AItest2/footageai1.mp4" --preset display-transition</span>
+      <div style="display:flex; gap:8px;">
+        <button class="copy-btn" onclick="syncPlayBoth()">▶ Phát Song Song Cả 2 Video</button>
+        <button class="copy-btn" style="background:#38bdf8;" onclick="navigator.clipboard.writeText(document.getElementById('cmdText').innerText); this.innerText='✓ Đã Copy Lệnh';">Copy Lệnh CLI</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- REF VIDEO -->
+    <div class="v-card">
+      <div class="v-head">
+        <div class="v-title">① Video Mẫu Tham Chiếu Kling #19 (<code>19_display_transition_4e204c1b.mp4</code>)</div>
+        <span class="badge badge-cyan">Kling Tier 1 Ref #19 (TOP 2)</span>
+      </div>
+      <div class="player-box">
+        <video id="vidRef" controls loop playsinline preload="metadata" src="19_display_transition_4e204c1b.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Cơ chế gốc của mẫu <code>#19 Display Transition</code>:</strong>
+        Mở cảnh từ không gian bàn làm việc hiện đại với chiếc màn hình đang phát trực tiếp nội dung video, sau đó máy quay đẩy xuyên qua viền màn hình vào thẳng bên trong khung hình thật.
+        <div class="phases">
+          <span class="phase-pill">Phase 1: Studio Desk Live Feed</span>
+          <span class="phase-pill">Phase 2: 2.5D Screen Portal Dolly-In</span>
+          <span class="phase-pill">Phase 3: Seamless Fullscreen Lock</span>
+        </div>
+        <div class="metrics">
+          <div><span class="m-lbl">Preset Ref</span><span class="m-val">Kling #19</span></div>
+          <div><span class="m-lbl">Rank</span><span class="m-val" style="color:var(--lime);">TOP 2 Tier 1</span></div>
+          <div><span class="m-lbl">Portal Mode</span><span class="m-val">Studio Display</span></div>
+          <div><span class="m-lbl">Role</span><span class="m-val" style="color:var(--cyan);">Visual Reference</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASTER VIDEO -->
+    <div class="v-card master">
+      <div class="v-head">
+        <div class="v-title">② Video Kết Quả Master (<code>footageai1_display_transition_web.mp4</code>)</div>
+        <span class="badge badge-lime">1080×1920 @ 24fps • PASS 6/6 GATES</span>
+      </div>
+      <div class="player-box">
+        <video id="vidMaster" controls loop playsinline preload="metadata" src="footageai1_display_transition_web.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Kết quả thực thi trên <code>AItest2/footageai1.mp4</code> (Hội ý CLAUDE2):</strong>
+        Cắt bỏ 65 frames chuẩn bị đầu tiên (<code>F_src=65 -> F_out=0</code>). Tại <code>F00..F20</code>, bàn làm việc Luxury Studio phát live 4K trên màn hình Apple Studio Display 9:16 kèm ánh sáng hắt mặt bàn gỗ; tại <code>F21..F47</code>, warp trực tiếp từ layer 4K gốc bằng ma trận Homography 4 đỉnh theo đường cong <code>easeInOutCubic</code>; khóa Passthrough 100% tại <code>F48 (2.000s)</code> ngay trước khi anh Việt mở lời tại <code>F57 (2.375s)</code>.
+        <div class="phases">
+          <span class="phase-pill">F00..F20 (0–0.83s): Studio Desk Live 4K</span>
+          <span class="phase-pill">F21..F47 (0.88–1.96s): Homography 4K Dolly-In</span>
+          <span class="phase-pill">F48+ (2.00s+): 100% Passthrough Lock</span>
+        </div>
+        <div class="metrics">
+          <div><span class="m-lbl">G2 Monotonic</span><span class="m-val" style="color:var(--lime);">PASS (0 dip)</span></div>
+          <div><span class="m-lbl">G3 Bezel @F47</span><span class="m-val" style="color:var(--lime);">0.0000 (Zero)</span></div>
+          <div><span class="m-lbl">G4 Min SSIM-Y</span><span class="m-val" style="color:var(--lime);">0.9956 (≥0.995)</span></div>
+          <div><span class="m-lbl">G4 Mean SSIM-Y</span><span class="m-val" style="color:var(--lime);">0.9967</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <strong style="font-size:16px; color:#fff;">🖼️ Bảng Kiểm Định 12 Keyframes R02 <code>#19 Display Transition</code> (<code>qa_footageai1_display_transition_sheet.jpg</code>)</strong>
+      <span class="badge badge-emerald">CLAUDE2 6-Gate Verifier • PASS 6/6 GATES (G0..G5) • 0% Bezel Ghosting</span>
+    </div>
+    <img src="qa_footageai1_display_transition_sheet.jpg" alt="QA Contact Sheet Display Transition">
+  </div>
+</div>
+
+<script>
+function syncPlayBoth() {
+  const v1 = document.getElementById('vidRef');
+  const v2 = document.getElementById('vidMaster');
+  v1.currentTime = 0;
+  v2.currentTime = 0;
+  v1.play();
+  v2.play();
+}
+</script>
+</body>
+</html>
