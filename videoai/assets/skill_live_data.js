@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 18:08:41
+ * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 19:24:59
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "24/10/2026 18:08:41",
-  "last_synced_iso": "2026-10-24T18:08:41.563305",
+  "last_synced_formatted": "24/10/2026 19:24:59",
+  "last_synced_iso": "2026-10-24T19:24:59.729396",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,10 +15,10 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 18,
     "components_count": 22,
-    "scripts_count": 65,
+    "scripts_count": 67,
     "skills_count": 7,
-    "studios_count": 15,
-    "evolution_entries_count": 11,
+    "studios_count": 16,
+    "evolution_entries_count": 12,
     "ai_hooks_count": 20
   },
   "ai_hooks": [
@@ -62,7 +62,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 1,
       "_studio_slug": "",
-      "_web_video": ""
+      "_web_video": "",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -104,7 +105,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 2,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_earth_zoom_v2_master.mp4"
+      "_web_video": "studios/viet2210_earth_zoom_v2_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -154,7 +156,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 3,
       "_studio_slug": "studio-ai-hook-display-transition.html",
-      "_web_video": "studios/footageai1_display_transition_web.mp4"
+      "_web_video": "studios/footageai1_display_transition_web.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -205,7 +208,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 4,
       "_studio_slug": "studio-ai-hook-intermission.html",
-      "_web_video": "studios/footageai3_intermission_web.mp4"
+      "_web_video": "studios/footageai3_intermission_web.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -251,7 +255,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 5,
       "_studio_slug": "studio-ai-hook-jib-down.html",
-      "_web_video": "studios/footageai1_jib_down_web.mp4"
+      "_web_video": "studios/footageai1_jib_down_web.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -300,7 +305,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 6,
       "_studio_slug": "studio-ai-hook-pantone1.html",
-      "_web_video": "studios/viet2210_katana_palette_master.mp4"
+      "_web_video": "studios/viet2210_katana_palette_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -350,7 +356,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 7,
       "_studio_slug": "studio-ai-hook-sticker-transition.html",
-      "_web_video": "studios/viet2210_sticker_transition_master.mp4"
+      "_web_video": "studios/viet2210_sticker_transition_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -391,18 +398,21 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 8,
       "_studio_slug": "",
-      "_web_video": ""
+      "_web_video": "",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
       "id": "timelapse-freeze",
       "aliases": [
-        "freeze-time"
+        "freeze-time",
+        "timelapse-human",
+        "dong-doi-tua-nhanh"
       ],
       "name": "Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (Timelapse-Freeze 2.00s)",
       "duration_sec": 2.0,
-      "option_label": "Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (Timelapse-Freeze 2.00s) — Khóa tĩnh chủ thể 100% mặt thật + Hậu cảnh công viên & vệt người tua nhanh Long-Exposure EMA + Slow Push-In 1.06x->1.00x + Clock Tick Sub-Drop SFX",
-      "when_to_recommend": "Khi nhân vật đứng nói ở công viên, đường phố, không gian mở ngoài trời muốn tạo hiệu ứng đóng băng thời gian điện ảnh.",
+      "option_label": "Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (Timelapse-Freeze 2.00s) — Khóa tĩnh chủ thể 100% mặt thật + Hậu cảnh công viên/hồ bơi & vệt người tua nhanh Long-Exposure EMA + Slow Push-In 1.06x->1.00x + Clock Tick Sub-Drop SFX",
+      "when_to_recommend": "Khi nhân vật đứng nói ở công viên, khu đô thị, hồ bơi, đường phố ngoài trời muốn tạo hiệu ứng đóng băng chủ thể giữa dòng người và cảnh vật tua nhanh điện ảnh (SSIM >= 0.996).",
       "ideal_motion": [
         "standing_ready",
         "walk_in",
@@ -416,23 +426,84 @@ window.SKILL_LIVE_DATA = {
         "script": "timelapse_freeze_engine.py",
         "entry": "build_timelapse_freeze"
       },
-      "verifier": "verify_timelapse_freeze.py",
-      "sfx_profile": "sfx_timelapse_freeze_2s.wav (Accelerated Clock Ticking 22 nhịp + Time-Rush Crowd Whoosh + 55Hz Time-Freeze Sub-Drop @ 1.90s)",
+      "verifier": "verify_timelapse_hook.py",
+      "verifier_script": "verify_timelapse_hook.py",
+      "sfx_file": "sfx_timelapse_freeze_2s.wav",
+      "ref_video": "studios/timelapse_human_ref.mp4",
+      "orig_video": "studios/footageai1_orig_web.mp4",
+      "orig_video_2": "studios/viet2210_orig_web.mp4",
+      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_timelapse_freeze_web.mp4",
+      "master_demo_video_2": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_timelapse_freeze_master.mp4",
+      "comparison_videos": [
+        {
+          "label": "① Mẫu Hiệu Ứng Gốc (TIMELAPSE HUMAN.mp4)",
+          "src": "studios/timelapse_human_ref.mp4",
+          "kind": "ref"
+        },
+        {
+          "label": "② Case 1 — File Gốc (footageai1.mp4)",
+          "src": "studios/footageai1_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "③ Case 1 — Bản Demo Master (footageai1_timelapse_freeze)",
+          "src": "studios/footageai1_timelapse_freeze_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "④ Case 2 — File Gốc (viet2210.MOV)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "⑤ Case 2 — Bản Demo Master (viet2210_timelapse_freeze)",
+          "src": "studios/viet2210_timelapse_freeze_master.mp4",
+          "kind": "demo"
+        }
+      ],
+      "sfx_profile": "sfx_timelapse_freeze_2s.wav (Accelerated Clock Ticking 22 nhịp + Time-Rush Crowd Whoosh + 55Hz Time-Freeze Sub-Drop @ 1.92s)",
       "scoring": {
-        "base": 60,
+        "base": 62,
         "motion_bonus": {
-          "standing_ready": 22,
+          "standing_ready": 24,
           "squat_to_stand": 16
         },
         "scene_bonus": {
-          "outdoor_park_city": 12,
-          "outdoor": 12
+          "outdoor_park_city": 14,
+          "outdoor": 14
         },
         "4k_bonus": 0
       },
       "order": 9,
-      "_studio_slug": "",
-      "_web_video": "studios/viet2210_timelapse_freeze_master.mp4"
+      "_studio_slug": "studio-ai-hook-timelapse-freeze.html",
+      "_web_video": "studios/footageai1_timelapse_freeze_web.mp4",
+      "_comparison_videos": [
+        {
+          "label": "① Mẫu Hiệu Ứng Gốc (TIMELAPSE HUMAN.mp4)",
+          "src": "studios/timelapse_human_ref.mp4",
+          "kind": "ref"
+        },
+        {
+          "label": "② Case 1 — File Gốc (footageai1.mp4)",
+          "src": "studios/footageai1_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "③ Case 1 — Bản Demo Master (footageai1_timelapse_freeze)",
+          "src": "studios/footageai1_timelapse_freeze_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "④ Case 2 — File Gốc (viet2210.MOV)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "⑤ Case 2 — Bản Demo Master (viet2210_timelapse_freeze)",
+          "src": "studios/viet2210_timelapse_freeze_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -479,7 +550,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 10,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_point_cloud_master.mp4"
+      "_web_video": "studios/viet2210_point_cloud_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -522,7 +594,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 11,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_giant_grab_master.mp4"
+      "_web_video": "studios/viet2210_giant_grab_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -569,7 +642,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 12,
       "_studio_slug": "",
-      "_web_video": ""
+      "_web_video": "",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -614,7 +688,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 13,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_hero_cam_master.mp4"
+      "_web_video": "studios/viet2210_hero_cam_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -657,7 +732,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 14,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_through_object_master.mp4"
+      "_web_video": "studios/viet2210_through_object_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -700,7 +776,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 15,
       "_studio_slug": "",
-      "_web_video": ""
+      "_web_video": "",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -751,7 +828,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 16,
       "_studio_slug": "",
-      "_web_video": ""
+      "_web_video": "",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -801,7 +879,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 16,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_polygon_sculpt_master.mp4"
+      "_web_video": "studios/viet2210_polygon_sculpt_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -850,7 +929,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 16,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_smoke_reveal_master.mp4"
+      "_web_video": "studios/viet2210_smoke_reveal_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -901,7 +981,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 17,
       "_studio_slug": "studio-ai-hook-glow-trace.html",
-      "_web_video": "studios/viet2210_glow_trace_master.mp4"
+      "_web_video": "studios/viet2210_glow_trace_master.mp4",
+      "_comparison_videos": []
     },
     {
       "schema_version": "3.0",
@@ -948,7 +1029,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 18,
       "_studio_slug": "",
-      "_web_video": "studios/viet2210_double_exposure_master.mp4"
+      "_web_video": "studios/viet2210_double_exposure_master.mp4",
+      "_comparison_videos": []
     }
   ],
   "evolution": {
@@ -962,6 +1044,16 @@ window.SKILL_LIVE_DATA = {
       "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
     ],
     "studios": [
+      {
+        "source": "studio_ai_hook_timelapse_freeze.html",
+        "slug": "studio-ai-hook-timelapse-freeze.html",
+        "order": -10,
+        "icon": "⏱️",
+        "title": "Studio AI Hook TIMELAPSE-FREEZE: Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (2.00s)",
+        "badge": "AI Hook #09: timelapse-freeze • File Gốc & Demo Master • PASS 100% Gates",
+        "badge_class": "motion",
+        "desc": "Đối chiếu trực tiếp đầy đủ File Gốc (footageai1.mp4 & viet2210.MOV), Mẫu Hiệu Ứng Tham Chiếu (TIMELAPSE HUMAN.mp4) và 2 Bản Demo Master (footageai1_timelapse_freeze_web.mp4 — SSIM 0.9969, ΔE 1.095 & viet2210_timelapse_freeze_master.mp4 — SSIM 0.9976, ΔE 1.256, 0% Halo, 0 Events)."
+      },
       {
         "source": "studio_ai_hook_glow_trace.html",
         "slug": "studio-ai-hook-glow-trace.html",
@@ -1124,6 +1216,110 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "ai-hook-timelapse-freeze-v3",
+        "date": "2026-10-24",
+        "title": "AI Hook Preset 'timelapse-freeze': Đứng Tĩnh Giữa Dòng Đời Tua Nhanh 2.00s — Đối Chiếu File Gốc & 2 Bản Demo Master (Kỹ năng ai-hook)",
+        "step_target": [
+          "dinh-dang",
+          "buoc-1",
+          "buoc-4"
+        ],
+        "source_thread": "25bc1d6b-06d5-41ba-ac08-94916ca2333f",
+        "studio_file": "studio_ai_hook_timelapse_freeze.html",
+        "what_title": "Khóa Tĩnh Chủ Thể 100% Mặt Thật (3-Channel Guided Filter + Pymatting ML) → Hậu Cảnh Chống Rung KLT/RANSAC Homography + Vệt Người Long-Exposure EMA → Slow Push-In 1.06x → 1.000x Khớp Khít Anchor Frame",
+        "what": "Chế độ Hook <strong><code>timelapse-freeze</code></strong> (aliases: <code>freeze-time</code>, <code>timelapse-human</code>, <code>dong-doi-tua-nhanh</code> &mdash; <code>2.00s</code> / <code>48 frames</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Thay vì dán đè nền giả làm mất bối cảnh thật, engine giữ nguyên 100% <strong>Clean Plate công viên / hồ bơi thật</strong> đã căn chỉnh <code>KLT/RANSAC Homography</code> từ chuỗi frame trước khi nói (<code>f_idx &le; anchor_idx</code>) về hệ tọa độ <code>Frame_Anchor</code> như đặt trên tripod tĩnh; kết hợp trích xuất các bóng người di chuyển từ <code>TIMELAPSE HUMAN.mp4</code> (đã trừ <code>med_bg</code> trước khi <code>np.roll</code> và hòa sắc độ <code>CIE LAB</code> khớp môi trường thật) phủ hiệu ứng <strong>Long-Exposure EMA Streak Blur (<code>acc_t = 0.55&middot;acc_{t-1} + 0.45&middot;B_t</code>)</strong> + <strong>High-Frequency Sharpness Equalizer</strong>. Chủ thể anh Việt được tách bằng <code>rembg</code> Full+ROI + co lõi <code>2px</code> + <strong>3-Channel Color Guided Filter (<code>r=8, eps=1e-4</code>)</strong> + khử màu biên <code>pymatting.estimate_foreground_ml</code> (<code>C9_HALO ratio = 0.643&ndash;0.654 &le; 1.35</code>), sau đó áp <strong>Digital Slow Push-In <code>1.06x &rarr; 1.000x</code></strong> theo đường cong <code>Ease-Out</code> hội tụ 100% vào <code>Frame_Anchor</code> (<code>SSIM = 0.9969&ndash;0.9976 &ge; 0.99</code>) và nối nguyên bản phần nói gốc 24fps không qua nội suy quang học.",
+        "why_title": "Vì sao phải chống rung Homography trên chính nền thật và trừ med_bg trước khi dịch chuyển lớp đám đông?",
+        "why": "1) <strong>Giữ 100% bối cảnh thật lúc chuyển giao vào phần nói:</strong> Nếu lấy nền từ video mẫu <code>TIMELAPSE HUMAN.mp4</code>, tại giây <code>2.00s</code> khi anh Việt bắt đầu nói sẽ xảy ra cú nhảy cảnh đột ngột từ phố lạ về công viên/hồ bơi thật. Khi tạo Clean Plate và chống rung Homography từ chính các frame chờ đầu clip (<code>pre_anchor_stabilized</code>), khung hình tại <code>t=2.00s</code> khớp tuyệt đối từng pixel với frame mở lời (<code>SSIM = 0.9976</code> trên <code>viet2210.MOV</code> và <code>0.9969</code> trên <code>footageai1.mp4</code>).<br>2) <strong>Chống sụt tương phản C4_GHOST_DIP:</strong> Trừ nền tĩnh <code>med_bg</code> của <code>TIMELAPSE HUMAN.mp4</code> trước khi dịch ngang <code>np.roll</code> kết hợp <code>High-Frequency Sharpness Equalizer</code> giúp chỉ có các bóng người lướt nhanh trên đường đi bộ phía sau lưng anh Việt, giữ độ sắc nét chi tiết hậu cảnh ổn định (<code>BG_LCON min = 20.14</code>, <code>0</code> sự kiện Ghost Dip).",
+        "how_title": "Gọi tự nhiên TIMELAPSE FREEZE / FREEZE TIME hoặc chạy CLI 1 chạm trên mọi video ngoài trời",
+        "how_intro": "Gọi trực tiếp bằng câu tự nhiên ('TIMELAPSE FREEZE : <video>', 'FREEZE TIME : <video>') hoặc chạy lệnh CLI:",
+        "how_cmd": "python3 ~/.gemini/config/skills/ai-hook/scripts/timelapse_freeze_engine.py --video \"/Users/vietmac/Documents/AItest2/temp/footageai1.mp4\" --output \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_timelapse_freeze_master.mp4\"",
+        "local_videos_title": "🎬 Đối Chiếu Trực Tiếp Đầy Đủ 5 Video: ① Mẫu Gốc (TIMELAPSE HUMAN) &rarr; ② File Gốc &amp; ③ Demo Master Case 1 (footageai1.mp4) &rarr; ④ File Gốc &amp; ⑤ Demo Master Case 2 (viet2210.MOV)",
+        "local_videos_badge": "Timelapse-Freeze 2.00s • 1080×1920 @ 24fps • VERDICT: PASS 100% (SSIM 0.9969–0.9976 • 0 Events)",
+        "local_videos": [
+          {
+            "src": "studios/timelapse_human_ref.mp4",
+            "fallback_url": "studios/timelapse_human_ref.mp4",
+            "badge": "① MẪU HIỆU ỨNG THAM CHIẾU GỐC (TIMELAPSE HUMAN.MP4)",
+            "title": "Mẫu tham chiếu hiệu ứng: TIMELAPSE HUMAN.mp4 (Higgsfield Minimax Motion)",
+            "desc": "Cơ chế gốc: Chủ thể đứng tĩnh giữa trung tâm khung hình trong khi dòng người và ánh sáng xung quanh lướt nhanh tạo vệt mờ phơi sáng dài (Long-Exposure Timelapse Trail)."
+          },
+          {
+            "src": "studios/footageai1_orig_web.mp4",
+            "fallback_url": "studios/footageai1_orig_web.mp4",
+            "badge": "② CASE 1 — FILE GỐC CHƯA QUA HOOK (AITEST2/FOOTAGEAI1.MP4)",
+            "title": "File Gốc Case 1: footageai1.mp4 (Khu hồ bơi, hàng cọ & tòa tháp — Anchor Frame #120 @ 5.00s)",
+            "desc": "Video gốc quay tại hồ bơi ngoài trời (19.08s @ 24fps): Trong 5.00 giây đầu (Frame #0..#119), nhân vật đứng chờ lấy nhịp trước khi bước đi và mở lời nói tại Frame #120 (5.00s)."
+          },
+          {
+            "src": "studios/footageai1_timelapse_freeze_web.mp4",
+            "fallback_url": "studios/footageai1_timelapse_freeze_web.mp4",
+            "badge": "③ CASE 1 — BẢN DEMO MASTER (FOOTAGEAI1_TIMELAPSE_FREEZE • PASS 0 EVENTS)",
+            "title": "Demo Master Case 1: footageai1_timelapse_freeze_master.mp4 (SSIM 0.9969 • ΔE 1.095 • C9 Halo 0.654)",
+            "desc": "Thay thế 5 giây chờ đầu bằng 2.00s Hook Timelapse-Freeze: Khóa tĩnh chủ thể tại Frame #120, hậu cảnh hồ bơi chống rung KLT/RANSAC + vệt người lướt nhanh + Slow Push-In 1.06x → 1.000x khớp khít Frame #120 kèm Clock Tick & 55Hz Sub-Drop SFX."
+          },
+          {
+            "src": "studios/viet2210_orig_web.mp4",
+            "fallback_url": "studios/viet2210_orig_web.mp4",
+            "badge": "④ CASE 2 — FILE GỐC CHƯA QUA HOOK (VIET2210.MOV)",
+            "title": "File Gốc Case 2: viet2210.MOV (Công viên tán cây xanh — Anchor Frame #48 @ 2.04s)",
+            "desc": "Video gốc quay tại công viên (1080×1920 @ 24fps): Trong 2.04 giây đầu (Frame #0..#47), nhân vật lấy đà đứng lên trước khi mở lời nói tại Frame #48 (2.04s)."
+          },
+          {
+            "src": "studios/viet2210_timelapse_freeze_master.mp4",
+            "fallback_url": "studios/viet2210_timelapse_freeze_master.mp4",
+            "badge": "⑤ CASE 2 — BẢN DEMO MASTER (VIET2210_TIMELAPSE_FREEZE • SSIM 0.9976)",
+            "title": "Demo Master Case 2: viet2210_timelapse_freeze_master.mp4 (SSIM 0.9976 • ΔE 1.256 • C9 Halo 0.643)",
+            "desc": "Giữ nguyên 100% Clean Plate công viên thật đã chống rung ECC Homography, tạo vệt người & xe cộ tua nhanh phía sau lưng anh Việt kèm ánh nắng quét qua tán lá, Slow Push-In 1.06x → 1.000x hội tụ 100% vào Frame #48."
+          }
+        ],
+        "items": [
+          {
+            "tier": "1. Bảy Chốt Chặn Kỹ Thuật CLAUDE2 Cho Preset timelapse-freeze (timelapse_freeze_engine.py)",
+            "code": "CHỐT 1 & 2",
+            "name": "Clean Plate Hậu Cảnh Thật (KLT/RANSAC Homography) & Dòng Người Long-Exposure EMA",
+            "desc": "Căn chỉnh mọi frame pre-anchor về hệ tọa độ Frame_Anchor; trừ med_bg của TIMELAPSE HUMAN.mp4 trước khi dịch chuyển, hòa sắc độ CIE LAB và tích lũy EMA (0.55·acc + 0.45·B_t) kèm High-Frequency Sharpness Equalizer."
+          },
+          {
+            "tier": "1. Bảy Chốt Chặn Kỹ Thuật CLAUDE2 Cho Preset timelapse-freeze (timelapse_freeze_engine.py)",
+            "code": "CHỐT 3 & 4",
+            "name": "3-Channel Color Guided Filter (r=8, eps=1e-4) + Pymatting ML Decontamination & Contact Shadow",
+            "desc": "Tách mask chủ thể sắc nét, khử hoàn toàn viền sáng Halo quanh tóc/vai (C9_HALO ratio = 0.643–0.654 ≤ 1.35) và giữ nguyên bóng đổ tiếp xúc dưới chân/thân."
+          },
+          {
+            "tier": "1. Bảy Chốt Chặn Kỹ Thuật CLAUDE2 Cho Preset timelapse-freeze (timelapse_freeze_engine.py)",
+            "code": "CHỐT 5, 6 & 7",
+            "name": "Digital Slow Push-In 1.06x → 1.000x + Unwarped 24fps Talk + Studio Clock-Tick Sub-Drop SFX",
+            "desc": "Phóng nhẹ 1.06x ở 0.00s và hạ êm Ease-Out về đúng 1.000x tại 2.00s (IDR keyframe lock SSIM ≥ 0.9969), ghép nguyên bản phần nói 24fps kèm sfx_timelapse_freeze_2s.wav (22 nhịp đồng hồ tăng tốc + Crowd Whoosh + 55Hz Sub-Drop tắt sạch ở 2.00s)."
+          }
+        ],
+        "asset_dir": "timelapse_freeze_v3",
+        "showcase_title": "🖼️ Bảng Kiểm Định 6 Keyframes Tiến Trình Hook & Viền Mask 400% (Case 1 footageai1 & Case 2 viet2210)",
+        "showcase_badge": "Chuẩn 25BC1D6B • CLAUDE2 Nghiệm Thu • VERDICT: PASS 100% (0 Events)",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_footageai1_timelapse_freeze_sheet.jpg",
+            "caption": "Case 1 (footageai1.mp4 — Anchor #120): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9969, ΔE = 1.095, C9 Halo = 0.654, PASS 0 events)",
+            "web_src": "assets/timelapse_freeze_v3/qa_footageai1_timelapse_freeze_sheet.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_viet2210_timelapse_freeze_sheet.jpg",
+            "caption": "Case 2 (viet2210.MOV — Anchor #48): Contact Sheet 6 Keyframes tiến trình Timelapse-Freeze (SSIM = 0.9976, ΔE = 1.256, C9 Halo = 0.643, PASS 0 events)",
+            "web_src": "assets/timelapse_freeze_v3/qa_viet2210_timelapse_freeze_sheet.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/work_timelapse_freeze/qa_mask_400pct.jpg",
+            "caption": "Kiểm định phóng đại 400% viền Mask chủ thể sau 3-Channel Guided Filter + Pymatting ML Foreground Decontamination (0% viền sáng Halo)",
+            "web_src": "assets/timelapse_freeze_v3/qa_mask_400pct.jpg"
+          }
+        ],
+        "tech_specs": [
+          "Engine lõi: ~/.gemini/config/skills/ai-hook/scripts/timelapse_freeze_engine.py (tự động phát hiện điểm mở lời và chạy SA1-AUTO cho mọi video đầu vào).",
+          "Manifest Registry v3.0: ~/.gemini/config/skills/ai-hook/hooks.d/timelapse-freeze.json (tích hợp comparison_videos gồm cả File Gốc & Bản Demo Master).",
+          "Verifier kiểm định 10 cổng: ~/.gemini/config/skills/ai-hook/scripts/verify_timelapse_hook.py (C1..C8, C9_HALO <= 1.35, C10_ANCHOR SSIM >= 0.99, C6_JPEG).",
+          "Âm thanh Studio: ~/.gemini/config/skills/ai-hook/assets/sfx_timelapse_freeze_2s.wav (48kHz Stereo, 22 nhịp đồng hồ tăng tốc + Crowd Whoosh + 55Hz Sub-Drop tắt sạch PCM=0 tại 2.00s)."
+        ]
+      },
       {
         "id": "ai-hook-glow-trace-batch3",
         "date": "2026-10-24",
@@ -2114,11 +2310,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "AI HOOK ROUTER V3.0",
       "desc": "Hệ thống Smart AI Hook Router v3.0 (Zero-Collision Registry hooks.d/ + register_hook.py khóa nguyên tử fcntl.flock) tự động quét 3 giây đầu video gốc và kết xuất 20 chế độ Hook (Xem đầy đủ tại 10-bang-ai-hook.html).",
       "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
-      "size": 50531,
-      "size_formatted": "49.3 KB",
+      "size": 50649,
+      "size_formatted": "49.5 KB",
       "lines_count": 283,
-      "mtime": 1792840121.4588754,
-      "mtime_formatted": "24/10/2026 18:08",
+      "mtime": 1792844699.506818,
+      "mtime_formatted": "24/10/2026 19:24",
       "headers": [
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
         "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
@@ -5625,12 +5821,12 @@ window.SKILL_LIVE_DATA = {
       "name": "giant_grab_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "size": 45426,
-      "size_formatted": "44.4 KB",
-      "lines": 988,
-      "mtime": 1792836052.9290512,
-      "mtime_formatted": "24/10/2026 17:00",
-      "desc": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
+      "size": 29872,
+      "size_formatted": "29.2 KB",
+      "lines": 694,
+      "mtime": 1792843889.4361272,
+      "mtime_formatted": "24/10/2026 19:11",
+      "desc": "giant_grab_engine.py — Giant-Grab V2 (Google Flow Veo 3.1 3D True-Physics Engine)"
     },
     {
       "name": "glow_trace_engine.py",
@@ -5647,11 +5843,11 @@ window.SKILL_LIVE_DATA = {
       "name": "hero_cam_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "size": 29821,
-      "size_formatted": "29.1 KB",
-      "lines": 735,
-      "mtime": 1792829015.6378531,
-      "mtime_formatted": "24/10/2026 15:03",
+      "size": 28346,
+      "size_formatted": "27.7 KB",
+      "lines": 701,
+      "mtime": 1792844270.5680606,
+      "mtime_formatted": "24/10/2026 19:17",
       "desc": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
     },
     {
@@ -5746,12 +5942,12 @@ window.SKILL_LIVE_DATA = {
       "name": "rooftop_jump_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "size": 20000,
-      "size_formatted": "19.5 KB",
-      "lines": 440,
-      "mtime": 1792838336.9106638,
-      "mtime_formatted": "24/10/2026 17:38",
-      "desc": "Rooftop Jump Engine (`rooftop_jump_engine.py`) — Động cơ tự động tạo hiệu ứng Nhảy Từ Đỉnh Tòa Nhà (Master V3)"
+      "size": 38893,
+      "size_formatted": "38.0 KB",
+      "lines": 793,
+      "mtime": 1792844214.3784544,
+      "mtime_formatted": "24/10/2026 19:16",
+      "desc": "Rooftop Jump Engine V4 (`rooftop_jump_engine.py`) — Google Flow Omni 1.1 Flash & Self-Learning Verifier (Gemini × CLAUDE2)"
     },
     {
       "name": "smoke_reveal_engine.py",
@@ -5895,6 +6091,28 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792819097.907293,
       "mtime_formatted": "24/10/2026 12:18",
       "desc": "SA2 — Deterministic 5-Gate Verifier (G0_COMMON + G1..G4) & Self-Test Suite"
+    },
+    {
+      "name": "verify_timelapse_freeze.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "size": 34109,
+      "size_formatted": "33.3 KB",
+      "lines": 765,
+      "mtime": 1792844398.7988446,
+      "mtime_formatted": "24/10/2026 19:19",
+      "desc": "SA2 — Specialized Anti-Jitter / Seam / Halo / Anchor Verifier for `timelapse-freeze` AI Hook."
+    },
+    {
+      "name": "verify_timelapse_hook.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "size": 34109,
+      "size_formatted": "33.3 KB",
+      "lines": 765,
+      "mtime": 1792844398.796944,
+      "mtime_formatted": "24/10/2026 19:19",
+      "desc": "SA2 — Specialized Anti-Jitter / Seam / Halo / Anchor Verifier for `timelapse-freeze` AI Hook."
     }
   ],
   "history": [
@@ -5902,9 +6120,57 @@ window.SKILL_LIVE_DATA = {
       "name": "ai-hook/SKILL.md",
       "type": "Markdown Spec",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792840121.4588754,
-      "mtime_formatted": "24/10/2026 18:08",
+      "mtime": 1792844699.506818,
+      "mtime_formatted": "24/10/2026 19:24",
       "detail": "283 dòng • 6 mục chính"
+    },
+    {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792844699.274596,
+      "mtime_formatted": "24/10/2026 19:24",
+      "detail": "12 quy chuẩn • 16 studios"
+    },
+    {
+      "name": "scripts/verify_timelapse_freeze.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792844398.7988446,
+      "mtime_formatted": "24/10/2026 19:19",
+      "detail": "SA2 — Specialized Anti-Jitter / Seam / Halo / Anchor Verifier for `timelapse-freeze` AI Hook."
+    },
+    {
+      "name": "scripts/verify_timelapse_hook.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792844398.796944,
+      "mtime_formatted": "24/10/2026 19:19",
+      "detail": "SA2 — Specialized Anti-Jitter / Seam / Halo / Anchor Verifier for `timelapse-freeze` AI Hook."
+    },
+    {
+      "name": "scripts/hero_cam_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792844270.5680606,
+      "mtime_formatted": "24/10/2026 19:17",
+      "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
+    },
+    {
+      "name": "scripts/rooftop_jump_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792844214.3784544,
+      "mtime_formatted": "24/10/2026 19:16",
+      "detail": "Rooftop Jump Engine V4 (`rooftop_jump_engine.py`) — Google Flow Omni 1.1 Flash & Self-Learning Verifier (Gemini × CLAUDE2)"
+    },
+    {
+      "name": "scripts/giant_grab_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792843889.4361272,
+      "mtime_formatted": "24/10/2026 19:11",
+      "detail": "giant_grab_engine.py — Giant-Grab V2 (Google Flow Veo 3.1 3D True-Physics Engine)"
     },
     {
       "name": "scripts/register_hook.py",
@@ -5913,14 +6179,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792840033.2283013,
       "mtime_formatted": "24/10/2026 18:07",
       "detail": "AI Hook Atomic Registry Manager (`register_hook.py`) — Thiết kế Gemini × CLAUDE2 (`claude_pro_cc944965.md`)"
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792839572.7002876,
-      "mtime_formatted": "24/10/2026 17:59",
-      "detail": "11 quy chuẩn • 15 studios"
     },
     {
       "name": "scripts/jib_down_engine.py",
@@ -5947,14 +6205,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
     },
     {
-      "name": "scripts/rooftop_jump_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792838336.9106638,
-      "mtime_formatted": "24/10/2026 17:38",
-      "detail": "Rooftop Jump Engine (`rooftop_jump_engine.py`) — Động cơ tự động tạo hiệu ứng Nhảy Từ Đỉnh Tòa Nhà (Master V3)"
-    },
-    {
       "name": "scripts/display_transition_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
@@ -5969,14 +6219,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792837927.994247,
       "mtime_formatted": "24/10/2026 17:32",
       "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
-    },
-    {
-      "name": "scripts/giant_grab_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792836052.9290512,
-      "mtime_formatted": "24/10/2026 17:00",
-      "detail": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
     },
     {
       "name": "scripts/spa_edit_cli.py",
@@ -6083,14 +6325,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "AI Hook Scanner (`hook_scanner.py`) — Bộ giải phẫu video đầu vào & gợi ý Hook thông minh"
     },
     {
-      "name": "scripts/hero_cam_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792829015.6378531,
-      "mtime_formatted": "24/10/2026 15:03",
-      "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
-    },
-    {
       "name": "scripts/verify_intermission_curtain.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
@@ -6121,22 +6355,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792827694.4328005,
       "mtime_formatted": "24/10/2026 14:41",
       "detail": "Anti-Jitter / Anti-Stutter QA Verifier for Vertical-Jib / AI-Hook renders."
-    },
-    {
-      "name": "scripts/verify_flycam_transition.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792821399.0401013,
-      "mtime_formatted": "24/10/2026 12:56",
-      "detail": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
-    },
-    {
-      "name": "scripts/flycam_transition_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792821115.8472116,
-      "mtime_formatted": "24/10/2026 12:51",
-      "detail": "Flycam-Transition V2 AI Hook Engine (`flycam_transition_engine.py`)"
     }
   ]
 };

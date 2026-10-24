@@ -21,17 +21,17 @@
           <em>Không cần nhớ đường dẫn file, không cần copy ảnh hay sửa HTML thủ công. Chỉ cần nói tự nhiên "cập nhật vào skill" hoặc "đưa vào videoai" — mọi quy chuẩn, phòng Studio và ảnh thực tế tự động lên sóng.</em>
         </p>
         <p style="font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--mute); margin-bottom:0;">
-          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">24/10/2026 18:08:41</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 15 Phòng Studio tương tác, 65 file kịch bản Python, 18 Remotion Compositions và 22 Visual Components.
+          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">24/10/2026 19:24:59</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 16 Phòng Studio tương tác, 67 file kịch bản Python, 18 Remotion Compositions và 22 Visual Components.
         </p>
 
         <!-- Khối chỉ số sống -->
         <div class="proof-grid">
           <div class="proof-item">
-            <div class="proof-num">4 Kỹ Năng + 15 Studio</div>
-            <div class="proof-lbl">auto-edit, render-v3, motion, fedu-media-pipeline &amp; 15 Studio HTML</div>
+            <div class="proof-num">4 Kỹ Năng + 16 Studio</div>
+            <div class="proof-lbl">auto-edit, render-v3, motion, fedu-media-pipeline &amp; 16 Studio HTML</div>
           </div>
           <div class="proof-item">
-            <div class="proof-num">65 Scripts Python</div>
+            <div class="proof-num">67 Scripts Python</div>
             <div class="proof-lbl">VAD, bóc nhịp, khóa mắt, B-Roll hot-swap &amp; QA Lint</div>
           </div>
           <div class="proof-item">
@@ -95,6 +95,24 @@
         Danh sách các quy chuẩn và phòng Studio đã được tự động đóng gói, copy ảnh và gắn vào đúng trang Bước học:
       </p>
       
+        <div class="matrix-card" style="border-left:4px solid #f59e0b; margin-bottom:16px;">
+          <div class="matrix-header">
+            <div class="matrix-title">
+              <span>⚡ AI Hook Preset 'timelapse-freeze': Đứng Tĩnh Giữa Dòng Đời Tua Nhanh 2.00s — Đối Chiếu File Gốc & 2 Bản Demo Master (Kỹ năng ai-hook)</span>
+            </div>
+            <span class="matrix-badge editorial">2026-10-24 • Đích: dinh-dang, buoc-1, buoc-4</span>
+          </div>
+          <p style="font-size:14.5px; color:var(--ink2); margin:0 0 10px;">Chế độ Hook <strong><code>timelapse-freeze</code></strong> (aliases: <code>freeze-time</code>, <code>timelapse-human</code>, <code>dong-doi-tua-nhanh</code> &mdash; <code>2.00s</code> / <code>48 frames</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Thay vì dán đè nền giả làm mất bối cảnh thật, engine giữ nguyên 100% <strong>Clean Plate công viên / hồ bơi thật</strong> đã căn chỉnh <code>KLT/RANSAC Homography</code> từ chuỗi frame trước khi nói (<code>f_idx &le; anchor_idx</code>) về hệ tọa độ <code>Frame_Anchor</code> như đặt trên tripod tĩnh; kết hợp trích xuất các bóng người di chuyển từ <code>TIMELAPSE HUMAN.mp4</code> (đã trừ <code>med_bg</code> trước khi <code>np.roll</code> và hòa sắc độ <code>CIE LAB</code> khớp môi trường thật) phủ hiệu ứng <strong>Long-Exposure EMA Streak Blur (<code>acc_t = 0.55&middot;acc_{t-1} + 0.45&middot;B_t</code>)</strong> + <strong>High-Frequency Sharpness Equalizer</strong>. Chủ thể anh Việt được tách bằng <code>rembg</code> Full+ROI + co lõi <code>2px</code> + <strong>3-Channel Color Guided Filter (<code>r=8, eps=1e-4</code>)</strong> + khử màu biên <code>pymatting.estimate_foreground_ml</code> (<code>C9_HALO ratio = 0.643&ndash;0.654 &le; 1.35</code>), sau đó áp <strong>Digital Slow Push-In <code>1.06x &rarr; 1.000x</code></strong> theo đường cong <code>Ease-Out</code> hội tụ 100% vào <code>Frame_Anchor</code> (<code>SSIM = 0.9969&ndash;0.9976 &ge; 0.99</code>) và nối nguyên bản phần nói gốc 24fps không qua nội suy quang học.</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:10px;">
+            <a href="05-buoc4-motion-cta.html#evo-ai-hook-timelapse-freeze-v3" style="font:700 12px var(--sans); color:#fff; background:#0f172a; padding:4px 10px; border-radius:6px; text-decoration:none;">📖 Xem trên 05-buoc4-motion-cta.html</a>
+            <button type="button" onclick="openStudioModal('studios/studio-ai-hook-timelapse-freeze.html', 'AI Hook Preset 'timelapse-freeze': Đứng Tĩnh Giữa Dòng Đời Tua Nhanh 2.00s — Đối Chiếu File Gốc & 2 Bản Demo Master (Kỹ năng ai-hook)')" style="font:700 12px var(--sans); color:#fff; background:#b45309; border:none; padding:4px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio (studio-ai-hook-timelapse-freeze.html)</button>
+            <a href="assets/timelapse_freeze_v3/qa_footageai1_timelapse_freeze_sheet.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ qa_footageai1_timelapse_freeze_sheet.jpg</a><a href="assets/timelapse_freeze_v3/qa_viet2210_timelapse_freeze_sheet.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ qa_viet2210_timelapse_freeze_sheet.jpg</a><a href="assets/timelapse_freeze_v3/qa_mask_400pct.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ qa_mask_400pct.jpg</a>
+          </div>
+          <div style="font:400 12px var(--mono); color:var(--mute);">
+            Phiên gốc: <code>25bc1d6b-06d5-41ba-ac08-94916ca2333f</code> • ID: <code>ai-hook-timelapse-freeze-v3</code>
+          </div>
+        </div>
+        
         <div class="matrix-card" style="border-left:4px solid #f59e0b; margin-bottom:16px;">
           <div class="matrix-header">
             <div class="matrix-title">
@@ -432,8 +450,8 @@
           </div>
           <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Hệ thống Smart AI Hook Router v3.0 (Zero-Collision Registry hooks.d/ + register_hook.py khóa nguyên tử fcntl.flock) tự động quét 3 giây đầu video gốc và kết xuất 20 chế độ Hook (Xem đầy đủ tại 10-bang-ai-hook.html).</p>
           <div style="font:400 12px var(--mono); color:var(--mute); margin-bottom:10px;">
-            <span>Dung lượng: <strong>49.3 KB</strong> (283 dòng)</span> • 
-            <span>Cập nhật: <strong style="color:var(--ink);">24/10/2026 18:08</strong></span>
+            <span>Dung lượng: <strong>49.5 KB</strong> (283 dòng)</span> • 
+            <span>Cập nhật: <strong style="color:var(--ink);">24/10/2026 19:24</strong></span>
           </div>
           <div style="font-size:13px; color:var(--ink2);">
             <strong>Mục chính trong SKILL.md:</strong>
@@ -468,7 +486,49 @@
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">ai-hook/SKILL.md</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 18:08</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 19:24</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">evolution_log.json</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Evolution Registry</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Auto-Evolve Hub</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 19:24</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/verify_timelapse_freeze.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 19:19</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/verify_timelapse_hook.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 19:19</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/hero_cam_engine.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 19:17</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/rooftop_jump_engine.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 19:16</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/giant_grab_engine.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 19:11</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -476,13 +536,6 @@
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 18:07</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">evolution_log.json</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Evolution Registry</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Auto-Evolve Hub</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 17:59</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -507,13 +560,6 @@
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/rooftop_jump_engine.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 17:38</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/display_transition_engine.py</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
@@ -528,38 +574,10 @@
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/giant_grab_engine.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 17:00</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/spa_edit_cli.py</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 16:12</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">spa-edit/SKILL.md</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 16:03</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/verify_6gates.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 16:02</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/verify_readability_and_sync.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">24/10/2026 15:55</td>
         </tr>
         
           </tbody>
@@ -569,7 +587,7 @@
       <!-- ========================================================
            DANH MỤC SCRIPTS PYTHON
            ======================================================== -->
-      <h2 style="margin-top:36px;">5. Danh mục toàn bộ 65 kịch bản Python</h2>
+      <h2 style="margin-top:36px;">5. Danh mục toàn bộ 67 kịch bản Python</h2>
       <div style="background:#ffffff; border:1px solid var(--line); border-radius:12px; overflow-x:auto;">
         <table style="width:100%; border-collapse:collapse; text-align:left;">
           <thead>
@@ -865,8 +883,8 @@
         <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">giant_grab_engine.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">ai-hook</td>
-          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">Giant-Grab AI Hook Engine (`giant_grab_engine.py`)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">988 dòng</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">giant_grab_engine.py — Giant-Grab V2 (Google Flow Veo 3.1 3D True-Physics Engine)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">694 dòng</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -880,7 +898,7 @@
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">hero_cam_engine.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">ai-hook</td>
           <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">735 dòng</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">701 dòng</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -942,8 +960,8 @@
         <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">rooftop_jump_engine.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">ai-hook</td>
-          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">Rooftop Jump Engine (`rooftop_jump_engine.py`) — Động cơ tự động tạo hiệu ứng Nhảy Từ Đỉnh Tòa Nhà (Master V3)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">440 dòng</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">Rooftop Jump Engine V4 (`rooftop_jump_engine.py`) — Google Flow Omni 1.1 Flash & Self-Learning Verifier (Gemini × CLAUDE2)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">793 dòng</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -1035,6 +1053,20 @@
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">ai-hook</td>
           <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">SA2 — Deterministic 5-Gate Verifier (G0_COMMON + G1..G4) & Self-Test Suite</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">1347 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">verify_timelapse_freeze.py</td>
+          <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">ai-hook</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">SA2 — Specialized Anti-Jitter / Seam / Halo / Anchor Verifier for `timelapse-freeze` AI Hook.</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">765 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">verify_timelapse_hook.py</td>
+          <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">ai-hook</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">SA2 — Specialized Anti-Jitter / Seam / Halo / Anchor Verifier for `timelapse-freeze` AI Hook.</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">765 dòng</td>
         </tr>
         
           </tbody>
