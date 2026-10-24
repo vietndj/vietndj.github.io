@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 12:24:29
+ * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 14:47:49
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "24/10/2026 12:24:29",
-  "last_synced_iso": "2026-10-24T12:24:29.025577",
+  "last_synced_formatted": "24/10/2026 14:47:49",
+  "last_synced_iso": "2026-10-24T14:47:49.467075",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,10 +15,10 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 18,
     "components_count": 22,
-    "scripts_count": 49,
+    "scripts_count": 50,
     "skills_count": 7,
-    "studios_count": 10,
-    "evolution_entries_count": 6
+    "studios_count": 12,
+    "evolution_entries_count": 7
   },
   "evolution": {
     "version": 1,
@@ -31,6 +31,16 @@ window.SKILL_LIVE_DATA = {
       "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
     ],
     "studios": [
+      {
+        "source": "studio_ai_hook_jib_down.html",
+        "slug": "studio-ai-hook-jib-down.html",
+        "order": -3,
+        "icon": "🏗️",
+        "title": "Studio AI Hook JIB-DOWN: Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt (2.30s)",
+        "badge": "AI Hook Preset: jib-down • 3D Veo Parallax + Vertical-Jib Verifier",
+        "badge_class": "motion",
+        "desc": "Đối chiếu trực tiếp 2 Case Study thực chiến của preset jib-down (2.30s): ① Công viên tán cây xanh (viet2210_jib_down_master.mp4 — SSIM 0.9923) và ② Khu hồ bơi, hàng cọ & tòa tháp chung cư 3D Parallax (footageai1_jib_down_web.mp4 — SSIM 0.9846, vp 0.91–0.94, sc 0.99–1.00, PASS 10/10 Gates)."
+      },
       {
         "source": "studio_ai_hook_sticker_transition.html",
         "slug": "studio-ai-hook-sticker-transition.html",
@@ -140,9 +150,108 @@ window.SKILL_LIVE_DATA = {
         "badge": "Auto-Detected Studio",
         "badge_class": "motion",
         "desc": "Phòng Studio tương tác tự động phát hiện từ before_after_10_styles_studio.html."
+      },
+      {
+        "source": "studio_katana_batch4_archive.html",
+        "slug": "studio-katana-batch4-archive.html",
+        "order": 8,
+        "icon": "🎛️",
+        "title": "Lưu Trữ Thử Nghiệm Katana Tier 1 Batch 4 (#05 Pink HUD, #01 Pantone Palette, #19 Pop Cutout) — Chưa Đưa Vào Skill",
+        "badge": "Auto-Detected Studio",
+        "badge_class": "motion",
+        "desc": "Phòng Studio tương tác tự động phát hiện từ studio_katana_batch4_archive.html."
       }
     ],
     "entries": [
+      {
+        "id": "ai-hook-jib-down-vertical-crane",
+        "date": "2026-10-24",
+        "title": "AI Hook Preset 'jib-down': Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây/Tòa Tháp Xuống Ngang Mắt 2.30s (Kỹ năng ai-hook)",
+        "step_target": [
+          "dinh-dang",
+          "buoc-1",
+          "buoc-4"
+        ],
+        "source_thread": "90fd0890-7409-4afb-b2b6-ed81e2c382a6",
+        "studio_file": "studio_ai_hook_jib_down.html",
+        "what_title": "Hạ cần cẩu máy quay 3D Parallax thẳng đứng từ vòm cây/hồ bơi/tòa tháp trên cao xuống ngang mắt nói luôn",
+        "what": "Chế độ Hook mới <strong><code>jib-down</code></strong> (alias: <code>crane-jib-down</code> — <code>2.30s</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Đặt <code>Frame_Anchor</code> làm First-Frame để Google Flow Veo 3.1 nâng máy thẳng đứng lên vòm cây/tòa tháp trên cao (<code>Jib-Up</code>), tự động cắt tại đỉnh cao nhất (<code>Auto-Trim Canopy Apex</code>), khử góc nghiêng camera roll về <code>0.0&deg;</code>, đảo ngược thời gian kèm <strong>DIS Bidirectional Flow Warp + 180&deg; Vertical Shutter Motion Blur</strong> và hội tụ êm ái về đúng khoảnh khắc mở lời nói (<code>SSIM = 0.9846 &ndash; 0.9923</code>, <code>VERDICT: PASS 0 events</code>).",
+        "why_title": "Vì sao không dùng dịch ảnh phẳng 2D hoặc gắn cả Start + End Frame trên Veo?",
+        "why": "Nếu dịch ảnh phẳng 2D sẽ mất hoàn toàn thị sai 3D (hồ bơi, ngọn cọ, tòa tháp phía sau) và lộ mép gương phản chiếu; còn nếu giữ nguyên cả đoạn đuôi của Veo khi máy quay tự ý dừng/hạ lùi sẽ gây nhảy giật <code>C5_POP</code> ở giây đầu. Engine <strong><code>jib_down_engine.py</code></strong> bảo toàn 100% khung hình 3D thật của Veo, tự cắt đúng đỉnh <code>cum_y</code>, xoay bù <code>+rot_cum</code> trong <code>getRotationMatrix2D</code> và dùng 3-frame Optical-Flow Morph nối thẳng vào <code>Frame_Anchor + 1</code>.",
+        "how_title": "Gọi tự nhiên JIB DOWN hoặc chạy CLI 1 chạm với preset jib-down",
+        "how_intro": "Gọi trực tiếp bằng câu tự nhiên hoặc chạy lệnh CLI của ai-hook:",
+        "how_cmd": "python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video \"/Users/vietmac/Documents/AItest2/footageai1.mp4\" --preset jib-down",
+        "local_videos_title": "🎬 Đối Chiếu 2 Case Study Thực Chiến: ① Công Viên Tán Cây (viet2210.MOV) &rarr; ② Hồ Bơi, Hàng Cọ &amp; Tòa Tháp 3D (AItest2/footageai1.mp4)",
+        "local_videos_badge": "3D Veo Parallax • 1080×1920 @ 24fps • PASS 10/10 Vertical-Jib Gates",
+        "local_videos": [
+          {
+            "src": "studios/viet2210_jib_down_master.mp4",
+            "fallback_url": "studios/viet2210_jib_down_master.mp4",
+            "badge": "① CASE 1: CÔNG VIÊN TÁN CÂY XANH (VIET2210.MOV • SSIM 0.9923)",
+            "title": "Case 1 Master: viet2210_jib_down_master.mp4 (Frame Anchor #48 @ 2.04s)",
+            "desc": "Từ vòm lá cây công viên trên cao hạ thẳng đứng mượt mà xuống ngang mắt anh Việt (vp = 0.89–0.91, sc = 1.00, max |Δlog(m)| = 0.30, SSIM = 0.9923) kèm âm thanh Canopy Air Rush + Crane Whoosh + 55Hz Sub-thump."
+          },
+          {
+            "src": "studios/footageai1_jib_down_web.mp4",
+            "fallback_url": "studios/footageai1_jib_down_web.mp4",
+            "badge": "② CASE 2: HỒ BƠI, HÀNG CỌ & TÒA THÁP 3D (FOOTAGEAI1.MP4 • SSIM 0.9846)",
+            "title": "Case 2 Master: footageai1_jib_down_master.mp4 (Frame Anchor #124 @ 5.17s)",
+            "desc": "Bảo toàn 100% phối cảnh 3D Parallax của hai tòa tháp chung cư, ngọn cọ và hồ bơi xanh; tự động cắt đỉnh Jib-Up tại #150/192 (cum_y = 790.6px), khử góc nghiêng camera roll về 0.0° và đáp êm vào nhịp bước đi nói."
+          }
+        ],
+        "items": [
+          {
+            "tier": "1. Bốn Trụ Cột Kỹ Thuật Của Hạ Cần Cẩu 3D (jib_down_engine.py)",
+            "code": "TRỤ CỘT 1",
+            "name": "Unique Hash Anchor & Auto-Trim Canopy Apex (#150/192)",
+            "desc": "Đặt tên ảnh mỏ neo duy nhất theo mã băm nội dung chống trùng trong Google Flow Asset Drawer (SSIM(f0, anchor) >= 0.65), tự động cắt tại đỉnh cao nhất của quỹ đạo nâng máy trước khi Veo dừng hoặc hạ máy lùi."
+          },
+          {
+            "tier": "1. Bốn Trụ Cột Kỹ Thuật Của Hạ Cần Cẩu 3D (jib_down_engine.py)",
+            "code": "TRỤ CỘT 2",
+            "name": "Pure 3D Parallax Roll Derotation & Vertical Flow Linearization",
+            "desc": "Giữ nguyên 100% khung hình 3D thật của Veo, xoay bù +rot_cum khử nghiêng đường chân trời về 0.0°, tuyến tính hóa cum_y và lấy mẫu lại theo đường cong 16% linear + 84% easeInOutCubic."
+          },
+          {
+            "tier": "1. Bốn Trụ Cột Kỹ Thuật Của Hạ Cần Cẩu 3D (jib_down_engine.py)",
+            "code": "TRỤ CỘT 3",
+            "name": "DIS Bidirectional Flow Warp + 180° Shutter + 3-Frame Flow Morph",
+            "desc": "Nội suy 2 chiều không bóng ma, phủ 180° Vertical Shutter Motion Blur giảm dần về 0 trong 8 frames cuối, hội tụ ECC Euclidean 12 frames + 3-frame Flow Morph nối thẳng vào Frame_Anchor + 1."
+          },
+          {
+            "tier": "2. Chế Độ Kiểm Định --mode vertical-jib & Âm Thanh Cần Cẩu (verify_jib_down.py)",
+            "code": "VERTICAL-JIB",
+            "name": "Vertical Purity >= 0.72, Sign Consistency >= 0.85 & Studio Crane SFX",
+            "desc": "Kiểm định nghiêm ngặt độ thuần khiết trục dọc (vp đạt 0.91–0.94), tính nhất quán chiều hạ máy (sc đạt 0.99–1.00), C8_ROLL <= 2.5°/0.5s và C10_ANCHOR SSIM >= 0.98, phối sẵn sfx_jib_down_2p3s.wav."
+          }
+        ],
+        "asset_dir": "jib_down_hook",
+        "showcase_title": "🖼️ Bảng Kiểm Định Từng Frame Hạ Cần Cẩu 3D Parallax & Contact Sheet 2 Case Study",
+        "showcase_badge": "Chuẩn 90FD0890 • Nghiệm Thu CLAUDE2 • VERDICT: PASS (0 events)",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_footageai1_jib_down_landing.jpg",
+            "caption": "Chuỗi frame hạ cần cẩu 3D Parallax trên AItest2/footageai1.mp4 (0.00s → 2.33s): Từ đỉnh ngọn cọ, hai tòa tháp & hồ bơi hạ mượt xuống lối đi lát đá khớp Frame #124",
+            "web_src": "assets/jib_down_hook/qa_footageai1_jib_down_landing.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_footageai1_jib_down_sheet.jpg",
+            "caption": "Contact Sheet tổng thể footageai1_jib_down_master.mp4 (1080x1920 @ 24fps): vp = 0.91–0.94, sc = 0.99–1.00, SSIM = 0.9846, PASS 0 events",
+            "web_src": "assets/jib_down_hook/qa_footageai1_jib_down_sheet.jpg"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_viet2210_jib_down_sheet.jpg",
+            "caption": "Contact Sheet tổng thể viet2210_jib_down_master.mp4 (1080x1920 @ 24fps): Hạ cần cẩu từ vòm cây công viên xuống ngang mắt Frame #48 (SSIM = 0.9923, PASS 0 events)",
+            "web_src": "assets/jib_down_hook/qa_viet2210_jib_down_sheet.jpg"
+          }
+        ],
+        "tech_specs": [
+          "Engine lõi: ~/.gemini/config/skills/ai-hook/scripts/jib_down_engine.py (tích hợp trong ai_hook_engine.py --preset jib-down / crane-jib-down và hook_scanner.py).",
+          "Bộ kiểm định 10 cổng: ~/.gemini/config/skills/ai-hook/scripts/verify_jib_down.py --mode vertical-jib (--self-test đạt SELF_TEST: PASS).",
+          "Âm thanh Studio: ~/.gemini/config/skills/ai-hook/assets/sfx_jib_down_2p3s.wav (Canopy Air Rush + Smooth Hydraulic Crane Whoosh + Soft Air Cushion 55Hz Sub-thump @ 2.22s).",
+          "Hai sản phẩm Master chuẩn: /Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_jib_down_master.mp4 & /Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_jib_down_master.mp4."
+        ]
+      },
       {
         "id": "ai-hook-sticker-transition-3d-peel",
         "date": "2026-10-24",
@@ -740,15 +849,15 @@ window.SKILL_LIVE_DATA = {
     },
     "ai-hook": {
       "id": "ai-hook",
-      "name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "badge": "AI HOOK ROUTER",
-      "desc": "Hệ thống tự động quét 3 giây đầu video gốc và kết xuất các chế độ Hook: Rooftop Jump V3, Earth Zoom V3, Through Object, Rapid Zoom, Pantone1 (2.40s) & Sticker Transition (3D Die-Cut Sticker Peel & Match-Cut 2.15s).",
+      "desc": "Hệ thống tự động quét 3 giây đầu video gốc và kết xuất các chế độ Hook: Rooftop Jump V3, Earth Zoom V3/V5, Vertical Crane Jib-Down (2.30s), Through Object, Rapid Zoom, Pantone1 (2.40s) & Sticker Transition (2.15s).",
       "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
-      "size": 26594,
-      "size_formatted": "26.0 KB",
-      "lines_count": 184,
-      "mtime": 1792819300.019477,
-      "mtime_formatted": "24/10/2026 12:21",
+      "size": 33970,
+      "size_formatted": "33.2 KB",
+      "lines_count": 210,
+      "mtime": 1792827888.0413792,
+      "mtime_formatted": "24/10/2026 14:44",
       "headers": [
         "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
         "1. Kiến Trúc 4 Chế Độ Preset Đóng Gói Sẵn (`hooks_registry.json`)",
@@ -4143,18 +4252,18 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "ai_hook_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 41846,
-      "size_formatted": "40.9 KB",
-      "lines": 946,
-      "mtime": 1792819235.2177157,
-      "mtime_formatted": "24/10/2026 12:20",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 42134,
+      "size_formatted": "41.1 KB",
+      "lines": 954,
+      "mtime": 1792827781.107316,
+      "mtime_formatted": "24/10/2026 14:43",
       "desc": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
       "name": "blinds_in_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 32693,
       "size_formatted": "31.9 KB",
       "lines": 706,
@@ -4165,7 +4274,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "build_earth_zoom_master_v3.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 37313,
       "size_formatted": "36.4 KB",
       "lines": 744,
@@ -4176,7 +4285,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "earth_zoom_master_v2.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 26812,
       "size_formatted": "26.2 KB",
       "lines": 664,
@@ -4187,40 +4296,40 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "earth_zoom_omni_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 12140,
-      "size_formatted": "11.9 KB",
-      "lines": 259,
-      "mtime": 1792817808.6501017,
-      "mtime_formatted": "24/10/2026 11:56",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 20813,
+      "size_formatted": "20.3 KB",
+      "lines": 478,
+      "mtime": 1792821275.3790393,
+      "mtime_formatted": "24/10/2026 12:54",
       "desc": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
     },
     {
       "name": "flycam_transition_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 40177,
-      "size_formatted": "39.2 KB",
-      "lines": 960,
-      "mtime": 1792802366.7570322,
-      "mtime_formatted": "24/10/2026 07:39",
-      "desc": "Flycam-Transition AI Hook Engine (`flycam_transition_engine.py`)"
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 39972,
+      "size_formatted": "39.0 KB",
+      "lines": 904,
+      "mtime": 1792821115.8472116,
+      "mtime_formatted": "24/10/2026 12:51",
+      "desc": "Flycam-Transition V2 AI Hook Engine (`flycam_transition_engine.py`)"
     },
     {
       "name": "giant_grab_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 39854,
-      "size_formatted": "38.9 KB",
-      "lines": 895,
-      "mtime": 1792801089.9385047,
-      "mtime_formatted": "24/10/2026 07:18",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 40604,
+      "size_formatted": "39.7 KB",
+      "lines": 912,
+      "mtime": 1792820687.649398,
+      "mtime_formatted": "24/10/2026 12:44",
       "desc": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
     },
     {
       "name": "hero_cam_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 28882,
       "size_formatted": "28.2 KB",
       "lines": 693,
@@ -4231,29 +4340,29 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "hook_scanner.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 18723,
-      "size_formatted": "18.3 KB",
-      "lines": 416,
-      "mtime": 1792819263.0194821,
-      "mtime_formatted": "24/10/2026 12:21",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 19477,
+      "size_formatted": "19.0 KB",
+      "lines": 425,
+      "mtime": 1792827743.237314,
+      "mtime_formatted": "24/10/2026 14:42",
       "desc": "AI Hook Scanner (`hook_scanner.py`) — Bộ giải phẫu video đầu vào & gợi ý Hook thông minh"
     },
     {
       "name": "jib_down_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 35273,
-      "size_formatted": "34.4 KB",
-      "lines": 760,
-      "mtime": 1792817975.6204822,
-      "mtime_formatted": "24/10/2026 11:59",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 36505,
+      "size_formatted": "35.6 KB",
+      "lines": 773,
+      "mtime": 1792827740.0401027,
+      "mtime_formatted": "24/10/2026 14:42",
       "desc": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
     },
     {
       "name": "katana_palette_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 39666,
       "size_formatted": "38.7 KB",
       "lines": 975,
@@ -4264,7 +4373,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "point_cloud_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 39361,
       "size_formatted": "38.4 KB",
       "lines": 896,
@@ -4275,7 +4384,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "rooftop_jump_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 18537,
       "size_formatted": "18.1 KB",
       "lines": 422,
@@ -4286,7 +4395,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "sticker_transition_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 32651,
       "size_formatted": "31.9 KB",
       "lines": 739,
@@ -4297,29 +4406,40 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "timelapse_freeze_engine.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 35211,
-      "size_formatted": "34.4 KB",
-      "lines": 848,
-      "mtime": 1792819393.5305889,
-      "mtime_formatted": "24/10/2026 12:23",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 35666,
+      "size_formatted": "34.8 KB",
+      "lines": 853,
+      "mtime": 1792821034.1258686,
+      "mtime_formatted": "24/10/2026 12:50",
       "desc": "Timelapse-Freeze AI Hook Engine (`timelapse_freeze_engine.py`)"
     },
     {
       "name": "verify_flycam_transition.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 62067,
-      "size_formatted": "60.6 KB",
-      "lines": 1461,
-      "mtime": 1792800392.7805753,
-      "mtime_formatted": "24/10/2026 07:06",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 83619,
+      "size_formatted": "81.7 KB",
+      "lines": 1894,
+      "mtime": 1792821399.0401013,
+      "mtime_formatted": "24/10/2026 12:56",
       "desc": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
+    },
+    {
+      "name": "verify_jib_down.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 34290,
+      "size_formatted": "33.5 KB",
+      "lines": 728,
+      "mtime": 1792827694.4328005,
+      "mtime_formatted": "24/10/2026 14:41",
+      "desc": "Anti-Jitter / Anti-Stutter QA Verifier for Vertical-Jib / AI-Hook renders."
     },
     {
       "name": "verify_katana_palette.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 34455,
       "size_formatted": "33.6 KB",
       "lines": 856,
@@ -4330,18 +4450,18 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "verify_smooth_zoom.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "size": 26928,
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "size": 26938,
       "size_formatted": "26.3 KB",
       "lines": 467,
-      "mtime": 1792817332.381445,
-      "mtime_formatted": "24/10/2026 11:48",
+      "mtime": 1792820697.499675,
+      "mtime_formatted": "24/10/2026 12:44",
       "desc": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
     },
     {
       "name": "verify_sticker_transition.py",
       "skill_id": "ai-hook",
-      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill_name": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "size": 58062,
       "size_formatted": "56.7 KB",
       "lines": 1347,
@@ -4355,118 +4475,126 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792819406.701178,
-      "mtime_formatted": "24/10/2026 12:23",
-      "detail": "6 quy chuẩn • 10 studios"
-    },
-    {
-      "name": "scripts/timelapse_freeze_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792819393.5305889,
-      "mtime_formatted": "24/10/2026 12:23",
-      "detail": "Timelapse-Freeze AI Hook Engine (`timelapse_freeze_engine.py`)"
+      "mtime": 1792828026.0602345,
+      "mtime_formatted": "24/10/2026 14:47",
+      "detail": "7 quy chuẩn • 12 studios"
     },
     {
       "name": "ai-hook/SKILL.md",
       "type": "Markdown Spec",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792819300.019477,
-      "mtime_formatted": "24/10/2026 12:21",
-      "detail": "184 dòng • 5 mục chính"
-    },
-    {
-      "name": "scripts/hook_scanner.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792819263.0194821,
-      "mtime_formatted": "24/10/2026 12:21",
-      "detail": "AI Hook Scanner (`hook_scanner.py`) — Bộ giải phẫu video đầu vào & gợi ý Hook thông minh"
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792827888.0413792,
+      "mtime_formatted": "24/10/2026 14:44",
+      "detail": "210 dòng • 5 mục chính"
     },
     {
       "name": "scripts/ai_hook_engine.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792819235.2177157,
-      "mtime_formatted": "24/10/2026 12:20",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792827781.107316,
+      "mtime_formatted": "24/10/2026 14:43",
       "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
+    },
+    {
+      "name": "scripts/hook_scanner.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792827743.237314,
+      "mtime_formatted": "24/10/2026 14:42",
+      "detail": "AI Hook Scanner (`hook_scanner.py`) — Bộ giải phẫu video đầu vào & gợi ý Hook thông minh"
+    },
+    {
+      "name": "scripts/jib_down_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792827740.0401027,
+      "mtime_formatted": "24/10/2026 14:42",
+      "detail": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
+    },
+    {
+      "name": "scripts/verify_jib_down.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792827694.4328005,
+      "mtime_formatted": "24/10/2026 14:41",
+      "detail": "Anti-Jitter / Anti-Stutter QA Verifier for Vertical-Jib / AI-Hook renders."
+    },
+    {
+      "name": "scripts/verify_flycam_transition.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792821399.0401013,
+      "mtime_formatted": "24/10/2026 12:56",
+      "detail": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
+    },
+    {
+      "name": "scripts/earth_zoom_omni_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792821275.3790393,
+      "mtime_formatted": "24/10/2026 12:54",
+      "detail": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
+    },
+    {
+      "name": "scripts/flycam_transition_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792821115.8472116,
+      "mtime_formatted": "24/10/2026 12:51",
+      "detail": "Flycam-Transition V2 AI Hook Engine (`flycam_transition_engine.py`)"
+    },
+    {
+      "name": "scripts/timelapse_freeze_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792821034.1258686,
+      "mtime_formatted": "24/10/2026 12:50",
+      "detail": "Timelapse-Freeze AI Hook Engine (`timelapse_freeze_engine.py`)"
+    },
+    {
+      "name": "scripts/verify_smooth_zoom.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792820697.499675,
+      "mtime_formatted": "24/10/2026 12:44",
+      "detail": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
+    },
+    {
+      "name": "scripts/giant_grab_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "mtime": 1792820687.649398,
+      "mtime_formatted": "24/10/2026 12:44",
+      "detail": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
     },
     {
       "name": "scripts/verify_sticker_transition.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792819097.907293,
       "mtime_formatted": "24/10/2026 12:18",
       "detail": "SA2 — Deterministic 5-Gate Verifier (G0_COMMON + G1..G4) & Self-Test Suite"
     },
     {
-      "name": "scripts/jib_down_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792817975.6204822,
-      "mtime_formatted": "24/10/2026 11:59",
-      "detail": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
-    },
-    {
       "name": "scripts/katana_palette_engine.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792817821.3488367,
       "mtime_formatted": "24/10/2026 11:57",
       "detail": "Katana Palette Hook Engine (`katana_palette_engine.py`) — `katana-palette-hook` (2.40s Hook)"
     },
     {
-      "name": "scripts/earth_zoom_omni_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792817808.6501017,
-      "mtime_formatted": "24/10/2026 11:56",
-      "detail": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
-    },
-    {
       "name": "scripts/verify_katana_palette.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792817773.2329297,
       "mtime_formatted": "24/10/2026 11:56",
       "detail": "SA2 — Katana Palette Verifier (Gates G0, K1, K2, K3, K4)"
     },
     {
-      "name": "scripts/verify_smooth_zoom.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792817332.381445,
-      "mtime_formatted": "24/10/2026 11:48",
-      "detail": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
-    },
-    {
-      "name": "scripts/flycam_transition_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792802366.7570322,
-      "mtime_formatted": "24/10/2026 07:39",
-      "detail": "Flycam-Transition AI Hook Engine (`flycam_transition_engine.py`)"
-    },
-    {
-      "name": "scripts/giant_grab_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792801089.9385047,
-      "mtime_formatted": "24/10/2026 07:18",
-      "detail": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
-    },
-    {
-      "name": "scripts/verify_flycam_transition.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
-      "mtime": 1792800392.7805753,
-      "mtime_formatted": "24/10/2026 07:06",
-      "detail": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
-    },
-    {
       "name": "scripts/blinds_in_engine.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792800202.3285782,
       "mtime_formatted": "24/10/2026 07:03",
       "detail": "3D Venetian Blinds Peek-In Engine (`blinds_in_engine.py`) — `through-object-in` (2.15s Hook)"
@@ -4474,7 +4602,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "scripts/sticker_transition_engine.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792800084.41793,
       "mtime_formatted": "24/10/2026 07:01",
       "detail": "3D Die-Cut Sticker Peel & Match-Cut AI Hook Engine (`sticker_transition_engine.py`)"
@@ -4482,7 +4610,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "scripts/hero_cam_engine.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792799861.6525674,
       "mtime_formatted": "24/10/2026 06:57",
       "detail": "180-Degree Orbital Whip-Around + 2.5D DIBR Tail Engine (hero-cam 2.10s AI Hook)."
@@ -4490,7 +4618,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "scripts/point_cloud_engine.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792774531.450546,
       "mtime_formatted": "23/10/2026 23:55",
       "detail": "3D LiDAR Matrix & Blueprint Wireframe Assembly Engine (point-cloud 2.20s AI Hook)."
@@ -4562,7 +4690,7 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "scripts/build_earth_zoom_master_v3.py",
       "type": "Python Script",
-      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
+      "skill": "AI Hook Studio (Smart AI Hook Router & 9 Presets: Rooftop Jump, Earth Zoom, Jib-Down, Through Object, Rapid Zoom, Pantone1, Sticker Transition...)",
       "mtime": 1792681927.5065823,
       "mtime_formatted": "22/10/2026 22:12",
       "detail": "Earth Zoom master v3: ex_1 space | concentric cloud punch-through | Veo1 clear city | Veo B_flow->A | viet2210.MOV."
@@ -4582,14 +4710,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792678726.2243233,
       "mtime_formatted": "22/10/2026 21:18",
       "detail": "so_do_motion_cli.py — CLI ĐIỀU PHỐI KỸ NĂNG SƠ ĐỒ MOTION 60FPS (SO-DO-MOTION)"
-    },
-    {
-      "name": "scripts/self_learning_voice_loop.py",
-      "type": "Python Script",
-      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
-      "mtime": 1792678713.1320174,
-      "mtime_formatted": "22/10/2026 21:18",
-      "detail": "STEP 2 (UPGRADED V2): GEMINI 3.8 FLASH TTS STUDIO VOICE + REAL-VOICE ACOUSTIC TRANSFER LOOP"
     }
   ]
 };
