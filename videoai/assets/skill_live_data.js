@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 15:12:58
+ * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 17:59:32
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "24/10/2026 15:12:58",
-  "last_synced_iso": "2026-10-24T15:12:58.588847",
+  "last_synced_formatted": "24/10/2026 17:59:32",
+  "last_synced_iso": "2026-10-24T17:59:32.772911",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,10 +15,10 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 18,
     "components_count": 22,
-    "scripts_count": 55,
+    "scripts_count": 65,
     "skills_count": 7,
-    "studios_count": 14,
-    "evolution_entries_count": 10
+    "studios_count": 15,
+    "evolution_entries_count": 11
   },
   "evolution": {
     "version": 1,
@@ -31,6 +31,16 @@ window.SKILL_LIVE_DATA = {
       "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
     ],
     "studios": [
+      {
+        "source": "studio_ai_hook_glow_trace.html",
+        "slug": "studio-ai-hook-glow-trace.html",
+        "order": -9,
+        "icon": "⚡",
+        "title": "Studio AI Hook GLOW TRACE: Quét Tia Laser Neon Đôi & Sóng Cầu Mở Khóa SDF (2.00s)",
+        "badge": "AI Hook #7: glow-trace • Dual Arclength Laser + SDF Wave • PASS 100% G1–G5",
+        "badge_class": "motion",
+        "desc": "Trình diễn trực tiếp AI Hook #7 (glow-trace — 2.002s / 48 frames): Chuyển nền về bản vẽ kỹ thuật Blueprint Navy #0A1A2F (luma 0.072 ≤ 0.12), 2 tia Laser Cyan #00E5FF & Gold #FFC24A chạy đối xứng dọc biên silhouette với bước cung đều 2px (CV 0.785% ≤ 5%), chạm nhau tại đỉnh đầu ở f30 (0.00 px) và bung sóng cầu Spherical SDF Reveal Wave mở khóa 100% khung hình thật tại f44 (SSIM Seam = 0.9977 ≥ 0.995)."
+      },
       {
         "source": "studio_ai_hook_display_transition.html",
         "slug": "studio-ai-hook-display-transition.html",
@@ -183,6 +193,68 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "ai-hook-glow-trace-batch3",
+        "date": "2026-10-24",
+        "title": "AI Hook #7 Preset 'glow-trace': Quét Tia Laser Neon Đôi Theo Độ Dài Cung & Sóng Mở Khóa SDF 2.00s (Kỹ năng ai-hook)",
+        "step_target": [
+          "dinh-dang",
+          "buoc-1",
+          "buoc-4"
+        ],
+        "source_thread": "abd48968-02c2-4354-a375-57738c422a08",
+        "studio_file": "studio_ai_hook_glow_trace.html",
+        "what_title": "Nền Blueprint #0A1A2F (f00..f30) → 2 Tia Laser Cyan/Gold Chạy Đối Xứng Hội Tụ Đỉnh Đầu (f30) → Sóng Cầu SDF Mở Khóa Hình Thật 100% (f30..f44) & Byte-Copy Anchor (f45..f47)",
+        "what": "Chế độ Hook mới <strong><code>glow-trace</code></strong> (aliases: <code>neon-laser-trace</code>, <code>sdf-reveal</code>, <code>blueprint-laser</code> &mdash; <code>2.002s</code> / <code>48 frames</code> @ 23.976fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Chuyển <code>plate.png</code> về nền bản vẽ kỹ thuật <strong>Blueprint Navy <code>#0A1A2F</code></strong> (Luma trung bình <code>0.072 &le; 0.12</code>, lưới <code>24px/6px</code>, nét Canny vùng mặt thanh thoát <code>2.94% &le; 6%</code>). Hai tia Laser <strong>Cyan <code>#00E5FF</code></strong> (chiều kim đồng hồ) và <strong>Gold <code>#FFC24A</code></strong> (ngược chiều kim đồng hồ) xuất phát từ đáy silhouette chạy ngược chiều nhau theo hàm <code>s(t) = (L/2) &middot; S(t/30)</code> với bước cung đều <code>2px</code> (<code>CV = 0.785% &le; 5%</code>) kèm 3 lớp Gaussian Bloom (<code>&sigma; = 4, 12, 24</code>) và vệt đuôi tắt hàm mũ (<code>half-life = 6 frames</code>). Tại <code>f30</code>, hai tia chạm nhau chính xác tuyệt đối ở đỉnh đầu (<code>0.00 px &le; 3px</code>) phát tia chớp <code>Crown Apex Flash</code> và lan tỏa sóng cầu <strong><code>SDF Reveal Wave</code></strong> mở khóa 100% <code>frame48.png</code> thật tại <code>f44</code>, khóa byte-copy <code>frame48.png</code> ở <code>f45..f47</code> nối mượt sang phần nói (<code>SSIM = 0.9977 &ge; 0.995</code>, <code>&Delta;E = 0.847 &lt; 1.0</code>).",
+        "why_title": "Vì sao phải Tham số hóa Độ dài cung 2px (Arclength Re-parameterization) và Mở khóa bằng Sóng cầu SDF?",
+        "why": "1) Contour thô trích từ <code>findContours</code> có mật độ điểm không đều (nơi đường chéo dày hơn đường thẳng ngang/dọc) và hai nhánh trái/phải của cơ thể có độ dài khác nhau; nếu chạy theo chỉ số mảng thô, 2 tia Laser sẽ bị giật tốc độ và lệch điểm gặp nhau. Đặt gốc <code>base_xy</code> tại điểm đối xứng chu vi <code>s = L/2</code> so với đỉnh đầu <code>apex_xy</code> và resample cách đều <code>2.0px</code> giúp 2 tia gặp nhau tại đỉnh đầu ở đúng <code>f30</code> với sai số <code>0.00 px</code>.<br>2) Sóng mở khóa hình cầu <code>M(x,y,t) = smoothstep(r(t)-40, r(t), r(t)-d(x,y))</code> từ chính điểm hội tụ đỉnh đầu <code>apex_xy</code> đảm bảo mọi pixel mở khóa đơn điệu <code>M(t) &sube; M(t+1)</code>, gương mặt anh Việt ở ngay dưới đỉnh đầu được mở lộ rõ nét đầu tiên và khóa 100% khung hình thật tại <code>f44</code>.",
+        "how_title": "Gọi tự nhiên GLOW TRACE / NEON LASER TRACE hoặc chạy CLI 1 chạm",
+        "how_intro": "Gọi trực tiếp bằng câu tự nhiên ('GLOW TRACE : <video>', 'NEON LASER TRACE : <video>') hoặc chạy lệnh CLI:",
+        "how_cmd": "python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210.MOV\" --preset glow-trace",
+        "local_videos_title": "🎬 Trình Diễn Trực Tiếp Video Master AI Hook #7 — Glow Trace (viet2210_glow_trace_master.mp4)",
+        "local_videos_badge": "Dual Arclength Neon Laser + SDF Reveal • 1080×1920 @ 23.976fps • PASS 100% G1–G5 + G0_SEAM (SSIM 0.9977)",
+        "local_videos": [
+          {
+            "src": "studios/viet2210_glow_trace_master.mp4",
+            "fallback_url": "studios/viet2210_glow_trace_master.mp4",
+            "badge": "VIDEO MASTER GLOW-TRACE (VIET2210_GLOW_TRACE_MASTER.MP4 • PASS 6/6 GATES)",
+            "title": "Master: viet2210_glow_trace_master.mp4 (Dual Laser Trace f00..f30 → Crown Apex Flash f30 → SDF Wave Reveal f30..f44 → Byte-Copy Lock f45..f47)",
+            "desc": "Nền Blueprint #0A1A2F (luma 0.072) + 2 tia Laser Cyan #00E5FF & Gold #FFC24A chạy đối xứng dọc biên silhouette (CV 0.785%, Hausdorff 0.978px), hội tụ đỉnh đầu tại f30 (0.00px), bung sóng cầu SDF mở khóa 100% tại f44 và nối mượt vào frame #49 (SSIM 0.9977, ΔE 0.847) kèm Studio SFX -14.0 LUFS."
+          }
+        ],
+        "items": [
+          {
+            "tier": "1. Ba Pha Toán Học Dual Arclength Laser & Spherical SDF Reveal (glow_trace_engine.py)",
+            "code": "PHA 1 (f00..f30)",
+            "name": "Dual Arclength-Parameterized Neon Laser (Cyan CW + Gold CCW) & 3-Layer HDR Bloom",
+            "desc": "Resample contour cách đều 2px (CV = 0.785% ≤ 5%, Hausdorff = 0.978px ≤ 2px). Hai tia chạy từ đáy silhouette lên đỉnh đầu theo Quintic C2 s(t) = (L/2)·S(t/30), lõi trắng 2px + 3 lớp Gaussian Bloom (σ = 4, 12, 24) + đuôi tắt hàm mũ (half-life = 6f)."
+          },
+          {
+            "tier": "1. Ba Pha Toán Học Dual Arclength Laser & Spherical SDF Reveal (glow_trace_engine.py)",
+            "code": "PHA 2 (f30..f44)",
+            "name": "Crown Apex Convergence Flash (f30) & Monotonic Spherical SDF Wave Reveal",
+            "desc": "Hai đầu tia chạm nhau tại đỉnh đầu apex_xy = (480, 884) ở f30 (khoảng cách 0.00 px ≤ 3px), kích hoạt sóng cầu SDF M(x,y,t) = smoothstep(r(t)-40, r(t), r(t)-d(x,y)) mở khóa đơn điệu 100% frame48.png tại f44."
+          },
+          {
+            "tier": "1. Ba Pha Toán Học Dual Arclength Laser & Spherical SDF Reveal (glow_trace_engine.py)",
+            "code": "PHA 3 (f45..f47)",
+            "name": "Byte-Copy Frame #48 Anchor Lock & Seamless Talk Continuation (-14.0 LUFS)",
+            "desc": "3 frames cuối (f45..f47) là byte-copy của frame48.png (diff = 0.0), nối sang frame #49 của viet2210.MOV đạt SSIM = 0.9977, MAD_ratio = 0.9885, ΔE = 0.847 kèm âm thanh Dual Laser Hum + Sparkle Ticks → Crystal Ping @ f30 → Radial Whoosh & 55Hz Sub Lock @ f44."
+          }
+        ],
+        "asset_dir": "glow_trace_batch3",
+        "showcase_title": "🖼️ Bảng Kiểm Định 12 Keyframes & Phóng Đại 300% Vùng Mặt Điểm Đáp f44..f48 (qa_glow_trace_sheet.jpg)",
+        "showcase_badge": "Chuẩn ABD48968 • CLAUDE2 Nghiệm Thu • VERDICT: PASS 100% G1–G5 + G0_SEAM",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/work_glow_trace/qa_glow_trace_sheet.jpg",
+            "badge": "QA CONTACT SHEET + 300% FACE ZOOM (F44..F48)",
+            "title": "12 Keyframes Tiến Trình Hook (f00..f47) & Zoom 300% Vùng Mặt Điểm Đáp (f44..f48)",
+            "desc": "Kiểm chứng trực quan: 2 tia Cyan/Gold leo dọc biên silhouette, hội tụ tại đỉnh đầu ở f30, bung sóng cầu SDF mở khóa từ đỉnh đầu xuống thân ở f30..f44 và giữ nguyên 100% độ nét gương mặt ở f44..f48.",
+            "web_src": "assets/glow_trace_batch3/qa_glow_trace_sheet.jpg"
+          }
+        ]
+      },
       {
         "id": "ai-hook-display-transition-kling19",
         "date": "2026-10-24",
@@ -1074,16 +1146,15 @@ window.SKILL_LIVE_DATA = {
       "badge": "SPA NICHE PACK V10",
       "desc": "Gói đóng gói chuyên biệt cho chủ đề Spa/Thẩm mỹ (Gọi tự nhiên: 'Hãy edit video sau theo phong cách spa' hoặc 'EDIT SPA' — Whip-Snap Zoom 0.28s khớp nhịp lấy hơi, Logo chỉ ở CTA & Outro, Atlas 2D hội ý CLAUDE2, Trước-Sau nền trắng #F5F2EB).",
       "path": "/Users/vietmac/.gemini/config/skills/spa-edit/SKILL.md",
-      "size": 8567,
-      "size_formatted": "8.4 KB",
-      "lines_count": 93,
-      "mtime": 1792742189.1667032,
-      "mtime_formatted": "23/10/2026 14:56",
+      "size": 8231,
+      "size_formatted": "8.0 KB",
+      "lines_count": 72,
+      "mtime": 1792832623.6388752,
+      "mtime_formatted": "24/10/2026 16:03",
       "headers": [
-        "🗣️ 0. TÊN KỸ NĂNG & CÁCH GỌI TỰ NHIÊN (0 MA SÁT)",
-        "🔥 1. BỐN NÂNG CẤP CỐT LÕI ĐÃ CẬP NHẬT TRONG BẢN `V10 MASTER`",
-        "🚀 2. ĐẦU VÀO CẦN GÌ (`INPUTS`)?",
-        "⚡ 3. CÁC LỆNH CHẠY TẤT ĐỊNH (`1-TURN CLI`)"
+        "🗣️ 0. CÁCH GỌI TỰ NHIÊN CHỈ VỚI 1 VIDEO QUAY ĐIỆN THOẠI (0 MA SÁT)",
+        "🔄 1. QUY TRÌNH 2 PHA THÔNG MINH (LẬP KẾ HOẠCH & HỎI CONFIRM ➔ KẾT XUẤT VIDEO `.MP4`)",
+        "🔥 2. NĂM TIÊU CHUẨN CỐT LÕI ĐÃ ĐÓNG BĂNG TRONG ENGINE `V10 MASTER`"
       ],
       "status": "ACTIVE"
     },
@@ -1112,11 +1183,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "AI HOOK ROUTER V3.0",
       "desc": "Hệ thống Smart AI Hook Router v3.0 (Zero-Collision Registry hooks.d/ + register_hook.py khóa nguyên tử fcntl.flock) tự động quét 3 giây đầu video gốc và kết xuất 15 chế độ Hook: Rooftop Jump V3, Earth Zoom V3/V5, Display Transition 2.5D Homography (2.00s), Intermission Stage Velvet Curtain (2.00s), Vertical Crane Jib-Down (2.30s), Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object & Rapid Zoom.",
       "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
-      "size": 48273,
-      "size_formatted": "47.1 KB",
-      "lines_count": 278,
-      "mtime": 1792829249.014575,
-      "mtime_formatted": "24/10/2026 15:07",
+      "size": 50442,
+      "size_formatted": "49.3 KB",
+      "lines_count": 283,
+      "mtime": 1792830713.0743582,
+      "mtime_formatted": "24/10/2026 15:31",
       "headers": [
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
         "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
@@ -4447,23 +4518,34 @@ window.SKILL_LIVE_DATA = {
       "name": "spa_edit_cli.py",
       "skill_id": "spa-edit",
       "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "size": 3953,
-      "size_formatted": "3.9 KB",
-      "lines": 83,
-      "mtime": 1792654773.6891718,
-      "mtime_formatted": "22/10/2026 14:39",
-      "desc": "SPA EDIT CLI V7.2 — ONE-COMMAND DETERMINISTIC PACKAGING ENGINE FOR SPA / CLINIC VIDEOS"
+      "size": 71953,
+      "size_formatted": "70.3 KB",
+      "lines": 1473,
+      "mtime": 1792833161.1937935,
+      "mtime_formatted": "24/10/2026 16:12",
+      "desc": "SPA & DENTAL-MEDICAL VIDEO EDIT CLI V10 MASTER — STANDALONE PORTABLE ENGINE FOR STUDENTS"
     },
     {
       "name": "verify_6gates.py",
       "skill_id": "spa-edit",
       "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "size": 2365,
-      "size_formatted": "2.3 KB",
-      "lines": 40,
-      "mtime": 1792742243.7970579,
-      "mtime_formatted": "23/10/2026 14:57",
-      "desc": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
+      "size": 3774,
+      "size_formatted": "3.7 KB",
+      "lines": 84,
+      "mtime": 1792832544.793697,
+      "mtime_formatted": "24/10/2026 16:02",
+      "desc": "7-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT & DENTAL-MEDICAL SKILL (V10 STANDALONE)"
+    },
+    {
+      "name": "verify_readability_and_sync.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "size": 15001,
+      "size_formatted": "14.6 KB",
+      "lines": 328,
+      "mtime": 1792832140.0447268,
+      "mtime_formatted": "24/10/2026 15:55",
+      "desc": "VERIFY READABILITY, COGNITIVE LOAD, CAMERA STABILITY, VERBATIM TRANSCRIPT, EYE-ANCHOR LOCK & VOICE GATE (7-GATE AUDITOR V10)"
     },
     {
       "name": "build_diagram_motion_60fps.py",
@@ -4513,11 +4595,11 @@ window.SKILL_LIVE_DATA = {
       "name": "ai_hook_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "size": 45150,
-      "size_formatted": "44.1 KB",
-      "lines": 1031,
-      "mtime": 1792829015.4819846,
-      "mtime_formatted": "24/10/2026 15:03",
+      "size": 45904,
+      "size_formatted": "44.8 KB",
+      "lines": 1046,
+      "mtime": 1792837927.994247,
+      "mtime_formatted": "24/10/2026 17:32",
       "desc": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
@@ -4546,12 +4628,23 @@ window.SKILL_LIVE_DATA = {
       "name": "display_transition_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "size": 11575,
-      "size_formatted": "11.3 KB",
-      "lines": 298,
-      "mtime": 1792828373.811497,
-      "mtime_formatted": "24/10/2026 14:52",
+      "size": 11842,
+      "size_formatted": "11.6 KB",
+      "lines": 305,
+      "mtime": 1792838321.8287725,
+      "mtime_formatted": "24/10/2026 17:38",
       "desc": "Display Transition 2.5D Homography Engine (`display_transition_engine.py`)"
+    },
+    {
+      "name": "double_exposure_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 25387,
+      "size_formatted": "24.8 KB",
+      "lines": 675,
+      "mtime": 1792830359.7807434,
+      "mtime_formatted": "24/10/2026 15:25",
+      "desc": "AI Hook #8 — Double Exposure (True-Detective Silhouette Blend) (`double-exposure`)"
     },
     {
       "name": "earth_zoom_master_v2.py",
@@ -4568,12 +4661,23 @@ window.SKILL_LIVE_DATA = {
       "name": "earth_zoom_omni_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "size": 20813,
-      "size_formatted": "20.3 KB",
-      "lines": 478,
-      "mtime": 1792821275.3790393,
-      "mtime_formatted": "24/10/2026 12:54",
+      "size": 20468,
+      "size_formatted": "20.0 KB",
+      "lines": 469,
+      "mtime": 1792838339.7795541,
+      "mtime_formatted": "24/10/2026 17:38",
       "desc": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
+    },
+    {
+      "name": "exploded_assembly_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 27297,
+      "size_formatted": "26.7 KB",
+      "lines": 752,
+      "mtime": 1792830546.7397156,
+      "mtime_formatted": "24/10/2026 15:29",
+      "desc": "AI Hook #5 — Exploded Assembly (3D Voronoï/Bento Shards) Engine (`exploded_assembly_engine.py`)"
     },
     {
       "name": "flycam_transition_engine.py",
@@ -4590,12 +4694,23 @@ window.SKILL_LIVE_DATA = {
       "name": "giant_grab_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "size": 40604,
-      "size_formatted": "39.7 KB",
-      "lines": 912,
-      "mtime": 1792820687.649398,
-      "mtime_formatted": "24/10/2026 12:44",
+      "size": 45426,
+      "size_formatted": "44.4 KB",
+      "lines": 988,
+      "mtime": 1792836052.9290512,
+      "mtime_formatted": "24/10/2026 17:00",
       "desc": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
+    },
+    {
+      "name": "glow_trace_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 24640,
+      "size_formatted": "24.1 KB",
+      "lines": 605,
+      "mtime": 1792839499.2475514,
+      "mtime_formatted": "24/10/2026 17:58",
+      "desc": "AI Hook #7 — Glow Trace (Dual Arclength Neon Laser + SDF Reveal) (`glow-trace`) Engine."
     },
     {
       "name": "hero_cam_engine.py",
@@ -4645,11 +4760,11 @@ window.SKILL_LIVE_DATA = {
       "name": "jib_down_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "size": 36505,
-      "size_formatted": "35.6 KB",
-      "lines": 773,
-      "mtime": 1792827740.0401027,
-      "mtime_formatted": "24/10/2026 14:42",
+      "size": 36583,
+      "size_formatted": "35.7 KB",
+      "lines": 774,
+      "mtime": 1792839566.4083023,
+      "mtime_formatted": "24/10/2026 17:59",
       "desc": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
     },
     {
@@ -4675,6 +4790,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "3D LiDAR Matrix & Blueprint Wireframe Assembly Engine (point-cloud 2.20s AI Hook)."
     },
     {
+      "name": "polygon_sculpt_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 22543,
+      "size_formatted": "22.0 KB",
+      "lines": 536,
+      "mtime": 1792830168.6052396,
+      "mtime_formatted": "24/10/2026 15:22",
+      "desc": "AI Hook #4 — Polygon Sculpt (3D Low-Poly Marble Morph) Engine (`polygon_sculpt_engine.py`)"
+    },
+    {
       "name": "register_hook.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
@@ -4689,12 +4815,23 @@ window.SKILL_LIVE_DATA = {
       "name": "rooftop_jump_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "size": 18537,
-      "size_formatted": "18.1 KB",
-      "lines": 422,
-      "mtime": 1792663062.2859828,
-      "mtime_formatted": "22/10/2026 16:57",
+      "size": 20000,
+      "size_formatted": "19.5 KB",
+      "lines": 440,
+      "mtime": 1792838336.9106638,
+      "mtime_formatted": "24/10/2026 17:38",
       "desc": "Rooftop Jump Engine (`rooftop_jump_engine.py`) — Động cơ tự động tạo hiệu ứng Nhảy Từ Đỉnh Tòa Nhà (Master V3)"
+    },
+    {
+      "name": "smoke_reveal_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 25515,
+      "size_formatted": "24.9 KB",
+      "lines": 620,
+      "mtime": 1792830002.0189393,
+      "mtime_formatted": "24/10/2026 15:20",
+      "desc": "AI Hook #6 — Smoke Reveal Engine (Curl-Noise Volumetric Smoke)"
     },
     {
       "name": "sticker_transition_engine.py",
@@ -4719,6 +4856,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "Timelapse-Freeze AI Hook Engine (`timelapse_freeze_engine.py`)"
     },
     {
+      "name": "verify_exploded_assembly.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 39488,
+      "size_formatted": "38.6 KB",
+      "lines": 1001,
+      "mtime": 1792830560.9874527,
+      "mtime_formatted": "24/10/2026 15:29",
+      "desc": "5-Gate + G0_SEAM Deterministic Verifier for AI Hook #5: Exploded Assembly (exploded-assembly)"
+    },
+    {
       "name": "verify_flycam_transition.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
@@ -4728,6 +4876,17 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792821399.0401013,
       "mtime_formatted": "24/10/2026 12:56",
       "desc": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
+    },
+    {
+      "name": "verify_glow_trace.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 39371,
+      "size_formatted": "38.4 KB",
+      "lines": 1000,
+      "mtime": 1792830992.1089911,
+      "mtime_formatted": "24/10/2026 15:36",
+      "desc": "5-Gate + G0_SEAM Deterministic Verifier for AI Hook #7 — Glow Trace (glow-trace)"
     },
     {
       "name": "verify_intermission_curtain.py",
@@ -4763,6 +4922,28 @@ window.SKILL_LIVE_DATA = {
       "desc": "SA2 — Katana Palette Verifier (Gates G0, K1, K2, K3, K4)"
     },
     {
+      "name": "verify_polygon_sculpt.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 36645,
+      "size_formatted": "35.8 KB",
+      "lines": 932,
+      "mtime": 1792830424.1576996,
+      "mtime_formatted": "24/10/2026 15:27",
+      "desc": "5-Gate Deterministic Verifier & Synthetic Self-Test Suite for AI Hook #4 — Polygon Sculpt"
+    },
+    {
+      "name": "verify_smoke_reveal.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "size": 38020,
+      "size_formatted": "37.1 KB",
+      "lines": 962,
+      "mtime": 1792830608.667968,
+      "mtime_formatted": "24/10/2026 15:30",
+      "desc": "5-Gate (+ G0_SEAM) Deterministic Verifier & Synthetic Self-Test Suite"
+    },
+    {
       "name": "verify_smooth_zoom.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
@@ -4790,9 +4971,169 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792829578.5334964,
-      "mtime_formatted": "24/10/2026 15:12",
-      "detail": "10 quy chuẩn • 14 studios"
+      "mtime": 1792839572.7002876,
+      "mtime_formatted": "24/10/2026 17:59",
+      "detail": "11 quy chuẩn • 15 studios"
+    },
+    {
+      "name": "scripts/jib_down_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792839566.4083023,
+      "mtime_formatted": "24/10/2026 17:59",
+      "detail": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
+    },
+    {
+      "name": "scripts/glow_trace_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792839499.2475514,
+      "mtime_formatted": "24/10/2026 17:58",
+      "detail": "AI Hook #7 — Glow Trace (Dual Arclength Neon Laser + SDF Reveal) (`glow-trace`) Engine."
+    },
+    {
+      "name": "scripts/earth_zoom_omni_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792838339.7795541,
+      "mtime_formatted": "24/10/2026 17:38",
+      "detail": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
+    },
+    {
+      "name": "scripts/rooftop_jump_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792838336.9106638,
+      "mtime_formatted": "24/10/2026 17:38",
+      "detail": "Rooftop Jump Engine (`rooftop_jump_engine.py`) — Động cơ tự động tạo hiệu ứng Nhảy Từ Đỉnh Tòa Nhà (Master V3)"
+    },
+    {
+      "name": "scripts/display_transition_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792838321.8287725,
+      "mtime_formatted": "24/10/2026 17:38",
+      "detail": "Display Transition 2.5D Homography Engine (`display_transition_engine.py`)"
+    },
+    {
+      "name": "scripts/ai_hook_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792837927.994247,
+      "mtime_formatted": "24/10/2026 17:32",
+      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
+    },
+    {
+      "name": "scripts/giant_grab_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792836052.9290512,
+      "mtime_formatted": "24/10/2026 17:00",
+      "detail": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
+    },
+    {
+      "name": "scripts/spa_edit_cli.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1792833161.1937935,
+      "mtime_formatted": "24/10/2026 16:12",
+      "detail": "SPA & DENTAL-MEDICAL VIDEO EDIT CLI V10 MASTER — STANDALONE PORTABLE ENGINE FOR STUDENTS"
+    },
+    {
+      "name": "spa-edit/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1792832623.6388752,
+      "mtime_formatted": "24/10/2026 16:03",
+      "detail": "72 dòng • 3 mục chính"
+    },
+    {
+      "name": "scripts/verify_6gates.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1792832544.793697,
+      "mtime_formatted": "24/10/2026 16:02",
+      "detail": "7-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT & DENTAL-MEDICAL SKILL (V10 STANDALONE)"
+    },
+    {
+      "name": "scripts/verify_readability_and_sync.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1792832140.0447268,
+      "mtime_formatted": "24/10/2026 15:55",
+      "detail": "VERIFY READABILITY, COGNITIVE LOAD, CAMERA STABILITY, VERBATIM TRANSCRIPT, EYE-ANCHOR LOCK & VOICE GATE (7-GATE AUDITOR V10)"
+    },
+    {
+      "name": "scripts/verify_glow_trace.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830992.1089911,
+      "mtime_formatted": "24/10/2026 15:36",
+      "detail": "5-Gate + G0_SEAM Deterministic Verifier for AI Hook #7 — Glow Trace (glow-trace)"
+    },
+    {
+      "name": "ai-hook/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830713.0743582,
+      "mtime_formatted": "24/10/2026 15:31",
+      "detail": "283 dòng • 6 mục chính"
+    },
+    {
+      "name": "scripts/verify_smoke_reveal.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830608.667968,
+      "mtime_formatted": "24/10/2026 15:30",
+      "detail": "5-Gate (+ G0_SEAM) Deterministic Verifier & Synthetic Self-Test Suite"
+    },
+    {
+      "name": "scripts/verify_exploded_assembly.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830560.9874527,
+      "mtime_formatted": "24/10/2026 15:29",
+      "detail": "5-Gate + G0_SEAM Deterministic Verifier for AI Hook #5: Exploded Assembly (exploded-assembly)"
+    },
+    {
+      "name": "scripts/exploded_assembly_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830546.7397156,
+      "mtime_formatted": "24/10/2026 15:29",
+      "detail": "AI Hook #5 — Exploded Assembly (3D Voronoï/Bento Shards) Engine (`exploded_assembly_engine.py`)"
+    },
+    {
+      "name": "scripts/verify_polygon_sculpt.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830424.1576996,
+      "mtime_formatted": "24/10/2026 15:27",
+      "detail": "5-Gate Deterministic Verifier & Synthetic Self-Test Suite for AI Hook #4 — Polygon Sculpt"
+    },
+    {
+      "name": "scripts/double_exposure_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830359.7807434,
+      "mtime_formatted": "24/10/2026 15:25",
+      "detail": "AI Hook #8 — Double Exposure (True-Detective Silhouette Blend) (`double-exposure`)"
+    },
+    {
+      "name": "scripts/polygon_sculpt_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830168.6052396,
+      "mtime_formatted": "24/10/2026 15:22",
+      "detail": "AI Hook #4 — Polygon Sculpt (3D Low-Poly Marble Morph) Engine (`polygon_sculpt_engine.py`)"
+    },
+    {
+      "name": "scripts/smoke_reveal_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
+      "mtime": 1792830002.0189393,
+      "mtime_formatted": "24/10/2026 15:20",
+      "detail": "AI Hook #6 — Smoke Reveal Engine (Curl-Noise Volumetric Smoke)"
     },
     {
       "name": "scripts/register_hook.py",
@@ -4801,14 +5142,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792829515.4880908,
       "mtime_formatted": "24/10/2026 15:11",
       "detail": "AI Hook Atomic Registry Manager (`register_hook.py`) — Thiết kế Gemini × CLAUDE2 (`claude_pro_cc944965.md`)"
-    },
-    {
-      "name": "ai-hook/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792829249.014575,
-      "mtime_formatted": "24/10/2026 15:07",
-      "detail": "278 dòng • 6 mục chính"
     },
     {
       "name": "scripts/hook_scanner.py",
@@ -4825,14 +5158,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792829015.6378531,
       "mtime_formatted": "24/10/2026 15:03",
       "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
-    },
-    {
-      "name": "scripts/ai_hook_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792829015.4819846,
-      "mtime_formatted": "24/10/2026 15:03",
-      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
       "name": "scripts/verify_intermission_curtain.py",
@@ -4859,22 +5184,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "Intermission Curtain Engine (intermission_curtain_engine.py) — Kỹ năng ai-hook"
     },
     {
-      "name": "scripts/display_transition_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792828373.811497,
-      "mtime_formatted": "24/10/2026 14:52",
-      "detail": "Display Transition 2.5D Homography Engine (`display_transition_engine.py`)"
-    },
-    {
-      "name": "scripts/jib_down_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792827740.0401027,
-      "mtime_formatted": "24/10/2026 14:42",
-      "detail": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
-    },
-    {
       "name": "scripts/verify_jib_down.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
@@ -4891,140 +5200,12 @@ window.SKILL_LIVE_DATA = {
       "detail": "SA2 — Deterministic Verifier & Synthetic Self-Test Suite for `flycam-transition` AI Hook."
     },
     {
-      "name": "scripts/earth_zoom_omni_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792821275.3790393,
-      "mtime_formatted": "24/10/2026 12:54",
-      "detail": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
-    },
-    {
       "name": "scripts/flycam_transition_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
       "mtime": 1792821115.8472116,
       "mtime_formatted": "24/10/2026 12:51",
       "detail": "Flycam-Transition V2 AI Hook Engine (`flycam_transition_engine.py`)"
-    },
-    {
-      "name": "scripts/timelapse_freeze_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792821034.1258686,
-      "mtime_formatted": "24/10/2026 12:50",
-      "detail": "Timelapse-Freeze AI Hook Engine (`timelapse_freeze_engine.py`)"
-    },
-    {
-      "name": "scripts/verify_smooth_zoom.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792820697.499675,
-      "mtime_formatted": "24/10/2026 12:44",
-      "detail": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
-    },
-    {
-      "name": "scripts/giant_grab_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792820687.649398,
-      "mtime_formatted": "24/10/2026 12:44",
-      "detail": "Giant-Grab AI Hook Engine (`giant_grab_engine.py`)"
-    },
-    {
-      "name": "scripts/verify_sticker_transition.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792819097.907293,
-      "mtime_formatted": "24/10/2026 12:18",
-      "detail": "SA2 — Deterministic 5-Gate Verifier (G0_COMMON + G1..G4) & Self-Test Suite"
-    },
-    {
-      "name": "scripts/katana_palette_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792817821.3488367,
-      "mtime_formatted": "24/10/2026 11:57",
-      "detail": "Katana Palette Hook Engine (`katana_palette_engine.py`) — `katana-palette-hook` (2.40s Hook)"
-    },
-    {
-      "name": "scripts/verify_katana_palette.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792817773.2329297,
-      "mtime_formatted": "24/10/2026 11:56",
-      "detail": "SA2 — Katana Palette Verifier (Gates G0, K1, K2, K3, K4)"
-    },
-    {
-      "name": "scripts/blinds_in_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792800202.3285782,
-      "mtime_formatted": "24/10/2026 07:03",
-      "detail": "3D Venetian Blinds Peek-In Engine (`blinds_in_engine.py`) — `through-object-in` (2.15s Hook)"
-    },
-    {
-      "name": "scripts/sticker_transition_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792800084.41793,
-      "mtime_formatted": "24/10/2026 07:01",
-      "detail": "3D Die-Cut Sticker Peel & Match-Cut AI Hook Engine (`sticker_transition_engine.py`)"
-    },
-    {
-      "name": "scripts/point_cloud_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 15 Presets: Rooftop Jump, Earth Zoom, Display Transition, Intermission, Jib-Down, Pantone1, Sticker Transition, Flycam-Transition, Timelapse-Freeze, Point-Cloud, Giant-Grab, Blinds-In, Hero-Cam, Through Object, Rapid Zoom)",
-      "mtime": 1792774531.450546,
-      "mtime_formatted": "23/10/2026 23:55",
-      "detail": "3D LiDAR Matrix & Blueprint Wireframe Assembly Engine (point-cloud 2.20s AI Hook)."
-    },
-    {
-      "name": "compositions/GiaHanBookReview.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792756449.4350102,
-      "mtime_formatted": "23/10/2026 18:54",
-      "detail": "1537 dòng • Composition"
-    },
-    {
-      "name": "auto-edit-video/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792742350.2682097,
-      "mtime_formatted": "23/10/2026 14:59",
-      "detail": "177 dòng • 7 mục chính"
-    },
-    {
-      "name": "scripts/verify_6gates.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1792742243.7970579,
-      "mtime_formatted": "23/10/2026 14:57",
-      "detail": "6-GATE DETERMINISTIC VERIFIER FOR SPA-EDIT SKILL"
-    },
-    {
-      "name": "scripts/verify_motion_deliverable.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792742219.5398512,
-      "mtime_formatted": "23/10/2026 14:56",
-      "detail": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic V3 (verify_motion_deliverable.py)"
-    },
-    {
-      "name": "scripts/verifier_4gates.py",
-      "type": "Python Script",
-      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
-      "mtime": 1792742212.9806004,
-      "mtime_formatted": "23/10/2026 14:56",
-      "detail": "verifier_4gates.py"
-    },
-    {
-      "name": "scripts/qa_lint.py",
-      "type": "Python Script",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1792742210.2069106,
-      "mtime_formatted": "23/10/2026 14:56",
-      "detail": "qa_lint.py — Deterministic Post-Plan & Pre-Render Verifier (MFX V4.0 — CLAUDE2 Council Edition)"
     }
   ]
 };
