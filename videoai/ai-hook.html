@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bảng tổng hợp 20 AI Hook (Tự động cập nhật) — Video AI Studio</title>
+  <link href="assets/style.css?v=20261022" rel="stylesheet"/>
+</head>
+<body data-page="bang-ai-hook">
+  <main class="main" style="display:none">
+    <div class="content">
+
+      <!-- ========================================================
+           HERO & CƠ CHẾ TỰ ĐỘNG CẬP NHẬT ZERO-COLLISION V3.0
+           ======================================================== -->
+      <div class="hero">
+        <div class="kicker" style="--stage:var(--c-motion)">— SỔ ĐĂNG KÝ SỐNG TỰ ĐỘNG ĐỒNG BỘ TỪ HOOKS.D/*.JSON • 20 PRESETS ACTIVE</div>
+        <h1>🎣 Bảng tổng hợp 20 AI Hook (Tự động cập nhật)</h1>
+        <p class="lede">
+          <em>Trung tâm tra cứu trực tuyến toàn bộ các chế độ mở màn AI Hook trong kỹ năng <code>ai-hook</code> — Tự động cập nhật ngay lập tức mỗi khi anh Việt yêu cầu "cập nhật thêm vào" mà không bao giờ đè file.</em>
+        </p>
+        <p style="font-family:var(--sans); font-size:15px; line-height:1.6; color:var(--mute); margin-bottom:0;">
+          Đồng bộ trực tiếp từ thư mục <code>~/.gemini/config/skills/ai-hook/hooks.d/*.json</code> lúc <strong style="color:var(--ink);">24/10/2026 18:08:41</strong>. Đường dẫn chuyên biệt: <a href="https://videoai.fedu.vn/10-bang-ai-hook.html" style="font-weight:700; color:#0284c7;">videoai.fedu.vn/10-bang-ai-hook.html</a> (hoặc link ngắn <a href="https://videoai.fedu.vn/ai-hook.html" style="font-weight:700; color:#0284c7;">videoai.fedu.vn/ai-hook.html</a>).
+        </p>
+
+        <div class="proof-grid">
+          <div class="proof-item">
+            <div class="proof-num">20 AI Hooks</div>
+            <div class="proof-lbl">Đọc trực tiếp từ <code>hooks.d/*.json</code> (Khóa nguyên tử <code>fcntl.flock</code>)</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">15 Video &amp; Studio</div>
+            <div class="proof-lbl">Xem trực tiếp video Master &amp; đối chiếu Reference ngay trên bảng</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">0% Đè File</div>
+            <div class="proof-lbl">Monotonic Guard + Orphan Engine Detector chuẩn CLAUDE2</div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; padding:16px 18px; background:#f0f9ff; border:2px solid #0284c7; border-radius:12px;">
+          <div style="font:700 14.5px var(--sans); color:#0369a1; margin-bottom:6px;">
+            🔄 Cơ chế Tự Động Cập Nhật Khi Anh Việt Nói: <em>"Đặt tên, đẩy vào ai hook, cập nhật thêm vào videoai"</em>
+          </div>
+          <div style="font:400 13.5px/1.55 var(--sans); color:#0f172a;">
+            Mỗi khi có một hiệu ứng Hook mới đạt chuẩn Verifier, Agent chỉ cần tạo 1 file manifest độc lập tại <code>~/.gemini/config/skills/ai-hook/hooks.d/&lt;id&gt;.json</code> và chạy lệnh duy nhất:
+            <code style="background:#e0f2fe; padding:2px 6px; border-radius:4px; font-weight:700;">python3 ~/.gemini/config/skills/ai-hook/scripts/register_hook.py rebuild --deploy</code>
+            &rarr; Hệ thống tự động biên dịch <code>hooks_registry.json</code>, cập nhật bảng trong <code>SKILL.md</code>, đồng bộ video demo sang trang này và đẩy thẳng lên <strong>videoai.fedu.vn</strong>!
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           THANH TÌM KIẾM & BỘ LỌC TỨC THỜI
+           ======================================================== -->
+      <h2>1. Bảng Ma Trận Tổng Hợp 20 AI Hooks (Tra Cứu &amp; Copy Lệnh 1 Chạm)</h2>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:18px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+        <input id="hookSearchInput" type="text" placeholder="🔍 Tìm nhanh theo tên Hook, mã preset (vd: display-transition, intermission, jib-down, rooftop...)" oninput="filterHooksTable()" style="flex:1; min-width:280px; padding:10px 14px; border:1px solid #cbd5e1; border-radius:8px; font:500 14px var(--sans);"/>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button type="button" class="hook-filter-btn" onclick="setHookFilter('all', this)" style="font:700 12px var(--sans); padding:7px 12px; border-radius:8px; border:1px solid #0f172a; background:#0f172a; color:#fff; cursor:pointer;">Tất cả (20)</button>
+          <button type="button" class="hook-filter-btn" onclick="setHookFilter('squat_to_stand', this)" style="font:600 12px var(--sans); padding:7px 12px; border-radius:8px; border:1px solid #cbd5e1; background:#fff; color:#0f172a; cursor:pointer;">🏃 Có nhịp nhún/nhảy</button>
+          <button type="button" class="hook-filter-btn" onclick="setHookFilter('standing_ready', this)" style="font:600 12px var(--sans); padding:7px 12px; border-radius:8px; border:1px solid #cbd5e1; background:#fff; color:#0f172a; cursor:pointer;">🧍 Đứng nói ngay</button>
+          <button type="button" class="hook-filter-btn" onclick="setHookFilter('outdoor', this)" style="font:600 12px var(--sans); padding:7px 12px; border-radius:8px; border:1px solid #cbd5e1; background:#fff; color:#0f172a; cursor:pointer;">🌳 Ngoài trời</button>
+          <button type="button" class="hook-filter-btn" onclick="setHookFilter('indoor', this)" style="font:600 12px var(--sans); padding:7px 12px; border-radius:8px; border:1px solid #cbd5e1; background:#fff; color:#0f172a; cursor:pointer;">🏠 Trong nhà / Studio</button>
+        </div>
+      </div>
+
+      <div style="background:#ffffff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; margin-bottom:36px; box-shadow:0 2px 8px rgba(15,23,42,0.04);">
+        <table style="width:100%; border-collapse:collapse; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--line); background:#f8fafc;">
+              <th style="padding:12px 10px; font:800 11.5px var(--mono); color:var(--mute); text-align:center;">#</th>
+              <th style="padding:12px 10px; font:800 11.5px var(--mono); color:var(--mute);">MÃ PRESET &amp; ALIASES</th>
+              <th style="padding:12px 10px; font:800 11.5px var(--mono); color:var(--mute);">TÊN HIỆU ỨNG &amp; BỐI CẢNH KHUYÊN DÙNG</th>
+              <th style="padding:12px 10px; font:800 11.5px var(--mono); color:var(--mute);">THỜI LƯỢNG</th>
+              <th style="padding:12px 10px; font:800 11.5px var(--mono); color:var(--mute);">ENGINE &amp; VERIFIER</th>
+              <th style="padding:12px 10px; font:800 11.5px var(--mono); color:var(--mute);">THAO TÁC NHANH</th>
+            </tr>
+          </thead>
+          <tbody id="hooksTableBody">
+            
+        <tr class="hook-row" data-motion="squat_to_stand, landing_crouch" data-scene="outdoor, any" data-search="rooftop-jump nhay-toa-nha nhảy từ đỉnh tòa nhà (rooftop jump master v3) khi đầu video có động tác nhún tiếp đất / ngồi xổm rồi bật đứng dậy bước ra nói chuyện (squat_to_stand). squat_to_stand, landing_crouch outdoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#01</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">rooftop-jump</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>nhay-toa-nha</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Nhảy Từ Đỉnh Tòa Nhà (Rooftop Jump Master V3)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi đầu video có động tác nhún tiếp đất / ngồi xổm rồi bật đứng dậy bước ra nói chuyện (squat_to_stand).</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.20s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>rooftop_jump_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_smooth_zoom.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset rooftop-jump'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="earth-zoom earth-zoom-v5 vu-tru earth zoom 4 tầng anti-jitter v5 (vũ trụ -> mây -> đô thị -> cảnh thật) khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy. standing_ready, walk_in, squat_to_stand outdoor" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#02</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">earth-zoom</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>earth-zoom-v5</code>, <code>vu-tru</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 5.58s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>earth_zoom_omni_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_smooth_zoom.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset earth-zoom'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_earth_zoom_v2_master.mp4', 'earth-zoom — Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="display-transition kling-19 studio-display xuyen-man-hinh dolly-in xuyên màn hình studio display 2.5d (display transition 2.00s — kling #19) khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn bằng cú 2.5d dolly-in xuyên qua màn hình apple studio display 9:16 trên bàn làm việc sang trọng vào thẳng cảnh thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#03</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">display-transition</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>kling-19</code>, <code>studio-display</code>, <code>xuyen-man-hinh</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Dolly-In Xuyên Màn Hình Studio Display 2.5D (Display Transition 2.00s — Kling #19)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn bằng cú 2.5D Dolly-In xuyên qua màn hình Apple Studio Display 9:16 trên bàn làm việc sang trọng vào thẳng cảnh thật.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.00s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>display_transition_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_smooth_zoom.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset display-transition'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-display-transition.html', 'Studio AI Hook: display-transition')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/footageai1_display_transition_web.mp4', 'display-transition — Dolly-In Xuyên Màn Hình Studio Display 2.5D (Display Transition 2.00s — Kling #19)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="squat_to_stand, landing_crouch, standing_ready, walk_in" data-scene="outdoor, indoor, any" data-search="intermission stage-curtain rem-nhung rem-san-khau kling-52 rèm nhung đỏ sân khấu 2.5d mở cảnh nhảy đáp đất (stage velvet curtain reveal — intermission 2.00s) khi đầu video có pha cúi người lấy đà bật nhảy đáp đất (squat_to_stand / jump_land) cần che kín 100% lúc lấy đà và mở toạc sân khấu đúng đỉnh nhảy trên không, hoặc mở màn sân khấu điện ảnh. squat_to_stand, landing_crouch, standing_ready, walk_in outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#04</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">intermission</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>stage-curtain</code>, <code>rem-nhung</code>, <code>rem-san-khau</code>, <code>kling-52</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất (Stage Velvet Curtain Reveal — Intermission 2.00s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi đầu video có pha cúi người lấy đà bật nhảy đáp đất (squat_to_stand / jump_land) cần che kín 100% lúc lấy đà và mở toạc sân khấu đúng đỉnh nhảy trên không, hoặc mở màn sân khấu điện ảnh.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.00s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>intermission_curtain_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_intermission_curtain.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset intermission'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-intermission.html', 'Studio AI Hook: intermission')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/footageai3_intermission_web.mp4', 'intermission — Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất (Stage Velvet Curtain Reveal — Intermission 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="jib-down crane-jib-down jib-up-reverse ha-can-cau hạ cần cẩu máy quay 3d parallax từ vòm cây xuống ngang mắt (vertical crane jib-down 2.30s) khi nhân vật đứng hoặc bước nói ở công viên, dưới tán cây, cạnh hồ bơi hoặc trước tòa nhà ngoài trời. standing_ready, walk_in, squat_to_stand outdoor" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#05</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">jib-down</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>crane-jib-down</code>, <code>jib-up-reverse</code>, <code>ha-can-cau</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt (Vertical Crane Jib-Down 2.30s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng hoặc bước nói ở công viên, dưới tán cây, cạnh hồ bơi hoặc trước tòa nhà ngoài trời.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.30s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>jib_down_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_jib_down.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset jib-down'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-jib-down.html', 'Studio AI Hook: jib-down')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/footageai1_jib_down_web.mp4', 'jib-down — Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt (Vertical Crane Jib-Down 2.30s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, sitting_ready, walk_in, squat_to_stand" data-scene="outdoor, indoor, any" data-search="pantone1 katana-palette-hook pantone-1 bảng màu pantone & vòng quạt màu xoay (pantone 1 — katana palette reveal 2.40s) khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn phong cách tạp chí thời trang / editorial pantone color reveal. standing_ready, sitting_ready, walk_in, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#06</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">pantone1</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>katana-palette-hook</code>, <code>pantone-1</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Bảng Màu Pantone & Vòng Quạt Màu Xoay (Pantone 1 — Katana Palette Reveal 2.40s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn phong cách tạp chí thời trang / Editorial Pantone Color Reveal.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.40s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>katana_palette_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_katana_palette.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset pantone1'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-pantone1.html', 'Studio AI Hook: pantone1')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_katana_palette_master.mp4', 'pantone1 — Bảng Màu Pantone & Vòng Quạt Màu Xoay (Pantone 1 — Katana Palette Reveal 2.40s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="sticker-transition transitions sticker-match-cut 3d-sticker-peel bóc nhãn dán sticker 3d & phóng match-cut (3d die-cut sticker peel & match-cut 2.15s) khi nhân vật đứng hoặc ngồi nói ở ngoài trời (công viên, đường phố, kiến trúc đô thị) hoặc trong nhà muốn mở màn bằng hiệu ứng bóc sticker 3d sáng tạo kiểu higgsfield transitions. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#07</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">sticker-transition</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>transitions</code>, <code>sticker-match-cut</code>, <code>3d-sticker-peel</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Bóc Nhãn Dán Sticker 3D & Phóng Match-Cut (3D Die-Cut Sticker Peel & Match-Cut 2.15s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời (công viên, đường phố, kiến trúc đô thị) hoặc trong nhà muốn mở màn bằng hiệu ứng bóc Sticker 3D sáng tạo kiểu Higgsfield Transitions.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.15s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>sticker_transition_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_sticker_transition.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset sticker-transition'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-sticker-transition.html', 'Studio AI Hook: sticker-transition')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_sticker_transition_master.mp4', 'sticker-transition — Bóc Nhãn Dán Sticker 3D & Phóng Match-Cut (3D Die-Cut Sticker Peel & Match-Cut 2.15s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="flycam-transition fpv-flycam fpv flycam xuyên khe cánh tay & lướt mặt cỏ đáp vào nhân vật (flycam-transition 2.50s) khi nhân vật đứng nói ở công viên, bãi cỏ hoặc không gian mở ngoài trời muốn có cú chuyển cảnh fpv drone xuyên cổng cơ thể tốc độ cao. standing_ready, walk_in, squat_to_stand outdoor" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#08</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">flycam-transition</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>fpv-flycam</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">FPV Flycam Xuyên Khe Cánh Tay & Lướt Mặt Cỏ Đáp Vào Nhân Vật (Flycam-Transition 2.50s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng nói ở công viên, bãi cỏ hoặc không gian mở ngoài trời muốn có cú chuyển cảnh FPV Drone xuyên cổng cơ thể tốc độ cao.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.50s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>flycam_transition_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_flycam_transition.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset flycam-transition'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="timelapse-freeze freeze-time đứng tĩnh giữa dòng đời tua nhanh (timelapse-freeze 2.00s) khi nhân vật đứng nói ở công viên, đường phố, không gian mở ngoài trời muốn tạo hiệu ứng đóng băng thời gian điện ảnh. standing_ready, walk_in, squat_to_stand outdoor" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#09</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">timelapse-freeze</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>freeze-time</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (Timelapse-Freeze 2.00s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng nói ở công viên, đường phố, không gian mở ngoài trời muốn tạo hiệu ứng đóng băng thời gian điện ảnh.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.00s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>timelapse_freeze_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_timelapse_freeze.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset timelapse-freeze'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_timelapse_freeze_master.mp4', 'timelapse-freeze — Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (Timelapse-Freeze 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="point-cloud lidar-scan 3d-point-cloud quét đám mây điểm lidar 3d & hợp nhất khung hình thật (3d lidar point-cloud scan 2.00s) khi muốn mở màn công nghệ cao với hiệu ứng quét lidar 3d point-cloud hội tụ thành nhân vật thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#10</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">point-cloud</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>lidar-scan</code>, <code>3d-point-cloud</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Quét Đám Mây Điểm LiDAR 3D & Hợp Nhất Khung Hình Thật (3D LiDAR Point-Cloud Scan 2.00s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi muốn mở màn công nghệ cao với hiệu ứng quét LiDAR 3D Point-Cloud hội tụ thành nhân vật thật.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.00s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>point_cloud_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_point_cloud.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset point-cloud'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_point_cloud_master.mp4', 'point-cloud — Quét Đám Mây Điểm LiDAR 3D & Hợp Nhất Khung Hình Thật (3D LiDAR Point-Cloud Scan 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, squat_to_stand, walk_in" data-scene="outdoor" data-search="giant-grab ban-tay-khong-lo hand-drop bàn tay khổng lồ thả nhân vật xuống bối cảnh thật (giant hand grab & drop 2.00s) khi nhân vật đứng nói ở ngoài trời muốn mở màn ấn tượng bằng bàn tay khổng lồ thả nhân vật từ trên cao xuống đất. standing_ready, squat_to_stand, walk_in outdoor" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#11</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">giant-grab</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>ban-tay-khong-lo</code>, <code>hand-drop</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Bàn Tay Khổng Lồ Thả Nhân Vật Xuống Bối Cảnh Thật (Giant Hand Grab & Drop 2.00s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng nói ở ngoài trời muốn mở màn ấn tượng bằng bàn tay khổng lồ thả nhân vật từ trên cao xuống đất.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.00s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>giant_grab_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_giant_grab.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset giant-grab'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_giant_grab_master.mp4', 'giant-grab — Bàn Tay Khổng Lồ Thả Nhân Vật Xuống Bối Cảnh Thật (Giant Hand Grab & Drop 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, sitting_ready, walk_in, squat_to_stand" data-scene="outdoor, indoor, any" data-search="blinds-in venetian-blinds rem-sao lao xuyên rèm sáo venetian blinds 3d vào nhân vật (blinds-in transition 2.15s) khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong phòng muốn mở màn bằng cú xuyên qua khe rèm sáo điện ảnh. standing_ready, sitting_ready, walk_in, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#12</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">blinds-in</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>venetian-blinds</code>, <code>rem-sao</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Lao Xuyên Rèm Sáo Venetian Blinds 3D Vào Nhân Vật (Blinds-In Transition 2.15s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong phòng muốn mở màn bằng cú xuyên qua khe rèm sáo điện ảnh.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.15s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>blinds_in_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_blinds_in.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset blinds-in'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor, indoor, any" data-search="hero-cam orbital-hero-cam bullet-time-orbit quỹ đạo vòng cung bullet-time hero cam 2.5d (orbital hero-cam 2.17s) khi nhân vật đứng nói ở ngoài trời hoặc studio muốn mở màn bằng cú máy lượn vòng cung hero-cam điện ảnh. standing_ready, walk_in, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#13</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">hero-cam</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>orbital-hero-cam</code>, <code>bullet-time-orbit</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Quỹ Đạo Vòng Cung Bullet-Time Hero Cam 2.5D (Orbital Hero-Cam 2.17s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng nói ở ngoài trời hoặc studio muốn mở màn bằng cú máy lượn vòng cung Hero-Cam điện ảnh.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.17s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>hero_cam_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_hero_cam.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset hero-cam'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_hero_cam_master.mp4', 'hero-cam — Quỹ Đạo Vòng Cung Bullet-Time Hero Cam 2.5D (Orbital Hero-Cam 2.17s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, sitting_ready, walk_in" data-scene="indoor, outdoor" data-search="through-object through-object-out xuyên lỗ mắt thần cửa gỗ (through object v2) khi nhân vật đứng hoặc ngồi nói trong nhà/studio/văn phòng, hoặc mở cảnh ngoài trời qua khung cửa. standing_ready, sitting_ready, walk_in indoor, outdoor" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#14</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">through-object</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>through-object-out</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Xuyên Lỗ Mắt Thần Cửa Gỗ (Through Object V2)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng hoặc ngồi nói trong nhà/studio/văn phòng, hoặc mở cảnh ngoài trời qua khung cửa.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.67s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">indoor, outdoor</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>ai_hook_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_smooth_zoom.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset through-object'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_through_object_master.mp4', 'through-object — Xuyên Lỗ Mắt Thần Cửa Gỗ (Through Object V2)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, sitting_ready, squat_to_stand" data-scene="outdoor, indoor" data-search="rapid-zoom fast-zoom rapid zoom in nhanh (hold -> rush -> settle) khi muốn vào thẳng câu nói đầu tiên với nhịp zoom nhanh gọn 2.15s từ toàn cảnh địa điểm. standing_ready, sitting_ready, squat_to_stand outdoor, indoor" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#15</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">rapid-zoom</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>fast-zoom</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Rapid Zoom In Nhanh (Hold -> Rush -> Settle)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi muốn vào thẳng câu nói đầu tiên với nhịp zoom nhanh gọn 2.15s từ toàn cảnh địa điểm.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.15s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>ai_hook_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_smooth_zoom.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset rapid-zoom'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="exploded-assembly voronoi-shards bento-shards 3d-exploded mảnh vỡ 3d voronoï/bento hợp nhất khung hình thật (3d exploded assembly 2.17s) khi muốn mở màn ấn tượng với hiệu ứng 38 mảnh khối 3d voronoï/bento có vách dày và bóng đổ bay hướng tâm lắp ghép khít thành chủ thể thật mà không cắt qua gương mặt. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#16</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">exploded-assembly</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>voronoi-shards</code>, <code>bento-shards</code>, <code>3d-exploded</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Mảnh Vỡ 3D Voronoï/Bento Hợp Nhất Khung Hình Thật (3D Exploded Assembly 2.17s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi muốn mở màn ấn tượng với hiệu ứng 38 mảnh khối 3D Voronoï/Bento có vách dày và bóng đổ bay hướng tâm lắp ghép khít thành chủ thể thật mà không cắt qua gương mặt.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.17s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>exploded_assembly_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_exploded_assembly.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset exploded-assembly'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="polygon-sculpt low-poly marble-sculpt polygon-morph điêu khắc đa giác cẩm thạch 3d & quét ánh sáng specular (polygon sculpt 2.09s) khi muốn mở màn nghệ thuật điêu khắc 3d low-poly marble kết tinh từ 350 đa giác thành gương mặt và khung hình thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#17</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">polygon-sculpt</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>low-poly</code>, <code>marble-sculpt</code>, <code>polygon-morph</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Điêu Khắc Đa Giác Cẩm Thạch 3D & Quét Ánh Sáng Specular (Polygon Sculpt 2.09s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi muốn mở màn nghệ thuật điêu khắc 3D Low-Poly Marble kết tinh từ 350 đa giác thành gương mặt và khung hình thật.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.09s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>polygon_sculpt_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_polygon_sculpt.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset polygon-sculpt'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_polygon_sculpt_master.mp4', 'polygon-sculpt — Điêu Khắc Đa Giác Cẩm Thạch 3D & Quét Ánh Sáng Specular (Polygon Sculpt 2.09s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="smoke-reveal curl-smoke volumetric-smoke khoi-mo-man cột khói xoáy 3d volumetric mở lộ chủ thể (curl-noise volumetric smoke reveal 2.09s) khi nhân vật đứng nói ở công viên, đường phố hoặc studio muốn mở màn điện ảnh bí ẩn từ làn khói 3d volumetric cuộn xoáy rồi tan dần lộ rõ gương mặt sắc nét. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#18</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">smoke-reveal</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>curl-smoke</code>, <code>volumetric-smoke</code>, <code>khoi-mo-man</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Cột Khói Xoáy 3D Volumetric Mở Lộ Chủ Thể (Curl-Noise Volumetric Smoke Reveal 2.09s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng nói ở công viên, đường phố hoặc studio muốn mở màn điện ảnh bí ẩn từ làn khói 3D Volumetric cuộn xoáy rồi tan dần lộ rõ gương mặt sắc nét.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.09s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>smoke_reveal_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_smoke_reveal.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset smoke-reveal'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_smoke_reveal_master.mp4', 'smoke-reveal — Cột Khói Xoáy 3D Volumetric Mở Lộ Chủ Thể (Curl-Noise Volumetric Smoke Reveal 2.09s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="glow-trace neon-laser-trace sdf-reveal blueprint-laser quét tia laser neon đôi & sóng mở khóa sdf (dual arclength neon laser + sdf reveal 2.00s) khi muốn mở màn công nghệ sắc nét với 2 tia laser neon cyan & gold vẽ đường viền chủ thể trên nền bản vẽ kỹ thuật blueprint rồi bung sóng cầu mở khóa cảnh thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#19</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">glow-trace</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>neon-laser-trace</code>, <code>sdf-reveal</code>, <code>blueprint-laser</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Quét Tia Laser Neon Đôi & Sóng Mở Khóa SDF (Dual Arclength Neon Laser + SDF Reveal 2.00s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi muốn mở màn công nghệ sắc nét với 2 tia Laser Neon Cyan & Gold vẽ đường viền chủ thể trên nền bản vẽ kỹ thuật Blueprint rồi bung sóng cầu mở khóa cảnh thật.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.00s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>glow_trace_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_glow_trace.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset glow-trace'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-glow-trace.html', 'Studio AI Hook: glow-trace')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_glow_trace_master.mp4', 'glow-trace — Quét Tia Laser Neon Đôi & Sóng Mở Khóa SDF (Dual Arclength Neon Laser + SDF Reveal 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+        <tr class="hook-row" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="double-exposure true-detective silhouette-blend hòa trộn phơi sáng kép điện ảnh (true-detective silhouette blend 2.085s) khi muốn mở màn nghệ thuật, chiều sâu nội tâm chuẩn điện ảnh true detective với cảnh vật chuyển động lồng trong bóng silhouette nhân vật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#20</td>
+          <td style="padding:12px 10px;">
+            <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">double-exposure</div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>true-detective</code>, <code>silhouette-blend</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Hòa Trộn Phơi Sáng Kép Điện Ảnh (True-Detective Silhouette Blend 2.085s)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi muốn mở màn nghệ thuật, chiều sâu nội tâm chuẩn điện ảnh True Detective với cảnh vật chuyển động lồng trong bóng Silhouette nhân vật.</div>
+          </td>
+          <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
+            ⏱️ 2.08s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, indoor, any</div>
+          </td>
+          <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
+            <div>⚙️ <code>double_exposure_engine.py</code></div>
+            <div style="color:var(--mute); margin-top:3px;">🛡️ <code>verify_double_exposure.py</code></div>
+          </td>
+          <td style="padding:12px 10px;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset double-exposure'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_double_exposure_master.mp4', 'double-exposure — Hòa Trộn Phơi Sáng Kép Điện Ảnh (True-Detective Silhouette Blend 2.085s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ========================================================
+           THƯ VIỆN THẺ TRỰC QUAN & VIDEO DEMO CHO TỪNG HOOK
+           ======================================================== -->
+      <h2>2. Thư Viện Trực Quan Từng Chế Độ Hook (Xem Video Demo &amp; Câu Lệnh)</h2>
+      <p style="margin-bottom:20px;">
+        Mỗi thẻ dưới đây được render trực tiếp từ file cấu hình trong <code>hooks.d/*.json</code> kèm trình phát video thành phẩm Master:
+      </p>
+      <div id="hooksCardsGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:20px;">
+        
+        <div class="matrix-card hook-card" data-motion="squat_to_stand, landing_crouch" data-scene="outdoor, any" data-search="rooftop-jump nhay-toa-nha nhảy từ đỉnh tòa nhà (rooftop jump master v3) khi đầu video có động tác nhún tiếp đất / ngồi xổm rồi bật đứng dậy bước ra nói chuyện (squat_to_stand). squat_to_stand, landing_crouch outdoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#01 • rooftop-jump</span>
+              </div>
+              <span class="matrix-badge motion">2.20s • outdoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Nhảy Từ Đỉnh Tòa Nhà (Rooftop Jump Master V3)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi đầu video có động tác nhún tiếp đất / ngồi xổm rồi bật đứng dậy bước ra nói chuyện (squat_to_stand).</p>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>ROOFTOP JUMP : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> 8 lớp SFX CapCut khóa đỉnh tại t_land=1.733s (MS3325, MS3324, MS3336, MS3341, MS3333, SS4372, SS4381, SS4415)</div>
+              <div><strong>⚙️ Engine:</strong> <code>rooftop_jump_engine.py</code> • <strong>Verifier:</strong> <code>verify_smooth_zoom.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (rooftop-jump)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset rooftop-jump</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset rooftop-jump'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="earth-zoom earth-zoom-v5 vu-tru earth zoom 4 tầng anti-jitter v5 (vũ trụ -> mây -> đô thị -> cảnh thật) khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy. standing_ready, walk_in, squat_to_stand outdoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#02 • earth-zoom</span>
+              </div>
+              <span class="matrix-badge motion">5.58s • outdoor</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_earth_zoom_v2_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>EARTH ZOOM : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_ex1_dive_0-5.5s.wav kéo khớp thời lượng dive + crossfade sang thoại gốc -16 LUFS</div>
+              <div><strong>⚙️ Engine:</strong> <code>earth_zoom_omni_engine.py</code> • <strong>Verifier:</strong> <code>verify_smooth_zoom.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (earth-zoom)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset earth-zoom</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset earth-zoom'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_earth_zoom_v2_master.mp4', 'earth-zoom — Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="display-transition kling-19 studio-display xuyen-man-hinh dolly-in xuyên màn hình studio display 2.5d (display transition 2.00s — kling #19) khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn bằng cú 2.5d dolly-in xuyên qua màn hình apple studio display 9:16 trên bàn làm việc sang trọng vào thẳng cảnh thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#03 • display-transition</span>
+              </div>
+              <span class="matrix-badge motion">2.00s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Dolly-In Xuyên Màn Hình Studio Display 2.5D (Display Transition 2.00s — Kling #19)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn bằng cú 2.5D Dolly-In xuyên qua màn hình Apple Studio Display 9:16 trên bàn làm việc sang trọng vào thẳng cảnh thật.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/footageai1_display_transition_web.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>DISPLAY TRANSITION : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_display_transition_2s.wav (Studio Ambient Hum -> 2.5D Glass Portal Dolly Whoosh @ 0.85s–1.95s -> 52Hz Screen Lock Thud @ 1.98s, Voice-Safe 100%)</div>
+              <div><strong>⚙️ Engine:</strong> <code>display_transition_engine.py</code> • <strong>Verifier:</strong> <code>verify_smooth_zoom.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (display-transition)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset display-transition</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset display-transition'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-display-transition.html', 'Studio AI Hook: display-transition')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/footageai1_display_transition_web.mp4', 'display-transition — Dolly-In Xuyên Màn Hình Studio Display 2.5D (Display Transition 2.00s — Kling #19)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="squat_to_stand, landing_crouch, standing_ready, walk_in" data-scene="outdoor, indoor, any" data-search="intermission stage-curtain rem-nhung rem-san-khau kling-52 rèm nhung đỏ sân khấu 2.5d mở cảnh nhảy đáp đất (stage velvet curtain reveal — intermission 2.00s) khi đầu video có pha cúi người lấy đà bật nhảy đáp đất (squat_to_stand / jump_land) cần che kín 100% lúc lấy đà và mở toạc sân khấu đúng đỉnh nhảy trên không, hoặc mở màn sân khấu điện ảnh. squat_to_stand, landing_crouch, standing_ready, walk_in outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#04 • intermission</span>
+              </div>
+              <span class="matrix-badge motion">2.00s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất (Stage Velvet Curtain Reveal — Intermission 2.00s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi đầu video có pha cúi người lấy đà bật nhảy đáp đất (squat_to_stand / jump_land) cần che kín 100% lúc lấy đà và mở toạc sân khấu đúng đỉnh nhảy trên không, hoặc mở màn sân khấu điện ảnh.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/footageai3_intermission_web.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>INTERMISSION : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_intermission_curtain_2s.wav (Stereo Velvet Curtain Whoosh & Cloth Foley @ 1.32s–1.96s -> 42Hz Landing Sub-Bass Thud @ 2.00s, Voice-Safe 100% từ F68)</div>
+              <div><strong>⚙️ Engine:</strong> <code>intermission_curtain_engine.py</code> • <strong>Verifier:</strong> <code>verify_intermission_curtain.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (intermission)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset intermission</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset intermission'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-intermission.html', 'Studio AI Hook: intermission')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/footageai3_intermission_web.mp4', 'intermission — Rèm Nhung Đỏ Sân Khấu 2.5D Mở Cảnh Nhảy Đáp Đất (Stage Velvet Curtain Reveal — Intermission 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="jib-down crane-jib-down jib-up-reverse ha-can-cau hạ cần cẩu máy quay 3d parallax từ vòm cây xuống ngang mắt (vertical crane jib-down 2.30s) khi nhân vật đứng hoặc bước nói ở công viên, dưới tán cây, cạnh hồ bơi hoặc trước tòa nhà ngoài trời. standing_ready, walk_in, squat_to_stand outdoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#05 • jib-down</span>
+              </div>
+              <span class="matrix-badge motion">2.30s • outdoor</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt (Vertical Crane Jib-Down 2.30s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng hoặc bước nói ở công viên, dưới tán cây, cạnh hồ bơi hoặc trước tòa nhà ngoài trời.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/footageai1_jib_down_web.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>JIB DOWN : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_jib_down_2p3s.wav (Canopy Air Rush + Smooth Crane Whoosh + Soft Air Cushion 55Hz Sub-thump @ 2.22s)</div>
+              <div><strong>⚙️ Engine:</strong> <code>jib_down_engine.py</code> • <strong>Verifier:</strong> <code>verify_jib_down.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (jib-down)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset jib-down</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset jib-down'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-jib-down.html', 'Studio AI Hook: jib-down')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/footageai1_jib_down_web.mp4', 'jib-down — Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt (Vertical Crane Jib-Down 2.30s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, sitting_ready, walk_in, squat_to_stand" data-scene="outdoor, indoor, any" data-search="pantone1 katana-palette-hook pantone-1 bảng màu pantone & vòng quạt màu xoay (pantone 1 — katana palette reveal 2.40s) khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn phong cách tạp chí thời trang / editorial pantone color reveal. standing_ready, sitting_ready, walk_in, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#06 • pantone1</span>
+              </div>
+              <span class="matrix-badge motion">2.40s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Bảng Màu Pantone & Vòng Quạt Màu Xoay (Pantone 1 — Katana Palette Reveal 2.40s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong nhà muốn mở màn phong cách tạp chí thời trang / Editorial Pantone Color Reveal.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_katana_palette_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>PANTONE1 : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_katana_palette_2p4s.wav (Mechanical Color Wheel Ratchet Spin -> 2x Crisp Card Pop Snaps @ 0.65s & 1.20s -> Warm Color Wave Shimmer + 55Hz Clean Lock Impact @ 2.30s)</div>
+              <div><strong>⚙️ Engine:</strong> <code>katana_palette_engine.py</code> • <strong>Verifier:</strong> <code>verify_katana_palette.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (pantone1)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset pantone1</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset pantone1'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-pantone1.html', 'Studio AI Hook: pantone1')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_katana_palette_master.mp4', 'pantone1 — Bảng Màu Pantone & Vòng Quạt Màu Xoay (Pantone 1 — Katana Palette Reveal 2.40s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="sticker-transition transitions sticker-match-cut 3d-sticker-peel bóc nhãn dán sticker 3d & phóng match-cut (3d die-cut sticker peel & match-cut 2.15s) khi nhân vật đứng hoặc ngồi nói ở ngoài trời (công viên, đường phố, kiến trúc đô thị) hoặc trong nhà muốn mở màn bằng hiệu ứng bóc sticker 3d sáng tạo kiểu higgsfield transitions. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#07 • sticker-transition</span>
+              </div>
+              <span class="matrix-badge motion">2.15s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Bóc Nhãn Dán Sticker 3D & Phóng Match-Cut (3D Die-Cut Sticker Peel & Match-Cut 2.15s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời (công viên, đường phố, kiến trúc đô thị) hoặc trong nhà muốn mở màn bằng hiệu ứng bóc Sticker 3D sáng tạo kiểu Higgsfield Transitions.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_sticker_transition_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>STICKER TRANSITION : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_sticker_transition_2p15s.wav (Crisp Vinyl Sticker Slap & Peel Rip @ 0.15s–1.25s -> Elastic Pop-Out Whoosh @ 1.20s–1.85s -> 55Hz Match-Cut Sub Lock @ 2.05s)</div>
+              <div><strong>⚙️ Engine:</strong> <code>sticker_transition_engine.py</code> • <strong>Verifier:</strong> <code>verify_sticker_transition.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (sticker-transition)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset sticker-transition</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset sticker-transition'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-sticker-transition.html', 'Studio AI Hook: sticker-transition')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_sticker_transition_master.mp4', 'sticker-transition — Bóc Nhãn Dán Sticker 3D & Phóng Match-Cut (3D Die-Cut Sticker Peel & Match-Cut 2.15s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="flycam-transition fpv-flycam fpv flycam xuyên khe cánh tay & lướt mặt cỏ đáp vào nhân vật (flycam-transition 2.50s) khi nhân vật đứng nói ở công viên, bãi cỏ hoặc không gian mở ngoài trời muốn có cú chuyển cảnh fpv drone xuyên cổng cơ thể tốc độ cao. standing_ready, walk_in, squat_to_stand outdoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#08 • flycam-transition</span>
+              </div>
+              <span class="matrix-badge motion">2.50s • outdoor</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">FPV Flycam Xuyên Khe Cánh Tay & Lướt Mặt Cỏ Đáp Vào Nhân Vật (Flycam-Transition 2.50s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng nói ở công viên, bãi cỏ hoặc không gian mở ngoài trời muốn có cú chuyển cảnh FPV Drone xuyên cổng cơ thể tốc độ cao.</p>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>FLYCAM TRANSITION : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_flycam_transition_2p5s.wav (Wind Rush + FPV Drone Doppler 180->320->140Hz + Portal Whoosh @ 1.04s + 55Hz Landing Sub-Drop @ 2.38s)</div>
+              <div><strong>⚙️ Engine:</strong> <code>flycam_transition_engine.py</code> • <strong>Verifier:</strong> <code>verify_flycam_transition.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (flycam-transition)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset flycam-transition</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset flycam-transition'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="timelapse-freeze freeze-time đứng tĩnh giữa dòng đời tua nhanh (timelapse-freeze 2.00s) khi nhân vật đứng nói ở công viên, đường phố, không gian mở ngoài trời muốn tạo hiệu ứng đóng băng thời gian điện ảnh. standing_ready, walk_in, squat_to_stand outdoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#09 • timelapse-freeze</span>
+              </div>
+              <span class="matrix-badge motion">2.00s • outdoor</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (Timelapse-Freeze 2.00s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng nói ở công viên, đường phố, không gian mở ngoài trời muốn tạo hiệu ứng đóng băng thời gian điện ảnh.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_timelapse_freeze_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>TIMELAPSE FREEZE : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_timelapse_freeze_2s.wav (Accelerated Clock Ticking 22 nhịp + Time-Rush Crowd Whoosh + 55Hz Time-Freeze Sub-Drop @ 1.90s)</div>
+              <div><strong>⚙️ Engine:</strong> <code>timelapse_freeze_engine.py</code> • <strong>Verifier:</strong> <code>verify_timelapse_freeze.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (timelapse-freeze)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset timelapse-freeze</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset timelapse-freeze'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_timelapse_freeze_master.mp4', 'timelapse-freeze — Đứng Tĩnh Giữa Dòng Đời Tua Nhanh (Timelapse-Freeze 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="point-cloud lidar-scan 3d-point-cloud quét đám mây điểm lidar 3d & hợp nhất khung hình thật (3d lidar point-cloud scan 2.00s) khi muốn mở màn công nghệ cao với hiệu ứng quét lidar 3d point-cloud hội tụ thành nhân vật thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#10 • point-cloud</span>
+              </div>
+              <span class="matrix-badge motion">2.00s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Quét Đám Mây Điểm LiDAR 3D & Hợp Nhất Khung Hình Thật (3D LiDAR Point-Cloud Scan 2.00s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi muốn mở màn công nghệ cao với hiệu ứng quét LiDAR 3D Point-Cloud hội tụ thành nhân vật thật.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_point_cloud_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>POINT CLOUD : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_point_cloud_2s.wav (Digital LiDAR Sweep + Particle Convergence Shimmer + 55Hz Lock Sub-Drop)</div>
+              <div><strong>⚙️ Engine:</strong> <code>point_cloud_engine.py</code> • <strong>Verifier:</strong> <code>verify_point_cloud.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (point-cloud)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset point-cloud</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset point-cloud'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_point_cloud_master.mp4', 'point-cloud — Quét Đám Mây Điểm LiDAR 3D & Hợp Nhất Khung Hình Thật (3D LiDAR Point-Cloud Scan 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, squat_to_stand, walk_in" data-scene="outdoor" data-search="giant-grab ban-tay-khong-lo hand-drop bàn tay khổng lồ thả nhân vật xuống bối cảnh thật (giant hand grab & drop 2.00s) khi nhân vật đứng nói ở ngoài trời muốn mở màn ấn tượng bằng bàn tay khổng lồ thả nhân vật từ trên cao xuống đất. standing_ready, squat_to_stand, walk_in outdoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#11 • giant-grab</span>
+              </div>
+              <span class="matrix-badge motion">2.00s • outdoor</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Bàn Tay Khổng Lồ Thả Nhân Vật Xuống Bối Cảnh Thật (Giant Hand Grab & Drop 2.00s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng nói ở ngoài trời muốn mở màn ấn tượng bằng bàn tay khổng lồ thả nhân vật từ trên cao xuống đất.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_giant_grab_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>GIANT GRAB : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_giant_grab_2s.wav (Sky Giant Whoosh + Cloth Grip + 55Hz Ground Impact)</div>
+              <div><strong>⚙️ Engine:</strong> <code>giant_grab_engine.py</code> • <strong>Verifier:</strong> <code>verify_giant_grab.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (giant-grab)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset giant-grab</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset giant-grab'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_giant_grab_master.mp4', 'giant-grab — Bàn Tay Khổng Lồ Thả Nhân Vật Xuống Bối Cảnh Thật (Giant Hand Grab & Drop 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, sitting_ready, walk_in, squat_to_stand" data-scene="outdoor, indoor, any" data-search="blinds-in venetian-blinds rem-sao lao xuyên rèm sáo venetian blinds 3d vào nhân vật (blinds-in transition 2.15s) khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong phòng muốn mở màn bằng cú xuyên qua khe rèm sáo điện ảnh. standing_ready, sitting_ready, walk_in, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#12 • blinds-in</span>
+              </div>
+              <span class="matrix-badge motion">2.15s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Lao Xuyên Rèm Sáo Venetian Blinds 3D Vào Nhân Vật (Blinds-In Transition 2.15s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng hoặc ngồi nói ở ngoài trời hoặc trong phòng muốn mở màn bằng cú xuyên qua khe rèm sáo điện ảnh.</p>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>BLINDS IN : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_blinds_in_2p15s.wav (Venetian Slat Clatter + Fast Portal Whoosh + 55Hz Lock Sub-Drop)</div>
+              <div><strong>⚙️ Engine:</strong> <code>blinds_in_engine.py</code> • <strong>Verifier:</strong> <code>verify_blinds_in.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (blinds-in)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset blinds-in</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset blinds-in'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor, indoor, any" data-search="hero-cam orbital-hero-cam bullet-time-orbit quỹ đạo vòng cung bullet-time hero cam 2.5d (orbital hero-cam 2.17s) khi nhân vật đứng nói ở ngoài trời hoặc studio muốn mở màn bằng cú máy lượn vòng cung hero-cam điện ảnh. standing_ready, walk_in, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#13 • hero-cam</span>
+              </div>
+              <span class="matrix-badge motion">2.17s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Quỹ Đạo Vòng Cung Bullet-Time Hero Cam 2.5D (Orbital Hero-Cam 2.17s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng nói ở ngoài trời hoặc studio muốn mở màn bằng cú máy lượn vòng cung Hero-Cam điện ảnh.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_hero_cam_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>HERO CAM : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_hero_cam_2p17s.wav (Orbital Bullet-Time Whoosh + Sub-Bass Lock)</div>
+              <div><strong>⚙️ Engine:</strong> <code>hero_cam_engine.py</code> • <strong>Verifier:</strong> <code>verify_hero_cam.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (hero-cam)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset hero-cam</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset hero-cam'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_hero_cam_master.mp4', 'hero-cam — Quỹ Đạo Vòng Cung Bullet-Time Hero Cam 2.5D (Orbital Hero-Cam 2.17s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, sitting_ready, walk_in" data-scene="indoor, outdoor" data-search="through-object through-object-out xuyên lỗ mắt thần cửa gỗ (through object v2) khi nhân vật đứng hoặc ngồi nói trong nhà/studio/văn phòng, hoặc mở cảnh ngoài trời qua khung cửa. standing_ready, sitting_ready, walk_in indoor, outdoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#14 • through-object</span>
+              </div>
+              <span class="matrix-badge motion">2.67s • indoor, outdoor</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Xuyên Lỗ Mắt Thần Cửa Gỗ (Through Object V2)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng hoặc ngồi nói trong nhà/studio/văn phòng, hoặc mở cảnh ngoài trời qua khung cửa.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_through_object_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>THROUGH OBJECT : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_through_object_3s.wav (Muffled 380Hz -> Hollow Tube Doppler 1.67s -> Open Air + 55Hz Sub-thump)</div>
+              <div><strong>⚙️ Engine:</strong> <code>ai_hook_engine.py</code> • <strong>Verifier:</strong> <code>verify_smooth_zoom.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (through-object)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset through-object</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset through-object'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_through_object_master.mp4', 'through-object — Xuyên Lỗ Mắt Thần Cửa Gỗ (Through Object V2)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, sitting_ready, squat_to_stand" data-scene="outdoor, indoor" data-search="rapid-zoom fast-zoom rapid zoom in nhanh (hold -> rush -> settle) khi muốn vào thẳng câu nói đầu tiên với nhịp zoom nhanh gọn 2.15s từ toàn cảnh địa điểm. standing_ready, sitting_ready, squat_to_stand outdoor, indoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#15 • rapid-zoom</span>
+              </div>
+              <span class="matrix-badge motion">2.15s • outdoor, indoor</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Rapid Zoom In Nhanh (Hold -> Rush -> Settle)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi muốn vào thẳng câu nói đầu tiên với nhịp zoom nhanh gọn 2.15s từ toàn cảnh địa điểm.</p>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>RAPID ZOOM : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> Whoosh Fast Air đặt đỉnh ở pha RUSH (1.20s–1.75s)</div>
+              <div><strong>⚙️ Engine:</strong> <code>ai_hook_engine.py</code> • <strong>Verifier:</strong> <code>verify_smooth_zoom.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (rapid-zoom)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset rapid-zoom</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset rapid-zoom'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="exploded-assembly voronoi-shards bento-shards 3d-exploded mảnh vỡ 3d voronoï/bento hợp nhất khung hình thật (3d exploded assembly 2.17s) khi muốn mở màn ấn tượng với hiệu ứng 38 mảnh khối 3d voronoï/bento có vách dày và bóng đổ bay hướng tâm lắp ghép khít thành chủ thể thật mà không cắt qua gương mặt. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#16 • exploded-assembly</span>
+              </div>
+              <span class="matrix-badge motion">2.17s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Mảnh Vỡ 3D Voronoï/Bento Hợp Nhất Khung Hình Thật (3D Exploded Assembly 2.17s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi muốn mở màn ấn tượng với hiệu ứng 38 mảnh khối 3D Voronoï/Bento có vách dày và bóng đổ bay hướng tâm lắp ghép khít thành chủ thể thật mà không cắt qua gương mặt.</p>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>EXPLODED ASSEMBLY : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_exploded_assembly.wav (Reverse Whoosh + 6 Magnetic Clack Clusters + Pneumatic Lock & 55Hz Sub Hit at f44)</div>
+              <div><strong>⚙️ Engine:</strong> <code>exploded_assembly_engine.py</code> • <strong>Verifier:</strong> <code>verify_exploded_assembly.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (exploded-assembly)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset exploded-assembly</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset exploded-assembly'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="polygon-sculpt low-poly marble-sculpt polygon-morph điêu khắc đa giác cẩm thạch 3d & quét ánh sáng specular (polygon sculpt 2.09s) khi muốn mở màn nghệ thuật điêu khắc 3d low-poly marble kết tinh từ 350 đa giác thành gương mặt và khung hình thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#17 • polygon-sculpt</span>
+              </div>
+              <span class="matrix-badge motion">2.09s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Điêu Khắc Đa Giác Cẩm Thạch 3D & Quét Ánh Sáng Specular (Polygon Sculpt 2.09s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi muốn mở màn nghệ thuật điêu khắc 3D Low-Poly Marble kết tinh từ 350 đa giác thành gương mặt và khung hình thật.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_polygon_sculpt_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>POLYGON SCULPT : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_polygon_sculpt.wav (7 Crystalline Marble Chisel Ticks + Specular Rim Sweep Whoosh + 55Hz Sub Lock)</div>
+              <div><strong>⚙️ Engine:</strong> <code>polygon_sculpt_engine.py</code> • <strong>Verifier:</strong> <code>verify_polygon_sculpt.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (polygon-sculpt)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset polygon-sculpt</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset polygon-sculpt'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_polygon_sculpt_master.mp4', 'polygon-sculpt — Điêu Khắc Đa Giác Cẩm Thạch 3D & Quét Ánh Sáng Specular (Polygon Sculpt 2.09s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="smoke-reveal curl-smoke volumetric-smoke khoi-mo-man cột khói xoáy 3d volumetric mở lộ chủ thể (curl-noise volumetric smoke reveal 2.09s) khi nhân vật đứng nói ở công viên, đường phố hoặc studio muốn mở màn điện ảnh bí ẩn từ làn khói 3d volumetric cuộn xoáy rồi tan dần lộ rõ gương mặt sắc nét. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#18 • smoke-reveal</span>
+              </div>
+              <span class="matrix-badge motion">2.09s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Cột Khói Xoáy 3D Volumetric Mở Lộ Chủ Thể (Curl-Noise Volumetric Smoke Reveal 2.09s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng nói ở công viên, đường phố hoặc studio muốn mở màn điện ảnh bí ẩn từ làn khói 3D Volumetric cuộn xoáy rồi tan dần lộ rõ gương mặt sắc nét.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_smoke_reveal_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>SMOKE REVEAL : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_smoke_reveal.wav (Swirling Wind + 45Hz Smoke Plume Rumble + f30 Breath Swell + f46 Soft Sub Lock)</div>
+              <div><strong>⚙️ Engine:</strong> <code>smoke_reveal_engine.py</code> • <strong>Verifier:</strong> <code>verify_smoke_reveal.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (smoke-reveal)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset smoke-reveal</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset smoke-reveal'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_smoke_reveal_master.mp4', 'smoke-reveal — Cột Khói Xoáy 3D Volumetric Mở Lộ Chủ Thể (Curl-Noise Volumetric Smoke Reveal 2.09s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="glow-trace neon-laser-trace sdf-reveal blueprint-laser quét tia laser neon đôi & sóng mở khóa sdf (dual arclength neon laser + sdf reveal 2.00s) khi muốn mở màn công nghệ sắc nét với 2 tia laser neon cyan & gold vẽ đường viền chủ thể trên nền bản vẽ kỹ thuật blueprint rồi bung sóng cầu mở khóa cảnh thật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#19 • glow-trace</span>
+              </div>
+              <span class="matrix-badge motion">2.00s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Quét Tia Laser Neon Đôi & Sóng Mở Khóa SDF (Dual Arclength Neon Laser + SDF Reveal 2.00s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi muốn mở màn công nghệ sắc nét với 2 tia Laser Neon Cyan & Gold vẽ đường viền chủ thể trên nền bản vẽ kỹ thuật Blueprint rồi bung sóng cầu mở khóa cảnh thật.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_glow_trace_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>GLOW TRACE : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_glow_trace.wav (Dual Cyber Laser Hum + Sparkle Ticks -> Crystal Ping @ f30 -> Radial Whoosh + 55Hz Sub Lock @ f44)</div>
+              <div><strong>⚙️ Engine:</strong> <code>glow_trace_engine.py</code> • <strong>Verifier:</strong> <code>verify_glow_trace.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (glow-trace)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset glow-trace</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset glow-trace'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-glow-trace.html', 'Studio AI Hook: glow-trace')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_glow_trace_master.mp4', 'glow-trace — Quét Tia Laser Neon Đôi & Sóng Mở Khóa SDF (Dual Arclength Neon Laser + SDF Reveal 2.00s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, sitting_ready, squat_to_stand" data-scene="outdoor, indoor, any" data-search="double-exposure true-detective silhouette-blend hòa trộn phơi sáng kép điện ảnh (true-detective silhouette blend 2.085s) khi muốn mở màn nghệ thuật, chiều sâu nội tâm chuẩn điện ảnh true detective với cảnh vật chuyển động lồng trong bóng silhouette nhân vật. standing_ready, walk_in, sitting_ready, squat_to_stand outdoor, indoor, any" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px;">
+              <div class="matrix-title">
+                <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#20 • double-exposure</span>
+              </div>
+              <span class="matrix-badge motion">2.08s • outdoor, indoor, any</span>
+            </div>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Hòa Trộn Phơi Sáng Kép Điện Ảnh (True-Detective Silhouette Blend 2.085s)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi muốn mở màn nghệ thuật, chiều sâu nội tâm chuẩn điện ảnh True Detective với cảnh vật chuyển động lồng trong bóng Silhouette nhân vật.</p>
+            
+            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
+              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                <source src="studios/viet2210_double_exposure_master.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
+              <div><strong>🗣️ Gọi nhanh:</strong> <code>DOUBLE EXPOSURE : /duong/dan/video.mp4</code></div>
+              <div><strong>🔊 SFX:</strong> sfx_double_exposure.wav (Warm Cinematic Pad + Timelapse Breeze Whoosh + Deep Heartbeat Pulse + 55Hz Clean Sub Lock)</div>
+              <div><strong>⚙️ Engine:</strong> <code>double_exposure_engine.py</code> • <strong>Verifier:</strong> <code>verify_double_exposure.py</code></div>
+            </div>
+          </div>
+          <div>
+            <div class="cmd-box" style="margin:0 0 10px;">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh CLI (double-exposure)</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/duong/dan/video.mp4" --preset double-exposure</code></pre>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              
+          <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset double-exposure'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
+        
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_double_exposure_master.mp4', 'double-exposure — Hòa Trộn Phơi Sáng Kép Điện Ảnh (True-Detective Silhouette Blend 2.085s)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Video</button>
+            
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL XEM VIDEO DEMO NHANH -->
+  <div id="hookVideoModal" style="display:none; position:fixed; inset:0; background:rgba(5,5,7,0.88); z-index:9999; align-items:center; justify-content:center; padding:20px;" onclick="if(event.target===this) closeHookVideoModal()">
+    <div style="background:#0f172a; border:1px solid #334155; border-radius:16px; max-width:480px; width:100%; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+      <div style="padding:12px 16px; border-bottom:1px solid #1e293b; display:flex; justify-content:space-between; align-items:center;">
+        <strong id="hookVideoModalTitle" style="font:700 14px var(--sans); color:#fff;">Video Demo</strong>
+        <button type="button" onclick="closeHookVideoModal()" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:4px 10px; font-weight:700; cursor:pointer;">✕ Đóng</button>
+      </div>
+      <div style="aspect-ratio:9/16; max-height:75vh; width:100%; background:#000;">
+        <video id="hookVideoModalPlayer" controls loop playsinline style="width:100%; height:100%; object-fit:contain; display:block;"></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window._currentHookFilter = 'all';
+    function setHookFilter(f, btn) {
+      window._currentHookFilter = f;
+      document.querySelectorAll('.hook-filter-btn').forEach(b => {
+        b.style.background = '#fff';
+        b.style.color = '#0f172a';
+        b.style.borderColor = '#cbd5e1';
+      });
+      if (btn) {
+        btn.style.background = '#0f172a';
+        btn.style.color = '#fff';
+        btn.style.borderColor = '#0f172a';
+      }
+      filterHooksTable();
+    }
+    function filterHooksTable() {
+      const q = (document.getElementById('hookSearchInput')?.value || '').trim().toLowerCase();
+      const f = window._currentHookFilter || 'all';
+      document.querySelectorAll('.hook-row, .hook-card').forEach(el => {
+        const s = el.getAttribute('data-search') || '';
+        const m = el.getAttribute('data-motion') || '';
+        const sc = el.getAttribute('data-scene') || '';
+        const matchQ = !q || s.includes(q);
+        let matchF = true;
+        if (f === 'squat_to_stand' || f === 'standing_ready') matchF = m.includes(f);
+        else if (f === 'outdoor' || f === 'indoor') matchF = sc.includes(f) || sc.includes('any');
+        el.style.display = (matchQ && matchF) ? '' : 'none';
+      });
+    }
+    function openHookVideoModal(src, title) {
+      const m = document.getElementById('hookVideoModal');
+      const v = document.getElementById('hookVideoModalPlayer');
+      const t = document.getElementById('hookVideoModalTitle');
+      if (!m || !v) return;
+      t.innerText = title;
+      v.src = src;
+      m.style.display = 'flex';
+      v.play().catch(()=>{});
+    }
+    function closeHookVideoModal() {
+      const m = document.getElementById('hookVideoModal');
+      const v = document.getElementById('hookVideoModalPlayer');
+      if (!m || !v) return;
+      v.pause();
+      v.src = '';
+      m.style.display = 'none';
+    }
+  </script>
+  <script src="assets/skill_live_data.js?v=20261022"></script>
+  <script src="assets/manifest.js?v=20261022"></script>
+  <script src="assets/hub.js?v=20261022"></script>
+</body>
+</html>
