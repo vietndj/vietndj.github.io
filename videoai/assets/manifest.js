@@ -122,6 +122,17 @@ window.HUB = {
       stage: "buoc4",
       icon: "🌿",
       q: "Cẩm nang đóng gói Kỹ năng Edit Video cho Spa: Đầu vào, Mantra EDIT SPA, MCP, Cài đặt máy mới & Chuyển giao học viên"
+    },
+    {
+      id: "bang-ai-hook",
+      file: "10-bang-ai-hook.html",
+      group: "ref",
+      n: "10",
+      title: "Bảng tổng hợp AI Hook (Tự động cập nhật)",
+      short: "Bảng AI Hook (Live)",
+      stage: "motion",
+      icon: "🎣",
+      q: "Tra cứu trực tiếp toàn bộ kho AI Hook tự động cập nhật từ hooks.d/*.json, xem video Master, mở Studio & copy lệnh 1 chạm"
     }
   ]
 };
