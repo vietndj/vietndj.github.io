@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio AI Hook STICKER TRANSITION — 3D Die-Cut Sticker Peel &amp; Match-Cut (2.15s)</title>
+<style>
+  :root {
+    --bg: #080a0f;
+    --card: #11151e;
+    --border: #232c3d;
+    --lime: #d4fe48;
+    --cyan: #38bdf8;
+    --emerald: #34d399;
+    --amber: #fbbf24;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.55;
+  }
+  .container { max-width: 1360px; margin: 0 auto; }
+  .hero {
+    background: linear-gradient(135deg, #111726 0%, #192338 100%);
+    border: 1px solid #2d3b56;
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+  }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .badge {
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .badge-lime { background: var(--lime); color: #000; }
+  .badge-cyan { background: rgba(56,189,248,0.16); color: var(--cyan); border: 1px solid rgba(56,189,248,0.4); }
+  .badge-emerald { background: rgba(52,211,153,0.16); color: var(--emerald); border: 1px solid rgba(52,211,153,0.4); }
+  h1 { margin: 0 0 8px 0; font-size: 24px; color: #fff; }
+  .sub { color: #cbd5e1; font-size: 14px; margin-bottom: 14px; }
+  .cmd-bar {
+    background: #0b0e15;
+    border: 1px solid #28344b;
+    border-left: 4px solid var(--lime);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+  }
+  .copy-btn {
+    background: var(--lime);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 12.5px;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+    margin-bottom: 22px;
+  }
+  .v-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .v-card.master { border: 1.5px solid rgba(212,254,72,0.65); }
+  .v-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid #1d2536;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .v-title { font-size: 16px; font-weight: 800; color: #fff; }
+  .player-box {
+    background: #040609;
+    aspect-ratio: 9/16;
+    max-height: 560px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+  .v-body { padding: 14px 18px; font-size: 13.5px; color: #cbd5e1; }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+    background: #0b0e15;
+    border: 1px solid #1e273a;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+  }
+  .m-lbl { color: var(--muted); font-size: 10px; text-transform: uppercase; display: block; }
+  .m-val { color: #fff; font-weight: 700; }
+  .phases {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .phase-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #0b0e15;
+    border: 1px solid #263147;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .qa-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  .qa-card img { width: 100%; height: auto; border-radius: 10px; border: 1px solid #263147; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="badges">
+      <span class="badge badge-lime">AI HOOK PRESET: STICKER-TRANSITION</span>
+      <span class="badge badge-cyan">Higgsfield Transitions #06 Sticker Match-Cut</span>
+      <span class="badge badge-emerald">VERDICT: PASS 5/5 GATES (SSIM 0.9983 • ΔE00 0.043 • 0% Halo)</span>
+    </div>
+    <h1>🏷️ Studio Đối Chiếu AI Hook <code>sticker-transition</code> (3D Die-Cut Sticker Peel &amp; Match-Cut — 2.15s)</h1>
+    <div class="sub">
+      So sánh trực tiếp giữa <strong>① Video Mẫu Gốc Higgsfield Transitions (<code>06_Sticker_Match_Cut.mp4</code>)</strong> và <strong>② Video Kết Quả Master Của Anh Việt (<code>viet2210_sticker_transition_master.mp4</code>)</strong>. Đóng gói sẵn vào kỹ năng <code>ai-hook</code> với mã preset <code>sticker-transition</code> (alias: <code>transitions</code>).
+    </div>
+    <div class="cmd-bar">
+      <span id="cmdText">python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "viet2210.MOV" --preset sticker-transition</span>
+      <div style="display:flex; gap:8px;">
+        <button class="copy-btn" onclick="syncPlayBoth()">▶ Phát Song Song Cả 2 Video</button>
+        <button class="copy-btn" style="background:#38bdf8;" onclick="navigator.clipboard.writeText(document.getElementById('cmdText').innerText); this.innerText='✓ Đã Copy Lệnh';">Copy Lệnh CLI</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- REF VIDEO -->
+    <div class="v-card">
+      <div class="v-head">
+        <div class="v-title">① Video Mẫu Gốc (Higgsfield Transitions #06)</div>
+        <a href="https://higgsfield.ai/apps/transitions" target="_blank" rel="noopener" style="color:var(--cyan); font-size:12px; font-weight:700; text-decoration:none;">Higgsfield App ↗</a>
+      </div>
+      <div class="player-box">
+        <video id="vidRef" controls loop playsinline preload="metadata" src="06_Sticker_Match_Cut.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Cơ chế gốc được giải phẫu:</strong> Chủ thể xuất hiện dưới dạng một miếng <strong>Decal / Sticker cắt bế có viền giấy trắng dày (Die-Cut White Outline)</strong> dán trên các bề mặt trụ bê tông và kiến trúc đô thị ngoài trời, sau đó tự động bóc tách khỏi bề mặt phẳng và phóng <code>Perspective Match-Cut</code> khớp 1:1 vào nhân vật thật đang chuyển động.
+        <div class="metrics">
+          <div><span class="m-lbl">Mẫu Gốc</span><span class="m-val">06_Sticker_Match_Cut</span></div>
+          <div><span class="m-lbl">Cơ chế</span><span class="m-val">Die-Cut → Real</span></div>
+          <div><span class="m-lbl">Biến dạng</span><span class="m-val">3D Page-Curl</span></div>
+          <div><span class="m-lbl">Bảo toàn mặt</span><span class="m-val">100% Pixel Thật</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASTER RESULT VIDEO -->
+    <div class="v-card master">
+      <div class="v-head">
+        <div class="v-title">② Kết Quả Master: Anh Việt (Preset <code>sticker-transition</code>)</div>
+        <span class="badge badge-lime">1080×1920 • PASS 5/5 GATES</span>
+      </div>
+      <div class="player-box">
+        <video id="vidMaster" controls loop playsinline preload="metadata" src="viet2210_sticker_transition_master.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Kết quả thực thi trên <code>viet2210.MOV</code> (2.15s Hook + Talk @ 24fps):</strong>
+        Pha 1 (<code>0.00–0.90s</code>) Miếng Sticker cắt bế viền trắng <code>16px</code> + vân giấy mỹ thuật + vệt bóng kính <code>Glossy Specular Sheen</code> dán nghiêng 3D trên trụ bê tông công viên &rarr; Pha 2 (<code>0.90–1.65s</code>) <code>3D Cylindrical Page-Curl Peel</code> bóc cong miếng Sticker kèm sóng phản quang và phóng <code>Perspective Match-Cut</code> &rarr; Pha 3 (<code>1.65–2.15s</code>) Viền trắng thu gọn về <code>0%</code> trước <code>1.88s</code>, hậu cảnh mở nét <code>Radial Focus Reveal</code> khóa tuyệt đối vào <code>Frame #48</code>.
+        <div class="phases">
+          <span class="phase-pill">P1 (0.00–0.90s): 16px Die-Cut Vinyl</span>
+          <span class="phase-pill">P2 (0.90–1.65s): 3D Cylindrical Peel</span>
+          <span class="phase-pill">P3 (1.65–2.15s): Radial Focus &amp; Lock</span>
+          <span class="phase-pill">SFX: Vinyl Rip + Pop Whoosh + 55Hz Sub</span>
+        </div>
+        <div class="metrics">
+          <div><span class="m-lbl">Gate G4 SSIM</span><span class="m-val" style="color:var(--lime);">0.99826</span></div>
+          <div><span class="m-lbl">Gate G4 ΔE00</span><span class="m-val" style="color:var(--lime);">0.0432 ≤ 0.5</span></div>
+          <div><span class="m-lbl">Gate G1 Outline</span><span class="m-val">83.2% → 0.0%</span></div>
+          <div><span class="m-lbl">Gate G3 Halo</span><span class="m-val">MAD 1.25 ≤ 4.0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <strong style="font-size:16px; color:#fff;">🖼️ Bảng Kiểm Định 12 Mốc Frame Thực Tế (QA Contact Sheet — <code>qa_sticker_transition_sheet.jpg</code>)</strong>
+      <span class="badge badge-emerald">Nghiệm Thu CLAUDE2 • 0% Viền Halo • Khóa Frame #48 Tuyệt Đối</span>
+    </div>
+    <img src="qa_sticker_transition_sheet.jpg" alt="QA Contact Sheet Sticker Transition">
+  </div>
+
+  <div class="qa-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <strong style="font-size:16px; color:#fff;">🧩 Bộ 6 Lớp Tài Nguyên 3D Die-Cut Sticker &amp; Surface Plate (<code>qa_sticker_assets_preview.jpg</code>)</strong>
+      <span class="badge badge-cyan">Euclidean Distance 16px • 3D Bevel • Disk Bokeh r=16px</span>
+    </div>
+    <img src="qa_sticker_assets_preview.jpg" alt="Sticker Assets Preview">
+  </div>
+</div>
+
+<script>
+function syncPlayBoth() {
+  const v1 = document.getElementById('vidRef');
+  const v2 = document.getElementById('vidMaster');
+  v1.currentTime = 0;
+  v2.currentTime = 0;
+  v1.play();
+  v2.play();
+}
+</script>
+</body>
+</html>
