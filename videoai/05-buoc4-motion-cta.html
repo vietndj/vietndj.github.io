@@ -119,6 +119,186 @@
       <!-- AUTO_EVOLUTION_START:buoc-4 -->
 
       <!-- ========================================================
+           QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (ai-hook-display-transition-kling19)
+           ======================================================== -->
+      <div class="evolution-injected-section" id="evo-ai-hook-display-transition-kling19" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <span style="font:700 11.5px var(--mono); color:#b45309; background:#fef3c7; border:1px solid #fde68a; padding:3px 10px; border-radius:999px;">
+            ⚡ QUY CHUẨN MỚI CẬP NHẬT • 2026-10-24 • CHUẨN A1455F3C
+          </span>
+        </div>
+        <h2 style="margin-top:6px;">AI Hook Preset 'display-transition': Dolly-In 2.5D Xuyên Màn Hình Studio Display 9:16 2.00s & Hệ Thống Zero-Collision Registry v3.0 (Kỹ năng ai-hook)</h2>
+
+        <!-- TẦNG 1: WHAT • WHY • HOW -->
+        <div class="wwh-grid">
+          <div class="wwh-card">
+            <div class="wwh-tag what">WHAT • BẢN CHẤT ELEMENT</div>
+            <div class="wwh-title">Toàn cảnh bàn làm việc Luxury Studio phát live 4K (F00..F20) → 2.5D Homography Dolly-In xuyên màn hình (F21..F47) → Khóa Passthrough 100% F48+ & Nâng cấp Zero-Collision Registry v3.0</div>
+            <p class="wwh-desc">Chế độ Hook mới <strong><code>display-transition</code></strong> (aliases: <code>kling-19</code>, <code>studio-display</code>, <code>xuyen-man-hinh</code> &mdash; <code>2.00s</code> @ 24fps) trong kỹ năng <strong><code>ai-hook</code></strong>: Mở màn từ bàn làm việc Luxury Executive Studio hiện đại có chiếc màn hình dọc <strong>Apple Studio Display 9:16</strong> đang phát trực tiếp (<code>live feed</code>) video 4K gốc (<code>F_src = 65 + F_out</code>) kèm phản xạ kính và ánh sáng màn hình hắt xuống mặt bàn gỗ óc chó ở <code>F00..F20</code>; thực hiện cú <strong>2.5D Homography Dolly-In xuyên qua viền màn hình</strong> theo đường cong <code>easeInOutCubic</code> từ <code>F21..F47</code> (warp trực tiếp từ layer 4K gốc <code>2160x3840</code>, không thu nhỏ rồi phóng to lại!) và từ <code>F48 (2.000s)</code> trở đi <strong>Passthrough 100% frame gốc</strong> (<code>min SSIM-Y = 0.9956 &ge; 0.995</code>, <code>mean SSIM-Y = 0.9967</code>) ngay trước khi anh Việt mở miệng nói tại <code>F57 (2.375s)</code>. Đồng thời nâng cấp toàn bộ kỹ năng <code>ai-hook</code> lên <strong>Zero-Collision Modular Registry v3.0 (<code>hooks.d/*.json</code> + <code>register_hook.py</code> khóa nguyên tử <code>fcntl.flock</code>)</strong> để các luồng cập nhật song song không bao giờ ghi đè lên nhau.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag why">WHY • VÌ SAO CẦN ELEMENT NÀY?</div>
+            <div class="wwh-title">Vì sao phải Warp Homography trực tiếp từ 4K gốc và dùng Zero-Collision Registry hooks.d/?</div>
+            <p class="wwh-desc">1) Nếu thu nhỏ video vào chiếc màn hình nhỏ trên bàn làm việc rồi phóng to tấm ảnh tổng hợp đó lên, nội dung bên trong màn hình sẽ bị vỡ nét nặng và viền màn hình khi qua Radial Blur sẽ để lại bóng ma đồng tâm. Khi <strong>warp trực tiếp từ layer 4K gốc bằng ma trận Homography 4 đỉnh</strong> và chỉ áp dụng <code>Peripheral Radial Blur</code> lên không gian phòng xung quanh trước khi ghép màn hình, hình ảnh nét căng 100% từ giây đầu đến lúc khóa <code>F48</code>. <br>2) Khi cập nhật liên tục nhiều Hook mới từ các luồng song song, việc sửa chung <code>hooks_registry.json</code> và <code>ai_hook_engine.py</code> từng làm đè mất 4 Hook. Chuyển sang kiến trúc <strong><code>hooks.d/&lt;id&gt;.json</code> + <code>register_hook.py</code> (khóa <code>fcntl.flock</code> + Monotonic Guard + Orphan Engine Detector)</strong> chấm dứt vĩnh viễn lỗi đè file.</p>
+          </div>
+
+          <div class="wwh-card">
+            <div class="wwh-tag how">HOW • 2 CHẾ ĐỘ GỌI TỰ NHIÊN</div>
+            <div class="wwh-title">Gọi tự nhiên DISPLAY TRANSITION / XUYÊN MÀN HÌNH hoặc chạy CLI 1 chạm</div>
+            <p class="wwh-desc">Gọi trực tiếp bằng câu tự nhiên ('DISPLAY TRANSITION : <video>', 'XUYÊN MÀN HÌNH : <video>') hoặc chạy lệnh CLI của ai-hook:</p>
+            <div class="cmd-box">
+              <div class="cmd-header">
+                <span class="cmd-title">Lệnh Antigravity</span>
+                <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+              </div>
+              <pre><code>python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/Users/vietmac/Documents/AItest2/footageai1.mp4" --preset display-transition</code></pre>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="studio-launch-bar" style="margin:20px 0;">
+          <div class="studio-launch-info">
+            <b>🏷️ Studio AI Hook DISPLAY TRANSITION: Dolly-In 2.5D Xuyên Màn Hình Studio Display 9:16 (2.00s)</b>
+            <span>Chạy thử thời gian thực trên video mẫu, chuyển đổi 2 chế độ: Chỉ Logo Thương Hiệu (Mode 1) hoặc Kèm Thẻ Vé CTA Ưu Đãi (Mode 2)</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            
+            <button type="button" class="studio-launch-btn" onclick="openStudioModal('studios/studio-ai-hook-display-transition.html', 'AI Hook Preset 'display-transition': Dolly-In 2.5D Xuyên Màn Hình Studio Display 9:16 2.00s & Hệ Thống Zero-Collision Registry v3.0 (Kỹ năng ai-hook)')">
+              <span>🎛️ Mở Studio Tương Tác</span>
+            </button>
+          </div>
+        </div>
+        
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🎬 Đối Chiếu Trực Tiếp: ① Video Mẫu Tham Chiếu Kling #19 (19_display_transition_4e204c1b.mp4) &rarr; ② Video Kết Quả Master (footageai1_display_transition_web.mp4)</span>
+            </div>
+            <span class="showcase-badge">2.5D Studio Display Portal • 1080×1920 @ 24fps • PASS 6/6 CLAUDE2 Gates (SSIM-Y 0.9967)</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>① VIDEO MẪU GỐC KLING #19 (19_DISPLAY_TRANSITION_4E204C1B.MP4)</span>
+                <a href="studios/19_display_transition_4e204c1b.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/19_display_transition_4e204c1b.mp4" type="video/mp4">
+                  <source src="studios/19_display_transition_4e204c1b.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Mẫu tham chiếu Higgsfield Kling R02 #19 Display Transition (TOP 2)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Cơ chế gốc: Toàn cảnh bàn làm việc hiện đại với chiếc màn hình đang phát trực tiếp nội dung video, sau đó camera đẩy xuyên qua viền màn hình vào thẳng cảnh thật.</p>
+              </div>
+            </div>
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+              <div style="padding:8px 12px; background:#0f172a; color:#f8fafc; font:700 11.5px var(--mono); display:flex; justify-content:space-between; align-items:center;">
+                <span>② VIDEO KẾT QUẢ MASTER (FOOTAGEAI1_DISPLAY_TRANSITION • PASS 6/6 GATES)</span>
+                <a href="studios/footageai1_display_transition_web.mp4" target="_blank" rel="noopener" style="color:#d4fe48; text-decoration:none;">Mở MP4 Gốc ↗</a>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:520px; width:100%; background:#000; display:flex; align-items:center; justify-content:center;">
+                <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                  <source src="studios/footageai1_display_transition_web.mp4" type="video/mp4">
+                  <source src="studios/footageai1_display_transition_web.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="showcase-card-body" style="padding:12px 14px; flex:1;">
+                <div class="showcase-card-title" style="font:700 14px/1.35 var(--sans); color:var(--ink); margin-bottom:6px;">Master: r02_display_transition_master.mp4 (Studio Desk Live 4K F00..F20 → Homography Dolly-In F21..F47 → Khóa F48+)</div>
+                <p class="showcase-card-desc" style="margin:0; font:400 13px/1.5 var(--sans); color:var(--mute);">Toàn cảnh bàn làm việc Luxury Studio phát live 4K trên màn hình Apple Studio Display 9:16 (F00..F20), warp trực tiếp từ layer 4K gốc bằng Homography 4 đỉnh (F21..F47, 0% Bezel Ghosting) và khóa Passthrough 100% từ F48 (min SSIM-Y = 0.9956, mean = 0.9967) kèm Glass Portal Whoosh + 52Hz Screen Lock Thud.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 1. Ba Pha Hình Học 2.5D Homography Direct-4K (display_transition_engine.py)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 1 (F00..F20)</div>
+              <div class="step-content">
+                <div class="step-name">Luxury Studio Desk Live 4K Feed (F_src 65..85) Kèm Glass Glare & Desk Spill</div>
+                <div class="step-desc">Cắt bỏ 65 frames chuẩn bị đầu tiên (F_src=65 làm F_out=0). Bàn làm việc gỗ óc chó hiện đại đặt màn hình dọc Apple Studio Display 9:16 phát trực tiếp frame 4K kèm ánh sáng màn hình hắt xuống mặt bàn.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 2 (F21..F47)</div>
+              <div class="step-content">
+                <div class="step-name">Direct-4K 4-Corner Homography Dolly-In & Peripheral Radial Blur (Zero Bezel Ghosting)</div>
+                <div class="step-desc">4 đỉnh màn hình mở rộng theo hàm easeInOutCubic khớp khít 1080x1920 tại F47; warp trực tiếp từ frame 4K (2160x3840) bằng cv2.getPerspectiveTransform; làm nhòe hướng tâm 14 bước chỉ trên nền phòng trước khi ghép màn hình.</div>
+              </div>
+            </div>
+            
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">PHA 3 (F48+)</div>
+              <div class="step-content">
+                <div class="step-name">100% Pixel Passthrough Lock Tại F48 (2.000s) Trước Khi Mở Lời Tại F57 (2.375s)</div>
+                <div class="step-desc">Từ F48 (F_src=113) trở đi passthrough 100% frame gốc với ma trận màu BT.709 chuẩn xác (Lossless SSIM-Y = 1.0, Delivered MP4 min SSIM-Y = 0.9956 >= 0.995, mean = 0.9967).</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <h3 style="margin:22px 0 12px; font:700 17px var(--sans); color:var(--ink);">🔹 2. Kiến Trúc Zero-Collision Modular Registry v3.0 Cho Kỹ Năng ai-hook (Hội Ý CLAUDE2)</h3>
+        <div class="stage-steps" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:12px 0 22px;">
+          
+            <div class="step-item" style="border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff;">
+              <div class="step-num" style="background:#eff6ff; color:#1d4ed8;">HOOKS.D + FLOCK</div>
+              <div class="step-content">
+                <div class="step-name">15 Files hooks.d/<id>.json Độc Lập + register_hook.py (Monotonic Guard & Orphan Detector)</div>
+                <div class="step-desc">Chấm dứt lỗi nhiều luồng song song ghi đè hooks_registry.json & ai_hook_engine.py: Mỗi hook là 1 file riêng trong hooks.d/, biên dịch dưới khóa fcntl.flock, chặn tự động nếu thiếu bất kỳ hook cũ nào và khôi phục đủ 15/15 hooks.</div>
+              </div>
+            </div>
+            
+        </div>
+        
+        
+        <div class="output-showcase" style="margin-top:20px;">
+          <div class="showcase-header">
+            <div class="showcase-title">
+              <span>🖼️ Bảng Kiểm Định 12 Keyframes R02 #19 Display Transition (F00 → F57)</span>
+            </div>
+            <span class="showcase-badge">Chuẩn A1455F3C • Hội Ý CLAUDE2 • VERDICT: PASS 6/6 GATES</span>
+          </div>
+          <div class="showcase-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+            
+            <div class="showcase-card" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;">
+              <a href="assets/display_transition_kling19/qa_footageai1_display_transition_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507;">
+                <img src="assets/display_transition_kling19/qa_footageai1_display_transition_sheet.jpg" alt="Contact Sheet 12 Keyframes (qa_footageai1_display_transition_sheet.jpg): Bàn làm việc Luxury Studio phát live 4K F00..F20 → 2.5D Homography Dolly-In F21..F47 (0% Bezel Ghosting) → Khóa Passthrough 100% tại F48 (SSIM-Y 0.9967)" loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover;"/>
+              </a>
+              <div class="showcase-card-body" style="padding:12px 14px;">
+                <p class="showcase-card-desc" style="margin:0; font:600 13px/1.45 var(--sans); color:var(--ink);">Contact Sheet 12 Keyframes (qa_footageai1_display_transition_sheet.jpg): Bàn làm việc Luxury Studio phát live 4K F00..F20 → 2.5D Homography Dolly-In F21..F47 (0% Bezel Ghosting) → Khóa Passthrough 100% tại F48 (SSIM-Y 0.9967)</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <details class="tech-drawer" style="margin-top:18px;">
+          <summary>🔧 Xem chi tiết kỹ thuật: AI Hook Preset 'display-transition': Dolly-In 2.5D Xuyên Màn Hình Studio Display 9:16 2.00s & Hệ Thống Zero-Collision Registry v3.0 (Kỹ năng ai-hook)</summary>
+          <div class="tech-body">
+            <ul style="padding-left:20px; line-height:1.6;">
+              <li style='margin-bottom:6px;'>Engine lõi: ~/.gemini/config/skills/ai-hook/scripts/display_transition_engine.py (khai báo tại ~/.gemini/config/skills/ai-hook/hooks.d/display-transition.json).</li><li style='margin-bottom:6px;'>Quản lý Registry nguyên tử v3.0: ~/.gemini/config/skills/ai-hook/scripts/hookreg.py & ~/.gemini/config/skills/ai-hook/scripts/register_hook.py (rebuild / audit --strict / upsert-videoai).</li><li style='margin-bottom:6px;'>Âm thanh Studio: ~/.gemini/config/skills/ai-hook/assets/sfx_display_transition_2s.wav (Studio Ambient Hum -> 2.5D Glass Portal Dolly Whoosh @ 0.85s–1.95s -> 52Hz Screen Lock Thud @ 1.98s).</li><li style='margin-bottom:6px;'>Sản phẩm Master chuẩn: /Users/vietmac/Documents/CODE/AI VIDEO EDIT/higgsfield_kling/tier1_outputs/r02_display_transition/r02_display_transition_master.mp4 (Bản Web: /Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_display_transition_web.mp4).</li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    
+
+      <!-- ========================================================
            QUY CHUẨN TỰ ĐỘNG ĐỒNG BỘ TỪ EVOLUTION_LOG.JSON (ai-hook-intermission-stage-curtain)
            ======================================================== -->
       <div class="evolution-injected-section" id="evo-ai-hook-intermission-stage-curtain" style="margin:36px 0; padding-top:8px; border-top:2px dashed var(--line);">
