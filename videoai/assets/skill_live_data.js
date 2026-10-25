@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 18:57:33
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 19:04:10
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 18:57:33",
-  "last_synced_iso": "2026-10-25T18:57:33.684352",
+  "last_synced_formatted": "25/10/2026 19:04:10",
+  "last_synced_iso": "2026-10-25T19:04:10.726985",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -6822,15 +6822,23 @@ window.SKILL_LIVE_DATA = {
       "name": "check_motion.py",
       "skill_id": "checkmotion",
       "skill_name": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
-      "size": 55221,
-      "size_formatted": "53.9 KB",
-      "lines": 1101,
-      "mtime": 1792922513.185128,
-      "mtime_formatted": "25/10/2026 17:01",
+      "size": 61363,
+      "size_formatted": "59.9 KB",
+      "lines": 1201,
+      "mtime": 1792929576.7186182,
+      "mtime_formatted": "25/10/2026 18:59",
       "desc": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
     }
   ],
   "history": [
+    {
+      "name": "scripts/check_motion.py",
+      "type": "Python Script",
+      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "mtime": 1792929576.7186182,
+      "mtime_formatted": "25/10/2026 18:59",
+      "detail": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
+    },
     {
       "name": "scripts/earth_zoom_omni_engine.py",
       "type": "Python Script",
@@ -6926,14 +6934,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792922669.718782,
       "mtime_formatted": "25/10/2026 17:04",
       "detail": "render_paage_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)"
-    },
-    {
-      "name": "scripts/check_motion.py",
-      "type": "Python Script",
-      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
-      "mtime": 1792922513.185128,
-      "mtime_formatted": "25/10/2026 17:01",
-      "detail": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
     },
     {
       "name": "compositions/PaageOffline0711_30fps.tsx",
