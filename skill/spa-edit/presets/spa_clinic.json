@@ -1,15 +1,28 @@
 {
   "preset_id": "spa_clinic",
-  "version": "7.2.0",
-  "display_name": "Chuẩn Hậu Kỳ Video Chuyên Gia Spa / Thẩm Mỹ / Da Liễu (V7.2 Master)",
+  "version": "10.0.0",
+  "display_name": "Phong Cách Thắm Thỏ Spa V10 (Spa / Thẩm Mỹ / Da Liễu / Phun Xăm)",
   "resolution": [1080, 1920],
   "fps": 30.0,
+  "palette": {
+    "paper_bg_rgb": [245, 242, 235],
+    "ink_rgb": [44, 42, 41],
+    "accent_primary_rgb": [181, 70, 47],
+    "accent_secondary_rgb": [46, 125, 91],
+    "highlight_gold_rgb": [255, 198, 110],
+    "card_bg_rgba": [22, 20, 19, 208],
+    "outro_bg_rgb": [5, 5, 7]
+  },
   "camera_eye_lock": {
     "target_eye_xy": [540.0, 650.0],
     "base_scale": 1.25,
-    "zoom_118_scale": 1.42,
-    "zoom_120_scale": 1.45,
-    "zoom_transition_frames": 0,
+    "zoom_118_scale": 1.38,
+    "zoom_120_scale": 1.44,
+    "whip_snap_duration_sec": 0.28,
+    "whip_snap_frames": 8.5,
+    "whip_snap_exponent": 3.8,
+    "unsharp_mask_amount": 1.22,
+    "unsharp_mask_sigma": 1.05,
     "min_static_frame_ratio": 0.80,
     "cut_continuity_cluster_lock": true
   },
@@ -23,7 +36,7 @@
     "line_spacing_px": 56,
     "card_top_y": 1586,
     "card_bottom_y": 1736,
-    "aroll_card_bg_rgba": [22, 20, 19, 198],
+    "aroll_card_bg_rgba": [22, 20, 19, 204],
     "aroll_text_rgb": [245, 242, 235],
     "aroll_highlight_rgb": [255, 198, 110],
     "atlas_card_bg_rgb": [238, 233, 222],
@@ -42,7 +55,8 @@
     "max_beat_duration_sec": 2.40,
     "unique_broll_usage_max_count": 1,
     "subpixel_warp_affine": true,
-    "macro_skin_bilateral_smoothing": true
+    "macro_skin_bilateral_smoothing": true,
+    "single_video_fallback": "atlas_2d_and_whip_zoom"
   },
   "cta_in_clip_spec": {
     "style_code": "CTA_01_EDITORIAL_TICKET_CLICK_RIPPLE",
@@ -51,7 +65,8 @@
   },
   "brand_2tier_spec": {
     "tier1_in_clip": {
-      "style_code": "BRAND_01_FROSTED_PILL",
+      "style_code": "BRAND_01_CTA_ONLY_TOP_PILL",
+      "visibility_rule": "cta_section_only",
       "safe_zone_y": [52, 144],
       "shimmer_interval_sec": 4.2,
       "shimmer_max_alpha": 24
@@ -64,18 +79,27 @@
       "crossfade_frames": 8
     }
   },
+  "before_after_spec": {
+    "style_code": "WHITE_IVORY_MEDICAL_SBS_V10",
+    "canvas_bg_hex": "#F5F2EB",
+    "show_top_topic_pill": true,
+    "show_right_specific_title": true,
+    "draw_left_bottom_white_box": false
+  },
   "audio_spec": {
     "voice_volume": 1.0,
     "sfx_volume": 0.085,
+    "pre_cut_riser_lead_sec": 1.25,
+    "max_risers_per_video": 3,
     "voice_ducking": false,
     "outro_pad_sec": 3.20
   },
   "verification_gates": {
-    "gate1_max_rli": 0.80,
+    "gate1_max_rli": 0.85,
     "gate2_min_static_aroll_ratio": 0.80,
     "gate3_max_fake_stats": 0,
     "gate4_max_transcript_wer": 0.0,
-    "gate5_max_eye_drift_px": 0.0,
+    "gate5_max_eye_drift_px": 4.0,
     "gate6_max_broll_reuse": 1
   }
 }

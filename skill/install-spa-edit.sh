@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# BỘ CÀI ĐẶT 1 CHẠM: KỸ NĂNG EDIT VIDEO CHO SPA (SPA-EDIT V7.2 MASTER)
+# BỘ CÀI ĐẶT 1 CHẠM: KỸ NĂNG EDIT VIDEO SPA & NHA KHOA Y KHOA (SPA-EDIT V10 MASTER)
+# Hợp nhất tinh hoa: Thắm Thỏ Spa V10 & Tiến Nha Sĩ V10 (100% Độc Lập Cho Học Viên Mới)
 # Sử dụng trên máy mới:
 #   curl -sSL https://fedu.vn/skill/install-spa-edit.sh | bash
+# Cờ hỗ trợ: --with-whisper (cài thêm faster-whisper bóc băng tự động) | --no-smoke
+# Biến môi trường: SPA_EDIT_BASE_URL, AIEDIT_BASE_URL (hỗ trợ cài offline/mirror)
 # ==============================================================================
 
 set -u
@@ -18,23 +21,52 @@ SKILL_DIR="$HOME/.gemini/config/skills/$SKILL_NAME"
 RUNTIME_DIR="$HOME/.mfx_v3"
 VENV_DIR="$RUNTIME_DIR/venv"
 
-echo -e "${GREEN}╔══════════════════════════════════════════════════════════════════╗${NC}"
-echo -e "${GREEN}║   BẮT ĐẦU CÀI ĐẶT KỸ NĂNG: EDIT VIDEO CHO SPA (SPA-EDIT V7.2)    ║${NC}"
-echo -e "${GREEN}╚══════════════════════════════════════════════════════════════════╝${NC}"
+WITH_WHISPER=0
+RUN_SMOKE=1
+for arg in "$@"; do
+  case "$arg" in
+    --with-whisper) WITH_WHISPER=1 ;;
+    --no-smoke)     RUN_SMOKE=0 ;;
+  esac
+done
 
-# 1. Cài đặt nền tảng MFX V3.2 (Python venv, OpenCV, Pillow, Fonts, 8 SFX) nếu chưa có
-if [ ! -x "$VENV_DIR/bin/python" ] || [ ! -d "$HOME/.gemini/config/skills/aiedit" ]; then
-  info "[1/3] Đang cài đặt nền tảng Core Engine MFX V3.2 (Fonts + 8 SFX + OpenCV)..."
-  curl -sSL https://fedu.vn/skill/install-aiedit.sh | bash -s -- --no-smoke || warn "Tiếp tục thiết lập gói Spa-Edit..."
+echo -e "${GREEN}╔════════════════════════════════════════════════════════════════════════╗${NC}"
+echo -e "${GREEN}║  BẮT ĐẦU CÀI ĐẶT KỸ NĂNG: EDIT VIDEO SPA & NHA KHOA (SPA-EDIT V10)     ║${NC}"
+echo -e "${GREEN}║  (Tích hợp sẵn: Phong cách Thắm Thỏ Spa V10 & Tiến Nha Sĩ V10)         ║${NC}"
+echo -e "${GREEN}╚════════════════════════════════════════════════════════════════════════╝${NC}"
+
+# 1. Cài đặt nền tảng MFX V3.2 + 12 Fonts V10 + 8 SFX (không cần rclone!)
+if [ ! -x "$VENV_DIR/bin/python" ] || [ ! -f "$RUNTIME_DIR/resources/fonts/SVN-Acta-BoldItalic.ttf" ]; then
+  info "[1/4] Đang cài đặt nền tảng Core Engine MFX V3.2 (Python venv + OpenCV + 12 Fonts V10 + 8 SFX)..."
+  if [ -n "${LOCAL_SKILL_REPO:-}" ] && [ -f "$LOCAL_SKILL_REPO/install-aiedit.sh" ]; then
+    AIEDIT_BASE_URL="file://$LOCAL_SKILL_REPO/aiedit-v3" bash "$LOCAL_SKILL_REPO/install-aiedit.sh" --no-smoke || warn "Tiếp tục thiết lập gói Spa-Edit V10..."
+  else
+    curl -sSL https://fedu.vn/skill/install-aiedit.sh | bash -s -- --no-smoke || warn "Tiếp tục thiết lập gói Spa-Edit V10..."
+  fi
 else
-  info "[1/3] Đã phát hiện Core Engine MFX V3.2 sẵn sàng tại $RUNTIME_DIR."
+  info "[1/4] Đã phát hiện Core Engine MFX V3.2 + 12 Fonts V10 sẵn sàng tại $RUNTIME_DIR."
 fi
 
-# 2. Tạo cấu trúc thư mục spa-edit và tải Preset + Brand + Scripts
-info "[2/3] Đang tải gói cấu hình Chủ đề Spa (presets/spa_clinic.json + brands/tham_tho_beauty.json)..."
+PY_BIN="$VENV_DIR/bin/python"
+[ -x "$PY_BIN" ] || PY_BIN="python3"
+
+if [ "$WITH_WHISPER" = "1" ]; then
+  info "      Đang cài đặt thêm faster-whisper (tự động bóc lời thoại tiếng Việt từ video điện thoại)..."
+  "$PY_BIN" -m pip install --quiet --disable-pip-version-check faster-whisper || warn "Bỏ qua faster-whisper (sẽ dùng transcript thông minh)."
+fi
+
+# 2. Tạo cấu trúc thư mục spa-edit và tải 2 Presets (Thắm Thỏ Spa + Tiến Nha Sĩ) + Brands + Scripts V10
+info "[2/4] Đang tải gói Kỹ năng SPA-EDIT V10 (Thắm Thỏ Spa + Tiến Nha Sĩ + Interactive Planner)..."
 mkdir -p "$SKILL_DIR/presets" "$SKILL_DIR/brands" "$SKILL_DIR/scripts"
 
-BASES=(
+BASES=()
+if [ -n "${SPA_EDIT_BASE_URL:-}" ]; then
+  BASES+=("${SPA_EDIT_BASE_URL%/}")
+fi
+if [ -n "${LOCAL_SKILL_REPO:-}" ] && [ -d "$LOCAL_SKILL_REPO/spa-edit" ]; then
+  BASES+=("file://$LOCAL_SKILL_REPO/spa-edit")
+fi
+BASES+=(
   "https://fedu.vn/skill/spa-edit"
   "https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/skill/spa-edit"
 )
@@ -55,18 +87,22 @@ download_rel(){
 FILES=(
   "SKILL.md"
   "presets/spa_clinic.json"
+  "presets/dental_medical.json"
   "brands/tham_tho_beauty.json"
+  "brands/tien_nha_si.json"
   "scripts/spa_edit_cli.py"
   "scripts/verify_6gates.py"
+  "scripts/verify_readability_and_sync.py"
 )
 
 for rel in "${FILES[@]}"; do
-  download_rel "$rel" "$SKILL_DIR/$rel" || warn "Bỏ qua tải $rel (sử dụng bản cục bộ nếu có)"
+  download_rel "$rel" "$SKILL_DIR/$rel" || die "Không tải được $rel"
 done
 
 chmod +x "$SKILL_DIR"/scripts/*.py 2>/dev/null || true
 
-# Tạo symlink đa đường dẫn để Antigravity nhận diện ngay lập tức
+# 3. Tạo symlink đa đường dẫn để Antigravity nhận diện ngay lập tức
+info "[3/4] Đang liên kết Kỹ năng SPA-EDIT V10 vào Antigravity..."
 mkdir -p "$HOME/.gemini/skills"
 ln -sfn "$SKILL_DIR" "$HOME/.gemini/skills/$SKILL_NAME" 2>/dev/null || true
 if [ -d "$HOME/.gemini/antigravity" ]; then
@@ -74,8 +110,17 @@ if [ -d "$HOME/.gemini/antigravity" ]; then
   ln -sfn "$SKILL_DIR" "$HOME/.gemini/antigravity/skills/$SKILL_NAME" 2>/dev/null || true
 fi
 
-info "[3/3] Hoàn tất liên kết Kỹ năng SPA-EDIT vào Antigravity!"
-echo -e "\n${GREEN}✅ CÀI ĐẶT KỸ NĂNG SPA-EDIT V7.2 THÀNH CÔNG!${NC} ($SKILL_DIR)"
-echo -e "${CYAN}Cách sử dụng ngay trong Antigravity (Tốn ít token nhất):${NC}"
-echo -e "  • Gõ câu lệnh ngắn gọn: ${GREEN}EDIT SPA${NC} (kèm file video gốc + 3 cảnh trám)"
-echo -e "  • Hoặc mở trang tài liệu đầy đủ tại: ${GREEN}https://videoai.fedu.vn/09-edit-video-spa.html${NC}"
+# 4. Chạy kiểm định độc lập 7 Cổng (7-Gate Verifier) đảm bảo máy học viên sẵn sàng 100%
+if [ "$RUN_SMOKE" = "1" ]; then
+  info "[4/4] Đang chạy kiểm định 7 Cổng (7-Gate Standalone Verifier)..."
+  "$PY_BIN" "$SKILL_DIR/scripts/verify_6gates.py" || die "Kiểm định 7 Cổng thất bại!"
+else
+  info "[4/4] Bỏ qua kiểm định (--no-smoke)."
+fi
+
+echo -e "\n${GREEN}✅ CÀI ĐẶT KỸ NĂNG SPA-EDIT & DENTAL V10 THÀNH CÔNG 100%!${NC} ($SKILL_DIR)"
+echo -e "${CYAN}Cách sử dụng tự nhiên chỉ với 1 video quay điện thoại trong Antigravity:${NC}"
+echo -e "  • Cách 1 (Gọi tự nhiên): ${GREEN}\"Hãy lên kế hoạch edit cho video <tên_video.mp4> theo phong cách spa (hoặc nha sĩ)\"${NC}"
+echo -e "    -> AI sẽ tự tìm video, bóc lời thoại, lập bảng kế hoạch + hỏi bạn 6 câu xác nhận trước khi xuất .mp4!"
+echo -e "  • Cách 2 (Mantra siêu tốc): ${GREEN}EDIT SPA${NC} (kèm file video)"
+echo -e "  • Tài liệu đầy đủ: ${GREEN}https://fedu.vn/skill/spa-edit.html${NC}"
