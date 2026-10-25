@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duyệt 2 Kịch Bản & 38 Cảnh Lớp Học Offline (0% Trùng Giữa 2 Bản) — Khóa Offline 07–08/11 | FEDU Studio</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f5f0;
+      --surface: #ffffff;
+      --surface-alt: #f0eee6;
+      --text: #141413;
+      --text-sub: #575652;
+      --border: #e2dfd5;
+      --kb1: #1d4ed8;
+      --kb1-bg: #eff6ff;
+      --kb1-border: #bfdbfe;
+      --kb2: #b45309;
+      --kb2-bg: #fffbeb;
+      --kb2-border: #fde68a;
+      --accent: #0f766e;
+      --danger: #dc2626;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding-bottom: 80px;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-master {
+      background: #059669;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.03em;
+    }
+    .topbar-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .tab-btn.active {
+      background: #141413;
+      color: #fff;
+      border-color: #141413;
+    }
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 28px 20px;
+    }
+    .hero-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    .hero-box h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .meta-card {
+      background: var(--surface-alt);
+      border-radius: 12px;
+      padding: 14px 16px;
+      border-left: 4px solid #141413;
+    }
+    .meta-card.kb1-card { border-left-color: var(--kb1); background: var(--kb1-bg); }
+    .meta-card.kb2-card { border-left-color: var(--kb2); background: var(--kb2-bg); }
+    .meta-card h3 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .meta-card p {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+    .chot-cung-banner {
+      margin-top: 16px;
+      background: #141413;
+      color: #fff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .chot-cung-banner .title-main {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fde047;
+      letter-spacing: 0.02em;
+    }
+    .chot-cung-banner .title-sub {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f3f4f6;
+    }
+
+    /* Scene Blocks */
+    .scene-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+    }
+    .scene-header {
+      background: #1c1b18;
+      color: #fff;
+      padding: 14px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .scene-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .scene-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      background: rgba(255,255,255,0.14);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #fde047;
+    }
+    .scene-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    body.view-kb1 .scene-grid { grid-template-columns: 1fr; }
+    body.view-kb1 .col-kb2 { display: none; }
+    body.view-kb2 .scene-grid { grid-template-columns: 1fr; }
+    body.view-kb2 .col-kb1 { display: none; }
+
+    @media (max-width: 960px) {
+      .scene-grid { grid-template-columns: 1fr; }
+    }
+    .script-col {
+      padding: 20px 22px;
+      border-right: 1px solid var(--border);
+    }
+    .script-col:last-child { border-right: none; }
+    .col-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+    .col-kb1 .col-header { background: var(--kb1-bg); color: var(--kb1); border: 1px solid var(--kb1-border); }
+    .col-kb2 .col-header { background: var(--kb2-bg); color: var(--kb2); border: 1px solid var(--kb2-border); }
+
+    .beat-item {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      background: var(--surface-alt);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .beat-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      background: #141413;
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 6px;
+    }
+    .beat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+    }
+    .beat-text {
+      margin-top: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .beat-text ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+    .beat-text li {
+      margin-bottom: 4px;
+    }
+
+    /* B-Roll Slot Box */
+    .broll-slot {
+      margin-top: 14px;
+      background: #fff;
+      border: 2px solid #d6d3c9;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .col-kb1 .broll-slot { border-color: #93c5fd; background: #f8fbff; }
+    .col-kb2 .broll-slot { border-color: #fcd34d; background: #fffdf5; }
+    .broll-slot-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .slot-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 5px;
+      background: #0f766e;
+      color: #fff;
+    }
+    .clip-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #141413;
+      background: rgba(0,0,0,0.06);
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+    .broll-video-wrap {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    @media (max-width: 600px) {
+      .broll-video-wrap { grid-template-columns: 1fr; }
+    }
+    .broll-video-wrap video {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #000;
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+    .broll-info h4 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .broll-info p {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+    .broll-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .ext-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: #141413;
+      color: #fff;
+    }
+    .ext-link.yt { background: #dc2626; }
+    .ext-link.gd { background: #2563eb; }
+
+    /* Library Grid */
+    .lib-section {
+      margin-top: 48px;
+    }
+    .lib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .lib-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .lib-card video {
+      width: 100%;
+      height: 195px;
+      object-fit: cover;
+      background: #000;
+    }
+    .lib-card-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .lib-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .lib-card-title {
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .lib-card-desc {
+      font-size: 12.5px;
+      color: var(--text-sub);
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="badge-master">CẬP NHẬT: 38 CẢNH LỚP OFFLINE KHÔNG TRÙNG (19 KB1 ≠ 19 KB2)</span>
+      <span class="topbar-title">Khóa Học Offline 07–08/11 Hà Nội (Cắt từ broll - offline 3 tren lop ko sub.mp4 · Đủ Drive + YouTube)</span>
+    </div>
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="setView('both', this)">Xem Song Song (KB1 & KB2)</button>
+      <button class="tab-btn" onclick="setView('kb1', this)">Chỉ Xem Kịch Bản 1 (19 Cảnh Riêng)</button>
+      <button class="tab-btn" onclick="setView('kb2', this)">Chỉ Xem Kịch Bản 2 (19 Cảnh Riêng)</button>
+      <a href="#kho-38-video" class="tab-btn" style="text-decoration:none;background:#0f766e;color:#fff;border-color:#0f766e;">🎬 Kho 38 Video Lớp Offline</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-box">
+      <h1>📋 Bảng Duyệt 2 Kịch Bản & 38 Cảnh Trám Lớp Học Offline (0% Trùng Giữa 2 Bản Vì Dùng Cả Hai)</h1>
+      <p style="color:var(--text-sub);font-size:14px;">
+        ✅ <strong>Đã cập nhật theo đúng chỉ đạo của anh Việt:</strong> Gỡ bỏ toàn bộ các cảnh quay lẻ ngoài lớp (<code>ID#263</code>, <code>ID#208</code>, <code>ID#486</code>, <code>ID#298</code>) và thay thế hoàn toàn bằng <strong>cảnh lớp học Offline thực tế cắt từ <code>broll - offline 3 tren lop ko sub.mp4</code></strong>.<br/>
+        ✅ <strong>Tách biệt 100% giữa 2 kịch bản:</strong> 19 vị trí của Kịch bản 1 (<code>KB1_M01..M19</code>) và 19 vị trí của Kịch bản 2 (<code>KB2_M01..M19</code>) là <strong>38 video hoàn toàn khác nhau (không trùng bất kỳ cảnh nào giữa 2 bên)</strong>, mỗi video đều có đủ <strong>File MP4 trực tiếp + Link Google Drive + Link YouTube</strong>.
+      </p>
+
+      <div class="hero-meta" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="meta-card kb1-card">
+          <h3>🎬 VIDEO THÀNH PHẨM V6 — KỊCH BẢN 1: Gỡ sợ ống kính · Kèm 1-1 ra 3 video tại lớp (70.4s · 30fps)</h3>
+          <p style="margin-bottom:10px;"><strong>Góc chạm:</strong> Ngoài đời tư vấn khách rất mượt, nhưng bật camera lên là khựng lại quên lời. 19 cảnh trám B-Roll lớp học Offline độc lập (<code>KB1_M01 → KB1_M19</code>).</p>
+          <video class="top-cmp-vid" controls preload="metadata" playsinline style="width:100%;border-radius:10px;background:#000;border:2px solid #0284c7;">
+            <source src="/studios/paage_offline_v6_kb1_web.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta-card kb2-card">
+          <h3>🎬 VIDEO THÀNH PHẨM V6 — KỊCH BẢN 2: Khách có tiền xem âm thầm · Thoát bẫy đốt Ads (70.4s · 30fps)</h3>
+          <p style="margin-bottom:10px;"><strong>Góc chạm:</strong> Khách có tiền xem rất kỹ nhưng chỉ nhắn riêng khi đủ tin. 19 cảnh trám B-Roll lớp học Offline hoàn toàn khác Bản 1 (<code>KB2_M01 → KB2_M19</code>).</p>
+          <video class="top-cmp-vid" controls preload="metadata" playsinline style="width:100%;border-radius:10px;background:#000;border:2px solid #b45309;">
+            <source src="/studios/paage_offline_v6_kb2_web.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta-card" style="border-left-color:#dc2626;background:#fef2f2;">
+          <h3 style="color:#991b1b;">📌 VIDEO MẪU GỐC PINTEREST (REF 333759022407965800 — 70.37s · 30fps)</h3>
+          <p style="margin-bottom:10px;"><strong>Đối chiếu 1:1:</strong> Video mẫu gốc dùng để đối chiếu trực tiếp nhịp chuyển động, bố cục 11 phân cảnh, tiếng gõ phím cơ, tiếng click chuột và cú cắt trắng ở 60.30s.</p>
+          <video class="top-cmp-vid" controls preload="metadata" playsinline style="width:100%;border-radius:10px;background:#000;border:2px solid #dc2626;">
+            <source src="/studios/paage_ref_pinterest_web.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button onclick="document.querySelectorAll('.top-cmp-vid').forEach((v,i)=>{v.currentTime=0;v.muted=(i>0);v.play();})" style="padding:9px 16px;border-radius:8px;border:none;background:#0f172a;color:#fff;font-weight:700;cursor:pointer;">▶ Phát đồng bộ cả 3 video (KB1 + KB2 + Mẫu REF) từ 00:00</button>
+        <button onclick="document.querySelectorAll('.top-cmp-vid').forEach(v=>v.pause())" style="padding:9px 16px;border-radius:8px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;font-weight:700;cursor:pointer;">⏸ Tạm dừng cả 3</button>
+        <a href="/studios/studio-motion-graphic-paage-offline-versions.html" style="padding:9px 16px;border-radius:8px;background:#2563eb;color:#fff;font-weight:700;text-decoration:none;">🎬 Mở Studio Đối Chiếu Đủ 8 Phiên Bản (REF + V1..V6) ↗</a>
+      </div>
+
+      <div class="chot-cung-banner">
+        <div>
+          <div style="font-size:11px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;color:#9ca3af;margin-bottom:2px;">CHỐT CỨNG NHỊP KẾT MÀN B28 (Scene 11 · f=1992..2111)</div>
+          <div class="title-main">2 NGÀY · CẦM TAY CHỈ VIỆC</div>
+          <div class="title-sub">Trực tiếp · 07–08/11 tại Hà Nội (Zalo: 0934.688.632)</div>
+        </div>
+        <div style="font-size:12.5px;color:#d1d5db;max-width:460px;">
+          ✅ 38/38 vị trí ở cả 2 kịch bản hoàn toàn độc lập để anh Việt sử dụng đồng thời cả 2 video mà không bị lặp bất kỳ cảnh trám nào.
+        </div>
+      </div>
+    </section>
+
+    <div id="scenes-container"></div>
+
+    <section id="kho-38-video" class="lib-section">
+      <div class="hero-box" style="margin-bottom:16px;">
+        <h2>🎬 Toàn Bộ 38 Video Lớp Học Offline Đã Phân Bổ Cho 2 Kịch Bản (KB1_M01..M19 & KB2_M01..M19)</h2>
+        <p style="font-size:14px;color:var(--text-sub);margin-top:4px;">
+          Tất cả 38 video dưới đây đều có sẵn trình phát MP4, nút mở <strong>Google Drive</strong> và <strong>YouTube</strong>.
+        </p>
+      </div>
+      <div id="library-grid" class="lib-grid"></div>
+    </section>
+  </main>
+
+  <script>
+    const CLIPS = {
+  "KB1_M01": {
+    "code": "KB1_M01",
+    "id": "ID#122",
+    "filename": "06_META_130_STUDIO_mat-cung-tay-do_MCU_9x16.mp4",
+    "file": "broll_paage_clips/B04_id122_do_mat_quen_loi.mp4",
+    "title": "Góc nhìn qua màn hình monitor máy quay cảnh nói vấp và ôm đầu bối rối",
+    "desc": "Góc POV nhìn vào màn hình monitor tròn đang bật nút REC đỏ ghi hình anh Việt mặc áo blazer đen: anh đang nói thì bị đơ cứng mặt, hai tay đưa lên vò đầu bứt tai vì quên lời (F3) rồi thở dài làm lại (F1, F2, F4).",
+    "drive": "https://drive.google.com/file/d/1FNwS70FzSxkwIuLgNknxbbDE14aJpg7E/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=Fg2xyYfKIus"
+  },
+  "KB1_M02": {
+    "code": "KB1_M02",
+    "id": "ID#364",
+    "filename": "broll_bank_37_t942s.mp4",
+    "file": "broll_paage_clips/B31_id364_lop_cua_kinh_cay_xanh.mp4",
+    "title": "Toàn cảnh lớp học cửa kính xanh và anh Việt trao đổi đầu bàn (t942s)",
+    "desc": "Góc máy rộng bao quát phòng học Offline có hệ cửa kính lớn nhìn ra vườn cây xanh mát. Anh Việt mặc đồ đen đứng ở rìa trái khung hình đang nghiêng người trò chuyện trực tiếp với cụm bàn học viên phía trước, nơi học viên nữ mặc đầm trắng kem ngồi chống cằm chăm chú lắng nghe và mỉm cười thảo luận ở F3.",
+    "drive": "https://drive.google.com/file/d/1SC11LBuPbZ2jatQ-wdu5YEjdHVZfoyXE/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=FEV9Sf7P6GY"
+  },
+  "KB1_M03": {
+    "code": "KB1_M03",
+    "id": "ID#240",
+    "filename": "Demo lop offline(1)_1080p_insta.mp4",
+    "file": "broll_paage_clips/B10_id240_kem_1_1_cuoi_tuoi.mp4",
+    "title": "Khoảnh khắc hướng dẫn học viên và làm việc tại lớp học offline",
+    "desc": "F1 anh Việt mặc áo tối màu cúi đầu cầm bút ghi chép trên bàn; F2 anh ngồi cạnh nữ học viên tên Thành cùng nhìn điện thoại cười tươi; F3 anh ngồi trên ghế giữa phòng studio có chân đèn; F4 anh ngồi làm việc bên bàn gỗ có màn hình máy tính và chậu cây.",
+    "drive": "https://drive.google.com/file/d/16jqcIe47B1tXjfUqkMyLV8wYEv-ZNXgs/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=WV8rggcgmGA"
+  },
+  "KB1_M04": {
+    "code": "KB1_M04",
+    "id": "ID#119",
+    "filename": "06_META_127_STUDIO_xoa-video-that-vong_CU_9x16.mp4",
+    "file": "broll_paage_clips/B05_id119_xoa_video_up_may.mp4",
+    "title": "Bấm nút xóa video trên điện thoại rồi chán nản úp máy xuống bàn",
+    "desc": "Cận cảnh bàn tay cầm điện thoại iPhone bấm chọn nút Delete Video màu đỏ để xóa đoạn clip vừa quay (F1, F2), sau đó tắt màn hình và đặt úp chiếc điện thoại màu đen xuống mặt bàn gỗ với thái độ thất vọng (F3, F4).",
+    "drive": "https://drive.google.com/file/d/1SEHBUtuk_i5kvrrPt-HulYddtEkoEAux/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=C1j4vJh381s"
+  },
+  "KB1_M05": {
+    "code": "KB1_M05",
+    "id": "ID#411",
+    "filename": "broll_bank_06_t334s.mp4",
+    "file": "broll_paage_clips/C_id411_broll_bank_06_t334s.mp4",
+    "title": "Anh Việt đứng trước màn chiếu trắng và bảng xanh mở rộng hai bàn tay giải thích (t334s)",
+    "desc": "Ở F1 là góc trung cảnh (MS) anh Việt đứng trước màn chiếu trắng, hai tay chạm micro trước ngực nhìn sang phải; sang F2, F3 và F4 góc máy mở rộng hơn (MLS) lấy cả màn chiếu trắng và bảng phấn xanh, nơi anh Việt mở rộng cả hai bàn tay ngang ngực (F3) để giải thích cặn kẽ bài học.",
+    "drive": "https://drive.google.com/file/d/1F6GGWTD092QQ8iFQnj2LDr17fjXKspp4/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=aNqlO8-7KGo"
+  },
+  "KB1_M06": {
+    "code": "KB1_M06",
+    "id": "ID#86",
+    "filename": "02_SEQ_154_STUDIO_lop-offline-fedu-huong-dan-hoc-vien_MS_9x16.mp4",
+    "file": "broll_paage_clips/B09_id086_mentor_blazer_xam.mp4",
+    "title": "Mặc Áo Khoác Xám Ngồi Làm Việc Với MacBook Và Trao Đổi Cùng Học Viên",
+    "desc": "Anh Việt mặc áo khoác blazer xám bên ngoài áo đen ngồi chăm chú làm việc trên chiếc MacBook tại bàn gỗ lớn, sau đó đứng dậy trò chuyện cùng các học viên trong phòng.",
+    "drive": "https://drive.google.com/file/d/1j36Uvjyt5utCj9z2DAN6QQ7ZLNJdiN4G/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=CFreGF4lud8"
+  },
+  "KB1_M07": {
+    "code": "KB1_M07",
+    "id": "ID#360",
+    "filename": "broll_bank_02_t30s.mp4",
+    "file": "broll_paage_clips/C_id360_broll_bank_02_t30s.mp4",
+    "title": "Toàn cảnh lớp học Offline và khoảnh khắc học viên mặc áo đỏ đứng lên phát biểu",
+    "desc": "F1, F2 và F4 quay góc rộng từ giữa lớp nhìn lên bục giảng nơi anh Việt đang đứng nói trước màn chiếu lớn; F3 ghi lại cảnh một học viên nam mặc áo thun đỏ in chữ 'GOOD TIMES TOGETHER' đứng dậy giữa lớp phát biểu.",
+    "drive": "https://drive.google.com/file/d/19Tvk-y4IQ0AoANimPczfvg-bnTtN74Z-/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=-sQqB7zt5gE"
+  },
+  "KB1_M08": {
+    "code": "KB1_M08",
+    "id": "ID#404",
+    "filename": "broll_bank_36_t926s.mp4",
+    "file": "broll_paage_clips/C_id404_broll_bank_36_t926s.mp4",
+    "title": "Toàn cảnh lớp học khi học viên nữ áo trắng vươn tay chỉ hướng tương tác với anh Việt (t926s)",
+    "desc": "Góc rộng toàn cảnh các bàn học viên trước dãy cửa kính cây xanh: anh Việt mặc đồ đen đứng ở rìa trái khung hình, trong khi tại bàn tiền cảnh trái, học viên nữ mặc đầm trắng kem hào hứng vươn thẳng cánh tay chỉ sang phía bên phải (F2, F4) để phát biểu ý kiến khiến cả bàn cùng nhìn theo và mỉm cười.",
+    "drive": "https://drive.google.com/file/d/1BnPD9SHr6R5rIo8yvowymjaF1U4-VMob/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=LUmXzwwGCwE"
+  },
+  "KB1_M09": {
+    "code": "KB1_M09",
+    "id": "ID#397",
+    "filename": "broll_bank_44_t1054s.mp4",
+    "file": "broll_paage_clips/C_id397_broll_bank_44_t1054s.mp4",
+    "title": "Nhóm học viên nữ mặc sơ mi trắng cười rạng rỡ và trò chuyện quanh bàn học (t1054s)",
+    "desc": "Góc trung cảnh quay bàn học viên trước dãy cửa kính xanh (phía sau có người đứng cầm máy quay/điện thoại ghi hình). Ở F1 học viên nữ áo đen ngồi giữa quay sang trao đổi, từ F2 đến F4 nhóm học viên nữ mặc áo trắng và sơ mi xanh nhạt ở bên trái bàn cùng nở nụ cười tươi tắn, hào hứng thảo luận.",
+    "drive": "https://drive.google.com/file/d/1l6AAMJ7qrLyyQUkuiu07m-9CCV-4_qRM/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=SMrd1wiN0aY"
+  },
+  "KB1_M10": {
+    "code": "KB1_M10",
+    "id": "ID#356",
+    "filename": "broll_bank_25_t734s.mp4",
+    "file": "broll_paage_clips/C_id356_broll_bank_25_t734s.mp4",
+    "title": "Góc nghiêng ấm áp quay anh Việt cầm micro bằng hai tay lắng nghe và trả lời học viên",
+    "desc": "Từ F1 đến F4, dưới ánh đèn vàng ấm bên cạnh bảng phấn xanh, anh Việt mặc áo thun đen đứng cầm micro trên tay, xoay người nhìn xuống phía các học viên ngồi ở tiền cảnh đang đặt câu hỏi và giải đáp thắc mắc.",
+    "drive": "https://drive.google.com/file/d/14j_-uSU49QuQAV55p3rxmzVqntNz94Sr/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=4XKIyxEVgrk"
+  },
+  "KB1_M11": {
+    "code": "KB1_M11",
+    "id": "ID#80",
+    "filename": "02_SEQ_125_FPT_lop-offline-fedu-sony_MS_9x16.mp4",
+    "file": "broll_paage_clips/B07_id080_lop_quay_den_softbox.mp4",
+    "title": "Toàn Cảnh Học Viên Thực Hành Quay Phim Với Đèn Studio Tại Lớp Offline",
+    "desc": "Trong phòng học rộng trang bị nhiều chân máy ảnh và đèn softbox công suất lớn đang bật sáng, anh Việt cùng các học viên vây quanh bàn tròn thực hành bấm máy.",
+    "drive": "https://drive.google.com/file/d/11LfCdANy5jB14Dj7vrxV5GiD9LlieGKV/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=IWP8Y1bT-nM"
+  },
+  "KB1_M12": {
+    "code": "KB1_M12",
+    "id": "ID#407",
+    "filename": "broll_bank_39_t974s.mp4",
+    "file": "broll_paage_clips/C_id407_broll_bank_39_t974s.mp4",
+    "title": "Anh Việt đứng giảng giữa lớp cắt sang cảnh học viên nam nữ chăm chú nhìn laptop (t974s)",
+    "desc": "Ở F1 là góc rộng quay anh Việt mặc đồ đen đứng cầm micro giảng bài ngay giữa các bàn học viên trước cửa kính xanh; sang F2, F3 và F4 máy cắt vào góc trung cảnh bàn học viên nơi học viên nam áo xám đang nghiêng người chăm chú cùng học viên nữ mặc vest đen xem bài thực hành trên laptop.",
+    "drive": "https://drive.google.com/file/d/1rQ8lD1ALf64m-NcPM0ozjXQsW8SpndKZ/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=dA-uVBjwvsc"
+  },
+  "KB1_M13": {
+    "code": "KB1_M13",
+    "id": "ID#352",
+    "filename": "broll_bank_31_t846s.mp4",
+    "file": "broll_paage_clips/C_id352_broll_bank_31_t846s.mp4",
+    "title": "Anh Việt chỉ tay giảng bài trên bục và góc máy lia xuống học viên đang ghi chép",
+    "desc": "F1, F2 và F4 ghi lại cảnh anh Việt mặc áo thun đen cầm micro vàng đứng giảng bài sôi nổi và vung tay chỉ về phía xa (F1); F3 máy quay hướng xuống các học viên nữ mặc áo trắng đang ngồi chăm chú học tập tại bàn.",
+    "drive": "https://drive.google.com/file/d/17pN5R3I8vNqYskluJHwGGh8fQy-a_YhL/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=DTt37Vi9PjI"
+  },
+  "KB1_M14": {
+    "code": "KB1_M14",
+    "id": "ID#402",
+    "filename": "broll_bank_28_t798s.mp4",
+    "file": "broll_paage_clips/B28_id402_cui_ban_va_hv_phat_bieu.mp4",
+    "title": "Anh Việt cúi sát bàn hỗ trợ rồi đứng đối diện lắng nghe học viên nam phát biểu (t798s)",
+    "desc": "Giữa không gian lớp học có vách gỗ đèn vàng: ở F1 anh Việt cúi gập người xuống sát bàn để xem bài và trao đổi với một học viên nữ; sang F2, F3 và F4 một học viên nam đeo kính mặc áo nâu đứng dậy ở tiền cảnh trái cầm micro phát biểu trực tiếp, còn anh Việt đứng đối diện bên phải chăm chú lắng nghe.",
+    "drive": "https://drive.google.com/file/d/19RpBqFWkIxfRPpYMeVvHA52136R4Smsm/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=bp6GKxr4tB8"
+  },
+  "KB1_M15": {
+    "code": "KB1_M15",
+    "id": "ID#260",
+    "filename": "Lớp offline - edit 2 cam - Cách 3 multicam_1080p_insta.mp4",
+    "file": "broll_paage_clips/C_id260_Lớp_offline_-_edit_2_cam_-_Cách_3_multicam_1080p_insta.mp4",
+    "title": "Quay màn hình hướng dẫn kỹ thuật dựng Multicam 2 máy trên CapCut (Cách 3)",
+    "desc": "Từ F1 đến F4 hiển thị màn hình phần mềm dựng phim với các rãnh âm thanh và hình ảnh xếp chồng lên nhau, kèm phụ đề tiếng Việt bên dưới giải thích cách chọn góc cam nhanh bất kỳ trong lúc biên tập buổi trò chuyện.",
+    "drive": "https://drive.google.com/file/d/1CtA_LZZj3aJYP94fnGjrK75IqMe7bGIC/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=ktBAEQCC9ik"
+  },
+  "KB1_M16": {
+    "code": "KB1_M16",
+    "id": "ID#368",
+    "filename": "broll_bank_27_t766s.mp4",
+    "file": "broll_paage_clips/B23_id368_viet_cuoi_cui_sat_ban.mp4",
+    "title": "Cận cảnh anh Việt cầm micro cười tươi và cúi người lắng nghe học viên (t766s)",
+    "desc": "Đứng giữa các bàn học viên với phông nền vách gỗ đèn vàng ấm áp, anh Việt cầm micro vàng nói ở góc nghiêng (F1), sau đó xoay chính diện nở nụ cười rạng rỡ (F2, F4) và ở F3 anh cúi thấp người xuống sát bàn để lắng nghe hoặc xem bài tập trực tiếp cho học viên.",
+    "drive": "https://drive.google.com/file/d/1AI0i2FenuMs5x94lSMyoYvq_QUIkchXa/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=DPs2H3JTHTg"
+  },
+  "KB1_M17": {
+    "code": "KB1_M17",
+    "id": "ID#461",
+    "filename": "Broll t9 p2 NOTE NGẮN.mp4",
+    "file": "broll_paage_clips/B30_id461_toc_ky_so_tay_cua_kinh.mp4",
+    "title": "Góc máy xuyên lớp lá cây phản chiếu qua kính cảnh tốc ký vào sổ tay",
+    "desc": "Quay từ ngoài ban công nhìn xuyên qua cửa kính in bóng cây xanh, anh Việt ngồi nghiêng tập trung ghi nhanh các ý chính vào sổ rồi ngước nhìn suy ngẫm.",
+    "drive": "https://drive.google.com/file/d/1Z3TbkP6CKOQQxOC-w9YxVjPIR0KXV40G/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=m9a7J2Hy9bM"
+  },
+  "KB1_M18": {
+    "code": "KB1_M18",
+    "id": "ID#384",
+    "filename": "broll_bank_11_t430s.mp4",
+    "file": "broll_paage_clips/C_id384_broll_bank_11_t430s.mp4",
+    "title": "Góc rộng anh Việt đứng giữa màn chiếu sáng và bảng phấn có sơ đồ (t430s)",
+    "desc": "Góc máy rộng lấy trọn màn chiếu trắng sáng bên trái và bảng phấn xanh có viết sơ đồ chữ bên phải. Anh Việt đứng ngay chính giữa hai bảng, cầm micro bằng tay trái và khẽ đưa tay phải lên trước ngực ở F3-F4 để giải thích nội dung trước hàng học viên nữ tóc dài ngồi ở tiền cảnh.",
+    "drive": "https://drive.google.com/file/d/1AWLSPRHjJPaUQd7NXar2CB4inW5R3AHJ/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=TQMySD0OtxM"
+  },
+  "KB1_M19": {
+    "code": "KB1_M19",
+    "id": "ID#386",
+    "filename": "broll_bank_45_t1070s.mp4",
+    "file": "broll_paage_clips/B32_id386_nhom_nu_vo_tay_cuoi.mp4",
+    "title": "Nhóm học viên nữ áo trắng vỗ tay cười tươi và bàn học viên dùng laptop (t1070s)",
+    "desc": "Ở F1, F2 và F4, nhóm học viên nữ mặc áo trắng và sơ mi xanh nhạt ngồi quanh bàn trước cửa kính cây xanh đang vỗ tay, cười tươi rạng rỡ hướng về phía người đang chia sẻ; ở F3 máy lia sang bàn bên cạnh ghi lại cảnh học viên nam áo vàng đang chăm chú nhìn laptop cùng hai học viên nữ.",
+    "drive": "https://drive.google.com/file/d/1IZrMOkTMrVdByb7a0WRiLlJY-UmBV4O4/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=skh1x9xKqa4"
+  },
+  "KB2_M01": {
+    "code": "KB2_M01",
+    "id": "ID#121",
+    "filename": "06_META_129_STUDIO_luot-instagram-fomo_CU_9x16.mp4",
+    "file": "broll_paage_clips/B06_id121_luot_reels_fomo.mp4",
+    "title": "Cầm điện thoại lướt xem Reels mạng xã hội với gương mặt áp lực FOMO",
+    "desc": "Đan xen giữa góc cận bàn tay dùng ngón cái lướt xem liên tục các video ngắn trên điện thoại (F1, F3) và góc trung cận anh Việt mặc áo blazer đen cúi nhìn màn hình với ánh mắt căng thẳng, áp lực vì hiệu ứng FOMO (F2, F4).",
+    "drive": "https://drive.google.com/file/d/1i8fiE4PB95p7_9d2KpccaV-bFNl_n4-F/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=V6OBlFIG1B4"
+  },
+  "KB2_M02": {
+    "code": "KB2_M02",
+    "id": "ID#396",
+    "filename": "broll_bank_38_t958s.mp4",
+    "file": "broll_paage_clips/B27_id396_dai_canh_di_giua_lop.mp4",
+    "title": "Đại cảnh lớp học đông kín và anh Việt cầm micro đi giữa lối đi các bàn (t958s)",
+    "desc": "Góc đại cảnh (WS) bao quát toàn bộ khán phòng lớp học Offline với hệ cửa kính xanh mát phía sau. Ở F1, F2, F4 anh Việt đứng giao lưu ở khu vực bên trái; đặc biệt ở F3 anh Việt vừa cầm micro nói vừa bước đi dọc lối đi chính giữa các cụm bàn tròn khiến tất cả học viên hai bên đều ngoái nhìn theo.",
+    "drive": "https://drive.google.com/file/d/1la-2wmoD4tuWLB-p-Vfkduri3Hi58F9H/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=nB19CV8zKaY"
+  },
+  "KB2_M03": {
+    "code": "KB2_M03",
+    "id": "ID#365",
+    "filename": "broll_bank_01_t0s.mp4",
+    "file": "broll_paage_clips/C_id365_broll_bank_01_t0s.mp4",
+    "title": "Anh Việt đứng giữa màn chiếu trắng và bảng phấn xanh mở đầu bài giảng (t0s)",
+    "desc": "Góc máy chính diện bục giảng: anh Việt mặc trang phục đen đứng ngay vị trí trung tâm giữa màn chiếu trắng sáng bên trái và bảng phấn xanh bên phải. Dưới chân bảng có trang trí bóng bay hồng trắng, tiền cảnh là hàng học viên ngồi quay lưng chăm chú theo dõi khi anh Việt cầm micro bằng hai tay mở đầu buổi học.",
+    "drive": "https://drive.google.com/file/d/1jb8h6xBp2cUYjoDVRdh-37ph-DlzTbEY/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=YtP0BrHe7ZQ"
+  },
+  "KB2_M04": {
+    "code": "KB2_M04",
+    "id": "ID#120",
+    "filename": "06_META_128_STUDIO_xoa-video-that-vong_CU_9x16.mp4",
+    "file": "broll_paage_clips/C_id120_06_META_128_STUDIO_xoa-video-that-vong_CU_9x16.mp4",
+    "title": "Đặc tả ngón tay cái bấm xác nhận xóa video trên màn hình iPhone",
+    "desc": "Góc cực cận (ECU) màn hình điện thoại cầm trên tay hiển thị thông báo xác nhận xóa video trong 30 ngày, ngón tay cái nhấn vào dòng chữ Delete Video màu đỏ rồi lướt qua thư viện ảnh (F1-F4).",
+    "drive": "https://drive.google.com/file/d/1Zq9KljBj4d67O99Or9XdiOAkvl3VZ18S/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=V5no2Ty72Is"
+  },
+  "KB2_M05": {
+    "code": "KB2_M05",
+    "id": "ID#388",
+    "filename": "broll_bank_08_t366s.mp4",
+    "file": "broll_paage_clips/B26_id388_chi_thang_man_chieu.mp4",
+    "title": "Anh Việt giữ nguyên cánh tay phải duỗi thẳng chỉ vào màn chiếu trắng (t366s)",
+    "desc": "Xuyên suốt cả 4 khung hình F1, F2, F3 và F4, anh Việt đứng giữa bục giảng (bên trái là màn chiếu trắng sáng, bên phải là bảng phấn xanh), tay trái cầm micro đưa sát miệng trong khi cánh tay phải duỗi thẳng tắp chỉ ngang sang bên trái hướng thẳng vào màn chiếu để phân tích tài liệu.",
+    "drive": "https://drive.google.com/file/d/1FCgUZNZ-kD0asJ7GidQrd2IZEibhUKz4/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=FvEP76hF-hI"
+  },
+  "KB2_M06": {
+    "code": "KB2_M06",
+    "id": "ID#379",
+    "filename": "broll_bank_59_t1454s.mp4",
+    "file": "broll_paage_clips/C_id379_broll_bank_59_t1454s.mp4",
+    "title": "Anh Việt đứng giữa màn chiếu có chữ và bảng xanh vừa nói vừa mỉm cười (t1454s)",
+    "desc": "Anh Việt đứng trên bục giảng ở khoảng giữa màn chiếu trắng đang chiếu nội dung chữ (bên trái) và bảng phấn xanh (bên phải). Ở F1 anh mở nhẹ tay phải khi nói, sang F2, F3 và F4 anh cầm micro bằng tay trái sát miệng, vừa chia sẻ vừa nở nụ cười tự tin, thoải mái với cả lớp.",
+    "drive": "https://drive.google.com/file/d/1zsOCFBUAHg1qsYO1abw_jRD7rO3PW3Vp/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=RFxou0QP3qw"
+  },
+  "KB2_M07": {
+    "code": "KB2_M07",
+    "id": "ID#377",
+    "filename": "broll_bank_42_t1022s.mp4",
+    "file": "broll_paage_clips/C_id377_broll_bank_42_t1022s.mp4",
+    "title": "Nhóm học viên nữ áo sọc hồng cười tươi thảo luận sôi nổi bên máy tính bảng (t1022s)",
+    "desc": "Trong cả 4 khung hình F1-F4, nhóm học viên nữ ngồi quanh bàn học trước khung cửa kính ngập sắc xanh cây cối đang thảo luận vô cùng rôm rả: học viên nữ mặc áo kẻ sọc hồng trắng cười tươi rói khi trò chuyện cùng bạn học đeo kính ngồi cạnh, trên bàn có chiếc máy tính bảng đang mở sáng, thẻ tên hồng và bình nước hồng.",
+    "drive": "https://drive.google.com/file/d/1z7rAdLOOBbie-kaBQbviUTHrwv9ABY84/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=qnh9TH6E1tE"
+  },
+  "KB2_M08": {
+    "code": "KB2_M08",
+    "id": "ID#406",
+    "filename": "broll_bank_43_t1038s.mp4",
+    "file": "broll_paage_clips/C_id406_broll_bank_43_t1038s.mp4",
+    "title": "Cận cảnh học viên nữ buộc tóc áo trắng cười tươi và các bàn thảo luận nhóm (t1038s)",
+    "desc": "Góc máy lia qua các bàn học viên đang thảo luận: ở F1 thấy học viên nam áo đen và nữ áo trắng gần cửa sổ; ở F2 và F4 lấy cận cảnh học viên nữ mặc áo trắng buộc tóc ngồi giữa bàn đang nở nụ cười tươi tắn nhìn người đối diện; ở F3 các học viên đang cúi đầu trao đổi ghi chép.",
+    "drive": "https://drive.google.com/file/d/1q2St_-vOVAhwW4jQlLO6FUaFCnK1rauh/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=sJIG5ZhnTWw"
+  },
+  "KB2_M09": {
+    "code": "KB2_M09",
+    "id": "ID#392",
+    "filename": "broll_bank_46_t1086s.mp4",
+    "file": "broll_paage_clips/C_id392_broll_bank_46_t1086s.mp4",
+    "title": "Bốn học viên ngồi bàn tập trung làm việc trên laptop dưới ánh đèn vàng (t1086s)",
+    "desc": "Trung cảnh cụm bàn học viên trước vách gỗ đèn vàng ấm: bên trái là học viên nam áo xám và học viên nam áo vàng đang chăm chú nhìn vào chiếc laptop mở trên bàn, ở giữa là học viên nữ đeo kính ngồi trầm ngâm suy nghĩ sau chiếc bình giữ nhiệt màu hồng đậm, bên phải là học viên nữ áo sọc hồng.",
+    "drive": "https://drive.google.com/file/d/1mKU1TPHOchL3BN3_cSz2_kUmv7z8sJUn/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=tMWGxIFIZ2g"
+  },
+  "KB2_M10": {
+    "code": "KB2_M10",
+    "id": "ID#81",
+    "filename": "02_SEQ_132_FPT_lop-offline-fedu-sony_MS_9x16.mp4",
+    "file": "broll_paage_clips/B08_id081_chi_man_hinh_tv.mp4",
+    "title": "Đứng Giảng Bài Và Chỉ Tay Lên Màn Hình Tivi Tại Lớp Offline",
+    "desc": "Anh Việt mặc áo đen đứng trước lớp học, tay cầm điện thoại và chỉ lên màn hình tivi lớn đang hiển thị slide bài giảng để phân tích chi tiết cho học viên.",
+    "drive": "https://drive.google.com/file/d/1ZxVailOQBtZcYPVOpksx5ZH7vbvtUvPL/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=DOMN2zKCWlk"
+  },
+  "KB2_M11": {
+    "code": "KB2_M11",
+    "id": "ID#367",
+    "filename": "broll_bank_41_t1006s.mp4",
+    "file": "broll_paage_clips/C_id367_broll_bank_41_t1006s.mp4",
+    "title": "Các bàn học viên chăm chú ghi chép và thảo luận bên cửa kính xanh (t1006s)",
+    "desc": "Góc máy quay các cụm bàn học viên trong phòng học nhiều ánh sáng tự nhiên. Ở F1 là góc rộng hai bàn học, sang F2 và F4 máy tập trung vào bàn bên phải với học viên nam áo xám, học viên nữ đeo kính làm việc trước máy tính bảng có thẻ tên hồng và học viên nữ áo sọc hồng đang ghi chép; ở F3 học viên nữ đeo kính bàn bên trái quay lại cười tươi.",
+    "drive": "https://drive.google.com/file/d/1798SE6QaTHxzXtadpi6UO2UXhFMDmraB/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=LPu0hAaPNAk"
+  },
+  "KB2_M12": {
+    "code": "KB2_M12",
+    "id": "ID#405",
+    "filename": "broll_bank_47_t1102s.mp4",
+    "file": "broll_paage_clips/C_id405_broll_bank_47_t1102s.mp4",
+    "title": "Cắt cảnh từ bàn học viên làm việc trên laptop sang anh Việt chỉ tay vào màn chiếu (t1102s)",
+    "desc": "Đoạn video chuyển cảnh giữa học viên và giảng viên: ở F1 quay bàn học viên (nam áo vàng nhìn laptop, nữ đeo kính cạnh bình nước hồng); sang F2, F3 và F4 chuyển lên bục giảng quay anh Việt đứng giữa màn chiếu trắng có chữ và bảng phấn xanh, duỗi thẳng tay phải chỉ vào màn chiếu (F2, F4).",
+    "drive": "https://drive.google.com/file/d/1yIKm1HL8XM9U3BA1dd36Pz2X8m70yWvN/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=s1kbjUKvk8I"
+  },
+  "KB2_M13": {
+    "code": "KB2_M13",
+    "id": "ID#378",
+    "filename": "broll_bank_40_t990s.mp4",
+    "file": "broll_paage_clips/B25_id378_hv_nam_nu_laptop.mp4",
+    "title": "Học viên nam áo xám và nữ áo vest đen chăm chú thực hành trên laptop (t990s)",
+    "desc": "Tại bàn học gần cửa kính xanh, học viên nam mặc áo thun xám ngồi bên trái đang nghiêng người chăm chú nhìn vào chiếc laptop màu bạc của học viên nữ mặc áo vest đen ngồi giữa (F1, F2, F4) để cùng giải quyết bài tập thực hành; ở F3 góc máy mở rộng hơn thấy thêm các bàn học viên phía xa.",
+    "drive": "https://drive.google.com/file/d/1SB1ICf6_1VbHmzYGAFBcVkriJ6aGCTUW/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=gEFYKtkdpZ8"
+  },
+  "KB2_M14": {
+    "code": "KB2_M14",
+    "id": "ID#410",
+    "filename": "broll_bank_29_t814s.mp4",
+    "file": "broll_paage_clips/C_id410_broll_bank_29_t814s.mp4",
+    "title": "Cận cảnh anh Việt cầm micro vàng đặt tay lên ngực lắng nghe giữa lớp học (t814s)",
+    "desc": "Giữa phòng học với nền vách gỗ vàng ấm: ở F1 có một học viên nam áo nâu đứng ở rìa phải cạnh anh Việt; sang F2, F3 và F4 anh Việt đứng ở trung tâm khung hình, tay trái cầm micro vàng sát miệng, tay phải đặt nhẹ lên ngực đầy chân thành trong khi các học viên xung quanh lắng nghe.",
+    "drive": "https://drive.google.com/file/d/10vtBCzeU9ggYAR_RM_CC5hJsCpfi67PN/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=P49ox-vvv54"
+  },
+  "KB2_M15": {
+    "code": "KB2_M15",
+    "id": "ID#460",
+    "filename": "Broll t9 p2 -edit timeline.mp4",
+    "file": "broll_paage_clips/B29_id460_tay_bam_phim_timeline.mp4",
+    "title": "Cận cảnh bàn tay cắt dựng timeline video đa lớp trên màn hình MacBook",
+    "desc": "Đặc tả màn hình MacBook đang mở phần mềm dựng phim với nhiều lớp timeline âm thanh và hình ảnh, bàn tay anh Việt bấm phím tắt chỉnh sửa liên tục.",
+    "drive": "https://drive.google.com/file/d/17F7FZifRgs5mYaxSKQOUfYxh1m7_g7cD/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=ZayjJ0rYLrA"
+  },
+  "KB2_M16": {
+    "code": "KB2_M16",
+    "id": "ID#403",
+    "filename": "broll_bank_62_t1566s.mp4",
+    "file": "broll_paage_clips/C_id403_broll_bank_62_t1566s.mp4",
+    "title": "Anh Việt đứng giữa màn chiếu có chữ và bảng xanh, zoom cận chỉ tay vào slide (t1566s)",
+    "desc": "Đoạn video kết hợp hai cỡ cảnh: ở F1 và F3 là góc trung rộng thấy anh Việt đứng cầm micro giữa màn chiếu trắng có chữ và bảng phấn xanh; ở F2 và F4 máy zoom cận hơn (MS) khi anh Việt đưa cánh tay phải sang bên trái chỉ trực tiếp vào các dòng chữ trên màn chiếu.",
+    "drive": "https://drive.google.com/file/d/1P8HmM09VDmZCB_k_t2Ac4Az864uSsOij/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=pEfkmv_N-zs"
+  },
+  "KB2_M17": {
+    "code": "KB2_M17",
+    "id": "ID#374",
+    "filename": "broll_bank_32_t862s.mp4",
+    "file": "broll_paage_clips/B24_id374_hv_nu_ghi_chep_ban.mp4",
+    "title": "Cận cảnh nhóm học viên nữ áo trắng chăm chú ghi chép và lắng nghe (t862s)",
+    "desc": "Góc máy trung cận tập trung vào các học viên nữ ngồi tại bàn học: ở F1 hai học viên nữ áo trắng đang cúi xem tài liệu trong khi bóng anh Việt cầm micro đi ngang phía sau; ở F2 và F4 lấy nét vào học viên nữ buộc tóc mặc sơ mi trắng đang chăm chú ghi chép; ở F3 máy lia sang bàn bên cạnh với học viên nữ chống cằm lắng nghe.",
+    "drive": "https://drive.google.com/file/d/1dhKdiQUI_aMTxJqABs7WReM6n-4ehtXL/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=qUh7WxgJepo"
+  },
+  "KB2_M18": {
+    "code": "KB2_M18",
+    "id": "ID#361",
+    "filename": "broll_bank_33_t878s.mp4",
+    "file": "broll_paage_clips/B22_id361_hv_vo_tay_thuc_hanh.mp4",
+    "title": "Các học viên chăm chú thực hành trên điện thoại, laptop và vỗ tay trong lớp học",
+    "desc": "F1, F2 và F4 quay hướng về phía các dãy bàn học viên đang ngồi mỉm cười, vỗ tay hưởng ứng và thao tác trên điện thoại, laptop; F3 ghi lại cảnh hai học viên đứng trao đổi thực hành bên khung cửa kính lớn của phòng học.",
+    "drive": "https://drive.google.com/file/d/1wycsrnFmChk2gHN6agHZXfMvBHqleGVv/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=GD0a063-vTk"
+  },
+  "KB2_M19": {
+    "code": "KB2_M19",
+    "id": "ID#357",
+    "filename": "broll_bank_65_t1758s.mp4",
+    "file": "broll_paage_clips/C_id357_broll_bank_65_t1758s.mp4",
+    "title": "Anh Việt mỉm cười thân thiện và giao lưu cùng học viên trên bục giảng",
+    "desc": "Xuyên suốt F1 đến F4, anh Việt mặc áo thun đen đứng trước bảng xanh và dải bóng bay trang trí, một tay cầm micro, gương mặt tươi cười rạng rỡ vừa nói vừa đưa tay phải ra hiệu tương tác vui vẻ với các học viên ngồi dưới.",
+    "drive": "https://drive.google.com/file/d/12f4wyedXnX301LeIVRIu_XifVJ33zTS3/view?usp=sharing",
+    "yt": "https://www.youtube.com/watch?v=q7BQKhhmFLg"
+  }
+};
+
+    const SCENES = [
+      {
+        id: "SCENE 1",
+        time: "0.00s – 2.67s (f=0..80)",
+        role: "Hook 3 Nhịp Chữ Mở Đầu & Cảnh Trám Mở Màn (Slot M01 — 2 Cảnh Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B01", label: "Nhịp chữ 1", text: "Bấm máy" },
+            { tag: "B02", label: "Nhịp chữ 2", text: "Thật ra chỉ là" },
+            { tag: "B03", label: "Nhịp chữ 3", text: "Nói chuyện với 1 khách" }
+          ],
+          slots: [
+            { slot: "M01", clip: "KB1_M01", reason: "Đúng cảnh thật ngay giây 0: bật REC đỏ lên là khựng lại vò đầu quên lời, khớp câu Hook 'Bấm máy / Thật ra chỉ là / Nói chuyện với 1 khách'." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B01", label: "Nhịp chữ 1", text: "Khách có tiền" },
+            { tag: "B02", label: "Nhịp chữ 2", text: "Xem rất kỹ" },
+            { tag: "B03", label: "Nhịp chữ 3", text: "Nhưng không bấm like" }
+          ],
+          slots: [
+            { slot: "M01", clip: "KB2_M01", reason: "Cận cảnh ngón tay lướt xem video liên tục trong im lặng — minh họa trực diện câu Hook 'Khách có tiền / Xem rất kỹ / Nhưng không bấm like'." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 2",
+        time: "2.67s – 4.33s (f=80..130)",
+        role: "Bung Khung B-Roll Hero Lớp Học Offline & Đại Tự Khóa Học (Slot M02 — 2 Cảnh Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B04", label: "Đại tự mở màn", text: "Offline 07–08/11" }
+          ],
+          slots: [
+            { slot: "M02", clip: "KB1_M02", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t942s): Mở bung chữ 'Offline 07–08/11' ra toàn cảnh lớp học cửa kính xanh và anh Việt đứng trao đổi đầu bàn." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B04", label: "Đại tự mở màn", text: "Offline 07–08/11" }
+          ],
+          slots: [
+            { slot: "M02", clip: "KB2_M02", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t958s): Mở bung chữ 'Offline 07–08/11' bằng đại cảnh lớp học Offline 3 đông kín và anh Việt cầm micro đi giữa lối đi các bàn." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 3",
+        time: "4.33s – 8.00s (f=130..240)",
+        role: "Nền Cầu Vồng Ấm & 2 Dòng Gõ Chữ Nối Tiếp (Slot M03 — 2 Cảnh Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B05", label: "Dòng gõ nhịp 1", text: "2 ngày kèm 1-1 tại bàn" },
+            { tag: "B06", label: "Dòng gõ nối tiếp nhịp 2", text: "2 ngày kèm 1-1 tại bàn, ra 3 video ngay tại lớp" }
+          ],
+          slots: [
+            { slot: "M03", clip: "KB1_M03", reason: "Cảnh tại lớp Offline: Anh Việt cầm bút sửa bài trực tiếp tại bàn, ngồi cạnh học viên cười tươi — khớp '2 ngày kèm 1-1 tại bàn'." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B05", label: "Dòng gõ nhịp 1", text: "Hàng giá cao bán bằng niềm tin" },
+            { tag: "B06", label: "Dòng gõ nối tiếp nhịp 2", text: "Hàng giá cao bán bằng niềm tin, không bán bằng view" }
+          ],
+          slots: [
+            { slot: "M03", clip: "KB2_M03", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t0s): Anh Việt đứng giữa màn chiếu trắng và bảng phấn xanh mở đầu bài giảng đầy uy tín — khớp 'Hàng giá cao bán bằng niềm tin'." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 4",
+        time: "8.00s – 12.50s (f=240..375)",
+        role: "Ô Nhập Bài Toán Kênh & Bàn Tay Kéo Thả Thẻ Video (Slot M04 — 2 Cảnh Xóa Video Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B07", label: "Ô chờ: Nhập bài toán kênh của bạn → Gõ câu vướng mắc", text: "Tư vấn khách thì nói mượt, bật camera lên là khựng lại quên lời" }
+          ],
+          slots: [
+            { slot: "M04", clip: "KB1_M04", reason: "Góc trung cận bấm nút Delete xóa video trên iPhone rồi thở dài úp máy xuống bàn gỗ — khớp câu gõ 'bật camera lên là khựng lại quên lời'." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B07", label: "Ô chờ: Nhập bài toán kênh của bạn → Gõ câu vướng mắc", text: "Chạy ads ra toàn khách hỏi giá rồi im, đăng video thì không ai xem" }
+          ],
+          slots: [
+            { slot: "M04", clip: "KB2_M04", reason: "Đặc tả ngón tay cái bấm xác nhận Delete xóa video trên màn hình iPhone (khác cảnh với KB1) — khớp câu gõ 'Chạy ads ra toàn khách hỏi giá rồi im'." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 5A",
+        time: "12.50s – 16.83s (f=375..505)",
+        role: "Chia Đôi Màn Hình (Split View): 3 Giải Pháp Cột Trái & Khung B-Roll Lớp Học Cột Phải (Slots M05, M06 — Khác Nhau 100%)",
+        kb1: {
+          beats: [
+            { tag: "B08", label: "3 Gạch đầu dòng phương pháp (Đã sửa '5 giây' → '5–7 chữ')", text: "<ul><li><strong>Kịch bản 60 giây:</strong> Gọi đúng điều khách ngại nói ra.</li><li><strong>Ngắt câu 5–7 chữ:</strong> Nhìn từ khoá là nói, không học vẹt.</li><li><strong>2 điện thoại, 1 sải tay:</strong> Chính diện & cận 45° + đèn 3 điểm.</li></ul>" },
+            { tag: "B09", label: "Ô chat gõ bổ sung", text: "Thêm kho cảnh tay nghề 10 phút để lấp chỗ nói vấp" },
+            { tag: "B10", label: "Thẻ số liệu & 4 Chip", text: "6,0M View · 50,8K Click · 428+ SĐT | Chip: ✋ Không cần ekip · 📱 1 điện thoại · 🎙️ Không học vẹt · ⚡ 30 phút/video" }
+          ],
+          slots: [
+            { slot: "M05", clip: "KB1_M05", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t334s): Anh Việt đứng trước màn chiếu trắng và bảng xanh mở rộng hai bàn tay giải thích 3 gạch đầu dòng phương pháp." },
+            { slot: "M06", clip: "KB1_M06", reason: "Anh Việt mặc blazer xám ngồi làm việc với MacBook và đứng dậy trao đổi cùng học viên tại lớp Offline — đặt cạnh thẻ số liệu 6,0M View." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B08", label: "3 Gạch đầu dòng phương pháp", text: "<ul><li><strong>Kịch bản 60 giây:</strong> Nói đúng nỗi lo khách giấu trong lòng.</li><li><strong>Tả đúng bệnh:</strong> Khách thấy mình trong đó, tự nhắn riêng.</li><li><strong>Hộp nhung cho nhẫn vàng:</strong> Đèn 3 điểm, 2 góc máy cho tay nghề thật.</li></ul>" },
+            { tag: "B09", label: "Ô chat gõ bổ sung", text: "Thêm cảnh làm nghề thật & kết quả khách đã nhận" },
+            { tag: "B10", label: "Thẻ số liệu & 4 Chip", text: "6,0M View · 3.642 tin nhắn · 428+ SĐT | Chip: ✋ Không cần ekip · 💸 Không đốt ads · 🎯 Đúng tệp khách · ⚡ 30 phút/video" }
+          ],
+          slots: [
+            { slot: "M05", clip: "KB2_M05", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t366s): Anh Việt đứng giữa bục giảng giữ nguyên cánh tay phải duỗi thẳng chỉ vào màn chiếu phân tích 3 gạch đầu dòng 'Tả đúng bệnh'." },
+            { slot: "M06", clip: "KB2_M06", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1454s): Anh Việt đứng giữa màn chiếu có chữ và bảng xanh vừa chia sẻ vừa mỉm cười tự tin — đặt cạnh thẻ 6,0M View · 3.642 tin nhắn." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 5B",
+        time: "16.67s – 20.67s (f=500..620)",
+        role: "Popup Modal: 6 Cảnh Học Viên Thực Hành & Phát Biểu Ngay Tại Lớp Offline 3 (Slots M07, M08, M09 — Đã Đổi 100% Sang Cảnh Lớp Học)",
+        kb1: {
+          beats: [
+            { tag: "B11", label: "Popup 3 Cảnh Học Viên Tại Lớp Offline 3 (Cắt từ broll - offline 3 tren lop ko sub.mp4)", text: "Tiêu đề: <strong>Học viên thực hành & chia sẻ ngay tại lớp</strong><br>1. Học viên đứng phát biểu trực tiếp tại lớp (ID#360)<br>2. Học viên tương tác hỏi đáp trực tiếp cùng giảng viên (ID#404)<br>3. Nhóm học viên thảo luận kịch bản & bấm máy tại bàn (ID#397)" }
+          ],
+          slots: [
+            { slot: "M07", clip: "KB1_M07", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t30s): Toàn cảnh lớp học Offline 3 và khoảnh khắc học viên mặc áo đỏ đứng lên cầm mic phát biểu trực tiếp." },
+            { slot: "M08", clip: "KB1_M08", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t926s): Toàn cảnh lớp học Offline 3 khi học viên nữ áo trắng vươn tay chỉ hướng tương tác sôi nổi với anh Việt." },
+            { slot: "M09", clip: "KB1_M09", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1054s): Nhóm học viên nữ mặc sơ mi trắng cười rạng rỡ trò chuyện quanh bàn học, phía sau có học viên cầm điện thoại thực hành quay." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B11", label: "Popup 3 Cảnh Học Viên Tại Lớp Offline 3 (Khác 100% với Kịch bản 1)", text: "Tiêu đề: <strong>Học viên làm thật & sửa bài ngay tại bàn</strong><br>1. Học viên thảo luận bài toán kênh trên máy tính bảng (ID#377)<br>2. Học viên trao đổi nhóm & ghi chép kịch bản tại bàn (ID#406)<br>3. Bàn học viên thực hành dựng bài trên laptop tại lớp (ID#392)" }
+          ],
+          slots: [
+            { slot: "M07", clip: "KB2_M07", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1022s): Nhóm học viên nữ áo sọc hồng cười tươi thảo luận sôi nổi bên máy tính bảng tại bàn học lớp Offline 3." },
+            { slot: "M08", clip: "KB2_M08", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1038s): Cận cảnh học viên nữ buộc tóc áo trắng cười tươi và các bàn thảo luận nhóm sôi nổi tại lớp Offline 3." },
+            { slot: "M09", clip: "KB2_M09", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1086s): Bốn học viên ngồi bàn tập trung thực hành làm việc trên laptop dưới ánh đèn vàng tại lớp Offline 3." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 6",
+        time: "20.67s – 25.33s (f=620..760)",
+        role: "Gõ Câu Cũ Xóa Đi & Gõ Lại Tư Duy Đúng (Slot M10 — Đã Đổi Sang Cảnh Lớp Học Offline)",
+        kb1: {
+          beats: [
+            { tag: "B12–B13", label: "Tiêu đề đôi", text: "Dành cho người / Giỏi nghề nhưng ngại máy" },
+            { tag: "B14", label: "Gõ câu sai rồi xóa", text: "<s>Học thuộc lòng rồi quay lại 20 lần...</s>" },
+            { tag: "B15", label: "Gõ lại câu đúng + Bấm gửi", text: "Mình chỉ muốn nói tự nhiên như lúc tư vấn khách, bấm máy là nói, tắt máy là xong" }
+          ],
+          slots: [
+            { slot: "M10", clip: "KB1_M10", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t734s): Góc nghiêng ấm áp tại lớp Offline 3 quay anh Việt cầm micro bằng hai tay lắng nghe và trò chuyện tự nhiên cùng học viên." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B12–B13", label: "Tiêu đề đôi", text: "Không cần / Nhảy trend, diễn kịch" },
+            { tag: "B14", label: "Gõ câu sai rồi xóa", text: "<s>Chạy thêm ads cho bài đăng không ai xem...</s>" },
+            { tag: "B15", label: "Gõ lại câu đúng + Bấm gửi", text: "Mình chỉ cần khách đúng tệp xem đủ kỹ, tin tay nghề rồi tự nhắn hỏi, khỏi đốt ads" }
+          ],
+          slots: [
+            { slot: "M10", clip: "KB2_M10", reason: "Anh Việt đứng giảng bài và chỉ tay lên màn hình Tivi lớn tại lớp Offline phân tích cấu trúc bài đăng để khách có tiền tự nhắn hỏi." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 7",
+        time: "25.33s – 33.60s (f=760..1008)",
+        role: "4 Định Dạng Thực Chiến & Dàn 3 Cột Video Thực Hành Tại Lớp Offline (Slots M11, M12, M13, M14 — 8 Cảnh Khác Nhau Hoàn Toàn)",
+        kb1: {
+          beats: [
+            { tag: "B16", label: "3 bước xử lý & Kết quả", text: "1. Đang tìm chỗ bạn hay bị khựng trước ống kính...<br>2. Đang chọn định dạng hợp với bạn (không cần lộ mặt)...<br>3. Đang ghép quy trình quay dựng 30 phút...<br>→ <strong>Xong! 4 định dạng bạn tự quay được ngay ngày 2:</strong>" },
+            { tag: "B17", label: "Danh sách 4 định dạng", text: "• <strong>01. Voice-Over & thao tác tay:</strong> 0% lộ mặt, chưa quen máy vẫn làm được.<br>• <strong>02. Talking Head 2 góc máy:</strong> Chính diện & cận 45°, nói như đang tư vấn.<br>• <strong>03. Walk & Talk:</strong> Vừa đi vừa nói, bớt gượng, giữ chân người xem x2.4.<br>• <strong>04. Storytelling:</strong> Kể 1 ca khách thật, không cần diễn." },
+            { tag: "B18", label: "Nhãn 3 cột Gallery tại lớp", text: "01. Thực hành quay đèn Studio · 02. Kèm dựng trên Laptop · 03. Ghi chép cấu trúc tại bàn" },
+            { tag: "B19", label: "3 Chip cam kết", text: "👥 Tối đa 35 học viên · 🤝 Kèm 1-1 tại bàn · 🛡️ Hoàn 100% sau Ngày 1 nếu không thực tế" }
+          ],
+          slots: [
+            { slot: "M11", clip: "KB1_M11", reason: "Cột 1 Gallery thực hành tại lớp: Toàn cảnh học viên vây quanh bàn tròn thực hành bấm máy quay với đèn studio tại lớp Offline." },
+            { slot: "M12", clip: "KB1_M12", reason: "Cột 2 Gallery — Cắt từ broll - offline 3 tren lop ko sub.mp4 (t974s): Anh Việt đứng giảng giữa lớp cắt sang cảnh học viên nam nữ chăm chú thực hành trên laptop." },
+            { slot: "M13", clip: "KB1_M13", reason: "Cột 3 Gallery — Cắt từ broll - offline 3 tren lop ko sub.mp4 (t846s): Anh Việt chỉ tay giảng bài trên bục và góc máy lia xuống học viên đang ghi chép kịch bản." },
+            { slot: "M14", clip: "KB1_M14", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t798s): Anh Việt cúi sát bàn hỗ trợ 1-1 rồi đứng đối diện lắng nghe học viên nam cầm mic phát biểu." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B16", label: "3 bước xử lý & Kết quả", text: "1. Đang tìm điều khách ngại hỏi thẳng...<br>2. Đang chọn định dạng hợp ngành (không cần lộ mặt)...<br>3. Đang ghép quy trình quay dựng 30 phút...<br>→ <strong>Xong! 4 định dạng để khách xem kỹ, tin rồi nhắn:</strong>" },
+            { tag: "B17", label: "Danh sách 4 định dạng", text: "• <strong>01. Voice-Over & thao tác tay:</strong> 0% lộ mặt, tay nghề tự nói thay bạn.<br>• <strong>02. Talking Head 2 góc máy:</strong> Đĩnh đạc như người đứng đầu tiệm.<br>• <strong>03. Walk & Talk:</strong> Dẫn khách đi một vòng tiệm, giữ chân x2.4.<br>• <strong>04. Storytelling:</strong> Kể 1 ca khách thật, người xem thấy chính mình." },
+            { tag: "B18", label: "Nhãn 3 cột Gallery tại lớp", text: "01. Thảo luận kịch bản tại bàn · 02. Phân tích trên màn chiếu · 03. Thực hành dựng ngay tại lớp" },
+            { tag: "B19", label: "3 Chip cam kết", text: "👥 Tối đa 35 học viên · 🤝 Kèm 1-1 tại bàn · 🛡️ Hoàn 100% sau Ngày 1 nếu không thực tế" }
+          ],
+          slots: [
+            { slot: "M11", clip: "KB2_M11", reason: "Cột 1 Gallery — Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1006s): Các bàn học viên chăm chú ghi chép kịch bản và thảo luận bên cửa kính xanh tại lớp Offline 3." },
+            { slot: "M12", clip: "KB2_M12", reason: "Cột 2 Gallery — Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1102s): Cắt cảnh từ bàn học viên làm việc trên laptop sang anh Việt chỉ tay phân tích vào màn chiếu." },
+            { slot: "M13", clip: "KB2_M13", reason: "Cột 3 Gallery — Cắt từ broll - offline 3 tren lop ko sub.mp4 (t990s): Học viên nam áo xám và nữ áo vest đen chăm chú thực hành trên laptop tại lớp Offline 3." },
+            { slot: "M14", clip: "KB2_M14", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t814s): Cận cảnh anh Việt cầm micro vàng đặt tay lên ngực chân thành lắng nghe học viên giữa lớp học Offline 3." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 8",
+        time: "33.60s – 38.77s (f=1008..1163)",
+        role: "Bấm Nút Xuất Video & Mở Màn Hình MacBook 3D (Slot M15 — 2 Cảnh Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B20", label: "Tiêu đề & Nút bấm xuất video", text: "<strong>Ra 3 video ngay tại lớp</strong> → Nút <em>Xuất video</em> → <em>Đang xuất 1080p...</em>" }
+          ],
+          slots: [
+            { slot: "M15", clip: "KB1_M15", reason: "Màn hình MacBook 3D: Quay màn hình hướng dẫn kỹ thuật dựng Multicam 2 góc máy của học viên trên CapCut ngay tại lớp Offline." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B20", label: "Tiêu đề & Nút bấm xuất video", text: "<strong>Mang về 3 video đăng được ngay</strong> → Nút <em>Xuất video</em> → <em>Đang xuất 1080p...</em>" }
+          ],
+          slots: [
+            { slot: "M15", clip: "KB2_M15", reason: "Màn hình MacBook 3D: Cận cảnh bàn tay bấm phím tắt cắt dựng đa lớp nhanh gọn trên màn hình MacBook." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 9",
+        time: "38.77s – 51.80s (f=1163..1554)",
+        role: "Sửa Kịch Bản Trực Tiếp & Dropdown Chuyển Đổi Cách Làm (Slots M16, M17 — 4 Cảnh Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B21", label: "Tiêu đề mở Scene 9", text: "Sửa kịch bản 1-1 tại bàn" },
+            { tag: "B22", label: "Dòng gõ prompt kịch bản", text: "Viết kịch bản 60 giây kể 1 ca khách thật của mình" },
+            { tag: "B23", label: "Nút lệnh nổi & 3 dòng cấu trúc", text: "<strong>✨ Ngắt câu 5–7 chữ theo nhịp thở</strong><br>1. Vào thẳng cảnh thật ngay 3 giây đầu.<br>2. Gọi đúng chỗ khách đang ngại nói ra.<br>3. Mỗi dòng 5–7 chữ: nhìn 1 giây là nói được." },
+            { tag: "B24", label: "Dropdown chọn cách nói (9D)", text: "<em>Cách nói: Học thuộc lòng (Mặc định)</em> → <strong>Nhìn từ khoá là nói · Không học vẹt</strong>" }
+          ],
+          slots: [
+            { slot: "M16", clip: "KB1_M16", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t766s): Cận cảnh anh Việt cầm micro cười tươi và cúi người sát bàn lắng nghe học viên — khớp 'Sửa kịch bản 1-1 tại bàn'." },
+            { slot: "M17", clip: "KB1_M17", reason: "Góc máy xuyên lớp lá cây qua cửa kính cảnh tốc ký từ khóa kịch bản vào sổ tay — khớp 'Nhìn từ khoá là nói · Không học vẹt'." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B21", label: "Tiêu đề mở Scene 9", text: "Khám kịch bản trên màn lớn" },
+            { tag: "B22", label: "Dòng gõ prompt kịch bản", text: "Viết 60 giây tả đúng nỗi lo khách không dám hỏi" },
+            { tag: "B23", label: "Nút lệnh nổi & 3 dòng cấu trúc", text: "<strong>✨ Tả đúng bệnh, không khoe giá</strong><br>1. Mở bằng 1 cảnh khách đang gặp thật.<br>2. Nói đúng điều khách ngại hỏi thẳng.<br>3. Kết bằng 1 lối nhắn riêng, không ép comment." },
+            { tag: "B24", label: "Dropdown đổi tệp người xem (9D — Đã bỏ chữ 'Dark Social')", text: "<em>Người xem: Lướt qua giải trí (Mặc định)</em> → <strong>90% khách có tiền xem âm thầm rồi nhắn riêng</strong>" }
+          ],
+          slots: [
+            { slot: "M16", clip: "KB2_M16", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1566s): Anh Việt đứng giữa màn chiếu có chữ và bảng xanh, zoom cận chỉ tay vào slide — khớp 'Khám kịch bản trên màn lớn'." },
+            { slot: "M17", clip: "KB2_M17", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t862s): Cận cảnh nhóm học viên nữ áo trắng chăm chú ghi chép và lắng nghe tại lớp Offline 3." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 10",
+        time: "51.80s – 58.77s (f=1554..1763)",
+        role: "Bộ Đếm 6,000,000+ Lượt Xem Thật & 4 Nhóm Ngành Nghề (Slot M18 — 2 Cảnh Lớp Offline Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B25", label: "Bộ đếm nhảy số & 4 nhóm ngành nghề", text: "<strong>Phương pháp đã kiểm chứng qua</strong> → <strong>6,000,000+</strong> <em>(Lượt xem thật · 50.800+ click tìm hiểu)</em><br>4 ngành: Chủ Spa & Thẩm mỹ · Bác sĩ & Dược sĩ · Chủ tiệm & Nhà hàng · BĐS, Bảo hiểm & Đào tạo" }
+          ],
+          slots: [
+            { slot: "M18", clip: "KB1_M18", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t430s): Góc rộng anh Việt đứng giữa màn chiếu sáng và bảng phấn có sơ đồ trước hàng học viên khi bộ đếm nhảy 6,000,000+." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B25", label: "Bộ đếm nhảy số & 4 nhóm ngành nghề", text: "<strong>Phương pháp đã kiểm chứng qua</strong> → <strong>6,000,000+</strong> <em>(Lượt xem thật · 1 video/tuần)</em><br>4 ngành: Chủ Spa & Thẩm mỹ · Bác sĩ & Dược sĩ · Chủ tiệm & Nhà hàng · BĐS, Bảo hiểm & Đào tạo" }
+          ],
+          slots: [
+            { slot: "M18", clip: "KB2_M18", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t878s): Các học viên chăm chú thực hành trên điện thoại, laptop và vỗ tay rạng rỡ trong lớp học khi bộ đếm nhảy 6,000,000+." }
+          ]
+        }
+      },
+      {
+        id: "SCENE 11",
+        time: "58.77s – 70.37s (f=1763..2111)",
+        role: "Lịch Học Hà Nội, Nút Giữ Chỗ & Màn Kết Chốt Cứng B28 (Slot M19 — 2 Cảnh Lớp Offline Khác Nhau)",
+        kb1: {
+          beats: [
+            { tag: "B26", label: "Địa điểm & Ngày học", text: "Học trực tiếp tại Hà Nội → Ngày 07 → Và 08/11" },
+            { tag: "B27", label: "Giới hạn sĩ số & Nút CTA", text: "Tối đa 35 học viên · Kèm 1-1 → Giữ chỗ ngay tại offline.fedu.vn" },
+            { tag: "B28 (CHỐT CỨNG)", label: "Màn kết (f=1992..2111) theo chỉ đạo của anh Việt", text: "<span style='color:#b45309;font-size:17px;'>2 NGÀY · CẦM TAY CHỈ VIỆC</span><br>Trực tiếp · 07–08/11 tại Hà Nội (Zalo: 0934.688.632)" }
+          ],
+          slots: [
+            { slot: "M19", clip: "KB1_M19", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1070s): Nhóm học viên nữ áo trắng vỗ tay cười tươi rạng rỡ và bàn học viên dùng laptop — đẩy cao năng lượng trước CTA." }
+          ]
+        },
+        kb2: {
+          beats: [
+            { tag: "B26", label: "Địa điểm & Ngày học", text: "Học trực tiếp tại Hà Nội → Ngày 07 → Và 08/11" },
+            { tag: "B27", label: "Giới hạn sĩ số & Nút CTA", text: "Tối đa 35 học viên · Kèm 1-1 → Giữ chỗ ngay tại offline.fedu.vn" },
+            { tag: "B28 (CHỐT CỨNG)", label: "Màn kết (f=1992..2111) theo chỉ đạo của anh Việt", text: "<span style='color:#b45309;font-size:17px;'>2 NGÀY · CẦM TAY CHỈ VIỆC</span><br>Trực tiếp · 07–08/11 tại Hà Nội (Zalo: 0934.688.632)" }
+          ],
+          slots: [
+            { slot: "M19", clip: "KB2_M19", reason: "Cắt từ broll - offline 3 tren lop ko sub.mp4 (t1758s): Anh Việt mỉm cười thân thiện và giao lưu cùng học viên trên bục giảng lớp Offline 3 trước màn kết B28." }
+          ]
+        }
+      }
+    ];
+
+    function renderSlot(s) {
+      const c = CLIPS[s.clip];
+      if (!c) return '';
+      return `
+        <div class="broll-slot">
+          <div class="broll-slot-header">
+            <span class="slot-badge">🎥 Vị trí ${s.slot}</span>
+            <span class="clip-code">${c.code} · ${c.id} (${c.filename})</span>
+          </div>
+          <div class="broll-video-wrap">
+            <video controls playsinline preload="metadata" src="${c.file}"></video>
+            <div class="broll-info">
+              <h4>${c.title}</h4>
+              <p><strong>Mô tả cảnh:</strong> ${c.desc}</p>
+              <p style="color:#0f766e;"><strong>Lý do ghép vào nhịp này:</strong> ${s.reason}</p>
+              <div class="broll-links">
+                <a href="${c.file}" target="_blank" class="ext-link">🔍 Mở file MP4</a>
+                ${c.drive ? `<a href="${c.drive}" target="_blank" rel="noopener" class="ext-link gd">☁ Mở Google Drive</a>` : ''}
+                ${c.yt ? `<a href="${c.yt}" target="_blank" rel="noopener" class="ext-link yt">▶ Xem gốc YouTube</a>` : ''}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderScenes() {
+      const container = document.getElementById('scenes-container');
+      container.innerHTML = SCENES.map(sc => `
+        <article class="scene-block">
+          <div class="scene-header">
+            <div class="scene-title">
+              <span>${sc.id}</span>
+              <span style="font-weight:500;font-size:14px;color:#d1d5db;">— ${sc.role}</span>
+            </div>
+            <span class="scene-time">${sc.time}</span>
+          </div>
+          <div class="scene-grid">
+            <div class="script-col col-kb1">
+              <div class="col-header">🅰️ KỊCH BẢN 1 — Gỡ Nỗi Sợ Ống Kính · Kèm 1-1</div>
+              ${sc.kb1.beats.map(b => `
+                <div class="beat-item">
+                  <div><span class="beat-tag">${b.tag}</span><span class="beat-label">${b.label}</span></div>
+                  <div class="beat-text">${b.text}</div>
+                </div>
+              `).join('')}
+              ${sc.kb1.slots.map(renderSlot).join('')}
+            </div>
+            <div class="script-col col-kb2">
+              <div class="col-header">🅱️ KỊCH BẢN 2 — Khách Có Tiền Xem Âm Thầm · Thoát Đốt Ads</div>
+              ${sc.kb2.beats.map(b => `
+                <div class="beat-item">
+                  <div><span class="beat-tag">${b.tag}</span><span class="beat-label">${b.label}</span></div>
+                  <div class="beat-text">${b.text}</div>
+                </div>
+              `).join('')}
+              ${sc.kb2.slots.map(renderSlot).join('')}
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderLibrary() {
+      const grid = document.getElementById('library-grid');
+      grid.innerHTML = Object.values(CLIPS).map(c => `
+        <div class="lib-card">
+          <video controls playsinline preload="metadata" src="${c.file}"></video>
+          <div class="lib-card-body">
+            <div class="lib-card-top">
+              <span class="slot-badge" style="background:#141413;">${c.code}</span>
+              <span class="clip-code">${c.id}</span>
+            </div>
+            <div class="lib-card-title">${c.title}</div>
+            <div class="lib-card-desc">${c.desc}</div>
+            <div class="broll-links" style="margin-top:8px;">
+              <a href="${c.file}" target="_blank" class="ext-link">MP4</a>
+              ${c.drive ? `<a href="${c.drive}" target="_blank" rel="noopener" class="ext-link gd">☁ Drive</a>` : ''}
+              ${c.yt ? `<a href="${c.yt}" target="_blank" rel="noopener" class="ext-link yt">▶ YouTube</a>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setView(mode, btn) {
+      document.querySelectorAll('.filter-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.body.classList.remove('view-kb1', 'view-kb2');
+      if (mode === 'kb1') document.body.classList.add('view-kb1');
+      if (mode === 'kb2') document.body.classList.add('view-kb2');
+    }
+
+    renderScenes();
+    renderLibrary();
+  </script>
+</body>
+</html>
