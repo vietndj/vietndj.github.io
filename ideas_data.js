@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-23T22:51:22+07:00",
-  "total_scene_items": 405,
-  "total_unique_ideas": 386,
-  "total_active_ideas": 326,
+  "generated_at": "2026-10-25T19:28:08+07:00",
+  "total_scene_items": 406,
+  "total_unique_ideas": 387,
+  "total_active_ideas": 327,
   "total_excluded_ideas": 60,
   "total_creators": 237,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 13,
     "talking-head": 45,
     "storytelling": 39,
-    "dien-anh": 158,
+    "dien-anh": 159,
     "chuyen-canh": 61,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 41,
     "kien-truc": 43,
     "the-thao": 6,
-    "ky-thuat-quay": 101,
+    "ky-thuat-quay": 102,
     "ugc": 7
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 231,
+    "us_eu": 232,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -462,6 +462,20 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@by.bennnj",
+      "name": "By Bennnj",
+      "profile_url": "https://www.instagram.com/by.bennnj/",
+      "video_count": 4,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_%40rocketespresso/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_@rocketespresso",
+        "IG_@by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with",
+        "IG_@by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp",
+        "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic"
+      ]
+    },
+    {
       "handle": "@arturbr",
       "name": "Arturbr",
       "profile_url": "https://www.instagram.com/arturbr/",
@@ -568,19 +582,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
         "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
         "IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling"
-      ]
-    },
-    {
-      "handle": "@by.bennnj",
-      "name": "By Bennnj",
-      "profile_url": "https://www.instagram.com/by.bennnj/",
-      "video_count": 3,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with",
-        "IG_@by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp",
-        "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic"
       ]
     },
     {
@@ -3012,6 +3013,77 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_@rocketespresso",
+      "shortcode": "Det8KYKxp3y",
+      "title_vi": "Morning coffee routine on the @rocketespresso",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @by.bennnj",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@by.bennnj",
+        "name": "By Bennnj",
+        "handle": "@by.bennnj",
+        "profile_url": "https://www.instagram.com/by.bennnj/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Det8KYKxp3y/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Qqt7Qn82vqZlW3lLIJgniqzdYtSvRoxi",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_%40rocketespresso/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_%40rocketespresso/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/Det8KYKxp3y.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/Det8KYKxp3y.mp4",
+        "report_url": "reports/IG_@by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_@rocketespresso.html",
+        "shots_count": 12,
+        "duration": "22.9s",
+        "youtube_id": "XB6_QFTmpHg",
+        "youtube_embed": "https://www.youtube.com/embed/XB6_QFTmpHg",
+        "youtube_url": "https://youtu.be/XB6_QFTmpHg"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
       "shortcode": "DezFNT-s1Ny",
       "title_vi": "You don’t need a complicated scene to make a",
@@ -5205,7 +5277,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -11863,7 +11935,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
