@@ -21,7 +21,7 @@
           <em>Không cần nhớ đường dẫn file, không cần copy ảnh hay sửa HTML thủ công. Chỉ cần nói tự nhiên "cập nhật vào skill" hoặc "đưa vào videoai" — mọi quy chuẩn, phòng Studio và ảnh thực tế tự động lên sóng.</em>
         </p>
         <p style="font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--mute); margin-bottom:0;">
-          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">25/10/2026 19:27:18</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 19 Phòng Studio tương tác, 71 file kịch bản Python, 26 Remotion Compositions và 22 Visual Components.
+          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">25/10/2026 20:43:00</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 19 Phòng Studio tương tác, 72 file kịch bản Python, 26 Remotion Compositions và 22 Visual Components.
         </p>
 
         <!-- Khối chỉ số sống -->
@@ -31,7 +31,7 @@
             <div class="proof-lbl">auto-edit, render-v3, motion, fedu-media-pipeline &amp; 19 Studio HTML</div>
           </div>
           <div class="proof-item">
-            <div class="proof-num">71 Scripts Python</div>
+            <div class="proof-num">72 Scripts Python</div>
             <div class="proof-lbl">VAD, bóc nhịp, khóa mắt, B-Roll hot-swap &amp; QA Lint</div>
           </div>
           <div class="proof-item">
@@ -95,6 +95,24 @@
         Danh sách các quy chuẩn và phòng Studio đã được tự động đóng gói, copy ảnh và gắn vào đúng trang Bước học:
       </p>
       
+        <div class="matrix-card" style="border-left:4px solid #f59e0b; margin-bottom:16px;">
+          <div class="matrix-header">
+            <div class="matrix-title">
+              <span>⚡ Mẫu 02 Motion Graphic (Adwave 61s V6 Master) & CHECKMOTION V4.0: Chống Đè Chữ Tiếp Sức (B8) • Pha OUT 9f Vút Thoát (B9) • Giàn Camera 3D Phối Cảnh Thật (B10) — Hội Ý CLAUDE2</span>
+            </div>
+            <span class="matrix-badge editorial">25/10/2026 • Đích: buoc-4</span>
+          </div>
+          <p style="font-size:14.5px; color:var(--ink2); margin:0 0 10px;">Giải phẫu 3 lỗi trên Mẫu 02 V5, hội ý kiến trúc cùng <strong>CLAUDE2 (Opus 5.5 Pro)</strong> và nâng cấp toàn diện hệ thống lên <strong>Motion Engine V6.0 (<code>smoothPhysics30fps.ts</code>)</strong> + <strong>CHECKMOTION V4.0 (<code>check_motion.py</code>)</strong>:<br/>1) <strong>Xóa sổ 100% lỗi chồng/đè chữ (Gate B8):</strong> Thay thế các cụm chữ đặt rời bằng <code>&lt;FlexRelayRow30&gt;</code> + <code>evaluateRelayShift30</code> (Cụm 1 xuất hiện ở tâm trước &rarr; lấy đà lùi 2f <code>-8%</code> &rarr; trượt sang trái theo lò xo <code>easeOutBack</code> nhường chỗ cho Cụm 2 bật lên bên phải với <code>gap &ge; 24px</code>).<br/>2) <strong>Bắt buộc mọi chuyển động có Giai đoạn OUT 9 frames đầy đủ (Gate B9):</strong> Sửa lỗi toán học ở V3/V5 (<code>ef / N</code> với <code>exitFrames=4..5</code> chỉ đi được <code>29.6%</code> quãng đường rồi biến mất đột ngột) sang chuẩn <strong><code>exitFrames = 9</code></strong> (3 frames đầu lấy đà ngược chiều <code>-12%</code> + 6 frames sau gia tốc bậc ba <code>u³</code> vút thoát đạt đúng <strong><code>100%</code> biên độ tại <code>exitFrame - 1</code></strong> qua <code>&lt;SceneExitWrapper30&gt;</code>).<br/>3) <strong>Giàn Camera 3D Phối Cảnh Thật ở 0:15 &amp; 0:46 (Gate B10):</strong> Thay xoay phẳng 2D bằng <code>&lt;Camera3DRig30 perspective=1480&gt;</code> + <code>&lt;Extrude3DPill&gt;</code> (6 lớp cạnh khối dày 3D <code>translateZ(-2.5px..-15px)</code> + lấy đà 3f trước khi tháo góc nghiêng về phẳng).<br/>4) <strong>Đóng gói Template Công Nghiệp Mẫu 02 (<code>adwave_ui_showcase_61s</code>):</strong> Giữ nguyên 100% nhạc &amp; SFX gốc Pinterest (<code>original_audio_plus6db.m4a</code>), chỉ cần thay JSON 28 nhịp chữ &amp; 6 cảnh trám B-Roll.</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:10px;">
+            <a href="05-buoc4-motion-cta.html#evo-checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f" style="font:700 12px var(--sans); color:#fff; background:#0f172a; padding:4px 10px; border-radius:6px; text-decoration:none;">📖 Xem trên 05-buoc4-motion-cta.html</a>
+            <button type="button" onclick="openStudioModal('studios/studio-motion-graphic-paage-offline-versions.html', 'Mẫu 02 Motion Graphic (Adwave 61s V6 Master) & CHECKMOTION V4.0: Chống Đè Chữ Tiếp Sức (B8) • Pha OUT 9f Vút Thoát (B9) • Giàn Camera 3D Phối Cảnh Thật (B10) — Hội Ý CLAUDE2')" style="font:700 12px var(--sans); color:#fff; background:#b45309; border:none; padding:4px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio (studio-motion-graphic-paage-offline-versions.html)</button>
+            <a href="assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_first6s_strip.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ v6_first6s_strip.jpg</a><a href="assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_sec15_18_strip.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ v6_sec15_18_strip.jpg</a>
+          </div>
+          <div style="font:400 12px var(--mono); color:var(--mute);">
+            Phiên gốc: <code>2b147481-82d3-4e70-89a7-81a6e5de8bb4</code> • ID: <code>checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f</code>
+          </div>
+        </div>
+        
         <div class="matrix-card" style="border-left:4px solid #f59e0b; margin-bottom:16px;">
           <div class="matrix-header">
             <div class="matrix-title">
@@ -424,8 +442,8 @@
           </div>
           <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.</p>
           <div style="font:400 12px var(--mono); color:var(--mute); margin-bottom:10px;">
-            <span>Dung lượng: <strong>10.0 KB</strong> (62 dòng)</span> • 
-            <span>Cập nhật: <strong style="color:var(--ink);">25/10/2026 19:19</strong></span>
+            <span>Dung lượng: <strong>10.6 KB</strong> (62 dòng)</span> • 
+            <span>Cập nhật: <strong style="color:var(--ink);">25/10/2026 20:40</strong></span>
           </div>
           <div style="font-size:13px; color:var(--ink2);">
             <strong>Mục chính trong SKILL.md:</strong>
@@ -557,10 +575,31 @@
           <tbody>
             
         <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">evolution_log.json</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Evolution Registry</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Auto-Evolve Hub</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:42</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">motion/SKILL.md</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 19:19</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:40</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/render_adwave_template.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:37</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/ai_hook_engine.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:03</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -589,20 +628,6 @@
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 18:43</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">evolution_log.json</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Evolution Registry</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Auto-Evolve Hub</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 18:40</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/ai_hook_engine.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 18:35</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -647,13 +672,6 @@
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 17:26</td>
         </tr>
         
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/render_paage_template.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 17:04</td>
-        </tr>
-        
           </tbody>
         </table>
       </div>
@@ -661,7 +679,7 @@
       <!-- ========================================================
            DANH MỤC SCRIPTS PYTHON
            ======================================================== -->
-      <h2 style="margin-top:36px;">5. Danh mục toàn bộ 71 kịch bản Python</h2>
+      <h2 style="margin-top:36px;">5. Danh mục toàn bộ 72 kịch bản Python</h2>
       <div style="background:#ffffff; border:1px solid var(--line); border-radius:12px; overflow-x:auto;">
         <table style="width:100%; border-collapse:collapse; text-align:left;">
           <thead>
@@ -829,6 +847,13 @@
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">render_adwave_template.py</td>
+          <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">motion</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">render_adwave_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">275 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">render_paage_template.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">motion</td>
           <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">render_paage_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)</td>
@@ -909,7 +934,7 @@
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">ai_hook_engine.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">ai-hook</td>
           <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">1313 dòng</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">1463 dòng</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">

@@ -68,6 +68,44 @@
         <div class="matrix-card" style="border:2px solid #f59e0b; background:#fffbeb; margin-bottom:20px;">
           <div class="matrix-header">
             <div class="matrix-title">
+              <span>🏷️ Mẫu 02 Motion Graphic (Adwave 61s V6 Master) & CHECKMOTION V4.0: Chống Đè Chữ Tiếp Sức (B8) • Pha OUT 9f Vút Thoát (B9) • Giàn Camera 3D Phối Cảnh Thật (B10) — Hội Ý CLAUDE2</span>
+            </div>
+            <span class="matrix-badge editorial">MỚI CẬP NHẬT • 25/10/2026</span>
+          </div>
+          <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0 0 12px;">
+            Giải phẫu 3 lỗi trên Mẫu 02 V5, hội ý kiến trúc cùng <strong>CLAUDE2 (Opus 5.5 Pro)</strong> và nâng cấp toàn diện hệ thống lên <strong>Motion Engine V6.0 (<code>smoothPhysics30fps.ts</code>)</strong> + <strong>CHECKMOTION V4.0 (<code>check_motion.py</code>)</strong>:<br/>1) <strong>Xóa sổ 100% lỗi chồng/đè chữ (Gate B8):</strong> Thay thế các cụm chữ đặt rời bằng <code>&lt;FlexRelayRow30&gt;</code> + <code>evaluateRelayShift30</code> (Cụm 1 xuất hiện ở tâm trước &rarr; lấy đà lùi 2f <code>-8%</code> &rarr; trượt sang trái theo lò xo <code>easeOutBack</code> nhường chỗ cho Cụm 2 bật lên bên phải với <code>gap &ge; 24px</code>).<br/>2) <strong>Bắt buộc mọi chuyển động có Giai đoạn OUT 9 frames đầy đủ (Gate B9):</strong> Sửa lỗi toán học ở V3/V5 (<code>ef / N</code> với <code>exitFrames=4..5</code> chỉ đi được <code>29.6%</code> quãng đường rồi biến mất đột ngột) sang chuẩn <strong><code>exitFrames = 9</code></strong> (3 frames đầu lấy đà ngược chiều <code>-12%</code> + 6 frames sau gia tốc bậc ba <code>u³</code> vút thoát đạt đúng <strong><code>100%</code> biên độ tại <code>exitFrame - 1</code></strong> qua <code>&lt;SceneExitWrapper30&gt;</code>).<br/>3) <strong>Giàn Camera 3D Phối Cảnh Thật ở 0:15 &amp; 0:46 (Gate B10):</strong> Thay xoay phẳng 2D bằng <code>&lt;Camera3DRig30 perspective=1480&gt;</code> + <code>&lt;Extrude3DPill&gt;</code> (6 lớp cạnh khối dày 3D <code>translateZ(-2.5px..-15px)</code> + lấy đà 3f trước khi tháo góc nghiêng về phẳng).<br/>4) <strong>Đóng gói Template Công Nghiệp Mẫu 02 (<code>adwave_ui_showcase_61s</code>):</strong> Giữ nguyên 100% nhạc &amp; SFX gốc Pinterest (<code>original_audio_plus6db.m4a</code>), chỉ cần thay JSON 28 nhịp chữ &amp; 6 cảnh trám B-Roll.
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
+            
+            <a href="assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_first6s_strip.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
+              <img src="assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_first6s_strip.jpg" alt="Dải Frame 6 Giây Đầu Mẫu 02 V6 Master (0.0s → 6.0s): Cụm 1 đứng giữa trước → Lấy đà lùi 2f → Trượt sang trái nhường chỗ cho Cụm 2 (0px đè chữ) → Pha OUT 9f lấy đà + vút thoát 100% trước khi chữ mới vào" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
+              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Dải Frame 6 Giây Đầu Mẫu 02 V6 Master (0.0s → 6.0s): Cụm 1 đứng giữa trước → Lấy đà lùi 2f → Trượt sang trái nhường chỗ cho Cụm 2 (0px đè chữ) → Pha OUT 9f lấy đà + vút thoát 100% trước khi chữ mới vào</div>
+            </a>
+            
+            <a href="assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_sec15_18_strip.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
+              <img src="assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_sec15_18_strip.jpg" alt="Dải Frame Cảnh Camera 3D Phối Cảnh Thật (15.0s → 18.0s): Camera3DRig30 (perspective 1480px, rx=14°, ry=-18°, rz=-13°, tz=230px) + Extrude3DPill 6 lớp cạnh khối 3D → Lấy đà 3f rồi tháo góc nghiêng mượt về phẳng" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
+              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Dải Frame Cảnh Camera 3D Phối Cảnh Thật (15.0s → 18.0s): Camera3DRig30 (perspective 1480px, rx=14°, ry=-18°, rz=-13°, tz=230px) + Extrude3DPill 6 lớp cạnh khối 3D → Lấy đà 3f rồi tháo góc nghiêng mượt về phẳng</div>
+            </a>
+            
+          </div>
+          <div class="cmd-box" style="margin-bottom:14px; background:#fff;">
+            <div class="cmd-header">
+              <span class="cmd-title">Lệnh gọi nhanh trong Antigravity</span>
+              <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+            </div>
+            <pre><code>python3 ~/.gemini/config/skills/motion/scripts/render_adwave_template.py --props ~/.gemini/config/skills/motion/templates/adwave_ui_showcase_61s/presets/offline_0711.json --check-only && python3 ~/.gemini/config/skills/checkmotion/scripts/check_motion.py --video "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/output/quang_cao_offline_07_08_11_mau02_adwave_v6_master.mp4" --tsx ~/.gemini/config/skills/auto-edit-video/remotion-studio/src/compositions/AdwaveOffline0711_30fps.tsx --ref "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/motion_references/pinterest_939563541021082754/pinterest_939563541021082754.mp4"</code></pre>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            
+            <a href="05-buoc4-motion-cta.html#evo-checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f" class="studio-launch-btn" style="background:#0f172a; border-color:#334155;">
+              📖 Xem tại trang Bước 4 &rarr;
+            </a>
+          </div>
+        </div>
+        
+        <div class="matrix-card" style="border:2px solid #f59e0b; background:#fffbeb; margin-bottom:20px;">
+          <div class="matrix-header">
+            <div class="matrix-title">
               <span>🏷️ Motion Graphic & CHECKMOTION V2.0: Toàn Bộ 6 Phiên Bản (Ref → V1 → V2 → V3 → V4 → V5 Master: Video B-Roll Thật & Bàn Tay Con Trỏ Đa Chặng — Hội Ý CLAUDE2)</span>
             </div>
             <span class="matrix-badge editorial">MỚI CẬP NHẬT • 25/10/2026</span>
@@ -126,49 +164,6 @@
           <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             
             <a href="02-buoc1-camera-cat-nhip.html#evo-google-flow-omni-1-1-master-protocol-v2-40effects" class="studio-launch-btn" style="background:#0f172a; border-color:#334155;">
-              📖 Xem tại trang Bước 4 &rarr;
-            </a>
-          </div>
-        </div>
-        
-        <div class="matrix-card" style="border:2px solid #f59e0b; background:#fffbeb; margin-bottom:20px;">
-          <div class="matrix-header">
-            <div class="matrix-title">
-              <span>🏷️ Earth Zoom V5.2 Omni Whip-Snap & Trang Riêng 'Hook Ổn Định' (Kiểm Chứng 6/6 Cảnh Thực Tế PASS 0 Lỗi)</span>
-            </div>
-            <span class="matrix-badge editorial">MỚI CẬP NHẬT • 25/10/2026</span>
-          </div>
-          <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0 0 12px;">
-            Đóng gói quy trình Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out trên Google Flow Omni 1.1 Flash + Đường cong tốc độ Whip-Snap 2->3->2->1 + Single-Frame Shutter Blur + Binary-Search Sharpness Restoration). Kiểm chứng thành công trên 6/6 cảnh thực tế (viet2210 + 5 clip AItest2) đạt VERDICT: PASS (0 events) và xuất bản trang riêng 11-hook-on-dinh.html.
-          </p>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:14px;">
-            
-            <a href="assets/earth-zoom-v5-2-omni-whipsnap-stable/earth_zoom_v5_whipsnap_master_overview.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
-              <img src="assets/earth-zoom-v5-2-omni-whipsnap-stable/earth_zoom_v5_whipsnap_master_overview.jpg" alt="Contact Sheet Overview: Earth Zoom V5.2 Whip-Snap (3.62s • 20.15 px/f • PASS 0 lỗi)" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
-              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Contact Sheet Overview: Earth Zoom V5.2 Whip-Snap (3.62s • 20.15 px/f • PASS 0 lỗi)</div>
-            </a>
-            
-            <a href="assets/earth-zoom-v5-2-omni-whipsnap-stable/five_anchors_sheet.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
-              <img src="assets/earth-zoom-v5-2-omni-whipsnap-stable/five_anchors_sheet.jpg" alt="5 Frame_Anchor tự động trích xuất từ 5 clip thực chiến trong AItest2" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
-              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">5 Frame_Anchor tự động trích xuất từ 5 clip thực chiến trong AItest2</div>
-            </a>
-            
-            <a href="assets/earth-zoom-v5-2-omni-whipsnap-stable/qa_EZ1_IMG_8611_overview.jpg" target="_blank" rel="noopener" style="display:block; background:#050507; border:1px solid #cbd5e1; border-radius:10px; overflow:hidden; text-decoration:none;">
-              <img src="assets/earth-zoom-v5-2-omni-whipsnap-stable/qa_EZ1_IMG_8611_overview.jpg" alt="Clip 1 (IMG_8611 - 2.71s Whip-Snap): VERDICT PASS 0 events" loading="lazy" style="width:100%; height:150px; object-fit:cover; display:block;"/>
-              <div style="padding:8px 10px; background:#fff; font:600 12px/1.35 var(--sans); color:var(--ink);">Clip 1 (IMG_8611 - 2.71s Whip-Snap): VERDICT PASS 0 events</div>
-            </a>
-            
-          </div>
-          <div class="cmd-box" style="margin-bottom:14px; background:#fff;">
-            <div class="cmd-header">
-              <span class="cmd-title">Lệnh gọi nhanh trong Antigravity</span>
-              <button type="button" class="copy-cmd-btn">Copy lệnh</button>
-            </div>
-            <pre><code>python3 -u ~/.gemini/config/skills/ai-hook/scripts/earth_zoom_omni_engine.py --video "/duong/dan/video.MOV" --output "/duong/dan/out_earth_zoom_v5.mp4"</code></pre>
-          </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            
-            <a href="02-buoc1-camera-cat-nhip.html#evo-earth-zoom-v5-2-omni-whipsnap-stable" class="studio-launch-btn" style="background:#0f172a; border-color:#334155;">
               📖 Xem tại trang Bước 4 &rarr;
             </a>
           </div>
