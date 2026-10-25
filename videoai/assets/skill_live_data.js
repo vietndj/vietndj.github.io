@@ -1,19 +1,19 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:31:19
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:51:48
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 08:31:19",
-  "last_synced_iso": "2026-10-25T08:31:19.454291",
+  "last_synced_formatted": "25/10/2026 08:51:48",
+  "last_synced_iso": "2026-10-25T08:51:48.971742",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
     "sfx_presets_count": 16,
     "profiles_count": 5,
     "presets_count": 8,
-    "compositions_count": 21,
+    "compositions_count": 22,
     "components_count": 22,
     "scripts_count": 68,
     "skills_count": 7,
@@ -45,6 +45,7 @@ window.SKILL_LIVE_DATA = {
         "script": "rooftop_jump_engine.py",
         "entry": "build_rooftop_jump"
       },
+      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/rooftop_jump_master_web.mp4",
       "sfx_profile": "8 lớp SFX CapCut khóa đỉnh tại t_land=1.733s (MS3325, MS3324, MS3336, MS3341, MS3333, SS4372, SS4381, SS4415)",
       "veo_prompt_template": "Fast-paced cinematic FPV tracking shot following the man in the {outfit} as he pushes off the rooftop ledge and drops straight down toward the {ground_desc} below, holding a steady crouched-in-air posture looking forward with his knees bent and hands in front as the camera plunges rapidly alongside him past the building floors, until his sneakers touch the ground once and he bends his knees into the exact squatting pose of the final frame. Smooth continuous downward motion, realistic gravity, natural motion blur.",
       "start_frame_prompt_template": "Hyper-realistic 8k vertical 9:16 wide-angle drone photograph captured from high above the rooftop edge of a tall modern building, looking steeply down at a wide urban street intersection and {environment} far below. [BIOMETRIC & IDENTITY LOCK]: The subject is the exact 35-year-old Vietnamese man from the reference images, oval face, high cheekbones, Asian monolid eyes, short neat black hair, clean-shaven, focused intense expression. [COMPOSITION & SCALE LOCK]: WIDE HIGH-ANGLE SHOT where the full-body man occupies ONLY 25% to 30% of the vertical frame height, positioned on the left rooftop parapet ledge at the upper-middle left area of the frame, crouching slightly on the concrete ledge and metal railing, looking down toward the bottom-right into the deep city street canyon below. [WARDROBE CONTINUITY LOCK]: Wearing {outfit}. [LIGHTING & REALISM]: {lighting}. Shot on DJI Mavic 3 Pro 24mm f/2.8, photorealistic, deep perspective.",
@@ -62,7 +63,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 1,
       "_studio_slug": "",
-      "_web_video": "",
+      "_web_video": "studios/rooftop_jump_master_web.mp4",
+      "_web_poster": "studios/thumb_hook_rooftop-jump.jpg",
       "_comparison_videos": []
     },
     {
@@ -155,6 +157,7 @@ window.SKILL_LIVE_DATA = {
       "order": 2,
       "_studio_slug": "studio-ai-hook-earth-zoom.html",
       "_web_video": "studios/earth_zoom_v5_whipsnap_web.mp4",
+      "_web_poster": "studios/thumb_hook_earth-zoom.jpg",
       "_comparison_videos": [
         {
           "label": "① Mẫu Chuẩn Higgsfield (02c_Hook3_Lao_Tu_Bau_Troi_4s)",
@@ -247,6 +250,7 @@ window.SKILL_LIVE_DATA = {
       "order": 3,
       "_studio_slug": "studio-ai-hook-display-transition.html",
       "_web_video": "studios/footageai1_display_transition_web.mp4",
+      "_web_poster": "studios/thumb_hook_display-transition.jpg",
       "_comparison_videos": []
     },
     {
@@ -299,6 +303,7 @@ window.SKILL_LIVE_DATA = {
       "order": 4,
       "_studio_slug": "studio-ai-hook-intermission.html",
       "_web_video": "studios/footageai3_intermission_web.mp4",
+      "_web_poster": "studios/thumb_hook_intermission.jpg",
       "_comparison_videos": []
     },
     {
@@ -346,6 +351,7 @@ window.SKILL_LIVE_DATA = {
       "order": 5,
       "_studio_slug": "studio-ai-hook-jib-down.html",
       "_web_video": "studios/footageai1_jib_down_web.mp4",
+      "_web_poster": "studios/thumb_hook_jib-down.jpg",
       "_comparison_videos": []
     },
     {
@@ -396,6 +402,7 @@ window.SKILL_LIVE_DATA = {
       "order": 6,
       "_studio_slug": "studio-ai-hook-pantone1.html",
       "_web_video": "studios/viet2210_katana_palette_master.mp4",
+      "_web_poster": "studios/thumb_hook_pantone1.jpg",
       "_comparison_videos": []
     },
     {
@@ -447,6 +454,7 @@ window.SKILL_LIVE_DATA = {
       "order": 7,
       "_studio_slug": "studio-ai-hook-sticker-transition.html",
       "_web_video": "studios/viet2210_sticker_transition_master.mp4",
+      "_web_poster": "studios/thumb_hook_sticker-transition.jpg",
       "_comparison_videos": []
     },
     {
@@ -473,6 +481,7 @@ window.SKILL_LIVE_DATA = {
         "entry": "build_flycam_transition"
       },
       "verifier": "verify_flycam_transition.py",
+      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_flycam_transition_web.mp4",
       "sfx_profile": "sfx_flycam_transition_2p5s.wav (Wind Rush + FPV Drone Doppler 180->320->140Hz + Portal Whoosh @ 1.04s + 55Hz Landing Sub-Drop @ 2.38s)",
       "scoring": {
         "base": 60,
@@ -488,7 +497,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 8,
       "_studio_slug": "",
-      "_web_video": "",
+      "_web_video": "studios/viet2210_flycam_transition_web.mp4",
+      "_web_poster": "studios/thumb_hook_flycam-transition.jpg",
       "_comparison_videos": []
     },
     {
@@ -567,6 +577,7 @@ window.SKILL_LIVE_DATA = {
       "order": 9,
       "_studio_slug": "studio-ai-hook-timelapse-freeze.html",
       "_web_video": "studios/footageai1_timelapse_freeze_web.mp4",
+      "_web_poster": "studios/thumb_hook_timelapse-freeze.jpg",
       "_comparison_videos": [
         {
           "label": "① Mẫu Hiệu Ứng Gốc (TIMELAPSE HUMAN.mp4)",
@@ -641,6 +652,7 @@ window.SKILL_LIVE_DATA = {
       "order": 10,
       "_studio_slug": "",
       "_web_video": "studios/viet2210_point_cloud_master.mp4",
+      "_web_poster": "studios/thumb_hook_point-cloud.jpg",
       "_comparison_videos": []
     },
     {
@@ -685,6 +697,7 @@ window.SKILL_LIVE_DATA = {
       "order": 11,
       "_studio_slug": "",
       "_web_video": "studios/viet2210_giant_grab_master.mp4",
+      "_web_poster": "studios/thumb_hook_giant-grab.jpg",
       "_comparison_videos": []
     },
     {
@@ -732,7 +745,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 12,
       "_studio_slug": "",
-      "_web_video": "",
+      "_web_video": "studios/viet2210_blinds_in_master.mp4",
+      "_web_poster": "studios/thumb_hook_blinds-in.jpg",
       "_comparison_videos": []
     },
     {
@@ -779,6 +793,7 @@ window.SKILL_LIVE_DATA = {
       "order": 13,
       "_studio_slug": "",
       "_web_video": "studios/viet2210_hero_cam_master.mp4",
+      "_web_poster": "studios/thumb_hook_hero-cam.jpg",
       "_comparison_videos": []
     },
     {
@@ -806,6 +821,7 @@ window.SKILL_LIVE_DATA = {
         "entry": "build_through_object"
       },
       "verifier": "verify_smooth_zoom.py",
+      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_through_object_master.mp4",
       "sfx_profile": "sfx_through_object_3s.wav (Muffled 380Hz -> Hollow Tube Doppler 1.67s -> Open Air + 55Hz Sub-thump)",
       "scoring": {
         "base": 60,
@@ -823,6 +839,7 @@ window.SKILL_LIVE_DATA = {
       "order": 14,
       "_studio_slug": "",
       "_web_video": "studios/viet2210_through_object_master.mp4",
+      "_web_poster": "studios/thumb_hook_through-object.jpg",
       "_comparison_videos": []
     },
     {
@@ -850,6 +867,7 @@ window.SKILL_LIVE_DATA = {
         "entry": "build_rapid_zoom"
       },
       "verifier": "verify_smooth_zoom.py",
+      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_rapid_zoom_master.mp4",
       "sfx_profile": "Whoosh Fast Air đặt đỉnh ở pha RUSH (1.20s–1.75s)",
       "scoring": {
         "base": 65,
@@ -866,7 +884,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 15,
       "_studio_slug": "",
-      "_web_video": "",
+      "_web_video": "studios/viet2210_rapid_zoom_master.mp4",
+      "_web_poster": "studios/thumb_hook_rapid-zoom.jpg",
       "_comparison_videos": []
     },
     {
@@ -900,7 +919,7 @@ window.SKILL_LIVE_DATA = {
       "verifier": "verify_exploded_assembly.py",
       "verifier_script": "verify_exploded_assembly.py",
       "sfx_file": "sfx_exploded_assembly.wav",
-      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_exploded_assembly_master.mp4",
+      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_exploded_assembly_web.mp4",
       "sfx_profile": "sfx_exploded_assembly.wav (Reverse Whoosh + 6 Magnetic Clack Clusters + Pneumatic Lock & 55Hz Sub Hit at f44)",
       "scoring": {
         "base": 62,
@@ -918,7 +937,8 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 16,
       "_studio_slug": "",
-      "_web_video": "",
+      "_web_video": "studios/viet2210_exploded_assembly_web.mp4",
+      "_web_poster": "studios/thumb_hook_exploded-assembly.jpg",
       "_comparison_videos": []
     },
     {
@@ -970,6 +990,7 @@ window.SKILL_LIVE_DATA = {
       "order": 16,
       "_studio_slug": "",
       "_web_video": "studios/viet2210_polygon_sculpt_master.mp4",
+      "_web_poster": "studios/thumb_hook_polygon-sculpt.jpg",
       "_comparison_videos": []
     },
     {
@@ -1020,6 +1041,7 @@ window.SKILL_LIVE_DATA = {
       "order": 16,
       "_studio_slug": "",
       "_web_video": "studios/viet2210_smoke_reveal_master.mp4",
+      "_web_poster": "studios/thumb_hook_smoke-reveal.jpg",
       "_comparison_videos": []
     },
     {
@@ -1072,6 +1094,7 @@ window.SKILL_LIVE_DATA = {
       "order": 17,
       "_studio_slug": "studio-ai-hook-glow-trace.html",
       "_web_video": "studios/viet2210_glow_trace_master.mp4",
+      "_web_poster": "studios/thumb_hook_glow-trace.jpg",
       "_comparison_videos": []
     },
     {
@@ -1120,6 +1143,7 @@ window.SKILL_LIVE_DATA = {
       "order": 18,
       "_studio_slug": "",
       "_web_video": "studios/viet2210_double_exposure_master.mp4",
+      "_web_poster": "studios/thumb_hook_double-exposure.jpg",
       "_comparison_videos": []
     }
   ],
@@ -5148,6 +5172,16 @@ window.SKILL_LIVE_DATA = {
       "desc": "Remotion Composition React Component 60fps"
     },
     {
+      "name": "Demo12P_V1_30fps.tsx",
+      "kind": "composition",
+      "size": 29322,
+      "size_formatted": "28.6 KB",
+      "lines": 764,
+      "mtime": 1792892221.5187373,
+      "mtime_formatted": "25/10/2026 08:37",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
       "name": "Demo12P_V2_10s.tsx",
       "kind": "composition",
       "size": 30083,
@@ -6312,6 +6346,14 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "compositions/Demo12P_V1_30fps.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792892221.5187373,
+      "mtime_formatted": "25/10/2026 08:37",
+      "detail": "764 dòng • Composition"
+    },
+    {
       "name": "ai-hook/SKILL.md",
       "type": "Markdown Spec",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
@@ -6542,14 +6584,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792830168.6052396,
       "mtime_formatted": "24/10/2026 15:22",
       "detail": "AI Hook #4 — Polygon Sculpt (3D Low-Poly Marble Morph) Engine (`polygon_sculpt_engine.py`)"
-    },
-    {
-      "name": "scripts/smoke_reveal_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792830002.0189393,
-      "mtime_formatted": "24/10/2026 15:20",
-      "detail": "AI Hook #6 — Smoke Reveal Engine (Curl-Noise Volumetric Smoke)"
     }
   ]
 };
