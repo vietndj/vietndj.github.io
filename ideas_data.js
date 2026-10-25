@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-25T19:48:21+07:00",
+  "generated_at": "2026-10-25T19:50:15+07:00",
   "total_scene_items": 409,
   "total_unique_ideas": 390,
   "total_active_ideas": 330,
@@ -172,11 +172,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 43,
     "thoi-trang": 24,
     "am-thuc": 31,
-    "du-lich": 50,
+    "du-lich": 49,
     "cong-nghe": 25,
     "kien-truc": 15,
     "the-thao": 6,
-    "ky-thuat-quay": 121,
+    "ky-thuat-quay": 122,
     "ugc": 8
   },
   "x_factors": [
@@ -654,7 +654,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Worldwithreece",
       "profile_url": "https://www.instagram.com/worldwithreece/",
       "video_count": 2,
-      "top_industry": "Du lịch",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life/shot_01_mid.webp",
       "video_ids": [
         "IG_@worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life",
@@ -3038,8 +3038,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life",
       "shortcode": "Der2Xm_skf9",
-      "title_vi": "Shot ideas you can use to film your life",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "5 Góc Máy B-Roll (Cảnh phụ minh họa) Dễ Áp Dụng Để Tự Quay Cuộc Sống Hàng Ngày Chỉn Chu",
+      "quick_takeaway": "Biến 5 khoảnh khắc đời thường thành thước phim có chiều sâu nhờ đặt máy trong tủ lạnh, tận dụng vũng nước phản chiếu, khung gương ô tô, vật cản tiền cảnh và ngược sáng hoàng hôn.",
       "key_tech": "Góc máy • B-Roll Chỉn Chu • Góc Máy Đời Thường • Góc Nhìn POV • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3050,12 +3050,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "du-lich",
-          "name": "Du lịch",
-          "en_name": "Travel & Culture",
-          "icon": "✈️",
-          "badge_color": "sky",
-          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -3063,8 +3063,11 @@ var FEDU_IDEAS_DATABASE = {
         "Góc máy",
         "B-Roll Chỉn Chu",
         "Góc Máy Đời Thường",
-        "Góc Nhìn POV",
-        "Establishing Hook Shot"
+        "POV (góc nhìn mắt mình)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Hook 2s đầu (cảnh mở màn giữ chân người xem)"
       ],
       "country": {
         "id": "us_eu",
@@ -3073,15 +3076,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @worldwithreece",
+      "purpose": "Học viên lấy ngay làm bài tập thực hành 5 góc đặt điện thoại cố định một mình không cần người quay phụ để gom kho cảnh phụ (B-Roll) cho kênh cá nhân.",
       "tech_tags": [
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Hook 2s đầu (cảnh mở màn giữ chân người xem)",
         "Góc máy",
         "B-Roll Chỉn Chu",
         "Góc Máy Đời Thường",
-        "Góc Nhìn POV",
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "POV (góc nhìn mắt mình)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -13757,7 +13762,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
