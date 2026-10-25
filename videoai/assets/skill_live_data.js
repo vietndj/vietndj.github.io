@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 13:52:38
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 14:33:01
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 13:52:38",
-  "last_synced_iso": "2026-10-25T13:52:38.168910",
+  "last_synced_formatted": "25/10/2026 14:33:01",
+  "last_synced_iso": "2026-10-25T14:33:01.827923",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -1409,10 +1409,10 @@ window.SKILL_LIVE_DATA = {
         "slug": "studio-motion-graphic-paage-offline-versions.html",
         "order": -15,
         "icon": "🎬",
-        "title": "Studio Motion Graphic & CHECKMOTION V2.0: Đối Chiếu Tất Cả Phiên Bản (Ref → V1 → V2 → V3 → V4 Readability-First)",
-        "badge": "MOTION GRAPHIC V1→V4 • READABILITY-FIRST • PASS 137/137",
+        "title": "Studio Motion Graphic & CHECKMOTION V2.0: Đối Chiếu Tất Cả 6 Phiên Bản (Ref → V1 → V2 → V3 → V4 → V5 B-Roll & Cursor Master)",
+        "badge": "MOTION GRAPHIC V1→V5 • REAL B-ROLL & CURSOR MASTER • PASS 100%",
         "badge_class": "motion",
-        "desc": "Đối chiếu trực tiếp toàn bộ quá trình tiến hóa từ Mẫu gốc Pinterest (333759022407965800) qua 4 phiên bản V1 (Chữ lờ đờ) → V2 (Tách cụm từ 5 pha) → V3 (136 chuyển động nhưng bội thực biến dạng chữ 10%–16%) → V4 Master (Phân tầng biến dạng 4 cấp hội ý CLAUDE2: Chữ đọc & Ảnh 0% méo trục, khóa đọc >= 65%; Đại tự Hero <= 2.5% trong 3–4f; Nút bấm, Con trỏ, Quả cầu & Vỏ rỗng đàn hồi 6%–14%)."
+        "desc": "Đối chiếu trực tiếp toàn bộ quá trình tiến hóa từ Mẫu gốc Pinterest (333759022407965800) qua 5 phiên bản: V1 (Chữ lờ đờ) → V2 (Tách cụm từ 5 pha) → V3 (Bội thực biến dạng chữ 10%–16%) → V4 (Phân tầng biến dạng 4 cấp Readability-First) → V5 Master (Hội ý CLAUDE2: Thay 100% ảnh tĩnh bằng 6 Video B-Roll thực tế Lớp Offline K3 & Hậu trường + Bộ điều phối Bàn tay Con trỏ Đa chặng evaluateCursorTimeline30 bấm trúng 100% tâm nút + Chuẩn hóa Caret macOS không nhấp nháy)."
       },
       {
         "source": "studio_ai_hook_timelapse_freeze.html",
@@ -1599,23 +1599,30 @@ window.SKILL_LIVE_DATA = {
       {
         "id": "checkmotion-v2-readability-first-motion-hierarchy-v1-to-v4",
         "date": "25/10/2026",
-        "title": "Motion Graphic & CHECKMOTION V2.0: Phân Tầng Biến Dạng Không Hại Mắt (Hội Ý CLAUDE2 • Toàn Bộ 5 Phiên Bản Ref → V1 → V2 → V3 → V4 Master)",
+        "title": "Motion Graphic & CHECKMOTION V2.0: Toàn Bộ 6 Phiên Bản (Ref → V1 → V2 → V3 → V4 → V5 Master: Video B-Roll Thật & Bàn Tay Con Trỏ Đa Chặng — Hội Ý CLAUDE2)",
         "step_target": "buoc-4",
         "source_thread": "a5848b46-86c9-4d1e-baa0-fd7b18de0b05",
-        "what_title": "Ma trận Biến dạng 4 Cấp (Readability-First) & Bộ 5 Phiên bản Tiến hóa V1→V4",
-        "why_title": "Vì sao biến dạng chữ tràn lan (V3) gây khó đọc & Cách phân bổ sang Nút/Quả cầu (V4)",
-        "how_title": "Lệnh kiểm toán CHECKMOTION & Kết xuất Motion Graphic V4",
-        "what": "Đóng gói hệ thống kiểm toán chuyển động từng giây <strong>CHECKMOTION V2.0</strong> và nâng cấp Engine <code>smoothPhysics30fps.ts</code> theo <strong>Ma Trận Phân Tầng Biến Dạng 4 Cấp (Readability-First Deformation Hierarchy)</strong> hội ý cùng CLAUDE2 Opus 5.5 Pro. Trình diễn đầy đủ cả 5 phiên bản của Video Quảng Cáo Khóa Học Offline 07–08/11 (70.37s / 2.111 frames @ 30fps): <strong>Mẫu gốc Pinterest</strong> &rarr; <strong>Bản V1 (Chữ lờ đờ)</strong> &rarr; <strong>Bản V2 (Kinetic 5 pha)</strong> &rarr; <strong>Bản V3 (Bội thực biến dạng)</strong> &rarr; <strong>Bản V4 Master (Chuẩn đọc sắc nét &amp; Đàn hồi đúng chỗ)</strong>.",
-        "why": "Ở bản V3, việc áp biến dạng trục (<code>maxStretch=10%–16%, skewX=6°</code>) và nhún khung (nén 14%) lên toàn bộ câu chữ dài, chữ gõ Typewriter và ảnh lớp học khiến dòng chữ uốn lượn như sóng nước, khuôn mặt trong ảnh bị méo và thời gian chữ đứng yên hoàn toàn (<code>Readability Hold</code>) tụt xuống chỉ còn <code>0%–4%</code>. Bản V4 giải quyết triệt để bằng quy luật: <strong>Vật đang được đọc/xem (Chữ câu dài, Typewriter, Ảnh thật, Thẻ UI) khóa 0% méo trục (<code>scaleX === scaleY</code>) và đứng yên &ge; 65% thời lượng</strong>; chỉ biến dạng vi mô <code>&le; 2.5%</code> trên Đại tự Hero 1–3 từ trong đúng 3–4 frame đỉnh vận tốc; và dồn toàn bộ biến dạng đàn hồi mạnh <code>6%–14%</code> sang <strong>Nút bấm tròn, Con trỏ, Quả cầu xoay, Vỏ thanh tìm kiếm rỗng và Sóng hạ cánh</strong>.",
-        "how_cmd": "python3 ~/.gemini/config/skills/checkmotion/scripts/check_motion.py --video \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/paage_offline_07_08_11/quang_cao_offline_07_08_11_v4_readability_hierarchy.mp4\" --tsx ~/.gemini/config/skills/auto-edit-video/remotion-studio/src/compositions/PaageOffline0711_30fps.tsx --ref \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/paage_offline_07_08_11/paage_reference_video.mp4\"",
+        "what_title": "Bộ 6 Phiên bản Tiến hóa V1→V5 Master: Video B-Roll Lớp Học Thật + Con Trỏ Đa Chặng + Ma trận Biến dạng 4 Cấp",
+        "why_title": "Vì sao phải đặt HandCursor30 trong hệ quy chiếu thẻ UI, nối chặng C2 và thay ảnh tĩnh bằng Video B-Roll 30fps?",
+        "how_title": "Lệnh kiểm toán CHECKMOTION & Kết xuất Motion Graphic V5 Master",
+        "what": "Đóng gói hệ thống kiểm toán chuyển động từng giây <strong>CHECKMOTION V2.0</strong> và nâng cấp Engine <code>smoothPhysics30fps.ts</code> qua 5 thế hệ sau khi hội ý cùng CLAUDE2 Opus 5.5 Pro. Trình diễn đầy đủ cả 6 phiên bản của Video Quảng Cáo Khóa Học Offline 07–08/11 (70.37s / 2.111 frames @ 30fps): <strong>Mẫu gốc Pinterest</strong> &rarr; <strong>Bản V1 (Chữ lờ đờ)</strong> &rarr; <strong>Bản V2 (Kinetic 5 pha)</strong> &rarr; <strong>Bản V3 (Bội thực biến dạng)</strong> &rarr; <strong>Bản V4 (Phân tầng biến dạng 4 cấp Readability-First)</strong> &rarr; <strong>Bản V5 Master (Thay 100% ảnh tĩnh khóa học bằng 6 Video B-Roll thực tế từ <code>/Users/vietmac/Documents/RENDER/</code> + Bộ điều phối Bàn tay Con trỏ Đa chặng <code>evaluateCursorTimeline30</code> bấm trúng 100% tâm nút + Chuẩn hóa vạch <code>caret</code> macOS không nhấp nháy)</strong>.",
+        "why": "1) <strong>Xử lý triệt để lỗi nhấp nháy &amp; lệch tâm bàn tay con trỏ chuột (V4 &rarr; V5):</strong> Ở V4, vạch <code>caret</code> khi gõ chữ co giãn <code>scaleY(1.26)</code> kèm glow tím gây cảm giác chớp nháy mỗi 3–4 frame; đồng thời <code>HandCursor30</code> đặt ngoài thẻ UI và dùng toán tử 3 ngôi <code>frame &lt; 1430 ? ... : ...</code> gây nhảy giật vị trí (Teleport) và bấm lệch nút khi thẻ zoom/pan. Bản V5 đặt <code>HandCursor30</code> trực tiếp vào bên trong từng thẻ UI và dùng <code>evaluateCursorTimeline30</code> (Fade-in/out 6f, nối chặng liên tục C2, cú bấm 4 pha + vòng sóng <code>CursorClickRipple</code> tại mũi ngón trỏ).<br/>2) <strong>Thay ảnh tĩnh bằng 6 Video B-Roll thật:</strong> Chuyển toàn bộ các khung hình khóa học sang phát 6 Video B-Roll thực tế tại lớp Offline K3 &amp; hậu trường quay dựng bằng <code>&lt;Sequence layout=\"none\"&gt;&lt;OffthreadVideo muted /&gt;&lt;/Sequence&gt;</code> chuẩn 30fps.",
+        "how_cmd": "python3 ~/.gemini/config/skills/checkmotion/scripts/check_motion.py --video \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/paage_offline_07_08_11/quang_cao_offline_07_08_11_v5_broll_cursor_master.mp4\" --tsx ~/.gemini/config/skills/auto-edit-video/remotion-studio/src/compositions/PaageOffline0711_30fps.tsx --ref \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/paage_offline_07_08_11/paage_reference_video.mp4\"",
         "studio_file": "studio_motion_graphic_paage_offline_versions.html",
-        "local_videos_title": "🎬 Trình Phát Đối Chiếu Trực Tiếp Toàn Bộ 5 Phiên Bản: 🏆 V4 Master (Readability-First) &bull; ⚠️ V3 (Bội thực biến dạng) &bull; 🔹 V2 (Kinetic 5 pha) &bull; 🔸 V1 (Chữ lờ đờ) &bull; 📌 Mẫu Gốc Pinterest",
-        "local_videos_badge": "1920×1080 @ 30fps • 70.37s (2.111 frames) • PASS 137/137 Motions & 10/10 Gates",
+        "local_videos_title": "🎬 Trình Phát Đối Chiếu Trực Tiếp Toàn Bộ 6 Phiên Bản: 🏆 V5 Master (Video B-Roll + Cursor Master) &bull; ✨ V4 (Readability-First) &bull; ⚠️ V3 (Bội thực biến dạng) &bull; 🔹 V2 (Kinetic 5 pha) &bull; 🔸 V1 (Chữ lờ đờ) &bull; 📌 Mẫu Gốc Pinterest",
+        "local_videos_badge": "1920×1080 @ 30fps • 70.37s (2.111 frames) • 6 Video B-Roll Thật • PASS 10/10 Gates",
         "local_videos": [
           {
-            "badge": "🏆 BẢN V4 MASTER (READABILITY-FIRST)",
-            "title": "Phiên bản V4 Master: Phân tầng biến dạng 4 cấp (Chữ & Ảnh 0% méo, Nút & Quả cầu đàn hồi 14%)",
-            "desc": "Chữ đọc câu dài & Typewriter khóa 0% méo trục, 0° skew, Readability Hold >= 65%; Đại tự Hero 1–3 từ biến dạng vi mô <= 2.5% trong 3–4f; Ảnh lớp học & Thẻ UI 0% méo trục; Nút bấm, Con trỏ, Quả cầu & Vỏ rỗng đàn hồi 6%–14%.",
+            "badge": "🏆 BẢN V5 MASTER (VIDEO B-ROLL + CURSOR MASTER)",
+            "title": "Phiên bản V5 Master: 6 Video B-Roll Lớp Học Thật + Bàn tay con trỏ đa chặng bấm trúng 100% tâm nút + Caret mượt macOS",
+            "desc": "Thay 100% ảnh tĩnh khóa học bằng 6 Video B-Roll thật từ /Users/vietmac/Documents/RENDER/ (Lớp Offline K3 Học viên 01–03 & Hậu trường); đặt HandCursor30 trong hệ quy chiếu thẻ UI với evaluateCursorTimeline30 (0% Teleport, 0% nhấp nháy Caret, có vòng sóng ClickRipple).",
+            "src": "studios/paage_offline_v5_broll_cursor_web.mp4",
+            "aspect": "16/9"
+          },
+          {
+            "badge": "✨ BẢN V4 (READABILITY-FIRST — ẢNH TĨNH)",
+            "title": "Phiên bản V4: Phân tầng biến dạng 4 cấp (Chữ & Ảnh 0% méo, Nút & Quả cầu đàn hồi 14%)",
+            "desc": "Chữ đọc câu dài & Typewriter khóa 0% méo trục, 0° skew, Readability Hold >= 65%; Đại tự Hero 1–3 từ biến dạng vi mô <= 2.5% trong 3–4f; tuy nhiên còn dùng ảnh tĩnh và bàn tay chuột lệch nút ở S5/S8/S9C.",
             "src": "studios/paage_offline_v4_master_web.mp4",
             "aspect": "16/9"
           },
@@ -5657,11 +5664,11 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "PaageOffline0711_30fps.tsx",
       "kind": "composition",
-      "size": 131048,
-      "size_formatted": "128.0 KB",
-      "lines": 3428,
-      "mtime": 1792910484.7794945,
-      "mtime_formatted": "25/10/2026 13:41",
+      "size": 137948,
+      "size_formatted": "134.7 KB",
+      "lines": 3555,
+      "mtime": 1792912990.4378085,
+      "mtime_formatted": "25/10/2026 14:23",
       "desc": "Remotion Composition React Component 60fps"
     },
     {
@@ -6774,9 +6781,17 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792910864.983159,
-      "mtime_formatted": "25/10/2026 13:47",
+      "mtime": 1792913474.5646095,
+      "mtime_formatted": "25/10/2026 14:31",
       "detail": "15 quy chuẩn • 18 studios"
+    },
+    {
+      "name": "compositions/PaageOffline0711_30fps.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792912990.4378085,
+      "mtime_formatted": "25/10/2026 14:23",
+      "detail": "3555 dòng • Composition"
     },
     {
       "name": "ai-hook/SKILL.md",
@@ -6801,14 +6816,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792910607.605959,
       "mtime_formatted": "25/10/2026 13:43",
       "detail": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
-    },
-    {
-      "name": "compositions/PaageOffline0711_30fps.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792910484.7794945,
-      "mtime_formatted": "25/10/2026 13:41",
-      "detail": "3428 dòng • Composition"
     },
     {
       "name": "scripts/timelapse_freeze_engine.py",
