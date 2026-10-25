@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-25T19:44:05+07:00",
+  "generated_at": "2026-10-25T19:46:50+07:00",
   "total_scene_items": 409,
   "total_unique_ideas": 390,
   "total_active_ideas": 330,
@@ -79,9 +79,9 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 8,
     "voice-over": 13,
     "talking-head": 45,
-    "storytelling": 39,
+    "storytelling": 40,
     "dien-anh": 161,
-    "chuyen-canh": 62,
+    "chuyen-canh": 61,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -169,14 +169,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 7,
-    "thuong-hieu": 42,
+    "thuong-hieu": 43,
     "thoi-trang": 24,
-    "am-thuc": 30,
+    "am-thuc": 31,
     "du-lich": 50,
     "cong-nghe": 25,
     "kien-truc": 15,
     "the-thao": 6,
-    "ky-thuat-quay": 123,
+    "ky-thuat-quay": 121,
     "ugc": 8
   },
   "x_factors": [
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -882,7 +882,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Anna_Kuchkova",
       "profile_url": "https://www.instagram.com/anna_kuchkova/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40anna_kuchkova_DdmLA9JBFOt_POV_you_said_you_wanted_a_productive_day/shot_01_mid.webp",
       "video_ids": [
         "IG_@anna_kuchkova_DdmLA9JBFOt_POV_you_said_you_wanted_a_productive_day"
@@ -893,7 +893,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Xamza_Abdulbakiyev",
       "profile_url": "https://www.instagram.com/xamza_abdulbakiyev/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko%E2%80%99ring%F0%9F%98%8D%F0%9F%91%87%F0%9F%8F%BB/shot_01_mid.webp",
       "video_ids": [
         "IG_@xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko’ring😍👇🏻"
@@ -3117,32 +3117,36 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@anna_kuchkova_DdmLA9JBFOt_POV_you_said_you_wanted_a_productive_day",
       "shortcode": "DdmLA9JBFOt",
-      "title_vi": "POV you said you wanted a productive day",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kể Chuyện Một Ngày Năng Suất Từ 05:30 Đến 21:00 Chỉ Bằng Góc Mắt Tự Nhìn Và Gương Phản Chiếu",
+      "quick_takeaway": "💡 Điểm ăn tiền: Dùng mốc giờ cố định chính giữa màn hình dẫn dắt 10 cảnh ngắn ~1.5 giây, đặc biệt cảnh mở đầu 05:30 và cảnh kết 21:00 lặp lại đúng một góc cửa sổ cùng chiếc cốc sứ hoa tulip tạo vòng tròn khép kín.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Kể Chuyện",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "POV (góc nhìn mắt mình)",
+        "Kể chuyện theo giờ",
+        "Tự quay qua gương",
+        "Cấu trúc đầu cuối đối xứng"
       ],
       "country": {
         "id": "us_eu",
@@ -3151,12 +3155,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @anna_kuchkova",
+      "purpose": "🎯 Áp dụng thực tế: Học viên ngại lộ mặt nói chuyện có thể tự cầm điện thoại bằng 1 tay ghi lại 8–10 khoảnh khắc trong ngày (cầm cốc, bước chân, tự quay qua gương) để xây kênh Thương hiệu cá nhân chỉn chu.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "POV (góc nhìn mắt mình)",
+        "Kể chuyện theo giờ",
+        "Tự quay qua gương",
+        "Cấu trúc đầu cuối đối xứng",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3192,31 +3200,33 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko’ring😍👇🏻",
       "shortcode": "De1nCRhtKzi",
-      "title_vi": "Issiq salat tayorlab ko’ring😍👇🏻",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Chế Biến Salad Gà Nóng Bốc Khói Với 43 Cú Cắt Khớp Nhịp Sắc Nét",
+      "quick_takeaway": "Kết hợp màn mở đầu nguyên liệu bay lơ lửng với chuỗi góc cận thái, tung, xào nối khớp chuyển động liên hoàn giữa làn khói và ánh đèn cam ấm.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Chuyển cảnh (Transition)",
+        "Hook 2s đầu (cảnh mở màn giữ chân người xem)"
       ],
       "country": {
         "id": "us_eu",
@@ -3225,11 +3235,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @xamza_abdulbakiyev",
+      "purpose": "Áp dụng cho chủ quán ăn, nhà hàng và kênh ẩm thực muốn quay video chế biến món ăn chỉn chu, kích thích vị giác mà không cần lộ mặt nói thoại dài.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Chuyển cảnh (Transition)",
+        "Hook 2s đầu (cảnh mở màn giữ chân người xem)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Toàn cảnh (WS: lấy trọn không gian)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -10188,7 +10200,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -13745,7 +13757,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -14924,7 +14936,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
