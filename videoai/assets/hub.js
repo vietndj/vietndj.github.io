@@ -470,4 +470,48 @@ document.addEventListener('DOMContentLoaded', () => {
             window.openStudioModal(url, title);
         }
     });
+
+    // --- 6. HỖ TRỢ TOÀN CỤC CHO HOOK VIDEO MODAL & INLINE MINI DEMO PLAYER ---
+    if (!document.getElementById('hookVideoModal')) {
+        const hvModal = document.createElement('div');
+        hvModal.id = 'hookVideoModal';
+        hvModal.style.cssText = 'display:none; position:fixed; inset:0; background:rgba(5,5,7,0.88); z-index:9999; align-items:center; justify-content:center; padding:20px;';
+        hvModal.onclick = function(ev) { if (ev.target === hvModal && window.closeHookVideoModal) window.closeHookVideoModal(); };
+        hvModal.innerHTML = `
+            <div style="background:#0f172a; border:1px solid #334155; border-radius:16px; max-width:440px; width:100%; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+              <div style="padding:12px 16px; border-bottom:1px solid #1e293b; display:flex; justify-content:space-between; align-items:center; gap:10px;">
+                <strong id="hookVideoModalTitle" style="font:700 14px var(--sans); color:#fff;">Video Demo</strong>
+                <button type="button" onclick="window.closeHookVideoModal()" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:4px 10px; font-weight:700; cursor:pointer; flex-shrink:0;">✕ Đóng</button>
+              </div>
+              <div style="aspect-ratio:9/16; max-height:76vh; width:100%; background:#000;">
+                <video id="hookVideoModalPlayer" controls loop playsinline style="width:100%; height:100%; object-fit:contain; display:block;"></video>
+              </div>
+            </div>
+        `;
+        document.body.appendChild(hvModal);
+    }
+
+    if (typeof window.openHookVideoModal !== 'function') {
+        window.openHookVideoModal = function(src, title) {
+            const m = document.getElementById('hookVideoModal');
+            const v = document.getElementById('hookVideoModalPlayer');
+            const t = document.getElementById('hookVideoModalTitle');
+            if (!m || !v) return;
+            if (t) t.innerText = title || 'Video Demo';
+            v.src = src;
+            m.style.display = 'flex';
+            v.play().catch(()=>{});
+        };
+    }
+
+    if (typeof window.closeHookVideoModal !== 'function') {
+        window.closeHookVideoModal = function() {
+            const m = document.getElementById('hookVideoModal');
+            const v = document.getElementById('hookVideoModalPlayer');
+            if (!m || !v) return;
+            v.pause();
+            v.src = '';
+            m.style.display = 'none';
+        };
+    }
 });

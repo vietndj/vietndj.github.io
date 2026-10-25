@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:56:45
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:57:46
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 08:56:45",
-  "last_synced_iso": "2026-10-25T08:56:45.797975",
+  "last_synced_formatted": "25/10/2026 08:57:46",
+  "last_synced_iso": "2026-10-25T08:57:46.246725",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -2689,8 +2689,8 @@ window.SKILL_LIVE_DATA = {
       "size": 52382,
       "size_formatted": "51.2 KB",
       "lines_count": 290,
-      "mtime": 1792891879.3674755,
-      "mtime_formatted": "25/10/2026 08:31",
+      "mtime": 1792893466.0784543,
+      "mtime_formatted": "25/10/2026 08:57",
       "headers": [
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
         "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
@@ -6544,20 +6544,20 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "ai-hook/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792893466.0784543,
+      "mtime_formatted": "25/10/2026 08:57",
+      "detail": "290 dòng • 6 mục chính"
+    },
+    {
       "name": "compositions/Demo12P_V1_30fps.tsx",
       "type": "Remotion .TSX",
       "skill": "Remotion Studio 60fps",
       "mtime": 1792892221.5187373,
       "mtime_formatted": "25/10/2026 08:37",
       "detail": "764 dòng • Composition"
-    },
-    {
-      "name": "ai-hook/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792891879.3674755,
-      "mtime_formatted": "25/10/2026 08:31",
-      "detail": "290 dòng • 6 mục chính"
     },
     {
       "name": "evolution_log.json",
