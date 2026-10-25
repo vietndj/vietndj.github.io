@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:51:48
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:56:45
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 08:51:48",
-  "last_synced_iso": "2026-10-25T08:51:48.971742",
+  "last_synced_formatted": "25/10/2026 08:56:45",
+  "last_synced_iso": "2026-10-25T08:56:45.797975",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -65,7 +65,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/rooftop_jump_master_web.mp4",
       "_web_poster": "studios/thumb_hook_rooftop-jump.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn rooftop-jump",
+          "src": "studios/rooftop_jump_master_web.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -251,7 +262,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "studio-ai-hook-display-transition.html",
       "_web_video": "studios/footageai1_display_transition_web.mp4",
       "_web_poster": "studios/thumb_hook_display-transition.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (footageai1)",
+          "src": "studios/footageai1_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn display-transition",
+          "src": "studios/footageai1_display_transition_web.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -304,7 +326,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "studio-ai-hook-intermission.html",
       "_web_video": "studios/footageai3_intermission_web.mp4",
       "_web_poster": "studios/thumb_hook_intermission.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (footageai3)",
+          "src": "studios/footageai3_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn intermission",
+          "src": "studios/footageai3_intermission_web.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -352,7 +385,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "studio-ai-hook-jib-down.html",
       "_web_video": "studios/footageai1_jib_down_web.mp4",
       "_web_poster": "studios/thumb_hook_jib-down.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (footageai1)",
+          "src": "studios/footageai1_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn jib-down",
+          "src": "studios/footageai1_jib_down_web.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -403,7 +447,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "studio-ai-hook-pantone1.html",
       "_web_video": "studios/viet2210_katana_palette_master.mp4",
       "_web_poster": "studios/thumb_hook_pantone1.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn pantone1",
+          "src": "studios/viet2210_katana_palette_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -455,7 +510,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "studio-ai-hook-sticker-transition.html",
       "_web_video": "studios/viet2210_sticker_transition_master.mp4",
       "_web_poster": "studios/thumb_hook_sticker-transition.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn sticker-transition",
+          "src": "studios/viet2210_sticker_transition_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -499,7 +565,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_flycam_transition_web.mp4",
       "_web_poster": "studios/thumb_hook_flycam-transition.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn flycam-transition",
+          "src": "studios/viet2210_flycam_transition_web.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -653,7 +730,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_point_cloud_master.mp4",
       "_web_poster": "studios/thumb_hook_point-cloud.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn point-cloud",
+          "src": "studios/viet2210_point_cloud_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -698,7 +786,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_giant_grab_master.mp4",
       "_web_poster": "studios/thumb_hook_giant-grab.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn giant-grab",
+          "src": "studios/viet2210_giant_grab_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -747,7 +846,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_blinds_in_master.mp4",
       "_web_poster": "studios/thumb_hook_blinds-in.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn blinds-in",
+          "src": "studios/viet2210_blinds_in_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -794,7 +904,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_hero_cam_master.mp4",
       "_web_poster": "studios/thumb_hook_hero-cam.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn hero-cam",
+          "src": "studios/viet2210_hero_cam_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -840,7 +961,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_through_object_master.mp4",
       "_web_poster": "studios/thumb_hook_through-object.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn through-object",
+          "src": "studios/viet2210_through_object_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -886,7 +1018,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_rapid_zoom_master.mp4",
       "_web_poster": "studios/thumb_hook_rapid-zoom.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn rapid-zoom",
+          "src": "studios/viet2210_rapid_zoom_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -939,7 +1082,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_exploded_assembly_web.mp4",
       "_web_poster": "studios/thumb_hook_exploded-assembly.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn exploded-assembly",
+          "src": "studios/viet2210_exploded_assembly_web.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -991,7 +1145,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_polygon_sculpt_master.mp4",
       "_web_poster": "studios/thumb_hook_polygon-sculpt.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn polygon-sculpt",
+          "src": "studios/viet2210_polygon_sculpt_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -1042,7 +1207,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_smoke_reveal_master.mp4",
       "_web_poster": "studios/thumb_hook_smoke-reveal.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn smoke-reveal",
+          "src": "studios/viet2210_smoke_reveal_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -1095,7 +1271,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "studio-ai-hook-glow-trace.html",
       "_web_video": "studios/viet2210_glow_trace_master.mp4",
       "_web_poster": "studios/thumb_hook_glow-trace.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn glow-trace",
+          "src": "studios/viet2210_glow_trace_master.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -1144,7 +1331,18 @@ window.SKILL_LIVE_DATA = {
       "_studio_slug": "",
       "_web_video": "studios/viet2210_double_exposure_master.mp4",
       "_web_poster": "studios/thumb_hook_double-exposure.jpg",
-      "_comparison_videos": []
+      "_comparison_videos": [
+        {
+          "label": "File Gốc (viet2210)",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "Sau khi gắn double-exposure",
+          "src": "studios/viet2210_double_exposure_master.mp4",
+          "kind": "demo"
+        }
+      ]
     }
   ],
   "evolution": {
