@@ -220,6 +220,34 @@
           <div style="font:500 12.5px/1.45 var(--sans); color:var(--ink); background:#fffbeb; border:1px solid #fde68a; border-radius:7px; padding:6px 9px;">🎥 <strong>Khi quay:</strong> Đáp xong đứng thẳng, chốt 0.3s rồi nói</div>
         </div>
         
+        <div class="matrix-card" style="display:flex; flex-direction:column; justify-content:space-between; margin-bottom:0; padding:14px;">
+          <div>
+            <div class="matrix-header" style="margin-bottom:10px; padding-bottom:8px;">
+              <h3 style="margin:0; font:800 15px/1.3 var(--sans); color:var(--ink);">Đứng nói công viên (Omni V2.0)</h3>
+              <span style="font:800 11px var(--mono); color:#15803d; background:#dcfce7; border:1px solid #86efac; padding:3px 8px; border-radius:6px;">v5.2 • 4.00s</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+              <div style="background:#000; border-radius:8px; overflow:hidden; border:1.5px solid #cbd5e1;">
+                <div style="padding:4px 6px; background:#f1f5f9; color:#334155; font:700 10px var(--mono); text-align:center;">FILE GỐC</div>
+                <div style="aspect-ratio:9/16; width:100%;">
+                  <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;">
+                    <source src="studios/footageai1_orig_web.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <div style="background:#000; border-radius:8px; overflow:hidden; border:1.5px solid #16a34a;">
+                <div style="padding:4px 6px; background:#dcfce7; color:#15803d; font:700 10px var(--mono); text-align:center;">EARTH ZOOM V5.2</div>
+                <div style="aspect-ratio:9/16; width:100%;">
+                  <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;">
+                    <source src="studios/omni_35_earth_zoom_web.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="font:500 12.5px/1.45 var(--sans); color:var(--ink); background:#fffbeb; border:1px solid #fde68a; border-radius:7px; padding:6px 9px;">🎥 <strong>Khi quay:</strong> Đứng yên tại chỗ nhìn cam ~0.4s rồi nói (Chế độ 1 Dual-Anchor 4.0s • 7 tín dụng)</div>
+        </div>
+        
       </div>
 
       <h3 style="margin:0 0 10px;">So với mẫu gốc Higgsfield</h3>
@@ -1262,6 +1290,14 @@
           <td style="padding:8px 10px; font:700 12px var(--mono); color:#0369a1;">18.44 px/f (+2.52%/f)</td>
         </tr>
         
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:700 12px var(--mono); color:#1d4ed8;">footageai1</td>
+          <td style="padding:8px 10px; font:600 12.5px var(--sans); color:var(--ink);">Đứng nói công viên (Omni V2.0)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono);"><code>f58 (2.42s)</code></td>
+          <td style="padding:8px 10px; font:700 12px var(--mono); color:#b45309;">4.00s</td>
+          <td style="padding:8px 10px; font:700 12px var(--mono); color:#0369a1;">32.60 px/f (rawSSIM 0.79 → seam 0.998)</td>
+        </tr>
+        
               </tbody>
             </table>
           </div>
@@ -1462,6 +1498,28 @@
             <a href="studios/qa_EZ5_IMG_8608_overview.jpg" target="_blank">🖼️ Ảnh QA toàn cảnh</a> &nbsp;•&nbsp; <a href="studios/qa_EZ5_IMG_8608_landing.jpg" target="_blank">🎯 Ảnh QA điểm đáp</a>
           </details>
         
+          <details style="margin-bottom:6px; border:1px solid var(--line); border-radius:8px; padding:6px 10px;">
+            <summary style="cursor:pointer; font:700 12.5px var(--sans);">footageai1 — Đứng nói công viên (Omni V2.0)</summary>
+            <p style="font-size:12.5px; margin:8px 0;">Chế độ 1 Dual-Anchor (fa1_aerial_start.jpg → fa1_flock.jpg) trên Google Flow Omni 1.1 Flash (720p, 4.0s, 7 tín dụng) + Adaptive DIS Optical-Flow Morph 6 frames khớp vào f58 (rawSSIM = 0.7878, seamSSIM = 0.9981, PASS 6/6 Cổng ngay Vòng 1).</p>
+            <table style="width:100%; border-collapse:collapse; margin-bottom:8px;">
+              <thead><tr style="background:#f1f5f9;"><th style="padding:4px 8px; font:700 11px var(--mono); text-align:left;">KHUNG GIỜ</th><th style="padding:4px 8px; font:700 11px var(--mono); text-align:left;">OPTICAL FLOW</th><th style="padding:4px 8px; font:700 11px var(--mono); text-align:right;">KẾT QUẢ</th></tr></thead>
+              <tbody><tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:4px 8px; font:700 11.5px var(--mono);">0.0–0.5s</td>
+              <td style="padding:4px 8px; font:500 11.5px var(--mono); color:#334155;">Khởi tạo từ tầng mây vệ tinh · G0_MODEL_OMNI = PASS (720x1280, 4.0s)</td>
+              <td style="padding:4px 8px; font:800 11px var(--mono); color:#15803d; text-align:right;">✓ PASS</td>
+            </tr><tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:4px 8px; font:700 11.5px var(--mono);">0.5–2.5s</td>
+              <td style="padding:4px 8px; font:500 11.5px var(--mono); color:#334155;">Climax lao xuyên mây & tán cây cọ · flow = 32.60 · luma = 29.57</td>
+              <td style="padding:4px 8px; font:800 11px var(--mono); color:#15803d; text-align:right;">✓ PASS</td>
+            </tr><tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:4px 8px; font:700 11.5px var(--mono);">2.5–4.0s</td>
+              <td style="padding:4px 8px; font:500 11.5px var(--mono); color:#334155;">Settle & Adaptive DIS Morph 6f · corr = 0.9733 · rawSSIM = 0.7878 · seam = 0.9981</td>
+              <td style="padding:4px 8px; font:800 11px var(--mono); color:#15803d; text-align:right;">✓ PASS</td>
+            </tr></tbody>
+            </table>
+            <a href="studios/omni_35_earth_zoom_sheet.jpg" target="_blank">🖼️ Ảnh QA toàn cảnh</a> &nbsp;•&nbsp; <a href="studios/omni_35_settings_proof.jpg" target="_blank">🎯 Ảnh QA điểm đáp</a>
+          </details>
+        
 
           <h4>D. Kỹ thuật 5 hook ở mục 2</h4>
           <ul><li><strong>Through Object v2:</strong> Tiền cảnh xuyên lỗ khóa/vật thể 3D + chuỗi Dolly-In từ Google Flow Omni 1.1 Flash đã tuyến tính hóa Optical Flow, vận tốc phối cảnh f(τ)=5.2τ^4.2-4.2τ^5.2, Sunlight Flash tại 1.74s.</li><li><strong>Smoke Reveal 3D v1:</strong> Curl-Noise không phân kỳ (∇·v = 0) + 16 bước dò tia Beer-Lambert + SDF ưu tiên mở sạch vùng mặt từ frame 35, khóa byte-exact vào Frame_Anchor.</li><li><strong>Sticker 3D v1:</strong> Color Guided Filter + khử ám màu viền, sticker cắt bế viền trắng 16px có Paper Grain & bóng đổ, Cylindrical Page-Curl Remap, Match-Cut khớp 1:1 vào Frame_Anchor.</li><li><strong>Jib-Down v6:</strong> 3D Multi-Plane Crane Rig + Upper Canopy Extension (1080x2880), 3 lớp thị sai (k_bg=0.82, k_fg=1.00, k_leaf=1.45), đường cong C² Whip-Snap đơn điệu, Landing SSIM ≥ 0.996.</li><li><strong>Rapid Zoom v2:</strong> Cắt 18 frames đầu v_out + ghép lớp 2.5D Frozen-Subject (khóa tĩnh chủ thể 100% ở Settle, 0% tua ngược) + Zero-Phase Symmetric Peripheral Radial Blur + đường cong scale C² đơn điệu tăng (min_step_zoom ≥ +0.00%, seam_frame_offset = 1).</li></ul>
@@ -1474,6 +1532,49 @@
   --video "/duong/dan/video_goc.MOV" \
   --work-dir "/tmp/work_ez_v5" \
   --output "/duong/dan/video_earth_zoom_v5_master.mp4"</code></pre>
+
+          <h4>G. Quy Trình Chuẩn Hợp Nhất Google Flow <code>Omni 1.1 Flash</code> Master Protocol V2.0 (Đối Chiếu Luồng <code>3e75839a</code> &times; Luồng <code>fcac404e</code> &times; CLAUDE2 — 40/40 Effects PASS)</h4>
+          <p style="font-size:13px; margin:6px 0 10px;">Tổng hợp điểm mạnh từ 2 luồng tối ưu: <strong>Luồng <code>3e75839a</code></strong> (chuẩn hóa Driver DOM <code>video_automator.py</code>, alias model, <code>MODEL_DURATIONS</code>, chống bấm toggle ngược) và <strong>Luồng <code>fcac404e</code></strong> (đã chạy thực nghiệm <strong>40/40 hiệu ứng Higgsfield Tier 1 PASS 6/6 cổng</strong> qua 52 vòng chạy trên <code>Omni 1.1 Flash</code> 4.0s &bull; 7 tín dụng/clip, đúc kết <strong>3 Chế Độ Prompt</strong> + <strong>14 Quy Luật Vàng <code>R01..R14</code></strong> + <strong>Adaptive DIS Optical-Flow Seam</strong>):</p>
+          <div style="overflow-x:auto; margin-bottom:12px;">
+            <table style="width:100%; border-collapse:collapse; text-align:left; border:1px solid var(--line); font-size:12px;">
+              <thead>
+                <tr style="border-bottom:2px solid var(--line); background:#f8fafc;">
+                  <th style="padding:6px 10px; font:800 11px var(--mono);">HẠNG MỤC</th>
+                  <th style="padding:6px 10px; font:800 11px var(--mono);">LUỒNG 3e75839a (DRIVER &amp; SKILL)</th>
+                  <th style="padding:6px 10px; font:800 11px var(--mono);">LUỒNG fcac404e (40/40 SELF-LEARNING LOOP)</th>
+                  <th style="padding:6px 10px; font:800 11px var(--mono);">QUY CHUẨN HỢP NHẤT V2.0 (HỘI Ý CLAUDE2)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--line);">
+                  <td style="padding:6px 10px; font-weight:700;">1. Khóa Model &amp; Bằng chứng DOM</td>
+                  <td style="padding:6px 10px;"><code>normalize_model_name()</code>, chọn model trước khi chọn 720p/thời lượng, đọc <code>aria-pressed</code> chống bấm tắt nhầm</td>
+                  <td style="padding:6px 10px;">Chụp ảnh <code>settings_omni_proof.jpg</code> + ghi <code>flow_meta.json</code> (Cổng <code>G0_MODEL_OMNI</code>, 7 tín dụng/4s)</td>
+                  <td style="padding:6px 10px; color:#15803d; font-weight:600;">Dùng Driver DOM của <code>3e75839a</code> + Chụp bằng chứng <code>settings_omni_proof.jpg</code> của <code>fcac404e</code></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--line);">
+                  <td style="padding:6px 10px; font-weight:700;">2. Phân tách 3 Chế độ Prompt</td>
+                  <td style="padding:6px 10px;">Ghi chung <em>&ldquo;camera keeps gliding, CẤM comes to a stop&rdquo;</em> (chỉ đúng cho Time-Reverse/B-Roll, gây lệch điểm nối nếu dùng cho Dual-Anchor)</td>
+                  <td style="padding:6px 10px;">Prompt 3 pha <code>[0-0.5s] Setup</code> &rarr; <code>[0.5-2.4s] Climax</code> &rarr; <code>[2.4-4.0s] Settle &amp; Clear 100%</code> khớp <code>F_lock</code></td>
+                  <td style="padding:6px 10px; color:#15803d; font-weight:600;">Tách bạch 3 Chế độ: <strong>Mode 1 Dual-Anchor (4s, dừng tại F_lock)</strong> &bull; <strong>Mode 2 Single-Anchor Reverse (6s, bay vượt cuối clip)</strong> &bull; <strong>Mode 3 B-Roll Daisy-Chain</strong></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--line);">
+                  <td style="padding:6px 10px; font-weight:700;">3. Khóa chiều sâu đứng tại chỗ (<code>R13/R14</code>)</td>
+                  <td style="padding:6px 10px;">Chưa có quy tắc chặn các từ kích hoạt bước chân (<code>tracking</code>, <code>follow</code>)</td>
+                  <td style="padding:6px 10px;">Phát hiện từ <code>tracking</code> làm AI tự bước về phía cam (<code>rawSSIM</code> tụt còn 0.44); thêm câu khóa 2 bàn chân đứng yên nâng <code>rawSSIM</code> lên <code>0.78–0.88</code> trên 26 hiệu ứng</td>
+                  <td style="padding:6px 10px; color:#15803d; font-weight:600;">Bắt buộc kèm <code>R13/R14 Foot-Plant Depth Lock</code> cho mọi hiệu ứng Overlay / HUD / Cutout / Body Motion</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--line);">
+                  <td style="padding:6px 10px; font-weight:700;">4. Nối điểm nói thật (<code>F_lock</code>) &amp; Kiểm định</td>
+                  <td style="padding:6px 10px;">Chỉ kiểm định <code>ffprobe</code> trên clip rời</td>
+                  <td style="padding:6px 10px;"><code>14f Unsharp Bridge</code> + <code>Adaptive DIS Optical-Flow Morph</code> + 6 Cổng <code>G0..G5</code> + Contact Sheet 3 hàng + Vòng lặp tự học 3 vòng</td>
+                  <td style="padding:6px 10px; color:#15803d; font-weight:600;">Adaptive Morph theo <code>rawSSIM</code> (<code>&ge;0.90: 3f</code>, <code>0.80–0.90: 6f</code>, <code>0.75–0.80: 8f</code>) + kiểm tra độ nét Laplacian chống bóng ma</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:12.5px; margin:6px 0;"><strong>14 Quy Luật Vàng Thực Nghiệm Trên 40/40 Hiệu Ứng (<code>omni_lessons_learned.json</code>):</strong> <code>R01</code> Single-Shot Lock &bull; <code>R02</code> Identity &amp; Park Lock &bull; <code>R03</code> <code>[2.4–4.0s]</code> Settle 100% về <code>F_lock</code> &bull; <code>R04</code> Chữ 3D/UI chỉ dùng 1 từ tiếng Anh IN HOA &le; 6 ký tự (<code>VIRAL</code>, <code>FOCUS</code>, <code>FLOW</code>, <code>POWER</code>, <code>BOOM</code>...) &bull; <code>R05</code> Vật thể lơ lửng cận cảnh cho Time-Freeze &bull; <code>R06</code> Đạo cụ trượt dốc 40&deg; rời khung trước 2.6s cho Incline &bull; <code>R07</code> Đạo cụ bay không trọng lực rời khung trước 2.5s &bull; <code>R08</code> Ẩn dụ <em>Pop-up Architecture</em> + lưới Neon cho Origami/Low-Poly &bull; <code>R09</code> Buồng tối LiDAR + lưới laser xanh + mạ bạc lỏng &bull; <code>R10</code> Viền cắt dán ở rìa + phông Pop-Art/Studio sau lưng &bull; <code>R11</code> Mảnh gương/quả cầu lăng kính ở rìa ống kính &bull; <code>R12</code> Dải lụa sáng 2 tông màu xoắn quanh thân &bull; <code>R13</code> Nhảy thẳng đứng tại chỗ ở trung cảnh &bull; <code>R14</code> Khóa 2 bàn chân đứng yên không tiến về phía cam (22/22 hiệu ứng PASS).</p>
+          <p style="font-size:12.5px; margin:6px 0 0;"><a href="studios/omni_35_earth_zoom_sheet.jpg" target="_blank">🖼️ Xem Contact Sheet 3 Hàng (#35 Earth Zoom Omni 1.1 Flash)</a> &nbsp;&bull;&nbsp; <a href="studios/omni_35_settings_proof.jpg" target="_blank">🛡️ Xem Ảnh Bằng Chứng DOM <code>Omni 1.1 Flash</code> (7 Tín Dụng)</a></p>
         </div>
       </details>
 
