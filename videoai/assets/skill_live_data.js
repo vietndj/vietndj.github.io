@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 19:04:10
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 19:27:18
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 19:04:10",
-  "last_synced_iso": "2026-10-25T19:04:10.726985",
+  "last_synced_formatted": "25/10/2026 19:27:18",
+  "last_synced_iso": "2026-10-25T19:27:18.199052",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -2804,17 +2804,15 @@ window.SKILL_LIVE_DATA = {
       "badge": "60FPS MOTION",
       "desc": "Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 14034,
-      "size_formatted": "13.7 KB",
-      "lines_count": 84,
-      "mtime": 1792922790.7343156,
-      "mtime_formatted": "25/10/2026 17:06",
+      "size": 10241,
+      "size_formatted": "10.0 KB",
+      "lines_count": 62,
+      "mtime": 1792930745.2306514,
+      "mtime_formatted": "25/10/2026 19:19",
       "headers": [
         "1. BA LUẬT VÀNG & BẢNG MANTRA ĐỊNH TUYẾN BỐI CẢNH (0 MA SÁT)",
-        "2. LUẬT PHÂN TẦNG BIẾN DẠNG 4 CẤP & BÀN TAY CON TRỎ 4 PHA (V5.0)",
-        "3. BỐN CHỐT ĐẠO DIỄN BỔ NGỮ (GÕ KÈM SAU MANTRA HOẶC NÓI TỰ NHIÊN)",
-        "4. MA TRẬN ÁP DỤNG TRỌN BỘ 12 NGUYÊN LÝ CHUYỂN ĐỘNG Ở CHUẨN 30FPS",
-        "5. VÒNG LẶP TỰ HỌC (`self_learning_ledger.jsonl`) & CỔNG KIỂM ĐỊNH KÉP"
+        "2. NĂM CHUẨN KIẾN TRÚC BẮT BUỘC CỦA MOTION ENGINE V6.0",
+        "3. VÒNG LẶP TỰ HỌC (`self_learning_ledger.jsonl`) & CỔNG KIỂM ĐỊNH KÉP V4.0"
       ],
       "status": "ACTIVE"
     },
@@ -2903,16 +2901,16 @@ window.SKILL_LIVE_DATA = {
       "badge": "CHECKMOTION V2.0",
       "desc": "Kiểm toán chuyển động từng giây (1-Second Motion Inventory), chấm điểm 5 Trụ Cột Vật Lý Tự Nhiên kết hợp Ma Trận Phân Tầng Biến Dạng 4 Cấp Không Hại Mắt (Readability-First Hierarchy: READ 0% méo / HERO ≤2.5% / RIGID 0% / ELASTIC 6-14%).",
       "path": "/Users/vietmac/.gemini/config/skills/checkmotion/SKILL.md",
-      "size": 7252,
-      "size_formatted": "7.1 KB",
-      "lines_count": 63,
-      "mtime": 1792921374.784911,
-      "mtime_formatted": "25/10/2026 16:42",
+      "size": 8614,
+      "size_formatted": "8.4 KB",
+      "lines_count": 67,
+      "mtime": 1792930663.2707348,
+      "mtime_formatted": "25/10/2026 19:17",
       "headers": [
         "1. MỤC TIÊU & MANTRA KÍCH HOẠT",
-        "2. NĂM TRỤ CỘT BẮT BUỘC CHO MỌI CHUYỂN ĐỘNG TỰ NHIÊN (5-PILLAR RUBRIC)",
+        "2. NĂM TRỤ CỘT BẮT BUỘC CHO MỌI CHUYỂN ĐỘNG TỰ NHIÊN (5-PILLAR RUBRIC V4.0)",
         "3. LỆNH CHẠY KIỂM TOÁN TỰ ĐỘNG (`check_motion.py`)",
-        "4. TIÊU CHUẨN VƯỢT CỔNG (`CHECKMOTION V3.0 PASS GATE`)"
+        "4. TIÊU CHUẨN VƯỢT CỔNG (`CHECKMOTION V4.0 PASS GATE`)"
       ],
       "status": "ACTIVE"
     }
@@ -6832,6 +6830,22 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792930745.2306514,
+      "mtime_formatted": "25/10/2026 19:19",
+      "detail": "62 dòng • 3 mục chính"
+    },
+    {
+      "name": "checkmotion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "mtime": 1792930663.2707348,
+      "mtime_formatted": "25/10/2026 19:17",
+      "detail": "67 dòng • 4 mục chính"
+    },
+    {
       "name": "scripts/check_motion.py",
       "type": "Python Script",
       "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
@@ -6920,14 +6934,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
     },
     {
-      "name": "motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792922790.7343156,
-      "mtime_formatted": "25/10/2026 17:06",
-      "detail": "84 dòng • 5 mục chính"
-    },
-    {
       "name": "scripts/render_paage_template.py",
       "type": "Python Script",
       "skill": "Motion Studio 60fps (Universal Archetypes)",
@@ -6942,14 +6948,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792922246.7120967,
       "mtime_formatted": "25/10/2026 16:57",
       "detail": "20 dòng • Composition"
-    },
-    {
-      "name": "checkmotion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
-      "mtime": 1792921374.784911,
-      "mtime_formatted": "25/10/2026 16:42",
-      "detail": "63 dòng • 4 mục chính"
     },
     {
       "name": "scripts/verify_timelapse_freeze.py",
