@@ -73,11 +73,11 @@ window.HUB = {
       file: "05-buoc4-motion-cta.html",
       group: "flow",
       n: "04",
-      title: "Bước 4: Motion 60fps & 3 kiểu CTA",
-      short: "B4: Motion & CTA",
+      title: "Bước 4: Motion Graphic & 3 kiểu CTA",
+      short: "B4: Motion Graphic",
       stage: "buoc4",
       icon: "⚡",
-      q: "16 mẫu Motion Graphic 60fps & 3 kiểu kết thúc CTA chuyển đổi cao?"
+      q: "Motion Graphic (CHECKMOTION V1→V4), 16 mẫu Archetypes 60fps & 3 kiểu CTA chuyển đổi cao?"
     },
     {
       id: "buoc-5",
@@ -144,6 +144,17 @@ window.HUB = {
       stage: "motion",
       icon: "🛡️",
       q: "Các hook đã chạy đạt trên nhiều kiểu mở đầu — xem Gốc ↔ Kết quả và lưu ý khi quay"
+    },
+    {
+      id: "motion-graphic",
+      file: "12-motion-graphic.html",
+      group: "ref",
+      n: "12",
+      title: "Motion Graphic (Tất cả phiên bản V1→V4)",
+      short: "Motion Graphic",
+      stage: "buoc4",
+      icon: "🎬",
+      q: "Tổng hợp tất cả các phiên bản Motion Graphic (Mẫu gốc Pinterest → V1 → V2 → V3 → V4 Readability-First) & Quy chuẩn CHECKMOTION"
     }
   ]
 };
