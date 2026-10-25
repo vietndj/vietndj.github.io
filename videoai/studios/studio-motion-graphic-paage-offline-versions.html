@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio Motion Graphic &amp; CHECKMOTION: Đối Chiếu Tất Cả Phiên Bản (Ref → V1 → V2 → V3 → V4 Readability-First)</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Ctext%20x='32'%20y='43'%20font-family='system-ui,sans-serif'%20font-size='28'%20font-weight='900'%20fill='%23FB923C'%20text-anchor='middle'%3EMG%3C/text%3E%3C/svg%3E"/>
+  <style>
+    :root {
+      --bg: #fdfcf9;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --mute: #475569;
+      --line: #e2e8f0;
+      --accent: #2563eb;
+      --emerald: #059669;
+      --amber: #d97706;
+      --rose: #e11d48;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 28px 24px 60px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1280px; margin: 0 auto; }
+    .kicker {
+      display: inline-block;
+      font: 700 11.5px var(--mono);
+      color: #b45309;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(24px, 2.8vw, 34px);
+      line-height: 1.22;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      font-size: 16px;
+      color: var(--mute);
+      max-width: 980px;
+      margin: 0 0 24px;
+    }
+    h2 {
+      font-size: 21px;
+      margin: 34px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--line);
+    }
+    .ver-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .ver-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .ver-card.master {
+      border: 2px solid var(--emerald);
+      box-shadow: 0 14px 36px rgba(5, 150, 105, 0.14);
+    }
+    .ver-head {
+      padding: 10px 14px;
+      background: #0f172a;
+      color: #f8fafc;
+      font: 700 12px var(--mono);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ver-card.master .ver-head {
+      background: linear-gradient(90deg, #065f46, #047857);
+    }
+    .ver-head a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .ver-card.master .ver-head a {
+      color: #a7f3d0;
+    }
+    .vid-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .vid-box video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+    .ver-body {
+      padding: 16px 18px;
+      flex: 1;
+    }
+    .ver-title {
+      font-size: 16.5px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+    .ver-desc {
+      font-size: 14px;
+      color: var(--mute);
+      margin: 0 0 12px;
+    }
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pill {
+      font: 700 11px var(--mono);
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #334155;
+    }
+    .pill.pass { background: #dcfce7; color: #166534; }
+    .pill.warn { background: #fef3c7; color: #92400e; }
+    .pill.fail { background: #ffe4e6; color: #9f1239; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      font: 800 12px var(--mono);
+      color: #1e293b;
+      text-transform: uppercase;
+    }
+    .ctrl-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .btn {
+      font: 700 13px var(--sans);
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: #0f172a;
+      color: #fff;
+      border-color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="kicker">⚡ MOTION GRAPHIC STUDIO • CHECKMOTION × CLAUDE2 OPUS 5.5 PRO</span>
+    <h1>Đối Chiếu Toàn Bộ Các Phiên Bản Motion Graphic Khóa Offline 07–08/11 (Ref → V1 → V2 → V3 → V4)</h1>
+    <p class="lede">
+      Trình phát đối chiếu trực tiếp toàn bộ quá trình tiến hóa từ Mẫu gốc Pinterest <code>333759022407965800</code> qua 4 phiên bản (V1 → V2 → V3 → V4) cùng bảng <strong>Ma Trận Phân Tầng Biến Dạng Không Hại Mắt (Readability-First Deformation Hierarchy)</strong>.
+    </p>
+
+    <div class="ctrl-bar">
+      <button class="btn primary" onclick="syncPlayAll()">▶ Phát đồng bộ tất cả phiên bản từ 00:00</button>
+      <button class="btn" onclick="pauseAll()">⏸ Tạm dừng tất cả</button>
+      <button class="btn" onclick="jumpAll(0)">⏮ Về 00s (Hook &amp; Đại tự)</button>
+      <button class="btn" onclick="jumpAll(8)">⏭ Tới 08s (Search Bar Morph &amp; Typewriter)</button>
+      <button class="btn" onclick="jumpAll(25.2)">⏭ Tới 25s (Quả cầu Orb &amp; 4 Định dạng)</button>
+      <button class="btn" onclick="jumpAll(52.8)">⏭ Tới 53s (Số nhảy 6,000,000+ &amp; Ngành nghề)</button>
+    </div>
+
+    <div class="ver-grid">
+      <!-- V4 MASTER -->
+      <div class="ver-card master">
+        <div class="ver-head">
+          <span>🏆 PHIÊN BẢN V4 MASTER (READABILITY-FIRST HIERARCHY)</span>
+          <a href="paage_offline_v4_master_web.mp4" target="_blank">Mở MP4 ↗</a>
+        </div>
+        <div class="vid-box">
+          <video class="cmp-vid" controls loop playsinline preload="metadata" src="paage_offline_v4_master_web.mp4"></video>
+        </div>
+        <div class="ver-body">
+          <div class="ver-title">Bản V4: Phân tầng biến dạng 4 cấp — Chữ &amp; Ảnh sắc băng, Nút &amp; Quả cầu đàn hồi mạnh</div>
+          <p class="ver-desc">
+            Áp dụng chuẩn hội ý cùng <strong>CLAUDE2</strong>: Chữ đọc câu dài &amp; Typewriter <strong>0% méo trục, 0° skew, khóa đọc &ge; 65%</strong>; Đại tự Hero 1–3 từ chỉ biến dạng vi mô <strong>&le; 2.5% trong đúng 3–4 frame đỉnh vận tốc</strong>; Ảnh lớp học &amp; Thẻ UI <strong>0% méo trục</strong> (lò xo đồng dạng + Ken Burns + bóng đổ động); Nút bấm, Con trỏ, Quả cầu, Vỏ rỗng gánh trọn độ nảy <strong>6%–14%</strong>.
+          </p>
+          <div class="metrics">
+            <span class="pill pass">CHECKMOTION V2: PASS (137/137)</span>
+            <span class="pill pass">Chữ đọc &amp; Ảnh: 0% méo trục</span>
+            <span class="pill pass">Đại tự Hero: &le; 2.5% (3–4f)</span>
+            <span class="pill pass">Readability Hold: 60%–75%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- V3 OVERDEFORM -->
+      <div class="ver-card">
+        <div class="ver-head">
+          <span>⚠️ PHIÊN BẢN V3 (FULL 136 MOTIONS — BỘI THỰC BIẾN DẠNG)</span>
+          <a href="paage_offline_v3_overdeform_web.mp4" target="_blank">Mở MP4 ↗</a>
+        </div>
+        <div class="vid-box">
+          <video class="cmp-vid" controls loop playsinline preload="metadata" src="paage_offline_v3_overdeform_web.mp4"></video>
+        </div>
+        <div class="ver-body">
+          <div class="ver-title">Bản V3: Mọi chữ và ảnh đều nhún biến dạng 8%–16% gây khó đọc</div>
+          <p class="ver-desc">
+            Đã có đủ 5 trụ cột vật lý cho 136 chuyển động nhưng áp <code>maxStretch=10%–16%, skewX=6°</code> và <code>evaluateTactileClickBounce30</code> (nén dọc 14%) lên cả câu chữ dài, chữ gõ Typewriter và ảnh lớp học. Thời gian chữ đứng yên hoàn toàn (Readability Hold) chỉ còn <strong>0–4%</strong> làm mắt bị mỏi khi đọc.
+          </p>
+          <div class="metrics">
+            <span class="pill warn">Chữ câu dài: méo 10% + nghiêng 6°</span>
+            <span class="pill fail">Readability Hold: 0%–4% (khó đọc)</span>
+            <span class="pill warn">Ảnh &amp; Thẻ: méo trục 4%–5%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- V2 KINETIC -->
+      <div class="ver-card">
+        <div class="ver-head">
+          <span>🔹 PHIÊN BẢN V2 (KINETIC TEXT 5 PHA — NÂNG CẤP LẦN 1)</span>
+          <a href="paage_offline_v2_kinetic_web.mp4" target="_blank">Mở MP4 ↗</a>
+        </div>
+        <div class="vid-box">
+          <video class="cmp-vid" controls loop playsinline preload="metadata" src="paage_offline_v2_kinetic_web.mp4"></video>
+        </div>
+        <div class="ver-body">
+          <div class="ver-title">Bản V2: Tách cụm từ KineticStaggerPhrase30 &amp; Gõ chữ theo từ</div>
+          <p class="ver-desc">
+            Chuyển từ khối chữ nguyên tảng sang tách cụm 1–2 từ và gõ chữ nảy theo từ, nhưng còn 37 tween của thẻ/khung/cuộn trang dùng <code>smoothStepRange</code> thuần chưa có lấy đà và chuyển động phụ.
+          </p>
+          <div class="metrics">
+            <span class="pill warn">99 Dynamic / 37 Tween phẳng</span>
+            <span class="pill warn">Chưa phân tầng biến dạng chữ vs nút</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- V1 BASELINE -->
+      <div class="ver-card">
+        <div class="ver-head">
+          <span>🔸 PHIÊN BẢN V1 (BASELINE — TRƯỚC CHECKMOTION)</span>
+          <a href="paage_offline_v1_baseline_web.mp4" target="_blank">Mở MP4 ↗</a>
+        </div>
+        <div class="vid-box">
+          <video class="cmp-vid" controls loop playsinline preload="metadata" src="paage_offline_v1_baseline_web.mp4"></video>
+        </div>
+        <div class="ver-body">
+          <div class="ver-title">Bản V1: Hiệu ứng chữ lờ đờ, đi nguyên tảng, cắt chuỗi ký tự khô</div>
+          <p class="ver-desc">
+            Bản dựng đầu tiên khớp kịch bản Phần 2 và âm thanh gốc nhưng hiệu ứng chữ đi cả câu nguyên khối (monolithic div), gõ chữ bằng <code>slice(0, n)</code> khô cứng, không có đà thoát cảnh (26/70 giây bị chết cứng ở cuối cảnh).
+          </p>
+          <div class="metrics">
+            <span class="pill fail">26/70 giây lờ đờ (Sluggish)</span>
+            <span class="pill fail">Chữ nguyên tảng + sliceTyped khô</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REF PINTEREST -->
+      <div class="ver-card">
+        <div class="ver-head">
+          <span>📌 MẪU GỐC PINTEREST (REF 333759022407965800)</span>
+          <a href="paage_ref_pinterest_web.mp4" target="_blank">Mở MP4 ↗</a>
+        </div>
+        <div class="vid-box">
+          <video class="cmp-vid" controls loop playsinline preload="metadata" src="paage_ref_pinterest_web.mp4"></video>
+        </div>
+        <div class="ver-body">
+          <div class="ver-title">Video Mẫu Gốc Paage (70.37s • 2.111 frames @ 30fps)</div>
+          <p class="ver-desc">
+            Mẫu quảng cáo gốc trên Pinterest dùng để trích xuất âm thanh 1:1 (nhạc nền, tiếng gõ phím cơ, tiếng whoosh, tiếng click chuột và nhịp ngắt trắng màn hình ở 60.30s).
+          </p>
+          <div class="metrics">
+            <span class="pill">70.37s • 30fps</span>
+            <span class="pill">Nguồn âm thanh &amp; nhịp cắt 1:1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Ma Trận Phân Tầng Biến Dạng 4 Cấp (Hội Ý Cùng CLAUDE2 Opus 5.5 Pro)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Cấp độ &amp; Nhóm đối tượng</th>
+          <th>Tần suất xuất hiện</th>
+          <th>Biên độ biến dạng cho phép</th>
+          <th>Cơ chế tạo lực tự nhiên thay thế (Không hại mắt)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CẤP 1: CHỮ ĐỂ ĐỌC (<code>READ</code>)</strong><br/>Câu dài &ge; 4 từ, chữ thông tin, chữ gõ Typewriter, số liệu/giá tiền, chữ trong thẻ UI</td>
+          <td><strong>0% thời gian</strong> biến dạng méo trục.<br/>Khóa tĩnh đọc (Readability Hold) <strong>&ge; 60%–75%</strong> thời lượng cảnh.</td>
+          <td>• Méo trục: <strong>0%</strong> (<code>scaleX === scaleY</code>)<br/>• Nghiêng <code>skewX</code>: <strong>0°</strong><br/>• Blur: &le; 1.5px (chỉ 2 frame đầu; 0px với Typewriter)</td>
+          <td>• <strong>Lấy đà vị trí + đồng dạng:</strong> lún 6–8px, scale 0.90<br/>• <strong>Xung lực vọt đồng dạng:</strong> scale 0.90 &rarr; <strong>1.035</strong> &rarr; 1.00<br/>• <strong>Tách nhịp gọn:</strong> lệch 1f/cụm, tổng pha vào &le; 10f<br/>• <strong>Gõ chữ:</strong> từ mới nảy đồng dạng 0.92 &rarr; 1.03 &rarr; 1 trong 6f; <strong>con trỏ (caret)</strong> gánh phần co giãn +25%</td>
+        </tr>
+        <tr>
+          <td><strong>CẤP 2: ĐẠI TỰ HERO (<code>HERO</code>)</strong><br/>1–3 từ cỡ cực lớn (&ge; 80px) ở nhịp nhấn trống (<em>“Làm video”, “Offline 07–08/11”, “Ngày 07”, “6,000,000+”</em>)</td>
+          <td>Chỉ mở cổng trong đúng <strong>3–4 frames</strong> đỉnh vận tốc (<code>nv &ge; 0.55</code>).<br/>Khóa phẳng <strong>100%</strong> suốt pha đọc (&ge; 50% cảnh).</td>
+          <td>• Giãn trục: <strong>&le; 2.5%</strong> (<code>maxStretch = 0.025</code>)<br/>• Nén lấy đà: <strong>&le; 1.8%</strong><br/>• Nghiêng <code>skewX</code>: <strong>&le; 1.8°</strong><br/>• Nhịp nhấn trống giữa cảnh: <code>uniform: true</code> (0% méo)</td>
+          <td>• Lực chính đến từ dịch chuyển 72–110px + phóng đồng dạng 0.74 &rarr; 1.055 &rarr; 1.00<br/>• Sóng hạ cánh <code>LandingBurst30</code> và 8 hạt sáng bung ở <strong>lớp nền</strong> phía sau chữ<br/>• Pivot khóa ở chân chữ (<code>50% 100%</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>CẤP 3: ẢNH THẬT &amp; THẺ UI (<code>RIGID</code>)</strong><br/>Ảnh lớp học, học viên, MacBook 3D, Thẻ Split View, Popup Kết quả, Thẻ Trang 3 video dọc</td>
+          <td><strong>0% thời gian</strong> biến dạng méo trục (khuôn mặt người và chữ trong thẻ tuyệt đối không méo).</td>
+          <td>• Méo trục: <strong>0%</strong> (<code>rigidContent: true</code>, <code>deformAlong = 1.000</code>)<br/>• Cho phép xoay 2.5D cứng &le; 4° và bo góc morph</td>
+          <td>• <strong>Lò xo đồng dạng:</strong> 0.92 &rarr; 1.02 &rarr; 1.00 có lún lấy đà<br/>• <strong>Inner Ken Burns / Parallax:</strong> ảnh bên trong khung <code>overflow: hidden</code> zoom nhẹ 1.02 &rarr; 1.06<br/>• <strong>Bóng đổ động (Elevation Shadow):</strong> nhấc 28px &rarr; 58px theo năng lượng</td>
+        </tr>
+        <tr>
+          <td><strong>CẤP 4: ĐỒ HỌA KHÔNG CHỮ (<code>ELASTIC</code>)</strong><br/>Nút bấm tròn <code>ArrowSubmitButton30</code>, Con trỏ <code>HandCursor30</code>, Quả cầu <code>Orb</code>, Vỏ thanh tìm kiếm lúc đang morph rỗng, Sóng/Hạt sáng</td>
+          <td>Mỗi khi có tương tác click, đổi bước xử lý hoặc biến hình khung vỏ rỗng (&le; 15%–20% tổng thời lượng).</td>
+          <td>• <strong>Nút bấm tròn:</strong> nén/giãn <strong>14%–20%</strong> (<code>squashY = 0.80, reboundY = 1.14</code>)<br/>• <strong>Quả cầu xoay:</strong> đàn hồi <strong>14%</strong> + sóng ripple<br/>• <strong>Vỏ Search Bar rỗng:</strong> giãn ngang <strong>6%</strong> trước khi hiện chữ<br/>• <strong>Con trỏ &amp; Sóng:</strong> đàn hồi tự do</td>
+          <td>• <strong>Quy tắc “Vỏ trước – Ruột sau”:</strong> Vỏ thanh tìm kiếm co giãn đàn hồi xong và khóa tĩnh rồi ảnh/chữ bên trong mới xuất hiện<br/>• Gánh trọn 80% cảm giác vật lý sống động cho cả video mà không ảnh hưởng mắt đọc</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function getVids() {
+      return Array.from(document.querySelectorAll('.cmp-vid'));
+    }
+    function syncPlayAll() {
+      getVids().forEach(function(v, idx) {
+        v.currentTime = 0;
+        v.muted = (idx !== 0); // Chỉ bật tiếng bản V4 Master để không dội âm
+        v.play().catch(function(){});
+      });
+    }
+    function pauseAll() {
+      getVids().forEach(function(v) { v.pause(); });
+    }
+    function jumpAll(sec) {
+      getVids().forEach(function(v) {
+        v.currentTime = sec;
+      });
+    }
+  </script>
+</body>
+</html>
