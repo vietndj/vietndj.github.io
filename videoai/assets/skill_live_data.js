@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 11:36:02
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 12:17:10
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 11:36:02",
-  "last_synced_iso": "2026-10-25T11:36:02.023771",
+  "last_synced_formatted": "25/10/2026 12:17:10",
+  "last_synced_iso": "2026-10-25T12:17:10.985105",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -6366,11 +6366,11 @@ window.SKILL_LIVE_DATA = {
       "name": "jib_down_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 41570,
-      "size_formatted": "40.6 KB",
-      "lines": 886,
-      "mtime": 1792895190.033639,
-      "mtime_formatted": "25/10/2026 09:26",
+      "size": 63622,
+      "size_formatted": "62.1 KB",
+      "lines": 1293,
+      "mtime": 1792904978.3951771,
+      "mtime_formatted": "25/10/2026 12:09",
       "desc": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
     },
     {
@@ -6596,6 +6596,14 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "scripts/jib_down_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792904978.3951771,
+      "mtime_formatted": "25/10/2026 12:09",
+      "detail": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
+    },
+    {
       "name": "compositions/PaageOffline0711_30fps.tsx",
       "type": "Remotion .TSX",
       "skill": "Remotion Studio 60fps",
@@ -6674,14 +6682,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792899079.2192512,
       "mtime_formatted": "25/10/2026 10:31",
       "detail": "71 dòng • 2 mục chính"
-    },
-    {
-      "name": "scripts/jib_down_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792895190.033639,
-      "mtime_formatted": "25/10/2026 09:26",
-      "detail": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
     },
     {
       "name": "scripts/giant_grab_engine.py",
