@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-25T19:28:08+07:00",
-  "total_scene_items": 406,
-  "total_unique_ideas": 387,
-  "total_active_ideas": 327,
+  "generated_at": "2026-10-25T19:34:00+07:00",
+  "total_scene_items": 407,
+  "total_unique_ideas": 388,
+  "total_active_ideas": 328,
   "total_excluded_ideas": 60,
-  "total_creators": 237,
+  "total_creators": 238,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 45,
     "storytelling": 39,
     "dien-anh": 159,
-    "chuyen-canh": 61,
+    "chuyen-canh": 62,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -168,16 +168,16 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 8,
-    "thuong-hieu": 28,
-    "thoi-trang": 27,
+    "spa-lam-dep": 7,
+    "thuong-hieu": 42,
+    "thoi-trang": 24,
     "am-thuc": 29,
-    "du-lich": 36,
-    "cong-nghe": 41,
-    "kien-truc": 43,
+    "du-lich": 49,
+    "cong-nghe": 25,
+    "kien-truc": 15,
     "the-thao": 6,
-    "ky-thuat-quay": 102,
-    "ugc": 7
+    "ky-thuat-quay": 123,
+    "ugc": 8
   },
   "x_factors": [
     "Biểu cảm Body language",
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 232,
+    "us_eu": 233,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -333,7 +333,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Framebygeorge",
       "profile_url": "https://www.instagram.com/framebygeorge/",
       "video_count": 10,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40framebygeorge_DemoZWsuTjr_October_but_cinematic%F0%9F%8D%82/shot_01_mid.webp",
       "video_ids": [
         "IG_@framebygeorge_DemoZWsuTjr_October_but_cinematic🍂",
@@ -388,7 +388,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Jazzie Sillona",
       "profile_url": "https://www.instagram.com/jazziesillona/",
       "video_count": 7,
-      "top_industry": "Thời trang",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40jazziesillona_Dc6Cxf-QRWh/shot_01_mid.webp",
       "video_ids": [
         "IG_@jazziesillona_Dc6Cxf-QRWh",
@@ -602,7 +602,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Mario Prawira",
       "profile_url": "https://www.instagram.com/mario.prawira/",
       "video_count": 3,
-      "top_industry": "F&B",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your/shot_01_mid.webp",
       "video_ids": [
         "IG_@mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your",
@@ -615,7 +615,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Megan_Tan",
       "profile_url": "https://www.instagram.com/megantanhweewen/",
       "video_count": 3,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Megan_Tan_DdgwV6dsxcS_Video_by_megantanhweewen/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Megan_Tan_DdgwV6dsxcS_Video_by_megantanhweewen",
@@ -678,7 +678,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Iamaayushswamy",
       "profile_url": "https://www.instagram.com/iamaayushswamy/",
       "video_count": 2,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera/shot_01_mid.webp",
       "video_ids": [
         "IG_@iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera",
@@ -714,7 +714,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Celfstudies",
       "profile_url": "https://www.instagram.com/celfstudies/",
       "video_count": 2,
-      "top_industry": "Thời trang",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40celfstudies_DajU5I5AKIu_LA_VLOG_%21%21_%28horizontal_edition%F0%9F%A4%B3%29/shot_01_mid.webp",
       "video_ids": [
         "IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳)",
@@ -738,7 +738,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Mylenesmind",
       "profile_url": "https://www.instagram.com/mylenesmind/",
       "video_count": 2,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_%F0%9F%91%80/shot_01_mid.webp",
       "video_ids": [
         "IG_@mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_👀",
@@ -762,7 +762,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "German991020",
       "profile_url": "https://www.instagram.com/german991020/",
       "video_count": 2,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series/shot_01_mid.webp",
       "video_ids": [
         "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
@@ -846,7 +846,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Steven.Vuu",
       "profile_url": "https://www.instagram.com/steven.vuu/",
       "video_count": 2,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_01_mid.webp",
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
@@ -863,6 +863,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
         "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
+      ]
+    },
+    {
+      "handle": "@xamza_abdulbakiyev",
+      "name": "Xamza_Abdulbakiyev",
+      "profile_url": "https://www.instagram.com/xamza_abdulbakiyev/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko%E2%80%99ring%F0%9F%98%8D%F0%9F%91%87%F0%9F%8F%BB/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko’ring😍👇🏻"
       ]
     },
     {
@@ -958,7 +969,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Medium Lady",
       "profile_url": "https://www.instagram.com/medium.lady/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
       "video_ids": [
         "IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone"
@@ -1013,7 +1024,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Itsbybrandon",
       "profile_url": "https://www.instagram.com/itsbybrandon/",
       "video_count": 1,
-      "top_industry": "Làm đẹp",
+      "top_industry": "Thời trang",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_01_mid.webp",
       "video_ids": [
         "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty"
@@ -1134,7 +1145,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Taimoorm",
       "profile_url": "https://www.instagram.com/taimoorm/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40taimoorm_Db1jadggnGA_Vibe_coding_is_the_future/shot_01_mid.webp",
       "video_ids": [
         "IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future"
@@ -1156,7 +1167,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Anatta Ha",
       "profile_url": "https://www.instagram.com/anatta.ha/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40anatta.ha_Dd6kWLjxNQJ_solo_date_to_the_bookstore_%F0%9F%98%97/shot_01_mid.webp",
       "video_ids": [
         "IG_@anatta.ha_Dd6kWLjxNQJ_solo_date_to_the_bookstore_😗"
@@ -1211,7 +1222,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Sametxhunter",
       "profile_url": "https://www.instagram.com/sametxhunter/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40sametxhunter_DdwxosERt7n_It%E2%80%99s_Now_or_Never/shot_01_mid.webp",
       "video_ids": [
         "IG_@sametxhunter_DdwxosERt7n_It’s_Now_or_Never"
@@ -1222,7 +1233,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Nouince",
       "profile_url": "https://www.instagram.com/nouince/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_%F0%9F%91%80/shot_01_mid.webp",
       "video_ids": [
         "IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀"
@@ -1288,7 +1299,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Kuzya_Монтаж_Reels",
       "profile_url": "https://www.instagram.com/kuzya.tm/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40KUZYA_%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6_Reels_DdYHuz_sXs0_Video_by_kuzya.tm/shot_01_mid.jpg",
       "video_ids": [
         "IG_@KUZYA_монтаж_Reels_DdYHuz_sXs0_Video_by_kuzya.tm"
@@ -1299,7 +1310,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ałec_Rijks",
       "profile_url": "https://www.instagram.com/alecrijks/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40A%C5%81EC_RIJKS_DdPESzcNS-W_Video_by_alecrijks/shot_01_mid.jpg",
       "video_ids": [
         "IG_@AŁEC_RIJKS_DdPESzcNS-W_Video_by_alecrijks"
@@ -1310,7 +1321,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Harry",
       "profile_url": "https://www.instagram.com/hdnimedia/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Harry_DdlmRIcBw81_Video_by_hdnimedia/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Harry_DdlmRIcBw81_Video_by_hdnimedia"
@@ -1376,7 +1387,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Elena_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲",
       "profile_url": "https://www.instagram.com/elenabuntushak/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
       "video_ids": [
         "IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak"
@@ -1387,7 +1398,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Minghan1004",
       "profile_url": "https://www.instagram.com/minghan1004/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40minghan1004_DdESxNlE2Ay_Carousel_Analysis/slide_01_mid.webp",
       "video_ids": [
         "IG_@minghan1004_DdESxNlE2Ay_Carousel_Analysis"
@@ -1420,7 +1431,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Sodam_Kim",
       "profile_url": "https://www.instagram.com/31.ioa/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa"
@@ -1464,7 +1475,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Flying",
       "profile_url": "https://www.instagram.com/loveqinghe/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Flying_DdplzLRytOA_Video_by_loveqinghe/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Flying_DdplzLRytOA_Video_by_loveqinghe"
@@ -1508,7 +1519,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Adz Mov",
       "profile_url": "https://www.instagram.com/adz.mov/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40adz.mov_DdGQQL-ih_O_the_land_of_smiles_%F0%9F%87%B9%F0%9F%87%AD_%23thailand_%23cinematograp/shot_01_mid.webp",
       "video_ids": [
         "IG_@adz.mov_DdGQQL-ih_O_the_land_of_smiles_🇹🇭_#thailand_#cinematograp"
@@ -1629,7 +1640,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ecombrand",
       "profile_url": "https://www.instagram.com/EcomBrand/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40EcomBrand_ECOM_Ulanzi_Ulanzi/shot_01_mid.jpg",
       "video_ids": [
         "IG_@EcomBrand_ECOM_Ulanzi_Ulanzi"
@@ -1695,7 +1706,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Xíu_Đi_Ăn",
       "profile_url": "https://www.instagram.com/xiudian/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40X%C3%8DU_%C4%90I_%C4%82N_DazzVqPBfje_Video_by_xiudian/shot_01_mid.webp",
       "video_ids": [
         "IG_@XÍU_ĐI_ĂN_DazzVqPBfje_Video_by_xiudian"
@@ -1706,7 +1717,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Misa｜築40年マンション暮らし",
       "profile_url": "https://www.instagram.com/mi_no_ie_39/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Góc nhà đẹp",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40misa%EF%BD%9C%E7%AF%8940%E5%B9%B4%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3%E6%9A%AE%E3%82%89%E3%81%97_Db-xDk4vWNQ_Video_by_mi_no_ie_39/shot_01_mid.webp",
       "video_ids": [
         "IG_@misa｜築40年マンション暮らし_Db-xDk4vWNQ_Video_by_mi_no_ie_39"
@@ -1717,7 +1728,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Studio_Berdua",
       "profile_url": "https://www.instagram.com/studioberdua/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.webp",
       "video_ids": [
         "IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua"
@@ -1750,7 +1761,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Hayden_Slow_Korean_&_Daily_Life",
       "profile_url": "https://www.instagram.com/haydenkorean/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Hayden_Slow_Korean_%26_Daily_Life_Daz3Po8zHIE_Video_by_haydenkorean/shot_01_mid.webp",
       "video_ids": [
         "IG_@Hayden_Slow_Korean_&_Daily_Life_Daz3Po8zHIE_Video_by_haydenkorean"
@@ -1761,7 +1772,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Jaehyung",
       "profile_url": "https://www.instagram.com/_hyungs/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs/shot_01_mid.webp",
       "video_ids": [
         "IG_@JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs"
@@ -1772,7 +1783,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Indang_Ayu",
       "profile_url": "https://www.instagram.com/indanayuu/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Indang_Ayu_DccpHbETFSr_Video_by_indanayuu/shot_01_mid.webp",
       "video_ids": [
         "IG_@Indang_Ayu_DccpHbETFSr_Video_by_indanayuu"
@@ -1783,7 +1794,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ume_📍Минск-Мир",
       "profile_url": "https://www.instagram.com/ume.izakaya/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40UME_%F0%9F%93%8D%D0%BC%D0%B8%D0%BD%D1%81%D0%BA-%D0%BC%D0%B8%D1%80_DcVnyJyNWGY_Video_by_ume.izakaya/shot_01_mid.webp",
       "video_ids": [
         "IG_@UME_📍минск-мир_DcVnyJyNWGY_Video_by_ume.izakaya"
@@ -1794,7 +1805,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Five_Oars_Coffee_Roasters",
       "profile_url": "https://www.instagram.com/focr.sg/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
       "video_ids": [
         "IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg"
@@ -1805,7 +1816,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "거북이_소영",
       "profile_url": "https://www.instagram.com/slowkoreanvlog/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40%EA%B1%B0%EB%B6%81%EC%9D%B4_%EC%86%8C%EC%98%81_Db0tHr8Bs7x_Video_by_slowkoreanvlog/shot_01_mid.webp",
       "video_ids": [
         "IG_@거북이_소영_Db0tHr8Bs7x_Video_by_slowkoreanvlog"
@@ -2047,7 +2058,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Karen Lee",
       "profile_url": "https://www.instagram.com/kawoon.lee/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_mid.webp",
       "video_ids": [
         "IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency"
@@ -2069,7 +2080,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Анастасия Турапина (Anastasiia Turapina)",
       "profile_url": "https://www.instagram.com/turapinaanastasiia/",
       "video_count": 1,
-      "top_industry": "Thời trang",
+      "top_industry": "UGC",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount/shot_01_mid.webp",
       "video_ids": [
         "IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount"
@@ -2124,7 +2135,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "UTS International Students",
       "profile_url": "https://www.instagram.com/utsint/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour/extracted_shots/shot_01_mid.webp",
       "video_ids": [
         "IG_@utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour"
@@ -2256,7 +2267,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "오새봄 / Oh Sae Bom",
       "profile_url": "https://www.instagram.com/saebomoh/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog/shot_01_mid.webp",
       "video_ids": [
         "IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog"
@@ -2333,7 +2344,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Kulniyasally",
       "profile_url": "https://www.instagram.com/kulniyasally/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV/extracted_shots/shot_01_mid.webp",
       "video_ids": [
         "IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV"
@@ -2652,7 +2663,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Kortafilms",
       "profile_url": "https://www.instagram.com/kortafilms/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40kortafilms_DcdthwaTM3J_Camera_Angles_Mastery/shot_01_mid.webp",
       "video_ids": [
         "IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery"
@@ -2729,7 +2740,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Kim Kyung-sik",
       "profile_url": "https://www.instagram.com/kyung6film/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40kyung6film_DakY2EST-Tm_Split_City_Shanghai/shot_01_mid.webp",
       "video_ids": [
         "IG_@kyung6film_DakY2EST-Tm_Split_City_Shanghai"
@@ -2740,7 +2751,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "岳_🍜_Gaku",
       "profile_url": "https://www.instagram.com/岳/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40%E5%B2%B3_%F0%9F%8D%9C_GAKU_Dc0MHhTE9z0_Carousel_Analysis/slide_01_mid.webp",
       "video_ids": [
         "IG_@岳_🍜_GAKU_Dc0MHhTE9z0_Carousel_Analysis"
@@ -2751,7 +2762,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Omgadrian",
       "profile_url": "https://www.instagram.com/omgadrian/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40omgadrian_DcqzVfno5Al_Travel_Sequence_Formula/shot_01_mid.webp",
       "video_ids": [
         "IG_@omgadrian_DcqzVfno5Al_Travel_Sequence_Formula"
@@ -2806,7 +2817,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ethan Barber",
       "profile_url": "https://www.instagram.com/ethanbarber.co/",
       "video_count": 1,
-      "top_industry": "F&B",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40ethanbarber.co_DW_iQNYDjX7_Summer_in_NYC/shot_01_mid.webp",
       "video_ids": [
         "IG_@ethanbarber.co_DW_iQNYDjX7_Summer_in_NYC"
@@ -2817,7 +2828,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Startup_Tm",
       "profile_url": "https://www.instagram.com/Startup_TM/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast/shot_01_mid.webp",
       "video_ids": [
         "IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast"
@@ -2828,7 +2839,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ethan",
       "profile_url": "https://www.instagram.com/chowyhh/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40chowyhh_DcTjYUftCcv_Art_of_Composition_London/shot_01_mid.webp",
       "video_ids": [
         "IG_@chowyhh_DcTjYUftCcv_Art_of_Composition_London"
@@ -2960,7 +2971,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Andrei Kostromskikh",
       "profile_url": "https://www.instagram.com/kosnio/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.webp",
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis"
@@ -2982,7 +2993,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ken Shoji - Tokyo Videographer",
       "profile_url": "https://www.instagram.com/kenshoji.visuals/",
       "video_count": 1,
-      "top_industry": "F&B",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_002_66f52422.webp",
       "video_ids": [
         "IG_@kenshoji.visuals_DZOzwweTc5a_The_Art_of_Static_Shot"
@@ -3012,6 +3023,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko’ring😍👇🏻",
+      "shortcode": "De1nCRhtKzi",
+      "title_vi": "Issiq salat tayorlab ko’ring😍👇🏻",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @xamza_abdulbakiyev",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@xamza_abdulbakiyev",
+        "name": "Xamza_Abdulbakiyev",
+        "handle": "@xamza_abdulbakiyev",
+        "profile_url": "https://www.instagram.com/xamza_abdulbakiyev/"
+      },
+      "ig_url": "https://www.instagram.com/reel/De1nCRhtKzi/",
+      "gdrive_folder": "https://drive.google.com/open?id=1TEr8ZHaBiRoyUOLZ0d8zCffkqvHruJBS",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko%E2%80%99ring%F0%9F%98%8D%F0%9F%91%87%F0%9F%8F%BB/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko%E2%80%99ring%F0%9F%98%8D%F0%9F%91%87%F0%9F%8F%BB/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/De1nCRhtKzi.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/De1nCRhtKzi.mp4",
+        "report_url": "reports/IG_@xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko’ring😍👇🏻.html",
+        "shots_count": 43,
+        "duration": "25.9s",
+        "youtube_id": "ci4GhL9Npjw",
+        "youtube_embed": "https://www.youtube.com/embed/ci4GhL9Npjw",
+        "youtube_url": "https://youtu.be/ci4GhL9Npjw"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_@rocketespresso",
       "shortcode": "Det8KYKxp3y",
@@ -5230,12 +5314,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -5693,12 +5777,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "spa-lam-dep",
-          "name": "Làm đẹp",
-          "en_name": "Beauty & Spa",
-          "icon": "💆",
-          "badge_color": "rose",
-          "desc": "Dịch vụ spa, phòng khám thẩm mỹ, da liễu Before/After, phẫu thuật, Flash Sale dịch vụ."
+          "id": "thoi-trang",
+          "name": "Thời trang",
+          "en_name": "Fashion & Style",
+          "icon": "👔",
+          "badge_color": "pink",
+          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
         }
       ],
       "x_factors": [],
@@ -6823,12 +6907,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -7399,12 +7483,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -7549,12 +7633,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -7923,12 +8007,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -7998,12 +8082,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -8301,12 +8385,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -8374,12 +8458,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -8447,12 +8531,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -8520,12 +8604,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -8666,12 +8750,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -8739,12 +8823,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -8885,12 +8969,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -9262,12 +9346,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -9342,12 +9426,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -9423,12 +9507,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -9895,12 +9979,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -9934,7 +10018,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -10045,12 +10129,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "thoi-trang",
-          "name": "Thời trang",
-          "en_name": "Fashion & Style",
-          "icon": "👔",
-          "badge_color": "pink",
-          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -10122,12 +10206,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -10432,12 +10516,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -10742,12 +10826,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -11038,12 +11122,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -11347,12 +11431,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -12591,12 +12675,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -12747,12 +12831,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -12822,12 +12906,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -12899,12 +12983,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "am-thuc",
-          "name": "F&B",
-          "en_name": "Food & Beverage",
-          "icon": "🍜",
-          "badge_color": "amber",
-          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -12974,12 +13058,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -13370,12 +13454,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -13602,12 +13686,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -13904,12 +13988,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
@@ -13984,12 +14068,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
         }
       ],
       "x_factors": [],
@@ -14063,12 +14147,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -14303,12 +14387,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -14384,12 +14468,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -14463,12 +14547,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -14543,12 +14627,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
@@ -14623,12 +14707,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
@@ -14670,7 +14754,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
@@ -14702,12 +14786,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -17704,12 +17788,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -17872,12 +17956,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "thoi-trang",
-          "name": "Thời trang",
-          "en_name": "Fashion & Style",
-          "icon": "👔",
-          "badge_color": "pink",
-          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
+          "id": "ugc",
+          "name": "UGC",
+          "en_name": "UGC & Ads",
+          "icon": "📱",
+          "badge_color": "amber",
+          "desc": "Video quảng cáo UGC sàn TMĐT (Shopee, Lazada...) chuẩn công thức AIDA: Gây chú ý, khơi gợi nhu cầu, thúc đẩy chuyển đổi."
         }
       ],
       "x_factors": [],
@@ -18359,12 +18443,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -19376,12 +19460,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -19867,12 +19951,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -19932,12 +20016,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
@@ -20139,12 +20223,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -23244,12 +23328,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -23406,12 +23490,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -23487,12 +23571,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -23886,12 +23970,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -24204,12 +24288,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [
@@ -24355,12 +24439,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
@@ -24825,12 +24909,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [
@@ -25303,12 +25387,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "am-thuc",
-          "name": "F&B",
-          "en_name": "Food & Beverage",
-          "icon": "🍜",
-          "badge_color": "amber",
-          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -25378,12 +25462,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -26482,12 +26566,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -26557,12 +26641,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -26632,12 +26716,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -26786,12 +26870,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -26863,12 +26947,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "thoi-trang",
-          "name": "Thời trang",
-          "en_name": "Fashion & Style",
-          "icon": "👔",
-          "badge_color": "pink",
-          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [
@@ -26948,12 +27032,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "am-thuc",
-          "name": "F&B",
-          "en_name": "Food & Beverage",
-          "icon": "🍜",
-          "badge_color": "amber",
-          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -27023,12 +27107,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "cong-nghe",
-          "name": "Đồ công nghệ",
-          "en_name": "Tech & Gear",
-          "icon": "📱",
-          "badge_color": "purple",
-          "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -27098,12 +27182,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "thoi-trang",
-          "name": "Thời trang",
-          "en_name": "Fashion & Style",
-          "icon": "👔",
-          "badge_color": "pink",
-          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -27254,12 +27338,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -27335,12 +27419,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -27556,12 +27640,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -27631,12 +27715,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "am-thuc",
-          "name": "F&B",
-          "en_name": "Food & Beverage",
-          "icon": "🍜",
-          "badge_color": "amber",
-          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -27872,12 +27956,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "am-thuc",
-          "name": "F&B",
-          "en_name": "Food & Beverage",
-          "icon": "🍜",
-          "badge_color": "amber",
-          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -28605,12 +28689,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
@@ -29546,12 +29630,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "spa-lam-dep",
-          "name": "Làm đẹp",
-          "en_name": "Beauty & Spa",
-          "icon": "💆",
-          "badge_color": "rose",
-          "desc": "Dịch vụ spa, phòng khám thẩm mỹ, da liễu Before/After, phẫu thuật, Flash Sale dịch vụ."
+          "id": "thoi-trang",
+          "name": "Thời trang",
+          "en_name": "Fashion & Style",
+          "icon": "👔",
+          "badge_color": "pink",
+          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
         }
       ],
       "x_factors": [],
@@ -32102,12 +32186,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
