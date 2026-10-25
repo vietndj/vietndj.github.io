@@ -1,24 +1,24 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 24/10/2026 19:24:59
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:31:19
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "24/10/2026 19:24:59",
-  "last_synced_iso": "2026-10-24T19:24:59.729396",
+  "last_synced_formatted": "25/10/2026 08:31:19",
+  "last_synced_iso": "2026-10-25T08:31:19.454291",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
     "sfx_presets_count": 16,
     "profiles_count": 5,
     "presets_count": 8,
-    "compositions_count": 18,
+    "compositions_count": 21,
     "components_count": 22,
-    "scripts_count": 67,
+    "scripts_count": 68,
     "skills_count": 7,
-    "studios_count": 16,
-    "evolution_entries_count": 12,
+    "studios_count": 17,
+    "evolution_entries_count": 13,
     "ai_hooks_count": 20
   },
   "ai_hooks": [
@@ -70,19 +70,22 @@ window.SKILL_LIVE_DATA = {
       "id": "earth-zoom",
       "aliases": [
         "earth-zoom-v5",
+        "earth-zoom-omni",
+        "whip-snap-zoom",
         "vu-tru"
       ],
-      "name": "Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)",
-      "duration_sec": 5.58,
-      "option_label": "Earth Zoom 4 Tầng V5 (5.58s) — Vũ trụ -> Xuyên mây -> Đô thị -> Đáp mượt vào cảnh mở lời nói (Chuẩn Anti-Jitter PASS 0 lỗi)",
-      "when_to_recommend": "Khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy.",
+      "name": "Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out — Kiểm chứng 6/6 cảnh PASS 0 lỗi)",
+      "duration_sec": 3.12,
+      "option_label": "Earth Zoom V5.2 Omni Whip-Snap (2.7s–3.6s) — Google Flow Omni 1.1 Flash Time-Reverse Single-Anchor + Whip-Snap Speed-Ramp (Đỉnh 14–20 px/f, Zero Alpha-Dissolve, PASS 100% 6/6 cảnh)",
+      "when_to_recommend": "Khi nhân vật đứng/bước nói hoặc nhảy vào khung hình ở ngoài trời (công viên, sân thượng, đường phố, tòa nhà) — tự động dò Frame_Anchor mở lời nói và tạo cú lao xuyên mây 90° xuống thẳng mắt nhân vật (0% mờ chồng lớp).",
       "ideal_motion": [
         "standing_ready",
         "walk_in",
         "squat_to_stand"
       ],
       "ideal_scene": [
-        "outdoor"
+        "outdoor",
+        "outdoor_park_city"
       ],
       "requires_4k_dolly_crop": false,
       "engine": {
@@ -90,23 +93,110 @@ window.SKILL_LIVE_DATA = {
         "entry": "build_and_verify_master"
       },
       "verifier": "verify_smooth_zoom.py",
-      "sfx_profile": "sfx_ex1_dive_0-5.5s.wav kéo khớp thời lượng dive + crossfade sang thoại gốc -16 LUFS",
+      "verifier_script": "verify_smooth_zoom.py",
+      "ref_video": "studios/ref_higgsfield_earth_zoom_4s.mp4",
+      "orig_video": "studios/viet2210_orig_web.mp4",
+      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/earth_zoom_v5_whipsnap_web.mp4",
+      "comparison_videos": [
+        {
+          "label": "① Mẫu Chuẩn Higgsfield (02c_Hook3_Lao_Tu_Bau_Troi_4s)",
+          "src": "studios/ref_higgsfield_earth_zoom_4s.mp4",
+          "kind": "ref"
+        },
+        {
+          "label": "② Case 0 (viet2210) — File Gốc",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "③ Case 0 (viet2210) — Earth Zoom V5.2 Whip-Snap (3.62s • 20.15 px/f)",
+          "src": "studios/earth_zoom_v5_whipsnap_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "④ Clip 1 (IMG_8611 Đứng yên quay đi) — Bản Master (2.71s • 17.61 px/f)",
+          "src": "studios/EZ1_IMG_8611_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑤ Clip 2 (IMG_8609 Đứng yên quay người) — Bản Master (3.12s • 12.14 px/f)",
+          "src": "studios/EZ2_IMG_8609_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑥ Clip 3 (IMG_8610 Nhảy đi qua cam) — Bản Master (3.33s • 14.13 px/f)",
+          "src": "studios/EZ3_IMG_8610_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑦ Clip 4 (IMG_8613 Nhảy ngước lên) — Bản Master (2.88s • 13.02 px/f)",
+          "src": "studios/EZ4_IMG_8613_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑧ Clip 5 (IMG_8608 Nhảy đứng yên) — Bản Master (3.33s • 18.44 px/f)",
+          "src": "studios/EZ5_IMG_8608_web.mp4",
+          "kind": "demo"
+        }
+      ],
+      "sfx_profile": "sfx_ex1_dive_0-5.5s.wav kéo khớp thời lượng dive (2.7s–3.6s) + crossfade sang thoại gốc -16 LUFS",
       "scoring": {
-        "base": 60,
+        "base": 68,
         "motion_bonus": {
-          "standing_ready": 24,
-          "squat_to_stand": 24
+          "standing_ready": 26,
+          "squat_to_stand": 26
         },
         "scene_bonus": {
-          "outdoor_park_city": 15,
-          "outdoor": 15
+          "outdoor_park_city": 18,
+          "outdoor": 18
         },
         "4k_bonus": 0
       },
       "order": 2,
-      "_studio_slug": "",
-      "_web_video": "studios/viet2210_earth_zoom_v2_master.mp4",
-      "_comparison_videos": []
+      "_studio_slug": "studio-ai-hook-earth-zoom.html",
+      "_web_video": "studios/earth_zoom_v5_whipsnap_web.mp4",
+      "_comparison_videos": [
+        {
+          "label": "① Mẫu Chuẩn Higgsfield (02c_Hook3_Lao_Tu_Bau_Troi_4s)",
+          "src": "studios/ref_higgsfield_earth_zoom_4s.mp4",
+          "kind": "ref"
+        },
+        {
+          "label": "② Case 0 (viet2210) — File Gốc",
+          "src": "studios/viet2210_orig_web.mp4",
+          "kind": "orig"
+        },
+        {
+          "label": "③ Case 0 (viet2210) — Earth Zoom V5.2 Whip-Snap (3.62s • 20.15 px/f)",
+          "src": "studios/earth_zoom_v5_whipsnap_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "④ Clip 1 (IMG_8611 Đứng yên quay đi) — Bản Master (2.71s • 17.61 px/f)",
+          "src": "studios/EZ1_IMG_8611_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑤ Clip 2 (IMG_8609 Đứng yên quay người) — Bản Master (3.12s • 12.14 px/f)",
+          "src": "studios/EZ2_IMG_8609_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑥ Clip 3 (IMG_8610 Nhảy đi qua cam) — Bản Master (3.33s • 14.13 px/f)",
+          "src": "studios/EZ3_IMG_8610_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑦ Clip 4 (IMG_8613 Nhảy ngước lên) — Bản Master (2.88s • 13.02 px/f)",
+          "src": "studios/EZ4_IMG_8613_web.mp4",
+          "kind": "demo"
+        },
+        {
+          "label": "⑧ Clip 5 (IMG_8608 Nhảy đứng yên) — Bản Master (3.33s • 18.44 px/f)",
+          "src": "studios/EZ5_IMG_8608_web.mp4",
+          "kind": "demo"
+        }
+      ]
     },
     {
       "schema_version": "3.0",
@@ -1135,6 +1225,16 @@ window.SKILL_LIVE_DATA = {
         "desc": "Đúc từ mẫu Pinterest SuiPlay 0X1 (20.03s / 1.202 frames @ 60fps): Giữ nguyên nhạc gốc, khớp 10 điểm chữ Tiếng Việt (Định nghĩa lại → Edit Video với AI → offline.fedu.vn), Khung Thiết Bị 3D 14 lớp Zoom-Through và 16 cảnh video thực tế cắt theo nhịp trống."
       },
       {
+        "order": 1,
+        "icon": "🌍",
+        "title": "Studio AI Hook: Earth Zoom V5.2 Omni Whip-Snap (Kiểm chứng 6/6 cảnh PASS 0 lỗi)",
+        "badge": "STABLE HOOK V5.2 • 6/6 PASS",
+        "badge_class": "sci",
+        "desc": "Phòng Studio đối chiếu trực tiếp 6 ca thực chiến Earth Zoom V5.2 Omni Whip-Snap (viet2210 + 5 clip AItest2: IMG_8611, IMG_8609, IMG_8610, IMG_8613, IMG_8608) áp dụng cơ chế Time-Reverse Single-Anchor Pull-Out trên Google Flow Omni 1.1 Flash & Whip-Snap Speed-Ramp (2.71s–3.62s).",
+        "source": "studio_ai_hook_earth_zoom.html",
+        "slug": "studio-ai-hook-earth-zoom.html"
+      },
+      {
         "source": "studio_35_kieu_chu_va_phu_de.html",
         "slug": "studio-35-kieu-chu.html",
         "order": 1,
@@ -1216,6 +1316,60 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "earth-zoom-v5-2-omni-whipsnap-stable",
+        "date": "25/10/2026",
+        "title": "Earth Zoom V5.2 Omni Whip-Snap & Trang Riêng 'Hook Ổn Định' (Kiểm Chứng 6/6 Cảnh Thực Tế PASS 0 Lỗi)",
+        "step_target": "buoc-1",
+        "source_thread": "2d960e4a-87e2-4eb8-8b27-350f42f2c0d0",
+        "what": "Đóng gói quy trình Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out trên Google Flow Omni 1.1 Flash + Đường cong tốc độ Whip-Snap 2->3->2->1 + Single-Frame Shutter Blur + Binary-Search Sharpness Restoration). Kiểm chứng thành công trên 6/6 cảnh thực tế (viet2210 + 5 clip AItest2) đạt VERDICT: PASS (0 events) và xuất bản trang riêng 11-hook-on-dinh.html.",
+        "why": "Triệt tiêu 100% lỗi mờ chồng đám mây ở giây 01 (C9_CLOUD_OVERLAP) và bóng ma tán cây đè mặt ở giây 07 (C10_LANDING_GHOST) do gắn 2 ảnh Start+End độc lập.",
+        "how_cmd": "python3 -u ~/.gemini/config/skills/ai-hook/scripts/earth_zoom_omni_engine.py --video \"/duong/dan/video.MOV\" --output \"/duong/dan/out_earth_zoom_v5.mp4\"",
+        "studio_file": "studio_ai_hook_earth_zoom.html",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/earth_zoom_v5_whipsnap_master_overview.jpg",
+            "web_src": "assets/earth-zoom-v5-2-omni-whipsnap-stable/earth_zoom_v5_whipsnap_master_overview.jpg",
+            "caption": "Contact Sheet Overview: Earth Zoom V5.2 Whip-Snap (3.62s • 20.15 px/f • PASS 0 lỗi)"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/five_anchors_sheet.jpg",
+            "web_src": "assets/earth-zoom-v5-2-omni-whipsnap-stable/five_anchors_sheet.jpg",
+            "caption": "5 Frame_Anchor tự động trích xuất từ 5 clip thực chiến trong AItest2"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/qa_EZ1_IMG_8611_overview.jpg",
+            "web_src": "assets/earth-zoom-v5-2-omni-whipsnap-stable/qa_EZ1_IMG_8611_overview.jpg",
+            "caption": "Clip 1 (IMG_8611 - 2.71s Whip-Snap): VERDICT PASS 0 events"
+          }
+        ],
+        "local_videos": [
+          {
+            "label": "Earth Zoom V5.2 Whip-Snap Master (viet2210 - 3.62s)",
+            "src": "studios/earth_zoom_v5_whipsnap_web.mp4"
+          },
+          {
+            "label": "Clip 1 (IMG_8611 - 2.71s)",
+            "src": "studios/EZ1_IMG_8611_web.mp4"
+          },
+          {
+            "label": "Clip 2 (IMG_8609 - 3.12s)",
+            "src": "studios/EZ2_IMG_8609_web.mp4"
+          },
+          {
+            "label": "Clip 3 (IMG_8610 - 3.33s)",
+            "src": "studios/EZ3_IMG_8610_web.mp4"
+          },
+          {
+            "label": "Clip 4 (IMG_8613 - 2.88s)",
+            "src": "studios/EZ4_IMG_8613_web.mp4"
+          },
+          {
+            "label": "Clip 5 (IMG_8608 - 3.33s)",
+            "src": "studios/EZ5_IMG_8608_web.mp4"
+          }
+        ]
+      },
       {
         "id": "ai-hook-timelapse-freeze-v3",
         "date": "2026-10-24",
@@ -2310,11 +2464,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "AI HOOK ROUTER V3.0",
       "desc": "Hệ thống Smart AI Hook Router v3.0 (Zero-Collision Registry hooks.d/ + register_hook.py khóa nguyên tử fcntl.flock) tự động quét 3 giây đầu video gốc và kết xuất 20 chế độ Hook (Xem đầy đủ tại 10-bang-ai-hook.html).",
       "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
-      "size": 50649,
-      "size_formatted": "49.5 KB",
-      "lines_count": 283,
-      "mtime": 1792844699.506818,
-      "mtime_formatted": "24/10/2026 19:24",
+      "size": 52382,
+      "size_formatted": "51.2 KB",
+      "lines_count": 290,
+      "mtime": 1792891879.3674755,
+      "mtime_formatted": "25/10/2026 08:31",
       "headers": [
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
         "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
@@ -4984,6 +5138,36 @@ window.SKILL_LIVE_DATA = {
       "desc": "Remotion Composition React Component 60fps"
     },
     {
+      "name": "Demo12P_V1_10s.tsx",
+      "kind": "composition",
+      "size": 36468,
+      "size_formatted": "35.6 KB",
+      "lines": 939,
+      "mtime": 1792890428.9912655,
+      "mtime_formatted": "25/10/2026 08:07",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
+      "name": "Demo12P_V2_10s.tsx",
+      "kind": "composition",
+      "size": 30083,
+      "size_formatted": "29.4 KB",
+      "lines": 834,
+      "mtime": 1792890495.8823364,
+      "mtime_formatted": "25/10/2026 08:08",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
+      "name": "Demo12P_V3_10s.tsx",
+      "kind": "composition",
+      "size": 27294,
+      "size_formatted": "26.7 KB",
+      "lines": 714,
+      "mtime": 1792890436.008761,
+      "mtime_formatted": "25/10/2026 08:07",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
       "name": "EventVideo.tsx",
       "kind": "composition",
       "size": 6358,
@@ -5631,6 +5815,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "scaffold_motion_project.py — Trình khởi tạo tự động dự án Motion Graphic 60fps từ Video Nói + SRT."
     },
     {
+      "name": "verify_12_principles.py",
+      "skill_id": "motion",
+      "skill_name": "Motion Studio 60fps (Universal Archetypes)",
+      "size": 20566,
+      "size_formatted": "20.1 KB",
+      "lines": 470,
+      "mtime": 1792890708.5201998,
+      "mtime_formatted": "25/10/2026 08:11",
+      "desc": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ (verify_12_principles.py)"
+    },
+    {
       "name": "verify_motion_deliverable.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 60fps (Universal Archetypes)",
@@ -5788,12 +5983,12 @@ window.SKILL_LIVE_DATA = {
       "name": "earth_zoom_omni_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "size": 20468,
-      "size_formatted": "20.0 KB",
-      "lines": 469,
-      "mtime": 1792838339.7795541,
-      "mtime_formatted": "24/10/2026 17:38",
-      "desc": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
+      "size": 31234,
+      "size_formatted": "30.5 KB",
+      "lines": 692,
+      "mtime": 1792889573.2714963,
+      "mtime_formatted": "25/10/2026 07:52",
+      "desc": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
     },
     {
       "name": "exploded_assembly_engine.py",
@@ -5887,12 +6082,12 @@ window.SKILL_LIVE_DATA = {
       "name": "jib_down_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "size": 36583,
-      "size_formatted": "35.7 KB",
-      "lines": 774,
-      "mtime": 1792839566.4083023,
-      "mtime_formatted": "24/10/2026 17:59",
-      "desc": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
+      "size": 31164,
+      "size_formatted": "30.4 KB",
+      "lines": 636,
+      "mtime": 1792849245.8908112,
+      "mtime_formatted": "24/10/2026 20:40",
+      "desc": "Jib-Down Engine V4.2 (`jib_down_engine.py`) — Google Flow Omni 1.1 Flash & Zero-Blur Self-Learning Verifier"
     },
     {
       "name": "katana_palette_engine.py",
@@ -5942,11 +6137,11 @@ window.SKILL_LIVE_DATA = {
       "name": "rooftop_jump_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "size": 38893,
-      "size_formatted": "38.0 KB",
-      "lines": 793,
-      "mtime": 1792844214.3784544,
-      "mtime_formatted": "24/10/2026 19:16",
+      "size": 42898,
+      "size_formatted": "41.9 KB",
+      "lines": 855,
+      "mtime": 1792847867.9506156,
+      "mtime_formatted": "24/10/2026 20:17",
       "desc": "Rooftop Jump Engine V4 (`rooftop_jump_engine.py`) — Google Flow Omni 1.1 Flash & Self-Learning Verifier (Gemini × CLAUDE2)"
     },
     {
@@ -6074,11 +6269,11 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_smooth_zoom.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "size": 26938,
-      "size_formatted": "26.3 KB",
-      "lines": 467,
-      "mtime": 1792820697.499675,
-      "mtime_formatted": "24/10/2026 12:44",
+      "size": 27013,
+      "size_formatted": "26.4 KB",
+      "lines": 468,
+      "mtime": 1792887911.502094,
+      "mtime_formatted": "25/10/2026 07:25",
       "desc": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
     },
     {
@@ -6120,17 +6315,81 @@ window.SKILL_LIVE_DATA = {
       "name": "ai-hook/SKILL.md",
       "type": "Markdown Spec",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792844699.506818,
-      "mtime_formatted": "24/10/2026 19:24",
-      "detail": "283 dòng • 6 mục chính"
+      "mtime": 1792891879.3674755,
+      "mtime_formatted": "25/10/2026 08:31",
+      "detail": "290 dòng • 6 mục chính"
     },
     {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792844699.274596,
-      "mtime_formatted": "24/10/2026 19:24",
-      "detail": "12 quy chuẩn • 16 studios"
+      "mtime": 1792891879.3110983,
+      "mtime_formatted": "25/10/2026 08:31",
+      "detail": "13 quy chuẩn • 17 studios"
+    },
+    {
+      "name": "scripts/verify_12_principles.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792890708.5201998,
+      "mtime_formatted": "25/10/2026 08:11",
+      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ (verify_12_principles.py)"
+    },
+    {
+      "name": "compositions/Demo12P_V2_10s.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792890495.8823364,
+      "mtime_formatted": "25/10/2026 08:08",
+      "detail": "834 dòng • Composition"
+    },
+    {
+      "name": "compositions/Demo12P_V3_10s.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792890436.008761,
+      "mtime_formatted": "25/10/2026 08:07",
+      "detail": "714 dòng • Composition"
+    },
+    {
+      "name": "compositions/Demo12P_V1_10s.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792890428.9912655,
+      "mtime_formatted": "25/10/2026 08:07",
+      "detail": "939 dòng • Composition"
+    },
+    {
+      "name": "scripts/earth_zoom_omni_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792889573.2714963,
+      "mtime_formatted": "25/10/2026 07:52",
+      "detail": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
+    },
+    {
+      "name": "scripts/verify_smooth_zoom.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792887911.502094,
+      "mtime_formatted": "25/10/2026 07:25",
+      "detail": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
+    },
+    {
+      "name": "scripts/jib_down_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792849245.8908112,
+      "mtime_formatted": "24/10/2026 20:40",
+      "detail": "Jib-Down Engine V4.2 (`jib_down_engine.py`) — Google Flow Omni 1.1 Flash & Zero-Blur Self-Learning Verifier"
+    },
+    {
+      "name": "scripts/rooftop_jump_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
+      "mtime": 1792847867.9506156,
+      "mtime_formatted": "24/10/2026 20:17",
+      "detail": "Rooftop Jump Engine V4 (`rooftop_jump_engine.py`) — Google Flow Omni 1.1 Flash & Self-Learning Verifier (Gemini × CLAUDE2)"
     },
     {
       "name": "scripts/verify_timelapse_freeze.py",
@@ -6157,14 +6416,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
     },
     {
-      "name": "scripts/rooftop_jump_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792844214.3784544,
-      "mtime_formatted": "24/10/2026 19:16",
-      "detail": "Rooftop Jump Engine V4 (`rooftop_jump_engine.py`) — Google Flow Omni 1.1 Flash & Self-Learning Verifier (Gemini × CLAUDE2)"
-    },
-    {
       "name": "scripts/giant_grab_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
@@ -6181,28 +6432,12 @@ window.SKILL_LIVE_DATA = {
       "detail": "AI Hook Atomic Registry Manager (`register_hook.py`) — Thiết kế Gemini × CLAUDE2 (`claude_pro_cc944965.md`)"
     },
     {
-      "name": "scripts/jib_down_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792839566.4083023,
-      "mtime_formatted": "24/10/2026 17:59",
-      "detail": "Jib-Down Engine (`jib_down_engine.py`) — Hạ Cần Cẩu Máy Quay Từ Trên Cao Xuống Ngang Mắt (2.30s Hook)"
-    },
-    {
       "name": "scripts/glow_trace_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
       "mtime": 1792839499.2475514,
       "mtime_formatted": "24/10/2026 17:58",
       "detail": "AI Hook #7 — Glow Trace (Dual Arclength Neon Laser + SDF Reveal) (`glow-trace`) Engine."
-    },
-    {
-      "name": "scripts/earth_zoom_omni_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792838339.7795541,
-      "mtime_formatted": "24/10/2026 17:38",
-      "detail": "Earth Zoom V5 Omni Self-Learning Engine (CLAUDE2 Verified Architecture)"
     },
     {
       "name": "scripts/display_transition_engine.py",
@@ -6315,46 +6550,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792830002.0189393,
       "mtime_formatted": "24/10/2026 15:20",
       "detail": "AI Hook #6 — Smoke Reveal Engine (Curl-Noise Volumetric Smoke)"
-    },
-    {
-      "name": "scripts/hook_scanner.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792829082.9184892,
-      "mtime_formatted": "24/10/2026 15:04",
-      "detail": "AI Hook Scanner (`hook_scanner.py`) — Bộ giải phẫu video đầu vào & gợi ý Hook thông minh"
-    },
-    {
-      "name": "scripts/verify_intermission_curtain.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792828462.419022,
-      "mtime_formatted": "24/10/2026 14:54",
-      "detail": "Bộ Kiểm Định 6 Cổng Verifier (G0..G5) theo chuẩn Hội ý CLAUDE2"
-    },
-    {
-      "name": "scripts/hookreg.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792828448.4827209,
-      "mtime_formatted": "24/10/2026 14:54",
-      "detail": "AI Hook Registry v3.0 Library (`hookreg.py`) — Thiết kế Gemini × CLAUDE2 (`claude_pro_cc944965.md`)"
-    },
-    {
-      "name": "scripts/intermission_curtain_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792828445.8851185,
-      "mtime_formatted": "24/10/2026 14:54",
-      "detail": "Intermission Curtain Engine (intermission_curtain_engine.py) — Kỹ năng ai-hook"
-    },
-    {
-      "name": "scripts/verify_jib_down.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze, point-cloud & +10 hooks)",
-      "mtime": 1792827694.4328005,
-      "mtime_formatted": "24/10/2026 14:41",
-      "detail": "Anti-Jitter / Anti-Stutter QA Verifier for Vertical-Jib / AI-Hook renders."
     }
   ]
 };

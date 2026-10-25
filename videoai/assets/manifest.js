@@ -133,6 +133,17 @@ window.HUB = {
       stage: "motion",
       icon: "🎣",
       q: "Tra cứu trực tiếp toàn bộ kho AI Hook tự động cập nhật từ hooks.d/*.json, xem video Master, mở Studio & copy lệnh 1 chạm"
+    },
+    {
+      id: "hook-on-dinh",
+      file: "11-hook-on-dinh.html",
+      group: "ref",
+      n: "11",
+      title: "Hook Ổn Định (Đã Kiểm Chứng Mọi Cảnh)",
+      short: "Hook Ổn Định",
+      stage: "motion",
+      icon: "🛡️",
+      q: "Trung tâm lưu trữ các chế độ AI Hook đã qua vòng tự học Google Flow Omni 1.1 & kiểm chứng hàng loạt trên nhiều bối cảnh/động tác (PASS 100% Verifier 0 lỗi)"
     }
   ]
 };
