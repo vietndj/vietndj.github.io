@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 08:59:55
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 09:02:40
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 08:59:55",
-  "last_synced_iso": "2026-10-25T08:59:55.784108",
+  "last_synced_formatted": "25/10/2026 09:02:40",
+  "last_synced_iso": "2026-10-25T09:02:40.474735",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
