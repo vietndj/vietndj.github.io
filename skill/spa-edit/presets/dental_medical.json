@@ -1,0 +1,113 @@
+{
+  "preset_id": "dental_medical",
+  "version": "10.0.0",
+  "display_name": "Phong Cách Tiến Nha Sĩ V10 (Nha Khoa / Bác Sĩ Chuyên Khoa / Phòng Khám Y Khoa)",
+  "resolution": [1080, 1920],
+  "fps": 30.0,
+  "palette": {
+    "paper_bg_rgb": [245, 242, 235],
+    "ink_rgb": [20, 34, 46],
+    "accent_primary_rgb": [56, 189, 248],
+    "accent_secondary_rgb": [110, 231, 183],
+    "symptom_coral_rgb": [248, 113, 113],
+    "highlight_gold_rgb": [251, 191, 36],
+    "card_bg_rgba": [16, 26, 38, 218],
+    "outro_bg_rgb": [8, 17, 26]
+  },
+  "camera_eye_lock": {
+    "target_eye_xy": [540.0, 650.0],
+    "base_scale": 1.24,
+    "zoom_118_scale": 1.38,
+    "zoom_120_scale": 1.42,
+    "whip_snap_duration_sec": 0.28,
+    "whip_snap_frames": 8.5,
+    "whip_snap_exponent": 3.8,
+    "unsharp_mask_amount": 1.20,
+    "unsharp_mask_sigma": 1.05,
+    "min_static_frame_ratio": 0.80,
+    "min_aroll_contiguous_dwell_sec": 3.0,
+    "cut_continuity_cluster_lock": true
+  },
+  "subtitle_spec": {
+    "style_code": "5B_FROSTED_SURGICAL_SLATE_DUAL_SEMANTIC",
+    "regular_font": "FDAeonik-Medium.ttf",
+    "regular_size_px": 46,
+    "highlight_font": "SVN-Acta-BoldItalic.ttf",
+    "highlight_size_px": 45,
+    "locked_x_height_px": 24.0,
+    "line_spacing_px": 56,
+    "card_top_y": 1586,
+    "card_bottom_y": 1736,
+    "aroll_card_bg_rgba": [16, 26, 38, 218],
+    "aroll_text_rgb": [245, 242, 235],
+    "aroll_highlight_rgb": [56, 189, 248],
+    "aroll_solution_rgb": [110, 231, 183],
+    "aroll_symptom_rgb": [248, 113, 113],
+    "atlas_card_bg_rgb": [245, 242, 235],
+    "atlas_text_rgb": [20, 34, 46],
+    "atlas_highlight_rgb": [15, 110, 102]
+  },
+  "opening_motion_spec": {
+    "single_content_frame_rule": true,
+    "mg1_stat_card": "MG1_DYNAMIC_COUNTER_BARS",
+    "mg2_roadmap_card": "MG2_VERTICAL_SPINE_AXIS_X158"
+  },
+  "scientific_atlas_spec": {
+    "style_code": "SCIENTIFIC_ATLAS_V2_CLINICAL_NAVY_TEAL",
+    "paper_bg_hex": "#F5F2EB",
+    "ink_hex": "#14222E",
+    "pathology_coral_hex": "#C63E31",
+    "surgical_teal_hex": "#0F6E66",
+    "callout_stagger_sync_to_voice": true
+  },
+  "broll_rules": {
+    "max_beat_duration_sec": 2.40,
+    "unique_broll_usage_max_count": 1,
+    "subpixel_warp_affine": true,
+    "single_video_fallback": "mg_roadmap_and_atlas_2d"
+  },
+  "cta_in_clip_spec": {
+    "style_code": "CTA_MEDICAL_03_PATIENT_DOCTOR_QA_BUBBLE",
+    "safe_zone_y": [1080, 1540],
+    "stages": ["patient_question_bubble", "doctor_verified_reply_bubble", "chasing_cyan_arrows"]
+  },
+  "brand_2tier_spec": {
+    "tier1_in_clip": {
+      "style_code": "BRAND_01_MEDICAL_CREDENTIAL_PILL",
+      "visibility_rule": "cta_section_only",
+      "safe_zone_y": [54, 148],
+      "shimmer_interval_sec": 4.0,
+      "shimmer_max_alpha": 24
+    },
+    "tier2_post_clip_outro": {
+      "style_code": "OUTRO_MEDICAL_01_SURGICAL_SLATE",
+      "default_option": "option_1_pure_brand",
+      "bg_hex": "#08111A",
+      "duration_sec": 3.00,
+      "crossfade_frames": 8
+    }
+  },
+  "before_after_spec": {
+    "style_code": "WHITE_IVORY_MEDICAL_SBS_V10",
+    "canvas_bg_hex": "#F5F2EB",
+    "show_top_topic_pill": true,
+    "show_right_specific_title": true,
+    "draw_left_bottom_white_box": false
+  },
+  "audio_spec": {
+    "voice_volume": 1.0,
+    "sfx_volume": 0.085,
+    "pre_cut_riser_lead_sec": 1.25,
+    "max_risers_per_video": 3,
+    "voice_ducking": false,
+    "outro_pad_sec": 3.00
+  },
+  "verification_gates": {
+    "gate1_max_rli": 0.85,
+    "gate2_min_static_aroll_ratio": 0.80,
+    "gate3_max_fake_stats": 0,
+    "gate4_max_transcript_wer": 0.0,
+    "gate5_max_eye_drift_px": 4.0,
+    "gate6_max_broll_reuse": 1
+  }
+}
