@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 13:45:46
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 13:46:51
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 13:45:46",
-  "last_synced_iso": "2026-10-25T13:45:46.909929",
+  "last_synced_formatted": "25/10/2026 13:46:51",
+  "last_synced_iso": "2026-10-25T13:46:51.600643",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -759,7 +759,7 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 9,
       "_studio_slug": "studio-ai-hook-timelapse-freeze.html",
-      "_web_video": "studios/viet2210_timelapse_freeze_master.mp4",
+      "_web_video": "studios/footageai1_timelapse_freeze_web.mp4",
       "_web_poster": "studios/thumb_hook_timelapse-freeze.jpg",
       "_comparison_videos": [
         {
@@ -771,6 +771,11 @@ window.SKILL_LIVE_DATA = {
           "label": "② Case 1 — File Gốc (footageai1.mp4)",
           "src": "studios/footageai1_orig_web.mp4",
           "kind": "orig"
+        },
+        {
+          "label": "③ Case 1 — Bản Demo Master (footageai1_timelapse_freeze)",
+          "src": "studios/footageai1_timelapse_freeze_web.mp4",
+          "kind": "demo"
         },
         {
           "label": "④ Case 2 — File Gốc (viet2210.MOV)",
@@ -2774,8 +2779,8 @@ window.SKILL_LIVE_DATA = {
       "size": 54491,
       "size_formatted": "53.2 KB",
       "lines_count": 291,
-      "mtime": 1792910746.7257638,
-      "mtime_formatted": "25/10/2026 13:45",
+      "mtime": 1792910811.5272677,
+      "mtime_formatted": "25/10/2026 13:46",
       "headers": [
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
         "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
@@ -6653,8 +6658,8 @@ window.SKILL_LIVE_DATA = {
       "name": "ai-hook/SKILL.md",
       "type": "Markdown Spec",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792910746.7257638,
-      "mtime_formatted": "25/10/2026 13:45",
+      "mtime": 1792910811.5272677,
+      "mtime_formatted": "25/10/2026 13:46",
       "detail": "291 dòng • 6 mục chính"
     },
     {
