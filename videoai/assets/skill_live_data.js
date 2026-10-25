@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 12:38:07
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 12:43:17
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 12:38:07",
-  "last_synced_iso": "2026-10-25T12:38:07.237006",
+  "last_synced_formatted": "25/10/2026 12:43:17",
+  "last_synced_iso": "2026-10-25T12:43:17.762259",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -1990,9 +1990,9 @@ window.SKILL_LIVE_DATA = {
           {
             "src": "studios/b4_11_color_palette_fa3_web.mp4",
             "fallback_url": "studios/b4_11_color_palette_fa3_web.mp4",
-            "badge": "② [ARCHIVE] #01 COLOR PALETTE PANTONE (FA3 • SSIM 0.9964)",
-            "title": "Thử nghiệm 11/12: b4_11_color_palette_fa3.mp4 (Bản thử trên fa3)",
-            "desc": "Bản thử nghiệm Pantone Wheel & Tilted Swatch Cards trên footageai3.mp4 (ngồi xổm rồi đứng dậy bước tới), khóa điểm đáp Frame #68 (2.83s, G0 SSIM 0.9964, G1 ΔE 38.88)."
+            "badge": "② [ARCHIVE V3 ZERO-JITTER] #01 COLOR PALETTE PANTONE (FA3 • PASS 11/11 GATES)",
+            "title": "Thử nghiệm 11/12 (V3 Mượt 1 Chiều): b4_11_color_palette_fa3.mp4 (Hội ý CLAUDE2)",
+            "desc": "Nâng cấp V3 Single-Stream Constant-Velocity Turntable + DIS Optical Flow Sub-frame Interpolation + Luma-Preserving CIE LAB Radial Recolor (G10 Reversals = 0, Near-Static = 0, Spine Ratio = 1.594 <= 1.75, G0 SSIM = 0.9985)."
           },
           {
             "src": "studios/b4_12_pop_cutout_fa1_web.mp4",
@@ -5504,11 +5504,11 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "PaageOffline0711_30fps.tsx",
       "kind": "composition",
-      "size": 122063,
+      "size": 122064,
       "size_formatted": "119.2 KB",
       "lines": 3278,
-      "mtime": 1792906678.6364272,
-      "mtime_formatted": "25/10/2026 12:37",
+      "mtime": 1792906693.2752016,
+      "mtime_formatted": "25/10/2026 12:38",
       "desc": "Remotion Composition React Component 60fps"
     },
     {
@@ -6201,11 +6201,11 @@ window.SKILL_LIVE_DATA = {
       "name": "ai_hook_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 57246,
-      "size_formatted": "55.9 KB",
-      "lines": 1286,
-      "mtime": 1792906643.444101,
-      "mtime_formatted": "25/10/2026 12:37",
+      "size": 57670,
+      "size_formatted": "56.3 KB",
+      "lines": 1302,
+      "mtime": 1792906747.359223,
+      "mtime_formatted": "25/10/2026 12:39",
       "desc": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
@@ -6322,11 +6322,11 @@ window.SKILL_LIVE_DATA = {
       "name": "hero_cam_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 44399,
-      "size_formatted": "43.4 KB",
-      "lines": 999,
-      "mtime": 1792906570.4899874,
-      "mtime_formatted": "25/10/2026 12:36",
+      "size": 45134,
+      "size_formatted": "44.1 KB",
+      "lines": 1012,
+      "mtime": 1792906926.1470191,
+      "mtime_formatted": "25/10/2026 12:42",
       "desc": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
     },
     {
@@ -6596,28 +6596,36 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
-      "name": "compositions/PaageOffline0711_30fps.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792906678.6364272,
-      "mtime_formatted": "25/10/2026 12:37",
-      "detail": "3278 dòng • Composition"
+      "name": "scripts/hero_cam_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792906926.1470191,
+      "mtime_formatted": "25/10/2026 12:42",
+      "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
+    },
+    {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792906841.618915,
+      "mtime_formatted": "25/10/2026 12:40",
+      "detail": "13 quy chuẩn • 17 studios"
     },
     {
       "name": "scripts/ai_hook_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792906643.444101,
-      "mtime_formatted": "25/10/2026 12:37",
+      "mtime": 1792906747.359223,
+      "mtime_formatted": "25/10/2026 12:39",
       "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
-      "name": "scripts/hero_cam_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792906570.4899874,
-      "mtime_formatted": "25/10/2026 12:36",
-      "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
+      "name": "compositions/PaageOffline0711_30fps.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792906693.2752016,
+      "mtime_formatted": "25/10/2026 12:38",
+      "detail": "3278 dòng • Composition"
     },
     {
       "name": "scripts/jib_down_engine.py",
@@ -6738,14 +6746,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792894010.4366152,
       "mtime_formatted": "25/10/2026 09:06",
       "detail": "Anti-Jitter / Anti-Stutter QA Verifier for Vertical-Jib / AI-Hook renders."
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792891879.3110983,
-      "mtime_formatted": "25/10/2026 08:31",
-      "detail": "13 quy chuẩn • 17 studios"
     },
     {
       "name": "compositions/Demo12P_V2_10s.tsx",
