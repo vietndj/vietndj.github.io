@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 11:04:59
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 11:36:02
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 11:04:59",
-  "last_synced_iso": "2026-10-25T11:04:59.479693",
+  "last_synced_formatted": "25/10/2026 11:36:02",
+  "last_synced_iso": "2026-10-25T11:36:02.023771",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -5504,11 +5504,11 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "PaageOffline0711_30fps.tsx",
       "kind": "composition",
-      "size": 98147,
-      "size_formatted": "95.8 KB",
-      "lines": 2623,
-      "mtime": 1792900810.5067065,
-      "mtime_formatted": "25/10/2026 11:00",
+      "size": 101059,
+      "size_formatted": "98.7 KB",
+      "lines": 2700,
+      "mtime": 1792902663.4039114,
+      "mtime_formatted": "25/10/2026 11:31",
       "desc": "Remotion Composition React Component 60fps"
     },
     {
@@ -6102,11 +6102,11 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_12_principles.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 60fps (Universal Archetypes)",
-      "size": 23804,
+      "size": 23744,
       "size_formatted": "23.2 KB",
-      "lines": 590,
-      "mtime": 1792900782.1874807,
-      "mtime_formatted": "25/10/2026 10:59",
+      "lines": 589,
+      "mtime": 1792901770.7037838,
+      "mtime_formatted": "25/10/2026 11:16",
       "desc": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
     },
     {
@@ -6599,16 +6599,16 @@ window.SKILL_LIVE_DATA = {
       "name": "compositions/PaageOffline0711_30fps.tsx",
       "type": "Remotion .TSX",
       "skill": "Remotion Studio 60fps",
-      "mtime": 1792900810.5067065,
-      "mtime_formatted": "25/10/2026 11:00",
-      "detail": "2623 dòng • Composition"
+      "mtime": 1792902663.4039114,
+      "mtime_formatted": "25/10/2026 11:31",
+      "detail": "2700 dòng • Composition"
     },
     {
       "name": "scripts/verify_12_principles.py",
       "type": "Python Script",
       "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792900782.1874807,
-      "mtime_formatted": "25/10/2026 10:59",
+      "mtime": 1792901770.7037838,
+      "mtime_formatted": "25/10/2026 11:16",
       "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
     },
     {
