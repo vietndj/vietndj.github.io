@@ -20,7 +20,7 @@
           <em>Trung tâm tra cứu trực tuyến toàn bộ các chế độ mở màn AI Hook trong kỹ năng <code>ai-hook</code> — Tự động cập nhật ngay lập tức mỗi khi anh Việt yêu cầu "cập nhật thêm vào" mà không bao giờ đè file.</em>
         </p>
         <p style="font-family:var(--sans); font-size:15px; line-height:1.6; color:var(--mute); margin-bottom:0;">
-          Đồng bộ trực tiếp từ thư mục <code>~/.gemini/config/skills/ai-hook/hooks.d/*.json</code> lúc <strong style="color:var(--ink);">24/10/2026 19:24:59</strong>. Đường dẫn chuyên biệt: <a href="https://videoai.fedu.vn/10-bang-ai-hook.html" style="font-weight:700; color:#0284c7;">videoai.fedu.vn/10-bang-ai-hook.html</a> (hoặc link ngắn <a href="https://videoai.fedu.vn/ai-hook.html" style="font-weight:700; color:#0284c7;">videoai.fedu.vn/ai-hook.html</a>).
+          Đồng bộ trực tiếp từ thư mục <code>~/.gemini/config/skills/ai-hook/hooks.d/*.json</code> lúc <strong style="color:var(--ink);">25/10/2026 08:31:19</strong>. Đường dẫn chuyên biệt: <a href="https://videoai.fedu.vn/10-bang-ai-hook.html" style="font-weight:700; color:#0284c7;">videoai.fedu.vn/10-bang-ai-hook.html</a> (hoặc link ngắn <a href="https://videoai.fedu.vn/ai-hook.html" style="font-weight:700; color:#0284c7;">videoai.fedu.vn/ai-hook.html</a>).
         </p>
 
         <div class="proof-grid">
@@ -46,6 +46,10 @@
             Mỗi khi có một hiệu ứng Hook mới đạt chuẩn Verifier, Agent chỉ cần tạo 1 file manifest độc lập tại <code>~/.gemini/config/skills/ai-hook/hooks.d/&lt;id&gt;.json</code> và chạy lệnh duy nhất:
             <code style="background:#e0f2fe; padding:2px 6px; border-radius:4px; font-weight:700;">python3 ~/.gemini/config/skills/ai-hook/scripts/register_hook.py rebuild --deploy</code>
             &rarr; Hệ thống tự động biên dịch <code>hooks_registry.json</code>, cập nhật bảng trong <code>SKILL.md</code>, đồng bộ video demo sang trang này và đẩy thẳng lên <strong>videoai.fedu.vn</strong>!
+          </div>
+          <div style="margin-top:12px; padding-top:12px; border-top:1px dashed #7dd3fc; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <span style="font:700 13.5px var(--sans); color:#0f172a;">🛡️ Xem riêng các mẫu <strong>Hook Ổn Định</strong> đã kiểm chứng hàng loạt trên 6/6 bối cảnh thực tế (PASS 100% Verifier 0 lỗi):</span>
+            <a href="11-hook-on-dinh.html" style="font:700 13px var(--sans); color:#fff; background:#15803d; padding:7px 14px; border-radius:8px; text-decoration:none;">🛡️ Mở Trang Riêng: Hook Ổn Định (11-hook-on-dinh.html) &rarr;</a>
           </div>
         </div>
       </div>
@@ -106,19 +110,19 @@
           </td>
         </tr>
         
-        <tr class="hook-row" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="earth-zoom earth-zoom-v5 vu-tru earth zoom 4 tầng anti-jitter v5 (vũ trụ -> mây -> đô thị -> cảnh thật) khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy. standing_ready, walk_in, squat_to_stand outdoor" style="border-bottom:1px solid var(--line);">
+        <tr class="hook-row" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor, outdoor_park_city" data-search="earth-zoom earth-zoom-v5 earth-zoom-omni whip-snap-zoom vu-tru earth zoom v5.2 omni whip-snap (time-reverse single-anchor pull-out — kiểm chứng 6/6 cảnh pass 0 lỗi) khi nhân vật đứng/bước nói hoặc nhảy vào khung hình ở ngoài trời (công viên, sân thượng, đường phố, tòa nhà) — tự động dò frame_anchor mở lời nói và tạo cú lao xuyên mây 90° xuống thẳng mắt nhân vật (0% mờ chồng lớp). standing_ready, walk_in, squat_to_stand outdoor, outdoor_park_city" style="border-bottom:1px solid var(--line);">
           <td style="padding:12px 10px; font:800 13px var(--mono); color:var(--mute); text-align:center;">#02</td>
           <td style="padding:12px 10px;">
             <div style="font:800 14px var(--mono); color:#1d4ed8; background:#eff6ff; display:inline-block; padding:3px 9px; border-radius:6px; border:1px solid #bfdbfe; margin-bottom:4px;">earth-zoom</div>
-            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>earth-zoom-v5</code>, <code>vu-tru</code></div>
+            <div style="font:400 11.5px var(--mono); color:var(--mute);">Aliases: <code>earth-zoom-v5</code>, <code>earth-zoom-omni</code>, <code>whip-snap-zoom</code>, <code>vu-tru</code></div>
           </td>
           <td style="padding:12px 10px;">
-            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)</div>
-            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy.</div>
+            <div style="font:700 14.5px/1.35 var(--sans); color:var(--ink); margin-bottom:4px;">Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out — Kiểm chứng 6/6 cảnh PASS 0 lỗi)</div>
+            <div style="font:400 13px/1.45 var(--sans); color:var(--ink2);">Khi nhân vật đứng/bước nói hoặc nhảy vào khung hình ở ngoài trời (công viên, sân thượng, đường phố, tòa nhà) — tự động dò Frame_Anchor mở lời nói và tạo cú lao xuyên mây 90° xuống thẳng mắt nhân vật (0% mờ chồng lớp).</div>
           </td>
           <td style="padding:12px 10px; font:700 12.5px var(--mono); color:#15803d; white-space:nowrap;">
-            ⏱️ 5.58s
-            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor</div>
+            ⏱️ 3.12s
+            <div style="font:500 11px var(--mono); color:var(--mute); margin-top:4px;">outdoor, outdoor_park_city</div>
           </td>
           <td style="padding:12px 10px; font:500 11.5px var(--mono); color:var(--ink2);">
             <div>⚙️ <code>earth_zoom_omni_engine.py</code></div>
@@ -129,7 +133,13 @@
               
           <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset earth-zoom'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
         
-          <button type="button" onclick="openHookVideoModal('studios/viet2210_earth_zoom_v2_master.mp4', 'earth-zoom (Demo Master) — Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Demo</button>
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-earth-zoom.html', 'Studio AI Hook: earth-zoom')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio (Gốc &amp; Demo)</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/earth_zoom_v5_whipsnap_web.mp4', 'earth-zoom (Demo Master) — Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out — Kiểm chứng 6/6 cảnh PASS 0 lỗi)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Demo</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_orig_web.mp4', 'earth-zoom — ② Case 0 (viet2210) — File Gốc')" style="font:700 11.5px var(--sans); color:#0f172a; background:#e0f2fe; border:1px solid #38bdf8; padding:5px 10px; border-radius:6px; cursor:pointer;">🎬 File Gốc</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/ref_higgsfield_earth_zoom_4s.mp4', 'earth-zoom — ① Mẫu Chuẩn Higgsfield (02c_Hook3_Lao_Tu_Bau_Troi_4s)')" style="font:700 11.5px var(--sans); color:#0f172a; background:#f1f5f9; border:1px solid #94a3b8; padding:5px 10px; border-radius:6px; cursor:pointer;">🎞️ Mẫu Ref</button>
             
             </div>
           </td>
@@ -713,26 +723,64 @@
           </div>
         </div>
         
-        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor" data-search="earth-zoom earth-zoom-v5 vu-tru earth zoom 4 tầng anti-jitter v5 (vũ trụ -> mây -> đô thị -> cảnh thật) khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy. standing_ready, walk_in, squat_to_stand outdoor" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="matrix-card hook-card" data-motion="standing_ready, walk_in, squat_to_stand" data-scene="outdoor, outdoor_park_city" data-search="earth-zoom earth-zoom-v5 earth-zoom-omni whip-snap-zoom vu-tru earth zoom v5.2 omni whip-snap (time-reverse single-anchor pull-out — kiểm chứng 6/6 cảnh pass 0 lỗi) khi nhân vật đứng/bước nói hoặc nhảy vào khung hình ở ngoài trời (công viên, sân thượng, đường phố, tòa nhà) — tự động dò frame_anchor mở lời nói và tạo cú lao xuyên mây 90° xuống thẳng mắt nhân vật (0% mờ chồng lớp). standing_ready, walk_in, squat_to_stand outdoor, outdoor_park_city" style="display:flex; flex-direction:column; justify-content:space-between;">
           <div>
             <div class="matrix-header" style="margin-bottom:10px;">
               <div class="matrix-title">
                 <span style="font:800 13px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px;">#02 • earth-zoom</span>
               </div>
-              <span class="matrix-badge motion">5.58s • outdoor</span>
+              <span class="matrix-badge motion">3.12s • outdoor, outdoor_park_city</span>
             </div>
-            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)</h3>
-            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng/bước nói ở ngoài trời (công viên, đường phố, tòa nhà) hoặc cắt từ sau nhịp đứng thẳng dậy.</p>
+            <h3 style="margin:0 0 8px; font:700 16.5px/1.35 var(--sans); color:var(--ink);">Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out — Kiểm chứng 6/6 cảnh PASS 0 lỗi)</h3>
+            <p style="font:400 13.5px/1.55 var(--sans); color:var(--ink2); margin:0 0 12px;">Khi nhân vật đứng/bước nói hoặc nhảy vào khung hình ở ngoài trời (công viên, sân thượng, đường phố, tòa nhà) — tự động dò Frame_Anchor mở lời nói và tạo cú lao xuyên mây 90° xuống thẳng mắt nhân vật (0% mờ chồng lớp).</p>
             
-            <div style="aspect-ratio:9/16; max-height:380px; width:100%; background:#050507; border-radius:10px; overflow:hidden; margin-bottom:12px; border:1px solid #cbd5e1;">
-              <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
-                <source src="studios/viet2210_earth_zoom_v2_master.mp4" type="video/mp4">
-              </video>
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:10px; padding:10px; margin-bottom:12px;">
+              <div style="font:700 12px var(--sans); color:#0f172a; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
+                <span>🎬 Đối Chiếu Trực Tiếp: File Gốc (Trái) &harr; Bản Demo Master (Phải)</span>
+                <span style="font:700 10.5px var(--mono); color:#15803d; background:#dcfce7; padding:2px 6px; border-radius:4px;">PASS 100%</span>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+                <div style="background:#050507; border-radius:8px; overflow:hidden; border:1px solid #38bdf8;">
+                  <div style="padding:4px 8px; background:#0c4a6e; color:#e0f2fe; font:700 10.5px var(--mono);">FILE GỐC (ORIGINAL)</div>
+                  <div style="aspect-ratio:9/16; max-height:300px; width:100%;">
+                    <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                      <source src="studios/viet2210_orig_web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div style="background:#050507; border-radius:8px; overflow:hidden; border:1px solid #22c55e;">
+                  <div style="padding:4px 8px; background:#14532d; color:#dcfce7; font:700 10.5px var(--mono);">BẢN DEMO (MASTER)</div>
+                  <div style="aspect-ratio:9/16; max-height:300px; width:100%;">
+                    <video controls loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:contain; display:block;">
+                      <source src="studios/earth_zoom_v5_whipsnap_web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; gap:5px; flex-wrap:wrap;">
+                
+                <button type="button" onclick="openHookVideoModal('studios/ref_higgsfield_earth_zoom_4s.mp4', 'earth-zoom — ① Mẫu Chuẩn Higgsfield (02c_Hook3_Lao_Tu_Bau_Troi_4s)')" style="font:700 11px var(--sans); color:#fff; background:#475569; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ① Mẫu Chuẩn Higgsfield (02c_Hook3_Lao_Tu_Bau_Troi_4s)</button>
+                
+                <button type="button" onclick="openHookVideoModal('studios/viet2210_orig_web.mp4', 'earth-zoom — ② Case 0 (viet2210) — File Gốc')" style="font:700 11px var(--sans); color:#fff; background:#0f766e; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ② Case 0 (viet2210) — File Gốc</button>
+                
+                <button type="button" onclick="openHookVideoModal('studios/earth_zoom_v5_whipsnap_web.mp4', 'earth-zoom — ③ Case 0 (viet2210) — Earth Zoom V5.2 Whip-Snap (3.62s • 20.15 px/f)')" style="font:700 11px var(--sans); color:#fff; background:#0284c7; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ③ Case 0 (viet2210) — Earth Zoom V5.2 Whip-Snap (3.62s • 20.15 px/f)</button>
+                
+                <button type="button" onclick="openHookVideoModal('studios/EZ1_IMG_8611_web.mp4', 'earth-zoom — ④ Clip 1 (IMG_8611 Đứng yên quay đi) — Bản Master (2.71s • 17.61 px/f)')" style="font:700 11px var(--sans); color:#fff; background:#0284c7; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ④ Clip 1 (IMG_8611 Đứng yên quay đi) — Bản Master (2.71s • 17.61 px/f)</button>
+                
+                <button type="button" onclick="openHookVideoModal('studios/EZ2_IMG_8609_web.mp4', 'earth-zoom — ⑤ Clip 2 (IMG_8609 Đứng yên quay người) — Bản Master (3.12s • 12.14 px/f)')" style="font:700 11px var(--sans); color:#fff; background:#0284c7; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ⑤ Clip 2 (IMG_8609 Đứng yên quay người) — Bản Master (3.12s • 12.14 px/f)</button>
+                
+                <button type="button" onclick="openHookVideoModal('studios/EZ3_IMG_8610_web.mp4', 'earth-zoom — ⑥ Clip 3 (IMG_8610 Nhảy đi qua cam) — Bản Master (3.33s • 14.13 px/f)')" style="font:700 11px var(--sans); color:#fff; background:#0284c7; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ⑥ Clip 3 (IMG_8610 Nhảy đi qua cam) — Bản Master (3.33s • 14.13 px/f)</button>
+                
+                <button type="button" onclick="openHookVideoModal('studios/EZ4_IMG_8613_web.mp4', 'earth-zoom — ⑦ Clip 4 (IMG_8613 Nhảy ngước lên) — Bản Master (2.88s • 13.02 px/f)')" style="font:700 11px var(--sans); color:#fff; background:#0284c7; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ⑦ Clip 4 (IMG_8613 Nhảy ngước lên) — Bản Master (2.88s • 13.02 px/f)</button>
+                
+                <button type="button" onclick="openHookVideoModal('studios/EZ5_IMG_8608_web.mp4', 'earth-zoom — ⑧ Clip 5 (IMG_8608 Nhảy đứng yên) — Bản Master (3.33s • 18.44 px/f)')" style="font:700 11px var(--sans); color:#fff; background:#0284c7; border:none; padding:4px 8px; border-radius:6px; cursor:pointer;">▶ ⑧ Clip 5 (IMG_8608 Nhảy đứng yên) — Bản Master (3.33s • 18.44 px/f)</button>
+                
+              </div>
             </div>
             
             <div style="font:400 12px/1.5 var(--mono); color:var(--mute); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:12px;">
               <div><strong>🗣️ Gọi nhanh:</strong> <code>EARTH ZOOM : /duong/dan/video.mp4</code></div>
-              <div><strong>🔊 SFX:</strong> sfx_ex1_dive_0-5.5s.wav kéo khớp thời lượng dive + crossfade sang thoại gốc -16 LUFS</div>
+              <div><strong>🔊 SFX:</strong> sfx_ex1_dive_0-5.5s.wav kéo khớp thời lượng dive (2.7s–3.6s) + crossfade sang thoại gốc -16 LUFS</div>
               <div><strong>⚙️ Engine:</strong> <code>earth_zoom_omni_engine.py</code> • <strong>Verifier:</strong> <code>verify_smooth_zoom.py</code></div>
             </div>
           </div>
@@ -748,7 +796,13 @@
               
           <button type="button" onclick="navigator.clipboard.writeText('python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video &quot;/duong/dan/video.mp4&quot; --preset earth-zoom'); this.innerText='✓ Đã Copy';" style="font:700 11.5px var(--sans); color:#0f172a; background:#fef3c7; border:1px solid #f59e0b; padding:5px 10px; border-radius:6px; cursor:pointer;">📋 Copy CLI</button>
         
-          <button type="button" onclick="openHookVideoModal('studios/viet2210_earth_zoom_v2_master.mp4', 'earth-zoom (Demo Master) — Earth Zoom 4 Tầng Anti-Jitter V5 (Vũ Trụ -> Mây -> Đô Thị -> Cảnh Thật)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Demo</button>
+          <button type="button" onclick="openStudioModal('studios/studio-ai-hook-earth-zoom.html', 'Studio AI Hook: earth-zoom')" style="font:700 11.5px var(--sans); color:#fff; background:#b45309; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio (Gốc &amp; Demo)</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/earth_zoom_v5_whipsnap_web.mp4', 'earth-zoom (Demo Master) — Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out — Kiểm chứng 6/6 cảnh PASS 0 lỗi)')" style="font:700 11.5px var(--sans); color:#fff; background:#0284c7; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">▶ Xem Demo</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/viet2210_orig_web.mp4', 'earth-zoom — ② Case 0 (viet2210) — File Gốc')" style="font:700 11.5px var(--sans); color:#0f172a; background:#e0f2fe; border:1px solid #38bdf8; padding:5px 10px; border-radius:6px; cursor:pointer;">🎬 File Gốc</button>
+            
+          <button type="button" onclick="openHookVideoModal('studios/ref_higgsfield_earth_zoom_4s.mp4', 'earth-zoom — ① Mẫu Chuẩn Higgsfield (02c_Hook3_Lao_Tu_Bau_Troi_4s)')" style="font:700 11.5px var(--sans); color:#0f172a; background:#f1f5f9; border:1px solid #94a3b8; padding:5px 10px; border-radius:6px; cursor:pointer;">🎞️ Mẫu Ref</button>
             
             </div>
           </div>
