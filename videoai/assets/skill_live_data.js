@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 12:17:10
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 12:38:07
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 12:17:10",
-  "last_synced_iso": "2026-10-25T12:17:10.985105",
+  "last_synced_formatted": "25/10/2026 12:38:07",
+  "last_synced_iso": "2026-10-25T12:38:07.237006",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -5504,11 +5504,11 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "PaageOffline0711_30fps.tsx",
       "kind": "composition",
-      "size": 101059,
-      "size_formatted": "98.7 KB",
-      "lines": 2700,
-      "mtime": 1792902663.4039114,
-      "mtime_formatted": "25/10/2026 11:31",
+      "size": 122063,
+      "size_formatted": "119.2 KB",
+      "lines": 3278,
+      "mtime": 1792906678.6364272,
+      "mtime_formatted": "25/10/2026 12:37",
       "desc": "Remotion Composition React Component 60fps"
     },
     {
@@ -6201,11 +6201,11 @@ window.SKILL_LIVE_DATA = {
       "name": "ai_hook_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 46434,
-      "size_formatted": "45.3 KB",
-      "lines": 1051,
-      "mtime": 1792894509.434631,
-      "mtime_formatted": "25/10/2026 09:15",
+      "size": 57246,
+      "size_formatted": "55.9 KB",
+      "lines": 1286,
+      "mtime": 1792906643.444101,
+      "mtime_formatted": "25/10/2026 12:37",
       "desc": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
@@ -6322,11 +6322,11 @@ window.SKILL_LIVE_DATA = {
       "name": "hero_cam_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 43925,
-      "size_formatted": "42.9 KB",
-      "lines": 988,
-      "mtime": 1792894969.7832615,
-      "mtime_formatted": "25/10/2026 09:22",
+      "size": 44399,
+      "size_formatted": "43.4 KB",
+      "lines": 999,
+      "mtime": 1792906570.4899874,
+      "mtime_formatted": "25/10/2026 12:36",
       "desc": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
     },
     {
@@ -6596,20 +6596,36 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "compositions/PaageOffline0711_30fps.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792906678.6364272,
+      "mtime_formatted": "25/10/2026 12:37",
+      "detail": "3278 dòng • Composition"
+    },
+    {
+      "name": "scripts/ai_hook_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792906643.444101,
+      "mtime_formatted": "25/10/2026 12:37",
+      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
+    },
+    {
+      "name": "scripts/hero_cam_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792906570.4899874,
+      "mtime_formatted": "25/10/2026 12:36",
+      "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
+    },
+    {
       "name": "scripts/jib_down_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
       "mtime": 1792904978.3951771,
       "mtime_formatted": "25/10/2026 12:09",
       "detail": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
-    },
-    {
-      "name": "compositions/PaageOffline0711_30fps.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792902663.4039114,
-      "mtime_formatted": "25/10/2026 11:31",
-      "detail": "2700 dòng • Composition"
     },
     {
       "name": "scripts/verify_12_principles.py",
@@ -6692,14 +6708,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "giant_grab_engine.py — Giant-Grab V2 (Google Flow Veo 3.1 3D True-Physics Engine)"
     },
     {
-      "name": "scripts/hero_cam_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792894969.7832615,
-      "mtime_formatted": "25/10/2026 09:22",
-      "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
-    },
-    {
       "name": "scripts/rooftop_jump_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
@@ -6714,14 +6722,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792894742.7456648,
       "mtime_formatted": "25/10/2026 09:19",
       "detail": "839 dòng • Composition"
-    },
-    {
-      "name": "scripts/ai_hook_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792894509.434631,
-      "mtime_formatted": "25/10/2026 09:15",
-      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
       "name": "scripts/smoke_reveal_engine.py",
