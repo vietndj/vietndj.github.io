@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 13:46:51
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 13:52:38
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 13:46:51",
-  "last_synced_iso": "2026-10-25T13:46:51.600643",
+  "last_synced_formatted": "25/10/2026 13:52:38",
+  "last_synced_iso": "2026-10-25T13:52:38.168910",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,10 +15,10 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 23,
     "components_count": 22,
-    "scripts_count": 69,
-    "skills_count": 7,
+    "scripts_count": 70,
+    "skills_count": 8,
     "studios_count": 18,
-    "evolution_entries_count": 14,
+    "evolution_entries_count": 15,
     "ai_hooks_count": 20
   },
   "ai_hooks": [
@@ -1405,6 +1405,16 @@ window.SKILL_LIVE_DATA = {
     ],
     "studios": [
       {
+        "source": "studio_motion_graphic_paage_offline_versions.html",
+        "slug": "studio-motion-graphic-paage-offline-versions.html",
+        "order": -15,
+        "icon": "🎬",
+        "title": "Studio Motion Graphic & CHECKMOTION V2.0: Đối Chiếu Tất Cả Phiên Bản (Ref → V1 → V2 → V3 → V4 Readability-First)",
+        "badge": "MOTION GRAPHIC V1→V4 • READABILITY-FIRST • PASS 137/137",
+        "badge_class": "motion",
+        "desc": "Đối chiếu trực tiếp toàn bộ quá trình tiến hóa từ Mẫu gốc Pinterest (333759022407965800) qua 4 phiên bản V1 (Chữ lờ đờ) → V2 (Tách cụm từ 5 pha) → V3 (136 chuyển động nhưng bội thực biến dạng chữ 10%–16%) → V4 Master (Phân tầng biến dạng 4 cấp hội ý CLAUDE2: Chữ đọc & Ảnh 0% méo trục, khóa đọc >= 65%; Đại tự Hero <= 2.5% trong 3–4f; Nút bấm, Con trỏ, Quả cầu & Vỏ rỗng đàn hồi 6%–14%)."
+      },
+      {
         "source": "studio_ai_hook_timelapse_freeze.html",
         "slug": "studio-ai-hook-timelapse-freeze.html",
         "order": -10,
@@ -1583,19 +1593,95 @@ window.SKILL_LIVE_DATA = {
         "badge": "Auto-Detected Studio",
         "badge_class": "motion",
         "desc": "Phòng Studio tương tác tự động phát hiện từ before_after_10_styles_studio.html."
-      },
-      {
-        "source": "studio_motion_graphic_paage_offline_versions.html",
-        "slug": "studio-motion-graphic-paage-offline-versions.html",
-        "order": 8,
-        "icon": "🎛️",
-        "title": "Studio Motion Graphic &amp; CHECKMOTION: Đối Chiếu Tất Cả Phiên Bản (Ref → V1 → V2 → V3 → V4 Readability-First)",
-        "badge": "Auto-Detected Studio",
-        "badge_class": "motion",
-        "desc": "Phòng Studio tương tác tự động phát hiện từ studio_motion_graphic_paage_offline_versions.html."
       }
     ],
     "entries": [
+      {
+        "id": "checkmotion-v2-readability-first-motion-hierarchy-v1-to-v4",
+        "date": "25/10/2026",
+        "title": "Motion Graphic & CHECKMOTION V2.0: Phân Tầng Biến Dạng Không Hại Mắt (Hội Ý CLAUDE2 • Toàn Bộ 5 Phiên Bản Ref → V1 → V2 → V3 → V4 Master)",
+        "step_target": "buoc-4",
+        "source_thread": "a5848b46-86c9-4d1e-baa0-fd7b18de0b05",
+        "what_title": "Ma trận Biến dạng 4 Cấp (Readability-First) & Bộ 5 Phiên bản Tiến hóa V1→V4",
+        "why_title": "Vì sao biến dạng chữ tràn lan (V3) gây khó đọc & Cách phân bổ sang Nút/Quả cầu (V4)",
+        "how_title": "Lệnh kiểm toán CHECKMOTION & Kết xuất Motion Graphic V4",
+        "what": "Đóng gói hệ thống kiểm toán chuyển động từng giây <strong>CHECKMOTION V2.0</strong> và nâng cấp Engine <code>smoothPhysics30fps.ts</code> theo <strong>Ma Trận Phân Tầng Biến Dạng 4 Cấp (Readability-First Deformation Hierarchy)</strong> hội ý cùng CLAUDE2 Opus 5.5 Pro. Trình diễn đầy đủ cả 5 phiên bản của Video Quảng Cáo Khóa Học Offline 07–08/11 (70.37s / 2.111 frames @ 30fps): <strong>Mẫu gốc Pinterest</strong> &rarr; <strong>Bản V1 (Chữ lờ đờ)</strong> &rarr; <strong>Bản V2 (Kinetic 5 pha)</strong> &rarr; <strong>Bản V3 (Bội thực biến dạng)</strong> &rarr; <strong>Bản V4 Master (Chuẩn đọc sắc nét &amp; Đàn hồi đúng chỗ)</strong>.",
+        "why": "Ở bản V3, việc áp biến dạng trục (<code>maxStretch=10%–16%, skewX=6°</code>) và nhún khung (nén 14%) lên toàn bộ câu chữ dài, chữ gõ Typewriter và ảnh lớp học khiến dòng chữ uốn lượn như sóng nước, khuôn mặt trong ảnh bị méo và thời gian chữ đứng yên hoàn toàn (<code>Readability Hold</code>) tụt xuống chỉ còn <code>0%–4%</code>. Bản V4 giải quyết triệt để bằng quy luật: <strong>Vật đang được đọc/xem (Chữ câu dài, Typewriter, Ảnh thật, Thẻ UI) khóa 0% méo trục (<code>scaleX === scaleY</code>) và đứng yên &ge; 65% thời lượng</strong>; chỉ biến dạng vi mô <code>&le; 2.5%</code> trên Đại tự Hero 1–3 từ trong đúng 3–4 frame đỉnh vận tốc; và dồn toàn bộ biến dạng đàn hồi mạnh <code>6%–14%</code> sang <strong>Nút bấm tròn, Con trỏ, Quả cầu xoay, Vỏ thanh tìm kiếm rỗng và Sóng hạ cánh</strong>.",
+        "how_cmd": "python3 ~/.gemini/config/skills/checkmotion/scripts/check_motion.py --video \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/paage_offline_07_08_11/quang_cao_offline_07_08_11_v4_readability_hierarchy.mp4\" --tsx ~/.gemini/config/skills/auto-edit-video/remotion-studio/src/compositions/PaageOffline0711_30fps.tsx --ref \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/paage_offline_07_08_11/paage_reference_video.mp4\"",
+        "studio_file": "studio_motion_graphic_paage_offline_versions.html",
+        "local_videos_title": "🎬 Trình Phát Đối Chiếu Trực Tiếp Toàn Bộ 5 Phiên Bản: 🏆 V4 Master (Readability-First) &bull; ⚠️ V3 (Bội thực biến dạng) &bull; 🔹 V2 (Kinetic 5 pha) &bull; 🔸 V1 (Chữ lờ đờ) &bull; 📌 Mẫu Gốc Pinterest",
+        "local_videos_badge": "1920×1080 @ 30fps • 70.37s (2.111 frames) • PASS 137/137 Motions & 10/10 Gates",
+        "local_videos": [
+          {
+            "badge": "🏆 BẢN V4 MASTER (READABILITY-FIRST)",
+            "title": "Phiên bản V4 Master: Phân tầng biến dạng 4 cấp (Chữ & Ảnh 0% méo, Nút & Quả cầu đàn hồi 14%)",
+            "desc": "Chữ đọc câu dài & Typewriter khóa 0% méo trục, 0° skew, Readability Hold >= 65%; Đại tự Hero 1–3 từ biến dạng vi mô <= 2.5% trong 3–4f; Ảnh lớp học & Thẻ UI 0% méo trục; Nút bấm, Con trỏ, Quả cầu & Vỏ rỗng đàn hồi 6%–14%.",
+            "src": "studios/paage_offline_v4_master_web.mp4",
+            "aspect": "16/9"
+          },
+          {
+            "badge": "⚠️ BẢN V3 (BỘI THỰC BIẾN DẠNG)",
+            "title": "Phiên bản V3: Đủ 136 chuyển động nhưng chữ & ảnh nhún biến dạng 8%–16% gây khó đọc",
+            "desc": "Áp maxStretch 10%–16%, skewX 6° và nhún khung 14% lên cả câu chữ dài, chữ gõ Typewriter và ảnh lớp học; thời gian chữ đứng yên để đọc chỉ còn 0%–4%.",
+            "src": "studios/paage_offline_v3_overdeform_web.mp4",
+            "aspect": "16/9"
+          },
+          {
+            "badge": "🔹 BẢN V2 (KINETIC TEXT 5 PHA)",
+            "title": "Phiên bản V2: Nâng cấp tách cụm từ KineticStaggerPhrase30 & Gõ chữ theo từ",
+            "desc": "Đã tách câu thành cụm 1–2 từ và gõ chữ nảy theo từ nhưng còn 37 tween của thẻ/khung dùng smoothStepRange phẳng chưa có lấy đà và chuyển động phụ.",
+            "src": "studios/paage_offline_v2_kinetic_web.mp4",
+            "aspect": "16/9"
+          },
+          {
+            "badge": "🔸 BẢN V1 (TRƯỚC CHECKMOTION)",
+            "title": "Phiên bản V1 Baseline: Chữ đi nguyên tảng, gõ chữ cắt chuỗi khô, thiếu đà thoát",
+            "desc": "Bản dựng đầu tiên khớp kịch bản Phần 2 và âm thanh gốc nhưng chữ trôi cả khối (monolithic div), gõ chữ slice(0,n) khô cứng, 26/70 giây cuối cảnh bị đứng lờ đờ.",
+            "src": "studios/paage_offline_v1_baseline_web.mp4",
+            "aspect": "16/9"
+          },
+          {
+            "badge": "📌 MẪU GỐC PINTEREST (REF)",
+            "title": "Video Mẫu Gốc Paage (Pinterest 333759022407965800 — 70.37s)",
+            "desc": "Video mẫu gốc dùng để trích xuất âm thanh 1:1 (nhạc nền, tiếng gõ phím cơ, tiếng whoosh, tiếng click chuột và cú ngắt trắng màn hình ở 60.30s).",
+            "src": "studios/paage_ref_pinterest_web.mp4",
+            "aspect": "16/9"
+          }
+        ],
+        "items": [
+          {
+            "tier": "Ma Trận Phân Tầng Biến Dạng 4 Cấp (Readability-First Deformation Hierarchy — Hội ý CLAUDE2)",
+            "code": "CẤP 1: READ",
+            "name": "Chữ đọc câu dài, Chữ thông tin, Typewriter & Số liệu (0% Méo trục • 0° Skew)",
+            "desc": "Tuyệt đối 0% biến dạng méo trục (scaleX === scaleY) và 0° nghiêng suốt 100% thời gian. Tạo độ nảy tự nhiên bằng Lấy đà vị trí (lún 6–8px) + Phóng đồng dạng vọt nhẹ (0.90 → 1.035 → 1.00) + Tách nhịp gọn 1f/cụm + Khóa tĩnh đọc >= 65% thời lượng cảnh. Khi gõ chữ Typewriter, con trỏ (caret) co giãn +25% gánh thay phần biến dạng cho chữ."
+          },
+          {
+            "tier": "Ma Trận Phân Tầng Biến Dạng 4 Cấp (Readability-First Deformation Hierarchy — Hội ý CLAUDE2)",
+            "code": "CẤP 2: HERO",
+            "name": "Đại tự Hero ngắn 1–3 từ cỡ lớn >= 80px (Biến dạng vi mô <= 2.5% trong 3–4 frames)",
+            "desc": "Chỉ mở cổng biến dạng vi mô (maxStretch <= 2.5%, skewX <= 1.8°) trong đúng 3–4 frames khi vận tốc đạt đỉnh (nv >= 0.55), sau đó khóa phẳng 100% suốt pha đọc. Các cú nhấn theo phách trống giữa cảnh bắt buộc bật uniform: true (phóng đồng dạng, không bóp dẹp chữ)."
+          },
+          {
+            "tier": "Ma Trận Phân Tầng Biến Dạng 4 Cấp (Readability-First Deformation Hierarchy — Hội ý CLAUDE2)",
+            "code": "CẤP 3: RIGID",
+            "name": "Ảnh chụp lớp học/học viên, Thẻ UI chứa chữ & MacBook 3D (0% Méo trục)",
+            "desc": "Khóa rigidContent: true (deformAlong = 1.000) để khuôn mặt người và chữ nhỏ trong thẻ tuyệt đối không bị kéo méo. Tạo cảm giác vật lý bằng Lò xo đồng dạng (0.92 → 1.02 → 1.00), Inner Ken Burns/Parallax (1.02 → 1.06 bên trong overflow: hidden) và Bóng đổ động (Elevation Shadow)."
+          },
+          {
+            "tier": "Ma Trận Phân Tầng Biến Dạng 4 Cấp (Readability-First Deformation Hierarchy — Hội ý CLAUDE2)",
+            "code": "CẤP 4: ELASTIC",
+            "name": "Đồ họa không chữ: Nút bấm tròn, Con trỏ, Quả cầu xoay, Vỏ Search Bar rỗng (Đàn hồi 6%–14%)",
+            "desc": "Nút mũi tên ArrowSubmitButton30 (nén 20% / bật 14%), Quả cầu xoay Orb (14% + sóng ripple), Con trỏ HandCursor30, Vỏ thanh tìm kiếm lúc đang morph rỗng (6% theo quy tắc 'Vỏ trước – Ruột sau') và Sóng hạ cánh LandingBurst30 gánh trọn 80% cảm giác đàn hồi vật lý mà không ảnh hưởng mắt đọc."
+          }
+        ],
+        "tech_specs": [
+          "<strong>Preset <code>KINETIC_READABLE_30</code> (Cấp 1 — Mặc định):</strong> <code>deformClass: 'READ', fromPx: 38, antiPx: 8, overshootPx: 5, fromScale: 0.90, peakScale: 1.035, antiFrames: 2, travelFrames: 8, maxStretch: 0, antiSquash: 0, landSquash: 0, maxSkewDeg: 0, maxBlurPx: 1.5, exitFrames: 4</code>.",
+          "<strong>Preset <code>KINETIC_HERO_30</code> (Cấp 2 — Đại tự 1–3 từ &ge; 80px):</strong> <code>deformClass: 'HERO', fromPx: 86, antiPx: 14, overshootPx: 9, fromScale: 0.74, peakScale: 1.055, antiFrames: 2, travelFrames: 9, maxStretch: 0.025, antiSquash: 0.018, landSquash: 0.012, maxSkewDeg: 1.8</code> + Cổng vận tốc <code>velGate = quinticC2(clamp((nv - 0.55) / 0.45, 0, 1))</code>.",
+          "<strong>Preset <code>KINETIC_POP_30</code> (Cấp 1 — Typewriter):</strong> <code>deformClass: 'READ', fromPx: 6, antiPx: 1.5, overshootPx: 1, fromScale: 0.92, peakScale: 1.03, antiFrames: 1, travelFrames: 5, maxStretch: 0, maxSkewDeg: 0, maxBlurPx: 0</code>.",
+          "<strong>Preset <code>KINETIC_RIGID_30</code> &amp; <code>rigidContent: true</code> (Cấp 3 — Ảnh &amp; Thẻ UI):</strong> Khóa <code>deformAlong = 1.0000</code>, bảo toàn 100% tỉ lệ hình học khuôn mặt và bảng chữ.",
+          "<strong>Kiểm định 2 cổng Verifier:</strong> <code>check_motion.py</code> đạt <code>overall = PASS</code> (137/137 chuyển động hợp lệ, 0 giây lờ đờ, 0 lỗi <code>READABILITY_VIOLATION</code>) &amp; <code>verify_12_principles.py</code> đạt <code>PASS 10/10 Gates</code>."
+        ]
+      },
       {
         "id": "google-flow-omni-1-1-master-protocol-v2-40effects",
         "date": "25/10/2026",
@@ -2788,6 +2874,25 @@ window.SKILL_LIVE_DATA = {
         "2. Lệnh CLI Thực Thi Nhanh (`hook_scanner.py` & `ai_hook_engine.py`)",
         "3. Tài Nguyên Tự Thân Đóng Gói Trong Skill (`assets/` & `hooks_registry.json`)",
         "4. Cổng Kiểm Định Chống Giật Tự Động & Cơ Chế Tự Học (Anti-Jitter Verifier Gate & Self-Upgrading Loop)"
+      ],
+      "status": "ACTIVE"
+    },
+    "checkmotion": {
+      "id": "checkmotion",
+      "name": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "badge": "CHECKMOTION V2.0",
+      "desc": "Kiểm toán chuyển động từng giây (1-Second Motion Inventory), chấm điểm 5 Trụ Cột Vật Lý Tự Nhiên kết hợp Ma Trận Phân Tầng Biến Dạng 4 Cấp Không Hại Mắt (Readability-First Hierarchy: READ 0% méo / HERO ≤2.5% / RIGID 0% / ELASTIC 6-14%).",
+      "path": "/Users/vietmac/.gemini/config/skills/checkmotion/SKILL.md",
+      "size": 7577,
+      "size_formatted": "7.4 KB",
+      "lines_count": 62,
+      "mtime": 1792910644.0670679,
+      "mtime_formatted": "25/10/2026 13:44",
+      "headers": [
+        "1. MỤC TIÊU & MANTRA KÍCH HOẠT",
+        "2. NĂM TRỤ CỘT BẮT BUỘC CHO MỌI CHUYỂN ĐỘNG TỰ NHIÊN (5-PILLAR RUBRIC)",
+        "3. LỆNH CHẠY KIỂM TOÁN TỰ ĐỘNG (`check_motion.py`)",
+        "4. TIÊU CHUẨN VƯỢT CỔNG (`CHECKMOTION PASS GATE`)"
       ],
       "status": "ACTIVE"
     }
@@ -6651,9 +6756,28 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792908304.0641453,
       "mtime_formatted": "25/10/2026 13:05",
       "desc": "SA2 — Specialized Anti-Jitter / Seam / Halo / Anchor Verifier for `timelapse-freeze` AI Hook."
+    },
+    {
+      "name": "check_motion.py",
+      "skill_id": "checkmotion",
+      "skill_name": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "size": 49588,
+      "size_formatted": "48.4 KB",
+      "lines": 998,
+      "mtime": 1792910607.605959,
+      "mtime_formatted": "25/10/2026 13:43",
+      "desc": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
     }
   ],
   "history": [
+    {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792910864.983159,
+      "mtime_formatted": "25/10/2026 13:47",
+      "detail": "15 quy chuẩn • 18 studios"
+    },
     {
       "name": "ai-hook/SKILL.md",
       "type": "Markdown Spec",
@@ -6661,6 +6785,22 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792910811.5272677,
       "mtime_formatted": "25/10/2026 13:46",
       "detail": "291 dòng • 6 mục chính"
+    },
+    {
+      "name": "checkmotion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "mtime": 1792910644.0670679,
+      "mtime_formatted": "25/10/2026 13:44",
+      "detail": "62 dòng • 4 mục chính"
+    },
+    {
+      "name": "scripts/check_motion.py",
+      "type": "Python Script",
+      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "mtime": 1792910607.605959,
+      "mtime_formatted": "25/10/2026 13:43",
+      "detail": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
     },
     {
       "name": "compositions/PaageOffline0711_30fps.tsx",
@@ -6717,14 +6857,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792907999.779981,
       "mtime_formatted": "25/10/2026 12:59",
       "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792907929.3969297,
-      "mtime_formatted": "25/10/2026 12:58",
-      "detail": "14 quy chuẩn • 18 studios"
     },
     {
       "name": "scripts/earth_zoom_master_v2.py",
@@ -6877,22 +7009,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792889573.2714963,
       "mtime_formatted": "25/10/2026 07:52",
       "detail": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
-    },
-    {
-      "name": "scripts/verify_smooth_zoom.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792887911.502094,
-      "mtime_formatted": "25/10/2026 07:25",
-      "detail": "Anti-Jitter / Anti-Stutter QA gate for Earth-Zoom / AI-Hook renders."
-    },
-    {
-      "name": "scripts/register_hook.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792840033.2283013,
-      "mtime_formatted": "24/10/2026 18:07",
-      "detail": "AI Hook Atomic Registry Manager (`register_hook.py`) — Thiết kế Gemini × CLAUDE2 (`claude_pro_cc944965.md`)"
     }
   ]
 };
