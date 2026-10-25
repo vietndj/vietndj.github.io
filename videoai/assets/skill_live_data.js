@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 19:27:18
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 20:43:00
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 19:27:18",
-  "last_synced_iso": "2026-10-25T19:27:18.199052",
+  "last_synced_formatted": "25/10/2026 20:43:00",
+  "last_synced_iso": "2026-10-25T20:43:00.674668",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,10 +15,10 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 26,
     "components_count": 22,
-    "scripts_count": 71,
+    "scripts_count": 72,
     "skills_count": 8,
     "studios_count": 19,
-    "evolution_entries_count": 15,
+    "evolution_entries_count": 16,
     "ai_hooks_count": 20
   },
   "ai_hooks": [
@@ -1430,10 +1430,10 @@ window.SKILL_LIVE_DATA = {
         "slug": "studio-motion-graphic-paage-offline-versions.html",
         "order": -15,
         "icon": "🎬",
-        "title": "Studio Motion Graphic & CHECKMOTION V2.0: Đối Chiếu Tất Cả 6 Phiên Bản (Ref → V1 → V2 → V3 → V4 → V5 B-Roll & Cursor Master)",
-        "badge": "MOTION GRAPHIC V1→V5 • REAL B-ROLL & CURSOR MASTER • PASS 100%",
+        "title": "Studio Motion Graphic V6.0 & CHECKMOTION V4.0: Bộ Đôi Khuôn Mẫu 02 (Adwave 61s V6 Master) & Mẫu 01 (Paage 70s V5 Master)",
+        "badge": "MOTION GRAPHIC V6.0 • CHECKMOTION V4.0 (B6..B10) • RELAY SHIFT & 3D CAMERA RIG",
         "badge_class": "motion",
-        "desc": "Đối chiếu trực tiếp toàn bộ quá trình tiến hóa từ Mẫu gốc Pinterest (333759022407965800) qua 5 phiên bản: V1 (Chữ lờ đờ) → V2 (Tách cụm từ 5 pha) → V3 (Bội thực biến dạng chữ 10%–16%) → V4 (Phân tầng biến dạng 4 cấp Readability-First) → V5 Master (Hội ý CLAUDE2: Thay 100% ảnh tĩnh bằng 6 Video B-Roll thực tế Lớp Offline K3 & Hậu trường + Bộ điều phối Bàn tay Con trỏ Đa chặng evaluateCursorTimeline30 bấm trúng 100% tâm nút + Chuẩn hóa Caret macOS không nhấp nháy)."
+        "desc": "Trình phát đối chiếu trực tiếp cả 2 Khuôn Motion Graphic Công Nghiệp: Mẫu 02 Adwave 61s (Ref Pinterest 939563541021082754 → V5 → V6 Master 96.4/100) và Mẫu 01 Paage 70s (Ref Pinterest 333759022407965800 → V1..V5 Master 94.3/100). Chuẩn hóa 5 Cổng Cấu Trúc CheckMotion V4.0 (B6..B10): Hàng chữ tiếp sức FlexRelayRow30 chống đè chữ 100% (B8), Pha OUT bắt buộc 9 frames lấy đà 3f + gia tốc u³ vút thoát đạt 100% biên độ (B9), và Giàn Camera 3D Phối Cảnh Thật Camera3DRig30 + Extrude3DPill 6 lớp cạnh khối (B10)."
       },
       {
         "source": "studio_ai_hook_timelapse_freeze.html",
@@ -1607,6 +1607,83 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f",
+        "date": "25/10/2026",
+        "title": "Mẫu 02 Motion Graphic (Adwave 61s V6 Master) & CHECKMOTION V4.0: Chống Đè Chữ Tiếp Sức (B8) • Pha OUT 9f Vút Thoát (B9) • Giàn Camera 3D Phối Cảnh Thật (B10) — Hội Ý CLAUDE2",
+        "step_target": "buoc-4",
+        "source_thread": "2b147481-82d3-4e70-89a7-81a6e5de8bb4",
+        "what_title": "Nâng Cấp Engine V6.0 & CheckMotion V4.0 (5 Cổng B6..B10) + Đóng Gói Khuôn Mẫu 02 Adwave 61s",
+        "why_title": "Vì sao CheckMotion V3.0 bỏ lọt 3 lỗi (Đè chữ, Xoay 2D giả 3D, Cắt cụt pha OUT) và Cách V4.0 khóa cứng bằng toán học?",
+        "how_title": "Lệnh Kiểm Toán CheckMotion V4.0 & Kết Xuất Template Mẫu 02 (adwave_ui_showcase_61s)",
+        "what": "Giải phẫu 3 lỗi trên Mẫu 02 V5, hội ý kiến trúc cùng <strong>CLAUDE2 (Opus 5.5 Pro)</strong> và nâng cấp toàn diện hệ thống lên <strong>Motion Engine V6.0 (<code>smoothPhysics30fps.ts</code>)</strong> + <strong>CHECKMOTION V4.0 (<code>check_motion.py</code>)</strong>:<br/>1) <strong>Xóa sổ 100% lỗi chồng/đè chữ (Gate B8):</strong> Thay thế các cụm chữ đặt rời bằng <code>&lt;FlexRelayRow30&gt;</code> + <code>evaluateRelayShift30</code> (Cụm 1 xuất hiện ở tâm trước &rarr; lấy đà lùi 2f <code>-8%</code> &rarr; trượt sang trái theo lò xo <code>easeOutBack</code> nhường chỗ cho Cụm 2 bật lên bên phải với <code>gap &ge; 24px</code>).<br/>2) <strong>Bắt buộc mọi chuyển động có Giai đoạn OUT 9 frames đầy đủ (Gate B9):</strong> Sửa lỗi toán học ở V3/V5 (<code>ef / N</code> với <code>exitFrames=4..5</code> chỉ đi được <code>29.6%</code> quãng đường rồi biến mất đột ngột) sang chuẩn <strong><code>exitFrames = 9</code></strong> (3 frames đầu lấy đà ngược chiều <code>-12%</code> + 6 frames sau gia tốc bậc ba <code>u³</code> vút thoát đạt đúng <strong><code>100%</code> biên độ tại <code>exitFrame - 1</code></strong> qua <code>&lt;SceneExitWrapper30&gt;</code>).<br/>3) <strong>Giàn Camera 3D Phối Cảnh Thật ở 0:15 &amp; 0:46 (Gate B10):</strong> Thay xoay phẳng 2D bằng <code>&lt;Camera3DRig30 perspective=1480&gt;</code> + <code>&lt;Extrude3DPill&gt;</code> (6 lớp cạnh khối dày 3D <code>translateZ(-2.5px..-15px)</code> + lấy đà 3f trước khi tháo góc nghiêng về phẳng).<br/>4) <strong>Đóng gói Template Công Nghiệp Mẫu 02 (<code>adwave_ui_showcase_61s</code>):</strong> Giữ nguyên 100% nhạc &amp; SFX gốc Pinterest (<code>original_audio_plus6db.m4a</code>), chỉ cần thay JSON 28 nhịp chữ &amp; 6 cảnh trám B-Roll.",
+        "why": "1) <strong>Tại sao CheckMotion V3.0 không phát hiện ra 3 lỗi trên V5?</strong> Vì V3.0 chỉ đo vận tốc từng phần tử đơn lẻ mà <em>(a)</em> chưa kiểm tra va chạm bố cục giữa 2 cụm chữ cùng hàng ngang (<code>position: 'absolute'</code> / <code>marginLeft: -18px</code>), <em>(b)</em> miễn trừ điểm P5 khi thấy khai báo <code>exitFrames: 5</code> trong code dù thực tế frame cuối chỉ đi được <code>(3/5)³ = 21.6%</code> biên độ, và <em>(c)</em> dùng Farneback 2D nên không phân biệt được xoay phẳng 2D (<code>rotate(-14deg) scale(2.15)</code>) với phối cảnh 3D thật (<code>perspective + rotateX/Y/Z + translateZ</code>).<br/>2) <strong>Nâng cấp CheckMotion V4.0:</strong> Bổ sung 3 cổng chặn cứng <strong>Gate B8 (Zero Text Overlap)</strong>, <strong>Gate B9 (Mandatory 9f Exit Dynamics + bỏ miễn trừ mù AST)</strong>, và <strong>Gate B10 (True 3D Perspective Camera Rig &amp; chống bẫy ép phẳng CSS 3D)</strong>.",
+        "how_cmd": "python3 ~/.gemini/config/skills/motion/scripts/render_adwave_template.py --props ~/.gemini/config/skills/motion/templates/adwave_ui_showcase_61s/presets/offline_0711.json --check-only && python3 ~/.gemini/config/skills/checkmotion/scripts/check_motion.py --video \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/output/quang_cao_offline_07_08_11_mau02_adwave_v6_master.mp4\" --tsx ~/.gemini/config/skills/auto-edit-video/remotion-studio/src/compositions/AdwaveOffline0711_30fps.tsx --ref \"/Users/vietmac/Documents/CODE/AI VIDEO EDIT/motion_references/pinterest_939563541021082754/pinterest_939563541021082754.mp4\"",
+        "studio_file": "studio_motion_graphic_paage_offline_versions.html",
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/2b147481-82d3-4e70-89a7-81a6e5de8bb4/v6_first6s_strip.jpg",
+            "web_src": "assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_first6s_strip.jpg",
+            "caption": "Dải Frame 6 Giây Đầu Mẫu 02 V6 Master (0.0s → 6.0s): Cụm 1 đứng giữa trước → Lấy đà lùi 2f → Trượt sang trái nhường chỗ cho Cụm 2 (0px đè chữ) → Pha OUT 9f lấy đà + vút thoát 100% trước khi chữ mới vào"
+          },
+          {
+            "src": "/Users/vietmac/.gemini/antigravity/brain/2b147481-82d3-4e70-89a7-81a6e5de8bb4/v6_sec15_18_strip.jpg",
+            "web_src": "assets/checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f/v6_sec15_18_strip.jpg",
+            "caption": "Dải Frame Cảnh Camera 3D Phối Cảnh Thật (15.0s → 18.0s): Camera3DRig30 (perspective 1480px, rx=14°, ry=-18°, rz=-13°, tz=230px) + Extrude3DPill 6 lớp cạnh khối 3D → Lấy đà 3f rồi tháo góc nghiêng mượt về phẳng"
+          }
+        ],
+        "local_videos_title": "🎬 Trình Phát Đối Chiếu Trực Tiếp Mẫu 02 Motion Graphic (Adwave 61s): 🏆 V6 Master (96.4/100 PASS) • ⚠️ V5 (Trước nâng cấp) • 📌 Mẫu Gốc Pinterest 939563541021082754",
+        "local_videos_badge": "1920×1080 @ 30fps • 61.00s (1.830 frames) • CheckMotion V4.0: 96.4/100 PASS • 10/10 Gates",
+        "local_videos": [
+          {
+            "badge": "🏆 MẪU 02 V6 MASTER (CHECKMOTION V4.0: 96.4/100)",
+            "title": "Mẫu 02 V6 Master: Hàng chữ tiếp sức FlexRelayRow30 (0% đè chữ) + Camera 3D Phối Cảnh Thật ở 0:15 & 0:46 + Pha OUT 9f vút thoát",
+            "desc": "Áp dụng đầy đủ kiến trúc V6.0 hội ý cùng CLAUDE2: FlexRelayRow30 + evaluateRelayShift30, Camera3DRig30 (perspective 1480px) + Extrude3DPill 6 lớp cạnh khối 3D, và SceneExitWrapper30 (9 frames: 3f lấy đà + 6f gia tốc bậc ba vút thoát đạt 100% biên độ).",
+            "src": "studios/adwave_mau02_v6_master_web.mp4",
+            "aspect": "16/9"
+          },
+          {
+            "badge": "⚠️ MẪU 02 BẢN V5 (TRƯỚC NÂNG CẤP V4.0)",
+            "title": "Mẫu 02 Bản V5: Bị chồng chữ ở Scene 1/2/8, xoay 2D giả 3D ở 0:15 và cắt cụt pha OUT ở 29.6%",
+            "desc": "Bản V5 trước khi có Gate B8/B9/B10: Đặt 2 cụm chữ absolute/marginLeft âm gây đè chữ, xoay 2D phẳng ở 0:15 và dùng exitFrames=5 khiến chữ biến mất trước khi kịp vút thoát.",
+            "src": "studios/adwave_mau02_v5_prev_web.mp4",
+            "aspect": "16/9"
+          },
+          {
+            "badge": "📌 MẪU GỐC PINTEREST 02 (REF 939563541021082754)",
+            "title": "Video Mẫu Gốc Adwave (Pinterest 939563541021082754 — 61.00s)",
+            "desc": "Video mẫu gốc trên Pinterest dùng để trích xuất 100% âm thanh & SFX gốc (original_audio_plus6db.m4a), nhịp Relay Shift mở màn và góc nghiêng Camera 3D ở 0:15.",
+            "src": "studios/adwave_ref_pinterest_web.mp4",
+            "aspect": "16/9"
+          }
+        ],
+        "items": [
+          {
+            "tier": "5 Cổng Cấu Trúc Bắt Buộc Của CHECKMOTION V4.0 (Gates B6..B10)",
+            "code": "GATE B8: RELAY SHIFT",
+            "name": "Chống Chồng/Đè Chữ Tuyệt Đối (<FlexRelayRow30> + evaluateRelayShift30)",
+            "desc": "Cấm dùng position: 'absolute' cho >= 2 cụm chữ cùng hàng ngang và cấm marginLeft <= -15px. Cụm A đứng tâm trước -> lấy đà lùi 2f (-8%) -> trượt sang trái theo lò xo easeOutBack nhường chỗ cho Cụm B bật lên bên phải với gap >= 24px (0px overlap ở mọi frame)."
+          },
+          {
+            "tier": "5 Cổng Cấu Trúc Bắt Buộc Của CHECKMOTION V4.0 (Gates B6..B10)",
+            "code": "GATE B9: 9F EXIT",
+            "name": "Bắt Buộc Giai Đoạn OUT 9 Frames Đầu Cuối (<SceneExitWrapper30> + exitCurve30)",
+            "desc": "Mọi chuyển động và mọi tiểu cảnh bắt buộc có exitFrames = 9 (3f đầu lấy đà ngược chiều -12% + 6f sau gia tốc bậc ba u³ đạt đúng 100% biên độ tại frame cuối cùng hiển thị exitFrame - 1 với PeakV >= 15 px/f). Xóa bỏ miễn trừ mù trên AST."
+          },
+          {
+            "tier": "5 Cổng Cấu Trúc Bắt Buộc Của CHECKMOTION V4.0 (Gates B6..B10)",
+            "code": "GATE B10: 3D CAMERA",
+            "name": "Giàn Camera 3D Phối Cảnh Thật (<Camera3DRig30> + <Extrude3DPill>)",
+            "desc": "Cấm xoay phẳng 2D giả 3D. Bắt buộc dùng perspective: 1450..1500px, transformStyle: 'preserve-3d', dolly-in translateZ(230px), Euler 3 trục rotateX/Y/Z, cạnh khối dày 3D 6 lớp Extrude3DPill và lấy đà 3f trước khi tháo góc nghiêng về phẳng."
+          }
+        ],
+        "tech_specs": [
+          "<strong>Toán tử Giai đoạn OUT 9 frames (<code>exitCurve30</code>):</strong> <code>t = clamp((ef + 1) / N, 0, 1)</code>; với <code>t &le; 1/3</code>: <code>e = -0.12 * sin(3 * &pi; * t)</code> (lấy đà ngược chiều 3f); với <code>t &gt; 1/3</code>: <code>u = (t - 1/3) / (2/3)</code>, <code>e = -0.12 + 1.12 * u³</code> (tăng tốc bậc ba đạt đúng <code>1.000</code> tại <code>ef = N - 1</code>).",
+          "<strong>Toán tử Tiếp sức nhường chỗ (<code>evaluateRelayShift30</code>):</strong> <code>anticipationFrames = 2</code> (lùi ngược <code>-8%</code>) + <code>shiftFrames = 8</code> (<code>easeOutBack</code> overshoot <code>1.15</code>) + <code>gap &ge; 24px</code>.",
+          "<strong>Toán tử Giàn Camera 3D (<code>evaluateCamera3DRig30</code>):</strong> <code>perspective = 1480px</code>, <code>from: {rx: 14, ry: -18, rz: -13, tz: 230, tx: -110, ty: 28} &rarr; to: {0,0,0,0,0,0}</code> với 3f lấy đà xoắn thêm <code>+1.2°</code> và vọt nhẹ lò xo tắt dần.",
+          "<strong>Đóng gói Template Mẫu 02 (<code>adwave_ui_showcase_61s</code>):</strong> <code>render_adwave_template.py --props presets/offline_0711.json --check-only</code> đạt PASS 28/28 nhịp chữ, giữ nguyên 100% nhạc &amp; SFX gốc (<code>original_audio_plus6db.m4a</code>)."
+        ]
+      },
       {
         "id": "checkmotion-v2-readability-first-motion-hierarchy-v1-to-v4",
         "date": "25/10/2026",
@@ -2804,11 +2881,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "60FPS MOTION",
       "desc": "Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 10241,
-      "size_formatted": "10.0 KB",
+      "size": 10902,
+      "size_formatted": "10.6 KB",
       "lines_count": 62,
-      "mtime": 1792930745.2306514,
-      "mtime_formatted": "25/10/2026 19:19",
+      "mtime": 1792935625.0881922,
+      "mtime_formatted": "25/10/2026 20:40",
       "headers": [
         "1. BA LUẬT VÀNG & BẢNG MANTRA ĐỊNH TUYẾN BỐI CẢNH (0 MA SÁT)",
         "2. NĂM CHUẨN KIẾN TRÚC BẮT BUỘC CỦA MOTION ENGINE V6.0",
@@ -6289,6 +6366,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "Bước 1 — Bóc tách Thoại & Sóng âm (extract_beat_timeline.py)"
     },
     {
+      "name": "render_adwave_template.py",
+      "skill_id": "motion",
+      "skill_name": "Motion Studio 60fps (Universal Archetypes)",
+      "size": 13749,
+      "size_formatted": "13.4 KB",
+      "lines": 275,
+      "mtime": 1792935422.4209125,
+      "mtime_formatted": "25/10/2026 20:37",
+      "desc": "render_adwave_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)"
+    },
+    {
       "name": "render_paage_template.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 60fps (Universal Archetypes)",
@@ -6413,11 +6501,11 @@ window.SKILL_LIVE_DATA = {
       "name": "ai_hook_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 59046,
-      "size_formatted": "57.7 KB",
-      "lines": 1313,
-      "mtime": 1792928139.2559285,
-      "mtime_formatted": "25/10/2026 18:35",
+      "size": 66388,
+      "size_formatted": "64.8 KB",
+      "lines": 1463,
+      "mtime": 1792933393.369749,
+      "mtime_formatted": "25/10/2026 20:03",
       "desc": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
@@ -6830,12 +6918,36 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792935749.5994704,
+      "mtime_formatted": "25/10/2026 20:42",
+      "detail": "16 quy chuẩn • 19 studios"
+    },
+    {
       "name": "motion/SKILL.md",
       "type": "Markdown Spec",
       "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792930745.2306514,
-      "mtime_formatted": "25/10/2026 19:19",
+      "mtime": 1792935625.0881922,
+      "mtime_formatted": "25/10/2026 20:40",
       "detail": "62 dòng • 3 mục chính"
+    },
+    {
+      "name": "scripts/render_adwave_template.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792935422.4209125,
+      "mtime_formatted": "25/10/2026 20:37",
+      "detail": "render_adwave_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)"
+    },
+    {
+      "name": "scripts/ai_hook_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792933393.369749,
+      "mtime_formatted": "25/10/2026 20:03",
+      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
       "name": "checkmotion/SKILL.md",
@@ -6868,22 +6980,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792928610.2415512,
       "mtime_formatted": "25/10/2026 18:43",
       "detail": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792928441.0905125,
-      "mtime_formatted": "25/10/2026 18:40",
-      "detail": "15 quy chuẩn • 19 studios"
-    },
-    {
-      "name": "scripts/ai_hook_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792928139.2559285,
-      "mtime_formatted": "25/10/2026 18:35",
-      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
       "name": "ai-hook/SKILL.md",
@@ -7060,14 +7156,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792894742.7456648,
       "mtime_formatted": "25/10/2026 09:19",
       "detail": "839 dòng • Composition"
-    },
-    {
-      "name": "scripts/smoke_reveal_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792894373.4193528,
-      "mtime_formatted": "25/10/2026 09:12",
-      "detail": "AI Hook #6 — Smoke Reveal Engine (Curl-Noise Volumetric Smoke)"
     }
   ]
 };
