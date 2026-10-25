@@ -186,8 +186,8 @@
   <div class="hero">
     <div class="badges">
       <span class="badge badge-amber">⚠️ BẢN LƯU TRỮ THỬ NGHIỆM — CHƯA CHO VÀO SKILL</span>
-      <span class="badge badge-rose">Katana Tier 1 • Batch 4 (#05, #01, #19)</span>
-      <span class="badge badge-emerald">Kỹ thuật: PASS 6/6 Gates (G0 SSIM 0.9944–0.9964)</span>
+      <span class="badge badge-rose">Katana Tier 1 • Batch 4 (#05, #01 V3 Zero-Jitter, #19)</span>
+      <span class="badge badge-emerald">Kỹ thuật: PASS 11/11 Gates (G0..G10 Rotational Smoothness)</span>
       <span class="badge badge-cyan">Backup KHOAI: 01dd4bdf &amp; fda99ac3</span>
     </div>
     <h1>🗂️ Lưu Trữ Thử Nghiệm Katana Tier 1 — Batch 4 (#05 Pink HUD, #01 Pantone Palette, #19 Pop Cutout)</h1>
@@ -261,8 +261,8 @@
     <!-- CARD 2: B4_11 COLOR PALETTE -->
     <div class="v-card archive">
       <div class="v-head">
-        <div class="v-title">2. #01 Color Palette Pantone (<code>b4_11_color_palette</code>)</div>
-        <span class="badge badge-cyan">fa3 • F68 (2.83s)</span>
+        <div class="v-title">2. #01 Color Palette Pantone V3 (<code>b4_11_color_palette</code>)</div>
+        <span class="badge badge-cyan">fa3 • V3 Zero-Jitter • PASS 11/11 Gates</span>
       </div>
       <div class="player-pair">
         <div class="player-col">
@@ -276,24 +276,24 @@
         </div>
         <div class="player-col">
           <div class="player-lbl res">
-            <span>② Thử Nghiệm (fa3)</span>
-            <a href="b4_11_color_palette_fa3_web.mp4" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none;">MP4 ↗</a>
+            <span>② Bản V3 Mượt 1 Chiều (fa3)</span>
+            <a href="b4_11_color_palette_fa3_web.mp4?v=3" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none;">MP4 ↗</a>
           </div>
           <div class="player-box">
-            <video controls loop playsinline preload="metadata" src="b4_11_color_palette_fa3_web.mp4"></video>
+            <video controls loop playsinline preload="metadata" src="b4_11_color_palette_fa3_web.mp4?v=3"></video>
           </div>
         </div>
       </div>
       <div class="v-body">
         <div>
-          <strong>Cơ chế thử nghiệm:</strong> Bản chạy thử trên <code>footageai3.mp4</code> (ngồi xổm rồi đứng dậy bước tới) với vòng quạt màu Pantone &amp; 3 thẻ Swatch bật nghiêng sau lưng trước khi mở khóa <code>Frame #68</code>.<br>
-          <span style="color:var(--amber); font-size:12px;">⚠️ Ghi chú: Bản <code>fa3</code> này lưu trữ tham khảo (bản chuẩn trên <code>viet2210.MOV</code> đã có riêng ở preset <code>pantone1</code>).</span>
+          <strong>Cơ chế V3 (Hội ý CLAUDE2 — Zero Jitter):</strong> Dùng <strong>1 luồng xoay 360° liên tục duy nhất (Arc-Length Reparameterization + DIS Optical Flow Sub-frame Interpolation)</strong> kết hợp <strong>Luma-Preserving CIE LAB Radial Recolor</strong> trên áo khoác và 3 thẻ Swatch Pantone trước khi mở khóa <code>Frame #68</code>.<br>
+          <span style="color:var(--emerald); font-size:12px;">✅ Cổng G10 Rotational Smoothness: Reversals = 0 • Stalls = 0 • Spine Jump Ratio = 1.546 (&le; 1.75).</span>
         </div>
         <div class="metrics">
-          <div><span class="m-lbl">G0 Seam SSIM</span><span class="m-val" style="color:var(--lime);">0.9964</span></div>
-          <div><span class="m-lbl">G0 Seam ΔE</span><span class="m-val">1.06</span></div>
-          <div><span class="m-lbl">G1 Hook ΔE</span><span class="m-val">38.88</span></div>
-          <div><span class="m-lbl">G2 Mask IoU</span><span class="m-val">0.9027</span></div>
+          <div><span class="m-lbl">G0 Seam SSIM</span><span class="m-val" style="color:var(--lime);">0.9985</span></div>
+          <div><span class="m-lbl">G10 Reversals</span><span class="m-val" style="color:var(--emerald);">0 (1 chiều)</span></div>
+          <div><span class="m-lbl">G10 Spine Ratio</span><span class="m-val" style="color:var(--cyan);">1.546</span></div>
+          <div><span class="m-lbl">G7 Sharp Ratio</span><span class="m-val">0.5322</span></div>
         </div>
       </div>
     </div>
