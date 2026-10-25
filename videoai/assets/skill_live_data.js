@@ -1,23 +1,23 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 14:33:01
+ * Sinh tự động bởi sync_videoai.py vào lúc: 25/10/2026 18:57:33
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "25/10/2026 14:33:01",
-  "last_synced_iso": "2026-10-25T14:33:01.827923",
+  "last_synced_formatted": "25/10/2026 18:57:33",
+  "last_synced_iso": "2026-10-25T18:57:33.684352",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
     "sfx_presets_count": 16,
     "profiles_count": 5,
     "presets_count": 8,
-    "compositions_count": 23,
+    "compositions_count": 26,
     "components_count": 22,
-    "scripts_count": 70,
+    "scripts_count": 71,
     "skills_count": 8,
-    "studios_count": 18,
+    "studios_count": 19,
     "evolution_entries_count": 15,
     "ai_hooks_count": 20
   },
@@ -82,15 +82,16 @@ window.SKILL_LIVE_DATA = {
       "schema_version": "3.0",
       "id": "earth-zoom",
       "aliases": [
+        "earth-zoom-v6",
         "earth-zoom-v5",
         "earth-zoom-omni",
         "whip-snap-zoom",
         "vu-tru"
       ],
-      "name": "Earth Zoom V5.2 Omni Whip-Snap (Time-Reverse Single-Anchor Pull-Out — Kiểm chứng 6/6 cảnh PASS 0 lỗi)",
-      "duration_sec": 3.12,
-      "option_label": "Earth Zoom V5.2 Omni Whip-Snap (2.7s–3.6s) — Google Flow Omni 1.1 Flash Time-Reverse Single-Anchor + Whip-Snap Speed-Ramp (Đỉnh 14–20 px/f, Zero Alpha-Dissolve, PASS 100% 6/6 cảnh)",
-      "when_to_recommend": "Khi nhân vật đứng/bước nói hoặc nhảy vào khung hình ở ngoài trời (công viên, sân thượng, đường phố, tòa nhà) — tự động dò Frame_Anchor mở lời nói và tạo cú lao xuyên mây 90° xuống thẳng mắt nhân vật (0% mờ chồng lớp).",
+      "name": "Earth Zoom V6.0 Cosmic Dual-Anchor & V5.2 Whip-Snap (100% Google Flow Omni 1.1 Flash Master Protocol V2.0 — 0% Veo 3, 0% OpenCV Fake)",
+      "duration_sec": 4.0,
+      "option_label": "Earth Zoom V6.0 Cosmic Dual-Anchor (4.0s • 7 credits) — Google Flow Omni 1.1 Flash Dual-Anchor (Cosmic Horizon -> Anchor F_lock) + 14 Luật Vàng R01..R14 + Adaptive DIS Optical-Flow Seam (SSIM >= 0.996)",
+      "when_to_recommend": "Khi nhân vật đứng/bước nói hoặc nhảy vào khung hình ở ngoài trời (công viên, sân thượng, đường phố, tòa nhà) — tự động dò Frame_Anchor mở lời nói và tạo cú lao từ tầng bình lưu vũ trụ xuyên mây xuống thẳng nhân vật bằng 100% Google Flow Omni 1.1 Flash.",
       "ideal_motion": [
         "standing_ready",
         "walk_in",
@@ -167,7 +168,7 @@ window.SKILL_LIVE_DATA = {
       },
       "order": 2,
       "_studio_slug": "studio-ai-hook-earth-zoom.html",
-      "_web_video": "studios/earth_zoom_v5_whipsnap_web.mp4",
+      "_web_video": "studios/EZ_V6_1_IMG_8611_web.mp4",
       "_web_poster": "studios/thumb_hook_earth-zoom.jpg",
       "_comparison_videos": [
         {
@@ -1405,6 +1406,26 @@ window.SKILL_LIVE_DATA = {
     ],
     "studios": [
       {
+        "order": -17,
+        "icon": "⚡",
+        "title": "Showcase 40 Hiệu Ứng Higgsfield Tier 1 + Lịch Sử Phiên Bản (V1 OpenCV vs V2 Omni 1.1 Flash Round 1/2 & Earth Zoom V1→V6.0)",
+        "badge": "40/40 TIER 1 EFFECTS • DEMO + REF + CHANGELOG • 100% OMNI 1.1 FLASH",
+        "badge_class": "motion",
+        "desc": "Bảng tổng hợp tương tác toàn bộ 40 hiệu ứng Higgsfield Tier 1 chạy 100% trên Google Flow Omni 1.1 Flash (720p, 4s, 7 credits, 0% Veo 3): đặt cạnh nhau Video Mẫu Gốc Higgsfield (Ref), Bản V1 (OpenCV cũ), Bản V2 (Omni 1.1 Flash Vòng 1 & Vòng 2), kèm ghi chú thay đổi kỹ thuật (R01..R14) và khu vực đối chiếu Earth Zoom V5.2 vs V6.0 trên 5 footage AItest2.",
+        "source": "omni_40_tier1_showcase.html",
+        "slug": "studio-omni-40-tier1-showcase.html"
+      },
+      {
+        "order": -16,
+        "icon": "🌍",
+        "title": "Studio AI Hook: Earth Zoom V6.0 Cosmic Dual-Anchor 4.0s vs V5.2 (100% Google Flow Omni 1.1 Flash • Kiểm chứng 7/7 cảnh PASS)",
+        "badge": "EARTH ZOOM V6.0 COSMIC DUAL-ANCHOR • 100% OMNI 1.1 FLASH • 7/7 PASS",
+        "badge_class": "sci",
+        "desc": "Phòng Studio đối chiếu trực tiếp lịch sử tiến hóa các phiên bản Earth Zoom (V1/V2 OpenCV Crop -> V3 Veo 3.1 -> V5.2 Single-Anchor Time-Reverse 6s -> V6.0 Cosmic Dual-Anchor 4.0s) trên 5 footage AItest2 (IMG_8611, IMG_8609, IMG_8610, IMG_8613, IMG_8608) + footageai1 + viet2210: Khôi phục 100% cảnh mở đầu Đường Cong Trái Đất Xanh Coban & Biển Mây Trắng từ tầng bình lưu, khóa bàn chân R13/R14 và nối Adaptive DIS Optical-Flow Seam (rawEndSSIM 0.82–0.97, seamSSIM >= 0.995).",
+        "source": "studio_ai_hook_earth_zoom.html",
+        "slug": "studio-ai-hook-earth-zoom.html"
+      },
+      {
         "source": "studio_motion_graphic_paage_offline_versions.html",
         "slug": "studio-motion-graphic-paage-offline-versions.html",
         "order": -15,
@@ -1503,16 +1524,6 @@ window.SKILL_LIVE_DATA = {
         "badge": "Khuôn .TSX Số 6 • 16:9 & 9:16 • 60fps",
         "badge_class": "motion",
         "desc": "Đúc từ mẫu Pinterest SuiPlay 0X1 (20.03s / 1.202 frames @ 60fps): Giữ nguyên nhạc gốc, khớp 10 điểm chữ Tiếng Việt (Định nghĩa lại → Edit Video với AI → offline.fedu.vn), Khung Thiết Bị 3D 14 lớp Zoom-Through và 16 cảnh video thực tế cắt theo nhịp trống."
-      },
-      {
-        "order": 1,
-        "icon": "🌍",
-        "title": "Studio AI Hook: Earth Zoom V5.2 Omni Whip-Snap (Kiểm chứng 6/6 cảnh PASS 0 lỗi)",
-        "badge": "STABLE HOOK V5.2 • 6/6 PASS",
-        "badge_class": "sci",
-        "desc": "Phòng Studio đối chiếu trực tiếp 6 ca thực chiến Earth Zoom V5.2 Omni Whip-Snap (viet2210 + 5 clip AItest2: IMG_8611, IMG_8609, IMG_8610, IMG_8613, IMG_8608) áp dụng cơ chế Time-Reverse Single-Anchor Pull-Out trên Google Flow Omni 1.1 Flash & Whip-Snap Speed-Ramp (2.71s–3.62s).",
-        "source": "studio_ai_hook_earth_zoom.html",
-        "slug": "studio-ai-hook-earth-zoom.html"
       },
       {
         "source": "studio_35_kieu_chu_va_phu_de.html",
@@ -2793,16 +2804,17 @@ window.SKILL_LIVE_DATA = {
       "badge": "60FPS MOTION",
       "desc": "Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 10464,
-      "size_formatted": "10.2 KB",
-      "lines_count": 69,
-      "mtime": 1792899130.9130378,
-      "mtime_formatted": "25/10/2026 10:32",
+      "size": 14034,
+      "size_formatted": "13.7 KB",
+      "lines_count": 84,
+      "mtime": 1792922790.7343156,
+      "mtime_formatted": "25/10/2026 17:06",
       "headers": [
         "1. BA LUẬT VÀNG & BẢNG MANTRA ĐỊNH TUYẾN BỐI CẢNH (0 MA SÁT)",
-        "2. BỐN CHỐT ĐẠO DIỄN BỔ NGỮ (GÕ KÈM SAU MANTRA HOẶC NÓI TỰ NHIÊN)",
-        "3. MA TRẬN ÁP DỤNG TRỌN BỘ 12 NGUYÊN LÝ CHUYỂN ĐỘNG Ở CHUẨN 30FPS",
-        "4. CỔNG KIỂM ĐỊNH LIỀN MẠCH & CHỐNG GIẬT DUY NHẤT (30FPS ANTI-JITTER VERIFIER)"
+        "2. LUẬT PHÂN TẦNG BIẾN DẠNG 4 CẤP & BÀN TAY CON TRỎ 4 PHA (V5.0)",
+        "3. BỐN CHỐT ĐẠO DIỄN BỔ NGỮ (GÕ KÈM SAU MANTRA HOẶC NÓI TỰ NHIÊN)",
+        "4. MA TRẬN ÁP DỤNG TRỌN BỘ 12 NGUYÊN LÝ CHUYỂN ĐỘNG Ở CHUẨN 30FPS",
+        "5. VÒNG LẶP TỰ HỌC (`self_learning_ledger.jsonl`) & CỔNG KIỂM ĐỊNH KÉP"
       ],
       "status": "ACTIVE"
     },
@@ -2869,12 +2881,13 @@ window.SKILL_LIVE_DATA = {
       "badge": "AI HOOK ROUTER V3.0",
       "desc": "Hệ thống Smart AI Hook Router v3.0 (Zero-Collision Registry hooks.d/ + register_hook.py khóa nguyên tử fcntl.flock) tự động quét 3 giây đầu video gốc và kết xuất 20 chế độ Hook (Xem đầy đủ tại 10-bang-ai-hook.html).",
       "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
-      "size": 54491,
-      "size_formatted": "53.2 KB",
-      "lines_count": 291,
-      "mtime": 1792910811.5272677,
-      "mtime_formatted": "25/10/2026 13:46",
+      "size": 55831,
+      "size_formatted": "54.5 KB",
+      "lines_count": 303,
+      "mtime": 1792926973.6822736,
+      "mtime_formatted": "25/10/2026 18:16",
       "headers": [
+        "0.0 Quy Tắc Cứng Toàn Cục: Mặc Định 100% Google Flow `Omni 1.1 Flash` (0% Veo 3, 0% Tự Render OpenCV)",
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
         "0. Quy Trình Định Tuyến Thông Minh Mặc Định (Smart AI Hook Router — Anh Việt Không Cần Nhớ Tên Hook)",
         "1. Kiến Trúc 4 Chế Độ Preset Đóng Gói Sẵn (`hooks_registry.json`)",
@@ -2890,16 +2903,16 @@ window.SKILL_LIVE_DATA = {
       "badge": "CHECKMOTION V2.0",
       "desc": "Kiểm toán chuyển động từng giây (1-Second Motion Inventory), chấm điểm 5 Trụ Cột Vật Lý Tự Nhiên kết hợp Ma Trận Phân Tầng Biến Dạng 4 Cấp Không Hại Mắt (Readability-First Hierarchy: READ 0% méo / HERO ≤2.5% / RIGID 0% / ELASTIC 6-14%).",
       "path": "/Users/vietmac/.gemini/config/skills/checkmotion/SKILL.md",
-      "size": 7577,
-      "size_formatted": "7.4 KB",
-      "lines_count": 62,
-      "mtime": 1792910644.0670679,
-      "mtime_formatted": "25/10/2026 13:44",
+      "size": 7252,
+      "size_formatted": "7.1 KB",
+      "lines_count": 63,
+      "mtime": 1792921374.784911,
+      "mtime_formatted": "25/10/2026 16:42",
       "headers": [
         "1. MỤC TIÊU & MANTRA KÍCH HOẠT",
         "2. NĂM TRỤ CỘT BẮT BUỘC CHO MỌI CHUYỂN ĐỘNG TỰ NHIÊN (5-PILLAR RUBRIC)",
         "3. LỆNH CHẠY KIỂM TOÁN TỰ ĐỘNG (`check_motion.py`)",
-        "4. TIÊU CHUẨN VƯỢT CỔNG (`CHECKMOTION PASS GATE`)"
+        "4. TIÊU CHUẨN VƯỢT CỔNG (`CHECKMOTION V3.0 PASS GATE`)"
       ],
       "status": "ACTIVE"
     }
@@ -5552,6 +5565,26 @@ window.SKILL_LIVE_DATA = {
   ],
   "compositions": [
     {
+      "name": "AdwaveOffline0711_30fps.tsx",
+      "kind": "composition",
+      "size": 498,
+      "size_formatted": "498.0 B",
+      "lines": 15,
+      "mtime": 1792924780.694746,
+      "mtime_formatted": "25/10/2026 17:39",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
+      "name": "AdwaveOffline61s_V5Master.tsx",
+      "kind": "composition",
+      "size": 316,
+      "size_formatted": "316.0 B",
+      "lines": 14,
+      "mtime": 1792924659.887512,
+      "mtime_formatted": "25/10/2026 17:37",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
       "name": "AutoEditVideo.tsx",
       "kind": "composition",
       "size": 7718,
@@ -5652,6 +5685,16 @@ window.SKILL_LIVE_DATA = {
       "desc": "Remotion Composition React Component 60fps"
     },
     {
+      "name": "Mau02HiggsfieldFigma_30fps.tsx",
+      "kind": "composition",
+      "size": 485,
+      "size_formatted": "485.0 B",
+      "lines": 17,
+      "mtime": 1792925057.676238,
+      "mtime_formatted": "25/10/2026 17:44",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
       "name": "NatureVideo.tsx",
       "kind": "composition",
       "size": 2846,
@@ -5664,11 +5707,11 @@ window.SKILL_LIVE_DATA = {
     {
       "name": "PaageOffline0711_30fps.tsx",
       "kind": "composition",
-      "size": 137948,
-      "size_formatted": "134.7 KB",
-      "lines": 3555,
-      "mtime": 1792912990.4378085,
-      "mtime_formatted": "25/10/2026 14:23",
+      "size": 678,
+      "size_formatted": "678.0 B",
+      "lines": 20,
+      "mtime": 1792922246.7120967,
+      "mtime_formatted": "25/10/2026 16:57",
       "desc": "Remotion Composition React Component 60fps"
     },
     {
@@ -6248,6 +6291,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "Bước 1 — Bóc tách Thoại & Sóng âm (extract_beat_timeline.py)"
     },
     {
+      "name": "render_paage_template.py",
+      "skill_id": "motion",
+      "skill_name": "Motion Studio 60fps (Universal Archetypes)",
+      "size": 15028,
+      "size_formatted": "14.7 KB",
+      "lines": 291,
+      "mtime": 1792922669.718782,
+      "mtime_formatted": "25/10/2026 17:04",
+      "desc": "render_paage_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)"
+    },
+    {
       "name": "scaffold_motion_project.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 60fps (Universal Archetypes)",
@@ -6262,11 +6316,11 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_12_principles.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 60fps (Universal Archetypes)",
-      "size": 23744,
-      "size_formatted": "23.2 KB",
-      "lines": 589,
-      "mtime": 1792901770.7037838,
-      "mtime_formatted": "25/10/2026 11:16",
+      "size": 25190,
+      "size_formatted": "24.6 KB",
+      "lines": 618,
+      "mtime": 1792924014.3636844,
+      "mtime_formatted": "25/10/2026 17:26",
       "desc": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
     },
     {
@@ -6361,11 +6415,11 @@ window.SKILL_LIVE_DATA = {
       "name": "ai_hook_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 57670,
-      "size_formatted": "56.3 KB",
-      "lines": 1302,
-      "mtime": 1792906747.359223,
-      "mtime_formatted": "25/10/2026 12:39",
+      "size": 59046,
+      "size_formatted": "57.7 KB",
+      "lines": 1313,
+      "mtime": 1792928139.2559285,
+      "mtime_formatted": "25/10/2026 18:35",
       "desc": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
     },
     {
@@ -6427,11 +6481,11 @@ window.SKILL_LIVE_DATA = {
       "name": "earth_zoom_omni_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 31234,
-      "size_formatted": "30.5 KB",
-      "lines": 692,
-      "mtime": 1792889573.2714963,
-      "mtime_formatted": "25/10/2026 07:52",
+      "size": 44510,
+      "size_formatted": "43.5 KB",
+      "lines": 941,
+      "mtime": 1792928846.7060544,
+      "mtime_formatted": "25/10/2026 18:47",
       "desc": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
     },
     {
@@ -6526,11 +6580,11 @@ window.SKILL_LIVE_DATA = {
       "name": "jib_down_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 63342,
-      "size_formatted": "61.9 KB",
-      "lines": 1311,
-      "mtime": 1792908642.708339,
-      "mtime_formatted": "25/10/2026 13:10",
+      "size": 65292,
+      "size_formatted": "63.8 KB",
+      "lines": 1344,
+      "mtime": 1792928610.2415512,
+      "mtime_formatted": "25/10/2026 18:43",
       "desc": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
     },
     {
@@ -6614,11 +6668,11 @@ window.SKILL_LIVE_DATA = {
       "name": "timelapse_freeze_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 41282,
-      "size_formatted": "40.3 KB",
-      "lines": 994,
-      "mtime": 1792910463.1220205,
-      "mtime_formatted": "25/10/2026 13:41",
+      "size": 41343,
+      "size_formatted": "40.4 KB",
+      "lines": 996,
+      "mtime": 1792926706.4585593,
+      "mtime_formatted": "25/10/2026 18:11",
       "desc": "Timelapse-Freeze AI Hook Engine V2.0 (`timelapse_freeze_engine.py`)"
     },
     {
@@ -6768,70 +6822,134 @@ window.SKILL_LIVE_DATA = {
       "name": "check_motion.py",
       "skill_id": "checkmotion",
       "skill_name": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
-      "size": 49588,
-      "size_formatted": "48.4 KB",
-      "lines": 998,
-      "mtime": 1792910607.605959,
-      "mtime_formatted": "25/10/2026 13:43",
+      "size": 55221,
+      "size_formatted": "53.9 KB",
+      "lines": 1101,
+      "mtime": 1792922513.185128,
+      "mtime_formatted": "25/10/2026 17:01",
       "desc": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
     }
   ],
   "history": [
     {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792913474.5646095,
-      "mtime_formatted": "25/10/2026 14:31",
-      "detail": "15 quy chuẩn • 18 studios"
-    },
-    {
-      "name": "compositions/PaageOffline0711_30fps.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792912990.4378085,
-      "mtime_formatted": "25/10/2026 14:23",
-      "detail": "3555 dòng • Composition"
-    },
-    {
-      "name": "ai-hook/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792910811.5272677,
-      "mtime_formatted": "25/10/2026 13:46",
-      "detail": "291 dòng • 6 mục chính"
-    },
-    {
-      "name": "checkmotion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
-      "mtime": 1792910644.0670679,
-      "mtime_formatted": "25/10/2026 13:44",
-      "detail": "62 dòng • 4 mục chính"
-    },
-    {
-      "name": "scripts/check_motion.py",
-      "type": "Python Script",
-      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
-      "mtime": 1792910607.605959,
-      "mtime_formatted": "25/10/2026 13:43",
-      "detail": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
-    },
-    {
-      "name": "scripts/timelapse_freeze_engine.py",
+      "name": "scripts/earth_zoom_omni_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792910463.1220205,
-      "mtime_formatted": "25/10/2026 13:41",
-      "detail": "Timelapse-Freeze AI Hook Engine V2.0 (`timelapse_freeze_engine.py`)"
+      "mtime": 1792928846.7060544,
+      "mtime_formatted": "25/10/2026 18:47",
+      "detail": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
     },
     {
       "name": "scripts/jib_down_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792908642.708339,
-      "mtime_formatted": "25/10/2026 13:10",
+      "mtime": 1792928610.2415512,
+      "mtime_formatted": "25/10/2026 18:43",
       "detail": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
+    },
+    {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1792928441.0905125,
+      "mtime_formatted": "25/10/2026 18:40",
+      "detail": "15 quy chuẩn • 19 studios"
+    },
+    {
+      "name": "scripts/ai_hook_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792928139.2559285,
+      "mtime_formatted": "25/10/2026 18:35",
+      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
+    },
+    {
+      "name": "ai-hook/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792926973.6822736,
+      "mtime_formatted": "25/10/2026 18:16",
+      "detail": "303 dòng • 7 mục chính"
+    },
+    {
+      "name": "scripts/timelapse_freeze_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1792926706.4585593,
+      "mtime_formatted": "25/10/2026 18:11",
+      "detail": "Timelapse-Freeze AI Hook Engine V2.0 (`timelapse_freeze_engine.py`)"
+    },
+    {
+      "name": "compositions/Mau02HiggsfieldFigma_30fps.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792925057.676238,
+      "mtime_formatted": "25/10/2026 17:44",
+      "detail": "17 dòng • Composition"
+    },
+    {
+      "name": "compositions/AdwaveOffline0711_30fps.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792924780.694746,
+      "mtime_formatted": "25/10/2026 17:39",
+      "detail": "15 dòng • Composition"
+    },
+    {
+      "name": "compositions/AdwaveOffline61s_V5Master.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792924659.887512,
+      "mtime_formatted": "25/10/2026 17:37",
+      "detail": "14 dòng • Composition"
+    },
+    {
+      "name": "scripts/verify_12_principles.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792924014.3636844,
+      "mtime_formatted": "25/10/2026 17:26",
+      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
+    },
+    {
+      "name": "motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792922790.7343156,
+      "mtime_formatted": "25/10/2026 17:06",
+      "detail": "84 dòng • 5 mục chính"
+    },
+    {
+      "name": "scripts/render_paage_template.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 60fps (Universal Archetypes)",
+      "mtime": 1792922669.718782,
+      "mtime_formatted": "25/10/2026 17:04",
+      "detail": "render_paage_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)"
+    },
+    {
+      "name": "scripts/check_motion.py",
+      "type": "Python Script",
+      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "mtime": 1792922513.185128,
+      "mtime_formatted": "25/10/2026 17:01",
+      "detail": "CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)"
+    },
+    {
+      "name": "compositions/PaageOffline0711_30fps.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1792922246.7120967,
+      "mtime_formatted": "25/10/2026 16:57",
+      "detail": "20 dòng • Composition"
+    },
+    {
+      "name": "checkmotion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)",
+      "mtime": 1792921374.784911,
+      "mtime_formatted": "25/10/2026 16:42",
+      "detail": "63 dòng • 4 mục chính"
     },
     {
       "name": "scripts/verify_timelapse_freeze.py",
@@ -6882,22 +7000,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "giant_grab_engine.py — Giant-Grab V2 (Google Flow Veo 3.1 3D True-Physics Engine)"
     },
     {
-      "name": "scripts/ai_hook_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792906747.359223,
-      "mtime_formatted": "25/10/2026 12:39",
-      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
-    },
-    {
-      "name": "scripts/verify_12_principles.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792901770.7037838,
-      "mtime_formatted": "25/10/2026 11:16",
-      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
-    },
-    {
       "name": "scripts/sticker_transition_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
@@ -6912,14 +7014,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792899164.3627465,
       "mtime_formatted": "25/10/2026 10:32",
       "detail": "48 dòng • 5 mục chính"
-    },
-    {
-      "name": "motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Motion Studio 60fps (Universal Archetypes)",
-      "mtime": 1792899130.9130378,
-      "mtime_formatted": "25/10/2026 10:32",
-      "detail": "69 dòng • 4 mục chính"
     },
     {
       "name": "so-do-motion/SKILL.md",
@@ -6976,46 +7070,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792894373.4193528,
       "mtime_formatted": "25/10/2026 09:12",
       "detail": "AI Hook #6 — Smoke Reveal Engine (Curl-Noise Volumetric Smoke)"
-    },
-    {
-      "name": "scripts/verify_jib_down.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792894010.4366152,
-      "mtime_formatted": "25/10/2026 09:06",
-      "detail": "Anti-Jitter / Anti-Stutter QA Verifier for Vertical-Jib / AI-Hook renders."
-    },
-    {
-      "name": "compositions/Demo12P_V2_10s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792890495.8823364,
-      "mtime_formatted": "25/10/2026 08:08",
-      "detail": "834 dòng • Composition"
-    },
-    {
-      "name": "compositions/Demo12P_V3_10s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792890436.008761,
-      "mtime_formatted": "25/10/2026 08:07",
-      "detail": "714 dòng • Composition"
-    },
-    {
-      "name": "compositions/Demo12P_V1_10s.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792890428.9912655,
-      "mtime_formatted": "25/10/2026 08:07",
-      "detail": "939 dòng • Composition"
-    },
-    {
-      "name": "scripts/earth_zoom_omni_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792889573.2714963,
-      "mtime_formatted": "25/10/2026 07:52",
-      "detail": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
     }
   ]
 };
