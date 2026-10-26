@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-26T20:09:51+07:00",
-  "total_scene_items": 412,
-  "total_unique_ideas": 393,
-  "total_active_ideas": 333,
+  "generated_at": "2026-10-26T20:12:58+07:00",
+  "total_scene_items": 413,
+  "total_unique_ideas": 394,
+  "total_active_ideas": 334,
   "total_excluded_ideas": 60,
   "total_creators": 242,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 13,
     "talking-head": 45,
     "storytelling": 40,
-    "dien-anh": 162,
+    "dien-anh": 163,
     "chuyen-canh": 63,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 31,
     "du-lich": 50,
     "cong-nghe": 25,
-    "kien-truc": 16,
+    "kien-truc": 17,
     "the-thao": 6,
     "ky-thuat-quay": 124,
     "ugc": 8
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 238,
+    "us_eu": 239,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -367,6 +367,23 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@iman.lizi",
+      "name": "Iman Lizi",
+      "profile_url": "https://www.instagram.com/iman.lizi/",
+      "video_count": 7,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_%F0%9F%95%AF%EF%B8%8F/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_🕯️",
+        "IG_@iman.lizi_Ddv7PoCo2AA_weekend_plans_coffee_by_the_window,_crisp_aut",
+        "IG_@iman.lizi_Dd9JnIBNJs7_welcoming_October_with_slow_days_at_home,_war",
+        "IG_@iman.lizi_DeZJOgZoRew_the_evening_rule_little_lights_only_🕯️",
+        "IG_@iman.lizi_DejopHOIoW5_autumn_at_home_🍂",
+        "IG_@iman.lizi_DbYrq6gIPtC_Summer_at_home_🌞",
+        "IG_@iman.lizi_Dc6qXoKoYKh"
+      ]
+    },
+    {
       "handle": "@joshdiazfilms",
       "name": "Joshdiazfilms",
       "profile_url": "https://www.instagram.com/joshdiazfilms/",
@@ -398,22 +415,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jazziesillona_DWrDUymD4_a_Carousel_Analysis",
         "IG_@Jazzie_DU2CTKzEqvl_Carousel_Analysis",
         "IG_@jazziesillona_DbIA2jwPHCV"
-      ]
-    },
-    {
-      "handle": "@iman.lizi",
-      "name": "Iman Lizi",
-      "profile_url": "https://www.instagram.com/iman.lizi/",
-      "video_count": 6,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40iman.lizi_Ddv7PoCo2AA_weekend_plans_coffee_by_the_window%2C_crisp_aut/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@iman.lizi_Ddv7PoCo2AA_weekend_plans_coffee_by_the_window,_crisp_aut",
-        "IG_@iman.lizi_Dd9JnIBNJs7_welcoming_October_with_slow_days_at_home,_war",
-        "IG_@iman.lizi_DeZJOgZoRew_the_evening_rule_little_lights_only_🕯️",
-        "IG_@iman.lizi_DejopHOIoW5_autumn_at_home_🍂",
-        "IG_@iman.lizi_DbYrq6gIPtC_Summer_at_home_🌞",
-        "IG_@iman.lizi_Dc6qXoKoYKh"
       ]
     },
     {
@@ -3068,6 +3069,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_🕯️",
+      "shortcode": "Ddg5dqqIrYs",
+      "title_vi": "an evening made for staying in 🕯️",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iman.lizi",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@iman.lizi",
+        "name": "Iman Lizi",
+        "handle": "@iman.lizi",
+        "profile_url": "https://www.instagram.com/iman.lizi/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Ddg5dqqIrYs/",
+      "gdrive_folder": "https://drive.google.com/open?id=19uTbTEhOQcRNXbMi_GnejonN370zhRSH",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_%F0%9F%95%AF%EF%B8%8F/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_%F0%9F%95%AF%EF%B8%8F/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/Ddg5dqqIrYs.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/Ddg5dqqIrYs.mp4",
+        "report_url": "reports/IG_@iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_🕯️.html",
+        "shots_count": 8,
+        "duration": "8.3s",
+        "youtube_id": "BQA7r-124Tc",
+        "youtube_embed": "https://www.youtube.com/embed/BQA7r-124Tc",
+        "youtube_url": "https://youtu.be/BQA7r-124Tc"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@ssmbx_22_De66aAuyeE-_DASHIMAKI_dual_pov🍳",
       "shortcode": "De66aAuyeE-",
@@ -10475,7 +10549,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -14032,7 +14106,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -15211,7 +15285,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
