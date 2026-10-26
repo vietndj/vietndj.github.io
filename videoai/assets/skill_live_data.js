@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 26/10/2026 15:28:45
+ * Sinh tự động bởi sync_videoai.py vào lúc: 26/10/2026 19:06:07
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "26/10/2026 15:28:45",
-  "last_synced_iso": "2026-10-26T15:28:45.619193",
+  "last_synced_formatted": "26/10/2026 19:06:07",
+  "last_synced_iso": "2026-10-26T19:06:07.100515",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,7 +15,7 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 26,
     "components_count": 22,
-    "scripts_count": 75,
+    "scripts_count": 78,
     "skills_count": 8,
     "studios_count": 19,
     "evolution_entries_count": 17,
@@ -2941,14 +2941,14 @@ window.SKILL_LIVE_DATA = {
       "badge": "SPA NICHE PACK V10",
       "desc": "Gói đóng gói chuyên biệt cho chủ đề Spa/Thẩm mỹ (Gọi tự nhiên: 'Hãy edit video sau theo phong cách spa' hoặc 'EDIT SPA' — Whip-Snap Zoom 0.28s khớp nhịp lấy hơi, Logo chỉ ở CTA & Outro, Atlas 2D hội ý CLAUDE2, Trước-Sau nền trắng #F5F2EB).",
       "path": "/Users/vietmac/.gemini/config/skills/spa-edit/SKILL.md",
-      "size": 8662,
-      "size_formatted": "8.5 KB",
-      "lines_count": 78,
-      "mtime": 1792899088.5866983,
-      "mtime_formatted": "25/10/2026 10:31",
+      "size": 6271,
+      "size_formatted": "6.1 KB",
+      "lines_count": 68,
+      "mtime": 1793009372.263715,
+      "mtime_formatted": "26/10/2026 17:09",
       "headers": [
         "🗣️ 0. CÁCH GỌI TỰ NHIÊN CHỈ VỚI 1 VIDEO QUAY ĐIỆN THOẠI (0 MA SÁT)",
-        "🔄 1. QUY TRÌNH 2 PHA THÔNG MINH (LẬP KẾ HOẠCH & HỎI CONFIRM ➔ KẾT XUẤT VIDEO `.MP4`)",
+        "🔄 1. QUY TRÌNH 2 PHA SIÊU TIẾT KIỆM TOKEN (`--plan --quiet-json` ➔ CONFIRM ➔ `--render --quiet-json`)",
         "🔥 2. NĂM TIÊU CHUẨN CỐT LÕI ĐÃ ĐÓNG BĂNG TRONG ENGINE `V10 MASTER`"
       ],
       "status": "ACTIVE"
@@ -6475,14 +6475,47 @@ window.SKILL_LIVE_DATA = {
       "desc": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic V3 (verify_motion_deliverable.py)"
     },
     {
+      "name": "content_brain.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "size": 47104,
+      "size_formatted": "46.0 KB",
+      "lines": 707,
+      "mtime": 1793009106.8891118,
+      "mtime_formatted": "26/10/2026 17:05",
+      "desc": "CONTENT BRAIN V10 — ZERO-TOKEN OFFLINE TOPIC ENGINE & VIETNAMESE COMPOUND HIGHLIGHTER"
+    },
+    {
+      "name": "doctor.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "size": 4481,
+      "size_formatted": "4.4 KB",
+      "lines": 109,
+      "mtime": 1793009300.402668,
+      "mtime_formatted": "26/10/2026 17:08",
+      "desc": "SPA-EDIT V10 SYSTEM DOCTOR — KIỂM TRA SỨC KHỎE MÔI TRƯỜNG CÀI ĐẶT (0 TOKEN)"
+    },
+    {
+      "name": "interactive_wizard.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "size": 3234,
+      "size_formatted": "3.2 KB",
+      "lines": 77,
+      "mtime": 1793009302.7756574,
+      "mtime_formatted": "26/10/2026 17:08",
+      "desc": "INTERACTIVE 0-TOKEN WIZARD CHO HỌC VIÊN SPA & NHA KHOA"
+    },
+    {
       "name": "spa_edit_cli.py",
       "skill_id": "spa-edit",
       "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "size": 71953,
-      "size_formatted": "70.3 KB",
-      "lines": 1473,
-      "mtime": 1792833161.1937935,
-      "mtime_formatted": "24/10/2026 16:12",
+      "size": 74729,
+      "size_formatted": "73.0 KB",
+      "lines": 1541,
+      "mtime": 1793009264.3776498,
+      "mtime_formatted": "26/10/2026 17:07",
       "desc": "SPA & DENTAL-MEDICAL VIDEO EDIT CLI V10 MASTER — STANDALONE PORTABLE ENGINE FOR STUDENTS"
     },
     {
@@ -6972,6 +7005,46 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "spa-edit/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793009372.263715,
+      "mtime_formatted": "26/10/2026 17:09",
+      "detail": "68 dòng • 3 mục chính"
+    },
+    {
+      "name": "scripts/interactive_wizard.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793009302.7756574,
+      "mtime_formatted": "26/10/2026 17:08",
+      "detail": "INTERACTIVE 0-TOKEN WIZARD CHO HỌC VIÊN SPA & NHA KHOA"
+    },
+    {
+      "name": "scripts/doctor.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793009300.402668,
+      "mtime_formatted": "26/10/2026 17:08",
+      "detail": "SPA-EDIT V10 SYSTEM DOCTOR — KIỂM TRA SỨC KHỎE MÔI TRƯỜNG CÀI ĐẶT (0 TOKEN)"
+    },
+    {
+      "name": "scripts/spa_edit_cli.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793009264.3776498,
+      "mtime_formatted": "26/10/2026 17:07",
+      "detail": "SPA & DENTAL-MEDICAL VIDEO EDIT CLI V10 MASTER — STANDALONE PORTABLE ENGINE FOR STUDENTS"
+    },
+    {
+      "name": "scripts/content_brain.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793009106.8891118,
+      "mtime_formatted": "26/10/2026 17:05",
+      "detail": "CONTENT BRAIN V10 — ZERO-TOKEN OFFLINE TOPIC ENGINE & VIETNAMESE COMPOUND HIGHLIGHTER"
+    },
+    {
       "name": "scripts/verify_12_principles.py",
       "type": "Python Script",
       "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
@@ -7170,46 +7243,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792907047.3652809,
       "mtime_formatted": "25/10/2026 12:44",
       "detail": "giant_grab_engine.py — Giant-Grab V2 (Google Flow Veo 3.1 3D True-Physics Engine)"
-    },
-    {
-      "name": "scripts/sticker_transition_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792900722.3259668,
-      "mtime_formatted": "25/10/2026 10:58",
-      "detail": "3D Die-Cut Sticker Peel & Match-Cut AI Hook Engine (`sticker_transition_engine.py`)"
-    },
-    {
-      "name": "fedu-media-pipeline/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "FEDU Media Pipeline (Tổng Thể)",
-      "mtime": 1792899164.3627465,
-      "mtime_formatted": "25/10/2026 10:32",
-      "detail": "48 dòng • 5 mục chính"
-    },
-    {
-      "name": "so-do-motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
-      "mtime": 1792899090.3836439,
-      "mtime_formatted": "25/10/2026 10:31",
-      "detail": "90 dòng • 4 mục chính"
-    },
-    {
-      "name": "spa-edit/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1792899088.5866983,
-      "mtime_formatted": "25/10/2026 10:31",
-      "detail": "78 dòng • 3 mục chính"
-    },
-    {
-      "name": "auto-edit-video/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1792899086.2493057,
-      "mtime_formatted": "25/10/2026 10:31",
-      "detail": "184 dòng • 7 mục chính"
     }
   ]
 };
