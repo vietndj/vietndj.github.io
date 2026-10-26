@@ -21,7 +21,7 @@
           <em>Không cần nhớ đường dẫn file, không cần copy ảnh hay sửa HTML thủ công. Chỉ cần nói tự nhiên "cập nhật vào skill" hoặc "đưa vào videoai" — mọi quy chuẩn, phòng Studio và ảnh thực tế tự động lên sóng.</em>
         </p>
         <p style="font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--mute); margin-bottom:0;">
-          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">25/10/2026 20:43:00</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 19 Phòng Studio tương tác, 72 file kịch bản Python, 26 Remotion Compositions và 22 Visual Components.
+          Thời điểm đồng bộ mới nhất: <strong style="color:var(--ink);">26/10/2026 11:13:44</strong>. Hệ thống quản lý trực tiếp 4 Kỹ năng lõi, 19 Phòng Studio tương tác, 75 file kịch bản Python, 26 Remotion Compositions và 22 Visual Components.
         </p>
 
         <!-- Khối chỉ số sống -->
@@ -31,7 +31,7 @@
             <div class="proof-lbl">auto-edit, render-v3, motion, fedu-media-pipeline &amp; 19 Studio HTML</div>
           </div>
           <div class="proof-item">
-            <div class="proof-num">72 Scripts Python</div>
+            <div class="proof-num">75 Scripts Python</div>
             <div class="proof-lbl">VAD, bóc nhịp, khóa mắt, B-Roll hot-swap &amp; QA Lint</div>
           </div>
           <div class="proof-item">
@@ -95,6 +95,24 @@
         Danh sách các quy chuẩn và phòng Studio đã được tự động đóng gói, copy ảnh và gắn vào đúng trang Bước học:
       </p>
       
+        <div class="matrix-card" style="border-left:4px solid #f59e0b; margin-bottom:16px;">
+          <div class="matrix-header">
+            <div class="matrix-title">
+              <span>⚡ Đóng Gói Khuôn Mẫu 03 Motion Graphic (Higgsfield Figma 44.8s V7.1 Master — Ngang 16:9 & Dọc 9:16) & Chuẩn Hóa Hệ Thống 3 Template Motion Graphic (Mẫu 01 • Mẫu 02 • Mẫu 03) — Hội Ý CLAUDE2</span>
+            </div>
+            <span class="matrix-badge editorial">26/10/2026 • Đích: buoc-4, motion-graphic</span>
+          </div>
+          <p style="font-size:14.5px; color:var(--ink2); margin:0 0 10px;">Hoàn tất đóng gói <strong>Khuôn Mẫu 03 Motion Graphic (<code>mau03_higgsfield_45s</code> — Higgsfield Figma Canvas Showcase V7.1)</strong> trên cả 2 tỷ lệ <strong>Ngang <code>16:9</code> (<code>1920×1080</code>)</strong> và <strong>Dọc <code>9:16</code> (<code>1080×1920</code>)</strong>, đồng thời hợp nhất cùng <strong>Mẫu 01 (Paage 70s)</strong> và <strong>Mẫu 02 (Adwave 61s)</strong> thành hệ thống 3 Template chuẩn hóa qua <code>templates/registry.json</code> và <code>scripts/render_template.py</code>:<br/>1) <strong>Kiến trúc Dừng Nhạc <code>1.60s</code> (<code>48 frames</code>) Mở Màn Hình Điểm Chính Độc Lập (<code>&lt;ZeroNoisePillarScreen30 /&gt;</code> — Gate B18 &amp; R_B12c):</strong> Tại 3 mốc <code>f=80, 533, 907</code>, ngắt nhạc <code>1.60s</code> kèm Sub-Bass Hit + Whoosh Riser và mở màn hình Điểm Chính toàn khung (<code>01 KỊCH BẢN 7 CÂU</code>, <code>02 KÈM 1-1 TẠI BÀN</code>, <code>03 MANG VỀ 3 VIDEO</code>) không có bất kỳ video nào cạnh tranh sự chú ý.<br/>2) <strong>Khung B-Roll Vuông &amp; Dải Ghép Khung Vuông Đa Cảnh (<code>&lt;MultiSquareBrollStrip30 /&gt;</code> — Gate B20 V7.1):</strong> Đưa mọi khung B-Roll đơn về tỷ lệ gần vuông (<code>cardAspect &le; 1.45</code>), tách các vùng ngang rộng ở <code>S04, S07, S09</code> thành 2–3 khung vuông <code>~1:1</code> đặt cạnh nhau (tăng lên <strong>29 cảnh trám độc bản <code>M01..M29</code></strong>), tự động cắt sạch biển <code>EXIT</code> xanh lá / trần nhà trắng và nâng khuôn mặt ở <code>S03, S10</code> lên đường vàng 1/3.<br/>3) <strong>Luật <code>0%</code> Zoom Cận Mặt Học Viên Trên Cả Bản Ngang &amp; Bản Dọc (<code>R_B20d_NO_STUDENT_FACE_ZOOM</code>):</strong> Với mọi video bài làm học viên dọc (<code>STU_off3_*</code>, <code>B18</code>, <code>B19</code>), khóa cứng <code>safeScale = 1.0</code> (<strong>0% zoom</strong>), giữ khung nhỏ gọn đủ tỷ lệ (<code>cardAspect = 0.65 / 0.5625</code> trên bản dọc <code>9:16</code>, vuông <code>1:1</code> trên bản ngang) để thấy trọn vẹn đầu, vai, trang phục và biểu cảm mắt mở tươi tắn; con trỏ chuột chỉ bấm vào thanh pill dưới chân card.<br/>4) <strong>Ma Trận Phân Tầng Cơ Học Nhún Có Nguyên Nhân (<code>L0..L3</code> — Gate B17) &amp; Neo Con Trỏ <code>anchorToRect30</code> Ở Root Stage (Gate B19):</strong> Khóa phẳng <code>0%</code> nhún cho mọi container lớn, lưới nhiều video và màn hình dừng nhạc; chỉ nhún khi con trỏ thật sự click vào nút.</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:10px;">
+            <a href="05-buoc4-motion-cta.html#evo-mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging" style="font:700 12px var(--sans); color:#fff; background:#0f172a; padding:4px 10px; border-radius:6px; text-decoration:none;">📖 Xem trên 05-buoc4-motion-cta.html</a>
+            <button type="button" onclick="openStudioModal('studios/studio-motion-graphic-paage-offline-versions.html', 'Đóng Gói Khuôn Mẫu 03 Motion Graphic (Higgsfield Figma 44.8s V7.1 Master — Ngang 16:9 & Dọc 9:16) & Chuẩn Hóa Hệ Thống 3 Template Motion Graphic (Mẫu 01 • Mẫu 02 • Mẫu 03) — Hội Ý CLAUDE2')" style="font:700 12px var(--sans); color:#fff; background:#b45309; border:none; padding:4px 10px; border-radius:6px; cursor:pointer;">🎛️ Mở Studio (studio-motion-graphic-paage-offline-versions.html)</button>
+            <a href="assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/doi_chieu_9x16_v6_vs_v7_1.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ doi_chieu_9x16_v6_vs_v7_1.jpg</a><a href="assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/doi_chieu_3_canh_v6_vs_v7_square_broll.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ doi_chieu_3_canh_v6_vs_v7_square_broll.jpg</a><a href="assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/qa_layout_blueprint_mau02_v7_16x9.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ qa_layout_blueprint_mau02_v7_16x9.jpg</a><a href="assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/qa_layout_blueprint_mau02_v7_9x16.jpg" target="_blank" style="font:600 11.5px var(--mono); color:#1d4ed8; background:#eff6ff; padding:3px 8px; border-radius:6px; text-decoration:none;">🖼️ qa_layout_blueprint_mau02_v7_9x16.jpg</a>
+          </div>
+          <div style="font:400 12px var(--mono); color:var(--mute);">
+            Phiên gốc: <code>af2ec2a2-4b78-41ed-ab3b-d65f25ddd21f</code> • ID: <code>mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging</code>
+          </div>
+        </div>
+        
         <div class="matrix-card" style="border-left:4px solid #f59e0b; margin-bottom:16px;">
           <div class="matrix-header">
             <div class="matrix-title">
@@ -436,19 +454,19 @@
         <div class="matrix-card" style="margin-bottom:16px;">
           <div class="matrix-header">
             <div class="matrix-title">
-              <span>🛠️ Motion Studio 60fps (Universal Archetypes)</span>
+              <span>🛠️ Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)</span>
             </div>
-            <span class="matrix-badge sci">🟢 ACTIVE • 60FPS MOTION</span>
+            <span class="matrix-badge sci">🟢 ACTIVE • 3 TEMPLATES V7.1</span>
           </div>
-          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Sản xuất Motion Graphic 60fps đa phiên bản từ 5 khuôn thiết kế gốc .TSX & 10 Archetypes.</p>
+          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Hệ thống 3 Template Motion Graphic 30fps V7.1 (Mẫu 01 Paage 70s, Mẫu 02 Adwave 61s, Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16): 12 Nguyên lý Vật lý, Dừng nhạc 1.60s mở màn hình Điểm Chính <ZeroNoisePillarScreen30 />, Khung B-Roll vuông đa cảnh <MultiSquareBrollStrip30 />, 0% Zoom mặt học viên (R_B20d) & render_template.py.</p>
           <div style="font:400 12px var(--mono); color:var(--mute); margin-bottom:10px;">
-            <span>Dung lượng: <strong>10.6 KB</strong> (62 dòng)</span> • 
-            <span>Cập nhật: <strong style="color:var(--ink);">25/10/2026 20:40</strong></span>
+            <span>Dung lượng: <strong>17.2 KB</strong> (89 dòng)</span> • 
+            <span>Cập nhật: <strong style="color:var(--ink);">26/10/2026 11:06</strong></span>
           </div>
           <div style="font-size:13px; color:var(--ink2);">
             <strong>Mục chính trong SKILL.md:</strong>
             <ul style="padding-left:18px; margin-top:4px; line-height:1.5;">
-              <li style="margin-bottom:3px;">1. BA LUẬT VÀNG & BẢNG MANTRA ĐỊNH TUYẾN BỐI CẢNH (0 MA SÁT)</li><li style="margin-bottom:3px;">2. NĂM CHUẨN KIẾN TRÚC BẮT BUỘC CỦA MOTION ENGINE V6.0</li><li style="margin-bottom:3px;">3. VÒNG LẶP TỰ HỌC (`self_learning_ledger.jsonl`) & CỔNG KIỂM ĐỊNH KÉP V4.0</li>
+              <li style="margin-bottom:3px;">1. BA LUẬT VÀNG, BẢNG 3 TEMPLATE ĐÓNG GÓI & MANTRA ĐỊNH TUYẾN BỐI CẢNH (0 MA SÁT)</li><li style="margin-bottom:3px;">2. TÁM CHUẨN KIẾN TRÚC BẮT BUỘC CỦA MOTION ENGINE V7.1</li><li style="margin-bottom:3px;">3. CHU TRÌNH KIỂM ĐỊNH 4 MỐC THỜI ĐIỂM (`T0 -> T1 -> T2 -> T3`) & GIAO HÀNG TELEGRAM TỰ ĐỘNG</li>
             </ul>
           </div>
         </div>
@@ -536,19 +554,19 @@
         <div class="matrix-card" style="margin-bottom:16px;">
           <div class="matrix-header">
             <div class="matrix-title">
-              <span>🛠️ CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)</span>
+              <span>🛠️ CHECKMOTION v7.1 (1-Second Motion Inventory, 5 Trụ Cột P1..P5 & 16 Cổng Tất Định B6..B21 Đa Tỷ Lệ 16:9 & 9:16)</span>
             </div>
-            <span class="matrix-badge sci">🟢 ACTIVE • CHECKMOTION V2.0</span>
+            <span class="matrix-badge sci">🟢 ACTIVE • CHECKMOTION V7.1</span>
           </div>
-          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Kiểm toán chuyển động từng giây (1-Second Motion Inventory), chấm điểm 5 Trụ Cột Vật Lý Tự Nhiên kết hợp Ma Trận Phân Tầng Biến Dạng 4 Cấp Không Hại Mắt (Readability-First Hierarchy: READ 0% méo / HERO ≤2.5% / RIGID 0% / ELASTIC 6-14%).</p>
+          <p style="font-size:14.5px; margin-bottom:10px; color:var(--ink2);">Kiểm toán chuyển động từng giây, 5 Trụ cột P1..P5, Độc bản B-Roll dHash (B11), Màn hình dừng nhạc 1.6s (B12/B18), Toán học đọc chữ Tiếng Việt (B16), Phân tầng nhún L0..L3 (B17), Neo con trỏ anchorToRect30 (B19), Khung B-Roll vuông & 0% Zoom mặt học viên R_B20d (B20), và Xuất Bản Thiết Kế 12 Nhịp (B21).</p>
           <div style="font:400 12px var(--mono); color:var(--mute); margin-bottom:10px;">
-            <span>Dung lượng: <strong>8.4 KB</strong> (67 dòng)</span> • 
-            <span>Cập nhật: <strong style="color:var(--ink);">25/10/2026 19:17</strong></span>
+            <span>Dung lượng: <strong>17.1 KB</strong> (88 dòng)</span> • 
+            <span>Cập nhật: <strong style="color:var(--ink);">26/10/2026 11:06</strong></span>
           </div>
           <div style="font-size:13px; color:var(--ink2);">
             <strong>Mục chính trong SKILL.md:</strong>
             <ul style="padding-left:18px; margin-top:4px; line-height:1.5;">
-              <li style="margin-bottom:3px;">1. MỤC TIÊU & MANTRA KÍCH HOẠT</li><li style="margin-bottom:3px;">2. NĂM TRỤ CỘT BẮT BUỘC CHO MỌI CHUYỂN ĐỘNG TỰ NHIÊN (5-PILLAR RUBRIC V4.0)</li><li style="margin-bottom:3px;">3. LỆNH CHẠY KIỂM TOÁN TỰ ĐỘNG (`check_motion.py`)</li><li style="margin-bottom:3px;">4. TIÊU CHUẨN VƯỢT CỔNG (`CHECKMOTION V4.0 PASS GATE`)</li>
+              <li style="margin-bottom:3px;">1. MỤC TIÊU, MANTRA KÍCH HOẠT & BẢNG PHÂN ĐỊNH 4 MỐC THỜI ĐIỂM KIỂM TOÁN (`T0 -> T1 -> T2 -> T3`)</li><li style="margin-bottom:3px;">2. CHI TIẾT 5 TẦNG KIỂM TOÁN TẤT ĐỊNH (`P1..P5` & `B6..B21`)</li><li style="margin-bottom:3px;">3. LỆNH CHẠY KIỂM TOÁN TỰ ĐỘNG (`check_motion.py`)</li>
             </ul>
           </div>
         </div>
@@ -578,20 +596,62 @@
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">evolution_log.json</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Evolution Registry</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Auto-Evolve Hub</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:42</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 11:12</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">checkmotion/SKILL.md</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">CHECKMOTION v7.1 (1-Second Motion Inventory, 5 Trụ Cột P1..P5 & 16 Cổng Tất Định B6..B21 Đa Tỷ Lệ 16:9 & 9:16)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 11:06</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">motion/SKILL.md</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:40</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 11:06</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/verify_12_principles.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 11:03</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/render_higgsfield_template.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 11:02</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/render_template.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 11:01</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/check_motion.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">CHECKMOTION v7.1 (1-Second Motion Inventory, 5 Trụ Cột P1..P5 & 16 Cổng Tất Định B6..B21 Đa Tỷ Lệ 16:9 & 9:16)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 11:00</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/scan_broll_faces.py</td>
+          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">26/10/2026 10:43</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/render_adwave_template.py</td>
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
+          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:37</td>
         </tr>
         
@@ -600,20 +660,6 @@
           <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
           <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 20:03</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">checkmotion/SKILL.md</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Markdown Spec</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 19:17</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/check_motion.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">CHECKMOTION v2.0 (1-Second Motion Inventory & Readability-First 4-Tier Hierarchy)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 18:59</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -644,34 +690,6 @@
           <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 18:11</td>
         </tr>
         
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">compositions/Mau02HiggsfieldFigma_30fps.tsx</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Remotion .TSX</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Remotion Studio 60fps</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 17:44</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">compositions/AdwaveOffline0711_30fps.tsx</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Remotion .TSX</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Remotion Studio 60fps</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 17:39</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">compositions/AdwaveOffline61s_V5Master.tsx</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Remotion .TSX</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Remotion Studio 60fps</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 17:37</td>
-        </tr>
-        
-        <tr style="border-bottom:1px solid var(--line);">
-          <td style="padding:8px 10px; font:600 12.5px var(--mono); color:var(--ink);">scripts/verify_12_principles.py</td>
-          <td style="padding:8px 10px; font:500 12.5px var(--sans); color:var(--ink2);">Python Script</td>
-          <td style="padding:8px 10px; font:400 12px var(--sans); color:var(--mute);">Motion Studio 60fps (Universal Archetypes)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:#15803d;">25/10/2026 17:26</td>
-        </tr>
-        
           </tbody>
         </table>
       </div>
@@ -679,7 +697,7 @@
       <!-- ========================================================
            DANH MỤC SCRIPTS PYTHON
            ======================================================== -->
-      <h2 style="margin-top:36px;">5. Danh mục toàn bộ 72 kịch bản Python</h2>
+      <h2 style="margin-top:36px;">5. Danh mục toàn bộ 75 kịch bản Python</h2>
       <div style="background:#ffffff; border:1px solid var(--line); border-radius:12px; overflow-x:auto;">
         <table style="width:100%; border-collapse:collapse; text-align:left;">
           <thead>
@@ -854,10 +872,24 @@
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">render_higgsfield_template.py</td>
+          <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">motion</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">CLI CÔNG NGHIỆP MẪU 03 MOTION GRAPHIC — HIGGSFIELD FIGMA SHOWCASE V7.1 (44.80S / 40.00S @ 30FPS)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">162 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">render_paage_template.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">motion</td>
           <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">render_paage_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)</td>
           <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">291 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">render_template.py</td>
+          <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">motion</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">CLI ĐIỀU PHỐI HỢP NHẤT 3 TEMPLATE MOTION GRAPHIC (V7.1 — HỘI Ý CÙNG CLAUDE OPUS 5.5)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">78 dòng</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -868,10 +900,17 @@
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">scan_broll_faces.py</td>
+          <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">motion</td>
+          <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">SCAN B-ROLL FACES, CEILING BANDS, HARD-CUTS & BURNED SUBTITLES (CheckMotion V7.1)</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">388 dòng</td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid var(--line);">
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">verify_12_principles.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">motion</td>
           <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">618 dòng</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">628 dòng</td>
         </tr>
         
         <tr style="border-bottom:1px solid var(--line);">
@@ -1193,7 +1232,7 @@
           <td style="padding:8px 10px; font:700 12.5px var(--mono); color:var(--ink);">check_motion.py</td>
           <td style="padding:8px 10px; font:600 12px var(--sans); color:#1d4ed8;">checkmotion</td>
           <td style="padding:8px 10px; font:400 12.5px var(--sans); color:var(--ink2);">CHECKMOTION — Kiểm toán chuyển động 2 tầng (AST .tsx + Optical Flow từng giây trên .mp4)</td>
-          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">1201 dòng</td>
+          <td style="padding:8px 10px; font:600 12px var(--mono); color:var(--mute);">2144 dòng</td>
         </tr>
         
           </tbody>
