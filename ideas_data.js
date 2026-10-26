@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-26T19:48:45+07:00",
-  "total_scene_items": 410,
-  "total_unique_ideas": 391,
-  "total_active_ideas": 331,
+  "generated_at": "2026-10-26T20:01:50+07:00",
+  "total_scene_items": 411,
+  "total_unique_ideas": 392,
+  "total_active_ideas": 332,
   "total_excluded_ideas": 60,
-  "total_creators": 240,
+  "total_creators": 241,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 45,
     "storytelling": 40,
     "dien-anh": 161,
-    "chuyen-canh": 61,
+    "chuyen-canh": 62,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 25,
     "kien-truc": 15,
     "the-thao": 6,
-    "ky-thuat-quay": 124,
+    "ky-thuat-quay": 125,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 236,
+    "us_eu": 237,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -875,6 +875,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
         "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
+      ]
+    },
+    {
+      "handle": "@sitmeiteng",
+      "name": "Sitmeiteng",
+      "profile_url": "https://www.instagram.com/sitmeiteng/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40sitmeiteng_DePB4HDBRzf_Welcome_to_Kyrgyzstan%F0%9F%87%B0%F0%9F%87%AC/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@sitmeiteng_DePB4HDBRzf_Welcome_to_Kyrgyzstan🇰🇬"
       ]
     },
     {
@@ -3046,6 +3057,81 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@sitmeiteng_DePB4HDBRzf_Welcome_to_Kyrgyzstan🇰🇬",
+      "shortcode": "DePB4HDBRzf",
+      "title_vi": "Welcome to Kyrgyzstan🇰🇬",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @sitmeiteng",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@sitmeiteng",
+        "name": "Sitmeiteng",
+        "handle": "@sitmeiteng",
+        "profile_url": "https://www.instagram.com/sitmeiteng/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DePB4HDBRzf/",
+      "gdrive_folder": "https://drive.google.com/open?id=1HCz2_pJ5H9O57aGU7yZuIPpF_ckMjDov",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40sitmeiteng_DePB4HDBRzf_Welcome_to_Kyrgyzstan%F0%9F%87%B0%F0%9F%87%AC/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40sitmeiteng_DePB4HDBRzf_Welcome_to_Kyrgyzstan%F0%9F%87%B0%F0%9F%87%AC/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DePB4HDBRzf.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DePB4HDBRzf.mp4",
+        "report_url": "reports/IG_@sitmeiteng_DePB4HDBRzf_Welcome_to_Kyrgyzstan🇰🇬.html",
+        "shots_count": 22,
+        "duration": "16.7s",
+        "youtube_id": "qDXoeyaDoH4",
+        "youtube_embed": "https://www.youtube.com/embed/qDXoeyaDoH4",
+        "youtube_url": "https://youtu.be/qDXoeyaDoH4"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@tuctatuctac_Degcxl-MRSa_Slowly,_slowly",
       "shortcode": "Degcxl-MRSa",
@@ -5636,7 +5722,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -10293,7 +10379,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
