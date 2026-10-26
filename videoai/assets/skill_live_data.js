@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 26/10/2026 11:46:28
+ * Sinh tự động bởi sync_videoai.py vào lúc: 26/10/2026 15:25:13
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "26/10/2026 11:46:28",
-  "last_synced_iso": "2026-10-26T11:46:28.510864",
+  "last_synced_formatted": "26/10/2026 15:25:13",
+  "last_synced_iso": "2026-10-26T15:25:13.627486",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -2903,11 +2903,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "3 TEMPLATES V7.1",
       "desc": "Hệ thống 3 Template Motion Graphic 30fps V7.1 (Mẫu 01 Paage 70s, Mẫu 02 Adwave 61s, Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16): 12 Nguyên lý Vật lý, Dừng nhạc 1.60s mở màn hình Điểm Chính <ZeroNoisePillarScreen30 />, Khung B-Roll vuông đa cảnh <MultiSquareBrollStrip30 />, 0% Zoom mặt học viên (R_B20d) & render_template.py.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 17563,
-      "size_formatted": "17.2 KB",
-      "lines_count": 89,
-      "mtime": 1792987603.5374093,
-      "mtime_formatted": "26/10/2026 11:06",
+      "size": 18506,
+      "size_formatted": "18.1 KB",
+      "lines_count": 94,
+      "mtime": 1793001405.1960132,
+      "mtime_formatted": "26/10/2026 14:56",
       "headers": [
         "1. BA LUẬT VÀNG, BẢNG 3 TEMPLATE ĐÓNG GÓI & MANTRA ĐỊNH TUYẾN BỐI CẢNH (0 MA SÁT)",
         "2. TÁM CHUẨN KIẾN TRÚC BẮT BUỘC CỦA MOTION ENGINE V7.1",
@@ -6423,11 +6423,11 @@ window.SKILL_LIVE_DATA = {
       "name": "render_template.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "size": 3046,
+      "size": 3087,
       "size_formatted": "3.0 KB",
       "lines": 78,
-      "mtime": 1792987312.3784444,
-      "mtime_formatted": "26/10/2026 11:01",
+      "mtime": 1793002566.2836692,
+      "mtime_formatted": "26/10/2026 15:16",
       "desc": "CLI ĐIỀU PHỐI HỢP NHẤT 3 TEMPLATE MOTION GRAPHIC (V7.1 — HỘI Ý CÙNG CLAUDE OPUS 5.5)"
     },
     {
@@ -6456,11 +6456,11 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_12_principles.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "size": 25896,
-      "size_formatted": "25.3 KB",
-      "lines": 628,
-      "mtime": 1792987428.1248028,
-      "mtime_formatted": "26/10/2026 11:03",
+      "size": 26315,
+      "size_formatted": "25.7 KB",
+      "lines": 631,
+      "mtime": 1793002968.391907,
+      "mtime_formatted": "26/10/2026 15:22",
       "desc": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
     },
     {
@@ -6972,6 +6972,30 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "scripts/verify_12_principles.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "mtime": 1793002968.391907,
+      "mtime_formatted": "26/10/2026 15:22",
+      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
+    },
+    {
+      "name": "scripts/render_template.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "mtime": 1793002566.2836692,
+      "mtime_formatted": "26/10/2026 15:16",
+      "detail": "CLI ĐIỀU PHỐI HỢP NHẤT 3 TEMPLATE MOTION GRAPHIC (V7.1 — HỘI Ý CÙNG CLAUDE OPUS 5.5)"
+    },
+    {
+      "name": "motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "mtime": 1793001405.1960132,
+      "mtime_formatted": "26/10/2026 14:56",
+      "detail": "94 dòng • 3 mục chính"
+    },
+    {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
@@ -6988,36 +7012,12 @@ window.SKILL_LIVE_DATA = {
       "detail": "88 dòng • 3 mục chính"
     },
     {
-      "name": "motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1792987603.5374093,
-      "mtime_formatted": "26/10/2026 11:06",
-      "detail": "89 dòng • 3 mục chính"
-    },
-    {
-      "name": "scripts/verify_12_principles.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1792987428.1248028,
-      "mtime_formatted": "26/10/2026 11:03",
-      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
-    },
-    {
       "name": "scripts/render_higgsfield_template.py",
       "type": "Python Script",
       "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
       "mtime": 1792987338.555392,
       "mtime_formatted": "26/10/2026 11:02",
       "detail": "CLI CÔNG NGHIỆP MẪU 03 MOTION GRAPHIC — HIGGSFIELD FIGMA SHOWCASE V7.1 (44.80S / 40.00S @ 30FPS)"
-    },
-    {
-      "name": "scripts/render_template.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1792987312.3784444,
-      "mtime_formatted": "26/10/2026 11:01",
-      "detail": "CLI ĐIỀU PHỐI HỢP NHẤT 3 TEMPLATE MOTION GRAPHIC (V7.1 — HỘI Ý CÙNG CLAUDE OPUS 5.5)"
     },
     {
       "name": "scripts/check_motion.py",
