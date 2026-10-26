@@ -150,11 +150,11 @@ window.HUB = {
       file: "12-motion-graphic.html",
       group: "ref",
       n: "12",
-      title: "Motion Graphic (Tất cả phiên bản V1→V4)",
-      short: "Motion Graphic",
+      title: "Motion Graphic Mẫu & 3 Template",
+      short: "Motion Graphic & Template",
       stage: "buoc4",
       icon: "🎬",
-      q: "Tổng hợp tất cả các phiên bản Motion Graphic (Mẫu gốc Pinterest → V1 → V2 → V3 → V4 Readability-First) & Quy chuẩn CHECKMOTION"
+      q: "3 Template đóng gói (Mẫu 01 • Mẫu 02 • Mẫu 03) • Video Demo • 5 Bối cảnh gọi Skill"
     }
   ]
 };

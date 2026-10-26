@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 26/10/2026 11:13:44
+ * Sinh tự động bởi sync_videoai.py vào lúc: 26/10/2026 11:46:28
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "26/10/2026 11:13:44",
-  "last_synced_iso": "2026-10-26T11:13:44.736779",
+  "last_synced_formatted": "26/10/2026 11:46:28",
+  "last_synced_iso": "2026-10-26T11:46:28.510864",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -1610,121 +1610,28 @@ window.SKILL_LIVE_DATA = {
       {
         "id": "mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging",
         "date": "26/10/2026",
-        "title": "Đóng Gói Khuôn Mẫu 03 Motion Graphic (Higgsfield Figma 44.8s V7.1 Master — Ngang 16:9 & Dọc 9:16) & Chuẩn Hóa Hệ Thống 3 Template Motion Graphic (Mẫu 01 • Mẫu 02 • Mẫu 03) — Hội Ý CLAUDE2",
+        "title": "Motion Graphic Mẫu & 3 Template Đóng Gói (Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield 44.8s 16:9 & 9:16)",
         "step_target": [
-          "buoc-4",
           "motion-graphic"
         ],
         "source_thread": "af2ec2a2-4b78-41ed-ab3b-d65f25ddd21f",
-        "what_title": "Hệ Thống 3 Template Motion Graphic V7.1 (Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield 44.8s) & Lịch Sử Tiến Hóa V1 → V7.1",
-        "why_title": "Logic tiến hóa 8 thế hệ của Mẫu 03 (Ref → V1..V7.1) và Cách giải quyết triệt để lỗi Cắt Mặt B-Roll, Zoom Cận Mặt Học Viên (R_B20d) & Trôi Tiêu Đề Chính (R_B12c)",
-        "how_title": "Cách Gọi Tự Nhiên (Mantra) & Lệnh CLI Điều Phối Thống Nhất Cả 3 Template (render_template.py)",
-        "what": "Hoàn tất đóng gói <strong>Khuôn Mẫu 03 Motion Graphic (<code>mau03_higgsfield_45s</code> — Higgsfield Figma Canvas Showcase V7.1)</strong> trên cả 2 tỷ lệ <strong>Ngang <code>16:9</code> (<code>1920×1080</code>)</strong> và <strong>Dọc <code>9:16</code> (<code>1080×1920</code>)</strong>, đồng thời hợp nhất cùng <strong>Mẫu 01 (Paage 70s)</strong> và <strong>Mẫu 02 (Adwave 61s)</strong> thành hệ thống 3 Template chuẩn hóa qua <code>templates/registry.json</code> và <code>scripts/render_template.py</code>:<br/>1) <strong>Kiến trúc Dừng Nhạc <code>1.60s</code> (<code>48 frames</code>) Mở Màn Hình Điểm Chính Độc Lập (<code>&lt;ZeroNoisePillarScreen30 /&gt;</code> — Gate B18 &amp; R_B12c):</strong> Tại 3 mốc <code>f=80, 533, 907</code>, ngắt nhạc <code>1.60s</code> kèm Sub-Bass Hit + Whoosh Riser và mở màn hình Điểm Chính toàn khung (<code>01 KỊCH BẢN 7 CÂU</code>, <code>02 KÈM 1-1 TẠI BÀN</code>, <code>03 MANG VỀ 3 VIDEO</code>) không có bất kỳ video nào cạnh tranh sự chú ý.<br/>2) <strong>Khung B-Roll Vuông &amp; Dải Ghép Khung Vuông Đa Cảnh (<code>&lt;MultiSquareBrollStrip30 /&gt;</code> — Gate B20 V7.1):</strong> Đưa mọi khung B-Roll đơn về tỷ lệ gần vuông (<code>cardAspect &le; 1.45</code>), tách các vùng ngang rộng ở <code>S04, S07, S09</code> thành 2–3 khung vuông <code>~1:1</code> đặt cạnh nhau (tăng lên <strong>29 cảnh trám độc bản <code>M01..M29</code></strong>), tự động cắt sạch biển <code>EXIT</code> xanh lá / trần nhà trắng và nâng khuôn mặt ở <code>S03, S10</code> lên đường vàng 1/3.<br/>3) <strong>Luật <code>0%</code> Zoom Cận Mặt Học Viên Trên Cả Bản Ngang &amp; Bản Dọc (<code>R_B20d_NO_STUDENT_FACE_ZOOM</code>):</strong> Với mọi video bài làm học viên dọc (<code>STU_off3_*</code>, <code>B18</code>, <code>B19</code>), khóa cứng <code>safeScale = 1.0</code> (<strong>0% zoom</strong>), giữ khung nhỏ gọn đủ tỷ lệ (<code>cardAspect = 0.65 / 0.5625</code> trên bản dọc <code>9:16</code>, vuông <code>1:1</code> trên bản ngang) để thấy trọn vẹn đầu, vai, trang phục và biểu cảm mắt mở tươi tắn; con trỏ chuột chỉ bấm vào thanh pill dưới chân card.<br/>4) <strong>Ma Trận Phân Tầng Cơ Học Nhún Có Nguyên Nhân (<code>L0..L3</code> — Gate B17) &amp; Neo Con Trỏ <code>anchorToRect30</code> Ở Root Stage (Gate B19):</strong> Khóa phẳng <code>0%</code> nhún cho mọi container lớn, lưới nhiều video và màn hình dừng nhạc; chỉ nhún khi con trỏ thật sự click vào nút.",
-        "why": "<strong>Giải phẫu logic tiến hóa từng phiên bản của Mẫu 03:</strong><br/>• <strong>V1 (70s):</strong> Dựng 1:1 theo mẫu Pinterest nhưng 70s quá dài cho quảng cáo, còn lẫn B-Roll rung lắc/áo ba lỗ.<br/>• <strong>V2 (40s):</strong> Nối nhạc đồng pha 16 ô nhịp tại <code>28.24s</code> (<code>98.8%</code> Mel similarity) rút gọn còn <code>40.00s</code>, xóa 12 clip lỗi, nạp 10 video học viên STU K3 &amp; 4 clip K2. Nhưng còn lặp lại cảnh trám và chưa có điểm nhấn nội dung.<br/>• <strong>V3 (40s — Gate B11):</strong> Áp bộ lọc <code>dHash</code> 64-bit bắt buộc mỗi cảnh trám chỉ dùng đúng 1 lần duy nhất (25/25 clip) và thêm 3 Điểm Chính, nhưng chữ còn dài (12–18 từ) và có thanh TopBar cố định gây rối.<br/>• <strong>V4 (40s — Gate B12a, B15, B16):</strong> Xóa TopBar, áp công thức toán học đọc chữ Tiếng Việt (&le;10 tiếng/dòng), bỏ cuộn FAQ nhanh ở S08, thêm bảng tóm tắt <code>&lt;PillarSummaryBoard30 /&gt;</code> cuối bài.<br/>• <strong>V5 Bản 1 (40s) &amp; Bản 2 (44.8s — Gate B18):</strong> Tách thành 2 phương án: Bản 1 giữ nhạc gốc 40s chữ 3–4 từ; Bản 2 <strong>dừng nhạc 1.60s (48f) mở màn hình <code>&lt;ZeroNoisePillarScreen30 /&gt;</code></strong> giúp người xem nhớ ngay 3 Điểm Chính.<br/>• <strong>V6 (44.8s — Gate B17, B19):</strong> Khóa phẳng <code>0%</code> nhún (<code>L0 Crisp Static Lock</code>) cho các container lớn, chỉ giữ nhún có nguyên nhân khi click (<code>L2/L3</code>), đặt <code>HandCursor30</code> ở Root Stage.<br/>• <strong>🏆 V7.1 Master Ngang 16:9 &amp; Dọc 9:16 (44.8s — Gate B20, R_B20d, R_B12c):</strong> Chuyển các khung ngang dẹt sang <code>&lt;MultiSquareBrollStrip30 /&gt;</code> (29 cảnh độc bản), cắt sạch biển EXIT/trần nhà, khóa <code>0%</code> zoom mặt học viên (<code>safeScale = 1.0</code>) và đồng bộ 3 màn hình dừng nhạc sang bản dọc <code>9:16</code>.",
-        "how_cmd": "# 1. Gọi bằng câu lệnh tự nhiên (Mantra) trong khung chat:\n# - Mẫu 03 (Higgsfield 44.8s 16:9 & 9:16): MAU 03 MOTION GRAPHIC <nội dung>  hoặc  MAU HIGGSFIELD 45S <nội dung>\n# - Mẫu 02 (Adwave 61s 16:9):             MAU 02 MOTION GRAPHIC <nội dung>  hoặc  MAU ADWAVE 61S <nội dung>\n# - Mẫu 01 (Paage 70s 16:9 & 9:16):        MAU 01 MOTION GRAPHIC <nội dung>  hoặc  MAU PAAGE 70S <nội dung>\n\n# 2. Hoặc chạy trực tiếp qua CLI điều phối thống nhất:\npython3 ~/.gemini/config/skills/motion/scripts/render_template.py --template mau03 --aspect both --variant kb2",
+        "what_title": "3 Template Motion Graphic (16:9 & 9:16) & 5 Bối Cảnh Gọi Lệnh",
+        "why_title": "Tối giản trực quan: Chỉ Tiêu Đề, Video Demo & Câu Lệnh Gọi",
+        "how_title": "5 Bối Cảnh Gọi Skill Motion",
+        "what": "Trang riêng tổng hợp <strong>3 Template Motion Graphic (Mẫu 01 • Mẫu 02 • Mẫu 03 Ngang 16:9 &amp; Dọc 9:16)</strong>, Video Mẫu Gốc và <strong>5 Bối Cảnh Gọi Skill</strong>.",
+        "why": "Gọi trực tiếp bằng lệnh tự nhiên trong Antigravity.",
+        "how_cmd": "MAU 03 MOTION GRAPHIC <nội dung> | MAU 02 MOTION GRAPHIC <nội dung> | MAU 01 MOTION GRAPHIC <nội dung>",
         "studio_file": "studio_motion_graphic_paage_offline_versions.html",
-        "preview_images": [
-          {
-            "src": "/Users/vietmac/.gemini/antigravity/brain/af2ec2a2-4b78-41ed-ab3b-d65f25ddd21f/doi_chieu_9x16_v6_vs_v7_1.jpg",
-            "web_src": "assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/doi_chieu_9x16_v6_vs_v7_1.jpg",
-            "caption": "Đối Chiếu Trực Quan Bản Dọc 9:16 (Trước V6 vs Sau V7.1 Master): (1) Khóa 0% Zoom mặt học viên (safeScale=1.0), giữ đủ tỷ lệ tự nhiên, mắt mở tươi tắn; (2) Bỏ chữ kẹp cạnh video, nâng cấp lên 3 Màn Hình Dừng Nhạc 1.60s <ZeroNoisePillarScreen30 portrait />"
-          },
-          {
-            "src": "/Users/vietmac/.gemini/antigravity/brain/af2ec2a2-4b78-41ed-ab3b-d65f25ddd21f/doi_chieu_3_canh_v6_vs_v7_square_broll.jpg",
-            "web_src": "assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/doi_chieu_3_canh_v6_vs_v7_square_broll.jpg",
-            "caption": "Đối Chiếu Trực Quan Bản Ngang 16:9 (V6 Hộp Ngang Cắt Mắt vs V7.1 Khung Vuông & MultiSquareBrollStrip30): Ghép 2–3 khung vuông ~1:1 đặt cạnh nhau ở S04/S07/S09 và nâng mặt ở S03/S10 lên đường vàng 1/3"
-          },
-          {
-            "src": "/Users/vietmac/.gemini/antigravity/brain/af2ec2a2-4b78-41ed-ab3b-d65f25ddd21f/qa_layout_blueprint_mau02_v7_16x9.jpg",
-            "web_src": "assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/qa_layout_blueprint_mau02_v7_16x9.jpg",
-            "caption": "Bản Thiết Kế Kiểm Toán 12 Nhịp Mẫu 03 V7.1 Ngang 16:9 (CheckMotion Gate B21 — 122/122 DYNAMIC_NATURAL, 10/10 Gates PASS)"
-          },
-          {
-            "src": "/Users/vietmac/.gemini/antigravity/brain/af2ec2a2-4b78-41ed-ab3b-d65f25ddd21f/qa_layout_blueprint_mau02_v7_9x16.jpg",
-            "web_src": "assets/mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging/qa_layout_blueprint_mau02_v7_9x16.jpg",
-            "caption": "Bản Thiết Kế Kiểm Toán 12 Nhịp Mẫu 03 V7.1 Dọc 9:16 (CheckMotion Gate B21 — 122/122 DYNAMIC_NATURAL, 0% Zoom mặt học viên, 3 màn hình dừng nhạc)"
-          }
-        ],
-        "local_videos_title": "🎬 Trình Phát Nghiệm Thu Toàn Bộ Các Phiên Bản Mẫu 03 (Higgsfield Figma V7.1 Master Ngang 16:9 & Dọc 9:16 + V6 + V5 Bản 2 & Bản 1 + V4 + V3 + V2 + V1 + Ref Pinterest)",
-        "local_videos_badge": "16:9 (1920×1080) & 9:16 (1080×1920) @ 30fps • 44.80s (1.344f) • CheckMotion V7.1 & verify_12_principles: 100% PASS",
-        "local_videos": [
-          {
-            "badge": "🏆 MẪU 03 V7.1 MASTER NGANG 16:9 (PHIÊN BẢN CUỐI TỐT NHẤT)",
-            "title": "Mẫu 03 V7.1 Master Ngang 16:9 (44.80s): Dừng nhạc 1.6s ở 3 Điểm Chính + Khung vuông đa cảnh MultiSquareBrollStrip30 (29 B-Roll độc bản)",
-            "desc": "Phiên bản ngang hoàn chỉnh nhất (quang_cao_offline_07_08_11_mau02_v7_ban2_dung_nhac_square_broll.mp4): Dừng nhạc 1.60s tại f=80, 533, 907 mở <ZeroNoisePillarScreen30 />, ghép 2–3 khung vuông ở S04/S07/S09, cắt sạch biển EXIT/trần nhà và nâng mặt ở S03/S10 lên đường vàng 1/3.",
-            "src": "studios/mau03_higgsfield_v7_square_broll_master_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "🏆 MẪU 03 V7.1 MASTER DỌC 9:16 (DỪNG NHẠC + 0% ZOOM MẶT HỌC VIÊN)",
-            "title": "Mẫu 03 V7.1 Master Dọc 9:16 (44.80s • 1080×1920): 0% Zoom cận mặt học viên (R_B20d) + 3 Màn hình dừng nhạc 1.6s (R_B12c)",
-            "desc": "Phiên bản dọc hoàn chỉnh nhất (quang_cao_offline_07_08_11_mau02_9x16_v7_ban2_dung_nhac_square_broll.mp4): Giữ nguyên tỷ lệ tự nhiên của video học viên (safeScale=1.0, mắt mở tươi tắn, con trỏ bấm footer ngoài mặt) và đồng bộ 3 màn hình dừng nhạc 1.60s y hệt bản ngang V7.1.",
-            "src": "studios/mau03_higgsfield_9x16_v7_master_web.mp4",
-            "aspect": "9/16"
-          },
-          {
-            "badge": "🔹 MẪU 03 V6 NGANG 16:9 (CRISP NO-BOUNCE L0..L3)",
-            "title": "Mẫu 03 Bản V6 Ngang (44.80s): Đã khóa phẳng L0 Crisp No-Bounce & Neo con trỏ Root Stage, trước khi lên khung vuông V7.1",
-            "desc": "Bản V6 (quang_cao_offline_07_08_11_mau02_v6_ban2_dung_nhac_crisp_nobounce.mp4): Đã loại bỏ nhún vô nghĩa trên container lớn (Gate B17), nhưng các hộp ngang ở S04/S07/S09 chưa tách thành dải khung vuông.",
-            "src": "studios/mau03_higgsfield_v6_crisp_nobounce_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "🔹 MẪU 03 V5 — BẢN 2 (DỪNG NHẠC 1.60S Ở 3 TIÊU ĐỀ CHÍNH)",
-            "title": "Mẫu 03 Bản V5 — Bản 2 (44.80s): Phiên bản đầu tiên áp dụng dừng nhạc 1.60s mở màn hình <ZeroNoisePillarScreen30 />",
-            "desc": "Bản V5 Bản 2 (quang_cao_offline_07_08_11_mau02_v5_ban2_dung_nhac_tieu_de_chinh.mp4): Đột phá cấu trúc nhận thức quảng cáo bằng 3 nhịp dừng nhạc 1.60s, trước khi lọc nhún L0 ở V6.",
-            "src": "studios/mau03_higgsfield_v5_ban2_dung_nhac_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "🔹 MẪU 03 V5 — BẢN 1 (GIỮ NHẠC GỐC 40S + CHỮ 3–4 TỪ)",
-            "title": "Mẫu 03 Bản V5 — Bản 1 (40.00s): Giữ nguyên nhạc gốc 40s liên tục, rút gọn chữ 3–4 từ/dòng",
-            "desc": "Bản V5 Bản 1 (quang_cao_offline_07_08_11_mau02_v5_ban1_giu_nhac_goc_it_chu.mp4): Phương án giữ mạch nhạc liên tục 40.00s (variant kb1).",
-            "src": "studios/mau03_higgsfield_v5_ban1_giu_nhac_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "🔸 MẪU 03 BẢN V4 (40.00S — TOÁN HỌC ĐỌC CHỮ & XÓA TOPBAR)",
-            "title": "Mẫu 03 Bản V4 (40.00s): Xóa TopBar cố định (Gate B12a), áp trần ≤10 tiếng (Gate B16) & thêm Bảng Tóm Tắt Cuối Bài",
-            "desc": "Bản V4 (quang_cao_offline_07_08_11_mau02_higgsfield_40s_v4.mp4): Giải quyết bài toán thời gian đọc chữ Tiếng Việt và thêm <PillarSummaryBoard30 /> cuối video.",
-            "src": "studios/mau03_higgsfield_v4_reading_math_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "🔸 MẪU 03 BẢN V3 (40.00S — ĐỘC BẢN 100% B-ROLL GATE B11)",
-            "title": "Mẫu 03 Bản V3 (40.00s): Áp dụng Gate B11 (dHash 64-bit) — Mỗi cảnh trám chỉ dùng đúng 1 lần duy nhất",
-            "desc": "Bản V3 (quang_cao_offline_07_08_11_mau02_higgsfield_40s_v3.mp4): Xóa sạch lỗi lặp cảnh trám giữa các scene, nhưng còn thanh TopBar trên đầu.",
-            "src": "studios/mau03_higgsfield_v3_unique_broll_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "🔸 MẪU 03 BẢN V2 (40.00S — CẮT GỌN NHẠC ĐỒNG PHA + STU OFF3 & K2)",
-            "title": "Mẫu 03 Bản V2 (40.00s): Nối nhạc đồng pha 98.8% Mel từ 70s xuống 40s, nạp 10 video học viên STU K3 & 4 clip K2",
-            "desc": "Bản V2 (quang_cao_offline_07_08_11_mau02_higgsfield_40s_v2.mp4): Rút gọn từ 70s xuống 40s và lọc bỏ 12 video lỗi.",
-            "src": "studios/mau03_higgsfield_v2_40s_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "⚠️ MẪU 03 BẢN V1 BASELINE (70.00S — TRƯỚC KHI RÚT GỌN 40S)",
-            "title": "Mẫu 03 Bản V1 Baseline (70.00s): Khớp thời lượng mẫu gốc nhưng quá dài (70s) và chưa lọc B-Roll",
-            "desc": "Bản V1 (quang_cao_offline_07_08_11_mau02_higgsfield_figma_v1.mp4): Bản dựng đầu tiên 2.100 frames.",
-            "src": "studios/mau03_higgsfield_v1_70s_web.mp4",
-            "aspect": "16/9"
-          },
-          {
-            "badge": "📌 MẪU GỐC PINTEREST MẪU 03 (REF 667799451045302713)",
-            "title": "Mẫu Gốc Pinterest Higgsfield for Figma (70.00s @ 30fps)",
-            "desc": "Video mẫu gốc dùng để bóc tách chuyển động Figma Canvas, Prompt Box, Remove BG và Quả cầu 3D Angles.",
-            "src": "studios/mau03_higgsfield_ref_pinterest_web.mp4",
-            "aspect": "16/9"
-          }
-        ]
+        "preview_images": [],
+        "local_videos": []
       },
       {
         "id": "checkmotion-v4-mau02-adwave-v6-master-relay-3d-camera-exit9f",
         "date": "25/10/2026",
-        "title": "Mẫu 02 Motion Graphic (Adwave 61s V6 Master) & CHECKMOTION V4.0: Chống Đè Chữ Tiếp Sức (B8) • Pha OUT 9f Vút Thoát (B9) • Giàn Camera 3D Phối Cảnh Thật (B10) — Hội Ý CLAUDE2",
-        "step_target": "buoc-4",
+        "title": "Mẫu 02 Motion Graphic (Adwave 61s V6 Master)",
+        "step_target": [
+          "motion-graphic"
+        ],
         "source_thread": "2b147481-82d3-4e70-89a7-81a6e5de8bb4",
         "what_title": "Nâng Cấp Engine V6.0 & CheckMotion V4.0 (5 Cổng B6..B10) + Đóng Gói Khuôn Mẫu 02 Adwave 61s",
         "why_title": "Vì sao CheckMotion V3.0 bỏ lọt 3 lỗi (Đè chữ, Xoay 2D giả 3D, Cắt cụt pha OUT) và Cách V4.0 khóa cứng bằng toán học?",
@@ -1800,8 +1707,10 @@ window.SKILL_LIVE_DATA = {
       {
         "id": "checkmotion-v2-readability-first-motion-hierarchy-v1-to-v4",
         "date": "25/10/2026",
-        "title": "Motion Graphic & CHECKMOTION V2.0: Toàn Bộ 6 Phiên Bản (Ref → V1 → V2 → V3 → V4 → V5 Master: Video B-Roll Thật & Bàn Tay Con Trỏ Đa Chặng — Hội Ý CLAUDE2)",
-        "step_target": "buoc-4",
+        "title": "Mẫu 01 Motion Graphic (Paage 70s V5/V6 Master)",
+        "step_target": [
+          "motion-graphic"
+        ],
         "source_thread": "a5848b46-86c9-4d1e-baa0-fd7b18de0b05",
         "what_title": "Bộ 6 Phiên bản Tiến hóa V1→V5 Master: Video B-Roll Lớp Học Thật + Con Trỏ Đa Chặng + Ma trận Biến dạng 4 Cấp",
         "why_title": "Vì sao phải đặt HandCursor30 trong hệ quy chiếu thẻ UI, nối chặng C2 và thay ảnh tĩnh bằng Video B-Roll 30fps?",
@@ -7066,8 +6975,8 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1792987965.6386385,
-      "mtime_formatted": "26/10/2026 11:12",
+      "mtime": 1792989859.2940152,
+      "mtime_formatted": "26/10/2026 11:44",
       "detail": "17 quy chuẩn • 19 studios"
     },
     {
