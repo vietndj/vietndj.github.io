@@ -3,243 +3,520 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio AI Hook PANTONE 1 — Editorial Pantone Color-Wheel &amp; Swatch Cards Reveal (2.40s)</title>
+<title>Studio AI Hook — #01 Color Palette Outfit Showcase (Pantone1 & 360° Turntable) · Lịch Sử Các Phiên Bản</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #080a0f;
-    --card: #11151e;
-    --border: #232c3d;
-    --lime: #d4fe48;
-    --cyan: #38bdf8;
-    --emerald: #34d399;
-    --amber: #fbbf24;
-    --text: #f1f5f9;
-    --muted: #94a3b8;
+    --bg: #F7F6F2;
+    --card: #FFFFFF;
+    --ink: #16181D;
+    --muted: #5B616E;
+    --line: #E4E2DC;
+    --accent: #0F766E;
+    --accent-soft: #E6F4F1;
+    --gold: #B45309;
+    --gold-soft: #FEF3C7;
+    --olive: #6B7F3F;
+    --cherry: #7A1C24;
+    --lilac: #D8C2E8;
+    --cobalt: #1E488F;
+    --danger: #B91C1C;
+    --danger-soft: #FEE2E2;
   }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.55;
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 28px 20px 64px;
   }
-  .container { max-width: 1360px; margin: 0 auto; }
-  .hero {
-    background: linear-gradient(135deg, #111726 0%, #192338 100%);
-    border: 1px solid #2d3b56;
-    border-radius: 18px;
-    padding: 22px 26px;
-    margin-bottom: 20px;
+  .container { max-width: 1440px; margin: 0 auto; }
+  .top-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 18px; flex-wrap: wrap; gap: 10px;
   }
-  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-  .badge {
-    font-size: 11.5px;
-    font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none; color: var(--ink); font-weight: 700; font-size: 13px;
+    background: #FFF; border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
   }
-  .badge-lime { background: var(--lime); color: #000; }
-  .badge-cyan { background: rgba(56,189,248,0.16); color: var(--cyan); border: 1px solid rgba(56,189,248,0.4); }
-  .badge-emerald { background: rgba(52,211,153,0.16); color: var(--emerald); border: 1px solid rgba(52,211,153,0.4); }
-  h1 { margin: 0 0 8px 0; font-size: 24px; color: #fff; }
-  .sub { color: #cbd5e1; font-size: 14px; margin-bottom: 14px; }
-  .cmd-bar {
-    background: #0b0e15;
-    border: 1px solid #28344b;
-    border-left: 4px solid var(--lime);
-    border-radius: 10px;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 13px;
-  }
-  .copy-btn {
-    background: var(--lime);
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    padding: 7px 14px;
-    font-weight: 800;
-    cursor: pointer;
-    font-size: 12.5px;
-  }
-  .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 20px;
-    margin-bottom: 22px;
-  }
-  .v-card {
+  .back-link:hover { border-color: var(--accent); color: var(--accent); }
+  .header {
     background: var(--card);
-    border: 1px solid var(--border);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  .badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 600;
+    padding: 5px 12px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .badge.gold { background: var(--gold-soft); color: var(--gold); }
+  .badge.olive { background: #ECF2DF; color: #4A5A28; }
+  .badge.cherry { background: #FBE9EB; color: #7A1C24; }
+  .badge.cobalt { background: #EBF1FA; color: #1E488F; }
+  h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .subtitle { color: var(--muted); font-size: 15px; max-width: 1040px; }
+
+  .toolbar {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px;
+    padding-top: 18px; border-top: 1px solid var(--line);
+  }
+  .btn {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 13.5px; font-weight: 700;
+    padding: 10px 18px; border-radius: 10px;
+    border: 1px solid var(--line); background: #FFF; color: var(--ink);
+    cursor: pointer; transition: all 0.15s ease;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn.primary { background: var(--accent); color: #FFF; border-color: var(--accent); }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+  .section-box {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 20px; padding: 26px 30px; margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.025);
+  }
+  .section-title {
+    font-size: 20px; font-weight: 800; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .section-desc {
+    color: var(--muted); font-size: 14px; margin-bottom: 20px;
+  }
+
+  /* Grid layouts for videos */
+  .grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 1280px) {
+    .grid-5 { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .grid-5, .grid-3 { grid-template-columns: 1fr; }
+  }
+
+  .vcard {
+    background: var(--card);
+    border: 1px solid var(--line);
     border-radius: 16px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.03);
   }
-  .v-card.master { border: 1.5px solid rgba(212,254,72,0.65); }
-  .v-head {
-    padding: 14px 18px;
-    border-bottom: 1px solid #1d2536;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+  .vcard.highlight {
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 26px rgba(15, 118, 110, 0.13);
   }
-  .v-title { font-size: 16px; font-weight: 800; color: #fff; }
-  .player-box {
-    background: #040609;
-    aspect-ratio: 9/16;
-    max-height: 560px;
+  .vcard.warn-card {
+    border: 1.5px dashed #D97706;
+  }
+  .vcard.fail-card {
+    border: 1.5px dashed var(--danger);
+  }
+  .vcard-head {
+    padding: 13px 15px;
+    border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  }
+  .vcard-title { font-weight: 700; font-size: 13.5px; }
+  .vcard-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px; font-weight: 700;
+    padding: 3px 8px; border-radius: 6px;
+    background: #F1F0EC; color: var(--muted); white-space: nowrap;
+  }
+  .vcard.highlight .vcard-tag { background: var(--accent); color: #FFF; }
+  .vcard.warn-card .vcard-tag { background: var(--gold-soft); color: var(--gold); }
+  .vcard.fail-card .vcard-tag { background: var(--danger-soft); color: var(--danger); }
+
+  .video-wrap {
+    background: #0E1015;
+    aspect-ratio: 9 / 16;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
   }
-  video { width: 100%; height: 100%; object-fit: contain; background: #000; }
-  .v-body { padding: 14px 18px; font-size: 13.5px; color: #cbd5e1; }
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-top: 10px;
-    background: #0b0e15;
-    border: 1px solid #1e273a;
-    border-radius: 10px;
-    padding: 10px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11.5px;
+  video {
+    width: 100%; height: 100%;
+    object-fit: contain; display: block;
   }
-  .m-lbl { color: var(--muted); font-size: 10px; text-transform: uppercase; display: block; }
-  .m-val { color: #fff; font-weight: 700; }
-  .swatches {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 10px;
+  .vcard-foot {
+    padding: 12px 15px;
+    font-size: 12.5px; color: var(--muted);
+    border-top: 1px solid var(--line);
+    background: #FAFAF8;
+    flex: 1;
   }
-  .swatch {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #0b0e15;
-    border: 1px solid #263147;
-    border-radius: 8px;
-    padding: 4px 10px;
-    font-size: 11.5px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  .vcard-foot code {
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+    background: #EFECE6; padding: 1px 5px; border-radius: 4px; color: var(--ink);
   }
-  .dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid rgba(255,255,255,0.25); }
-  .qa-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 18px;
+
+  /* Table styles */
+  .spec-table {
+    width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 10px;
   }
-  .qa-card img { width: 100%; height: auto; border-radius: 10px; border: 1px solid #263147; margin-top: 12px; }
+  .spec-table th, .spec-table td {
+    text-align: left; padding: 11px 13px; border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .spec-table th {
+    font-weight: 700; color: var(--muted); background: #FAFAF8;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .pass {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 3px 8px; border-radius: 6px; font-size: 11.5px; display: inline-block;
+  }
+  .fail {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    color: var(--danger); background: var(--danger-soft);
+    padding: 3px 8px; border-radius: 6px; font-size: 11.5px; display: inline-block;
+  }
+  .warn {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    color: var(--gold); background: var(--gold-soft);
+    padding: 3px 8px; border-radius: 6px; font-size: 11.5px; display: inline-block;
+  }
+
+  .repo-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px;
+  }
+  @media (max-width: 900px) { .repo-grid { grid-template-columns: 1fr; } }
+  .repo-card {
+    background: #FAFAF8; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px;
+  }
+  .repo-card.recommended {
+    background: #F2FBF9; border: 1.5px solid var(--accent);
+  }
+  .repo-card h3 { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+  .repo-card p { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .repo-card code {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    background: #FFF; border: 1px solid var(--line); padding: 2px 6px; border-radius: 5px;
+  }
+
+  .sheet-img {
+    width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; margin-top: 10px;
+  }
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="hero">
-    <div class="badges">
-      <span class="badge badge-lime">AI HOOK PRESET: PANTONE1</span>
-      <span class="badge badge-cyan">Higgsfield Katana Ref #326c512a</span>
-      <span class="badge badge-emerald">VERDICT: PASS (SSIM 0.9977 • ΔE00 0.459 • 0% Halo)</span>
+  <div class="top-nav">
+    <a class="back-link" href="/07-phong-studio.html">← Quay lại Phòng Studio (videoai.fedu.vn)</a>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <a class="back-link" href="/ai-hook.html">⚡ Bảng 15 AI Hook</a>
+      <a class="back-link" href="/studios/studio-katana-batch4-archive.html">🗂️ Kho Katana Batch 4</a>
     </div>
-    <h1>🎨 Studio Đối Chiếu AI Hook <code>pantone1</code> (Editorial Pantone Color-Wheel &amp; Swatch Cards Reveal)</h1>
-    <div class="sub">
-      So sánh trực tiếp giữa <strong>① Video Mẫu Gốc Higgsfield Katana (<code>326c512a</code>)</strong> và <strong>② Video Kết Quả Master Của Anh Việt (<code>viet2210_katana_palette_master.mp4</code>)</strong>. Đóng gói sẵn vào kỹ năng <code>ai-hook</code> với mã preset <code>pantone1</code>.
+  </div>
+
+  <!-- HERO HEADER -->
+  <div class="header">
+    <div class="badge-row">
+      <span class="badge">HOOK #05 · PANTONE1 / B4_11_COLOR_PALETTE</span>
+      <span class="badge gold">KATANA TARGET 326C512A · #01 COLOR PALETTE OUTFIT SHOWCASE</span>
+      <span class="badge olive">01 FIELD #6B7F3F</span>
+      <span class="badge cherry">02 CHERRY #7A1C24</span>
+      <span class="badge cobalt">04 COBALT #1E488F</span>
     </div>
-    <div class="cmd-bar">
-      <span id="cmdText">PANTONE1 : viet2210.MOV</span>
-      <div style="display:flex; gap:8px;">
-        <button class="copy-btn" onclick="syncPlayBoth()">▶ Phát Song Song Cả 2 Video</button>
-        <button class="copy-btn" style="background:#38bdf8;" onclick="navigator.clipboard.writeText(document.getElementById('cmdText').innerText); this.innerText='✓ Đã Copy Lệnh';">Copy Lệnh Gọi Nhanh</button>
+    <h1>#01 Color Palette Outfit Showcase — Hồ Sơ Các Phiên Bản (V1 → V2 → V3 Master & 4-Outfits 360°)</h1>
+    <p class="subtitle">
+      Trang tổng hợp toàn bộ lịch sử tiến hóa của hiệu ứng <strong>#01 Color Palette Outfit Showcase (Pantone Wheel &amp; 360° Turntable)</strong> trên <code>videoai.fedu.vn</code>: đối chiếu trực diện <strong>File gốc</strong>, <strong>Video mẫu Katana</strong>, và <strong>5 phiên bản qua từng lần nâng cấp</strong> (từ bản V1 OpenCV bị nhòe xa → V2 Google Flow ghép 3 clip bị giật điểm cắt → V3 Single-Stream 360° Turntable mượt 100% + CIE LAB Recolor 4 bộ đồ → Bản Preset <code>pantone1</code> 2.40s và Bản Full 11.0s 4-Outfits Showcase).
+    </p>
+    <div class="toolbar">
+      <button class="btn primary" onclick="playAllGroup('fa3-vid')">▶ Phát đồng bộ Cụm 1 (5 video fa3)</button>
+      <button class="btn primary" style="background:#1E488F;border-color:#1E488F;" onclick="playAllGroup('viet-vid')">▶ Phát đồng bộ Cụm 2 (3 video viet2210 &amp; 11s 4-Outfits)</button>
+      <button class="btn" onclick="pauseAllVideos()">⏸ Dừng tất cả</button>
+      <button class="btn" onclick="restartAllVideos()">↺ Tua về 0.00s</button>
+    </div>
+  </div>
+
+  <!-- BẢNG TỔNG HỢP LỊCH SỬ CÁC PHIÊN BẢN -->
+  <div class="section-box">
+    <div class="section-title">📊 Bảng Tiến Hóa Qua Các Lần Làm (Version History &amp; Self-Learning Ledger)</div>
+    <p class="section-desc">
+      Mỗi lần chạy đều được chấm qua bộ Verifier Tất Định (<code>verify_katana_tier1.py</code> — 11 Cổng G0..G10) và ghi vết vào sổ cái <code>flow_palette_learn_ledger.jsonl</code>.
+    </p>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Phiên bản / Lần chạy</th>
+          <th>Tên file &amp; Thời lượng</th>
+          <th>Công nghệ &amp; Kiến trúc</th>
+          <th>Vấn đề phát hiện / Cải tiến đạt được</th>
+          <th>Kết quả Cổng QA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>File Gốc 1 (Source fa3)</strong></td>
+          <td><code>footageai3_orig_web.mp4</code><br><span style="color:var(--muted);font-size:12px;">1080×1920 @ 24fps</span></td>
+          <td>Footage gốc cầm máy ngoài trời (cảnh nhảy từ bục cao xuống vỉa hè)</td>
+          <td>Nhân vật ở xa (bbox width = 197px lúc đứng dưới đất), có chuyển động ngồi xổm khi tiếp đất.</td>
+          <td><span class="badge">SOURCE FOOTAGE</span></td>
+        </tr>
+        <tr>
+          <td><strong>Video Mẫu (Reference Demo)</strong></td>
+          <td><code>katana_target_326c512a.mp4</code><br><span style="color:var(--muted);font-size:12px;">9.1s · Katana #01</span></td>
+          <td>Mẫu chuẩn Higgsfield Katana #01 Color Palette Outfit Showcase</td>
+          <td>Nhân vật đứng thẳng giữa khung, xoay 360° Turntable, 4 thẻ bài phóng 3D ra giữa ngực, đổi 4 màu áo + Pantone Wheel góc trái dưới.</td>
+          <td><span class="badge gold">TARGET DEMO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Lần 1 — V1 (OpenCV Distant Recolor)</strong></td>
+          <td><code>b4_11_color_palette_fa3_v1_web.mp4</code><br><span style="color:var(--muted);font-size:12px;">6.50s · 156 frames</span></td>
+          <td>OpenCV 2D Crop + HSV Recolor trực tiếp trên frame nhảy xa của <code>fa3</code></td>
+          <td>❌ Nhân vật đứng quá xa (197px) nên crop lên bị <strong>nhòe mờ</strong> (Laplacian = 95 &lt; 180), tư thế ngồi xổm không giống mẫu đứng xoay 3D Turntable.</td>
+          <td><span class="fail">FAIL (G6 Blur, G8 Squat, G9 No-3D)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Lần 2 — V2 (Google Flow Multi-Clip 3D)</strong></td>
+          <td><code>b4_11_color_palette_fa3_v2_web.mp4</code><br><span style="color:var(--muted);font-size:12px;">6.50s · 156 frames</span></td>
+          <td>Ghép 3 clip Veo 3.1 độc lập (Olive clip + Cherry clip + Cobalt clip)</td>
+          <td>⚠️ Đã có 3D Turntable cận cảnh sắc nét (Laplacian = 1492), <strong>NHƯNG bị giật hình (pose jump)</strong> tại điểm cắt nối giữa 3 clip Veo khác quỹ đạo xoay.</td>
+          <td><span class="warn">WARN (G10 Multi-Clip Jitter)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Lần 3 — V3 Master (Single-Stream Zero-Jitter)</strong></td>
+          <td><code>b4_11_color_palette_fa3_web.mp4</code><br><span style="color:var(--muted);font-size:12px;">6.50s · 156 frames</span></td>
+          <td><strong>1 Luồng Xoay 360° Duy Nhất</strong> (Single-Stream Continuous Turntable) + CIE LAB Luminance-Preserving Outfit Recolor + 4K Dynamic Pull-Out</td>
+          <td>✅ <strong>Triệt tiêu 100% lỗi giật giữa các pha đổi màu</strong> (cùng 1 đạo hàm góc quay dθ/dt liên tục), đổi màu áo tức thì ngay khoảnh khắc thẻ 3D nổ (f34, f52, f70), khóa khớp Seam về <code>fa3</code> gốc (SSIM = 0.9999).</td>
+          <td><span class="pass">PASS 11/11 GATES (G0..G10)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bản Preset <code>pantone1</code> (Talk Hook 2.40s)</strong></td>
+          <td><code>viet2210_katana_palette_master.mp4</code><br><span style="color:var(--muted);font-size:12px;">23.27s · 60fps</span></td>
+          <td>Tích hợp vào CLI <code>apply_ai_hook.py --preset pantone1</code> trên <code>viet2210.MOV</code></td>
+          <td>✅ Đóng gói thành Hook 2.40s đầu video talking-head (xoay 3 màu áo + bánh xe Pantone + phi thẻ 3D) rồi nối mượt 100% vào lời thoại gốc ở <code>t = 2.40s</code>.</td>
+          <td><span class="pass">PASS 5/5 GATES (CLI READY)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bản Full 11.0s (4-Outfits 360° Turntable Showcase)</strong></td>
+          <td><code>viet_katana_360_4outfits_master_web.mp4</code><br><span style="color:var(--muted);font-size:12px;">11.00s · 24fps</span></td>
+          <td>Full Showcase 11 giây theo đúng cấu trúc 4 bộ trang phục của mẫu Katana (<code>01 FIELD</code> → <code>02 CHERRY</code> → <code>03 LILAC</code> → <code>04 COBALT</code>)</td>
+          <td>✅ Xoay 360° 1 luồng duy nhất suốt 8.5s đầu kèm 4 pha phóng thẻ bài 3D lật mặt + đổi 4 màu trang phục + nối mượt về video nói chuyện gốc.</td>
+          <td><span class="pass">PASS FULL 4-OUTFITS 11.0S</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CỤM 1: SO SÁNH 5 CỘT TRÊN FOOTAGEAI3 (FA3) -->
+  <div class="section-box">
+    <div class="section-title">🎬 Cụm 1 — Đối Chiếu Trực Diện Trên <code>footageai3.mp4</code> (File Gốc · Demo Mẫu · Lần 1 V1 · Lần 2 V2 · Lần 3 V3 Master)</div>
+    <p class="section-desc">
+      Bấm <strong>"▶ Phát đồng bộ Cụm 1"</strong> ở thanh công cụ phía trên để xem cùng lúc sự khác biệt từ File gốc → Mẫu Katana → Lần 1 (V1 nhòe) → Lần 2 (V2 giật khi chuyển clip) → Lần 3 (V3 xoay 1 luồng mượt + đổi màu áo chuẩn).
+    </p>
+    <div class="grid-5">
+      <!-- 1. File gốc fa3 -->
+      <div class="vcard">
+        <div class="vcard-head">
+          <div class="vcard-title">① File Gốc (fa3)</div>
+          <span class="vcard-tag">SOURCE</span>
+        </div>
+        <div class="video-wrap">
+          <video class="fa3-vid" controls playsinline preload="metadata" loop muted src="footageai3_orig_web.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File gốc: <code>footageai3.mp4</code> (cắt 6.5s đầu). Nhân vật nhảy từ trên bục xuống, kích thước người ở xa chỉ rộng 197px.
+        </div>
+      </div>
+
+      <!-- 2. Video Mẫu Demo -->
+      <div class="vcard">
+        <div class="vcard-head">
+          <div class="vcard-title">② Video Mẫu Katana</div>
+          <span class="vcard-tag">DEMO MẪU</span>
+        </div>
+        <div class="video-wrap">
+          <video class="fa3-vid" controls playsinline preload="metadata" loop muted src="katana_target_326c512a.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File mẫu: <code>katana_target_326c512a.mp4</code>. Chuẩn 360° Turntable đứng giữa khung, thẻ bài phóng ra ngực, đổi 4 bộ đồ + Pantone Wheel.
+        </div>
+      </div>
+
+      <!-- 3. Lần 1 V1 -->
+      <div class="vcard fail-card">
+        <div class="vcard-head">
+          <div class="vcard-title">③ Lần 1 — V1 (OpenCV)</div>
+          <span class="vcard-tag">LẦN 1 · NHÒE</span>
+        </div>
+        <div class="video-wrap">
+          <video class="fa3-vid" controls playsinline preload="metadata" loop muted src="b4_11_color_palette_fa3_v1_web.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File: <code>b4_11_color_palette_fa3_v1_web.mp4</code>. ❌ Crop từ frame nhảy xa nên bị vỡ nét (Blur = 95.3), nhân vật ngồi xổm không xoay 3D.
+        </div>
+      </div>
+
+      <!-- 4. Lần 2 V2 -->
+      <div class="vcard warn-card">
+        <div class="vcard-head">
+          <div class="vcard-title">④ Lần 2 — V2 (3 Clips)</div>
+          <span class="vcard-tag">LẦN 2 · GIẬT</span>
+        </div>
+        <div class="video-wrap">
+          <video class="fa3-vid" controls playsinline preload="metadata" loop muted src="b4_11_color_palette_fa3_v2_web.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File: <code>b4_11_color_palette_fa3_v2_web.mp4</code>. ⚠️ Ghép 3 clip Veo 3.1 riêng lẻ nên bị giật tư thế (pose snap) tại điểm chuyển màu áo.
+        </div>
+      </div>
+
+      <!-- 5. Lần 3 V3 Master -->
+      <div class="vcard highlight">
+        <div class="vcard-head">
+          <div class="vcard-title">⑤ Lần 3 — V3 Master</div>
+          <span class="vcard-tag">PASS 11/11 · CHUẨN</span>
+        </div>
+        <div class="video-wrap">
+          <video class="fa3-vid" controls playsinline preload="metadata" loop src="b4_11_color_palette_fa3_web.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File: <code>b4_11_color_palette_fa3_web.mp4</code>. ✅ <strong>Single-Stream 360° Turntable</strong> không giật + CIE LAB đổi màu áo tức thì + 4K Pull-Out khớp Seam <code>SSIM=0.9999</code>.
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="grid-2">
-    <!-- REF VIDEO -->
-    <div class="v-card">
-      <div class="v-head">
-        <div class="v-title">① Video Mẫu Gốc (Higgsfield Katana #326c512a)</div>
-        <a href="https://static-public-media.higgsfield.ai/katana-presets/326c512a-ee04-417d-bb2a-faa3f2d1c6d1.mp4" target="_blank" rel="noopener" style="color:var(--cyan); font-size:12px; font-weight:700; text-decoration:none;">Link Gốc CDN ↗</a>
-      </div>
-      <div class="player-box">
-        <video id="vidRef" controls loop playsinline preload="metadata">
-          <source src="katana_target_326c512a.mp4" type="video/mp4">
-          <source src="https://static-public-media.higgsfield.ai/katana-presets/326c512a-ee04-417d-bb2a-faa3f2d1c6d1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="v-body">
-        <strong>Cơ chế gốc được giải phẫu:</strong> Chủ thể khởi đầu ở trạng thái Đen–Trắng tương phản cao trên nền giấy Studio trắng sáng <code>#F8F8F6</code>, bên dưới là Vòng Quạt Màu Pantone xoay tròn, 3 thẻ màu Pantone nghiêng bật nảy ra phía sau lưng (Spring Overshoot) kích hoạt sóng màu nhuộm trang phục từ vô sắc sang hữu sắc.
-        <div class="metrics">
-          <div><span class="m-lbl">Preset ID</span><span class="m-val">326c512a</span></div>
-          <div><span class="m-lbl">Cơ chế</span><span class="m-val">B&amp;W → Color</span></div>
-          <div><span class="m-lbl">Đồ họa</span><span class="m-val">Pantone Wheel</span></div>
-          <div><span class="m-lbl">Xếp hạng</span><span class="m-val">Top #2 Katana</span></div>
+  <!-- CỤM 2: VIET2210 & BẢN 11S 4-OUTFITS SHOWCASE -->
+  <div class="section-box">
+    <div class="section-title">👔 Cụm 2 — Ứng Dụng Thực Chiến Trên <code>viet2210.MOV</code> (Bản Hook 2.40s <code>pantone1</code> &amp; Bản Full 11.0s 4-Outfits 360° Showcase)</div>
+    <p class="section-desc">
+      So sánh giữa <strong>File gốc <code>viet2210.MOV</code></strong>, <strong>Bản Hook ngắn 2.40s (Preset <code>pantone1</code>)</strong> dùng để mở đầu video Chia sẻ/Talking-head, và <strong>Bản Full 11.0s 4-Outfits 360° Turntable Showcase</strong> trình diễn trọn vẹn 4 màu trang phục (<code>01 FIELD</code> → <code>02 CHERRY</code> → <code>03 LILAC</code> → <code>04 COBALT</code>).
+    </p>
+    <div class="grid-3">
+      <!-- 1. File gốc viet2210 -->
+      <div class="vcard">
+        <div class="vcard-head">
+          <div class="vcard-title">① File Gốc (viet2210.MOV)</div>
+          <span class="vcard-tag">ORIGINAL INPUT</span>
+        </div>
+        <div class="video-wrap">
+          <video class="viet-vid" controls playsinline preload="metadata" loop muted src="viet2210_orig_web.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File gốc: <code>viet2210_orig_web.mp4</code> (1080×1920 @ 60fps). Nhân vật mặc áo thun xanh đứng trước cửa hàng chuẩn bị nói câu mở đầu.
         </div>
       </div>
-    </div>
 
-    <!-- MASTER RESULT VIDEO -->
-    <div class="v-card master">
-      <div class="v-head">
-        <div class="v-title">② Kết Quả Master: Anh Việt (Preset <code>pantone1</code>)</div>
-        <span class="badge badge-lime">1080×1920 • PASS 5/5 GATES</span>
-      </div>
-      <div class="player-box">
-        <video id="vidMaster" controls loop playsinline preload="metadata" src="viet2210_katana_palette_master.mp4"></video>
-      </div>
-      <div class="v-body">
-        <strong>Kết quả thực thi trên <code>viet2210.MOV</code> (2.40s Hook + Talk):</strong>
-        Pha 1 (<code>0.00–0.65s</code>) Monochrome Editorial + quạt Pantone xoay &rarr; Pha 2 (<code>0.65–1.80s</code>) 2 nhịp dừng quạt bật 3 thẻ màu nghiêng sau lưng + sóng <code>Radial Colorize Wave</code> &rarr; Pha 3 (<code>1.80–2.40s</code>) bung nền công viên thật với phương trình <code>α·F48 + (1-α)·F48 ≡ F48</code> khóa 0% Halo nối thẳng sang Frame #49.
-        <div class="swatches">
-          <span class="swatch"><span class="dot" style="background:#5E6B45;"></span>OLIVE #5E6B45</span>
-          <span class="swatch"><span class="dot" style="background:#ECEBE1;"></span>BONE #ECEBE1</span>
-          <span class="swatch"><span class="dot" style="background:#1F1F23;"></span>INK #1F1F23</span>
-          <span class="swatch"><span class="dot" style="background:#453A36;"></span>CHARCOAL #453A36</span>
-          <span class="swatch"><span class="dot" style="background:#D88556;"></span>AMBER #D88556</span>
-          <span class="swatch"><span class="dot" style="background:#5E8238;"></span>CANOPY #5E8238</span>
+      <!-- 2. Bản Preset pantone1 2.40s -->
+      <div class="vcard highlight">
+        <div class="vcard-head">
+          <div class="vcard-title">② Bản Preset <code>pantone1</code> (Hook 2.40s + Talk)</div>
+          <span class="vcard-tag">PRESET PANTONE1</span>
         </div>
-        <div class="metrics">
-          <div><span class="m-lbl">Gate G0 SSIM</span><span class="m-val" style="color:var(--lime);">0.99768</span></div>
-          <div><span class="m-lbl">Gate G0 ΔE00</span><span class="m-val" style="color:var(--lime);">0.459 ≤ 1.0</span></div>
-          <div><span class="m-lbl">Gate K1 Sat</span><span class="m-val">1.68 → 97.06</span></div>
-          <div><span class="m-lbl">Gate K3 Luma</span><span class="m-val">0.243 (No Flash)</span></div>
+        <div class="video-wrap">
+          <video class="viet-vid" controls playsinline preload="metadata" loop src="viet2210_katana_palette_master.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File: <code>viet2210_katana_palette_master.mp4</code>. Đảo 3 màu áo siêu tốc trong 2.40s đầu kèm bánh xe Pantone + thẻ 3D rồi khóa khớp hoàn hảo vào câu thoại.
+        </div>
+      </div>
+
+      <!-- 3. Bản Full 11.0s 4-Outfits 360 Turntable -->
+      <div class="vcard highlight">
+        <div class="vcard-head">
+          <div class="vcard-title">③ Bản Full 11.0s — 4-Outfits 360° Turntable</div>
+          <span class="vcard-tag">4 OUTFITS · 11.0S</span>
+        </div>
+        <div class="video-wrap">
+          <video class="viet-vid" controls playsinline preload="metadata" loop src="viet_katana_360_4outfits_master_web.mp4"></video>
+        </div>
+        <div class="vcard-foot">
+          File: <code>viet_katana_360_4outfits_master_web.mp4</code>. Trình diễn đủ 4 bộ màu (Field Olive → Cherry Red → Lilac Purple → Cobalt Blue) trên 1 luồng xoay 360° mượt liên tục.
         </div>
       </div>
     </div>
   </div>
 
-  <div class="qa-card">
-    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-      <strong style="font-size:16px; color:#fff;">🖼️ Bảng Kiểm Định 10 Mốc Frame Thực Tế (QA Contact Sheet — <code>qa_katana_palette_sheet.jpg</code>)</strong>
-      <span class="badge badge-emerald">Nghiệm Thu CLAUDE2 • 0% Viền Halo Tóc/Vai</span>
+  <!-- CỤM 3: CONTACT SHEETS KIỂM TOÁN TRỰC QUAN -->
+  <div class="section-box">
+    <div class="section-title">🔍 Cụm 3 — Contact Sheets Kiểm Toán Từng Khung Hình (Visual QA Strips)</div>
+    <p class="section-desc">
+      Ảnh chụp đối chiếu từng mốc thời gian từ bộ kiểm định <code>verify_katana_tier1.py</code>.
+    </p>
+    <div style="margin-bottom:20px;">
+      <div style="font-weight:700;font-size:14px;margin-bottom:4px;">1. Đối chiếu trực diện 3 hàng: Video Mẫu Katana vs. Lần 1 (V1 OpenCV Nhòe) vs. Lần 3 (V3 Single-Stream 360° Turntable Master)</div>
+      <img class="sheet-img" src="b4_11_color_palette_v1_vs_v2_flow_sheet.jpg" alt="So sánh Katana Ref vs V1 vs V3 Master">
     </div>
-    <img src="qa_katana_palette_sheet.jpg" alt="QA Contact Sheet Pantone 1">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">2. Contact Sheet 7 Mốc Khung Hình Chuẩn V3 Master (<code>b4_11_color_palette_sheet.jpg</code>)</div>
+        <img class="sheet-img" src="b4_11_color_palette_sheet.jpg" alt="7-Frame Contact Sheet b4_11_color_palette">
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">3. Contact Sheet Bản Preset <code>pantone1</code> trên <code>viet2210.MOV</code> (<code>qa_katana_palette_sheet.jpg</code>)</div>
+        <img class="sheet-img" src="qa_katana_palette_sheet.jpg" alt="Contact Sheet viet2210 pantone1">
+      </div>
+    </div>
+  </div>
+
+  <!-- CỤM 4: KIẾN TRÚC QUẢN LÝ REPO & PHIÊN BẢN -->
+  <div class="section-box">
+    <div class="section-title">🗂️ Kiến Trúc Lưu Trữ Repo &amp; Quản Lý Phiên Bản Trên <code>videoai.fedu.vn</code></div>
+    <p class="section-desc">
+      Sơ đồ tổ chức giúp quản lý tập trung toàn bộ các trang hiệu ứng và lịch sử phiên bản (`V1 → V2 → V3 → Master`) mà không bị phân mảnh.
+    </p>
+    <div class="repo-grid">
+      <div class="repo-card">
+        <h3>1. Nơi Chế Tác &amp; Render Gốc (Local Workspace)</h3>
+        <p>Chứa code Python render hiệu ứng, bộ kiểm định 11 cổng, sổ cái tự học và các file <code>studio_*.html</code> gốc:</p>
+        <p><code></code></p>
+        <p>Sổ cái đăng ký danh mục Studio: <code>~/.gemini/config/skills/auto-edit-video/resources/evolution_log.json</code></p>
+      </div>
+      <div class="repo-card recommended">
+        <h3>2. Repo Chuẩn Đang Chạy Web Chính Thức (Khuyên Dùng Quản Lý Tập Trung)</h3>
+        <p>Repo trung tâm quản lý toàn bộ <strong>videoai.fedu.vn</strong> (Cloudflare Pages/Workers):</p>
+        <p><code>/Users/vietmac/Documents/CODE/videoai.fedu.vn/</code></p>
+        <p>Mỗi hiệu ứng có 1 trang định danh cố định tại <code>public/studios/studio-ai-hook-&lt;slug&gt;.html</code>. Chạy 1 lệnh <code>python3 sync_videoai.py --deploy</code> sẽ tự động gom hết các phiên bản <code>V1..Vn</code> lên web.</p>
+      </div>
+      <div class="repo-card">
+        <h3>3. Repo GitHub Mirror (Sao Lưu Git Tự Động)</h3>
+        <p>Khi chạy <code>sync_videoai.py --deploy</code>, toàn bộ thư mục <code>public/</code> được đồng bộ tự động sang GitHub Pages repo:</p>
+        <p><code>/Users/vietmac/Documents/CODE/vietndj.github.io/videoai/</code></p>
+        <p>Git Remote: <code>https://github.com/vietndj/vietndj.github.io.git</code> (giúp lưu vết lịch sử commit Git cho từng phiên bản HTML).</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <script>
-function syncPlayBoth() {
-  const v1 = document.getElementById('vidRef');
-  const v2 = document.getElementById('vidMaster');
-  v1.currentTime = 0;
-  v2.currentTime = 0;
-  v1.play();
-  v2.play();
-}
+  function playAllGroup(cls) {
+    const vids = document.querySelectorAll('.' + cls);
+    vids.forEach(v => {
+      v.currentTime = 0;
+      v.play().catch(() => {});
+    });
+  }
+  function pauseAllVideos() {
+    document.querySelectorAll('video').forEach(v => v.pause());
+  }
+  function restartAllVideos() {
+    document.querySelectorAll('video').forEach(v => {
+      v.currentTime = 0;
+      v.play().catch(() => {});
+    });
+  }
 </script>
 </body>
 </html>

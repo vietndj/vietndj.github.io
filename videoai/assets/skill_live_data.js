@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 26/10/2026 19:06:07
+ * Sinh tự động bởi sync_videoai.py vào lúc: 27/10/2026 06:49:16
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "26/10/2026 19:06:07",
-  "last_synced_iso": "2026-10-26T19:06:07.100515",
+  "last_synced_formatted": "27/10/2026 06:49:16",
+  "last_synced_iso": "2026-10-27T06:49:16.945320",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -447,16 +447,17 @@ window.SKILL_LIVE_DATA = {
       ]
     },
     {
-      "schema_version": "3.0",
+      "schema_version": "4.2",
       "id": "jib-down",
       "aliases": [
         "crane-jib-down",
         "jib-up-reverse",
-        "ha-can-cau"
+        "ha-can-cau",
+        "jib-down-crane-up"
       ],
-      "name": "Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt (Vertical Crane Jib-Down 2.30s)",
+      "name": "Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt & Bay Ngược Lên Cuối Video (Omni 1.1 Flash Jib-Down V4.2 Zero-Blur + Crane-Up Outro)",
       "duration_sec": 2.3,
-      "option_label": "Hạ Cần Cẩu Máy Quay (Jib-Down 2.30s) — Từ vòm cây/hồ bơi/tòa tháp trên cao hạ thẳng đứng 3D Parallax xuống ngang mắt nói luôn (Auto-Trim Apex + Roll Derotation + DIS Bidirectional Flow + 180° Shutter + Studio Crane SFX)",
+      "option_label": "Hạ Cần Cẩu Máy Quay (Jib-Down V4.2 Zero-Blur 2.30s + Crane-Up Outro) — Google Flow Omni 1.1 Flash Single-Anchor Reverse Crane Lift + 6 Cổng JB1..JB6 (SSIM >= 0.98, 0% Blur/Cross-dissolve tại điểm nối) + Kết video bay ngược cần cẩu lên vòm cây & Fade-to-Black",
       "when_to_recommend": "Khi nhân vật đứng hoặc bước nói ở công viên, dưới tán cây, cạnh hồ bơi hoặc trước tòa nhà ngoài trời.",
       "ideal_motion": [
         "standing_ready",
@@ -469,22 +470,25 @@ window.SKILL_LIVE_DATA = {
       "requires_4k_dolly_crop": false,
       "engine": {
         "script": "jib_down_engine.py",
-        "entry": "build_jib_down"
+        "entry": "build_jib_down",
+        "full_mfx_outro_pipeline": "/Users/vietmac/Documents/AItest2/render_hook_plus_mfx.py",
+        "outro_style": "reverse_jib_up_crane_up_1p45s_fade_to_black"
       },
-      "verifier": "verify_jib_down.py",
-      "master_demo_video": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_jib_down_master.mp4",
-      "master_demo_video_2": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_jib_down_master.mp4",
+      "verifier": "jib_down_engine.py (verify_jib_down_6_gates: JB1_DURATION, JB2_NO_HALLUCINATED_OVERLAY, JB3_CONTINUOUS_DESCENT, JB4_SEAM_ZERO_BLUR_LOCK, JB5_ZERO_BORDER_CROP, JB6_CLEAN_HARD_CUT_HANDOFF)",
+      "master_demo_video": "/Users/vietmac/Documents/AItest2/products_flow/FLOW1_IMG_8611_JibDown_MFX.mp4",
+      "master_demo_video_2": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/viet2210_jib_down_master.mp4",
+      "master_demo_video_3": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/footageai1_jib_down_master.mp4",
       "sfx_profile": "sfx_jib_down_2p3s.wav (Canopy Air Rush + Smooth Crane Whoosh + Soft Air Cushion 55Hz Sub-thump @ 2.22s)",
-      "veo_jib_up_prompt": "Smooth vertical camera crane jib-up rising straight upward from eye-level into the green park tree canopy and sky above. The man stands completely still in a frozen pose, mouth closed, no blinking. Windless environment, still leaves, no pedestrians walking, no moving cars, static background, single continuous vertical camera lift.",
+      "omni_jib_up_prompt": "Continuous vertical camera crane jib-up rising straight upward from eye-level up into the green tree canopy and sky above. The person stands completely frozen like a statue in the exact starting pose, mouth closed, zero body movement. No new branches or objects crossing in front of the lens, clean unobstructed vertical camera lift, photorealistic 4K.",
       "scoring": {
-        "base": 62,
+        "base": 68,
         "motion_bonus": {
           "standing_ready": 24,
           "squat_to_stand": 20
         },
         "scene_bonus": {
-          "outdoor_park_city": 15,
-          "outdoor": 15
+          "outdoor_park_city": 18,
+          "outdoor": 18
         },
         "4k_bonus": 0
       },
@@ -1416,6 +1420,16 @@ window.SKILL_LIVE_DATA = {
         "desc": "Trình phát nghiệm thu toàn bộ 3 Khuôn Mẫu Motion Graphic đóng gói chuẩn hóa (hội ý CLAUDE2 Opus 5.5): Mẫu 03 Higgsfield Figma 44.8s (Đầy đủ các phiên bản ngang Ref → V1 70s → V2 40s → V3 Độc bản B-Roll → V4 Toán học đọc chữ → V5 Bản 1 & 2 Dừng nhạc 1.6s → V6 Crisp No-Bounce → V7.1 Final Best Khung vuông Multi-Square B-Roll + Bản dọc 9:16 V7.1 0% Zoom Mặt Học Viên), Mẫu 02 Adwave 61s V6 Master, và Mẫu 01 Paage 70s (16:9 kb1/kb2 & 9:16)."
       },
       {
+        "source": "studio_ai_hook_pantone1.html",
+        "slug": "studio-ai-hook-pantone1.html",
+        "order": -19,
+        "icon": "🎨",
+        "title": "Studio AI Hook #01 COLOR PALETTE (Pantone1 & 360° Turntable): Hồ Sơ Tiến Hóa Các Phiên Bản (V1 → V2 → V3 Master & 4-Outfits)",
+        "badge": "AI Hook Preset: pantone1 • Katana #01 (326c512a) • 5 Phiên Bản Đối Chiếu",
+        "badge_class": "editorial",
+        "desc": "Đối chiếu trực diện File Gốc (footageai3.mp4 & viet2210.MOV), Video Mẫu Katana (#326c512a), và 5 phiên bản qua các lần nâng cấp: Lần 1 V1 (OpenCV nhòe), Lần 2 V2 (Google Flow 3 clips giật), Lần 3 V3 Master (Single-Stream 360° Turntable mượt + CIE LAB Recolor PASS 11/11 Gates), Bản Preset pantone1 2.40s và Bản Full 11.0s 4-Outfits Showcase."
+      },
+      {
         "order": -17,
         "icon": "⚡",
         "title": "Showcase 40 Hiệu Ứng Higgsfield Tier 1 + Lịch Sử Phiên Bản (V1 OpenCV vs V2 Omni 1.1 Flash Round 1/2 & Earth Zoom V1→V6.0)",
@@ -1504,16 +1518,6 @@ window.SKILL_LIVE_DATA = {
         "badge": "AI Hook Preset: sticker-transition • Higgsfield Transitions #06",
         "badge_class": "motion",
         "desc": "Đối chiếu trực tiếp ① Video Mẫu Gốc Higgsfield Transitions (06_Sticker_Match_Cut.mp4) và ② Video Kết Quả Master của anh Việt (viet2210_sticker_transition_master.mp4 — SSIM 0.9983, ΔE00 0.043, 0% Halo, PASS 5/5 Gates)."
-      },
-      {
-        "source": "studio_ai_hook_pantone1.html",
-        "slug": "studio-ai-hook-pantone1.html",
-        "order": -1,
-        "icon": "🎨",
-        "title": "Studio AI Hook PANTONE 1: Vòng Quạt Màu Pantone & 3 Thẻ Màu Nghiêng (2.40s)",
-        "badge": "AI Hook Preset: pantone1 • Ref #326c512a",
-        "badge_class": "editorial",
-        "desc": "Đối chiếu trực tiếp Video Mẫu Gốc Higgsfield Katana (#326c512a) và Video Kết Quả Master của anh Việt (viet2210_katana_palette_master.mp4 — SSIM 0.9977, ΔE00 0.459, 0% Halo, PASS 5/5 Gates)."
       },
       {
         "source": "suiplay_launch_motion_studio.html",
@@ -6456,11 +6460,11 @@ window.SKILL_LIVE_DATA = {
       "name": "verify_12_principles.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "size": 26315,
-      "size_formatted": "25.7 KB",
-      "lines": 631,
-      "mtime": 1793002968.391907,
-      "mtime_formatted": "26/10/2026 15:22",
+      "size": 26413,
+      "size_formatted": "25.8 KB",
+      "lines": 632,
+      "mtime": 1793027274.7546406,
+      "mtime_formatted": "26/10/2026 22:07",
       "desc": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
     },
     {
@@ -7005,6 +7009,22 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1793058540.885828,
+      "mtime_formatted": "27/10/2026 06:49",
+      "detail": "17 quy chuẩn • 19 studios"
+    },
+    {
+      "name": "scripts/verify_12_principles.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "mtime": 1793027274.7546406,
+      "mtime_formatted": "26/10/2026 22:07",
+      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
+    },
+    {
       "name": "spa-edit/SKILL.md",
       "type": "Markdown Spec",
       "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
@@ -7045,14 +7065,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "CONTENT BRAIN V10 — ZERO-TOKEN OFFLINE TOPIC ENGINE & VIETNAMESE COMPOUND HIGHLIGHTER"
     },
     {
-      "name": "scripts/verify_12_principles.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1793002968.391907,
-      "mtime_formatted": "26/10/2026 15:22",
-      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
-    },
-    {
       "name": "scripts/render_template.py",
       "type": "Python Script",
       "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
@@ -7067,14 +7079,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1793001405.1960132,
       "mtime_formatted": "26/10/2026 14:56",
       "detail": "94 dòng • 3 mục chính"
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1792989859.2940152,
-      "mtime_formatted": "26/10/2026 11:44",
-      "detail": "17 quy chuẩn • 19 studios"
     },
     {
       "name": "checkmotion/SKILL.md",
