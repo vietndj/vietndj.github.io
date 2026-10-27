@@ -675,30 +675,35 @@
       filter: brightness(1.1);
     }
   
-.main.wide .content { max-width: 1560px !important; padding: 24px 28px 60px !important; }
+.shell { grid-template-columns: 268px 1fr !important; }
+.main.wide { max-width: none !important; width: 100% !important; display: block !important; }
+.main.wide .content { max-width: 100% !important; width: 100% !important; padding: 20px 24px 60px !important; }
 .chon-studio-wrap {
   background: radial-gradient(circle at 15% 0%, #161829 0%, #090A10 55%);
   color: #F4F5F8;
   border-radius: 20px;
   border: 1px solid #252836;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 20px 50px rgba(0,0,0,0.22);
-  margin-top: 12px;
+  margin-top: 8px;
 }
 .chon-studio-wrap h3, .chon-studio-wrap h4, .chon-studio-wrap p { color: inherit; }
 .chon-studio-wrap a { text-decoration: none; }
+.chon-studio-wrap .topbar { position: relative !important; top: 0 !important; border-radius: 20px 20px 0 0; }
 
   </style>
 </head>
 <body data-page="chon-style-tong-hop">
   <main class="main" style="display:none">
     <div class="content">
-      <div class="hero" style="margin-bottom:14px; padding-bottom:12px;">
-        <div class="kicker" style="--stage:var(--c-studio)">— TỔNG ĐÀI CHỌN MẪU HỢP NHẤT • 10 KIỂU 2 BÊN × 35 CHỮ × 22 ANIMATION TEXT</div>
-        <h1 style="margin-bottom:6px;">Tổng Đài Chọn Chữ (35 Kiểu) • Style 2 Bên (10 Kiểu) • Animation Text</h1>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-          <a href="/studios/studio-chon-style-tong-hop.html" target="_blank" class="studio-launch-btn" style="background:#d97706; border-color:#f59e0b;">🖥️ Mở Chế Độ Toàn Màn Hình (Fullscreen Studio) ↗</a>
-          <a href="14-thamtho-spa.html" class="studio-launch-btn" style="background:#be185d; border-color:#ec4899;">🌸 Xem Hồ Sơ 5 Video Thắm Thỏ Spa (V1→V11) →</a>
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+        <div>
+          <div class="kicker" style="--stage:var(--c-studio); margin-bottom:4px;">— TỔNG ĐÀI CHỌN MẪU HỢP NHẤT • 10 KIỂU 2 BÊN × 35 CHỮ × 22 ANIMATION TEXT</div>
+          <h1 style="margin:0; font-size:26px;">Tổng Đài Chọn Chữ (35 Kiểu) • Style 2 Bên (10 Kiểu) • Animation Text</h1>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <a href="/studios/studio-chon-style-tong-hop.html" target="_blank" class="studio-launch-btn" style="background:#d97706; border-color:#f59e0b;">🖥️ Mở Toàn Màn Hình ↗</a>
+          <a href="14-thamtho-spa.html" class="studio-launch-btn" style="background:#be185d; border-color:#ec4899;">🌸 Hồ Sơ 5 Video Thắm Thỏ Spa →</a>
         </div>
       </div>
 
@@ -832,7 +837,7 @@
           <div class="sec-head">
             <div>
               <span class="sec-kicker">MÀN HÌNH CHỌN 01 / 04 • SIDE-BY-SIDE LAYOUT GEOMETRY (CLAUDE2 UI/UX)</span>
-              <h2 class="sec-title">1. Chọn Kiểu Trình Bày 2 Bên Trước–Sau (`LAYOUT #01 → #10`)</h2>
+              <div class="sec-title" style="font-size:19px;font-weight:800;margin:0 0 6px;color:#fff">1. Chọn Kiểu Trình Bày 2 Bên Trước–Sau (`LAYOUT #01 → #10`)</div>
             </div>
             <span id="status-layout" style="font-size:12.5px; font-weight:800; color:var(--gold);">Đang chọn: LAYOUT #03 (Bậc Thang Chéo)</span>
           </div>
@@ -846,7 +851,7 @@
           <div class="sec-head">
             <div>
               <span class="sec-kicker">MÀN HÌNH CHỌN 02 / 04 • 35 SYSTEM TYPOGRAPHY STYLES</span>
-              <h2 class="sec-title">2. Chọn Kiểu Chữ Trong 35 Kiểu Chữ Hệ Thống (`STYLE-01 → STYLE-35`)</h2>
+              <div class="sec-title" style="font-size:19px;font-weight:800;margin:0 0 6px;color:#fff">2. Chọn Kiểu Chữ Trong 35 Kiểu Chữ Hệ Thống (`STYLE-01 → STYLE-35`)</div>
             </div>
             <span id="status-typo" style="font-size:12.5px; font-weight:800; color:var(--cyan);">Đang chọn: STYLE-15 (Góc Nhìn CHUYÊN GIA)</span>
           </div>
@@ -860,7 +865,7 @@
           <div class="sec-head">
             <div>
               <span class="sec-kicker">MÀN HÌNH CHỌN 03 / 04 • TEXT ANIMATION & KINETIC ARCHETYPES</span>
-              <h2 class="sec-title">3. Chọn Animation Text Cho Tiêu Đề (`M01 → M06`) & Chữ Trong Video (`#01 → #16`)</h2>
+              <div class="sec-title" style="font-size:19px;font-weight:800;margin:0 0 6px;color:#fff">3. Chọn Animation Text Cho Tiêu Đề (`M01 → M06`) & Chữ Trong Video (`#01 → #16`)</div>
             </div>
             <span id="status-anim" style="font-size:12.5px; font-weight:800; color:var(--emerald);">Đang chọn: M03 • Clinical Line Sweep</span>
           </div>
@@ -879,7 +884,7 @@
           <div class="sec-head">
             <div>
               <span class="sec-kicker">MÀN HÌNH CHỌN 04 / 04 • SUBTITLES, CTA & BRAND OUTRO</span>
-              <h2 class="sec-title">4. Chọn Kiểu Phụ Đề (`5A → 5E`), Băng Rôn CTA (`01 → 03`) & Màn Đen Outro</h2>
+              <div class="sec-title" style="font-size:19px;font-weight:800;margin:0 0 6px;color:#fff">4. Chọn Kiểu Phụ Đề (`5A → 5E`), Băng Rôn CTA (`01 → 03`) & Màn Đen Outro</div>
             </div>
           </div>
           <div class="quick-studios-grid">
