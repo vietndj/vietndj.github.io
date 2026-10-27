@@ -482,7 +482,7 @@
       object-fit: cover;
       display: block;
     }
-    .l-card-.chon-studio-wrap {
+    .l-card-body {
       padding: 10px 12px;
       display: flex;
       flex-direction: column;
@@ -698,7 +698,7 @@
     <div class="content">
       <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
         <div>
-          
+          <div class="kicker" style="--stage:var(--c-studio); margin-bottom:4px;">— TỔNG ĐÀI CHỌN MẪU HỢP NHẤT • 10 KIỂU 2 BÊN × 35 CHỮ × 22 ANIMATION TEXT</div>
           <h1 style="margin:0; font-size:26px;">Tổng Đài Chọn Chữ (35 Kiểu) • Style 2 Bên (10 Kiểu) • Animation Text</h1>
         </div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -712,7 +712,7 @@
 
   <!-- TOP STICKY BAR -->
   <nav class="top-nav">
-    <a href="../index.html" class="brand-box">
+    <a href="index.html" class="brand-box">
       <div class="brand-icon">35×10</div>
       <div>
         <span class="brand-title">TỔNG ĐÀI CHỌN CHỮ (35 KIỂU) • STYLE 2 BÊN (10 KIỂU) • ANIMATION TEXT</span>
@@ -724,7 +724,7 @@
       <a href="#sec-typo-35" class="nav-tab">🔤 2. Chọn Chữ (35 Kiểu Chữ)</a>
       <a href="#sec-anim-text" class="nav-tab">⚡ 3. Chọn Animation Text (6 + 16 Kiểu)</a>
       <a href="#sec-sub-cta" class="nav-tab">💬 4. Phụ Đề (5A–5E) & CTA / Logo</a>
-      <a href="../thamtho-spa.html" class="nav-tab cyan-btn">🌸 Xem Trang 5 Video Thắm Thỏ Spa</a>
+      <a href="14-thamtho-spa.html" class="nav-tab cyan-btn">🌸 Xem Trang 5 Video Thắm Thỏ Spa</a>
     </div>
   </nav>
 
@@ -801,7 +801,7 @@
               <span>VIDEO GỐC (TRƯỚC)</span>
               <span>●</span>
             </div>
-            <img class="sim-box-media" id="sim-img-left" data-thamtho-src="v3_phone_noface_2.jpg" src="thamtho/v3_phone_noface_2.jpg" alt="Trước" />
+            <img class="sim-box-media" id="sim-img-left" data-thamtho-src="v3_phone_noface_2.jpg" src="studios/thamtho/v3_phone_noface_2.jpg" alt="Trước" />
           </div>
 
           <!-- KHUNG PHẢI: VIDEO ĐÃ EDIT -->
@@ -810,11 +810,11 @@
               <span>BẢN DỰNG AI V11 • THẮM THỎ SPA</span>
               <span>✦</span>
             </div>
-            <img class="sim-box-media" id="sim-img-right" data-thamtho-src="v3_phone_noface_3.jpg" src="thamtho/v3_phone_noface_3.jpg" alt="Sau" />
+            <img class="sim-box-media" id="sim-img-right" data-thamtho-src="v3_phone_noface_3.jpg" src="studios/thamtho/v3_phone_noface_3.jpg" alt="Sau" />
           </div>
 
           <!-- LỚP ẢNH RENDER THẬT 1080x1920 -->
-          <img class="sim-static-render" id="sim-static-render" data-thamtho-src="layout_03_before_after.jpg" src="thamtho/layout_03_before_after.jpg" alt="Rendered Layout" />
+          <img class="sim-static-render" id="sim-static-render" data-thamtho-src="layout_03_before_after.jpg" src="studios/thamtho/layout_03_before_after.jpg" alt="Rendered Layout" />
         </div>
 
         <div style="display:flex; gap:8px; width:100%;">
@@ -1089,10 +1089,10 @@
 
     function getMediaPrefix() {
       var p = window.location.pathname || "";
-      if (p.endsWith("/chon-style.html") || p.endsWith("/thamtho-spa.html") || p.endsWith("/index.html")) {
-        return "studios/thamtho/";
+      if (p.indexOf("/studios/") !== -1) {
+        return "thamtho/";
       }
-      return "thamtho/";
+      return "studios/thamtho/";
     }
 
     function initPage() {
