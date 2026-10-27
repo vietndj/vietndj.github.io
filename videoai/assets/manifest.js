@@ -156,5 +156,27 @@ window.HUB = {
       icon: "🎬",
       q: "3 Template đóng gói (Mẫu 01 • Mẫu 02 • Mẫu 03) • Video Demo • 5 Bối cảnh gọi Skill"
     }
+    ,{
+      id: "chon-style-tong-hop",
+      file: "13-chon-style-tong-hop.html",
+      group: "ref",
+      n: "13",
+      title: "Chọn Chữ • Style 2 Bên • Animation Text",
+      short: "Chọn Chữ & Style 2 Bên",
+      stage: "studio",
+      icon: "🎨",
+      q: "Tổng đài chọn 10 Kiểu 2 Bên Trước–Sau × 35 Kiểu Chữ × 6 & 16 Animation Text trên cùng 1 màn hình"
+    },
+    {
+      id: "thamtho-spa",
+      file: "14-thamtho-spa.html",
+      group: "ref",
+      n: "14",
+      title: "Hồ Sơ 5 Video Thắm Thỏ Spa (V1→V11)",
+      short: "5 Video Thắm Thỏ Spa",
+      stage: "buoc4",
+      icon: "🌸",
+      q: "Quy trình lịch sử 5 Video Thắm Thỏ Spa: Nguyên liệu (Trái) → Đường hội tụ → Bản cuối & Trước–Sau (Phải) + Hộp đóng mở 11 Phiên bản"
+    }
   ]
 };
