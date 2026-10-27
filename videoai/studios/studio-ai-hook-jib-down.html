@@ -151,19 +151,123 @@
 <div class="container">
   <div class="hero">
     <div class="badges">
-      <span class="badge badge-lime">AI HOOK PRESET: JIB-DOWN (2.30S)</span>
-      <span class="badge badge-cyan">3D Veo Parallax • Auto-Trim Canopy Apex • Roll Derotation</span>
-      <span class="badge badge-emerald">VERDICT: PASS 10/10 GATES (vp 0.91–0.94 • sc 0.99–1.00 • SSIM ≥ 0.985)</span>
+      <span class="badge badge-lime">AI HOOK PRESET: JIB-DOWN V4.2 ZERO-BLUR (2.30S + CRANE-UP OUTRO)</span>
+      <span class="badge badge-cyan">Google Flow Omni 1.1 Flash • 0% Blur/Cross-dissolve • 6 Gates JB1..JB6</span>
+      <span class="badge badge-emerald">VERDICT: PASS 6/6 GATES (Score 96.35–99.32 • SSIM ≥ 0.983 • End Fade 0.00)</span>
     </div>
-    <h1>🏗️ Studio Đối Chiếu AI Hook <code>jib-down</code> (Hạ Cần Cẩu Máy Quay 3D Parallax Từ Vòm Cây Xuống Ngang Mắt — 2.30s)</h1>
+    <h1>🏗️ Studio Đối Chiếu AI Hook <code>jib-down</code> V4.2 (Hạ Cần Cẩu 3D Parallax Từ Vòm Cây Xuống Ngang Mắt &amp; Bay Ngược Lên Cuối Video)</h1>
     <div class="sub">
-      So sánh trực tiếp 2 Case Study thực chiến của preset <strong><code>jib-down</code></strong> (<code>jib_down_engine.py</code>): <strong>① Case 1 (<code>viet2210_jib_down_master.mp4</code> — Công viên tán cây xanh)</strong> và <strong>② Case 2 (<code>footageai1_jib_down_web.mp4</code> — Khu hồ bơi, hàng cọ &amp; tòa tháp chung cư 3D Parallax)</strong>.
+      Tổng hợp đầy đủ các bản Demo thực chiến của preset <strong><code>jib-down</code></strong> (<code>jib_down_engine.py</code> V4.2 trên <strong>Google Flow Omni 1.1 Flash</strong>): <strong>⭐ Bộ 5 Video Full V4.2 Khép Kín (<code>JD1..JD5_IMG_86*_JibDown_CraneUp_MFX.mp4</code> — Vào Jib-Down Zero-Blur ➔ Thân MFX V3.2 ➔ Ra Crane-Up Outro)</strong>, <strong>Bộ 5 Hook Lẻ (<code>JIB1..JIB5</code>)</strong>, cùng <strong>Case Công Viên (<code>viet2210.MOV</code>)</strong> và <strong>Case Hồ Bơi (<code>footageai1.mp4</code>)</strong>.
     </div>
     <div class="cmd-bar">
-      <span id="cmdText">python3 ~/.gemini/config/skills/ai-hook/scripts/ai_hook_engine.py --video "/Users/vietmac/Documents/AItest2/footageai1.mp4" --preset jib-down</span>
+      <span id="cmdText">python3 ~/.gemini/config/skills/ai-hook/scripts/jib_down_engine.py --video "/Users/vietmac/Documents/AItest2/IMG_8611.MOV" --output "/tmp/out_jib_down.mp4" --mode full-mfx-outro --spec "/Users/vietmac/Documents/AItest2/specs/spec_1_8611.json"</span>
       <div style="display:flex; gap:8px;">
-        <button class="copy-btn" onclick="syncPlayBoth()">▶ Phát Song Song Cả 2 Video</button>
+        <button class="copy-btn" onclick="syncPlayBoth()">▶ Phát Song Song</button>
         <button class="copy-btn" style="background:#38bdf8;" onclick="navigator.clipboard.writeText(document.getElementById('cmdText').innerText); this.innerText='✓ Đã Copy Lệnh';">Copy Lệnh CLI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MASTER V4.2 FULL VIDEO COMPARISON -->
+  <div class="grid-2">
+    <div class="v-card">
+      <div class="v-head">
+        <div class="v-title">🎬 Video Gốc Chưa Có Hook (<code>IMG_8611.MOV</code>)</div>
+        <span class="badge badge-cyan">RAW FOOTAGE • 16.27s</span>
+      </div>
+      <div class="player-box">
+        <video controls loop playsinline preload="metadata" src="ORIG_IMG_8611_web.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Bản quay gốc <code>IMG_8611.MOV</code>:</strong> Đứng nói tĩnh dưới hàng cây từ giây 0.00s, chưa có chuyển động hạ cần cẩu mở đầu, chưa có MFX V3.2 và chưa có hiệu ứng bay ngược cần cẩu kết thúc.
+      </div>
+    </div>
+
+    <div class="v-card master">
+      <div class="v-head">
+        <div class="v-title">⭐ Chuẩn Vàng V4.2: Vào Jib-Down Zero-Blur ➔ MFX ➔ Ra Crane-Up Outro (<code>JD1 / FLOW1_IMG_8611</code>)</div>
+        <span class="badge badge-lime">OMNI 1.1 FLASH • SSIM 0.9834</span>
+      </div>
+      <div class="player-box">
+        <video controls loop playsinline preload="metadata" src="FLOW1_IMG_8611_JibDown_MFX_web.mp4"></video>
+      </div>
+      <div class="v-body">
+        <strong>Bản Full V4.2 (<code>15.83s</code> • <code>Score 96.35</code>):</strong> Dùng <strong>Google Flow Omni 1.1 Flash</strong> thay thế hoàn toàn Veo 3.1 + loại bỏ 100% <code>n_blend_head</code>/<code>GaussianBlur</code> để <strong>cây cối xung quanh sắc nét tuyệt đối lúc vào cảnh thật (0% mờ nhòe)</strong>, kèm <strong>Reverse Jib-Up/Crane-Up Outro + Fade-to-Black</strong> ở cuối video.
+        <div class="phases">
+          <span class="phase-pill">0.00–1.96s: Omni Jib-Down Zero-Blur</span>
+          <span class="phase-pill">1.96–13.83s: Thân MFX V3.2</span>
+          <span class="phase-pill">13.83–15.83s: Crane-Up Outro + Fade Black</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 AITEST2 FULL JIB-DOWN V4.2 + MFX V3.2 + CRANE-UP OUTRO (JD1..JD5) -->
+  <div class="qa-card" style="margin-bottom:24px; border:1.5px solid rgba(212,254,72,0.55);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+      <strong style="font-size:17px; color:#fff;">⭐ Bộ 5 Video Hoàn Chỉnh V4.2 Khép Kín: Vào <code>Jib-Down Zero-Blur</code> ➔ Thân <code>MFX V3.2</code> ➔ Ra <code>Crane-Up Outro</code> (<code>JD1..JD5</code>)</strong>
+      <span class="badge badge-lime">5/5 FULL PIPELINE V4.2 • OMNI 1.1 FLASH • 6/6 GATES JB1..JB6 PASS</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:14px;">
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JD #1 — <code>IMG_8611</code> (Full V4.2)</div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JD1_IMG_8611_JibDown_CraneUp_MFX_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Vào Jib-Down Zero-Blur (Score 96.35) ➔ MFX V3.2 ➔ Quay lưng bước đi (E1) + Ra Crane-Up Outro.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JD #2 — <code>IMG_8609</code> (Full V4.2)</div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JD2_IMG_8609_JibDown_CraneUp_MFX_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Vào Jib-Down Zero-Blur (Score 98.96) ➔ MFX V3.2 ➔ Xoay người bước đi (E1) + Ra Crane-Up Outro.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JD #3 — <code>IMG_8610</code> (Full V4.2)</div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JD3_IMG_8610_JibDown_CraneUp_MFX_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Vào Jib-Down Zero-Blur (Score 97.86) ➔ MFX V3.2 ➔ Bước qua cam (E6) + Ra Crane-Up Outro.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JD #4 — <code>IMG_8613</code> (Full V4.2)</div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JD4_IMG_8613_JibDown_CraneUp_MFX_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Vào Jib-Down Zero-Blur (Score 96.58) ➔ MFX V3.2 ➔ Ngước nhìn đỉnh tháp (E2) + Ra Crane-Up Outro.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JD #5 — <code>IMG_8608</code> (Full V4.2)</div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JD5_IMG_8608_JibDown_CraneUp_MFX_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Vào Jib-Down Zero-Blur (Score 99.32) ➔ MFX V3.2 ➔ Khoanh tay đứng tĩnh (E4) + Ra Crane-Up Outro.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 AITEST2 JIB-DOWN DEMOS -->
+  <div class="qa-card" style="margin-bottom:24px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+      <strong style="font-size:17px; color:#fff;">🎞️ Bộ 5 Bản Demo Hook Lẻ <code>Jib-Down</code> Trên 5 Footage Thực Tế (<code>AItest2: JIB1..JIB5</code>)</strong>
+      <span class="badge badge-emerald">5/5 FOOTAGE ĐÃ CÓ TRÊN STUDIO &amp; THƯ MỤC DESKTOP</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:14px;">
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JIB #1 — <code>IMG_8611</code></div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JIB1_IMG_8611_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Hạ cần cẩu từ vòm cây công viên xuống ngang mắt nói.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JIB #2 — <code>IMG_8609</code></div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JIB2_IMG_8609_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Hạ cần cẩu thẳng đứng xuống lối đi xanh.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JIB #3 — <code>IMG_8610</code></div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JIB3_IMG_8610_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Hạ cần cẩu từ tán lá cao xuống cận mặt.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JIB #4 — <code>IMG_8613</code></div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JIB4_IMG_8613_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Hạ cần cẩu 3D Parallax xuống ngang ngực.</div>
+      </div>
+      <div class="v-card master">
+        <div class="v-head"><div class="v-title" style="font-size:13.5px;">JIB #5 — <code>IMG_8608</code></div></div>
+        <div class="player-box" style="max-height:380px;"><video controls loop playsinline preload="metadata" src="JIB5_IMG_8608_web.mp4"></video></div>
+        <div class="v-body" style="font-size:12px;">Hạ cần cẩu từ hàng dừa xuống bắt nhịp thoại.</div>
       </div>
     </div>
   </div>

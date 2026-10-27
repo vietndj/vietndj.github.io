@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 27/10/2026 06:49:16
+ * Sinh tự động bởi sync_videoai.py vào lúc: 27/10/2026 07:54:26
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "27/10/2026 06:49:16",
-  "last_synced_iso": "2026-10-27T06:49:16.945320",
+  "last_synced_formatted": "27/10/2026 07:54:26",
+  "last_synced_iso": "2026-10-27T07:54:26.922921",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -15,9 +15,9 @@ window.SKILL_LIVE_DATA = {
     "presets_count": 8,
     "compositions_count": 26,
     "components_count": 22,
-    "scripts_count": 78,
+    "scripts_count": 80,
     "skills_count": 8,
-    "studios_count": 19,
+    "studios_count": 20,
     "evolution_entries_count": 17,
     "ai_hooks_count": 20
   },
@@ -1409,6 +1409,16 @@ window.SKILL_LIVE_DATA = {
       "Mảng 'studios' chỉ để làm đẹp thẻ Studio (tiêu đề, mô tả, nút chế độ). File *studio*.html / *preview*.html mới KHÔNG cần khai báo vẫn tự hiện ở trang 07."
     ],
     "studios": [
+      {
+        "source": "studio_thamtho_spa_5videos.html",
+        "slug": "studio-thamtho-spa-5videos.html",
+        "order": -25,
+        "icon": "🌸",
+        "title": "Hồ Sơ Quy Trình 5 Video Thắm Thỏ Spa (V1 → V11 Master) & 10 Kiểu Trình Bày Trước–Sau (CLAUDE2 UI/UX)",
+        "badge": "5 VIDEOS FULL EVOLUTION • V1→V11 MASTER • GOOGLE FLOW + 10 LAYOUTS × 35 KIỂU CHỮ",
+        "badge_class": "editorial",
+        "desc": "Trang đóng gói chuyên biệt toàn bộ 5 Video Thắm Thỏ Spa (Mỗi video 1 phần độc lập: Bên trái Nguyên liệu Zalo + B-Roll + Ảnh không rõ mặt màu ĐT + Video Google Flow ➔ Ở giữa Đường hội tụ SVG ➔ Bên phải Bản cuối chuẩn nhất V10/V11 & Bản Trước–Sau 2 bên ➔ Ở dưới Hộp đóng mở xem toàn bộ lịch sử 11 phiên bản từ đơn sơ đến hoàn chỉnh) kèm Bảng 10 Kiểu Trình Bày Trước–Sau (LAYOUT #01..#10) đã tối ưu UI/UX cùng CLAUDE2."
+      },
       {
         "source": "studio_motion_graphic_paage_offline_versions.html",
         "slug": "studio-motion-graphic-paage-offline-versions.html",
@@ -2982,11 +2992,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "AI HOOK ROUTER V3.0",
       "desc": "Hệ thống Smart AI Hook Router v3.0 (Zero-Collision Registry hooks.d/ + register_hook.py khóa nguyên tử fcntl.flock) tự động quét 3 giây đầu video gốc và kết xuất 20 chế độ Hook (Xem đầy đủ tại 10-bang-ai-hook.html).",
       "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
-      "size": 55831,
-      "size_formatted": "54.5 KB",
-      "lines_count": 303,
-      "mtime": 1792926973.6822736,
-      "mtime_formatted": "25/10/2026 18:16",
+      "size": 57711,
+      "size_formatted": "56.4 KB",
+      "lines_count": 315,
+      "mtime": 1793058858.8909187,
+      "mtime_formatted": "27/10/2026 06:54",
       "headers": [
         "0.0 Quy Tắc Cứng Toàn Cục: Mặc Định 100% Google Flow `Omni 1.1 Flash` (0% Veo 3, 0% Tự Render OpenCV)",
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
@@ -6757,12 +6767,12 @@ window.SKILL_LIVE_DATA = {
       "name": "jib_down_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 65292,
-      "size_formatted": "63.8 KB",
-      "lines": 1344,
-      "mtime": 1792928610.2415512,
-      "mtime_formatted": "25/10/2026 18:43",
-      "desc": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
+      "size": 35528,
+      "size_formatted": "34.7 KB",
+      "lines": 718,
+      "mtime": 1793059580.351594,
+      "mtime_formatted": "27/10/2026 07:06",
+      "desc": "Jib-Down Engine V4.2 (`jib_down_engine.py`) — Google Flow Omni 1.1 Flash & Zero-Blur Self-Learning Verifier"
     },
     {
       "name": "katana_palette_engine.py",
@@ -6812,12 +6822,23 @@ window.SKILL_LIVE_DATA = {
       "name": "rooftop_jump_engine.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 39090,
-      "size_formatted": "38.2 KB",
-      "lines": 871,
-      "mtime": 1792894778.9616385,
-      "mtime_formatted": "25/10/2026 09:19",
-      "desc": "Rooftop Jump Omni Whip-Snap Engine V5.2 (`rooftop_jump_engine.py`)"
+      "size": 28948,
+      "size_formatted": "28.3 KB",
+      "lines": 655,
+      "mtime": 1793062354.716782,
+      "mtime_formatted": "27/10/2026 07:52",
+      "desc": "ROOFTOP-JUMP MASTER ENGINE V6.0 (Google Flow Omni 1.1 Flash Dual-Anchor + Biomechanical Landing)"
+    },
+    {
+      "name": "rooftop_jump_v3_engine.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "size": 28948,
+      "size_formatted": "28.3 KB",
+      "lines": 655,
+      "mtime": 1793062354.716782,
+      "mtime_formatted": "27/10/2026 07:52",
+      "desc": "ROOFTOP-JUMP MASTER ENGINE V6.0 (Google Flow Omni 1.1 Flash Dual-Anchor + Biomechanical Landing)"
     },
     {
       "name": "smoke_reveal_engine.py",
@@ -6941,6 +6962,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "5-Gate Deterministic Verifier & Synthetic Self-Test Suite for AI Hook #4 — Polygon Sculpt"
     },
     {
+      "name": "verify_rooftop_jump.py",
+      "skill_id": "ai-hook",
+      "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "size": 20462,
+      "size_formatted": "20.0 KB",
+      "lines": 480,
+      "mtime": 1793061028.3259833,
+      "mtime_formatted": "27/10/2026 07:30",
+      "desc": "VERIFY ROOFTOP-JUMP MASTER V6.0 (7 Deterministic Gates RJ1..RJ7)"
+    },
+    {
       "name": "verify_smoke_reveal.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
@@ -7012,9 +7044,49 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1793058540.885828,
-      "mtime_formatted": "27/10/2026 06:49",
-      "detail": "17 quy chuẩn • 19 studios"
+      "mtime": 1793062442.8204699,
+      "mtime_formatted": "27/10/2026 07:54",
+      "detail": "17 quy chuẩn • 20 studios"
+    },
+    {
+      "name": "scripts/rooftop_jump_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1793062354.716782,
+      "mtime_formatted": "27/10/2026 07:52",
+      "detail": "ROOFTOP-JUMP MASTER ENGINE V6.0 (Google Flow Omni 1.1 Flash Dual-Anchor + Biomechanical Landing)"
+    },
+    {
+      "name": "scripts/rooftop_jump_v3_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1793062354.716782,
+      "mtime_formatted": "27/10/2026 07:52",
+      "detail": "ROOFTOP-JUMP MASTER ENGINE V6.0 (Google Flow Omni 1.1 Flash Dual-Anchor + Biomechanical Landing)"
+    },
+    {
+      "name": "scripts/verify_rooftop_jump.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1793061028.3259833,
+      "mtime_formatted": "27/10/2026 07:30",
+      "detail": "VERIFY ROOFTOP-JUMP MASTER V6.0 (7 Deterministic Gates RJ1..RJ7)"
+    },
+    {
+      "name": "scripts/jib_down_engine.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1793059580.351594,
+      "mtime_formatted": "27/10/2026 07:06",
+      "detail": "Jib-Down Engine V4.2 (`jib_down_engine.py`) — Google Flow Omni 1.1 Flash & Zero-Blur Self-Learning Verifier"
+    },
+    {
+      "name": "ai-hook/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1793058858.8909187,
+      "mtime_formatted": "27/10/2026 06:54",
+      "detail": "315 dòng • 7 mục chính"
     },
     {
       "name": "scripts/verify_12_principles.py",
@@ -7137,22 +7209,6 @@ window.SKILL_LIVE_DATA = {
       "detail": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
     },
     {
-      "name": "scripts/jib_down_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792928610.2415512,
-      "mtime_formatted": "25/10/2026 18:43",
-      "detail": "Jib-Down Engine V5.2 (`jib_down_engine.py`) — CLAUDE2 Whip-Snap & Real-Tail Bridge Architecture"
-    },
-    {
-      "name": "ai-hook/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792926973.6822736,
-      "mtime_formatted": "25/10/2026 18:16",
-      "detail": "303 dòng • 7 mục chính"
-    },
-    {
       "name": "scripts/timelapse_freeze_engine.py",
       "type": "Python Script",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
@@ -7223,30 +7279,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792908163.3207822,
       "mtime_formatted": "25/10/2026 13:02",
       "detail": "G0 + G1-G11 Deterministic Verifier & Synthetic Self-Test Suite for Hero-Cam V3 AI Hook"
-    },
-    {
-      "name": "scripts/hero_cam_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792907999.779981,
-      "mtime_formatted": "25/10/2026 12:59",
-      "detail": "Hero-Cam V2 Engine: 6-View Turnaround Reference + Google Flow Veo 3.1 True 3D Orbit"
-    },
-    {
-      "name": "scripts/earth_zoom_master_v2.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792907047.366937,
-      "mtime_formatted": "25/10/2026 12:44",
-      "detail": "Earth Zoom Master V2 Engine (`earth_zoom_master_v2.py`) — Chuẩn Hóa Từ Luồng 7ef7b16f-5b2b-46a2-bbe4-b4f587205229"
-    },
-    {
-      "name": "scripts/giant_grab_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792907047.3652809,
-      "mtime_formatted": "25/10/2026 12:44",
-      "detail": "giant_grab_engine.py — Giant-Grab V2 (Google Flow Veo 3.1 3D True-Physics Engine)"
     }
   ]
 };
