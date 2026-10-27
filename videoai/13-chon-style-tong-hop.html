@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tổng Đài Chọn Chữ (35 Kiểu) • Chọn Style 2 Bên (10 Kiểu) • Chọn Animation Text — videoai.fedu.vn</title>
+  <link href="assets/style.css?v=20261027" rel="stylesheet"/>
+  <style>
+
+    :root {
+      --bg-deep: #090C12;
+      --bg-panel: #111622;
+      --bg-card: #171E2E;
+      --bg-card-hover: #1E273B;
+      --border-subtle: rgba(255, 255, 255, 0.11);
+      --border-gold: rgba(250, 204, 21, 0.55);
+      --gold: #FACC15;
+      --cyan: #00E5FF;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+      --text-main: #F8FAFC;
+      --text-sub: #CBD5E1;
+      --text-muted: #94A3B8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    .chon-studio-wrap {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 100px;
+    }
+
+    /* TOP STICKY HEADER */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 12, 18, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(250, 204, 21, 0.3);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #FACC15, #F97316);
+      color: #090C12;
+      font-weight: 900;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(250, 204, 21, 0.35);
+    }
+    .brand-title {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 0.3px;
+    }
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-tab {
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--text-sub);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      padding: 8px 14px;
+      border-radius: 999px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .nav-tab:hover, .nav-tab.active {
+      background: var(--gold);
+      color: #090C12;
+      border-color: var(--gold);
+    }
+    .nav-tab.cyan-btn {
+      background: rgba(0, 229, 255, 0.12);
+      border-color: rgba(0, 229, 255, 0.45);
+      color: var(--cyan);
+    }
+    .nav-tab.cyan-btn:hover {
+      background: var(--cyan);
+      color: #090C12;
+    }
+
+    .container {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* DIRECTORY LINKS BANNER (TỔNG HỢP TẤT CẢ LINK STUDIO) */
+    .hub-links-banner {
+      margin: 24px auto;
+      background: linear-gradient(135deg, #131B2E 0%, #0F172A 100%);
+      border: 1.5px solid rgba(0, 229, 255, 0.35);
+      border-radius: 22px;
+      padding: 22px 26px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .hub-banner-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hub-banner-desc {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+    }
+    .quick-studios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 12px;
+    }
+    .qs-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 13px 16px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .qs-card:hover {
+      background: rgba(250, 204, 21, 0.1);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .qs-tag {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .qs-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .qs-url {
+      font-size: 11.5px;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 2px;
+    }
+
+    /* INTERACTIVE LIVE MIXER & SIMULATOR */
+    .mixer-workspace {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      gap: 24px;
+      margin: 28px 0;
+      align-items: start;
+    }
+    @media (max-width: 1100px) {
+      .mixer-workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* STICKY 9:16 LIVE SIMULATOR */
+    .sim-sticky-panel {
+      position: sticky;
+      top: 78px;
+      background: var(--bg-panel);
+      border: 1.5px solid var(--border-gold);
+      border-radius: 24px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.65);
+    }
+    .sim-mode-bar {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: #090C12;
+      padding: 4px;
+      border-radius: 10px;
+    }
+    .sim-mode-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 7px 10px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+    .sim-mode-btn.active {
+      background: var(--gold);
+      color: #090C12;
+    }
+
+    .phone-916 {
+      width: 378px;
+      height: 672px;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      background: #0d121d;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.8), 0 0 0 2px rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
+    }
+
+    /* 10 BACKGROUND THEMES */
+    .bg-1 { background: radial-gradient(circle at 68% 48%, rgba(255,180,0,0.40) 0%, transparent 55%), linear-gradient(180deg, #07090e 0%, #0d121d 100%); }
+    .bg-2 { background: radial-gradient(circle at 68% 50%, rgba(244,140,155,0.38) 0%, transparent 55%), linear-gradient(160deg, #160a0e 0%, #2b121a 55%, #17090e 100%); }
+    .bg-3 { background: radial-gradient(circle at 68% 50%, rgba(15,110,102,0.14) 0%, transparent 55%), linear-gradient(180deg, #f5f2eb 0%, #ebe5d8 100%); }
+    .bg-4 { background: radial-gradient(circle at 68% 50%, rgba(0,229,255,0.35) 0%, transparent 55%), linear-gradient(180deg, #040b14 0%, #09192e 100%); }
+    .bg-5 { background: radial-gradient(circle at 70% 50%, rgba(208,56,36,0.12) 0%, transparent 55%), linear-gradient(180deg, #f3efe6 0%, #e5dec9 100%); }
+    .bg-6 { background: radial-gradient(circle at 68% 50%, rgba(16,185,129,0.32) 0%, transparent 55%), linear-gradient(180deg, #041410 0%, #09261e 100%); }
+    .bg-7 { background: radial-gradient(circle at 70% 48%, rgba(255,51,102,0.45) 0%, transparent 52%), linear-gradient(180deg, #0b0719 0%, #1c0f30 100%); }
+    .bg-8 { background: radial-gradient(circle at 66% 48%, rgba(203,213,225,0.26) 0%, transparent 55%), linear-gradient(180deg, #101318 0%, #1e2430 100%); }
+    .bg-9 { background: radial-gradient(circle at 68% 50%, rgba(255,150,30,0.34) 0%, transparent 55%), linear-gradient(180deg, #140e0a 0%, #281a11 100%); }
+    .bg-10 { background: radial-gradient(circle at 68% 50%, rgba(255,46,46,0.42) 0%, transparent 52%), linear-gradient(180deg, #08080a 0%, #140c10 100%); border-top: 3px solid #ff2e2e; border-bottom: 3px solid #ff2e2e; }
+
+    .sim-top-badge {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(12, 16, 24, 0.9);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2.5px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    /* DYNAMIC HEADER BLOCK INSIDE PHONE */
+    .sim-hdr-block {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 28px;
+      text-align: center;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    .sim-h1-line {
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #fff;
+      position: relative;
+      display: inline-block;
+    }
+    .sim-h2-line {
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+    .sim-topic-bar {
+      margin: 6px auto 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(14, 20, 32, 0.92);
+      border: 1px solid var(--gold);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      max-width: 96%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sim-topic-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* DYNAMIC LEFT & RIGHT VIDEO CARDS INSIDE PHONE */
+    .sim-box-left, .sim-box-right {
+      position: absolute;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #141820;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.55);
+    }
+    .sim-box-left {
+      border: 1.5px solid rgba(148, 163, 184, 0.6);
+      z-index: 5;
+    }
+    .sim-box-right {
+      border: 2px solid var(--gold);
+      z-index: 6;
+    }
+    .sim-box-hdr {
+      padding: 4px 7px;
+      font-size: 8px;
+      font-weight: 800;
+      color: #e2e8f0;
+      background: rgba(15, 23, 42, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sim-box-right .sim-box-hdr {
+      padding: 5px 8px;
+      font-size: 8.5px;
+      color: var(--gold);
+    }
+    .sim-box-media {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+    }
+    .sim-box-left .sim-box-media {
+      filter: grayscale(100%) contrast(1.1);
+    }
+
+    .sim-static-render {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 25;
+      display: none;
+    }
+
+    /* TEXT ANIMATION KEYFRAMES FOR LIVE PREVIEW */
+    @keyframes animM01 {
+      0% { filter: blur(10px); opacity: 0; transform: scale(0.86); }
+      100% { filter: blur(0); opacity: 1; transform: scale(1); }
+    }
+    @keyframes animM02 {
+      0% { opacity: 0; transform: translateX(-45px) skewX(-10deg); }
+      70% { transform: translateX(6px) skewX(2deg); }
+      100% { opacity: 1; transform: translateX(0) skewX(0); }
+    }
+    @keyframes animM03 {
+      0% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 0 0 0); }
+    }
+    @keyframes animM04 {
+      0% { opacity: 0; transform: translateY(14px) scale(0.95); }
+      50% { filter: drop-shadow(0 0 14px #FFD700); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes animM05 {
+      0% { opacity: 0; transform: scale(1.65); }
+      65% { opacity: 1; transform: scale(0.94); }
+      100% { transform: scale(1); }
+    }
+    @keyframes animM06 {
+      0% { opacity: 0; transform: translateY(16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .play-M01 .sim-hdr-block { animation: animM01 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .play-M02 .sim-hdr-block { animation: animM02 0.65s cubic-bezier(0.22, 1.35, 0.36, 1) forwards; }
+    .play-M03 .sim-hdr-block { animation: animM03 0.70s ease-out forwards; }
+    .play-M04 .sim-hdr-block { animation: animM04 0.75s ease-out forwards; }
+    .play-M05 .sim-hdr-block { animation: animM05 0.45s cubic-bezier(0.18, 1.3, 0.3, 1) forwards; }
+    .play-M06 .sim-hdr-block { animation: animM06 0.80s ease-out forwards; }
+
+    /* RIGHT SELECTION SECTIONS */
+    .selector-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .sec-panel {
+      background: var(--bg-panel);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+    }
+    .sec-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .sec-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .sec-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    /* 1. 10 LAYOUTS 2-SIDE SELECTOR GRID */
+    .layouts-10-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 14px;
+    }
+    .l-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .l-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-3px);
+    }
+    .l-card.active {
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 22px rgba(250, 204, 21, 0.28);
+    }
+    .l-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+    }
+    .l-card-.chon-studio-wrap {
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .l-code {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .l-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .l-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* 2. 35 TYPOGRAPHY STYLES VISUAL GRID */
+    .typo-35-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+      gap: 12px;
+    }
+    .t35-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.18s;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .t35-card:hover {
+      border-color: var(--cyan);
+      background: var(--bg-card-hover);
+    }
+    .t35-card.active {
+      border: 2px solid var(--gold);
+      background: rgba(250, 204, 21, 0.12);
+    }
+    .t35-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .t35-preview-stage {
+      background: #090D16;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 10px 8px;
+      text-align: center;
+      min-height: 68px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+    .t35-preview-stage.light-stage {
+      background: #F5F2EB;
+      border-color: #D6D0C4;
+    }
+    .t35-line1 {
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .t35-line2 {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    /* 3. ANIMATION TEXT SELECTOR (6 M01..M06 + 16 ARCHETYPES) */
+    .anim-6-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .a6-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .a6-card:hover {
+      border-color: var(--cyan);
+    }
+    .a6-card.active {
+      border: 2px solid var(--gold);
+      background: rgba(250, 204, 21, 0.12);
+    }
+    .a6-id {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .a6-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      margin: 4px 0;
+    }
+    .a6-desc {
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    .archetypes-16-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .arch-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 11px 13px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .arch-card:hover, .arch-card.active {
+      border-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.12);
+    }
+
+    /* BOTTOM STICKY COMMAND BAR */
+    .bottom-cmd-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(13, 19, 34, 0.96);
+      backdrop-filter: blur(16px);
+      border-top: 2px solid var(--gold);
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+    }
+    .dock-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .dock-badges {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .dock-prompt {
+      font-size: 13px;
+      color: var(--cyan);
+      font-weight: 700;
+    }
+    .dock-copy-btn {
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);
+    }
+    .dock-copy-btn:hover {
+      filter: brightness(1.1);
+    }
+  
+.main.wide .content { max-width: 1560px !important; padding: 24px 28px 60px !important; }
+.chon-studio-wrap {
+  background: radial-gradient(circle at 15% 0%, #161829 0%, #090A10 55%);
+  color: #F4F5F8;
+  border-radius: 20px;
+  border: 1px solid #252836;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+  margin-top: 12px;
+}
+.chon-studio-wrap h3, .chon-studio-wrap h4, .chon-studio-wrap p { color: inherit; }
+.chon-studio-wrap a { text-decoration: none; }
+
+  </style>
+</head>
+<body data-page="chon-style-tong-hop">
+  <main class="main" style="display:none">
+    <div class="content">
+      <div class="hero" style="margin-bottom:14px; padding-bottom:12px;">
+        <div class="kicker" style="--stage:var(--c-studio)">— TỔNG ĐÀI CHỌN MẪU HỢP NHẤT • 10 KIỂU 2 BÊN × 35 CHỮ × 22 ANIMATION TEXT</div>
+        <h1 style="margin-bottom:6px;">Tổng Đài Chọn Chữ (35 Kiểu) • Style 2 Bên (10 Kiểu) • Animation Text</h1>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <a href="/studios/studio-chon-style-tong-hop.html" target="_blank" class="studio-launch-btn" style="background:#d97706; border-color:#f59e0b;">🖥️ Mở Chế Độ Toàn Màn Hình (Fullscreen Studio) ↗</a>
+          <a href="14-thamtho-spa.html" class="studio-launch-btn" style="background:#be185d; border-color:#ec4899;">🌸 Xem Hồ Sơ 5 Video Thắm Thỏ Spa (V1→V11) →</a>
+        </div>
+      </div>
+
+      <div class="chon-studio-wrap">
+
+
+  <!-- TOP STICKY BAR -->
+  <nav class="top-nav">
+    <a href="../index.html" class="brand-box">
+      <div class="brand-icon">35×10</div>
+      <div>
+        <span class="brand-title">TỔNG ĐÀI CHỌN CHỮ (35 KIỂU) • STYLE 2 BÊN (10 KIỂU) • ANIMATION TEXT</span>
+        <span class="brand-sub">Bấm chọn trực quan Kiểu Bố Cục 2 Bên Trước–Sau + Kiểu Chữ + Animation Text trên cùng 1 màn hình</span>
+      </div>
+    </a>
+    <div class="nav-tabs">
+      <a href="#sec-layouts-10" class="nav-tab active">📐 1. Chọn Kiểu 2 Bên Trước–Sau (10 Kiểu)</a>
+      <a href="#sec-typo-35" class="nav-tab">🔤 2. Chọn Chữ (35 Kiểu Chữ)</a>
+      <a href="#sec-anim-text" class="nav-tab">⚡ 3. Chọn Animation Text (6 + 16 Kiểu)</a>
+      <a href="#sec-sub-cta" class="nav-tab">💬 4. Phụ Đề (5A–5E) & CTA / Logo</a>
+      <a href="../thamtho-spa.html" class="nav-tab cyan-btn">🌸 Xem Trang 5 Video Thắm Thỏ Spa</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- BẢNG TỔNG HỢP TẤT CẢ ĐƯỜNG LINK STUDIO CHỌN TRONG HỆ THỐNG -->
+    <section class="hub-links-banner">
+      <div class="hub-banner-title">
+        <span>🧭 DANH BẠ TRỰC TIẾP TẤT CẢ CÁC MÀN HÌNH CHỌN CHỮ • CHỌN STYLE 2 BÊN • CHỌN ANIMATION TEXT</span>
+      </div>
+      <p class="hub-banner-desc">
+        Ngoài việc bấm chọn và phối trực tiếp ngay ở bên dưới trang này, anh Việt có thể mở từng Phòng Studio chuyên biệt theo danh sách link dưới đây:
+      </p>
+      <div class="quick-studios-grid">
+        <a class="qs-card" data-hub-href="studios/studio-before-after-10-styles-studio.html" href="studios/studio-before-after-10-styles-studio.html">
+          <span class="qs-tag">STUDIO 01 • STYLE 2 BÊN TRƯỚC–SAU</span>
+          <span class="qs-name">🎛️ Studio Chọn 10 Kiểu 2 Bên Trước–Sau × 35 Chữ</span>
+          <span class="qs-url">/studios/studio-before-after-10-styles-studio.html</span>
+        </a>
+        <a class="qs-card" data-hub-href="studios/studio-35-kieu-chu.html" href="studios/studio-35-kieu-chu.html">
+          <span class="qs-tag">STUDIO 02 • 35 KIỂU CHỮ & PHỤ ĐỀ</span>
+          <span class="qs-name">🔤 Studio 35 Mẫu Chữ Xây Kênh + Phụ Đề 5A•5B•5C</span>
+          <span class="qs-url">/studios/studio-35-kieu-chu.html</span>
+        </a>
+        <a class="qs-card" data-hub-href="05-buoc4-motion-cta.html" href="05-buoc4-motion-cta.html">
+          <span class="qs-tag">STUDIO 03 • 16 ANIMATION TEXT & MOTION</span>
+          <span class="qs-name">⚡ Thư Viện 16 Kiểu Animation Text & 16 SFX</span>
+          <span class="qs-url">/05-buoc4-motion-cta.html</span>
+        </a>
+        <a class="qs-card" data-hub-href="studios/studio-5-phu-de.html" href="studios/studio-5-phu-de.html">
+          <span class="qs-tag">STUDIO 04 • 5 KIỂU PHỤ ĐỀ KARAOKE</span>
+          <span class="qs-name">💬 Studio Xem Thử 5 Kiểu Phụ Đề (5A → 5E)</span>
+          <span class="qs-url">/studios/studio-5-phu-de.html</span>
+        </a>
+        <a class="qs-card" data-hub-href="studios/studio-3-cta.html" href="studios/studio-3-cta.html">
+          <span class="qs-tag">STUDIO 05 • 3 KIỂU MOTION CTA</span>
+          <span class="qs-name">🎯 Studio Chọn 3 Kiểu Băng Rôn Kêu Gọi CTA</span>
+          <span class="qs-url">/studios/studio-3-cta.html</span>
+        </a>
+        <a class="qs-card" data-hub-href="studios/studio-brand-logo-outro.html" href="studios/studio-brand-logo-outro.html">
+          <span class="qs-tag">STUDIO 06 • LOGO & MÀN ĐEN OUTRO</span>
+          <span class="qs-name">🏛️ Studio 2 Tầng Thương Hiệu (BRAND & OUTRO 01–03)</span>
+          <span class="qs-url">/studios/studio-brand-logo-outro.html</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- KHÔNG GIAN TƯƠNG TÁC TRỰC TIẾP: TRÁI LÀ MÀN HÌNH 9:16 LIVE SIMULATOR — PHẢI LÀ 3 BẢNG CHỌN -->
+    <div class="mixer-workspace">
+
+      <!-- CỘT TRÁI: MÀN HÌNH ĐIỆN THOẠI 9:16 MÔ PHỎNG TRỰC TIẾP BỐ CỤC + CHỮ + ANIMATION -->
+      <aside class="sim-sticky-panel">
+        <div class="sim-mode-bar">
+          <button class="sim-mode-btn active" id="btn-sim-live" onclick="setSimView('live')">🎬 Mô Phỏng Bố Cục & Animation</button>
+          <button class="sim-mode-btn" id="btn-sim-img" onclick="setSimView('render')">🖼️ Ảnh Render Thực Tế 1080p</button>
+        </div>
+
+        <div class="phone-916 bg-3 play-M03" id="phone-stage">
+          <div class="sim-top-badge" id="sim-top-badge">LAYOUT #03 • STYLE-15 + STYLE-24 • MOTION M03</div>
+
+          <!-- HEADER BLOCK -->
+          <div class="sim-hdr-block" id="sim-hdr-block">
+            <div class="sim-h1-line" id="sim-h1-line">CHIA SẺ CHUYÊN MÔN CHUẨN Y KHOA</div>
+            <div class="sim-h2-line" id="sim-h2-line">Chỉ cần quay nói • Để AI đóng gói</div>
+            <div class="sim-topic-bar" id="sim-topic-bar">
+              <span class="sim-topic-dot" id="sim-topic-dot"></span>
+              <span id="sim-topic-text">CHỦ ĐỀ VIDEO: Phác đồ Detox khử thâm môi & 35 Kiểu chữ chuyển cảnh nhanh</span>
+            </div>
+          </div>
+
+          <!-- KHUNG TRÁI: VIDEO GỐC -->
+          <div class="sim-box-left" id="sim-box-left">
+            <div class="sim-box-hdr">
+              <span>VIDEO GỐC (TRƯỚC)</span>
+              <span>●</span>
+            </div>
+            <img class="sim-box-media" id="sim-img-left" data-thamtho-src="v3_phone_noface_2.jpg" src="thamtho/v3_phone_noface_2.jpg" alt="Trước" />
+          </div>
+
+          <!-- KHUNG PHẢI: VIDEO ĐÃ EDIT -->
+          <div class="sim-box-right" id="sim-box-right">
+            <div class="sim-box-hdr">
+              <span>BẢN DỰNG AI V11 • THẮM THỎ SPA</span>
+              <span>✦</span>
+            </div>
+            <img class="sim-box-media" id="sim-img-right" data-thamtho-src="v3_phone_noface_3.jpg" src="thamtho/v3_phone_noface_3.jpg" alt="Sau" />
+          </div>
+
+          <!-- LỚP ẢNH RENDER THẬT 1080x1920 -->
+          <img class="sim-static-render" id="sim-static-render" data-thamtho-src="layout_03_before_after.jpg" src="thamtho/layout_03_before_after.jpg" alt="Rendered Layout" />
+        </div>
+
+        <div style="display:flex; gap:8px; width:100%;">
+          <button onclick="replayTextAnimation()" style="flex:1; background:rgba(0,229,255,0.15); color:#00E5FF; border:1px solid #00E5FF; padding:9px; border-radius:10px; font-weight:800; font-size:12px; cursor:pointer;">
+            ▶ Chạy Lại Animation Chữ
+          </button>
+          <button onclick="copyFinalCommand()" style="flex:1; background:var(--gold); color:#090C12; border:none; padding:9px; border-radius:10px; font-weight:900; font-size:12px; cursor:pointer;">
+            📋 Copy Lệnh Đang Chọn
+          </button>
+        </div>
+      </aside>
+
+      <!-- CỘT PHẢI: 4 MÀN HÌNH BẢNG CHỌN TRỰC QUAN -->
+      <div class="selector-sections">
+
+        <!-- =============================================================== -->
+        <!-- MÀN HÌNH 1: CHỌN KIỂU TRÌNH BÀY 2 BÊN TRƯỚC–SAU (10 KIỂU)      -->
+        <!-- =============================================================== -->
+        <section id="sec-layouts-10" class="sec-panel">
+          <div class="sec-head">
+            <div>
+              <span class="sec-kicker">MÀN HÌNH CHỌN 01 / 04 • SIDE-BY-SIDE LAYOUT GEOMETRY (CLAUDE2 UI/UX)</span>
+              <h2 class="sec-title">1. Chọn Kiểu Trình Bày 2 Bên Trước–Sau (`LAYOUT #01 → #10`)</h2>
+            </div>
+            <span id="status-layout" style="font-size:12.5px; font-weight:800; color:var(--gold);">Đang chọn: LAYOUT #03 (Bậc Thang Chéo)</span>
+          </div>
+          <div class="layouts-10-grid" id="grid-layouts-10"></div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- MÀN HÌNH 2: CHỌN CHỮ TRONG 35 KIỂU CHỮ HỆ THỐNG (STYLE 01..35)  -->
+        <!-- =============================================================== -->
+        <section id="sec-typo-35" class="sec-panel">
+          <div class="sec-head">
+            <div>
+              <span class="sec-kicker">MÀN HÌNH CHỌN 02 / 04 • 35 SYSTEM TYPOGRAPHY STYLES</span>
+              <h2 class="sec-title">2. Chọn Kiểu Chữ Trong 35 Kiểu Chữ Hệ Thống (`STYLE-01 → STYLE-35`)</h2>
+            </div>
+            <span id="status-typo" style="font-size:12.5px; font-weight:800; color:var(--cyan);">Đang chọn: STYLE-15 (Góc Nhìn CHUYÊN GIA)</span>
+          </div>
+          <div class="typo-35-cards" id="grid-typo-35"></div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- MÀN HÌNH 3: CHỌN ANIMATION TEXT (6 MOTION M01..M06 + 16 KIỂU)   -->
+        <!-- =============================================================== -->
+        <section id="sec-anim-text" class="sec-panel">
+          <div class="sec-head">
+            <div>
+              <span class="sec-kicker">MÀN HÌNH CHỌN 03 / 04 • TEXT ANIMATION & KINETIC ARCHETYPES</span>
+              <h2 class="sec-title">3. Chọn Animation Text Cho Tiêu Đề (`M01 → M06`) & Chữ Trong Video (`#01 → #16`)</h2>
+            </div>
+            <span id="status-anim" style="font-size:12.5px; font-weight:800; color:var(--emerald);">Đang chọn: M03 • Clinical Line Sweep</span>
+          </div>
+
+          <h3 style="font-size:14px; font-weight:800; color:var(--gold); margin-bottom:10px;">A. 6 Khuôn Animation Text Cho Khung 2 Bên Trước–Sau (`MOTION M01 → M06` — Bấm để xem hiệu ứng trên điện thoại bên trái):</h3>
+          <div class="anim-6-grid" id="grid-anim-6"></div>
+
+          <h3 style="font-size:14px; font-weight:800; color:var(--cyan); margin:18px 0 10px;">B. 16 Kiểu Animation Text & Đồ Họa Chuyển Cảnh Nhanh Trong Video Chính (`ARCHETYPE #01 → #16`):</h3>
+          <div class="archetypes-16-grid" id="grid-arch-16"></div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- MÀN HÌNH 4: CHỌN PHỤ ĐỀ (5A..5E), CTA (01..03) & OUTRO (01..03) -->
+        <!-- =============================================================== -->
+        <section id="sec-sub-cta" class="sec-panel">
+          <div class="sec-head">
+            <div>
+              <span class="sec-kicker">MÀN HÌNH CHỌN 04 / 04 • SUBTITLES, CTA & BRAND OUTRO</span>
+              <h2 class="sec-title">4. Chọn Kiểu Phụ Đề (`5A → 5E`), Băng Rôn CTA (`01 → 03`) & Màn Đen Outro</h2>
+            </div>
+          </div>
+          <div class="quick-studios-grid">
+            <div class="qs-card" style="cursor:pointer;" onclick="selectSubStyle('5B (Hộp Nền Tối Khóa x-height 1:1 - Chuẩn Spa V10/V11)')">
+              <span class="qs-tag">PHỤ ĐỀ 5B • CHUẨN VÀNG SPA</span>
+              <span class="qs-name">💬 Phụ Đề 5B: Hộp Nền Đen Mờ + Highlight Vàng Kim</span>
+              <span class="qs-url">Khóa chiều cao x-height 1:1 không nhảy dòng</span>
+            </div>
+            <div class="qs-card" style="cursor:pointer;" onclick="selectSubStyle('5A (Chữ Trắng Viền Đen Karaoke Năng Lượng)')">
+              <span class="qs-tag">PHỤ ĐỀ 5A • REELS / TIKTOK</span>
+              <span class="qs-name">💬 Phụ Đề 5A: Karaoke Đổi Màu Từng Từ Nổi Bật</span>
+              <span class="qs-url">Phù hợp video nhịp nhanh, đi bộ ngoài trời</span>
+            </div>
+            <div class="qs-card" style="cursor:pointer;" onclick="selectSubStyle('5C (Editorial Serif Tinh Tế Trên Nền Sáng)')">
+              <span class="qs-tag">PHỤ ĐỀ 5C • EDITORIAL</span>
+              <span class="qs-name">💬 Phụ Đề 5C: Chữ Thanh Lịch Tạp Chí</span>
+              <span class="qs-url">Phù hợp Podcast, Tâm lý, Sách, Tư vấn</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- BOTTOM STICKY COMMAND BAR -->
+  <div class="bottom-cmd-dock">
+    <div class="dock-info">
+      <div class="dock-badges" id="dock-badges">ĐANG CHỌN: LAYOUT #03 (Bậc Thang Chéo) • CHỮ STYLE-15 • ANIMATION M03 • ARCHETYPE #01</div>
+      <div class="dock-prompt" id="dock-prompt">🗣️ Câu lệnh gửi AI: "Ghép trước sau kiểu 3, chữ 15, animation M03 cho video này"</div>
+    </div>
+    <button class="dock-copy-btn" id="dock-copy-btn" onclick="copyFinalCommand()">
+      📋 COPY CÂU LỆNH ĐANG CHỌN
+    </button>
+  </div>
+
+  
+      </div>
+
+      <script>
+
+    // Dữ liệu 10 Kiểu Trình Bày 2 Bên Trước–Sau (Tọa độ quy đổi vào khung Simulator 378x672)
+    const LAYOUTS_10_DATA = [
+      {
+        id: 1, code: 'LAYOUT #01', name: 'Hero Right Bento (Chuẩn Vàng)',
+        defaultTypo: 4, defaultAnim: 'M02', bgId: 1, isLight: false,
+        desc: 'Khung Trái nhỏ căn giữa (342×608) • Khung Phải lớn (612×1088).',
+        hdrPos: { top: '26px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '215px', width: '122px', height: '218px' },
+        rightBox: { left: '148px', top: '136px', width: '216px', height: '384px' }
+      },
+      {
+        id: 2, code: 'LAYOUT #02', name: 'Symmetric Twin 50/50 (Song Song)',
+        defaultTypo: 30, defaultAnim: 'M06', bgId: 2, isLight: false,
+        desc: '2 Khung Trước & Sau bằng nhau (441×784) đặt đối xứng 50/50.',
+        hdrPos: { top: '26px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '180px', width: '166px', height: '295px' },
+        rightBox: { left: '198px', top: '180px', width: '166px', height: '295px' }
+      },
+      {
+        id: 3, code: 'LAYOUT #03', name: 'Staggered Diagonal Step (Bậc Thang)',
+        defaultTypo: 15, defaultAnim: 'M03', bgId: 3, isLight: true,
+        desc: 'Khung Trái đẩy lên cao (Y=356) • Khung Phải hạ thấp (Y=456) trên nền trắng #F5F2EB.',
+        hdrPos: { top: '24px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '128px', width: '128px', height: '228px' },
+        rightBox: { left: '156px', top: '162px', width: '208px', height: '368px' }
+      },
+      {
+        id: 4, code: 'LAYOUT #04', name: 'Editorial Left Masthead (Cột Trái)',
+        defaultTypo: 32, defaultAnim: 'M01', bgId: 4, isLight: false,
+        desc: 'Chữ xếp gọn vào Cột Trái phía trên • Khung Phải vươn cao từ đỉnh (Y=260).',
+        hdrPos: { top: '48px', left: '14px', right: '225px', textAlign: 'left' },
+        leftBox: { left: '14px', top: '260px', width: '132px', height: '234px' },
+        rightBox: { left: '158px', top: '96px', width: '206px', height: '390px' }
+      },
+      {
+        id: 5, code: 'LAYOUT #05', name: 'Editorial Warm Paper Gallery',
+        defaultTypo: 35, defaultAnim: 'M03', bgId: 5, isLight: true,
+        desc: '2 Khung căn đáy đồng trục thoáng sạch trên nền giấy ấm Risograph.',
+        hdrPos: { top: '26px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '272px', width: '134px', height: '242px' },
+        rightBox: { left: '160px', top: '144px', width: '204px', height: '370px' }
+      },
+      {
+        id: 6, code: 'LAYOUT #06', name: 'Cinema Stage Top & Bottom Hero',
+        defaultTypo: 28, defaultAnim: 'M04', bgId: 6, isLight: false,
+        desc: '2 Khung đẩy lên cao • Nhường sân khấu phía dưới cho Đại Tiêu Đề Vàng Gold.',
+        hdrPos: { top: '495px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '135px', width: '126px', height: '226px' },
+        rightBox: { left: '154px', top: '86px', width: '210px', height: '376px' }
+      },
+      {
+        id: 7, code: 'LAYOUT #07', name: 'Reverse Hero Left (Đảo Chiều)',
+        defaultTypo: 18, defaultAnim: 'M05', bgId: 7, isLight: false,
+        desc: 'Đảo chiều độc bản: Khung Thành Phẩm lớn bên Trái • Khung Gốc nhỏ bên Phải.',
+        hdrPos: { top: '26px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '240px', top: '215px', width: '124px', height: '220px' },
+        rightBox: { left: '14px', top: '136px', width: '214px', height: '380px' }
+      },
+      {
+        id: 8, code: 'LAYOUT #08', name: 'Architectural Glass Split',
+        defaultTypo: 25, defaultAnim: 'M01', bgId: 8, isLight: false,
+        desc: 'Vòng elip tâm điểm bao quanh tiêu đề Bạc Silver • 2 Khung lệch tầng.',
+        hdrPos: { top: '26px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '170px', width: '130px', height: '232px' },
+        rightBox: { left: '158px', top: '138px', width: '206px', height: '368px' }
+      },
+      {
+        id: 9, code: 'LAYOUT #09', name: 'Golden Hour Journey Bridge',
+        defaultTypo: 23, defaultAnim: 'M06', bgId: 9, isLight: false,
+        desc: 'Khung Trái cỡ trung (405×720) nối qua cầu mũi tên sang Khung Phải (540×960).',
+        hdrPos: { top: '26px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '178px', width: '144px', height: '256px' },
+        rightBox: { left: '172px', top: '142px', width: '192px', height: '342px' }
+      },
+      {
+        id: 10, code: 'LAYOUT #10', name: 'Brutalist Laser Contrast',
+        defaultTypo: 8, defaultAnim: 'M05', bgId: 10, isLight: false,
+        desc: 'Thanh Laser đỏ gạch ngang cụm từ sai lầm • Khung Phải viền đỏ rực.',
+        hdrPos: { top: '26px', left: '10px', right: '10px', textAlign: 'center' },
+        leftBox: { left: '14px', top: '215px', width: '122px', height: '218px' },
+        rightBox: { left: '148px', top: '136px', width: '216px', height: '384px' }
+      }
+    ];
+
+    // 35 Kiểu Chữ Hệ Thống
+    const STYLES_35 = [
+      { id: 1, name: 'STYLE-01 • Bật Ý Tưởng', l1: 'Bật Ý Tưởng', l2: 'XÂY KÊNH MỖI NGÀY', c1: '#00FF66', c2: '#FFFFFF', serif1: true },
+      { id: 2, name: 'STYLE-02 • TRIỆU VIEW', l1: 'TRIỆU VIEW', l2: 'TỪ VIDEO ĐỜI THƯỜNG', c1: '#FF7A00', c2: '#FFFFFF', serif1: false },
+      { id: 3, name: 'STYLE-03 • Bí Quyết Vàng', l1: 'Bí Quyết Vàng', l2: 'Giữ Chân Người Xem', c1: '#FF7A00', c2: '#FFE600', serif2: true },
+      { id: 4, name: 'STYLE-04 • ĐỊNH VỊ Thương Hiệu', l1: 'ĐỊNH VỊ VỊ THẾ', l2: 'Thương Hiệu Chuyên Gia', c1: '#FFFFFF', c2: '#FFC400', serif2: true },
+      { id: 5, name: 'STYLE-05 • Khách Hàng TỰ TÌM ĐẾN', l1: 'Để Khách Hàng', l2: 'TỰ TÌM ĐẾN SPA', c1: '#FFFFFF', c2: '#FF2E2E', serif1: true },
+      { id: 6, name: 'STYLE-06 • Bứt Phá 3s Đầu', l1: 'BỨT PHÁ 3 GIÂY ĐẦU', l2: 'Chuyển Cảnh Liên Tục', c1: '#00E5FF', c2: '#FFFFFF', serif2: true },
+      { id: 7, name: 'STYLE-07 • Làm Chủ Ống Kính', l1: 'Làm Chủ Ống Kính', l2: 'Tự Tin Nói Chuyện', c1: '#FFFFFF', c2: '#00E5FF', serif1: true, serif2: true },
+      { id: 8, name: 'STYLE-08 • Đừng Làm Mò (Gạch Laser)', l1: 'ĐỪNG TỰ CẮT GHÉP MÒ', l2: 'ĐỂ AI ĐÓNG GÓI A–Z', c1: '#FFFFFF', c2: '#FF2E2E', strike: true, serif1: true },
+      { id: 9, name: 'STYLE-09 • TÂM ĐIỂM (Vòng Tròn)', l1: 'TÂM ĐIỂM THỊ GIÁC', l2: 'Bố Cục Chuẩn Điện Ảnh', c1: '#E2E8F0', c2: '#FFFFFF', circle: true, serif2: true },
+      { id: 10, name: 'STYLE-10 • KỊCH BẢN ĐỈNH', l1: 'Kịch Bản Sắc Bén', l2: 'Chạm Đúng Nỗi Đau', c1: '#FFFFFF', c2: '#CBD5E1', serif1: true, serif2: true },
+      { id: 11, name: 'STYLE-11 • ĐỘC BẢN', l1: 'PHONG CÁCH ĐỘC BẢN', l2: 'Không Trộn Lẫn Đám Đông', c1: '#FFF8E7', c2: '#FACC15', serif2: true },
+      { id: 12, name: 'STYLE-12 • Tự Tin Chia Sẻ', l1: 'Tự Tin Chia Sẻ', l2: 'Góc Nhìn Chuyên Môn', c1: '#FFFFFF', c2: '#FFECA8', serif1: true, serif2: true },
+      { id: 13, name: 'STYLE-13 • QUY TRÌNH 3 BƯỚC', l1: 'QUY TRÌNH 3 BƯỚC', l2: 'RÕ RÀNG & DỄ HIỂU', c1: '#00E5FF', c2: '#FFFFFF' },
+      { id: 14, name: 'STYLE-14 • 100K FOLLOW', l1: 'CỘT MỐC 100K FOLLOW', l2: 'Xây Kênh Bền Vững', c1: '#FFE600', c2: '#FFFFFF' },
+      { id: 15, name: 'STYLE-15 • Góc Nhìn CHUYÊN GIA', l1: 'Góc Nhìn Thực Chiến', l2: 'CHUẨN Y KHOA SPA', c1: '#181716', c2: '#D03824', lightStage: true, serif1: true },
+      { id: 16, name: 'STYLE-16 • NÚT: XEM HƯỚNG DẪN', l1: '● XEM NGAY PHÁC ĐỒ', l2: 'Chi Tiết Từng Bước', c1: '#00E5FF', c2: '#FFFFFF' },
+      { id: 17, name: 'STYLE-17 • THỰC CHIẾN Có Kết Quả', l1: 'THỰC CHIẾN MỖI NGÀY', l2: 'Ra Kết Quả Thật', c1: '#FFC400', c2: '#FFFFFF', serif2: true },
+      { id: 18, name: 'STYLE-18 • ĐÒN BẨY Thu Nhập', l1: 'THÓI QUEN TÔ SON ĐÈ', l2: 'Khiến Môi Thâm Xỉn', c1: '#FFE600', c2: '#FF3366', serif2: true },
+      { id: 19, name: 'STYLE-19 • 30 NGÀY Lột Xác', l1: 'Liệu Trình Khử Thâm', l2: 'TRẢ LẠI NỀN MÔI MỘC', c1: '#FFECA8', c2: '#FFFFFF', serif1: true },
+      { id: 20, name: 'STYLE-20 • TỐI ƯU HÓA Thời Gian', l1: 'TỐI ƯU 95% THỜI GIAN', l2: 'Vận Hành Tự Động', c1: '#FFE600', c2: '#FFFFFF', serif2: true },
+      { id: 21, name: 'STYLE-21 • NĂNG LƯỢNG Tích Cực', l1: 'NĂNG LƯỢNG MỖI SÁNG', l2: 'Truyền Cảm Hứng Thật', c1: '#00B4D8', c2: '#FFFFFF', serif2: true },
+      { id: 22, name: 'STYLE-22 • All in one Video Ngắn', l1: 'Hệ Sinh Thái Video', l2: 'ALL-IN-ONE STUDIO', c1: '#00E5FF', c2: '#FFFFFF', serif1: true },
+      { id: 23, name: 'STYLE-23 • VỊ THẾ Dẫn Đầu', l1: 'Uống Cà Phê Mỗi Sáng', l2: 'LÀM SAO ĐỂ MÔI HỒNG?', c1: '#FFECA8', c2: '#FFAA00', serif1: true },
+      { id: 24, name: 'STYLE-24 • NỘI DUNG CHẤT (Y Khoa)', l1: 'PHÁC ĐỒ CHUẨN Y KHOA', l2: 'An Toàn & Minh Bạch', c1: '#14222E', c2: '#0F6E66', lightStage: true, serif2: true },
+      { id: 25, name: 'STYLE-25 • 4 Trụ Cột Sự Nghiệp', l1: '4 TRỤ CỘT CỐT LÕI', l2: 'Chuẩn Hóa Nhận Diện', c1: '#E2E8F0', c2: '#FFFFFF', serif2: true },
+      { id: 26, name: 'STYLE-26 • Tự Do Tài Chính', l1: 'Tự Do Sáng Tạo', l2: 'KHÔNG LO HẬU KỲ', c1: '#00E5FF', c2: '#FFFFFF', serif1: true },
+      { id: 27, name: 'STYLE-27 • DÁM BẮT ĐẦU', l1: 'DÁM BẮT ĐẦU NGAY', l2: 'Từ Những Clip Đầu Tiên', c1: '#FFE600', c2: '#FFFFFF' },
+      { id: 28, name: 'STYLE-28 • DẤU ẤN Riêng Biệt (Gold)', l1: 'DẤU ẤN THƯƠNG HIỆU', l2: 'Sang Trọng & Đẳng Cấp', c1: '#FFD700', c2: '#FFF8E7', serif2: true },
+      { id: 29, name: 'STYLE-29 • Truyền Cảm Hứng', l1: 'Truyền Cảm Hứng', l2: 'BỨT PHÁ DOANH THU', c1: '#FF3366', c2: '#FFE600', serif1: true },
+      { id: 30, name: 'STYLE-30 • Tỏa Sáng ✦ (Ngôi Sao)', l1: 'Tự Tin Tỏa Sáng ✦', l2: 'Nền Môi Hồng Tự Nhiên', c1: '#FFFFFF', c2: '#FFECA8', serif1: true, serif2: true },
+      { id: 31, name: 'STYLE-31 • HÀNH ĐỘNG NGAY', l1: 'HÀNH ĐỘNG NGAY HÔM NAY', l2: 'Đừng Trì Hoãn Thêm', c1: '#E2E8F0', c2: '#38BDF8' },
+      { id: 32, name: 'STYLE-32 • TẬP TRUNG Bứt Phá', l1: 'Tập Trung Chuyên Môn', l2: 'Để AI Lo Phần Dựng', c1: '#FFFFFF', c2: '#FFECA8', serif1: true, serif2: true },
+      { id: 33, name: 'STYLE-33 • VƯỢT MỌI GIỚI HẠN', l1: 'Vượt Mọi Giới Hạn', l2: 'Công Nghệ AI Video', c1: '#00E5FF', c2: '#00FF66', serif1: true, serif2: true },
+      { id: 34, name: 'STYLE-34 • Bản Lĩnh Tương Lai', l1: 'Bản Lĩnh Người Dẫn Đầu', l2: 'CHUẨN HÓA TOÀN DIỆN', c1: '#FFAA00', c2: '#FFECA8', serif1: true },
+      { id: 35, name: 'STYLE-35 • BÀI HỌC ĐẮT GIÁ', l1: 'Sai Lầm Đắt Giá', l2: 'KHI CHƯA DETOX NỀN MÔI', c1: '#FF3333', c2: '#FFECA8', serif1: true }
+    ];
+
+    const ANIM_6 = [
+      { id: 'M01', name: 'M01 • Blur & Glow Pop', desc: 'Chữ bung từ mờ blur(12px) → 0px kèm hào quang thở nhẹ.' },
+      { id: 'M02', name: 'M02 • Elastic Whip Slide', desc: 'Dòng 1 trượt ngang, Dòng 2 quất đàn hồi tách khoảng thở.' },
+      { id: 'M03', name: 'M03 • Clinical Line Sweep', desc: 'Quét lộ chữ từ trái sang phải chuẩn học thuật / Y khoa.' },
+      { id: 'M04', name: 'M04 • Luxury Gold Shimmer', desc: 'Bung nhẹ từ dưới lên kèm ánh kim Vàng Gold sang trọng.' },
+      { id: 'M05', name: 'M05 • High-Impact Zoom Slam', desc: 'Phóng từ 1.65x đập dứt khoát xuống 1.0x gây chú ý mạnh.' },
+      { id: 'M06', name: 'M06 • Sparkle Twinkle ✦ Drift', desc: 'Trôi êm ái kèm ngôi sao 4 cánh lấp lánh ở góc tiêu đề.' }
+    ];
+
+    const ARCHETYPES_16 = [
+      { id: '#01', name: 'Kinetic Pop Slam', desc: 'Chữ bung đàn hồi khớp nhịp trống mở đầu' },
+      { id: '#02', name: 'Split Mask Reveal', desc: 'Chữ trượt lên từ mặt nạ cắt ngang' },
+      { id: '#03', name: 'Highlighter Marker Sweep', desc: 'Bút dạ quang quét nền dưới từ khóa chính' },
+      { id: '#04', name: 'Typewriter HUD Terminal', desc: 'Gõ từng ký tự công nghệ kèm con trỏ nhấp nháy' },
+      { id: '#05', name: 'Laser Strike Warning', desc: 'Thanh Laser đỏ gạch ngang cụm từ sai lầm' },
+      { id: '#06', name: 'Glassmorphism Floating Card', desc: 'Thẻ kính mờ 3D nổi trên cảnh trám B-Roll' },
+      { id: '#07', name: 'Vertical Roadmap (#MG2)', desc: 'Sơ đồ trục dọc X=158 nối các bước quy trình' },
+      { id: '#08', name: 'Scientific Atlas Callout', desc: 'Đường chỉ dẫn giải phẫu học trên nền #F5F2EB' },
+      { id: '#09', name: 'Word-by-Word Stagger', desc: 'Từng từ bung nối tiếp nhau theo giọng nói' },
+      { id: '#10', name: 'Circle Focus Draw', desc: 'Vẽ vòng elip khoanh tròn từ khóa tâm điểm' },
+      { id: '#11', name: 'Editorial Serif Glide', desc: 'Chữ có chân nghiêng trượt mượt kiểu tạp chí' },
+      { id: '#12', name: 'Counter Number Roll', desc: 'Số liệu chạy tăng tốc (0% → 95%)' },
+      { id: '#13', name: 'Dual Contrast Split', desc: 'Đối lập Đỏ/Xanh giữa Sai lầm & Giải pháp' },
+      { id: '#14', name: 'Floating Pill Tag', desc: 'Viên thuốc chủ đề nổi góc trên cảnh trám' },
+      { id: '#15', name: 'Whip-Pan Blur Transition', desc: 'Quét nhòe chuyển động ngang giữa 2 câu' },
+      { id: '#16', name: 'Luxury Gold Shimmer Sweep', desc: 'Vệt sáng vàng kim chạy dọc chữ thương hiệu' }
+    ];
+
+    let curState = {
+      simView: 'live',
+      layoutId: 3,
+      typoId: 15,
+      animId: 'M03',
+      archId: '#01',
+      subStyle: '5B'
+    };
+
+    function getMediaPrefix() {
+      var p = window.location.pathname || "";
+      if (p.endsWith("/chon-style.html") || p.endsWith("/thamtho-spa.html") || p.endsWith("/index.html")) {
+        return "studios/thamtho/";
+      }
+      return "thamtho/";
+    }
+
+    function initPage() {
+      var prefix = getMediaPrefix();
+      var isInStudiosDir = (prefix === "thamtho/");
+      document.querySelectorAll("[data-thamtho-src]").forEach(function(el) {
+        el.setAttribute("src", prefix + el.getAttribute("data-thamtho-src"));
+      });
+      document.querySelectorAll("[data-hub-href]").forEach(function(a) {
+        var rawHref = a.getAttribute("data-hub-href");
+        if (isInStudiosDir) {
+          if (rawHref.startsWith("studios/")) a.setAttribute("href", rawHref.replace("studios/", ""));
+          else a.setAttribute("href", "../" + rawHref);
+        } else {
+          a.setAttribute("href", rawHref);
+        }
+      });
+
+      renderLayouts10();
+      renderTypo35();
+      renderAnim6();
+      renderArch16();
+      applySelection();
+    }
+
+    function renderLayouts10() {
+      var prefix = getMediaPrefix();
+      var grid = document.getElementById("grid-layouts-10");
+      grid.innerHTML = "";
+      LAYOUTS_10_DATA.forEach(function(l) {
+        var card = document.createElement("div");
+        card.className = "l-card" + (curState.layoutId === l.id ? " active" : "");
+        card.id = "l-card-" + l.id;
+        card.onclick = function() {
+          curState.layoutId = l.id;
+          curState.typoId = l.defaultTypo;
+          curState.animId = l.defaultAnim;
+          applySelection();
+        };
+        var numStr = String(l.id).padStart(2, "0");
+        card.innerHTML =
+          '<img src="' + prefix + 'layout_' + numStr + '_before_after.jpg" alt="' + l.code + '" />' +
+          '<div class="l-card-body">' +
+            '<span class="l-code">' + l.code + '</span>' +
+            '<div class="l-name">' + l.name + '</div>' +
+            '<div class="l-desc">' + l.desc + '</div>' +
+          '</div>';
+        grid.appendChild(card);
+      });
+    }
+
+    function renderTypo35() {
+      var grid = document.getElementById("grid-typo-35");
+      grid.innerHTML = "";
+      STYLES_35.forEach(function(t) {
+        var card = document.createElement("div");
+        card.className = "t35-card" + (curState.typoId === t.id ? " active" : "");
+        card.id = "t35-card-" + t.id;
+        card.onclick = function() {
+          curState.typoId = t.id;
+          applySelection();
+        };
+        var f1 = t.serif1 ? "'Playfair Display', serif" : "'Be Vietnam Pro', sans-serif";
+        var f2 = t.serif2 ? "'Playfair Display', serif" : "'Be Vietnam Pro', sans-serif";
+        var s1 = t.serif1 ? "italic" : "normal";
+        var s2 = t.serif2 ? "italic" : "normal";
+        var strikeStyle = t.strike ? "text-decoration: line-through; text-decoration-color: #FF2E2E; text-decoration-thickness: 3px;" : "";
+        var circleStyle = t.circle ? "border: 1.5px solid #E2E8F0; border-radius: 999px; padding: 2px 10px;" : "";
+
+        card.innerHTML =
+          '<div class="t35-top">' +
+            '<span>' + t.name + '</span>' +
+            '<span style="color:var(--gold);">Chọn ➔</span>' +
+          '</div>' +
+          '<div class="t35-preview-stage' + (t.lightStage ? ' light-stage' : '') + '">' +
+            '<div class="t35-line1" style="font-family:' + f1 + '; font-style:' + s1 + '; color:' + t.c1 + ';' + strikeStyle + circleStyle + '">' + t.l1 + '</div>' +
+            '<div class="t35-line2" style="font-family:' + f2 + '; font-style:' + s2 + '; color:' + t.c2 + ';">' + t.l2 + '</div>' +
+          '</div>';
+        grid.appendChild(card);
+      });
+    }
+
+    function renderAnim6() {
+      var grid = document.getElementById("grid-anim-6");
+      grid.innerHTML = "";
+      ANIM_6.forEach(function(a) {
+        var card = document.createElement("div");
+        card.className = "a6-card" + (curState.animId === a.id ? " active" : "");
+        card.id = "a6-card-" + a.id;
+        card.onclick = function() {
+          curState.animId = a.id;
+          applySelection();
+          replayTextAnimation();
+        };
+        card.innerHTML =
+          '<div class="a6-id">⚡ MOTION ' + a.id + '</div>' +
+          '<div class="a6-name">' + a.name + '</div>' +
+          '<div class="a6-desc">' + a.desc + '</div>';
+        grid.appendChild(card);
+      });
+    }
+
+    function renderArch16() {
+      var grid = document.getElementById("grid-arch-16");
+      grid.innerHTML = "";
+      ARCHETYPES_16.forEach(function(ar) {
+        var card = document.createElement("div");
+        card.className = "arch-card" + (curState.archId === ar.id ? " active" : "");
+        card.id = "arch-card-" + ar.id;
+        card.onclick = function() {
+          curState.archId = ar.id;
+          applySelection();
+        };
+        card.innerHTML =
+          '<div style="font-size:11px; font-weight:800; color:var(--emerald); font-family:monospace;">ARCHETYPE ' + ar.id + '</div>' +
+          '<div style="font-size:13px; font-weight:800; color:#fff; margin:2px 0;">' + ar.name + '</div>' +
+          '<div style="font-size:11.5px; color:var(--text-muted);">' + ar.desc + '</div>';
+        grid.appendChild(card);
+      });
+    }
+
+    function selectSubStyle(subName) {
+      curState.subStyle = subName.split(" ")[0];
+      applySelection();
+    }
+
+    function applySelection() {
+      var prefix = getMediaPrefix();
+      var lObj = LAYOUTS_10_DATA.find(function(x) { return x.id === curState.layoutId; }) || LAYOUTS_10_DATA[2];
+      var tObj = STYLES_35.find(function(x) { return x.id === curState.typoId; }) || STYLES_35[14];
+
+      document.querySelectorAll(".l-card").forEach(function(el) { el.classList.remove("active"); });
+      var actL = document.getElementById("l-card-" + curState.layoutId);
+      if (actL) actL.classList.add("active");
+
+      document.querySelectorAll(".t35-card").forEach(function(el) { el.classList.remove("active"); });
+      var actT = document.getElementById("t35-card-" + curState.typoId);
+      if (actT) actT.classList.add("active");
+
+      document.querySelectorAll(".a6-card").forEach(function(el) { el.classList.remove("active"); });
+      var actA = document.getElementById("a6-card-" + curState.animId);
+      if (actA) actA.classList.add("active");
+
+      document.querySelectorAll(".arch-card").forEach(function(el) { el.classList.remove("active"); });
+      var actAr = document.getElementById("arch-card-" + curState.archId);
+      if (actAr) actAr.classList.add("active");
+
+      document.getElementById("status-layout").textContent = "Đang chọn: " + lObj.code + " (" + lObj.name + ")";
+      document.getElementById("status-typo").textContent = "Đang chọn: " + tObj.name;
+      document.getElementById("status-anim").textContent = "Đang chọn: " + curState.animId + " + Trong video " + curState.archId;
+
+      // Update Phone Stage
+      var stage = document.getElementById("phone-stage");
+      for (var i = 1; i <= 10; i++) stage.classList.remove("bg-" + i);
+      stage.classList.add("bg-" + lObj.bgId);
+
+      var numStr = String(lObj.id).padStart(2, "0");
+      var typoNumStr = String(tObj.id).padStart(2, "0");
+      document.getElementById("sim-top-badge").textContent =
+        lObj.code + " • STYLE-" + typoNumStr + " • MOTION " + curState.animId;
+
+      // Update Header position & Typography
+      var hdr = document.getElementById("sim-hdr-block");
+      hdr.style.top = lObj.hdrPos.top;
+      hdr.style.left = lObj.hdrPos.left;
+      hdr.style.right = lObj.hdrPos.right;
+      hdr.style.textAlign = lObj.hdrPos.textAlign;
+
+      var h1 = document.getElementById("sim-h1-line");
+      var h2 = document.getElementById("sim-h2-line");
+      h1.textContent = tObj.l1;
+      h2.textContent = tObj.l2;
+      h1.style.fontFamily = tObj.serif1 ? "'Playfair Display', serif" : "'Be Vietnam Pro', sans-serif";
+      h1.style.fontStyle = tObj.serif1 ? "italic" : "normal";
+      h1.style.color = (lObj.isLight && tObj.c1 === "#FFFFFF") ? "#14222E" : tObj.c1;
+      h1.style.textDecoration = tObj.strike ? "line-through #FF2E2E 3px" : "none";
+
+      h2.style.fontFamily = tObj.serif2 ? "'Playfair Display', serif" : "'Be Vietnam Pro', sans-serif";
+      h2.style.fontStyle = tObj.serif2 ? "italic" : "normal";
+      h2.style.color = (lObj.isLight && tObj.c2 === "#FFFFFF") ? "#0F5E59" : tObj.c2;
+
+      // Update Left & Right video boxes geometry
+      var boxL = document.getElementById("sim-box-left");
+      boxL.style.left = lObj.leftBox.left;
+      boxL.style.top = lObj.leftBox.top;
+      boxL.style.width = lObj.leftBox.width;
+      boxL.style.height = lObj.leftBox.height;
+
+      var boxR = document.getElementById("sim-box-right");
+      boxR.style.left = lObj.rightBox.left;
+      boxR.style.top = lObj.rightBox.top;
+      boxR.style.width = lObj.rightBox.width;
+      boxR.style.height = lObj.rightBox.height;
+
+      // Update static render image
+      document.getElementById("sim-static-render").src = prefix + "layout_" + numStr + "_before_after.jpg";
+
+      // Update Bottom Dock
+      document.getElementById("dock-badges").textContent =
+        "ĐANG CHỌN: " + lObj.code + " (" + lObj.name + ") • CHỮ STYLE-" + typoNumStr + " • ANIMATION " + curState.animId + " • TRONG VIDEO " + curState.archId + " • PHỤ ĐỀ " + curState.subStyle;
+      document.getElementById("dock-prompt").textContent =
+        '🗣️ Câu lệnh gửi AI: "Ghép trước sau kiểu ' + lObj.id + ', chữ ' + tObj.id + ', animation ' + curState.animId + ' (chữ trong video ' + curState.archId + ', phụ đề ' + curState.subStyle + ') cho video này"';
+    }
+
+    function replayTextAnimation() {
+      var stage = document.getElementById("phone-stage");
+      ["play-M01","play-M02","play-M03","play-M04","play-M05","play-M06"].forEach(function(c) {
+        stage.classList.remove(c);
+      });
+      void stage.offsetWidth;
+      stage.classList.add("play-" + curState.animId);
+    }
+
+    function setSimView(mode) {
+      curState.simView = mode;
+      document.getElementById("btn-sim-live").classList.toggle("active", mode === "live");
+      document.getElementById("btn-sim-img").classList.toggle("active", mode === "render");
+      document.getElementById("sim-static-render").style.display = (mode === "render") ? "block" : "none";
+    }
+
+    function copyFinalCommand() {
+      var cmd = 'Ghép trước sau kiểu ' + curState.layoutId + ', chữ ' + curState.typoId + ', animation ' + curState.animId + ' (chữ trong video ' + curState.archId + ', phụ đề ' + curState.subStyle + ') cho video này';
+      navigator.clipboard.writeText(cmd).then(function() {
+        var btn = document.getElementById("dock-copy-btn");
+        var old = btn.textContent;
+        btn.textContent = "✅ ĐÃ COPY: " + cmd;
+        setTimeout(function() { btn.textContent = old; }, 2500);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", initPage);
+  
+      </script>
+    </div>
+  </main>
+  <script src="assets/skill_live_data.js?v=20261027"></script>
+  <script src="assets/manifest.js?v=20261027"></script>
+  <script src="assets/hub.js?v=20261027"></script>
+</body>
+</html>
