@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 27/10/2026 07:57:26
+ * Sinh tự động bởi sync_videoai.py vào lúc: 27/10/2026 08:06:42
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "27/10/2026 07:57:26",
-  "last_synced_iso": "2026-10-27T07:57:26.254773",
+  "last_synced_formatted": "27/10/2026 08:06:42",
+  "last_synced_iso": "2026-10-27T08:06:42.694215",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -17,7 +17,7 @@ window.SKILL_LIVE_DATA = {
     "components_count": 22,
     "scripts_count": 80,
     "skills_count": 8,
-    "studios_count": 20,
+    "studios_count": 22,
     "evolution_entries_count": 17,
     "ai_hooks_count": 20
   },
@@ -1618,6 +1618,24 @@ window.SKILL_LIVE_DATA = {
         "badge": "Auto-Detected Studio",
         "badge_class": "motion",
         "desc": "Phòng Studio tương tác tự động phát hiện từ before_after_10_styles_studio.html."
+      },
+      {
+        "source": "studio_chon_style_tong_hop.html",
+        "slug": "studio-chon-style-tong-hop.html",
+        "order": 8,
+        "icon": "🎛️",
+        "title": "Tổng Đài Chọn Chữ (35 Styles) • Chọn Style 2 Bên Trước–Sau (10 Layouts) • Chọn Animation Text",
+        "badge": "Auto-Detected Studio",
+        "badge_class": "motion",
+        "desc": "Phòng Studio tương tác tự động phát hiện từ studio_chon_style_tong_hop.html."
+      },
+      {
+        "id": "chon-style-tong-hop",
+        "title": "Tổng Đài Chọn Chữ 35 Kiểu • Style 2 Bên 10 Kiểu • Animation Text 6 & 16 Kiểu",
+        "subtitle": "Trang hợp nhất chọn đồng thời 10 Kiểu Bố Cục Trước–Sau × 35 Kiểu Chữ × 6 Khuôn Motion & 16 Animation Text",
+        "local_file": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/studio_chon_style_tong_hop.html",
+        "public_path": "/chon-style.html",
+        "count": "10 Layouts × 35 Chữ × 22 Motions"
       }
     ],
     "entries": [
@@ -7044,9 +7062,9 @@ window.SKILL_LIVE_DATA = {
       "name": "evolution_log.json",
       "type": "Evolution Registry",
       "skill": "Auto-Evolve Hub",
-      "mtime": 1793062442.8204699,
-      "mtime_formatted": "27/10/2026 07:54",
-      "detail": "17 quy chuẩn • 20 studios"
+      "mtime": 1793063202.552466,
+      "mtime_formatted": "27/10/2026 08:06",
+      "detail": "17 quy chuẩn • 22 studios"
     },
     {
       "name": "scripts/rooftop_jump_engine.py",
