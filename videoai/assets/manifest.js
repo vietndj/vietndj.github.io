@@ -177,6 +177,17 @@ window.HUB = {
       stage: "buoc4",
       icon: "🌸",
       q: "Quy trình lịch sử 5 Video Thắm Thỏ Spa: Nguyên liệu (Trái) → Đường hội tụ → Bản cuối & Trước–Sau (Phải) + Hộp đóng mở 11 Phiên bản"
+    },
+    {
+      id: "edit-video-bds",
+      file: "15-edit-video-bds.html",
+      group: "ref",
+      n: "15",
+      title: "Kỹ năng Edit Video Bất Động Sản (V1.0)",
+      short: "Edit Video BĐS",
+      stage: "buoc4",
+      icon: "🏛️",
+      q: "Kỹ năng Edit Video BĐS (Mẫu 01 Chị Bùi Thị Hiền — Vinhomes Hạ Long Xanh): Lọc vấp 100%, Phụ đề 5B, 0% Meta-Label, Whip-Snap 0.28s & 4 Khuôn Motion BĐS"
     }
   ]
 };

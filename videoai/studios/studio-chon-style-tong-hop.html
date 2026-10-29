@@ -1054,10 +1054,10 @@
 
     function getMediaPrefix() {
       var p = window.location.pathname || "";
-      if (p.endsWith("/chon-style.html") || p.endsWith("/thamtho-spa.html") || p.endsWith("/index.html")) {
-        return "studios/thamtho/";
+      if (p.indexOf("/studios/") !== -1 || p.indexOf("studio_") !== -1) {
+        return "thamtho/";
       }
-      return "thamtho/";
+      return "studios/thamtho/";
     }
 
     function initPage() {
