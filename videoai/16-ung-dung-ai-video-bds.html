@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện V5.0 (12 Trụ Cột M1→M12 • Bản Đồ Tên Tỉnh • Khoanh Lô 3D • 35 Kiểu Chữ)</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M13.2%2052.5Q12.1%2052.5%2012.1%2051.4V23.1L10.6%2023.7Q9.5%2024.1%209.3%2023L8.5%2018.7Q8.4%2017.8%209.2%2017.4L15.1%2014.8Q15.6%2014.5%2016.4%2014.5H19.4Q20.4%2014.5%2020.4%2015.6V51.4Q20.4%2052.5%2019.4%2052.5ZM34.3%2053Q31.3%2053%2029.4%2052.2Q27.4%2051.4%2026.4%2050.1Q25.3%2048.8%2025%2047.1Q24.6%2045.5%2024.6%2043.7V23.2Q24.6%2021.5%2025%2019.8Q25.4%2018.2%2026.5%2016.9Q27.5%2015.6%2029.5%2014.8Q31.4%2014%2034.3%2014Q37.3%2014%2039.1%2014.8Q41%2015.6%2042.1%2016.9Q43.2%2018.2%2043.6%2019.8Q44%2021.5%2044%2023.2V24.1Q44%2025.1%2043%2025.1H36.9Q35.8%2025.1%2035.8%2024.1V22.7Q35.8%2021.6%2035.4%2021.2Q35%2020.8%2034.3%2020.8Q33.6%2020.8%2033.2%2021.2Q32.8%2021.6%2032.8%2022.7V28.6H33Q33.7%2027.6%2035%2027.2Q36.4%2026.8%2037.5%2026.8Q39.4%2026.8%2040.6%2027.4Q41.9%2028%2042.7%2029.1Q43.4%2030.2%2043.7%2031.7Q44%2033.2%2044%2035.1V43.7Q44%2045.5%2043.6%2047.1Q43.2%2048.8%2042.2%2050.1Q41.1%2051.4%2039.2%2052.2Q37.3%2053%2034.3%2053ZM34.3%2046.2Q35%2046.2%2035.4%2045.8Q35.8%2045.4%2035.8%2044.3V35.5Q35.8%2034.4%2035.4%2034Q35%2033.6%2034.3%2033.6Q33.6%2033.6%2033.3%2034Q33%2034.4%2032.8%2035V44.3Q32.8%2045.4%2033.2%2045.8Q33.6%2046.2%2034.3%2046.2Z'%20fill='%23FB923C'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%23FB923C'/%3E%3C/svg%3E">
+  <link href="assets/style.css?v=20261031" rel="stylesheet"/>
+  <style>
+    .bds-hero-banner {
+      background: linear-gradient(135deg, #0b1120 0%, #172554 55%, #1e1b4b 100%);
+      color: #f8fafc;
+      border-radius: 18px;
+      padding: 32px 28px;
+      border: 2px solid #f59e0b;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+      margin-bottom: 28px;
+    }
+    .bds-hero-banner h1 {
+      color: #ffffff !important;
+      font-size: clamp(26px, 3.4vw, 38px);
+      line-height: 1.22;
+      margin-bottom: 14px;
+    }
+    .bds-hero-banner .kicker {
+      color: #fbbf24 !important;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+    .bds-hero-lede {
+      font-size: 16px;
+      line-height: 1.68;
+      color: #e2e8f0;
+      margin-bottom: 22px;
+    }
+    .bds-stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .bds-stat-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .bds-stat-num {
+      font: 800 20px/1.2 var(--sans);
+      color: #fbbf24;
+      margin-bottom: 4px;
+    }
+    .bds-stat-lbl {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #cbd5e1;
+    }
+    .bds-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .bds-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font: 700 13px var(--sans);
+      text-decoration: none;
+      color: #0f172a;
+      background: #fbbf24;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .bds-nav-pill.secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .bds-nav-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .pain-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-top: 4px solid #dc2626;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .pain-card .pain-tag {
+      display: inline-block;
+      font: 800 11px var(--mono);
+      background: #fef2f2;
+      color: #b91c1c;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .pain-card .solve-box {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #cbd5e1;
+      font-size: 13.5px;
+      color: #065f46;
+      background: #ecfdf5;
+      padding: 10px 12px;
+      border-radius: 8px;
+    }
+    .vid-card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .vid-card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .vid-showcase-card {
+      background: #0f172a;
+      border: 2px solid #334155;
+      border-radius: 14px;
+      padding: 14px;
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .vid-showcase-card.gold {
+      border-color: #f59e0b;
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.14);
+    }
+    .vid-showcase-card.red {
+      border-color: #ef4444;
+      box-shadow: 0 12px 30px rgba(239, 68, 68, 0.14);
+    }
+    .vid-showcase-card.cyan {
+      border-color: #06b6d4;
+      box-shadow: 0 12px 30px rgba(6, 182, 212, 0.14);
+    }
+    .vid-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .vid-card-title {
+      font: 800 15px/1.35 var(--sans);
+      color: #fbbf24;
+    }
+    .vid-card-badge {
+      font: 700 11px var(--mono);
+      background: rgba(251, 191, 36, 0.18);
+      color: #fde68a;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .vid-showcase-card video {
+      width: 100%;
+      border-radius: 10px;
+      background: #000;
+      display: block;
+    }
+    .vid-card-desc {
+      margin-top: 10px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #cbd5e1;
+    }
+    .vid-card-footer {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12.5px;
+    }
+    .vid-card-footer a {
+      color: #38bdf8;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .vid-card-footer a:hover {
+      text-decoration: underline;
+    }
+    .module-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+    }
+    .module-table th {
+      background: #0f172a;
+      color: #fbbf24;
+      text-align: left;
+      padding: 12px 14px;
+      font: 800 13px var(--sans);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .module-table td {
+      padding: 13px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .module-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    .m-badge {
+      display: inline-block;
+      font: 800 12px var(--mono);
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #f59e0b;
+      white-space: nowrap;
+    }
+    .step-flow-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .step-flow-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 18px;
+      position: relative;
+    }
+    .step-flow-num {
+      font: 900 13px var(--mono);
+      color: #fff;
+      background: #b45309;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body data-page="ung-dung-ai-video-bds">
+  <main class="main" style="display:none">
+    <div class="content">
+
+      <!-- ========================================================
+           PHẦN 0: HERO SHOWCASE — BỘ KỸ NĂNG AI VIDEO BĐS V5.0 MASTER SUITE
+           ======================================================== -->
+      <div class="bds-hero-banner">
+        <div class="kicker">— TRỌN BỘ KỸ NĂNG AI VIDEO BẤT ĐỘNG SẢN V5.0 MASTER SUITE (HỘI THẢO KIẾN TRÚC CÙNG CLAUDE2 OPUS 5.5)</div>
+        <h1>Từ 1 Tấm Ảnh Google Maps Hoặc Câu Lệnh Tiếng Việt Trên Gemini ➔ Xuất Video Bất Động Sản 3D Bạc Tỷ</h1>
+        <p class="bds-hero-lede">
+          Thay thế <strong>100% thao tác dò Camera 3D phức tạp trong After Effects</strong> và <strong>kéo keyframe tay từng nhịp trong CapCut</strong>. Toàn bộ quy trình từ <strong>Bản đồ Địa lý Sáng rõ hiển thị tên các tỉnh xung quanh &amp; Vòng cung số phút di chuyển (<code>M12</code>)</strong>, <strong>Không có Flycam tự tìm &amp; đo lô góc 3D trên Google Maps (<code>M3</code>)</strong>, <strong>Khoanh vùng lô đất 3D trên Flycam (<code>M2</code>)</strong>, đến <strong>Lọc nói vấp 12ms + 6 Khuôn Poster Motion + 35 Kiểu Chữ Luxury</strong> đều được đóng gói sẵn trên <strong>Gemini</strong> thành <strong>12 Trụ Cột Tự Động (<code>M1</code> &rarr; <code>M12</code>)</strong>.
+        </p>
+
+        <div class="bds-stat-row">
+          <div class="bds-stat-box">
+            <div class="bds-stat-num">12 Trụ Cột (M1 &rarr; M12)</div>
+            <div class="bds-stat-lbl">Đóng gói trọn bộ trong Skill <code>bds-edit</code> V5.0 • Gọi bằng 1 câu lệnh tiếng Việt trên Gemini</div>
+          </div>
+          <div class="bds-stat-box">
+            <div class="bds-stat-num">Bản Đồ Hiện Tên Tỉnh</div>
+            <div class="bds-stat-lbl">Nhìn 0.5s biết ngay dự án ở đâu (Quảng Ninh, Hải Phòng, Bắc Giang...) + Vòm cung đi Hà Nội 75P</div>
+          </div>
+          <div class="bds-stat-box">
+            <div class="bds-stat-num">Có &amp; Không Có Flycam</div>
+            <div class="bds-stat-lbl">Không có Flycam: Tự tìm Google Maps, chụp vệ tinh, đo lô góc <code>355m²–706m²</code> &amp; tự vẽ đường GPS</div>
+          </div>
+          <div class="bds-stat-box">
+            <div class="bds-stat-num">Sai Số Track &lt; 0.003px</div>
+            <div class="bds-stat-lbl">Khóa cứng 4 góc lô đất &amp; đường giao thông bằng <code>Planar Homography + Savitzky-Golay</code></div>
+          </div>
+        </div>
+
+        <div class="bds-nav-pills">
+          <a href="#phan-0b-video-30s-khoa-hoc" class="bds-nav-pill" style="background:#f59e0b; color:#0f172a;">🎬 0. Xem 2 Video 30s Khóa 30 Ngày Làm Nội Dung &amp; 3 Bài Viết FB (CLAUDE2)</a>
+          <a href="#phan-2-danh-muc" class="bds-nav-pill">🧭 1. Danh Mục 12 Trụ Cột Đóng Gói (M1&rarr;M12)</a>
+          <a href="#phan-2b-5-ky-nang-moi" class="bds-nav-pill" style="background:#38bdf8;">🚀 2. Kỹ Năng Mở Rộng &amp; Bản Đồ Hiện Tên Tỉnh (M7&rarr;M12)</a>
+          <a href="#phan-3-khoanh-lo-3d" class="bds-nav-pill">🛰️ 3. Khoanh Vùng Lô Đất 3D (Mức 1 &amp; Mức 2)</a>
+          <a href="#phan-4-earth-zoom" class="bds-nav-pill">🌍 4. Google Earth Zoom 4 Chế Độ (PA1&rarr;PA4)</a>
+          <a href="#phan-5-chuyen-gia" class="bds-nav-pill">🏛️ 5. Video Chuyên Gia &amp; Trước–Sau Thực Chiến</a>
+          <a href="17-google-maps-khoanh-lo-bds.html" class="bds-nav-pill" style="background:#10b981; color:#fff;">🗺️ 6. Chuyên Trang Google Maps × Khoanh Lô 3D (5 Combo Hạ Long Xanh) &rarr;</a>
+          <a href="#phan-7-phong-thu" class="bds-nav-pill secondary">📐 7. Thử Chấm 4 Góc Lô Đất Trực Tiếp</a>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 0B: SHOWCASE 2 VIDEO 30 GIÂY GIỚI THIỆU HỌC PHẦN AI BĐS — KHÓA 30 NGÀY LÀM NỘI DUNG (V3.1 CLAUDE2)
+           ======================================================== -->
+      <div id="phan-0b-video-30s-khoa-hoc" class="output-showcase" style="border:2px solid #d97706; background:#fffbeb; margin-bottom:32px;">
+        <div class="showcase-header">
+          <h3 class="showcase-title">🎬 Mới Cập Nhật (01/11/2026): 2 Video Tổng Hợp 30 Giây Giới Thiệu Học Phần AI Bất Động Sản — Khóa &ldquo;30 Ngày Làm Nội Dung&rdquo; (V3.1 &bull; Hội Thảo Cùng CLAUDE2 Opus 5.5)</h3>
+          <span class="showcase-badge editorial" style="background:#b45309; color:#fff;">11 NHỊP CẮT NHANH • 30.0S • GEMINI AI</span>
+        </div>
+        <p style="font-size:14.8px; line-height:1.62; color:#334155; margin:8px 0 16px;">
+          Tổng hợp toàn bộ tinh hoa của bộ kỹ năng <code>bds-edit</code> V5.0 vào <strong>11 nhịp cắt nhanh trong đúng 30.0 giây</strong> để đăng lên trang Facebook <a href="https://www.facebook.com/nguyenducviet.video" target="_blank" rel="noopener"><strong>Nguyễn Đức Việt (30 Ngày Làm Nội Dung) &nearr;</strong></a>: <strong>(1) Hạ Long Xanh (4.110 ha) zoom ngược ra toàn vùng</strong>, <strong>(2) Bản đồ Địa lý Sáng rõ hiển thị tên các tỉnh xung quanh &amp; đường vòng cung đi Hà Nội 75 phút, Hải Phòng 28 phút</strong>, <strong>(3) Có Flycam vs Không có Flycam (tự tìm trên Google Maps, chụp ảnh, đo lô góc 355m²–706m² &amp; tự vẽ đường GPS)</strong>, và <strong>(4) Khung hình ghép 3 màn hình Chat thực tế trên Gemini</strong>.
+        </p>
+
+        <div class="vid-card-grid-2">
+          <!-- Video 1: PA2 V3.1 -->
+          <div class="vid-showcase-card gold">
+            <div>
+              <div class="vid-card-head">
+                <div class="vid-card-title">⭐ Phương Án 2 V3.1 (Khuyến Nghị Số 1 Của CLAUDE2 — v03): Mở Màn Bằng Hạ Long Xanh Zoom Ra Toàn Vùng &amp; Bản Đồ Tên Tỉnh</div>
+                <span class="vid-card-badge">V3.1 PA2 • 30.0S • 9:16</span>
+              </div>
+              <video controls playsinline preload="metadata" poster="assets/bds_suite/bds_30ngay_v31_pa2_poster.jpg?v=20261101" src="assets/bds_suite/bds_30ngay_v31_pa2.mp4?v=20261101" style="aspect-ratio:9/16; max-height:520px; margin:0 auto; display:block;"></video>
+              <div class="vid-card-desc">
+                <strong>Cấu trúc 11 nhịp:</strong> <code>01. Hạ Long Xanh Zoom ra cả vùng</code> &rarr; <code>02. Biết ngay ở đâu (Hiện tên các tỉnh &amp; Hà Nội 75P)</code> &rarr; <code>03. Khoanh 2 phân khu</code> &rarr; <code>04. Có Flycam (Lô 3D bám đất)</code> &rarr; <code>05. Không có Flycam? (Dùng Google Maps tự đo 355m²–706m²)</code> &rarr; <code>06. Tự vẽ đường đi GPS</code> &rarr; <code>07. Chỉ cần gõ lệnh (Ghép 3 màn hình Chat)</code> &rarr; <code>08. Không cần thuộc bài (Giọng thật anh Việt)</code> &rarr; <code>09. Học cái gốc (Bento 4 ô lớn)</code> &rarr; <code>10–11. Khóa 30 Ngày Làm Nội Dung</code>.
+              </div>
+            </div>
+            <div class="vid-card-footer">
+              <a href="assets/bds_suite/qa_V3_PA2_11beats.jpg" target="_blank" rel="noopener">🖼️ Xem Bảng Kiểm Định 11 Nhịp &nearr;</a>
+              <a href="https://drive.google.com/open?id=1wuxDNphIqTk3yVx4fclGwMOuTyd7RQng" target="_blank" rel="noopener">☁️ Google Drive (v03) &nearr;</a>
+            </div>
+          </div>
+
+          <!-- Video 2: PA1 V3.1 -->
+          <div class="vid-showcase-card cyan">
+            <div>
+              <div class="vid-card-head">
+                <div class="vid-card-title" style="color:#38bdf8;">Phương Án 1 V3.1 (v04): Mở Màn Bằng 3 Màn Hình Chat Gõ Lệnh Tiếng Việt &rarr; Bung Ngay Bản Đồ Tên Tỉnh &amp; Lô 3D</div>
+                <span class="vid-card-badge">V3.1 PA1 • 30.0S • 9:16</span>
+              </div>
+              <video controls playsinline preload="metadata" poster="assets/bds_suite/bds_30ngay_v31_pa1_poster.jpg?v=20261101" src="assets/bds_suite/bds_30ngay_v31_pa1.mp4?v=20261101" style="aspect-ratio:9/16; max-height:520px; margin:0 auto; display:block;"></video>
+              <div class="vid-card-desc">
+                <strong>Cấu trúc 11 nhịp:</strong> Đưa <strong>Khung hình ghép 3 màn hình Chat thực tế trên Gemini</strong> lên ngay nhịp mở đầu (<code>0.0s–3.6s</code>: <em>&ldquo;CHỈ CẦN GÕ LỆNH / Ra ngay địa điểm&rdquo;</em>), sau đó bung liên hoàn kết quả: <code>Hạ Long Xanh Zoom ra cả vùng</code> &rarr; <code>Bản đồ hiện tên tỉnh</code> &rarr; <code>Khoanh 2 phân khu</code> &rarr; <code>Có Flycam</code> &rarr; <code>Không có Flycam tự đo trên Google Maps</code> &rarr; <code>Tự vẽ đường đi</code> &rarr; <code>Không cần thuộc bài</code> &rarr; <code>Khóa 30 Ngày Làm Nội Dung</code>.
+              </div>
+            </div>
+            <div class="vid-card-footer">
+              <a href="assets/bds_suite/qa_V3_PA1_11beats.jpg" target="_blank" rel="noopener">🖼️ Xem Bảng Kiểm Định 11 Nhịp &nearr;</a>
+              <a href="https://drive.google.com/file/d/1DF2vUqp5-ly75YfQ1oZPk-cYp4xuVkY5/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v04) &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Phương Án Bài Viết Facebook do CLAUDE2 viết -->
+        <div style="margin-top:20px; background:#ffffff; border:1px solid #f59e0b; border-radius:14px; padding:18px;">
+          <div style="font:800 15.5px var(--sans); color:#0f172a; margin-bottom:12px;">
+            📝 3 Phương Án Bài Viết Facebook Đi Kèm Video (Do Cố Vấn 2 <code>CLAUDE2 Opus 5.5</code> Chấp Bút — Đã Đạt Chuẩn <code>verify_voice.py</code> 100%)
+          </div>
+          <div class="wwh-grid">
+            <div class="wwh-card" style="background:#f8fafc; border-top:4px solid #d97706;">
+              <div class="wwh-tag what">⭐ PHƯƠNG ÁN 3 (KHUYẾN NGHỊ SỐ 1) • TÂM TÌNH GIÚP ANH CHỊ BĐS YÊN TÂM</div>
+              <p style="font-size:13.4px; line-height:1.6; color:#1e293b; margin:6px 0 0;">
+                Mình quen nhiều anh chị làm bất động sản đã mười mấy năm, nói về một khu đất thì nói cả buổi không hết: hướng nào đẹp, đường nào sắp mở, giá khu bên cạnh từng lên thế nào. Vậy mà bảo làm video thì anh chị lại ngại, vì nghĩ phải học dựng phim, học phần mềm, nghe thôi đã thấy mệt.<br/><br/>
+                Mình hiểu điều đó nên phần bất động sản trong khóa <strong>30 Ngày Làm Nội Dung</strong> được làm riêng cho anh chị. Tất cả chỉ học trên <strong>Gemini</strong>, các bước đã đóng gói sẵn. Anh chị nói muốn xem dự án nằm ở đâu, giáp tỉnh nào, đi từ Hà Nội mất bao lâu, lô góc rộng bao nhiêu mét, AI tự hiểu và dựng bản đồ cho anh chị, con số nào cũng khớp với bản đồ thật.<br/><br/>
+                Quay video mà lỡ nói vấp cũng không sao, AI tự cắt đi phần ngập ngừng. Anh chị chỉ giữ đúng cái mình giỏi nhất là kinh nghiệm, nói sao cho khách hiểu và tin.<br/><br/>
+                Anh chị nào đang làm nghề mà còn e ngại chuyện công nghệ thì cứ yên tâm, phần này mình làm ra là dành cho chính anh chị.
+              </p>
+            </div>
+
+            <div class="wwh-card" style="background:#f8fafc; border-top:4px solid #0284c7;">
+              <div class="wwh-tag why">PHƯƠNG ÁN 2 • TRẢI NGHIỆM &ldquo;CHỈ VIỆC NÓI LÀ AI TỰ DỰNG&rdquo;</div>
+              <p style="font-size:13.4px; line-height:1.6; color:#1e293b; margin:6px 0 0;">
+                Mình kể anh chị nghe một buổi làm video dự án Hạ Long Xanh. Mình mở <strong>Gemini</strong>, nói đúng một câu: tìm giúp mình dự án Hạ Long Xanh, khoanh ranh hai phân khu, hiện tên các tỉnh xung quanh và vẽ đường đi từ Hà Nội, Hải Phòng, Tuần Châu. Chờ một chút là bản đồ hiện ra đầy đủ, có cả số phút di chuyển trên từng trục đường.<br/><br/>
+                Dự án nào chưa có cảnh Flycam cũng vậy, anh chị nói AI tìm địa điểm trên Google Maps, đo diện tích lô góc, vẽ đường giao thông là nó tự làm. Các kỹ thuật này mình đã đóng gói sẵn trong Gemini, anh chị học xong là dùng được ngay, con số nào cũng lấy từ bản đồ thật nên chính xác.<br/><br/>
+                Cái hay là anh chị chẳng phải nhớ gì về kỹ thuật cả. Việc của anh chị chỉ là nói cho rõ, cho có duyên, và đem kinh nghiệm thực tế của mình về khu đất đó ra chia sẻ với khách.<br/><br/>
+                Phần này nằm trong khóa <strong>30 Ngày Làm Nội Dung</strong>, mình thiết kế riêng cho anh chị làm bất động sản để ai đang làm nghề cũng bắt tay làm được ngay.
+              </p>
+            </div>
+
+            <div class="wwh-card" style="background:#f8fafc; border-top:4px solid #059669;">
+              <div class="wwh-tag how">PHƯƠNG ÁN 1 • NHẸ NHÕM, KHÔNG PHẢI NHỚ KỸ THUẬT</div>
+              <p style="font-size:13.4px; line-height:1.6; color:#1e293b; margin:6px 0 0;">
+                Làm bất động sản lâu năm, thứ anh chị có nhiều nhất là kinh nghiệm: hiểu đất, hiểu quy hoạch, biết khách hỏi gì và lo gì. Còn khi nhắc tới làm video, cái khiến anh chị ngại nhất lại là phần kỹ thuật, sợ phải học phần mềm, nhớ nút bấm, nhớ thông số.<br/><br/>
+                Trong khóa <strong>30 Ngày Làm Nội Dung</strong>, phần làm video bản đồ dự án mình dạy hoàn toàn trên <strong>Gemini</strong>, mọi thứ đã đóng gói sẵn, mở ra là dùng. Anh chị chỉ việc nói như đang kể cho khách nghe, ví dụ muốn xem dự án Hạ Long Xanh nằm ở đâu, cách Hà Nội bao xa. AI tự hiểu và dựng bản đồ có tên các tỉnh xung quanh, khoanh ranh dự án, vẽ đường đi và tính luôn thời gian di chuyển, số liệu lấy từ bản đồ thật nên anh chị yên tâm.<br/><br/>
+                Thế nên đầu óc anh chị để dành hết cho việc quan trọng nhất là nói sao cho hay, cho thật, chia sẻ đúng những gì mình biết về mảnh đất đó. Khách tin mình vì kinh nghiệm của mình, phần hình ảnh cứ để AI lo.<br/><br/>
+                Đây là phần mình làm riêng cho anh chị làm bất động sản, nên anh chị cứ yên tâm vào học, không lo bị lạc giữa một đống kỹ thuật.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 1: 4 NỖI ĐAU CỦA NGƯỜI LÀM VIDEO BĐS & CÁCH AI GIẢI QUYẾT
+           ======================================================== -->
+      <h2>1. Tại sao Học Viên Bất Động Sản Cần Hệ Thống AI Này Thay Vì Cách Làm Thủ Công?</h2>
+      <p>
+        Trước khi có bộ kỹ năng <code>bds-edit</code> V3.0, một môi giới hoặc đội marketing BĐS muốn làm được các hiệu ứng dưới đây phải đối mặt với 4 rào cản rất lớn:
+      </p>
+
+      <div class="pain-grid">
+        <div class="pain-card">
+          <span class="pain-tag">NỖI ĐAU #01 • KHÔNG CÓ FLYCAM</span>
+          <div style="font:800 15.5px var(--sans); color:#0f172a;">Chỉ có ảnh chụp Google Maps tĩnh hoặc sơ đồ phân lô 2D</div>
+          <p style="font-size:13.5px; color:#475569; margin:6px 0 0;">
+            Dự án ở xa hoặc đất nền tỉnh chưa kịp thuê đội bay Drone thực tế, đăng ảnh chụp màn hình Google Maps lên TikTok/Reels thì khách lướt qua ngay.
+          </p>
+          <div class="solve-box">
+            <strong>✅ Giải pháp AI (Mức độ 1):</strong> Đưa 1 tấm ảnh Google Maps vào <strong>Google Flow (<code>Omni 1.1 Flash</code>)</strong> để dựng cảnh Flycam 3D mượt mà, sau đó AI tự động khoanh lô đất 3D phát sáng!
+          </div>
+        </div>
+
+        <div class="pain-card">
+          <span class="pain-tag">NỖI ĐAU #02 • TRACKING AE / CAPCUT QUÁ CỰC</span>
+          <div style="font:800 15.5px var(--sans); color:#0f172a;">Mất 3–4 giờ dò 3D Camera trong After Effects hoặc keyframe tay CapCut</div>
+          <p style="font-size:13.5px; color:#475569; margin:6px 0 0;">
+            Trong After Effects phải tạo Null, dựng từng tấm Solid 3D; còn trong CapCut phải kéo 4 góc thủ công từng nhịp khiến khung lô đất bị trượt, rung lắc khỏi mặt đất.
+          </p>
+          <div class="solve-box">
+            <strong>✅ Giải pháp AI (Mức độ 2):</strong> Chỉ cần <strong>chấm 4 góc lô đất ở Frame đầu tiên</strong> (mất 15 giây trên Web UI), thuật toán <code>Planar Homography</code> tự khóa chặt lô đất suốt video với sai số <code>&lt; 0.003px</code>.
+          </div>
+        </div>
+
+        <div class="pain-card">
+          <span class="pain-tag">NỖI ĐAU #03 • QUAY THỰC ĐỊA HAY NÓI VẤP</span>
+          <div style="font:800 15.5px var(--sans); color:#0f172a;">Đứng trước sa bàn hay ấp úng &ldquo;ờ... à...&rdquo;, quên lời câu cuối, góc máy xa</div>
+          <p style="font-size:13.5px; color:#475569; margin:6px 0 0;">
+            Quay 10 lần vẫn vấp, cắt thủ công thì bị giật hình (jump-cut), đứng xa sa bàn làm gương mặt nhỏ xíu thiếu uy tín chuyên gia.
+          </p>
+          <div class="solve-box">
+            <strong>✅ Giải pháp AI (Trụ cột M1):</strong> Áp dụng công thức quay <strong>&ldquo;3V + 2 Giây&rdquo;</strong> + bộ lọc <code>cut_stumbles_vad.py</code> cắt sạch 100% đoạn vấp, bồi nhịp <code>Whip-Snap Zoom 0.28s</code> che vết cắt hoàn hảo.
+          </div>
+        </div>
+
+        <div class="pain-card">
+          <span class="pain-tag">NỖI ĐAU #04 • ĐỒ HỌA RỜI RẠC, KÉM SANG</span>
+          <div style="font:800 15.5px var(--sans); color:#0f172a;">Thiếu bản đồ kết nối vùng, chữ phụ đề rẻ tiền, không giữ chân nhà đầu tư VIP</div>
+          <p style="font-size:13.5px; color:#475569; margin:6px 0 0;">
+            Khách mua BĐS tiền tỷ cần nhìn thấy quy mô, hạ tầng cao tốc, pháp lý và đòn bẩy tài chính rõ ràng trong 3 giây đầu tiên.
+          </p>
+          <div class="solve-box">
+            <strong>✅ Giải pháp AI (Trụ cột M3, M4, M5):</strong> Kết hợp <strong>4 chế độ Google Earth Zoom</strong>, <strong>6 Khuôn Poster Motion BĐS (<code>P1..P6</code>)</strong>, <strong>35 Kiểu Chữ Luxury</strong> và <strong>Phụ đề 5B-R</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 2: DANH MỤC 6 TRỤ CỘT SAU KHI ĐÓNG GÓI (HỘI Ý CÙNG CLAUDE2)
+           ======================================================== -->
+      <h2 id="phan-2-danh-muc" style="margin-top:42px;">2. Danh Mục Trọn Bộ Kỹ Năng Bất Động Sản Sau Khi Đóng Gói (<code>bds-edit</code> V3.0 Master Suite)</h2>
+      <p style="margin-bottom:14px;">
+        Qua hội thảo kiến trúc cùng <strong>CLAUDE2 (Claude Opus 5.5)</strong>, toàn bộ công cụ Bất Động Sản được hợp nhất thành <strong>6 Trụ Cột Thực Chiến (<code>M1</code> &rarr; <code>M6</code>)</strong> bên trong <code>~/.gemini/config/skills/bds-edit/</code> (giữ nguyên Single Source of Truth với <code>auto-edit-video</code>, <code>before-after-video</code> và <code>ai-hook</code>):
+      </p>
+
+      <div style="overflow-x:auto;">
+        <table class="module-table">
+          <thead>
+            <tr>
+              <th style="width:90px;">Trụ Cột</th>
+              <th style="width:240px;">Tên Module &amp; Chức Năng Lõi</th>
+              <th>Chi Tiết Kỹ Thuật &amp; Đầu Ra Thực Tế</th>
+              <th style="width:230px;">Câu Lệnh / Mantra Kích Hoạt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="m-badge">TRỤ CỘT M1</span></td>
+              <td><strong>Chuyên Gia Phân Tích BĐS (Talking-Head &amp; 6 Poster Motion)</strong></td>
+              <td>
+                • <strong>Lọc vấp tự động 12ms:</strong> <code>cut_stumbles_vad.py</code> cắt sạch tiếng <em>&ldquo;ờ... à...&rdquo;</em> và câu quên lời cuối clip.<br/>
+                • <strong>Whip-Snap Zoom 0.28s + Unsharp Mask:</strong> Khóa tâm mặt chuyên gia &amp; che vết cắt.<br/>
+                • <strong>Phụ đề 5B-R Zero-Strikethrough:</strong> Khóa <code>x-height 1:1</code> vàng kim <code>#FFD018</code>, 0% hộp pill vàng giữa dòng.<br/>
+                • <strong>6 Kiểu Poster Motion Cutaway (<code>P1..P6</code>):</strong> Quy mô, Chuyên gia, Bản đồ TOD, Kiến trúc, Thẻ Voucher 3D, Đúc kết CTA.
+              </td>
+              <td>
+                <code>EDIT BDS</code><br/>
+                <code>VIDEO BAT DONG SAN</code><br/>
+                <em>&ldquo;Hãy edit video sau theo phong cách bất động sản&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#dcfce7; color:#166534; border-color:#22c55e;">TRỤ CỘT M2</span></td>
+              <td><strong>Khoanh Vùng Lô Đất 3D &amp; Flycam Tracking (2 Mức Độ × 2 Phương Án)</strong></td>
+              <td>
+                • <strong>Mức độ 1 (Từ 1 tấm ảnh Google Maps):</strong> Tự gọi Google Flow (<code>Omni 1.1 Flash</code>) tạo cảnh bay Flycam 1080p &rarr; Tự động khoanh vùng 3D.<br/>
+                • <strong>Mức độ 2 (Đã có sẵn video Flycam):</strong> Chấm 4 góc ở Frame 0 trên <code>bds-lot-picker.html</code> &rarr; Tracking Homography (<code>&lt; 0.003px</code>).<br/>
+                • <strong>Phương án 1 (<code>pa1_gold_wall</code>):</strong> Tường ánh sáng 3D vàng kim + Tia Laser chu vi + Lưới trắc địa + Thẻ Callout.<br/>
+                • <strong>Phương án 2 (<code>pa2_capcut_red</code>):</strong> Chữ diện tích 3D nằm trên mặt đất + Lô đất đỏ neon + Tuyến đường xanh dương phát sáng + Ghim vị trí 3D.
+              </td>
+              <td>
+                <code>KHOANH LO DAT 3D</code><br/>
+                <code>TRACKING LO DAT</code><br/>
+                <em>&ldquo;Khoanh lô đất 3D cho video flycam này (kiểu tường vàng / kiểu chữ 3D)&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#e0f2fe; color:#075985; border-color:#0ea5e9;">TRỤ CỘT M3</span></td>
+              <td><strong>Google Earth Zoom &amp; Bản Đồ Vệ Tinh Đa Tầng (4 Chế Độ <code>PA1..PA4</code>)</strong></td>
+              <td>
+                • <strong>PA1 (Retina Pyramid Dive):</strong> Zoom liên tục đa tầng từ toàn thành phố xuống từng lô đất + Laser Parcel &amp; Street Flow.<br/>
+                • <strong>PA2 (Cosmic Earth Zoom):</strong> Lao xuyên tầng mây từ vũ trụ xuống thẳng bản đồ vệ tinh Google Maps.<br/>
+                • <strong>PA3 (Google Flow Aerial Dive):</strong> Biến đổi Start-to-End Frame bằng AI <code>Omni 1.1 Flash</code>.<br/>
+                • <strong>PA4 (3D Drone Pitch-Tilt 0°&rarr;46°):</strong> Nghiêng mặt phẳng bản đồ 3D + Vòng sóng Radar kết nối vùng + Đùn khối 3D.
+              </td>
+              <td>
+                <code>EARTH ZOOM BDS</code><br/>
+                <code>ZOOM BAN DO BDS</code><br/>
+                <em>&ldquo;Làm hiệu ứng Google Earth Zoom lao xuống vị trí dự án [địa chỉ/tọa độ]&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#fae8ff; color:#86198f; border-color:#d946ef;">TRỤ CỘT M4</span></td>
+              <td><strong>35 Kiểu Chữ Luxury (<code>#01..#35</code>) &amp; Callout Thông Số BĐS</strong></td>
+              <td>
+                • Tích hợp trực tiếp Bộ 35 Kiểu Chữ từ <code>13-chon-style-tong-hop.html</code>.<br/>
+                • <strong>Preset chủ lực ngành BĐS:</strong> <code>STYLE-17</code> (Bệ đá kính tối viền vàng + Biểu tượng La bàn Kiến trúc 8 cánh phát sáng) và <code>STYLE-28</code> (Monochrome Luxury Serif).
+              </td>
+              <td>
+                <code>CHU LUXURY BDS</code><br/>
+                <code>STYLE 17 BDS</code><br/>
+                <em>&ldquo;Gắn chữ mở đầu kiểu 17 / kiểu 28 cho video BĐS&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#ffedd5; color:#9a3412; border-color:#f97316;">TRỤ CỘT M5</span></td>
+              <td><strong>Video So Sánh Trước–Sau (<code>#01..#10</code>) &amp; 15 AI Hooks BĐS</strong></td>
+              <td>
+                • <strong>10 Kiểu Khung Trước–Sau:</strong> Đặt song song hoặc trên–dưới để đối chiếu <em>Đất nguyên trạng ↔ Sau quy hoạch</em> hoặc <em>Video gốc ↔ Video AI Edit</em>.<br/>
+                • <strong>AI Hooks 3 giây đầu hợp BĐS:</strong> <code>Earth Zoom V5/V6</code>, <code>Vertical Crane Jib-Down</code>, <code>Flycam Transition</code>, <code>Through Object</code>.
+              </td>
+              <td>
+                <code>TRUOC SAU BDS</code><br/>
+                <code>HOOK BDS</code><br/>
+                <em>&ldquo;Làm video Trước–Sau dự án BĐS&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#f1f5f9; color:#0f172a; border-color:#64748b;">TRỤ CỘT M6</span></td>
+              <td><strong>Combo Toàn Trình + Cổng Verifier Tất Định + Giao Hàng Telegram/Drive</strong></td>
+              <td>
+                • Kết nối liền mạch: <code>AI Hook / Earth Zoom (M3/M5)</code> &rarr; <code>Khoanh Lô 3D (M2)</code> &rarr; <code>Chuyên Gia Phân Tích + Poster Motion (M1/M4)</code>.<br/>
+                • Kiểm định tự động qua Verifier (<code>mean_fb_error &lt; 1.0px</code>, <code>0% Meta-Label</code>) &rarr; Bắn Telegram + Lưu Google Drive đa phiên bản (<code>v01, v02...</code>).
+              </td>
+              <td>
+                <code>COMBO BDS</code><br/>
+                <code>TRON BO VIDEO BDS</code><br/>
+                <em>&ldquo;Làm trọn bộ video BĐS từ A–Z cho dự án này&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#cffafe; color:#155e75; border-color:#06b6d4;">TRỤ CỘT M7</span></td>
+              <td><strong>Quét X-Ray Quy Hoạch &amp; Đùn Khối Biệt Thự 3D Từ Đất Trống</strong></td>
+              <td>
+                • Quét tia Laser X-Ray Xanh Cyan hiện bản vẽ mặt bằng móng CAD trên mặt đất trống.<br/>
+                • Đùn cao 3 tầng biệt thự + hệ mái 3D theo vector hội tụ phối cảnh kèm thông số từng tầng.
+              </td>
+              <td>
+                <code>XRAY BDS</code><br/>
+                <code>DUNG KHOI 3D BDS</code><br/>
+                <em>&ldquo;Quét X-Ray quy hoạch và dựng khối biệt thự 3D từ lô đất trống&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#fef9c3; color:#854d0e; border-color:#eab308;">TRỤ CỘT M8</span></td>
+              <td><strong>La Bàn Phong Thủy 3D, Quỹ Đạo Ánh Nắng &amp; Chuyển Cảnh Ngày &rarr; Đêm</strong></td>
+              <td>
+                • Chiếu đĩa La bàn Phong thủy 3D (<code>ĐÔNG NAM ★ VƯỢNG KHÍ</code>) &amp; Vòm quỹ đạo Mặt trời <code>06:00 &rarr; 18:00</code>.<br/>
+                • Biến đổi cảnh ban ngày sang Hoàng hôn &amp; Đêm lên đèn rực rỡ (<code>AI Virtual Twilight Shader</code>).
+              </td>
+              <td>
+                <code>PHONG THUY BDS</code><br/>
+                <code>NGAY SANG DEM BDS</code><br/>
+                <em>&ldquo;Gắn la bàn phong thủy hướng nắng và chuyển cảnh ngày sang đêm&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#dcfce7; color:#166534; border-color:#10b981;">TRỤ CỘT M9</span></td>
+              <td><strong>Tour Biệt Thự Google Flow + Nhịp Speed-Ramp &amp; Nhãn Vật Liệu 3D</strong></td>
+              <td>
+                • Tạo chuyển động camera kiến trúc từ ảnh biệt thự bằng Google Flow (<code>Omni 1.1 Flash</code>).<br/>
+                • Đường cong <code>Velocity Speed-Ramp</code> + Khóa 4 Nhãn Thông Số Vật Liệu (<code>Kính Low-E</code>, <code>Ban công mạ vàng</code>) bằng LK Optical Flow.
+              </td>
+              <td>
+                <code>TOUR BIET THU 3D</code><br/>
+                <code>SPEED RAMP BDS</code><br/>
+                <em>&ldquo;Làm tour biệt thự Speed-Ramp kèm nhãn thông số vật liệu bám dính 3D&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#fee2e2; color:#991b1b; border-color:#ef4444;">TRỤ CỘT M10</span></td>
+              <td><strong>Đường Đua Sao Băng Giao Thông &amp; Bán Kính Tiện Ích 3–5–8 Phút</strong></td>
+              <td>
+                • Bắn các vệt sao băng ánh sáng (<code>Neon Comet Trails</code>) chạy dọc trục đường thật từ dự án tới 4 Trạm Tiện Ích 3D bật nảy (<code>Trường Quốc Tế 3P</code>, <code>Bệnh Viện 5P</code>, <code>Bến Du Thuyền 6P</code>, <code>Cao Tốc 8P</code>).
+              </td>
+              <td>
+                <code>RADAR TIEN ICH BDS</code><br/>
+                <code>DUONG DUA ANH SANG BDS</code><br/>
+                <em>&ldquo;Vẽ đường đua ánh sáng giao thông và radar tiện ích 3-5-8 phút&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#ede9fe; color:#5b21b6; border-color:#8b5cf6;">TRỤ CỘT M11</span></td>
+              <td><strong>Đồ Họa 60fps Bài Toán Đòn Bẩy Tài Chính 30/70 &amp; Lộ Trình Tăng Giá</strong></td>
+              <td>
+                • Motion Graphic 60fps giải bài toán dòng tiền (<code>30% Vốn tự có = 1.80 Tỷ</code> vs <code>70% Ngân hàng ân hạn 0% 24 tháng</code>) song song Biểu đồ đường cong tăng giá qua 3 cột mốc hạ tầng.
+              </td>
+              <td>
+                <code>DON BAY TAI CHINH BDS</code><br/>
+                <code>BAI TOAN DONG TIEN BDS</code><br/>
+                <em>&ldquo;Làm đồ họa 60fps bài toán đòn bẩy tài chính 30/70 và lộ trình tăng giá&rdquo;</em>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="m-badge" style="background:#ccfbf1; color:#115e59; border-color:#14b8a6;">TRỤ CỘT M12 (V5.0)</span></td>
+              <td><strong>Bản Đồ Địa Lý – Vệ Tinh Sáng Rõ Hiện Tên Các Tỉnh Xung Quanh &amp; Vòng Cung 3D (16:9 &amp; 9:16)</strong></td>
+              <td>
+                • Hợp nhất 3 lớp Google Maps (<code>Esri World Imagery + Hillshade + Hybrid Roads</code>), đóng dấu trực tiếp <strong>Nhãn Tên Các Tỉnh Lân Cận (<code>QUẢNG NINH, HẢI PHÒNG, HẢI DƯƠNG, BẮC GIANG...</code>)</strong> để nhìn 0.5 giây biết ngay vị trí.<br/>
+                • Quét Laser đa giác dự án + Rút ngược <code>Reverse Zoom-Out</code> ra toàn vùng + Bắn 4 Vòm cung 3D đo số phút di chuyển thật qua OSRM GPS (<code>Hà Nội 75P</code>, <code>Hải Phòng 28P</code>, <code>Vân Đồn 48P</code>).
+              </td>
+              <td>
+                <code>VONG CUNG MAP BDS</code><br/>
+                <code>BAN DO TEN TINH BDS</code><br/>
+                <em>&ldquo;Vẽ bản đồ sáng rõ hiện tên các tỉnh và vòng cung số phút đi lại&rdquo;</em>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 2B: 5 KỸ NĂNG HẬU KỲ BĐS CHUYÊN SÂU MỚI (M7 -> M11) & 5 VIDEO DEMO THỰC TẾ
+           ======================================================== -->
+      <h2 id="phan-2b-5-ky-nang-moi" style="margin-top:46px;">2B. 5 Kỹ Năng Hậu Kỳ Bất Động Sản Chuyên Sâu Mở Rộng (<code>M7</code> &rarr; <code>M11</code>) &amp; 5 Video Demo Thực Tế</h2>
+      <p>
+        Qua nghiên cứu thị trường làm video Bất Động Sản triệu view quốc tế &amp; Việt Nam (Luxury Real Estate Reels/TikTok), dưới đây là <strong>5 Kỹ Năng Hậu Kỳ Chuyên Biệt (<code>M7</code> &rarr; <code>M11</code>)</strong> giải quyết trực diện 5 điểm nghẽn tâm lý lớn nhất của người mua nhà/đất (kết hợp giữa <strong>Google Flow <code>Omni 1.1 Flash</code></strong>, <strong>3D Planar Homography</strong>, <strong>LK Optical Flow</strong> và <strong>Motion Graphic 60fps</strong>):
+      </p>
+
+      <div class="vid-card-grid-3" style="margin-top:18px;">
+        <!-- Demo 1: M7 -->
+        <div class="vid-showcase-card cyan">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#38bdf8;">Demo #1 (M7): Quét Tia X-Ray Quy Hoạch &amp; Đùn Khối Biệt Thự 3D Từ Đất Trống</div>
+            <span class="vid-card-badge">M7 • X-RAY 3D VILLA</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/m7_xray_3d_villa_poster.jpg" src="assets/bds_suite/m7_xray_3d_villa.mp4" style="aspect-ratio:16/9;"></video>
+          <div class="vid-card-desc">
+            <strong>Điểm nghẽn giải quyết:</strong> Khách nhìn bãi đất trống không hình dung được ngôi nhà xây lên sẽ thế nào.<br/>
+            <strong>Hiệu ứng AI:</strong> Tia Laser X-Ray quét hiện mặt bằng móng CAD trên đất, sau đó <strong>3 tầng biệt thự + mái 3D</strong> tự mọc dựng đứng lên kèm thông số từng tầng.
+          </div>
+        </div>
+
+        <!-- Demo 2: M8 -->
+        <div class="vid-showcase-card gold">
+          <div class="vid-card-head">
+            <div class="vid-card-title">Demo #2 (M8): La Bàn Phong Thủy 3D, Quỹ Đạo Nắng &amp; Ngày &rarr; Đêm Lên Đèn</div>
+            <span class="vid-card-badge">M8 • FENG SHUI &amp; TWILIGHT</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/m8_fengshui_twilight_poster.jpg" src="assets/bds_suite/m8_fengshui_twilight.mp4" style="aspect-ratio:16/9;"></video>
+          <div class="vid-card-desc">
+            <strong>Điểm nghẽn giải quyết:</strong> Khách hỏi hướng phong thủy, nắng chiều và cảnh ban đêm khi khu đô thị lên đèn.<br/>
+            <strong>Hiệu ứng AI:</strong> Xoay đĩa <strong>La bàn Phong thủy 3D (<code>ĐÔNG NAM ★ VƯỢNG KHÍ</code>)</strong> + Vòm Mặt trời <code>06:00&rarr;18:00</code> rồi biến đổi sang <strong>Hoàng hôn &amp; Đêm lên đèn rực rỡ</strong>.
+          </div>
+        </div>
+
+        <!-- Demo 3: M9 -->
+        <div class="vid-showcase-card">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#4ade80;">Demo #3 (M9): Tour Biệt Thự Google Flow + Speed-Ramp &amp; Nhãn Vật Liệu 3D</div>
+            <span class="vid-card-badge">M9 • FLOW + 3D CALLOUTS</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/m9_villa_speedramp_poster.jpg" src="assets/bds_suite/m9_villa_speedramp.mp4" style="aspect-ratio:16/9;"></video>
+          <div class="vid-card-desc">
+            <strong>Điểm nghẽn giải quyết:</strong> Show chất liệu đắt tiền của biệt thự/căn hộ hạng sang.<br/>
+            <strong>Hiệu ứng AI:</strong> Tạo chuyển động camera từ ảnh tĩnh bằng <strong>Google Flow (<code>Omni 1.1 Flash</code>)</strong> + Nhịp <code>Velocity Speed-Ramp</code> + Khóa cứng 4 nhãn vật liệu (<code>Kính Low-E</code>, <code>Ban công mạ vàng</code>, <code>Mặt tiền 14.5m</code>).
+          </div>
+        </div>
+      </div>
+
+      <div class="vid-card-grid-2" style="margin-top:18px;">
+        <!-- Demo 4: M10 -->
+        <div class="vid-showcase-card red">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#f87171;">Demo #4 (M10): Đường Đua Sao Băng Giao Thông &amp; Bán Kính Tiện Ích 3–5–8 Phút</div>
+            <span class="vid-card-badge">M10 • HIGHWAY COMET RADAR</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/m10_highway_comet_poster.jpg" src="assets/bds_suite/m10_highway_comet.mp4" style="aspect-ratio:16/9;"></video>
+          <div class="vid-card-desc">
+            <strong>Điểm nghẽn giải quyết:</strong> Chứng minh vị trí tâm điểm kết nối bằng hình ảnh trực quan thay vì chỉ nói miệng.<br/>
+            <strong>Hiệu ứng AI:</strong> 3 vòng sóng bán kính thời gian (<code>Isochrone Radar</code>) + <strong>4 Vệt sao băng ánh sáng phóng dọc trục đường thật</strong> tới 4 trạm tiện ích 3D bật nảy (<code>Trường Quốc Tế 03P</code>, <code>Bệnh Viện 05P</code>, <code>Bến Du Thuyền 06P</code>, <code>Cao Tốc 08P</code>).
+          </div>
+        </div>
+
+        <!-- Demo 5: M11 -->
+        <div class="vid-showcase-card gold">
+          <div class="vid-card-head">
+            <div class="vid-card-title">Demo #5 (M11): Đồ Họa 60fps Bài Toán Đòn Bẩy Tài Chính 30/70 &amp; Lộ Trình Tăng Giá</div>
+            <span class="vid-card-badge">M11 • 60FPS FINANCIAL ROI</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/m11_financial_roi_60fps_poster.jpg" src="assets/bds_suite/m11_financial_roi_60fps.mp4" style="aspect-ratio:16/9;"></video>
+          <div class="vid-card-desc">
+            <strong>Điểm nghẽn giải quyết:</strong> Giúp nhà đầu tư nhìn thấy rõ bài toán dòng tiền và tỷ suất sinh lời ROE.<br/>
+            <strong>Hiệu ứng AI (60fps):</strong> Cột trái phân tách <code>30% Vốn tự có (1.80 Tỷ)</code> vs <code>70% Ngân hàng ân hạn 0% 24 tháng</code>; Cột phải vẽ <strong>Đường cong tăng giá qua 3 cột mốc hạ tầng (<code>+32%</code> &rarr; <code>+65%</code>)</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- CHUYÊN ĐỀ NÂNG CAO M10: 3 PHƯƠNG ÁN ĐƯỜNG VÒNG CUNG GIAO THÔNG & THỜI GIAN ĐI LẠI -->
+      <div class="output-showcase" style="border:2px solid #0284c7; background:#f0f9ff; margin-top:26px;">
+        <div class="showcase-header">
+          <h3 class="showcase-title">🌈 Chuyên Đề Nâng Cao M10: 3 Phương Án Đường Vòng Cung Biểu Diễn Giao Thông &amp; Thời Gian Đi Lại (Từ Lô Đất &rarr; Trường Học · Bệnh Viện · Trung Tâm · Biển)</h3>
+          <span class="showcase-badge sci" style="background:#0284c7; color:#fff;">3 CURVED TRAFFIC ARC MODES</span>
+        </div>
+        <p style="font-size:14.5px; color:#475569; margin:8px 0 14px;">
+          Thay vì kẻ đường thẳng 2D đơn điệu, Engine <code>render_curved_traffic_arcs_demos.py</code> cung cấp <strong>3 phương pháp biểu diễn đường vòng cung 3D &amp; thời gian di chuyển</strong> bám dính 100% theo chuyển động Flycam:
+        </p>
+
+        <div class="vid-card-grid-3">
+          <!-- PA_ARC_1 -->
+          <div class="vid-showcase-card cyan">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#38bdf8;">Phương Án Vòng Cung 1 (<code>PA_ARC_1</code>): Cầu Ánh Sáng Parabol 3D Vươn Qua Bầu Trời</div>
+              <span class="vid-card-badge">PA_ARC_1 • 3D SKY PARABOLIC BRIDGES</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/arc_pa1_3d_sky_parabolic_bridges_poster.jpg" src="assets/bds_suite/arc_pa1_3d_sky_parabolic_bridges.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              <strong>Cơ chế thị giác 3D:</strong> Từ lô đất trung tâm bắn ra <strong>4 Vòm Cung Parabol 3D</strong> vồng cao trên không trung tới <code>Trường Học Quốc Tế (02P · 800m)</code>, <code>Bệnh Viện Đa Khoa (04P · 1.8km)</code>, <code>TTTM Mega Mall (05P · 2.4km)</code> và <code>Cao Tốc (08P · 4.5km)</code>, kèm <strong>bóng đổ nét đứt dưới mặt đất + cột tia gióng thẳng đứng + Viên nang thời gian ngay đỉnh vòm cung</strong>.
+            </div>
+            <div class="vid-card-footer">
+              <span>Độ cao vòm 3D: <code>175px–240px</code></span>
+              <a href="https://drive.google.com/open?id=1c2ExKS8CCzJuobkwqdHnNRDmZJ58sPzH" target="_blank" rel="noopener">🌐 Link Drive (v14) &nearr;</a>
+            </div>
+          </div>
+
+          <!-- PA_ARC_2 -->
+          <div class="vid-showcase-card gold">
+            <div class="vid-card-head">
+              <div class="vid-card-title">Phương Án Vòng Cung 2 (<code>PA_ARC_2</code>): Dải Lụa Đường Cong S-Curve &amp; Vành Đai Thời Gian</div>
+              <span class="vid-card-badge">PA_ARC_2 • S-CURVE &amp; ISOCHRONE ARCS</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/arc_pa2_smooth_scurve_ground_flow_poster.jpg" src="assets/bds_suite/arc_pa2_smooth_scurve_ground_flow.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              <strong>Cơ chế thị giác:</strong> Dùng thuật toán nội suy <code>Catmull-Rom Spline</code> vẽ <strong>4 dải lụa đường cong S-Curve mềm mại bám sát mặt đất</strong>, bên trên có <strong>làn sóng mũi tên lưu thông (<code>&rArr;&rArr;&rArr;</code>)</strong> chạy liên tục, kết hợp <strong>3 Vòng Cung Bán Kính Thời Gian đồng tâm (<code>2P · 5P · 8P</code>)</strong>.
+            </div>
+            <div class="vid-card-footer">
+              <span>Nội suy đường cong: <code>Catmull-Rom 96pts</code></span>
+              <a href="https://drive.google.com/open?id=1qL8Yi5uerkRkjj_CF-fi030I7VkDWDnw" target="_blank" rel="noopener">🌐 Link Drive (v15) &nearr;</a>
+            </div>
+          </div>
+
+          <!-- PA_ARC_3 -->
+          <div class="vid-showcase-card red">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#f87171;">Phương Án Vòng Cung 3 (<code>PA_ARC_3</code>): Combo Vòm Cung 3D Đa Tầng + Bảng Lộ Trình HUD</div>
+              <span class="vid-card-badge">PA_ARC_3 • COMBO 3D ARCS + COMMUTE HUD</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/arc_pa3_combo_sky_arcs_and_hud_poster.jpg" src="assets/bds_suite/arc_pa3_combo_sky_arcs_and_hud.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              <strong>Cơ chế thị giác (Bản Toàn Diện Nhất):</strong> Kết hợp <strong>Vòm Cung Ánh Sáng 3D Đa Tầng</strong> vươn từ lô đất ra <code>Trường Học (02P)</code>, <code>Bãi Biển (03P)</code>, <code>Bệnh Viện (04P)</code>, <code>Trung Tâm Hành Chính (05P)</code> cùng <strong>Bảng Tổng Hợp Thời Gian Di Chuyển (<code>Live Commute Matrix HUD</code>)</strong> ở góc trái dưới màn hình.
+            </div>
+            <div class="vid-card-footer">
+              <span>Tích hợp: <code>3D Arcs + HUD Matrix</code></span>
+              <a href="https://drive.google.com/open?id=1KHtwkZbst21wqFDEZYFPPPu2jM6zv7fr" target="_blank" rel="noopener">🌐 Link Drive (v16) &nearr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRỤ CỘT M12 V5.0 (GIAO DIỆN TỐI GIẢN): BẢN ĐỒ ĐỊA LÝ SÁNG RÕ + TÊN CÁC TỈNH XUNG QUANH & 3D ARCS (16:9 & 9:16) -->
+      <div class="output-showcase" style="border:2px solid #0f766e; background:#f8fafc; margin-top:26px;">
+        <div class="showcase-header">
+          <h3 class="showcase-title">🌏 Trụ Cột M12 (V5.0): Bản Đồ Địa Lý – Vệ Tinh Sáng Rõ + Nhãn Tên Các Tỉnh Lân Cận &amp; Vòng Cung 3D (16:9 &amp; 9:16)</h3>
+          <span class="showcase-badge sci" style="background:#0f766e; color:#fff;">BRIGHT GEO-ATLAS • PROVINCE LABELS • 5-LAYER SFX</span>
+        </div>
+        <p style="font-size:14px; color:#475569; margin:6px 0 14px;">
+          Hợp nhất 3 lớp Google Maps (<code>Vệ tinh Sáng + Địa hình Nổi + Đường Cao tốc Tiếng Việt</code>) &bull; Đóng dấu trực tiếp <strong>Nhãn Tên Các Tỉnh &amp; Vùng Biển Xung Quanh</strong> (<code>BẮC GIANG, BẮC NINH, HẢI DƯƠNG, HƯNG YÊN, THÁI BÌNH, HẢI PHÒNG, QUẢNG NINH, VỊNH HẠ LONG</code>) &bull; Giữ chuẩn <strong>Hướng Bắc Địa Lý (<code>North-Up 0&deg;</code>)</strong> giúp nhìn 0.5 giây nhận ra ngay vị trí.
+        </p>
+
+        <!-- NHÓM A: 3 TÍNH NĂNG BẢN NGANG 16:9 -->
+        <h4 style="margin:10px 0 10px; font-size:15.5px; color:#0f172a;">🅰 Bản Ngang <code>16:9 (1920&times;1080)</code> — Bản Đồ Sáng Rõ + Nhãn Tên Các Tỉnh Xung Quanh</h4>
+        <div class="vid-card-grid-3">
+          <div class="vid-showcase-card gold">
+            <div class="vid-card-head">
+              <div class="vid-card-title">1. Kết Nối Liên Tỉnh Bắc Bộ (Đi Hà Nội 75P)</div>
+              <span class="vid-card-badge">M1 • 16:9 • 6.0S</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/hlx_v2_m1_regional_16x9_poster.jpg?v=v50" src="assets/bds_suite/hlx_v2_m1_regional_16x9.mp4?v=v50" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              <strong>Tính năng:</strong> Hiển thị rõ tên các tỉnh Bắc Bộ + 1 vòm cung Chính (<code>Hà Nội 75P</code>) &amp; 3 vòm cung Phụ.
+            </div>
+            <div class="vid-card-footer">
+              <span><code>Province Atlas + SFX</code></span>
+              <a href="https://drive.google.com/open?id=1IC2Dw8onnGdqXw0CvltSd7g4k6p7-yXP" target="_blank" rel="noopener">🌐 Link Drive (v31) &nearr;</a>
+            </div>
+          </div>
+
+          <div class="vid-showcase-card cyan">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#38bdf8;">2. Quy Hoạch 4.110 ha &amp; Địa Danh Nội Vùng</div>
+              <span class="vid-card-badge">M2 • 16:9 • 6.0S</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/hlx_v2_m2_masterplan_16x9_poster.jpg?v=v50" src="assets/bds_suite/hlx_v2_m2_masterplan_16x9.mp4?v=v50" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              <strong>Tính năng:</strong> Đùn tường 3D <code>4.110 ha</code> + Nhãn <code>Tuần Châu, Bãi Cháy, Cửa Lục, Hoàng Tân</code>.
+            </div>
+            <div class="vid-card-footer">
+              <span><code>3D Wall + Local Labels</code></span>
+              <a href="https://drive.google.com/open?id=1bZVet-HkRacOTfu_rLnMmFIZ-Zwa9zTU" target="_blank" rel="noopener">🌐 Link Drive (v33) &nearr;</a>
+            </div>
+          </div>
+
+          <div class="vid-showcase-card emerald">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#34d399;">3. Zoom Ngược Từ Đất Ra Bản Đồ Các Tỉnh</div>
+              <span class="vid-card-badge">M3 REVERSE ZOOM • 6.5S</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/hlx_v2_m3_reverse_zoom_arcs_16x9_poster.jpg?v=v50" src="assets/bds_suite/hlx_v2_m3_reverse_zoom_arcs_16x9.mp4?v=v50" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              <strong>Tính năng:</strong> Quét Laser cận cảnh <code>Zoom 13.3</code> &rarr; Rút ngược ra Bản đồ Các Tỉnh Bắc Bộ &rarr; Bắn 4 vòm cung.
+            </div>
+            <div class="vid-card-footer">
+              <span><code>Reverse Zoom + Atlas</code></span>
+              <a href="https://drive.google.com/open?id=1pIhnJxebRRV77ojVIn6xia5sKIaYBZcm" target="_blank" rel="noopener">🌐 Link Drive (v35) &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NHÓM B: 3 TÍNH NĂNG BẢN DỌC 9:16 -->
+        <h4 style="margin:20px 0 10px; font-size:15.5px; color:#0f172a;">🅱 Bản Dọc <code>9:16 (1080&times;1920)</code> Reels / TikTok — Hướng Bắc Địa Lý Chuẩn (<code>North-Up 0&deg;</code>) + Nhãn Tên Các Tỉnh</h4>
+        <div class="vid-card-grid-3">
+          <div class="vid-showcase-card gold">
+            <div class="vid-card-head">
+              <div class="vid-card-title">1. Liên Tỉnh Dọc 9:16 (Hiển Thị Tên Tỉnh)</div>
+              <span class="vid-card-badge">M1 • 9:16 • 6.0S</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/hlx_v2_m1_regional_9x16_poster.jpg?v=v50" src="assets/bds_suite/hlx_v2_m1_regional_9x16.mp4?v=v50" style="aspect-ratio:9/16; max-height:430px; margin:0 auto; display:block;"></video>
+            <div class="vid-card-desc">
+              <strong>Tính năng:</strong> Giữ chuẩn Hướng Bắc địa lý, thấy trọn các tỉnh từ <code>Thái Nguyên, Lạng Sơn</code> tới <code>Thái Bình, Nam Định</code>.
+            </div>
+            <div class="vid-card-footer">
+              <span><code>North-Up 9:16 Atlas</code></span>
+              <a href="https://drive.google.com/open?id=1HE-YPb82tz4izIoc66I81Usw2eyeHnrp" target="_blank" rel="noopener">🌐 Link Drive (v32) &nearr;</a>
+            </div>
+          </div>
+
+          <div class="vid-showcase-card cyan">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#38bdf8;">2. Quy Hoạch &amp; Địa Danh Nội Vùng 9:16</div>
+              <span class="vid-card-badge">M2 • 9:16 • 6.0S</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/hlx_v2_m2_masterplan_9x16_poster.jpg?v=v50" src="assets/bds_suite/hlx_v2_m2_masterplan_9x16.mp4?v=v50" style="aspect-ratio:9/16; max-height:430px; margin:0 auto; display:block;"></video>
+            <div class="vid-card-desc">
+              <strong>Tính năng:</strong> Khối 3D <code>4.110 ha</code> sáng rõ giữa vịnh biển + Nhãn địa danh nội vùng &amp; 4 thẻ Pin phân tầng.
+            </div>
+            <div class="vid-card-footer">
+              <span><code>Bright Terrain 9:16</code></span>
+              <a href="https://drive.google.com/open?id=1f-OZRl4Lhbw1enHa4qml1dfpGQv9kPa0" target="_blank" rel="noopener">🌐 Link Drive (v34) &nearr;</a>
+            </div>
+          </div>
+
+          <div class="vid-showcase-card emerald">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#34d399;">3. Zoom Ngược Ra Bản Đồ Các Tỉnh 9:16</div>
+              <span class="vid-card-badge">M3 • 9:16 • 6.5S</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/hlx_v2_m3_reverse_zoom_arcs_9x16_poster.jpg?v=v50" src="assets/bds_suite/hlx_v2_m3_reverse_zoom_arcs_9x16.mp4?v=v50" style="aspect-ratio:9/16; max-height:430px; margin:0 auto; display:block;"></video>
+            <div class="vid-card-desc">
+              <strong>Tính năng:</strong> Khoanh Laser <code>4.110 ha</code> &rarr; Rút ngược <code>Zoom-Out</code> mở rộng toàn cảnh các tỉnh Bắc Bộ &rarr; Bắn vòm cung.
+            </div>
+            <div class="vid-card-footer">
+              <span><code>Zoom-Out + Provinces</code></span>
+              <a href="https://drive.google.com/open?id=15QOTyHoucPZxT-gtvU5LEVxfyx3FEhaM" target="_blank" rel="noopener">🌐 Link Drive (v36) &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HỘP TỐI GIẢN: CUNG CẤP GÌ & GỌI THẾ NÀO CHO ĐỊA ĐIỂM BẤT KỲ -->
+        <div style="margin-top:18px; padding:16px 20px; background:#0f172a; color:#f8fafc; border-radius:14px; border:1px solid #334155;">
+          <div style="font-size:15px; font-weight:700; color:#e9c46a; margin-bottom:8px;">
+            ⚡ Muốn Làm Animation Này Cho Địa Điểm Bất Kỳ Của Bạn &rarr; Cần Cung Cấp Gì &amp; Gọi Thế Nào?
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:12px; font-size:13.5px; line-height:1.55; color:#e2e8f0;">
+            <div>
+              <strong>1. Vị trí dự án / lô đất:</strong><br/>
+              Tên dự án hoặc tọa độ Google Maps (VD: <code>Vinhomes Cổ Loa</code> hoặc <code>20.9585, 106.9280</code>).
+            </div>
+            <div>
+              <strong>2. 4 Điểm kết nối (1 Chính + 3 Phụ):</strong><br/>
+              Chỉ cần nêu tên 4 địa điểm (AI tự đo số km &amp; số phút qua GPS OSRM).
+            </div>
+            <div>
+              <strong>3. Câu lệnh gọi nhanh trong Chat:</strong><br/>
+              <code style="background:#1e293b; color:#38bdf8; padding:3px 7px; border-radius:6px; display:inline-block; margin-top:3px;">VÒNG CUNG MAP BDS: [Tên dự án] đi [4 điểm], bản dọc và ngang</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 3: TRỤ CỘT M2 — KHOANH VÙNG LÔ ĐẤT 3D & FLYCAM TRACKING (2 MỨC ĐỘ × 2 PHƯƠNG ÁN)
+           ======================================================== -->
+      <h2 id="phan-3-khoanh-lo-3d" style="margin-top:46px;">3. Trụ Cột M2 (Con Át Chủ Bài): Tự Động Tracking &amp; Khoanh Vùng Lô Đất 3D (2 Mức Độ × 2 Phương Án AI)</h2>
+      <p>
+        Dưới đây là kết quả thực tế từ Engine <code>bds_lot_engine.py</code> V1.2. Học viên có thể đối chiếu trực tiếp với <strong>2 Video Mẫu Tham Chiếu Trên Mạng</strong> (dựng thủ công bằng After Effects và CapCut) để thấy sự vượt trội về độ bám mặt đất (<code>&lt; 0.003px</code>) và tốc độ xử lý (<code>~19 giây</code>):
+      </p>
+
+      <!-- Hộp đóng mở xem 2 Video Mẫu Tham Chiếu Trên Mạng -->
+      <div class="output-showcase" style="border:2px solid #64748b; background:#f8fafc; margin-bottom:24px;">
+        <div class="showcase-header">
+          <h3 class="showcase-title">📌 Đối Chiếu: 2 Video Mẫu Hướng Dẫn Thủ Công Trên Mạng (After Effects &amp; CapCut)</h3>
+          <span class="showcase-badge editorial" style="background:#334155; color:#fff;">REFERENCE SAMPLES</span>
+        </div>
+        <div class="vid-card-grid-2">
+          <div class="vid-showcase-card">
+            <div class="vid-card-head">
+              <div class="vid-card-title">Mẫu Tham Chiếu 1: MapEffect (Dựng thủ công trên After Effects)</div>
+              <span class="vid-card-badge">AE 3D TRACKER</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/ref_mapeffect_web_poster.jpg" src="assets/bds_suite/ref_mapeffect_web.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              Cách làm cũ: Phải chạy 3D Camera Tracker trong After Effects, tạo Null Object và dựng tay 4 tấm Solid 3D làm tường sáng vàng. Nếu chuyển thành công nghệ AI của chúng ta &rarr; chính là <strong>Phương Án 1 (<code>pa1_gold_wall</code>)</strong>.
+            </div>
+            <div class="vid-card-footer">
+              <span>Nguồn: YouTube MapEffect</span>
+              <a href="https://drive.google.com/open?id=1HAZcF7JTlXdSfrdydRiWAM7VOrinmElc" target="_blank" rel="noopener">🌐 Mở Bản Gốc Trên Drive &nearr;</a>
+            </div>
+          </div>
+
+          <div class="vid-showcase-card">
+            <div class="vid-card-head">
+              <div class="vid-card-title">Mẫu Tham Chiếu 2: CapCut HUMADIA (Keyframe tay từng nhịp)</div>
+              <span class="vid-card-badge">CAPCUT MANUAL</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/ref_capcut_web_poster.jpg" src="assets/bds_suite/ref_capcut_web.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              Cách làm cũ: Tạo từng lớp chữ <code>200m²</code>, đường xanh <code>Nguyễn A</code>, xoay Basic 3D rồi ngồi kéo keyframe đuổi theo đất bằng tay (dễ bị trượt giật). Khi chuyển thành AI &rarr; chính là <strong>Phương Án 2 (<code>pa2_capcut_red</code>)</strong>.
+            </div>
+            <div class="vid-card-footer">
+              <span>Nguồn: YouTube HUMADIA</span>
+              <a href="https://drive.google.com/open?id=1dotBbm_GIOsg8I0NFx5CAmT8SVIJlqiZ" target="_blank" rel="noopener">🌐 Mở Bản Gốc Trên Drive &nearr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MỨC ĐỘ 1: TỪ ẢNH GOOGLE MAPS -> GOOGLE FLOW FLYCAM -> KHOANH VÙNG 3D -->
+      <div class="output-showcase" style="border:2px solid #d97706; background:#fffbeb; margin-bottom:26px;">
+        <div class="showcase-header">
+          <h3 class="showcase-title">🛰️ MỨC ĐỘ 1: Chưa Có Flycam — Tạo Video Flycam Từ 1 Tấm Ảnh Google Maps Bằng Google Flow &rarr; Tự Động Đánh Dấu Ô Đất 3D</h3>
+          <span class="showcase-badge sci" style="background:#b45309; color:#fff;">LEVEL 1 • IMAGE TO 3D TRACKED FLYCAM</span>
+        </div>
+        <p style="font-size:14.5px; color:#475569; margin:8px 0 14px;">
+          <strong>Bài toán:</strong> Học viên chỉ có <strong>1 tấm ảnh chụp phối cảnh từ Google Maps</strong> (<code>map_input_level1.jpg</code>). Hệ thống gọi <strong>Google Flow (<code>Omni 1.1 Flash</code>)</strong> biến ảnh tĩnh thành cảnh bay Flycam 8 giây (<code>lot_muc1_raw.mp4</code>), sau đó tự động giải ma trận Homography và kết xuất ra <strong>2 Phương án AI 3D</strong>:
+        </p>
+
+        <div class="vid-card-grid-3">
+          <!-- Cột 1: Đầu vào + Flycam AI Gốc -->
+          <div class="vid-showcase-card cyan">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#38bdf8;">Bước 1: Ảnh Google Maps &rarr; Video Flycam AI Gốc</div>
+              <span class="vid-card-badge">GOOGLE FLOW OMNI 1.1</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/lot_muc1_raw_poster.jpg" src="assets/bds_suite/lot_muc1_raw.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              <strong>Đầu vào:</strong> 1 tấm ảnh vệ tinh Google Maps.<br/>
+              <strong>Đầu ra Bước 1:</strong> Cảnh quay Flycam lượn vòng mượt mà quanh khu đất nền ven biển (8.0s, Full HD 1080p).
+            </div>
+            <div class="vid-card-footer">
+              <span>Sai số Track: <code>0.0029 px</code></span>
+              <a href="https://drive.google.com/open?id=1XlTNpSonTBy4RK8C4PxJbC7dcEXD4-UA" target="_blank" rel="noopener">🌐 Link Drive (v01) &nearr;</a>
+            </div>
+          </div>
+
+          <!-- Cột 2: Mức 1 - Phương án 1 -->
+          <div class="vid-showcase-card gold">
+            <div class="vid-card-head">
+              <div class="vid-card-title">Phương Án 1 (<code>pa1_gold_wall</code>): Tường Ánh Sáng 3D Vàng Kim</div>
+              <span class="vid-card-badge">PA1 • LUXURY GOLD WALL</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/lot_muc1_pa1_poster.jpg" src="assets/bds_suite/lot_muc1_pa1.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              Hạ tối cảnh ngoài (<code>Spotlight Dimming 44%</code>), tia Laser vàng kim <code>#FFD018</code> chạy chu vi, <strong>Tường ánh sáng 3D dựng đứng</strong> có sóng năng lượng quét dọc thân tường, lưới trắc địa <code>320 m² (12.5m × 25.6m)</code> &amp; Thẻ Callout nổi.
+            </div>
+            <div class="vid-card-footer">
+              <span>Render: <code>18.7 giây</code></span>
+              <a href="https://drive.google.com/open?id=1KtL-d6GLnPsC1zq3Z6VZMochg1Q7uMSR" target="_blank" rel="noopener">🌐 Link Drive (v02) &nearr;</a>
+            </div>
+          </div>
+
+          <!-- Cột 3: Mức 1 - Phương án 2 -->
+          <div class="vid-showcase-card red">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#f87171;">Phương Án 2 (<code>pa2_capcut_red</code>): Chữ 3D Trên Đất &amp; Đường Phát Sáng</div>
+              <span class="vid-card-badge">PA2 • 3D GROUND TEXT &amp; ROAD</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/lot_muc1_pa2_poster.jpg" src="assets/bds_suite/lot_muc1_pa2.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              Lô đất Đỏ–Cam Neon phát sáng, <strong>chữ diện tích <code>320m²</code> đùn khối 3D nằm nghiêng trên mặt đất</strong>, 2 tuyến đường <code>NGUYỄN A · 24M</code> &amp; <code>Đ.213 · 13.5M</code> phát sáng Xanh Dương Neon + <strong>Ghim Vị Trí 3D</strong> nảy đàn hồi.
+            </div>
+            <div class="vid-card-footer">
+              <span>Render: <code>19.8 giây</code></span>
+              <a href="https://drive.google.com/open?id=1rhnX5kkGbcRd3kseGPXcTKVlOrS53Psv" target="_blank" rel="noopener">🌐 Link Drive (v04) &nearr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MỨC ĐỘ 2: ĐÃ CÓ SẴN VIDEO FLYCAM THỰC TẾ -> KHOANH VÙNG 3D -->
+      <div class="output-showcase" style="border:2px solid #0284c7; background:#f0f9ff;">
+        <div class="showcase-header">
+          <h3 class="showcase-title">🚁 MỨC ĐỘ 2: Đã Có Sẵn Video Flycam Thực Tế &rarr; Chỉ Cần Đánh Dấu Thông Tin Motion Graphic 3D Lên Khu Đất</h3>
+          <span class="showcase-badge sci" style="background:#0369a1; color:#fff;">LEVEL 2 • REAL DRONE FOOTAGE TO 3D LOT</span>
+        </div>
+        <p style="font-size:14.5px; color:#475569; margin:8px 0 14px;">
+          <strong>Bài toán:</strong> Học viên đã có sẵn <strong>video Flycam quay thực tế khu đô thị phân lô</strong> (<code>lot_muc2_raw.mp4</code> — 10.0s). Chỉ cần chấm 4 góc cho <strong>2 lô đất (Lô góc <code>200m²</code> &amp; Lô biệt thự <code>300m²</code>)</strong> ở Frame đầu tiên, AI tự động bám dính tuyệt đối theo từng nhịp bay tiến và xoay góc của Drone:
+        </p>
+
+        <div class="vid-card-grid-3">
+          <!-- Cột 1: Flycam Thực Tế Gốc -->
+          <div class="vid-showcase-card cyan">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#38bdf8;">Video Gốc: Cảnh Quay Flycam Thực Tế Khu Đô Thị Phân Lô</div>
+              <span class="vid-card-badge">RAW DRONE 1080P</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/lot_muc2_raw_poster.jpg" src="assets/bds_suite/lot_muc2_raw.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              Cảnh bay Drone thực tế 10 giây qua các dãy đất nền đã chia ô vỉa hè. Trước khi xử lý: người xem không biết lô đất đang chào bán nằm ở đâu, diện tích bao nhiêu.
+            </div>
+            <div class="vid-card-footer">
+              <span>Sai số Track: <code>0.0021 px</code></span>
+              <a href="https://drive.google.com/open?id=1rRHFGrTgWCOnrs3ScwpA9zifyrMArspz" target="_blank" rel="noopener">🌐 Link Drive (v03) &nearr;</a>
+            </div>
+          </div>
+
+          <!-- Cột 2: Mức 2 - Phương án 1 -->
+          <div class="vid-showcase-card gold">
+            <div class="vid-card-head">
+              <div class="vid-card-title">Phương Án 1 (<code>pa1_gold_wall</code>): Tracking 2 Lô <code>200m²</code> &amp; <code>300m²</code></div>
+              <span class="vid-card-badge">PA1 • DUAL 3D GOLD WALLS</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/lot_muc2_pa1_poster.jpg" src="assets/bds_suite/lot_muc2_pa1.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              Khóa đồng thời 2 lô đất (Lô góc <code>200 m² · 10m×20m</code> tường vàng kim &amp; Lô biệt thự <code>300 m² · 15m×20m</code> tường cam hổ phách) kèm lưới trắc địa và hộp thông số nổi.
+            </div>
+            <div class="vid-card-footer">
+              <span>Inlier Ratio: <code>79.1%</code></span>
+              <a href="https://drive.google.com/open?id=1CLwuk8VRFPdZ7gYd8l4beV_P-ulXZR9k" target="_blank" rel="noopener">🌐 Link Drive (v05) &nearr;</a>
+            </div>
+          </div>
+
+          <!-- Cột 3: Mức 2 - Phương án 2 -->
+          <div class="vid-showcase-card red">
+            <div class="vid-card-head">
+              <div class="vid-card-title" style="color:#f87171;">Phương Án 2 (<code>pa2_capcut_red</code>): 2 Lô 3D + 2 Trục Đường Phát Sáng</div>
+              <span class="vid-card-badge">PA2 • 3D TEXT + ROAD NETWORK</span>
+            </div>
+            <video controls preload="metadata" poster="assets/bds_suite/lot_muc2_pa2_poster.jpg" src="assets/bds_suite/lot_muc2_pa2.mp4" style="aspect-ratio:16/9;"></video>
+            <div class="vid-card-desc">
+              2 Ghim Vị Trí 3D thả rơi xuống đúng tâm 2 lô đất, chữ <code>200m²</code> và <code>300m²</code> đùn khối 3D nằm gọn ở mặt tiền lô đất, giao cắt với 2 trục đường xanh dương phát sáng (<code>ĐƯỜNG NỘI KHU Đ.01 · 15.5M</code>).
+            </div>
+            <div class="vid-card-footer">
+              <span>Render: <code>20.3 giây</code></span>
+              <a href="https://drive.google.com/open?id=1qE-TARD2iXqFujzRAjrR668RoDtz_1zo" target="_blank" rel="noopener">🌐 Link Drive (v06) &nearr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 4: TRỤ CỘT M3 — GOOGLE EARTH ZOOM & BẢN ĐỒ VỆ TINH ĐA TẦNG (4 CHẾ ĐỘ PA1..PA4)
+           ======================================================== -->
+      <h2 id="phan-4-earth-zoom" style="margin-top:46px;">4. Trụ Cột M3: 4 Phương Án Google Earth Zoom &amp; Bản Đồ Vệ Tinh Bất Động Sản (<code>PA1</code> &rarr; <code>PA4</code>)</h2>
+      <p>
+        Để mở đầu video BĐS bằng cú lao từ bầu trời/vệ tinh xuống đúng vị trí khu đất hoặc tòa nhà dự án (9:16 dọc chuẩn Reels/TikTok/Shorts), học viên được trang bị sẵn <strong>4 Phương án Google Earth Zoom tự động</strong> (<code>render_all_4_methods.py</code>):
+      </p>
+
+      <div class="vid-card-grid-2" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));">
+        <!-- PA1 -->
+        <div class="vid-showcase-card gold">
+          <div class="vid-card-head">
+            <div class="vid-card-title">PA1: Google Maps Multi-Scale Retina Pyramid Dive</div>
+            <span class="vid-card-badge">PA1 • PYRAMID DIVE</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/ez_pa1_pyramid_poster.jpg" src="assets/bds_suite/ez_pa1_pyramid.mp4" style="aspect-ratio:9/16;"></video>
+          <div class="vid-card-desc">
+            <strong>Khi nào dùng:</strong> Khi muốn zoom liên tục mượt mà từ bản đồ tổng thể toàn quận/thành phố xuống thẳng ranh giới lô đất kèm tia Laser khoanh vùng &amp; dòng chảy giao thông.
+          </div>
+        </div>
+
+        <!-- PA2 -->
+        <div class="vid-showcase-card cyan">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#38bdf8;">PA2: AI Hook Cosmic Earth Zoom (Xuyên Tầng Mây)</div>
+            <span class="vid-card-badge">PA2 • COSMIC CLOUD DIVE</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/ez_pa2_cosmic_poster.jpg" src="assets/bds_suite/ez_pa2_cosmic.mp4" style="aspect-ratio:9/16;"></video>
+          <div class="vid-card-desc">
+            <strong>Khi nào dùng:</strong> Làm Hook 3 giây đầu gây choáng ngợp thị giác — lao từ tầng bình lưu xuyên qua lớp mây mỏng khớp无缝 (Seamless Match-Cut) vào bản đồ vệ tinh dự án.
+          </div>
+        </div>
+
+        <!-- PA3 -->
+        <div class="vid-showcase-card">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#c084fc;">PA3: Google Flow Omni 1.1 Start-to-End Aerial Dive</div>
+            <span class="vid-card-badge">PA3 • FLOW GENERATIVE</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/ez_pa3_flow_poster.jpg" src="assets/bds_suite/ez_pa3_flow.mp4" style="aspect-ratio:9/16;"></video>
+          <div class="vid-card-desc">
+            <strong>Khi nào dùng:</strong> Kết nối khung hình vệ tinh ở độ cao lớn (Start Frame) và khung hình cận cảnh lô đất (End Frame) bằng mô hình tạo sinh video <code>Omni 1.1 Flash</code>.
+          </div>
+        </div>
+
+        <!-- PA4 -->
+        <div class="vid-showcase-card red">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#f87171;">PA4: 3D Drone Pitch-Tilt (0°&rarr;46°) &amp; Radar Kết Nối Vùng</div>
+            <span class="vid-card-badge">PA4 • 3D TILT + RADAR</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/ez_pa4_tilt3d_poster.jpg" src="assets/bds_suite/ez_pa4_tilt3d.mp4" style="aspect-ratio:9/16;"></video>
+          <div class="vid-card-desc">
+            <strong>Khi nào dùng:</strong> Phân tích liên kết vùng — tự động nghiêng mặt phẳng bản đồ từ góc thẳng đứng <code>0°</code> sang góc nghiêng Flycam <code>46°</code>, bật vòng sóng Radar đo khoảng cách và đùn khối 3D dự án.
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 5: TRỤ CỘT M1 & M5 — VIDEO CHUYÊN GIA BĐS & SO SÁNH TRƯỚC–SAU THỰC CHIẾN
+           ======================================================== -->
+      <h2 id="phan-5-chuyen-gia" style="margin-top:46px;">5. Trụ Cột M1 &amp; M5: Biến Clip Quay Thô Tại Sa Bàn Thành Video Chuyên Gia BĐS Bạc Tỷ (Kèm So Sánh Trước–Sau)</h2>
+      <p>
+        Khi học viên tự quay clip phân tích dự án tại sa bàn, văn phòng hoặc ngoài thực địa, hệ thống tự động: <strong>(1) Cắt sạch 100% đoạn nói vấp/quên lời (<code>12ms crossfade</code>)</strong>, <strong>(2) Đẩy nhịp <code>Whip-Snap Zoom 0.28s</code> khóa tâm mặt</strong>, <strong>(3) Lồng 6 Khuôn Poster Motion Cutaway (<code>P1..P6</code>)</strong> và <strong>(4) Xuất song song Video So Sánh Trước–Sau</strong>:
+      </p>
+
+      <div class="vid-card-grid-3">
+        <!-- Mẫu 01: Chị Bùi Thị Hiền -->
+        <div class="vid-showcase-card gold">
+          <div class="vid-card-head">
+            <div class="vid-card-title">Mẫu Chuẩn #01: Chị Bùi Thị Hiền — Vinhomes Hạ Long Xanh (V2 Master)</div>
+            <span class="vid-card-badge">MẪU 01 • MASTER</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_edit/hook_style17.jpg" src="assets/bds_edit/bui_thi_hien_halong_xanh_v2_web.mp4" style="aspect-ratio:9/16;"></video>
+          <div class="vid-card-desc">
+            Lọc sạch 10 vết vấp &amp; câu quên lời cuối clip, mở đầu bằng <code>STYLE-17</code> + La bàn vàng 8 cánh phát sáng, Phụ đề <code>5B-R</code> và 4 Khuôn Motion BĐS (<code>6.200 HA</code>, Bản đồ TOD, 3 Đại Công Viên, Thẻ Đúc Kết).
+          </div>
+          <div class="vid-card-footer">
+            <span>Thời lượng: <code>44.50s</code></span>
+            <a href="15-edit-video-bds.html">📖 Xem Giải Phẫu Chi Tiết Mẫu 01 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Case C0562 Trước - Sau -->
+        <div class="vid-showcase-card cyan">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#38bdf8;">So Sánh Trước–Sau #01: Bản Quay Thô ↔ Bản AI Edit (Hạ Long Xanh C0562)</div>
+            <span class="vid-card-badge">BEFORE ↔ AFTER SBS</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/bds_sbs_c0562_poster.jpg" src="assets/bds_suite/bds_sbs_c0562.mp4" style="aspect-ratio:9/16;"></video>
+          <div class="vid-card-desc">
+            Đặt trực diện <strong>Video gốc chưa chỉnh sửa</strong> và <strong>Video sau khi qua hệ thống AI BĐS</strong> (Lọc vấp, chỉnh màu Luxury, phụ đề Domaine/Aeonik và cảnh trám thực địa).
+          </div>
+          <div class="vid-card-footer">
+            <span>Khuôn: <code>Side-by-Side V13</code></span>
+            <a href="13-chon-style-tong-hop.html">🎨 Xem 10 Khung Trước–Sau &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Case C0563 Trước - Sau -->
+        <div class="vid-showcase-card red">
+          <div class="vid-card-head">
+            <div class="vid-card-title" style="color:#f87171;">So Sánh Trước–Sau #02: Monochrome Luxury Editorial (Case C0563)</div>
+            <span class="vid-card-badge">MONOCHROME LUXURY</span>
+          </div>
+          <video controls preload="metadata" poster="assets/bds_suite/bds_sbs_c0563_poster.jpg" src="assets/bds_suite/bds_sbs_c0563.mp4" style="aspect-ratio:9/16;"></video>
+          <div class="vid-card-desc">
+            Biến cảnh quay thực tế thành phong cách tạp chí tài chính cao cấp (Monochrome Luxury + Điểm nhấn chữ vàng kim &amp; B-Roll nhịp nhanh).
+          </div>
+          <div class="vid-card-footer">
+            <span>Style: <code>STYLE-28 Editorial</code></span>
+            <a href="10-bang-ai-hook.html">🎣 Kết Hợp 15 AI Hooks &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 6: TRỤ CỘT M4 — 35 KIỂU CHỮ LUXURY & 6 KHUÔN POSTER MOTION BĐS
+           ======================================================== -->
+      <h2 id="phan-6-35-kieu-chu" style="margin-top:46px;">6. Trụ Cột M4: Bộ 35 Kiểu Chữ Luxury (<code>#01..#35</code>) &amp; 6 Kiểu Poster Motion Chuẩn Ngành BĐS (<code>P1..P6</code>)</h2>
+      <p>
+        Không cần tự thiết kế từng hộp chữ trong phần mềm dựng phim. Học viên được truy cập trực tiếp kho <strong>35 Kiểu Chữ Luxury</strong> và <strong>6 Khuôn Poster Motion Cutaway (<code>P1..P6</code>)</strong> tuân thủ quy tắc thị giác <code>60 / 25 / 15</code> (Trần chữ <code>&le; 14 từ/cảnh</code>, đọc hiểu trọn vẹn trong 1.5 giây):
+      </p>
+
+      <div class="wwh-grid" style="margin-top:14px;">
+        <div class="wwh-card" style="background:#fff; border-top:4px solid #d97706;">
+          <div class="wwh-tag what">POSTER P1 &amp; P3 • QUY MÔ &amp; BẢN ĐỒ TOD</div>
+          <div class="wwh-title">P1 (Hero Metric Scale) &amp; P3 (Masterplan Transit Radar)</div>
+          <p class="wwh-desc">
+            Dành cho nhịp nói về <strong>Diện tích đại đô thị (<code>6.200 HA</code>), Tổng vốn đầu tư (<code>18 TỶ USD</code>)</strong> hoặc <strong>Bản đồ đường sắt cao tốc / Thời gian di chuyển (<code>23 PHÚT</code>)</strong>. Số liệu chính chiếm 60% trọng lượng thị giác kèm hiệu ứng Counter Roll &amp; Gold Shimmer.
+          </p>
+        </div>
+
+        <div class="wwh-card" style="background:#fff; border-top:4px solid #0284c7;">
+          <div class="wwh-tag why">POSTER P2 &amp; P6 • CHUYÊN GIA DẪN DẮT &amp; CHỐT ĐẦU TƯ</div>
+          <div class="wwh-title">P2 (Editorial Presenter) &amp; P6 (Luxury Verdict CTA)</div>
+          <p class="wwh-desc">
+            Tự động tách nền nhân vật chính (mặc trang phục Blazer/Vest sang trọng phù hợp chủ đề), đánh <strong>viền sáng Rim Light vàng kim <code>#FFD018</code></strong> đặt tại trục <code>1/3</code> hướng vào con số kết luận đầu tư.
+          </p>
+        </div>
+
+        <div class="wwh-card" style="background:#fff; border-top:4px solid #059669;">
+          <div class="wwh-tag how">POSTER P4 &amp; P5 • KIẾN TRÚC &amp; ĐÒN BẨY TÀI CHÍNH</div>
+          <div class="wwh-title">P4 (Architectural Showcase) &amp; P5 (Financial Voucher 3D)</div>
+          <p class="wwh-desc">
+            Trình bày phối cảnh mặt tiền biệt thự/shophouse hoặc <strong>Thẻ E-Voucher 3D nghiêng phối cảnh</strong> giải thích bài toán dòng tiền (Vốn tự có đợt 1 chỉ 15–30%, ân hạn lãi gốc).
+          </p>
+        </div>
+      </div>
+
+      <div class="studio-launch-bar" style="margin-top:18px;">
+        <div class="studio-launch-info">
+          <b>🎨 Phòng Thử Nghiệm Trực Quan 35 Kiểu Chữ Luxury, 10 Khung Trước–Sau &amp; 15 AI Hooks</b>
+          <span>Chạm để xem trước trực tiếp từng kiểu chữ (đặc biệt là <code>STYLE-17</code> &amp; <code>STYLE-28</code> cho BĐS) và copy mã lệnh 1 chạm</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="13-chon-style-tong-hop.html" class="studio-launch-btn" style="background:#b45309; border-color:#fbbf24; text-decoration:none; font-weight:800;">
+            🎨 Mở Tổng Đài 35 Kiểu Chữ × 10 Khung Trước–Sau &rarr;
+          </a>
+          <a href="bo-chon-7.html" class="studio-launch-btn" style="background:#0f172a; border-color:#475569; text-decoration:none;">
+            📱 Mở Bộ Chọn 7 Kiểu Nhanh Trên Điện Thoại &rarr;
+          </a>
+          <a href="10-bang-ai-hook.html" class="studio-launch-btn" style="background:#0369a1; border-color:#38bdf8; text-decoration:none;">
+            🎣 Mở Bảng 15 AI Hooks (Earth Zoom, Jib-Down...) &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 7: PHÒNG THỬ NGHIỆM TRỰC TIẾP — CHẤM 4 GÓC LÔ ĐẤT 3D NGAY TRÊN TRANG
+           ======================================================== -->
+      <h2 id="phan-7-phong-thu" style="margin-top:46px;">7. Trải Nghiệm Trực Tiếp: Công Cụ Web UI Chấm 4 Góc Lô Đất &amp; Đường Giao Thông 1 Chạm</h2>
+      <p style="margin-bottom:14px;">
+        Học viên không cần đo tọa độ pixel thủ công. Hãy thử nghiệm ngay bên dưới (hoặc mở toàn màn hình tại <a href="bds-lot-picker.html" target="_blank" rel="noopener"><strong>bds-lot-picker.html &nearr;</strong></a>): Chỉ cần thả video Flycam hoặc ảnh Google Maps vào, <strong>click chuột vào 4 góc lô đất</strong>, nhập diện tích (VD: <code>200 m²</code>) và bấm <strong>Copy JSON Config</strong>!
+      </p>
+
+      <div style="border:2px solid #f59e0b; border-radius:16px; overflow:hidden; background:#090d16; box-shadow:0 16px 40px rgba(15,23,42,0.18);">
+        <div style="background:#0f172a; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #334155;">
+          <span style="font:800 13.5px var(--sans); color:#fbbf24;">📐 BDS 3D Lot &amp; Road Picker Studio (Nhúng Trực Tiếp)</span>
+          <a href="bds-lot-picker.html" target="_blank" rel="noopener" style="font:700 12.5px var(--sans); color:#38bdf8; text-decoration:none;">🔎 Mở Toàn Màn Hình &nearr;</a>
+        </div>
+        <iframe src="bds-lot-picker.html" title="Công cụ chấm 4 góc lô đất 3D" style="width:100%; height:640px; border:0; display:block;" loading="lazy"></iframe>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 8: QUY TRÌNH 3 BƯỚC HỌC VIÊN SỬ DỤNG TRONG KHÓA HỌC AI
+           ======================================================== -->
+      <h2 style="margin-top:46px;">8. Quy Trình 3 Bước Học Viên Thực Hành Trong Khóa Học AI Video Bất Động Sản</h2>
+      <p>
+        Toàn bộ kỹ thuật phức tạp (Optical Flow, Homography Matrix, 3D Extrusion, Audio VAD 12ms, HDR Bloom) đã được đóng gói ngầm bên dưới. Học viên chỉ cần làm đúng <strong>3 bước đơn giản</strong>:
+      </p>
+
+      <div class="step-flow-3">
+        <div class="step-flow-card">
+          <span class="step-flow-num">BƯỚC 1 • NGUYÊN LIỆU ĐẦU VÀO (1 PHÚT)</span>
+          <div style="font:800 16px var(--sans); color:#0f172a; margin-bottom:8px;">Chụp 1 ảnh Google Maps hoặc quay clip theo công thức &ldquo;3V + 2 Giây&rdquo;</div>
+          <p style="font-size:13.8px; color:#475569; line-height:1.6; margin:0;">
+            • Nếu làm <strong>Flycam Khoanh Lô 3D / Earth Zoom</strong>: Chỉ cần chụp 1 ảnh vệ tinh Google Maps hoặc lấy sẵn clip Flycam dự án.<br/>
+            • Nếu quay <strong>Chuyên gia phân tích</strong>: Khi nói vấp chỉ cần <em>Ngừng 2 giây &rarr; Vỗ tay 1 cái &rarr; Nói lại trọn câu</em>.
+          </p>
+        </div>
+
+        <div class="step-flow-card" style="border-color:#f59e0b;">
+          <span class="step-flow-num" style="background:#d97706;">BƯỚC 2 • CHẤM 4 GÓC / GÕ 1 CÂU LỆNH (30 GIÂY)</span>
+          <div style="font:800 16px var(--sans); color:#0f172a; margin-bottom:8px;">Chấm 4 góc lô đất trên Web UI &amp; Gọi câu lệnh tiếng Việt</div>
+          <p style="font-size:13.8px; color:#475569; line-height:1.6; margin:0;">
+            • Chấm 4 điểm góc lô đất trên <code>bds-lot-picker.html</code>.<br/>
+            • Gõ câu lệnh tự nhiên: <code>&ldquo;Khoanh lô đất 3D cho video này&rdquo;</code>, <code>&ldquo;Earth zoom tới dự án...&rdquo;</code> hoặc <code>&ldquo;Hãy edit video sau theo phong cách bất động sản&rdquo;</code>.
+          </p>
+        </div>
+
+        <div class="step-flow-card" style="border-color:#10b981;">
+          <span class="step-flow-num" style="background:#059669;">BƯỚC 3 • NHẬN VIDEO QUA TELEGRAM &amp; DRIVE (~20 GIÂY)</span>
+          <div style="font:800 16px var(--sans); color:#0f172a; margin-bottom:8px;">AI tự động kiểm định Verifier &amp; Giao hàng Full HD 1080p</div>
+          <p style="font-size:13.8px; color:#475569; line-height:1.6; margin:0;">
+            • Hệ thống tự động kiểm tra độ bám mặt đất (<code>&lt; 1.0px</code>), kiểm tra chữ phụ đề <code>5B-R</code>.<br/>
+            • Tự động bắn file <code>.mp4</code> về <strong>Telegram trên điện thoại</strong> kèm đẩy lưu trữ đa phiên bản lên <strong>Google Drive</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="matrix-card" style="margin-top:24px; border:2px solid #0f172a;">
+        <div class="matrix-header">
+          <div class="matrix-title"><span>💻 Bộ Lệnh Thực Thi Nhanh Cho Học Viên &amp; Chuyên Gia (Tại <code>~/.gemini/config/skills/bds-edit/</code>)</span></div>
+          <span class="matrix-badge sci">BDS-EDIT V3.0 CLI</span>
+        </div>
+
+        <div class="cmd-box" style="margin-top:10px;">
+          <div class="cmd-header">
+            <span class="cmd-title">1. Chạy Khoanh Vùng Lô Đất 3D — Mức Độ 1 (Từ Ảnh Google Maps &rarr; Google Flow &rarr; Cả 2 Phương Án PA1 &amp; PA2)</span>
+            <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+          </div>
+          <pre><code>python3 ~/.gemini/config/skills/bds-edit/scripts/bds_lot_engine.py --config ~/.gemini/config/skills/bds-edit/examples/mau_03_lot_tracking_3d/config_level1_google_flow.json --style both</code></pre>
+        </div>
+
+        <div class="cmd-box" style="margin-top:10px;">
+          <div class="cmd-header">
+            <span class="cmd-title">2. Chạy Khoanh Vùng Lô Đất 3D — Mức Độ 2 (Từ Video Flycam Thực Tế Có Sẵn &rarr; Cả 2 Phương Án PA1 &amp; PA2)</span>
+            <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+          </div>
+          <pre><code>python3 ~/.gemini/config/skills/bds-edit/scripts/bds_lot_engine.py --config ~/.gemini/config/skills/bds-edit/examples/mau_03_lot_tracking_3d/config_level2_real_drone.json --style both</code></pre>
+        </div>
+
+        <div class="cmd-box" style="margin-top:10px;">
+          <div class="cmd-header">
+            <span class="cmd-title">3. Chạy Trọn Bộ 4 Phương Án Google Earth Zoom &amp; Bản Đồ Vệ Tinh Bất Động Sản (PA1 &rarr; PA4)</span>
+            <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+          </div>
+          <pre><code>python3 ~/.gemini/config/skills/bds-edit/scripts/render_all_4_methods.py</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script src="assets/skill_live_data.js?v=20261031"></script>
+  <script src="assets/manifest.js?v=20261031"></script>
+  <script src="assets/hub.js?v=20261031"></script>
+</body>
+</html>

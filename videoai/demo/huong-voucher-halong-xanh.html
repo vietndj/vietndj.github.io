@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Pre-Edit Demo & Duyệt Trước Render: Chị Bùi Thị Hiền (Hạ Long Xanh) — FEDU Video AI</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M17.8%2014Q21.2%2014%2023.2%2014.8Q25.1%2015.5%2026.2%2016.7Q27.2%2018%2027.5%2019.5Q27.8%2021%2027.8%2022.6V31.8Q27.8%2033.3%2027.5%2034.9Q27.2%2036.4%2026.2%2037.6Q25.1%2038.9%2023.2%2039.7Q21.2%2040.4%2017.8%2040.4H15.5V51.9Q15.5%2053%2014.4%2053H7.8Q6.7%2053%206.7%2051.9V15.1Q6.7%2014%207.8%2014ZM19.1%2022.9Q19.1%2022.3%2018.7%2021.8Q18.3%2021.3%2017.4%2021.3H15.5V33.1H17.5Q18.4%2033.1%2018.7%2032.5Q19.1%2032%2019.1%2031.4ZM32.4%2053Q31.3%2053%2031.3%2051.9V15.1Q31.3%2014%2032.4%2014H44.7Q45.8%2014%2045.8%2015.1V20.2Q45.8%2021.3%2044.7%2021.3H40.1V29.5H44Q45%2029.5%2045%2030.6V35.8Q45%2036.8%2043.9%2036.8H40.1V45.7H44.7Q45.8%2045.7%2045.8%2046.8V51.9Q45.8%2053%2044.7%2053Z'%20fill='%23FB923C'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%23FB923C'/%3E%3C/svg%3E">
+<style>
+  @font-face {
+    font-family: 'FDAeonik';
+    src: url('/assets/fonts/FDAeonik-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'FDAeonikBlack';
+    src: url('/assets/fonts/FDAeonik-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'SVNActa';
+    src: url('/assets/fonts/SVN-Acta-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #090C10;
+    --panel: #121721;
+    --card: #171E2B;
+    --gold: #FFD018;
+    --amber: #FF9914;
+    --emerald: #10B981;
+    --red: #EF4444;
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+    --border: rgba(255,255,255,0.09);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'FDAeonik', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding-bottom: 92px;
+    line-height: 1.4;
+  }
+
+  /* STICKY HEADER */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(9, 12, 16, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+  }
+  .top-row {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .doc-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--gold);
+  }
+  .doc-sub {
+    font-size: 10.5px;
+    color: var(--muted);
+  }
+  .nav-link-pill {
+    background: rgba(255, 208, 24, 0.14);
+    border: 1px solid rgba(255, 208, 24, 0.4);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 99px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* QUICK JUMP ANCHOR BAR */
+  .step-bar {
+    max-width: 520px;
+    margin: 6px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+  .step-pill {
+    background: #151B26;
+    border: 1px solid var(--border);
+    color: #CBD5E1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 4px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .step-pill span { color: var(--gold); }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* BLOCK CARD */
+  .block-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+  .block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .block-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .block-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(16, 185, 129, 0.16);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+  }
+
+  /* BLOCK 1: TRUE-RENDER FRAME INSPECTOR */
+  .frame-viewer {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    background: #0D1117;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 208, 24, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .frame-viewer img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .frame-overlay-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(9, 12, 16, 0.85);
+    border: 1px solid rgba(255, 208, 24, 0.45);
+    color: var(--gold);
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+  .frame-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .frame-thumb-btn {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 5px 4px;
+    color: #CBD5E1;
+    font-size: 10.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+  }
+  .frame-thumb-btn.active {
+    border-color: var(--gold);
+    background: rgba(255, 208, 24, 0.15);
+    color: var(--gold);
+  }
+
+  /* QUICK STYLE PILLS IN DEMO */
+  .mini-selector-group {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .mini-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pill-row {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .pill-row::-webkit-scrollbar { display: none; }
+  .style-pill {
+    flex-shrink: 0;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    color: #E2E8F0;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .style-pill.active {
+    border-color: var(--gold);
+    background: rgba(255, 208, 24, 0.16);
+    color: var(--gold);
+  }
+
+  /* BLOCK 2: TRANSCRIPT, STUMBLE CUTS & WHIP-SNAP ZOOMS */
+  .legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+  }
+  .transcript-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .seg-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 12.5px;
+  }
+  .seg-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .seg-time {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: var(--gold);
+    background: rgba(255,208,24,0.12);
+    padding: 1.5px 6px;
+    border-radius: 5px;
+  }
+  .seg-toggles {
+    display: flex;
+    gap: 5px;
+  }
+  .toggle-chip {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.05);
+    color: #CBD5E1;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .toggle-chip.cut-on {
+    background: rgba(239, 68, 68, 0.18);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #FCA5A5;
+  }
+  .toggle-chip.cut-off {
+    background: rgba(16, 185, 129, 0.18);
+    border-color: rgba(16, 185, 129, 0.5);
+    color: #6EE7B7;
+  }
+  .toggle-chip.zoom-on {
+    background: rgba(255, 208, 24, 0.18);
+    border-color: rgba(255, 208, 24, 0.5);
+    color: var(--gold);
+  }
+  .stumble-tag {
+    display: inline-block;
+    background: rgba(239, 68, 68, 0.16);
+    color: #FCA5A5;
+    text-decoration: line-through;
+    padding: 0 5px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    margin-right: 4px;
+  }
+  .stumble-tag.restored {
+    background: rgba(16, 185, 129, 0.18);
+    color: #6EE7B7;
+    text-decoration: none;
+  }
+  .kw-gold {
+    color: var(--gold);
+    font-family: 'SVNActa', serif;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* BLOCK 3: B-ROLL & 2D ATLAS STORYBOARD SWAPPER */
+  .slot-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .slot-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 9px;
+  }
+  .slot-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .slot-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #FFF;
+  }
+  .slot-time {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .cand-box {
+    background: #10151E;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: 0.15s;
+  }
+  .cand-box.active {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+  .cand-box.warn {
+    border-color: rgba(239, 68, 68, 0.45);
+    opacity: 0.82;
+  }
+  .cand-img {
+    width: 100%;
+    height: 76px;
+    object-fit: cover;
+    display: block;
+  }
+  .cand-meta {
+    padding: 4px 5px;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .cand-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 1px 4px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+  }
+  .tag-picked { background: var(--gold); color: #000; }
+  .tag-alt { background: rgba(255,255,255,0.12); color: #CBD5E1; }
+  .tag-bad { background: rgba(239, 68, 68, 0.25); color: #FCA5A5; }
+
+  /* STICKY DELTA CONFIRM BAR */
+  .sticky-confirm {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: rgba(9, 12, 16, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1.5px solid rgba(255, 208, 24, 0.35);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  }
+  .confirm-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .delta-info {
+    min-width: 0;
+    flex: 1;
+  }
+  .delta-status {
+    font-size: 10.5px;
+    color: #34D399;
+    font-weight: 700;
+  }
+  .delta-code {
+    font-size: 11px;
+    color: var(--text);
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .confirm-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .btn-reset {
+    border: 1px solid var(--border);
+    background: #1A2230;
+    color: #CBD5E1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 9px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+  }
+  .btn-approve {
+    border: none;
+    background: var(--gold);
+    color: #090C10;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 9px 14px;
+    border-radius: 9px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(255, 208, 24, 0.3);
+  }
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <div class="top-row">
+    <div>
+      <div class="doc-title">🎬 DEMO VIDEO #02: CHỊ HƯỜNG BĐS</div>
+      <div class="doc-sub">Voucher 1–2 Tỷ Liền Kề Hạ Long Xanh · 27.6s · Chuẩn 5B-R</div>
+    </div>
+    <a href="/bo-chon-7.html" class="nav-link-pill">🎨 Bộ Chọn 7 Kiểu ↗</a>
+  </div>
+  <div class="step-bar">
+    <a href="#block-frames" class="step-pill"><span>1.</span> Khung Hình Thật</a>
+    <a href="#block-cuts" class="step-pill"><span>2.</span> Cắt Vấp & Zoom</a>
+    <a href="#block-broll" class="step-pill"><span>3.</span> Đổi Cảnh Trám</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- BLOCK 1: TRUE-RENDER FRAME PREVIEW & STYLE SWITCH -->
+  <div class="block-card" id="block-frames">
+    <div class="block-header">
+      <div class="block-title">1️⃣ Ảnh Khung Hình Thật Từ Bộ Render</div>
+      <span class="block-badge">0% Gạch Xóa Chữ</span>
+    </div>
+
+    <div class="frame-viewer">
+      <span class="frame-overlay-tag" id="frameTag">00.8s · Mở Đầu STYLE-17 + Phụ Đề 5B-R</span>
+      <img src="/assets/demo_huong/frame_01_hero.webp" id="mainFrameImg" alt="Rendered Frame">
+    </div>
+
+    <div class="frame-strip">
+      <button class="frame-thumb-btn active" onclick="setFrame(0, '/assets/demo_huong/frame_01_hero.webp', '00.8s · Mở Đầu STYLE-17 + Phụ Đề 5B-R')">01s Mở đầu</button>
+      <button class="frame-thumb-btn" onclick="setFrame(1, '/assets/demo_huong/frame_02_voucher.webp', '02.2s · 2 Thẻ Voucher 1,319 Tỷ & 2,000 Tỷ')">02s Voucher</button>
+      <button class="frame-thumb-btn" onclick="setFrame(2, '/assets/demo_huong/frame_03_arch.webp', '05.2s · Banner Vòm Thành Phố Kỳ Quan + Zoom 1.16x')">05s Vòm 3D</button>
+      <button class="frame-thumb-btn" onclick="setFrame(3, '/assets/demo_huong/frame_04_carousel.webp', '07.6s · Carousel 3 Thẻ Phân Khu Chạy Ngang')">08s Carousel</button>
+      <button class="frame-thumb-btn" onclick="setFrame(4, '/assets/demo_huong/frame_05_3d4f.webp', '10.8s · Mặt Cắt 3D 4 Tầng Liền Kề 60m²')">11s Nhà 3D 4T</button>
+      <button class="frame-thumb-btn" onclick="setFrame(5, '/assets/demo_huong/frame_06_math30.webp', '13.8s · Bài Toán Đợt 1 (1,2 Tỷ) Áp Voucher Gánh Trọn')">14s Đợt 1 30%</button>
+      <button class="frame-thumb-btn" onclick="setFrame(6, '/assets/demo_huong/frame_07_math70.webp', '15.6s · 2 Lựa Chọn 70% Còn Lại (CK Sớm vs HTLS 18-36T)')">16s 70% Vốn</button>
+      <button class="frame-thumb-btn" onclick="setFrame(7, '/assets/demo_huong/frame_08_cta.webp', '22.4s · Bảng Tính Dòng Tiền Chi Tiết & CTA')">22s Bảng Tính</button>
+    </div>
+    <div class="mini-selector-group">
+      <div class="mini-label">
+        <span>Đổi nhanh Kiểu Phụ Đề cho dự án này:</span>
+        <a href="/bo-chon-7.html#sub=S01" style="color:var(--gold);text-decoration:none;font-weight:700;">Xem đủ 7 kiểu ↗</a>
+      </div>
+      <div class="pill-row" id="subPills"></div>
+
+      <div class="mini-label" style="margin-top:8px;">
+        <span>Đổi nhanh Chữ Mở Đầu (Hero Title):</span>
+      </div>
+      <div class="pill-row" id="heroPills"></div>
+    </div>
+  </div>
+
+  <!-- BLOCK 2: TRANSCRIPT, STUMBLE CUTS & WHIP-SNAP ZOOMS -->
+  <div class="block-card" id="block-cuts">
+    <div class="block-header">
+      <div class="block-title">2️⃣ Lời Thoại, Vết Cắt Vấp & Nhịp Zoom</div>
+      <span class="block-badge">Đã cắt 5 đoạn thừa & nối 2 A-Roll</span>
+    </div>
+    <div class="legend-row">
+      <span>✂️ <b>Chữ gạch đỏ:</b> Đoạn ngập ngừng/quên lời đã cắt (chạm để giữ/cắt)</span>
+      <span>⚡ <b>Zoom 1.18x:</b> Nhịp Whip-Snap 0.28s cận mặt câu nhấn</span>
+    </div>
+    <div class="transcript-list" id="transcriptList"></div>
+  </div>
+
+  <!-- BLOCK 3: B-ROLL & 2D ATLAS STORYBOARD SWAPPER -->
+  <div class="block-card" id="block-broll">
+    <div class="block-header">
+      <div class="block-title">3️⃣ Storyboard Cảnh Trám (Chạm Để Đổi)</div>
+      <span class="block-badge">6 Khe Cảnh Trám</span>
+    </div>
+    <div class="slot-list" id="slotList"></div>
+  </div>
+
+</div>
+
+<!-- STICKY BOTTOM CONFIRM BAR -->
+<div class="sticky-confirm">
+  <div class="confirm-inner">
+    <div class="delta-info">
+      <div class="delta-status" id="deltaStatus">✓ Chuẩn phương án AI đề xuất (0 thay đổi)</div>
+      <div class="delta-code" id="deltaCode">CONFIRM: huong-voucher-halong-xanh · v2 · DEFAULT</div>
+    </div>
+    <div class="confirm-actions">
+      <button class="btn-reset" onclick="resetDefaults()">Mặc định</button>
+      <button class="btn-approve" id="approveBtn" onclick="approveAndCopy()">✅ Chốt & Copy Lệnh</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUB_OPTIONS = [
+  { id: 'S01', label: '★ S01: 5B-R Luxury Gold (Không gạch)' },
+  { id: 'S02', label: 'S02: 5B-Cream Thẻ Kem #F5F2EB' },
+  { id: 'S03', label: 'S03: 5B-Emerald Xanh Ngọc' },
+  { id: 'S04', label: 'S04: Cinema Floating Không Hộp' },
+  { id: 'S05', label: 'S05: Amber Glow Cam Hổ Phách' },
+  { id: 'S06', label: 'S06: Soft Gold Pill Đệm Bo Tròn' },
+  { id: 'S07', label: 'S07: Cyan Executive Báo Chí' }
+];
+
+const HERO_OPTIONS = [
+  { id: 'H01', label: '★ H01: STYLE-17 La Bàn Vàng Kim' },
+  { id: 'H02', label: 'H02: STYLE-28 Thẻ Kem Tinh Hoa' },
+  { id: 'H03', label: 'H03: STYLE-05 Kính Mờ Viền Vàng' },
+  { id: 'H04', label: 'H04: STYLE-12 Dải Băng Vàng Năng Động' },
+  { id: 'H05', label: 'H05: STYLE-21 Viên Nang Tối Giản' }
+];
+
+const SEGMENTS = [
+  {
+    "id": "seg1",
+    "time": "00.0s – 04.4s (A-Roll 2)",
+    "stumble": "0.00s–3.66s: ngồi chờ máy, nhìn xuống lấy hơi",
+    "text": "Anh chị có trong tay <span class=\"kw-gold\">voucher 1 – 2 tỷ đồng</span> của <span class=\"kw-gold\">Vinhomes Hạ Long Xanh</span>?",
+    "cutRemoved": true,
+    "zoom": false
+  },
+  {
+    "id": "seg2",
+    "time": "04.4s – 08.5s (A-Roll 2)",
+    "stumble": "8.05s–8.40s: nghỉ lấy hơi + 12.40s–16.87s: nói 'Đó.' & vươn tay tắt máy",
+    "text": "Đừng bỏ lỡ cơ hội sở hữu một <span class=\"kw-gold\">căn liền kề</span> tại <span class=\"kw-gold\">Vinhomes Hạ Long Xanh</span>.",
+    "cutRemoved": true,
+    "zoom": true
+  },
+  {
+    "id": "seg3",
+    "time": "08.5s – 11.4s (Cầu nối B1)",
+    "stumble": "Chuyển cảnh Window Expand Wipe 0.32s nối 2 A-Roll",
+    "text": "Minh họa <span class=\"kw-gold\">Cảnh 2 & 3</span>: Mặt cắt 3D 4 tầng căn <span class=\"kw-gold\">Liền kề 60m²</span> mặt tiền 5m & Bến vịnh kỳ quan ESG++.",
+    "cutRemoved": true,
+    "zoom": false
+  },
+  {
+    "id": "seg4",
+    "time": "11.4s – 14.4s (Cầu nối B2)",
+    "stumble": "Đồ họa bài toán dòng tiền từ Bảng Cảnh Quay giấy",
+    "text": "Minh họa <span class=\"kw-gold\">Cảnh 4, 5 & 6</span>: Giá 6,0 Tỷ (Đất 4,0 Tỷ) → Đợt 1 (30%) = <span class=\"kw-gold\">1,2 Tỷ</span> → Áp Voucher 1,319 Tỷ <span class=\"kw-gold\">gánh gần trọn Đợt 1</span>.",
+    "cutRemoved": true,
+    "zoom": false
+  },
+  {
+    "id": "seg5",
+    "time": "14.4s – 17.0s (Cầu nối B3)",
+    "stumble": "So sánh 2 phương án tài chính 70% còn lại",
+    "text": "Minh họa <span class=\"kw-gold\">Cảnh 7</span>: 70% còn lại chọn <span class=\"kw-gold\">Thanh toán sớm</span> nhận CK hoặc <span class=\"kw-gold\">Vay HTLS 18 – 24 – 36 tháng</span>.",
+    "cutRemoved": true,
+    "zoom": false
+  },
+  {
+    "id": "seg6",
+    "time": "17.0s – 18.8s (A-Roll 1)",
+    "stumble": "0.00s–1.04s: chuẩn bị vào nhịp nói",
+    "text": "<span class=\"kw-gold\">Voucher</span> có hạn sử dụng.",
+    "cutRemoved": true,
+    "zoom": false
+  },
+  {
+    "id": "seg7",
+    "time": "18.8s – 25.2s (A-Roll 1)",
+    "stumble": "9.28s–11.00s: dứt câu & giơ tay bấm tắt điện thoại",
+    "text": "Anh chị hãy <span class=\"kw-gold\">bấm nhận thông tin</span> để em gửi <span class=\"kw-gold\">bảng chi tiết</span> và hỗ trợ anh chị sử dụng chiếc <span class=\"kw-gold\">voucher giá trị</span> này.",
+    "cutRemoved": true,
+    "zoom": true
+  },
+  {
+    "id": "seg8",
+    "time": "25.2s – 27.6s (Kết bài)",
+    "stumble": "Chuyển cảnh Executive Verdict Card",
+    "text": "Màn hình kết bài <span class=\"kw-gold\">Hường · BĐS Hạ Long</span>: Tóm tắt 3 trụ cột sử dụng Voucher 1–2 Tỷ mua Liền kề 60m².",
+    "cutRemoved": true,
+    "zoom": false
+  }
+];
+
+const BROLL_SLOTS = [
+  {
+    "id": "slot1",
+    "title": "Slot 1 · 2 Thẻ E-Voucher Vinhomes (01.7s – 04.4s)",
+    "time": "01.7s – 04.4s",
+    "picked": "voucher_pair",
+    "candidates": [
+      {
+        "id": "voucher_pair",
+        "name": "2 Thẻ Voucher 1,319 Tỷ & 2,000 Tỷ (Vector)",
+        "tag": "★ AI Chọn",
+        "tagClass": "tag-picked",
+        "img": "/assets/demo_huong/frame_02_voucher.webp"
+      },
+      {
+        "id": "banner_kyquan",
+        "name": "Banner Thành Phố Kỳ Quan",
+        "tag": "Thay thế 1",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/banner_ky_quan.webp"
+      },
+      {
+        "id": "vinh_disan",
+        "name": "Bến Du Thuyền Vịnh Di Sản",
+        "tag": "Thay thế 2",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/s1_vinh_di_san.webp"
+      }
+    ]
+  },
+  {
+    "id": "slot2",
+    "title": "Slot 2 · Banner Vòm & Carousel 3 Phân Khu (04.4s – 08.5s)",
+    "time": "04.4s – 08.5s",
+    "picked": "arch_carousel",
+    "candidates": [
+      {
+        "id": "arch_carousel",
+        "name": "Banner Vòm + Carousel 3 Thẻ (Từ Mẫu 2)",
+        "tag": "★ AI Chọn",
+        "tagClass": "tag-picked",
+        "img": "/assets/demo_huong/frame_04_carousel.webp"
+      },
+      {
+        "id": "banner_esg",
+        "name": "Banner Chuẩn Sống ESG++",
+        "tag": "Thay thế 1",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/banner_esg.webp"
+      },
+      {
+        "id": "kayak_canal",
+        "name": "Kênh Đào Kayak Nội Khu",
+        "tag": "Thay thế 2",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/s1_kayak_canal.webp"
+      }
+    ]
+  },
+  {
+    "id": "slot3",
+    "title": "Slot 3 · Mặt Cắt 3D 4 Tầng Liền Kề 60m² (08.5s – 11.4s)",
+    "time": "08.5s – 11.4s",
+    "picked": "3d_4floors",
+    "candidates": [
+      {
+        "id": "3d_4floors",
+        "name": "Mặt Cắt 3D 4 Tầng + 4 Nhãn Công Năng",
+        "tag": "★ AI Chọn",
+        "tagClass": "tag-picked",
+        "img": "/assets/demo_huong/frame_05_3d4f.webp"
+      },
+      {
+        "id": "street_view",
+        "name": "Phối Cảnh Dãy Phố Liền Kề Mặt Tiền 5m",
+        "tag": "Thay thế 1",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/townhouse_street.webp"
+      },
+      {
+        "id": "interior_shop",
+        "name": "Không Gian Kinh Doanh Tầng 1",
+        "tag": "Thay thế 2",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/townhouse_interior.webp"
+      }
+    ]
+  },
+  {
+    "id": "slot4",
+    "title": "Slot 4 · Bài Toán Đợt 1 (1,2 Tỷ) Áp Voucher (11.4s – 14.4s)",
+    "time": "11.4s – 14.4s",
+    "picked": "math_30pct",
+    "candidates": [
+      {
+        "id": "math_30pct",
+        "name": "Infographic Kem #F5F2EB: Voucher Gánh Đợt 1",
+        "tag": "★ AI Chọn",
+        "tagClass": "tag-picked",
+        "img": "/assets/demo_huong/frame_06_math30.webp"
+      },
+      {
+        "id": "street_alt",
+        "name": "Phối Cảnh Dãy Phố Thương Mại",
+        "tag": "Thay thế 1",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/townhouse_street.webp"
+      },
+      {
+        "id": "vinh_alt",
+        "name": "Toàn Cảnh Vịnh Kỳ Quan",
+        "tag": "Thay thế 2",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/s1_vinh_di_san.webp"
+      }
+    ]
+  },
+  {
+    "id": "slot5",
+    "title": "Slot 5 · 2 Lựa Chọn Cho 70% Còn Lại (14.4s – 17.0s)",
+    "time": "14.4s – 17.0s",
+    "picked": "math_70pct",
+    "candidates": [
+      {
+        "id": "math_70pct",
+        "name": "So Sánh Thanh Toán Sớm vs Vay HTLS 18–36T",
+        "tag": "★ AI Chọn",
+        "tagClass": "tag-picked",
+        "img": "/assets/demo_huong/frame_07_math70.webp"
+      },
+      {
+        "id": "interior_alt",
+        "name": "Nội Thất Kinh Doanh Cafe Tầng 1",
+        "tag": "Thay thế 1",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/townhouse_interior.webp"
+      },
+      {
+        "id": "kayak_alt",
+        "name": "Cảnh Quan Kênh Đào Sinh Thái",
+        "tag": "Thay thế 2",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/s1_kayak_canal.webp"
+      }
+    ]
+  },
+  {
+    "id": "slot6",
+    "title": "Slot 6 · Bảng Tính Chi Tiết & Kết Bài (19.6s – 27.6s)",
+    "time": "19.6s – 27.6s",
+    "picked": "cta_outro",
+    "candidates": [
+      {
+        "id": "cta_outro",
+        "name": "Bảng Tính Dòng Tiền + Executive Verdict",
+        "tag": "★ AI Chọn",
+        "tagClass": "tag-picked",
+        "img": "/assets/demo_huong/frame_08_cta.webp"
+      },
+      {
+        "id": "outro_card",
+        "name": "Màn Hình Chốt 3 Trụ Cột Kết Bài",
+        "tag": "Thay thế 1",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/frame_09_outro.webp"
+      },
+      {
+        "id": "voucher_remind",
+        "name": "Thẻ Lưu Ý Hạn Sử Dụng Voucher",
+        "tag": "Thay thế 2",
+        "tagClass": "tag-alt",
+        "img": "/assets/demo_huong/frame_02_voucher.webp"
+      }
+    ]
+  }
+];
+
+

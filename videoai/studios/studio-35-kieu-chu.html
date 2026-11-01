@@ -752,8 +752,57 @@
     }
     
   </style>
-</head>
-<body>
+<!-- MOBILE_V2_START -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+  /* 5B-R Zero-Strikethrough & Mobile Override */
+  .kw-gold, .kw-italic, .sub-kw, [class*="kw"] {
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  .kw-gold::after, .kw-italic::after, .sub-kw::after {
+    display: none !important;
+    content: none !important;
+  }
+  .mobile-top-bridge {
+    position: sticky; top: 0; z-index: 9999;
+    background: rgba(10, 13, 18, 0.96);
+    border-bottom: 1px solid rgba(255, 208, 24, 0.35);
+    padding: 8px 12px;
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .mobile-top-bridge a {
+    text-decoration: none; font-size: 11.5px; font-weight: 800;
+    padding: 5px 10px; border-radius: 99px;
+  }
+  @media (max-width: 860px) {
+    body, html { height: auto !important; overflow-y: auto !important; overflow-x: hidden !important; }
+    .studio-layout, .main-grid, .container {
+      display: flex !important; flex-direction: column !important;
+      height: auto !important; overflow: visible !important;
+    }
+    .sidebar, .left-panel, .controls-panel {
+      width: 100% !important; max-width: 100% !important;
+      height: auto !important; max-height: none !important;
+      overflow: visible !important;
+    }
+    .preview-area, .right-panel, .stage-panel {
+      width: 100% !important; min-height: 420px !important;
+      padding: 12px !important;
+    }
+  }
+</style>
+<!-- MOBILE_V2_END --></head>
+<body><!-- MOBILE_V2_START -->
+<div class="mobile-top-bridge">
+  <span style="color:#FFD018;font-size:12px;font-weight:800;">⚡ Chuẩn 5B-R (0% Gạch Chân)</span>
+  <div style="display:flex;gap:6px;">
+    <a href="/bo-chon-7.html" style="background:#FFD018;color:#000;">📱 Bộ Chọn 7 Kiểu Gọn</a>
+    <a href="/demo/hien-halong-xanh.html" style="background:rgba(16,185,129,0.2);color:#34D399;border:1px solid #10B981;">🎬 Demo Chị Hiền</a>
+  </div>
+</div>
+<!-- MOBILE_V2_END -->
 
   <div class="container">
     
