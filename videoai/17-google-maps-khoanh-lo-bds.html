@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Google Maps Tọa Độ Thật × Khoanh Lô 3D Bất Động Sản (4 Phương Án + 5 Bối Cảnh Kết Hợp Hạ Long Xanh)</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M14.5%2053Q13.4%2053%2013.4%2051.9V22.9L11.8%2023.5Q10.7%2023.9%2010.5%2022.7L9.7%2018.3Q9.5%2017.3%2010.4%2017L16.5%2014.3Q17%2014%2017.8%2014H20.9Q21.9%2014%2021.9%2015.1V51.9Q21.9%2053%2020.9%2053ZM29.9%2053Q28.7%2053%2028.8%2051.9L33.2%2021.8H26.2Q25.2%2021.8%2025.2%2020.7V15.1Q25.2%2014%2026.2%2014H41.8Q42.8%2014%2042.8%2015.1V17.8L37.4%2052Q37.2%2053%2036.2%2053Z'%20fill='%2338BDF8'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%2338BDF8'/%3E%3C/svg%3E">
+  <link href="assets/style.css?v=20261031" rel="stylesheet"/>
+  <style>
+    .map-hero {
+      background: linear-gradient(135deg, #090d16 0%, #0f172a 52%, #172554 100%);
+      color: #f8fafc;
+      border-radius: 18px;
+      padding: 30px 28px;
+      border: 2px solid #f59e0b;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.24);
+      margin-bottom: 28px;
+    }
+    .map-hero h1 {
+      color: #ffffff !important;
+      font-size: clamp(25px, 3.2vw, 36px);
+      line-height: 1.24;
+      margin-bottom: 12px;
+    }
+    .map-hero .kicker {
+      color: #fbbf24 !important;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+    .map-hero-lede {
+      font-size: 15.8px;
+      line-height: 1.65;
+      color: #e2e8f0;
+      margin-bottom: 20px;
+    }
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(251, 191, 36, 0.38);
+      border-radius: 12px;
+      padding: 13px 15px;
+    }
+    .stat-pill b {
+      display: block;
+      font: 800 19px/1.2 var(--sans);
+      color: #fbbf24;
+      margin-bottom: 4px;
+    }
+    .stat-pill span {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #cbd5e1;
+    }
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .q-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font: 700 13px var(--sans);
+      text-decoration: none;
+      color: #0f172a;
+      background: #fbbf24;
+    }
+    .q-btn.sec {
+      background: rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .funnel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 18px 0 24px;
+    }
+    .funnel-step {
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      border-top: 5px solid #f59e0b;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    }
+    .funnel-step.cyan { border-top-color: #06b6d4; }
+    .funnel-step.emerald { border-top-color: #10b981; }
+    .funnel-tag {
+      display: inline-block;
+      font: 800 11px var(--mono);
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-bottom: 8px;
+    }
+    .funnel-step.cyan .funnel-tag { background: #cffafe; color: #155e75; }
+    .funnel-step.emerald .funnel-tag { background: #d1fae5; color: #065f46; }
+    .funnel-step h3 {
+      font: 800 16.5px/1.35 var(--sans);
+      color: #0f172a;
+      margin: 0 0 8px;
+    }
+    .funnel-step p {
+      font-size: 13.8px;
+      line-height: 1.58;
+      color: #334155;
+      margin: 0;
+    }
+    .vid-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .vid-grid-5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .v-card {
+      background: #0f172a;
+      border: 2px solid #334155;
+      border-radius: 14px;
+      padding: 14px;
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .v-card.gold { border-color: #f59e0b; box-shadow: 0 12px 28px rgba(245, 158, 11, 0.14); }
+    .v-card.cyan { border-color: #06b6d4; box-shadow: 0 12px 28px rgba(6, 182, 212, 0.14); }
+    .v-card.emerald { border-color: #10b981; box-shadow: 0 12px 28px rgba(16, 185, 129, 0.14); }
+    .v-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .v-title {
+      font: 800 15px/1.35 var(--sans);
+      color: #fbbf24;
+    }
+    .v-badge {
+      font: 700 11px var(--mono);
+      background: rgba(251, 191, 36, 0.18);
+      color: #fde68a;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .v-card video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 10px;
+      background: #000;
+      display: block;
+      object-fit: cover;
+    }
+    .v-desc {
+      margin-top: 10px;
+      font-size: 13.4px;
+      line-height: 1.55;
+      color: #cbd5e1;
+    }
+    .v-meta {
+      margin-top: 10px;
+      padding: 9px 11px;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid #fbbf24;
+      border-radius: 6px;
+      font-size: 12.6px;
+      line-height: 1.48;
+      color: #e2e8f0;
+    }
+    .v-foot {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12.5px;
+    }
+    .v-foot a {
+      color: #38bdf8;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .v-foot a:hover { text-decoration: underline; }
+    .synergy-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.8px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+      margin-top: 14px;
+    }
+    .synergy-table th {
+      background: #0f172a;
+      color: #fbbf24;
+      text-align: left;
+      padding: 12px 14px;
+      font: 800 12.5px var(--sans);
+      text-transform: uppercase;
+    }
+    .synergy-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .synergy-table tr:nth-child(even) td { background: #f8fafc; }
+  </style>
+</head>
+<body data-page="google-maps-khoanh-lo-bds">
+  <main class="main" style="display:none">
+    <div class="content">
+
+      <!-- HERO BANNER -->
+      <section class="map-hero">
+        <div class="kicker">CHUYÊN TRANG KỸ THUẬT SỐ 17 • ĐÃ THẨM ĐỊNH CÙNG CLAUDE2 (OPUS 5.5)</div>
+        <h1>Hiệu Ứng Google Maps Tọa Độ Thật (`M3`) × Khoanh Vùng Lô Đất 3D (`M2`) &amp; 5 Bối Cảnh Kết Hợp Hạ Long Xanh</h1>
+        <p class="map-hero-lede">
+          Giải quyết triệt để bài toán định vị Bất Động Sản bằng <strong>Bản đồ vệ tinh Google Maps Retina 2x theo đúng tọa độ thực WGS84</strong> (thấy rõ từng trục đường, khu dân cư, sông hồ xung quanh lô đất), kết hợp liền mạch với <strong>Khoanh vùng lô đất 3D trên Flycam (`Hybrid Planar Homography`)</strong> và <strong>Giọng phân tích chuẩn chuyên gia (`Chị Bùi Thị Hiền — Vinhomes Hạ Long Xanh`)</strong>.
+        </p>
+
+        <div class="stat-strip">
+          <div class="stat-pill">
+            <b>4 Phương Án Maps (PA1→PA4)</b>
+            <span>Từ Auto-Parcel Zoom, AI Hook Earth Zoom, Google Flow 3D đến Drone Tilt 36° + Radar Giao Thông.</span>
+          </div>
+          <div class="stat-pill">
+            <b>Phễu Không Gian 3 Tầng</b>
+            <span>Vĩ mô Vệ tinh (`z=6..17`) &rarr; Mỏ neo Đa giác (`0.35s`) &rarr; Vi mô Khoanh lô 3D (`z=18..20`).</span>
+          </div>
+          <div class="stat-pill">
+            <b>5 Video Combo Hạ Long Xanh</b>
+            <span>5 bối cảnh thực chiến để mua/bán ngay tại đại dự án 6.200ha của Chị Bùi Thị Hiền.</span>
+          </div>
+          <div class="stat-pill">
+            <b>Đóng Gói Skill `bds-edit`</b>
+            <span>Tích hợp 100% vào bộ công cụ `~/.gemini/config/skills/bds-edit/` kèm Verifier tự động.</span>
+          </div>
+        </div>
+
+        <div class="quick-nav">
+          <a href="#phan-1-4-phuong-an-maps" class="q-btn">🗺️ 1. Xem 4 Phương Án Google Maps (PA1→PA4)</a>
+          <a href="#phan-2-su-lien-he" class="q-btn">🔗 2. Sự Liên Hệ Giữa Google Maps &amp; Khoanh Lô 3D</a>
+          <a href="#phan-3-5-combo-halong-xanh" class="q-btn">🏛️ 3. Xem 5 Video Kết Hợp Hạ Long Xanh (Chị Hiền)</a>
+          <a href="16-ung-dung-ai-video-bds.html" class="q-btn sec">🛰️ Mở Trang Tổng Quan 11 Module BĐS &rarr;</a>
+          <a href="15-edit-video-bds.html" class="q-btn sec">👩🏻‍💼 Mở Mẫu 01 Chị Hiền Hạ Long Xanh &rarr;</a>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PHẦN 1: 4 PHƯƠNG ÁN GOOGLE MAPS TỌA ĐỘ THẬT (PA1..PA4)
+           ======================================================== -->
+      <h2 id="phan-1-4-phuong-an-maps">1. Bốn Phương Án Hiệu Ứng Google Maps Tọa Độ Thật (`PA1 → PA4` · Case Study: Vincom Bà Triệu)</h2>
+      <p>
+        Khác với hiệu ứng Earth Zoom AI ngẫu nhiên (chỉ đẹp về mặt thị giác nhưng sai địa hình thực tế), hệ thống <code>map_pyramid_core.py</code> truy xuất trực tiếp <strong>1.107 mảnh bản đồ vệ tinh Google Maps Retina 2x (`z=6 → z=19`)</strong> kết hợp cân bằng dải màu vệ tinh (<em>LAB Swath Equalizer</em>) tại đúng tọa độ <strong>Tổ hợp Vincom Center Bà Triệu (`21.01122°N, 105.84956°E`)</strong>:
+      </p>
+
+      <div class="vid-grid-4">
+        <!-- PA1 -->
+        <div class="v-card gold">
+          <div>
+            <div class="v-head">
+              <div class="v-title">PA1 • Google Maps Auto-Parcel &amp; Traffic Zoom</div>
+              <span class="v-badge">CHUẨN XÁC 100%</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/PA1_poster.jpg">
+              <source src="assets/bds_map_combos/PA1_GoogleMaps_AutoParcel_Zoom.mp4" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              Nâng cấp hoàn toàn cách quay màn hình Google Maps thủ công: Tự động lao mượt qua 11 tầng vệ tinh (`z=12.8 → 18.45`), dùng tia Laser vàng kim vẽ viền lô đất Tháp A-B &amp; Tháp C và bật sáng 5 trục phố giao thông bao quanh.
+            </p>
+            <div class="v-meta">
+              <b>Khi nào dùng:</b> Khi cần chứng minh <strong>vị trí địa lý thật 100%, ngã tư/ngã năm tiếp giáp và ranh giới sổ đỏ</strong> mà không sai lệch 1 mét.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/PA1_GoogleMaps_AutoParcel_Zoom.mp4" target="_blank" rel="noopener">🎬 Mở MP4 Trực Tiếp &nearr;</a>
+            <a href="https://drive.google.com/file/d/1YV4UH52vMKkserPkRnuq3RzxALn-h9MO/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v01) &nearr;</a>
+          </div>
+        </div>
+
+        <!-- PA2 -->
+        <div class="v-card cyan">
+          <div>
+            <div class="v-head">
+              <div class="v-title">PA2 • AI Hook Cosmic Earth Zoom × Google Maps</div>
+              <span class="v-badge">THU HÚT 3 GIÂY ĐẦU</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/PA2_poster.jpg">
+              <source src="assets/bds_map_combos/PA2_AI_Hook_EarthZoom_GoogleMaps_Hybrid.mp4" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              Ghép nối cú lao từ ngoài vũ trụ xuyên qua tầng mây (`z=6.2 → 13.0`) vào thẳng tháp bản đồ vệ tinh thật của Google Maps Hà Nội (`z=13.0 → 18.45`), vừa giữ hiệu ứng thị giác triệu view vừa đáp đúng tọa độ lô đất.
+            </p>
+            <div class="v-meta">
+              <b>Khi nào dùng:</b> Mở đầu các video <strong>TikTok / Reels / Shorts quảng cáo dự án trọng điểm</strong> cần giữ chân người xem ngay 1.5 giây đầu tiên.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/PA2_AI_Hook_EarthZoom_GoogleMaps_Hybrid.mp4" target="_blank" rel="noopener">🎬 Mở MP4 Trực Tiếp &nearr;</a>
+            <a href="https://drive.google.com/file/d/1daBnl-c45mHwTu6k6ryRTQtTp2WUj10g/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v02) &nearr;</a>
+          </div>
+        </div>
+
+        <!-- PA3 -->
+        <div class="v-card emerald">
+          <div>
+            <div class="v-head">
+              <div class="v-title">PA3 • Google Flow Omni 1.1 Flash (Start–End Map)</div>
+              <span class="v-badge">ĐIỆN ẢNH AI 3D</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/PA3_poster.jpg">
+              <source src="assets/bds_map_combos/PA3_GoogleFlow_Omni_StartEnd_Map.mp4" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              Xuất 2 khung hình Google Maps thật (<em>Ảnh đầu: Vệ tinh Hà Nội `z=14.8`</em> &rarr; <em>Ảnh cuối: Tổ hợp Vincom Bà Triệu `z=18.42`</em>) và đưa vào <strong>Google Flow (`Omni 1.1 Flash`)</strong> để AI nội suy cú bay lượn 3D xuyên mây rồi khóa vào bản đồ thật.
+            </p>
+            <div class="v-meta">
+              <b>Khi nào dùng:</b> Khi muốn tạo cảm giác <strong>camera trực thăng/drone bay lượn điện ảnh</strong> từ trên mây xuống dự án mà chỉ có ảnh chụp bản đồ.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/PA3_GoogleFlow_Omni_StartEnd_Map.mp4" target="_blank" rel="noopener">🎬 Mở MP4 Trực Tiếp &nearr;</a>
+            <a href="https://drive.google.com/file/d/15SGp-EiG50mosmh0EAMH5qtVgd0nTL2w/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v03) &nearr;</a>
+          </div>
+        </div>
+
+        <!-- PA4 -->
+        <div class="v-card gold">
+          <div>
+            <div class="v-head">
+              <div class="v-title">PA4 • 3D Drone Pitch-Tilt 36° + Radar &amp; Khối 3D</div>
+              <span class="v-badge">MASTER BĐS VIP</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/PA4_poster.jpg">
+              <source src="assets/bds_map_combos/PA4_3D_Drone_Tilt_Radar_Traffic_Master.mp4" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              Ma trận phối cảnh `3D Planar Homography` nghiêng mặt phẳng Google Maps từ góc thẳng đứng `0°` sang góc nhìn Drone `36°`, quét Radar khoảng cách tới Hồ Gươm (`2.0km`) và đùn khối 3D vàng kim ngay trên nền vệ tinh thật.
+            </p>
+            <div class="v-meta">
+              <b>Khi nào dùng:</b> Phù hợp nhất để <strong>phân tích kết nối giao thông liên vùng và làm cầu nối chuyển sang cảnh Flycam thực tế</strong>.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/PA4_3D_Drone_Tilt_Radar_Traffic_Master.mp4" target="_blank" rel="noopener">🎬 Mở MP4 Trực Tiếp &nearr;</a>
+            <a href="https://drive.google.com/file/d/1DEojWPwqValeFxfp5eSij7qMNoizkg-B/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v04) &nearr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 2: SỰ LIÊN HỆ CỘNG HƯỞNG GIỮA GOOGLE MAPS (M3) & KHOANH LÔ 3D (M2)
+           ======================================================== -->
+      <h2 id="phan-2-su-lien-he" style="margin-top:44px;">2. Sự Liên Hệ Giữa Hiệu Ứng Google Maps (`M3`) &amp; Khoanh Vùng Lô Đất 3D (`M2`): Khi Kết Hợp Sẽ Tạo Ra Vũ Khí Gì?</h2>
+      <p>
+        Qua hội thảo kiến trúc cùng <strong>CLAUDE2 (`Claude Opus 5.5`, Biên bản `0126211e`)</strong>, nếu tách rời hai kỹ năng này thì mỗi bên đều có một "điểm mù" tâm lý đối với khách mua bất động sản. Khi ghép chúng lại theo công thức <strong>Mỏ Neo Đa Giác (`Shared Polygon Anchor Seam`)</strong>, chúng tạo thành <strong>Phễu Thuyết Phục Không Gian 3 Tầng Không Điểm Mù</strong>:
+      </p>
+
+      <div class="funnel-grid">
+        <div class="funnel-step">
+          <span class="funnel-tag">TẦNG 1 • GOOGLE MAPS TỌA ĐỘ THẬT (M3 · Z=6→17)</span>
+          <h3>Giải Quyết Câu Hỏi Vĩ Mô: &ldquo;Ở Đâu &amp; Kết Nối Thế Nào?&rdquo;</h3>
+          <p>
+            • Giúp khách hàng thấy toàn cảnh vị trí địa lý thật trên bản đồ: Giáp vịnh biển nào, cách cao tốc/ga tàu bao nhiêu phút, nằm giữa các khu dân cư hay đại tiện ích nào.<br/>
+            • <strong>Điểm giới hạn nếu đứng một mình:</strong> Ở mức zoom sát mặt đất (`z=18+`), ảnh vệ tinh 2D nhìn thẳng từ đỉnh đầu xuống không thấy được chiều cao mặt tiền hay không khí thực tế của lô đất.
+          </p>
+        </div>
+
+        <div class="funnel-step cyan">
+          <span class="funnel-tag">KHỚP NỐI • MỎ NEO ĐA GIÁC 0.35 GIÂY (SEAM M3 → M2)</span>
+          <h3>Cầu Nối Không Gian Mượt Mà Không Gây &ldquo;Ngợp Hướng&rdquo;</h3>
+          <p>
+            • Ở giây cuối của Google Maps (`M3`), bản đồ tự động <strong>nghiêng góc Pitch `36°–42°`</strong> và khóa khung đa giác vàng tại phân khu mục tiêu.<br/>
+            • Chuyển cảnh `0.35s` xuyên thẳng vào video Flycam (`M2`) có cùng góc nghiêng, giúp não bộ khách hàng hiểu ngay: <em>&ldquo;À! Lô đất 3D trên Flycam này chính là điểm vàng vừa định vị trên Google Maps!&rdquo;</em>
+          </p>
+        </div>
+
+        <div class="funnel-step emerald">
+          <span class="funnel-tag">TẦNG 2 &amp; 3 • KHOANH LÔ 3D FLYCAM (M2) + CHUYÊN GIA (M1)</span>
+          <h3>Giải Quyết Câu Hỏi Vi Mô: &ldquo;Lô Nào Đẹp Nhất Để Xuống Tiền?&rdquo;</h3>
+          <p>
+            • Ngay khi hạ xuống Flycam, thuật toán `Hybrid Planar Homography` dựng <strong>Tường vàng 3D (`PA1`)</strong> hoặc <strong>Đường phát sáng Cyan + Chữ diện tích 3D nằm trên đất (`PA2`)</strong> khóa chặt lô `200m²–320m²`.<br/>
+            • Kết hợp giọng phân tích không vấp của Chuyên gia (`M1`) giúp khách hàng <strong>chốt chọn mã lô ngay từ xa</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 3: 5 VIDEO CẢNH TRÁM HẠ LONG XANH V5.0 (DỮ LIỆU ĐỊA LÝ THẬT 100%)
+           ======================================================== -->
+      <h2 id="phan-3-5-combo-halong-xanh" style="margin-top:44px;">3. Năm Video Cảnh Trám Thực Chiến (`Combo 01 → 05` · `V5.0`) Tại Đại Đô Thị Hạ Long Xanh (`4.110 ha`)</h2>
+      <p>
+        Đã tái kiến trúc toàn diện cùng <strong>CLAUDE2 (`Claude Opus 5.5` — Job `9c0cad12`)</strong> và vượt qua <strong>Cổng Kiểm Toán Địa Lý 5 Tầng (`5-Gate Geodesic GIS Verifier`)</strong>: Loại bỏ hoàn toàn hình PIP rối mắt và các đa giác giả, sử dụng <strong>100% Dữ liệu Địa hình Geodesic (`Quảng Yên 3.186 ha` + `Hạ Long 924 ha` = `4.110 ha`, sai số `0.00%`)</strong>, <strong>969 đỉnh tọa độ đường bộ OSRM GPS thật</strong>, <strong>Vòm Cung Parabol 3D (`V4.2`)</strong> và <strong>Phân lô khớp 1:1 mép vỉa hè ở `z=18` (`Inset 1.2m`)</strong> kèm 5 lớp âm thanh phòng thu 48kHz:
+      </p>
+
+      <div class="vid-grid-5">
+        <!-- COMBO 01 -->
+        <div class="v-card gold">
+          <div>
+            <div class="v-head">
+              <div class="v-title">Combo 01 • Ranh Giới Địa Hình Thật 4.110 ha &rarr; Whip Reverse Zoom &rarr; 3 Vòm Cung Parabol &amp; Cao Tốc OSRM</div>
+              <span class="v-badge">GEODESIC 4.110HA × REVERSE ZOOM</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/Combo01_poster.jpg?v=20261031v5">
+              <source src="assets/bds_map_combos/Combo01_ViMo_6200ha_To_PhanKhu_3D_Lot.mp4?v=20261031v5" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              • <strong>0.0s–0.9s (`z=13.1`):</strong> Tia Laser Vàng Champagne &amp; Ngọc Lam quét dọc đúng bờ sông Chanh, sông Hốt và vịnh Hạ Long của 2 phân khu <strong>Quảng Yên (`3.186 ha`) &amp; Hạ Long (`924 ha`)</strong> với lớp tô trong suốt `15%`.<br/>
+              • <strong>0.9s–6.5s (`z=8.95`):</strong> Rút ngược `Whip Reverse Zoom-Out` (`Pitch 32°`, `Bearing +58°`), bắn <strong>3 Vòm Cung Parabol 3D + Tuyến Cao Tốc OSRM GPS</strong> đi <strong>Thủ đô Hà Nội (`122 KM`)</strong>, <strong>Hải Phòng · Cát Bi (`28P · 35km`)</strong>, <strong>Sân bay Vân Đồn (`48P · 68km`)</strong>.
+            </p>
+            <div class="v-meta">
+              <b>Bối cảnh sử dụng:</b> Cảnh trám mở đầu chứng minh <strong>quy mô đại đô thị 4.110 ha và vị thế tâm điểm siêu kết nối liên tỉnh</strong>.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/Combo01_ViMo_6200ha_To_PhanKhu_3D_Lot.mp4?v=20261031v5" target="_blank" rel="noopener">🎬 Xem MP4 Full HD &nearr;</a>
+            <a id="drive-link-combo01" href="https://drive.google.com/file/d/1Umo2XnkZuzeCYdhw8KENdgfRzWcm7gG1/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v01) &nearr;</a>
+          </div>
+        </div>
+
+        <!-- COMBO 02 -->
+        <div class="v-card cyan">
+          <div>
+            <div class="v-head">
+              <div class="v-title">Combo 02 • Đùn Khối 3D Tách Biệt 2 Phân Khu (`3.186 ha` × `924 ha`) &amp; 3 Vòm Cung Kết Nối Vịnh Di Sản</div>
+              <span class="v-badge">2 PHÂN KHU 3D × VỊNH HẠ LONG</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/Combo02_poster.jpg?v=20261031v5">
+              <source src="assets/bds_map_combos/Combo02_HaTang_CaoToc_GaTau23Phut_To_TrucDuong3D.mp4?v=20261031v5" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              • Trên nền vệ tinh `z=12.2` nghiêng `Pitch 33°`, đùn khối 3D tường Gradient trong suốt tách biệt <strong>Phân khu Quảng Yên (`3.186 ha` Vàng Champagne)</strong> và <strong>Phân khu Hạ Long (`924 ha` Ngọc Lam)</strong> ngăn cách bởi Sông Hốt.<br/>
+              • Chạy dòng chảy OSRM dọc <strong>Cao tốc CT06</strong> và bắn <strong>3 Vòm Cung Parabol 3D</strong> tới <strong>Nút giao Hoàng Tân (`02P · 1.5km`)</strong>, <strong>Đảo Tuần Châu (`10P · 11km`)</strong>, <strong>Bãi Cháy · Sun World (`15P · 15km`)</strong>.
+            </p>
+            <div class="v-meta">
+              <b>Bối cảnh sử dụng:</b> Cảnh trám phân tích <strong>cấu trúc 2 phân khu quy hoạch và kết nối 2–15 phút tới tâm du lịch Vịnh Hạ Long</strong>.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/Combo02_HaTang_CaoToc_GaTau23Phut_To_TrucDuong3D.mp4?v=20261031v5" target="_blank" rel="noopener">🎬 Xem MP4 Full HD &nearr;</a>
+            <a id="drive-link-combo02" href="https://drive.google.com/file/d/1TJvypZ0IvMD8BKv22kJguysm5NvJR8rp/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v02) &nearr;</a>
+          </div>
+        </div>
+
+        <!-- COMBO 03 -->
+        <div class="v-card gold">
+          <div>
+            <div class="v-head">
+              <div class="v-title">Combo 03 • Mạng Lưới Giao Thông OSRM GPS Thật (`Chevron Flow ❯❯❯`) &amp; Bán Kính Geodesic `1.5–3.0–4.5 km`</div>
+              <span class="v-badge">OSRM GPS ROAD × CHEVRON FLOW</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/Combo03_poster.jpg?v=20261031v5">
+              <source src="assets/bds_map_combos/Combo03_SanLo_BietThu_VenVinh_EarthZoom_To_3DLot.mp4?v=20261031v5" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              • Từ <strong>Nút giao Hoa thị Hoàng Tân (`20.9430°N, 106.8950°E`)</strong> ở `z=14.8`, chiếu <strong>3 Vòng Cung Bán Kính Geodesic (`1.5 km · 3.0 km · 4.5 km`)</strong> chuẩn phối cảnh 3D.<br/>
+              • Chạy 3 luồng ánh sáng mũi tên `Chevron Flow` bám khít 100% lên đường nhựa thật từ OSRM GPS: <strong>Hành lang Cao tốc CT06 · Cầu Sông Hốt (`3.5 KM`)</strong>, <strong>Trục Xuyên Tâm Bán Đảo Hoàng Tân (`3.2 KM`)</strong>, <strong>Nhánh Tây Hoàng Tân (`1.9 KM`)</strong>.
+            </p>
+            <div class="v-meta">
+              <b>Bối cảnh sử dụng:</b> Cảnh trám chứng minh <strong>hạ tầng giao thông thực địa dẫn từ nút giao cao tốc tỏa đi khắp bán đảo</strong>.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/Combo03_SanLo_BietThu_VenVinh_EarthZoom_To_3DLot.mp4?v=20261031v5" target="_blank" rel="noopener">🎬 Xem MP4 Full HD &nearr;</a>
+            <a id="drive-link-combo03" href="https://drive.google.com/file/d/1zpzIqmQBbGOSOg-TrQ1xiwh94XiDDV3k/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v03) &nearr;</a>
+          </div>
+        </div>
+
+        <!-- COMBO 04 -->
+        <div class="v-card emerald">
+          <div>
+            <div class="v-head">
+              <div class="v-title">Combo 04 • Cú Lao Xuyên Tầng (`z=13.2 → z=17.3`) Vào Bán Đảo Phân Lô &amp; Khóa 6 Dãy Block Khớp 100% Vỉa Hè</div>
+              <span class="v-badge">MULTI-SCALE DIVE × 6 CURB BLOCKS</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/Combo04_poster.jpg?v=20261031v5">
+              <source src="assets/bds_map_combos/Combo04_HeSinhThai_3DaiCongVien_To_ToaDoLoKeCan.mp4?v=20261031v5" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              • <strong>0.0s–2.5s:</strong> Camera lao mượt qua 3 tầng vệ tinh (`z=13 → z=15 → z=17.3`, `Pitch 18° → 36°`) theo đúng tuyến đường OSRM GPS từ Quốc lộ 18 rẽ vào đại lộ trung tâm bán đảo (`20.9522°N, 106.9772°E`).<br/>
+              • <strong>2.5s–7.0s:</strong> Bật sáng <strong>Đại lộ Đôi Trung Tâm</strong> đâm thẳng ra Quảng trường Biển và đùn tường 3D Gradient khóa <strong>6 Dãy Block (`LK-01: 0.59 ha`, `LK-02: 0.69 ha`, `VIP-01: 0.49 ha`...)</strong> khớp 100% mép vỉa hè (`Inset 1.2m`), 0% lấn lòng đường.
+            </p>
+            <div class="v-meta">
+              <b>Bối cảnh sử dụng:</b> Cảnh trám dẫn dắt nhà đầu tư <strong>từ bản đồ phân khu vĩ mô lao thẳng xuống từng dãy đất thực tế bên bờ vịnh</strong>.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/Combo04_HeSinhThai_3DaiCongVien_To_ToaDoLoKeCan.mp4?v=20261031v5" target="_blank" rel="noopener">🎬 Xem MP4 Full HD &nearr;</a>
+            <a id="drive-link-combo04" href="https://drive.google.com/file/d/1-fd4MctgyCSep95hNmOGtt09-wZdnAPc/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v04) &nearr;</a>
+          </div>
+        </div>
+
+        <!-- COMBO 05 -->
+        <div class="v-card cyan">
+          <div>
+            <div class="v-head">
+              <div class="v-title">Combo 05 • Cận Cảnh `z=17.6` Lưới Trắc Địa Chia Lô, Khóa 3 Lô Góc VIP (`355m² · 365m² · 706m²`) &amp; Vòm Cung Biển</div>
+              <span class="v-badge">CADASTRAL GRID × 3 VIP CORNER LOTS</span>
+            </div>
+            <video controls playsinline preload="metadata" poster="assets/bds_map_combos/Combo05_poster.jpg?v=20261031v5">
+              <source src="assets/bds_map_combos/Combo05_PhapSuAI_GoogleMaps_GoogleFlow_3DLot_Pipeline.mp4?v=20261031v5" type="video/mp4"/>
+            </video>
+            <p class="v-desc">
+              • Trên nền vệ tinh `z=18` Retina nghiêng `Pitch 38°`, vẽ <strong>Lưới Trắc Địa Chia Lô</strong> nằm khít bên trong mép vỉa hè của cả 6 dãy đất.<br/>
+              • Đùn hộp kính 3D Vàng Champagne khóa chính xác 3 lô góc chuẩn Geodesic: <strong>`LK-01A` (`355 m² · MT 16.5m`)</strong>, <strong>`LK-02A` (`365 m² · 2 Mặt thoáng`)</strong>, <strong>`VIP-01` (`706 m² · Đối diện Quảng trường Biển`)</strong> kèm 2 Vòm Cung Parabol nối ra <strong>Quảng trường Vịnh Biển (`01P · 180m`)</strong> &amp; <strong>Cửa ngõ QL18 (`01P · 320m`)</strong>.
+            </p>
+            <div class="v-meta">
+              <b>Bối cảnh sử dụng:</b> Cảnh trám chốt hạ khi <strong>tư vấn chọn mã căn / chọn lô góc ngã tư đại lộ và lô đầu hồi mặt biển</strong>.
+            </div>
+          </div>
+          <div class="v-foot">
+            <a href="assets/bds_map_combos/Combo05_PhapSuAI_GoogleMaps_GoogleFlow_3DLot_Pipeline.mp4?v=20261031v5" target="_blank" rel="noopener">🎬 Xem MP4 Full HD &nearr;</a>
+            <a id="drive-link-combo05" href="https://drive.google.com/file/d/1r3WtdcJ_AHjJOehufPlt6f96q61tkffy/view?usp=sharing" target="_blank" rel="noopener">☁️ Google Drive (v05) &nearr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PHẦN 4: MA TRẬN TỔNG HỢP & BỘ LỆNH THỰC THI TRONG SKILL BDS-EDIT
+           ======================================================== -->
+      <h2 style="margin-top:44px;">4. Bảng Tra Cứu Nhanh 5 Bối Cảnh Cảnh Trám `V5.0` &amp; Lệnh Chạy Tự Động Trong Bộ Kỹ Năng `bds-edit`</h2>
+
+      <table class="synergy-table">
+        <thead>
+          <tr>
+            <th>Bối Cảnh Sử Dụng Thực Tế (Pure B-Roll Cutaway)</th>
+            <th>Tầng Bản Đồ &amp; Địa Hình Geodesic</th>
+            <th>Tầng Đường Cong Giao Thông &amp; Phân Lô 3D</th>
+            <th>Cổng Kiểm Toán Toán Học (`5-Gate Verifier`)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>1. Mở đầu chứng minh đại quy mô 4.110 ha &amp; siêu kết nối liên tỉnh</b></td>
+            <td>Quét Laser 2 đa giác địa hình thật <code>Quảng Yên 3.186 ha</code> &amp; <code>Hạ Long 924 ha</code> ở <code>z=13.1</code></td>
+            <td>Rút ngược <code>Whip Reverse Zoom-Out (z=8.95)</code> + 3 Vòm cung Parabol &amp; Tuyến OSRM GPS đi Hà Nội, Hải Phòng, Vân Đồn</td>
+            <td>Sai số diện tích Geodesic <code>0.00%</code> · Fill trong suốt <code>15%</code></td>
+          </tr>
+          <tr>
+            <td><b>2. Phân tích cấu trúc 2 phân khu &amp; kết nối Vịnh Hạ Long</b></td>
+            <td>Đùn khối 3D tường Gradient tách biệt 2 phân khu ngăn cách bởi Sông Hốt (<code>z=12.2</code>)</td>
+            <td>Dòng chảy OSRM dọc Cao tốc CT06 + 3 Vòm cung Parabol tới Nút giao Hoàng Tân (02P), Tuần Châu (10P), Bãi Cháy (15P)</td>
+            <td>Tường Gradient <code>38% &rarr; 0%</code> · 0% đè thẻ Pin</td>
+          </tr>
+          <tr>
+            <td><b>3. Phân tích hạ tầng nút giao cao tốc &amp; bán kính tiếp cận nội khu</b></td>
+            <td>3 Vòng cung bán kính Geodesic thật (<code>1.5 km · 3.0 km · 4.5 km</code>) từ Nút giao Hoàng Tân (<code>z=14.8</code>)</td>
+            <td>3 Tuyến đường nhựa OSRM GPS thật chạy mũi tên <code>Chevron Flow (❯❯❯)</code> dọc CT06, Trục Xuyên Tâm &amp; Nhánh Tây Hoàng Tân</td>
+            <td><code>969</code> đỉnh GPS thực tế từ <code>router.project-osrm.org</code></td>
+          </tr>
+          <tr>
+            <td><b>4. Dẫn dắt từ toàn cảnh phân khu lao xuống từng dãy Block mặt vịnh</b></td>
+            <td>Camera lao xuyên 3 tầng vệ tinh (<code>z=13.2 &rarr; z=15 &rarr; z=17.3</code>) theo đường dẫn GPS từ QL18</td>
+            <td>Quét sáng Đại lộ đôi trung tâm &amp; đùn khối 3D khóa 6 dãy Block (<code>LK-01: 0.59 ha</code>, <code>LK-02: 0.69 ha</code>, <code>VIP-01: 0.49 ha</code>...)</td>
+            <td>Khớp 100% mép vỉa hè (<code>Inset 1.2m</code>, 0% lấn lòng đường)</td>
+          </tr>
+          <tr>
+            <td><b>5. Cận cảnh chọn căn / khóa 3 lô góc VIP mặt đại lộ &amp; quảng trường biển</b></td>
+            <td>Nền vệ tinh <code>z=18</code> Retina nghiêng <code>Pitch 38°</code> + Lưới chia lô trắc địa bên trong mép vỉa hè</td>
+            <td>Đùn hộp kính 3D Vàng Champagne tại 3 lô góc (<code>355 m² · 365 m² · 706 m²</code>) + 2 Vòm cung Parabol ra Quảng trường Biển &amp; QL18</td>
+            <td>Diện tích Geodesic từng lô sai số <code>&lt; 0.5%</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="matrix-card" style="margin-top:24px; border:2px solid #0f172a;">
+        <div class="matrix-header">
+          <div class="matrix-title"><span>💻 Bộ Lệnh Thực Thi Đã Đóng Gói Trong Skill <code>bds-edit</code> (<code>~/.gemini/config/skills/bds-edit/</code>)</span></div>
+          <span class="matrix-badge sci">BDS-EDIT V3.0 MASTER</span>
+        </div>
+
+        <div class="cmd-box" style="margin-top:10px;">
+          <div class="cmd-header">
+            <span class="cmd-title">1. Kết xuất 4 Phương Án Google Maps Tọa Độ Thật (PA1 → PA4)</span>
+            <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+          </div>
+          <pre><code>python3 ~/.gemini/config/skills/bds-edit/scripts/render_all_4_methods.py</code></pre>
+        </div>
+
+        <div class="cmd-box" style="margin-top:10px;">
+          <div class="cmd-header">
+            <span class="cmd-title">2. Kết xuất 5 Video Bối Cảnh Kết Hợp (Google Maps × Khoanh Lô 3D × Chị Hiền Hạ Long Xanh)</span>
+            <button type="button" class="copy-cmd-btn">Copy lệnh</button>
+          </div>
+          <pre><code>python3 ~/.gemini/config/skills/bds-edit/scripts/render_halong_xanh_5_combos.py</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script src="assets/skill_live_data.js?v=20261031"></script>
+  <script src="assets/manifest.js?v=20261031"></script>
+  <script src="assets/hub.js?v=20261031"></script>
+</body>
+</html>

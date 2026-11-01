@@ -188,6 +188,28 @@ window.HUB = {
       stage: "buoc4",
       icon: "🏛️",
       q: "Kỹ năng Edit Video BĐS (Mẫu 01 Chị Bùi Thị Hiền — Vinhomes Hạ Long Xanh): Lọc vấp 100%, Phụ đề 5B, 0% Meta-Label, Whip-Snap 0.28s & 4 Khuôn Motion BĐS"
+    },
+    {
+      id: "ung-dung-ai-video-bds",
+      file: "16-ung-dung-ai-video-bds.html",
+      group: "ref",
+      n: "16",
+      title: "Bộ Kỹ Năng BĐS Toàn Diện V5.0 (12 Trụ Cột M1→M12 • Bản Đồ Tên Tỉnh • Khoanh Lô 3D)",
+      short: "Bộ Kỹ Năng BĐS V5.0",
+      stage: "motion",
+      icon: "🛰️",
+      q: "Trọn bộ 12 Trụ Cột AI Video Bất Động Sản V5.0 (M1→M12): Bản đồ hiện tên các tỉnh & số phút đi lại, Không có Flycam tự đo trên Google Maps, Khoanh lô 3D, 35 Kiểu Chữ Luxury & 2 Video 30s Khóa 30 Ngày Làm Nội Dung"
+    },
+    {
+      id: "google-maps-khoanh-lo-bds",
+      file: "17-google-maps-khoanh-lo-bds.html",
+      group: "ref",
+      n: "17",
+      title: "Google Maps Tọa Độ Thật × Khoanh Lô 3D & Bản Đồ Tên Tỉnh V5.0 (Hạ Long Xanh)",
+      short: "Google Maps × Khoanh Lô 3D",
+      stage: "motion",
+      icon: "🗺️",
+      q: "4 Phương án Google Maps Tọa Độ Thật (PA1→PA4) + Bản đồ Địa lý Sáng rõ hiện tên các tỉnh (M12 V5.0) & 5 Video Kết Hợp Thực Chiến tại Vinhomes Hạ Long Xanh"
     }
   ]
 };

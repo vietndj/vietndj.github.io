@@ -1,24 +1,24 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 29/10/2026 13:49:25
+ * Sinh tự động bởi sync_videoai.py vào lúc: 01/11/2026 11:09:05
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "29/10/2026 13:49:25",
-  "last_synced_iso": "2026-10-29T13:49:25.019914",
+  "last_synced_formatted": "01/11/2026 11:09:05",
+  "last_synced_iso": "2026-11-01T11:09:05.829840",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
     "sfx_presets_count": 16,
     "profiles_count": 5,
     "presets_count": 8,
-    "compositions_count": 26,
+    "compositions_count": 27,
     "components_count": 22,
-    "scripts_count": 81,
-    "skills_count": 9,
+    "scripts_count": 96,
+    "skills_count": 8,
     "studios_count": 22,
-    "evolution_entries_count": 17,
+    "evolution_entries_count": 18,
     "ai_hooks_count": 20
   },
   "ai_hooks": [
@@ -1624,7 +1624,7 @@ window.SKILL_LIVE_DATA = {
         "slug": "studio-chon-style-tong-hop.html",
         "order": 8,
         "icon": "🎛️",
-        "title": "Tổng Đài Chọn Chữ (35 Styles) • Chọn Style 2 Bên Trước–Sau (10 Layouts) • Chọn Animation Text",
+        "title": "Bộ Chọn 7 Kiểu Chuẩn Mobile V2 (5B-R Zero-Strikethrough) — FEDU Video AI",
         "badge": "Auto-Detected Studio",
         "badge_class": "motion",
         "desc": "Phòng Studio tương tác tự động phát hiện từ studio_chon_style_tong_hop.html."
@@ -1639,6 +1639,35 @@ window.SKILL_LIVE_DATA = {
       }
     ],
     "entries": [
+      {
+        "id": "bds-edit-v5-0-master-suite-12-modules-30ngay-showcase",
+        "date": "01/11/2026",
+        "title": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện V5.0 (12 Trụ Cột M1→M12 • Bản Đồ Hiện Tên Tỉnh • Không Flycam Tự Đo Google Maps • 2 Video 30s Khóa 30 Ngày Làm Nội Dung)",
+        "step_target": [
+          "buoc-3"
+        ],
+        "source_thread": "5f4a56ac-ff2f-47af-98a7-327ab4d164de",
+        "what_title": "Trọn Bộ 12 Trụ Cột BĐS V5.0 (M1→M12), 5 Combo Hạ Long Xanh & 2 Video 30s Giới Thiệu Khóa 30 Ngày Làm Nội Dung",
+        "why_title": "Vì Sao Anh Chị Làm BĐS Chỉ Cần Nói Hoặc Gõ Tiếng Việt Trên Gemini Mà Không Cần Nhớ Kỹ Thuật?",
+        "how_title": "Lệnh Gọi Nhanh Trong Antigravity & Truy Cập Chuyên Trang BĐS V5.0",
+        "what": "Hợp nhất toàn bộ <strong>12 Trụ Cột AI Bất Động Sản V5.0 (<code>M1</code> &rarr; <code>M12</code>)</strong> đã hội thảo cùng <strong>Cố vấn 2 (<code>CLAUDE2 Opus 5.5</code>)</strong>:<br/>1) <strong>Trụ cột M12 (Bản Đồ Địa Lý Sáng Rõ Hiện Tên Các Tỉnh &amp; Vòng Cung 3D):</strong> Hợp nhất 3 lớp Google Maps, đóng dấu trực tiếp tên các tỉnh lân cận (<code>QUẢNG NINH, HẢI PHÒNG, HẢI DƯƠNG, BẮC GIANG...</code>) kèm vòm cung thời gian di chuyển thật qua OSRM GPS (<code>Hà Nội 75P</code>, <code>Hải Phòng 28P</code>, <code>Vân Đồn 48P</code>).<br/>2) <strong>Có Flycam &amp; Không Có Flycam:</strong> Nếu không có Flycam, công cụ tự tìm vị trí trên Google Maps, chụp ảnh vệ tinh nét cao, chia lưới trắc địa đo chính xác từng lô góc (<code>355m² &bull; 365m² &bull; 706m²</code>) sát mép vỉa hè, tự dựng khối 3D và tự vẽ đường giao thông GPS.<br/>3) <strong>2 Video 30 Giây Giới Thiệu Học Phần AI BĐS — Khóa 30 Ngày Làm Nội Dung (<code>V3.1 v03 &amp; v04</code>) &amp; 3 Phương Án Bài Viết Facebook:</strong> Xem trọn bộ tại <a href=\"16-ung-dung-ai-video-bds.html\"><strong>Chuyên trang 16: Bộ Kỹ Năng BĐS V5.0 &rarr;</strong></a> và <a href=\"17-google-maps-khoanh-lo-bds.html\"><strong>Chuyên trang 17: Google Maps &times; Khoanh Lô 3D &rarr;</strong></a>.",
+        "why": "Mọi kỹ thuật khó nhất (dựng bản đồ hiện tên tỉnh, khoanh ranh giới 2 phân khu, đo diện tích lô góc, vẽ đường đi GPS, cắt đoạn nói vấp 12ms) đều đã được đóng gói sẵn trên <strong>Gemini</strong>. Anh chị làm BĐS hoàn toàn không phải nhớ thao tác kỹ thuật mà chỉ tập trung nói cho tốt và chia sẻ kinh nghiệm thực tế của mình về mảnh đất đó.",
+        "how_cmd": "EDIT BDS | KHOANH LO DAT 3D | EARTH ZOOM BDS | VONG CUNG MAP BDS: [Tên dự án] đi [4 điểm]",
+        "studio_file": null,
+        "preview_images": [
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/work_30ngay_bds_showcase/qa_V3_PA2_11beats.jpg",
+            "web_src": "assets/bds-edit-v5-0-master-suite-12-modules-30ngay-showcase/qa_V3_PA2_11beats.jpg",
+            "caption": "Bảng Kiểm Định 11 Nhịp Cắt Nhanh (30.0s) — Phương Án 2 V3.1 (Khuyến nghị CLAUDE2): Hạ Long Xanh Zoom Ra Cả Vùng • Bản Đồ Hiện Tên Tỉnh • Không Có Flycam Tự Đo Google Maps • 3 Màn Hình Chat"
+          },
+          {
+            "src": "/Users/vietmac/Documents/CODE/AI VIDEO EDIT/work_30ngay_bds_showcase/qa_V3_PA1_11beats.jpg",
+            "web_src": "assets/bds-edit-v5-0-master-suite-12-modules-30ngay-showcase/qa_V3_PA1_11beats.jpg",
+            "caption": "Bảng Kiểm Định 11 Nhịp Cắt Nhanh (30.0s) — Phương Án 1 V3.1: Mở Màn Bằng 3 Màn Hình Chat Gõ Lệnh Tiếng Việt -> Bung Ngay Địa Điểm & Bản Đồ 3D"
+          }
+        ],
+        "local_videos": []
+      },
       {
         "id": "mau03-higgsfield-v7-1-master-dual-aspect-3-templates-packaging",
         "date": "26/10/2026",
@@ -2896,11 +2925,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "V3.4 CORE",
       "desc": "Tự động cắt dựng video Talking-Head V3, OpenCV Mockup, B-Roll Hot-Swap, Logo & Outro 2 tầng & Remotion 60fps.",
       "path": "/Users/vietmac/.gemini/config/skills/auto-edit-video/SKILL.md",
-      "size": 15298,
-      "size_formatted": "14.9 KB",
-      "lines_count": 148,
-      "mtime": 1793130090.2075186,
-      "mtime_formatted": "28/10/2026 02:41",
+      "size": 19650,
+      "size_formatted": "19.2 KB",
+      "lines_count": 172,
+      "mtime": 1793383278.5760932,
+      "mtime_formatted": "31/10/2026 01:01",
       "headers": [
         "1. NGUYÊN TẮC CỐT LÕI & CHẾ ĐỘ MẶC ĐỊNH V3 KHÔNG HỎI NHIỀU (ZERO-FRICTION MFX V3.2 DEFAULT)",
         "2. AUTO-EDIT V3: PRO TALKING-HEAD STUDIO (QUY TRÌNH 2-CHẠM)",
@@ -2908,7 +2937,8 @@ window.SKILL_LIVE_DATA = {
         "4. PHONG CÁCH MỞ RỘNG (V1/V2)",
         "5. BỘ CÔNG CỤ & TÀI NGUYÊN",
         "6. GỌI NHANH QUA MCP `viet-tools` & CẦU NỐI HYBRID",
-        "7. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ 0 MA SÁT LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)"
+        "7. CƠ CHẾ TỰ ĐỘNG ĐỒNG BỘ 0 MA SÁT LÊN `videoai.fedu.vn` (`ZERO-FRICTION AUTO-EVOLVE`)",
+        "🚨 CỔNG BẮT BUỘC V2.0: BUNG HTML PRE-EDIT DEMO TRƯỚC KHI RENDER SÂU & PHỤ ĐỀ 5B-R ZERO-STRIKETHROUGH"
       ],
       "status": "ACTIVE"
     },
@@ -2935,35 +2965,15 @@ window.SKILL_LIVE_DATA = {
       "badge": "3 TEMPLATES V7.1",
       "desc": "Hệ thống 3 Template Motion Graphic 30fps V7.1 (Mẫu 01 Paage 70s, Mẫu 02 Adwave 61s, Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16): 12 Nguyên lý Vật lý, Dừng nhạc 1.60s mở màn hình Điểm Chính <ZeroNoisePillarScreen30 />, Khung B-Roll vuông đa cảnh <MultiSquareBrollStrip30 />, 0% Zoom mặt học viên (R_B20d) & render_template.py.",
       "path": "/Users/vietmac/.gemini/config/skills/motion/SKILL.md",
-      "size": 18506,
-      "size_formatted": "18.1 KB",
+      "size": 17464,
+      "size_formatted": "17.1 KB",
       "lines_count": 94,
-      "mtime": 1793001405.1960132,
-      "mtime_formatted": "26/10/2026 14:56",
+      "mtime": 1793436485.6553352,
+      "mtime_formatted": "31/10/2026 15:48",
       "headers": [
         "1. BA LUẬT VÀNG, BẢNG 3 TEMPLATE ĐÓNG GÓI & MANTRA ĐỊNH TUYẾN BỐI CẢNH (0 MA SÁT)",
         "2. TÁM CHUẨN KIẾN TRÚC BẮT BUỘC CỦA MOTION ENGINE V7.1",
         "3. CHU TRÌNH KIỂM ĐỊNH 4 MỐC THỜI ĐIỂM (`T0 -> T1 -> T2 -> T3`) & GIAO HÀNG TELEGRAM TỰ ĐỘNG"
-      ],
-      "status": "ACTIVE"
-    },
-    "fedu-media-pipeline": {
-      "id": "fedu-media-pipeline",
-      "name": "FEDU Media Pipeline (Tổng Thể)",
-      "badge": "PIPELINE ORCHESTRATOR",
-      "desc": "Dây chuyền tổng thể sản xuất video đa tầng FEDU từ kịch bản, ảnh nhân bản đến Remotion 60fps.",
-      "path": "/Users/vietmac/.gemini/config/plugins/fedu-media-studio/skills/fedu-media-pipeline/SKILL.md",
-      "size": 3215,
-      "size_formatted": "3.1 KB",
-      "lines_count": 48,
-      "mtime": 1792899164.3627465,
-      "mtime_formatted": "25/10/2026 10:32",
-      "headers": [
-        "1. Sơ đồ phối hợp liên hoàn",
-        "2. Bảng giao việc",
-        "3. Thứ tự bắt buộc",
-        "4. Cầu nối Hybrid Edit & Motion",
-        "5. Phối hợp CLAUDE2 viết code `.TSX`"
       ],
       "status": "ACTIVE"
     },
@@ -2973,35 +2983,37 @@ window.SKILL_LIVE_DATA = {
       "badge": "SPA NICHE PACK V10",
       "desc": "Gói đóng gói chuyên biệt cho chủ đề Spa/Thẩm mỹ (Gọi tự nhiên: 'Hãy edit video sau theo phong cách spa' hoặc 'EDIT SPA' — Whip-Snap Zoom 0.28s khớp nhịp lấy hơi, Logo chỉ ở CTA & Outro, Atlas 2D hội ý CLAUDE2, Trước-Sau nền trắng #F5F2EB).",
       "path": "/Users/vietmac/.gemini/config/skills/spa-edit/SKILL.md",
-      "size": 6271,
-      "size_formatted": "6.1 KB",
-      "lines_count": 68,
-      "mtime": 1793009372.263715,
-      "mtime_formatted": "26/10/2026 17:09",
+      "size": 13661,
+      "size_formatted": "13.3 KB",
+      "lines_count": 118,
+      "mtime": 1793436485.6560779,
+      "mtime_formatted": "31/10/2026 15:48",
       "headers": [
         "🗣️ 0. CÁCH GỌI TỰ NHIÊN CHỈ VỚI 1 VIDEO QUAY ĐIỆN THOẠI (0 MA SÁT)",
         "🔄 1. QUY TRÌNH 2 PHA SIÊU TIẾT KIỆM TOKEN (`--plan --quiet-json` ➔ CONFIRM ➔ `--render --quiet-json`)",
-        "🔥 2. NĂM TIÊU CHUẨN CỐT LÕI ĐÃ ĐÓNG BĂNG TRONG ENGINE `V10 MASTER`"
+        "🔥 2. NĂM TIÊU CHUẨN CỐT LÕI ĐÃ ĐÓNG BĂNG TRONG ENGINE `V10 MASTER`",
+        "🚨 CỔNG BẮT BUỘC V2.0: BUNG HTML PRE-EDIT DEMO TRƯỚC KHI RENDER SÂU & PHỤ ĐỀ 5B-R ZERO-STRIKETHROUGH",
+        "🏛️ 3. QUY CHUẨN ĐÓNG GÓI MONOCHROME LUXURY SERIF V13 (HYBRID TYPOGRAPHY 0.2S READABILITY & ZERO ASPECT-RATIO DISTORTION)"
       ],
       "status": "ACTIVE"
     },
     "bds-edit": {
       "id": "bds-edit",
-      "name": "Kỹ năng Edit Video Bất Động Sản (BDS-Edit V1.0 Master — Mẫu 01 Chị Bùi Thị Hiền Vinhomes Hạ Long Xanh)",
-      "badge": "BDS NICHE PACK V1.0",
-      "desc": "Gói đóng gói chuyên biệt cho ngành Bất Động Sản (Gọi tự nhiên: 'Hãy edit video sau theo phong cách bất động sản' hoặc 'EDIT BDS' — Lọc vấp 100% & Công thức quay 3V+2 Giây, Phụ đề 5B X-Height 1:1, 0% Meta-Label, Mở đầu STYLE-17 + La bàn phát sáng, Whip-Snap Zoom 0.28s & 4 Khuôn Motion BĐS).",
+      "name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "badge": "BDS NICHE PACK V5.0",
+      "desc": "Trọn bộ 12 Trụ Cột AI Bất Động Sản V5.0 (M1→M12): Bản đồ Địa lý Sáng rõ hiện tên các tỉnh xung quanh & Vòng cung số phút di chuyển (M12), Khoanh vùng lô đất 3D trên Flycam & Không có Flycam tự tìm/đo đất trên Google Maps (M2/M3), 5 Combo Hạ Long Xanh 4.110 ha, Talking-Head Lọc Vấp 12ms + Whip-Snap 0.28s (M1), 35 Kiểu Chữ Luxury (M4), X-Ray 3D Villa, Phong Thủy & Đòn Bẩy Tài Chính 60fps (M7→M11).",
       "path": "/Users/vietmac/.gemini/config/skills/bds-edit/SKILL.md",
-      "size": 17431,
-      "size_formatted": "17.0 KB",
-      "lines_count": 150,
-      "mtime": 1793256265.860057,
-      "mtime_formatted": "29/10/2026 13:44",
+      "size": 21698,
+      "size_formatted": "21.2 KB",
+      "lines_count": 138,
+      "mtime": 1793489617.4428375,
+      "mtime_formatted": "01/11/2026 06:33",
       "headers": [
-        "🗣️ 0. CÁCH KÍCH HOẠT TỰ NHIÊN & MANTRA (0 MA SÁT)",
-        "🧠 1. TÂM LÝ HỌC NHÀ ĐẦU TƯ BĐS & ĐỐI CHIẾU CHUYÊN SÂU `BDS-EDIT` VS `SPA-EDIT`",
-        "🛡️ 2. NĂM LUẬT SẮT BẤT BIẾN CỦA `BDS-EDIT` V1.0 (ĐÃ CHỐT CÙNG ANH VIỆT)",
-        "🔄 3. QUY TRÌNH 6 BƯỚC THỰC THI CHUẨN `BDS-EDIT`",
-        "📂 4. CẤU TRÚC THƯ MỤC SKILL `BDS-EDIT`"
+        "🧭 0. BẢNG ĐỊNH TUYẾN 6 TRỤ CỘT BẤT ĐỘNG SẢN (`M1..M6`) & MANTRA KÍCH HOẠT TỰ NHIÊN",
+        "🧠 1. TÂM LÝ HỌC NHÀ ĐẦU TƯ BĐS & ĐỐI CHIẾU `BDS-EDIT` VS `SPA-EDIT`",
+        "🛡️ 2. NĂM LUẬT SẮT BẤT BIẾN & QUY TRÌNH 6 BƯỚC THỰC THI `BDS-EDIT` (TRỤ CỘT `M1`)",
+        "📂 4. CẤU TRÚC THƯ MỤC SKILL `BDS-EDIT` V3.0 MASTER SUITE & LỆNH THỰC THI `M2` / `M3`",
+        "🚨 CỔNG BẮT BUỘC V2.0: BUNG HTML PRE-EDIT DEMO TRƯỚC KHI RENDER SÂU & PHỤ ĐỀ 5B-R ZERO-STRIKETHROUGH"
       ],
       "status": "ACTIVE"
     },
@@ -3011,11 +3023,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "FLOWCHART 60FPS",
       "desc": "Tạo sơ đồ giải thích quy trình 60fps kèm Phụ đề 5B, 4 lớp SFX & Lồng tiếng Khóa Vi Nhịp 4 Cổng Verifier (Mặc định: Giọng Gemini TTS; Thêm 'giọng của tôi': Lấy giọng thật qua AI Studio).",
       "path": "/Users/vietmac/.gemini/config/skills/so-do-motion/SKILL.md",
-      "size": 7562,
-      "size_formatted": "7.4 KB",
+      "size": 7077,
+      "size_formatted": "6.9 KB",
       "lines_count": 90,
-      "mtime": 1792899090.3836439,
-      "mtime_formatted": "25/10/2026 10:31",
+      "mtime": 1793436485.6569495,
+      "mtime_formatted": "31/10/2026 15:48",
       "headers": [
         "🗣️ 0. TÊN KỸ NĂNG & CÁCH GỌI TỰ NHIÊN (2 CHẾ ĐỘ GIỌNG ĐỌC)",
         "🏗️ 1. KIẾN TRÚC 2 BƯỚC & VÒNG LẶP TỰ HỌC 4 CỔNG VERIFIER",
@@ -3030,11 +3042,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "AI HOOK ROUTER V3.0",
       "desc": "Hệ thống Smart AI Hook Router v3.0 (Zero-Collision Registry hooks.d/ + register_hook.py khóa nguyên tử fcntl.flock) tự động quét 3 giây đầu video gốc và kết xuất 20 chế độ Hook (Xem đầy đủ tại 10-bang-ai-hook.html).",
       "path": "/Users/vietmac/.gemini/config/skills/ai-hook/SKILL.md",
-      "size": 21457,
-      "size_formatted": "21.0 KB",
+      "size": 20843,
+      "size_formatted": "20.4 KB",
       "lines_count": 140,
-      "mtime": 1793130158.4912035,
-      "mtime_formatted": "28/10/2026 02:42",
+      "mtime": 1793436485.6562972,
+      "mtime_formatted": "31/10/2026 15:48",
       "headers": [
         "0.0 Quy Tắc Cứng Toàn Cục: Mặc Định 100% Google Flow `Omni 1.1 Flash` (0% Veo 3, 0% Tự Render OpenCV)",
         "0.1 Quy Trình Đóng Gói Hook Mới Chống Ghi Đè (`Zero-Collision Modular Registry v3.0` — Chuẩn CLAUDE2 `claude_pro_cc944965`)",
@@ -3052,11 +3064,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "CHECKMOTION V7.1",
       "desc": "Kiểm toán chuyển động từng giây, 5 Trụ cột P1..P5, Độc bản B-Roll dHash (B11), Màn hình dừng nhạc 1.6s (B12/B18), Toán học đọc chữ Tiếng Việt (B16), Phân tầng nhún L0..L3 (B17), Neo con trỏ anchorToRect30 (B19), Khung B-Roll vuông & 0% Zoom mặt học viên R_B20d (B20), và Xuất Bản Thiết Kế 12 Nhịp (B21).",
       "path": "/Users/vietmac/.gemini/config/skills/checkmotion/SKILL.md",
-      "size": 17476,
-      "size_formatted": "17.1 KB",
+      "size": 16398,
+      "size_formatted": "16.0 KB",
       "lines_count": 88,
-      "mtime": 1792987610.05663,
-      "mtime_formatted": "26/10/2026 11:06",
+      "mtime": 1793436485.6557672,
+      "mtime_formatted": "31/10/2026 15:48",
       "headers": [
         "1. MỤC TIÊU, MANTRA KÍCH HOẠT & BẢNG PHÂN ĐỊNH 4 MỐC THỜI ĐIỂM KIỂM TOÁN (`T0 -> T1 -> T2 -> T3`)",
         "2. CHI TIẾT 5 TẦNG KIỂM TOÁN TẤT ĐỊNH (`P1..P5` & `B6..B21`)",
@@ -5883,6 +5895,16 @@ window.SKILL_LIVE_DATA = {
       "desc": "============================================================================"
     },
     {
+      "name": "ThamThoMotionPoster06.tsx",
+      "kind": "composition",
+      "size": 18615,
+      "size_formatted": "18.2 KB",
+      "lines": 621,
+      "mtime": 1793364220.5890508,
+      "mtime_formatted": "30/10/2026 19:43",
+      "desc": "Remotion Composition React Component 60fps"
+    },
+    {
       "name": "VietBrandPinterestGold.tsx",
       "kind": "composition",
       "size": 60279,
@@ -6252,6 +6274,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "build_motion_showcase.py"
     },
     {
+      "name": "generate_pre_edit_demo.py",
+      "skill_id": "auto-edit-video",
+      "skill_name": "Auto Edit Video V3 (Talking-Head Studio)",
+      "size": 3980,
+      "size_formatted": "3.9 KB",
+      "lines": 72,
+      "mtime": 1793271975.654685,
+      "mtime_formatted": "29/10/2026 18:06",
+      "desc": "Pre-Edit Interactive HTML Demo Generator (V2.0 — Co-designed with CLAUDE2 Opus 5.5)"
+    },
+    {
       "name": "generate_studio.py",
       "skill_id": "auto-edit-video",
       "skill_name": "Auto Edit Video V3 (Talking-Head Studio)",
@@ -6283,6 +6316,17 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792564981.4453545,
       "mtime_formatted": "21/10/2026 13:43",
       "desc": "mfx_v3_universal_engine.py — Động Cơ Kết Xuất Video MFX V3.2 (2-Pass Low-RAM Streaming)"
+    },
+    {
+      "name": "native_broll_motion.py",
+      "skill_id": "auto-edit-video",
+      "skill_name": "Auto Edit Video V3 (Talking-Head Studio)",
+      "size": 10142,
+      "size_formatted": "9.9 KB",
+      "lines": 259,
+      "mtime": 1793440758.5987725,
+      "mtime_formatted": "31/10/2026 16:59",
+      "desc": "ANTIGRAVITY NATIVE IMAGE -> CINEMATIC MOTION VIDEO ENGINE (FALLBACK KHI KHÔNG CÓ GOOGLE FLOW)"
     },
     {
       "name": "profiles.py",
@@ -6475,11 +6519,11 @@ window.SKILL_LIVE_DATA = {
       "name": "render_template.py",
       "skill_id": "motion",
       "skill_name": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "size": 3087,
-      "size_formatted": "3.0 KB",
-      "lines": 78,
-      "mtime": 1793002566.2836692,
-      "mtime_formatted": "26/10/2026 15:16",
+      "size": 3482,
+      "size_formatted": "3.4 KB",
+      "lines": 88,
+      "mtime": 1793437982.921006,
+      "mtime_formatted": "31/10/2026 16:13",
       "desc": "CLI ĐIỀU PHỐI HỢP NHẤT 3 TEMPLATE MOTION GRAPHIC (V7.1 — HỘI Ý CÙNG CLAUDE OPUS 5.5)"
     },
     {
@@ -6527,6 +6571,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "Bước 5 — Kiểm định Tất Định Sản Phẩm Motion Graphic V3 (verify_motion_deliverable.py)"
     },
     {
+      "name": "voice_gate.py",
+      "skill_id": "motion",
+      "skill_name": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "size": 5517,
+      "size_formatted": "5.4 KB",
+      "lines": 135,
+      "mtime": 1793440127.4171617,
+      "mtime_formatted": "31/10/2026 16:48",
+      "desc": "voice_gate.py — Cổng Kiểm Định Văn Phong Trước Khi Render (Pre-Render Voice Gate)"
+    },
+    {
       "name": "content_brain.py",
       "skill_id": "spa-edit",
       "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
@@ -6549,6 +6604,17 @@ window.SKILL_LIVE_DATA = {
       "desc": "SPA-EDIT V10 SYSTEM DOCTOR — KIỂM TRA SỨC KHỎE MÔI TRƯỜNG CÀI ĐẶT (0 TOKEN)"
     },
     {
+      "name": "fedu_ota_client.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "size": 6441,
+      "size_formatted": "6.3 KB",
+      "lines": 153,
+      "mtime": 1793440125.1532474,
+      "mtime_formatted": "31/10/2026 16:48",
+      "desc": "FEDU OTA AUTO-UPDATER CLIENT (ZERO-FRICTION SELF-UPDATE ON RUN)"
+    },
+    {
       "name": "interactive_wizard.py",
       "skill_id": "spa-edit",
       "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
@@ -6563,12 +6629,23 @@ window.SKILL_LIVE_DATA = {
       "name": "spa_edit_cli.py",
       "skill_id": "spa-edit",
       "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "size": 74729,
-      "size_formatted": "73.0 KB",
-      "lines": 1541,
-      "mtime": 1793009264.3776498,
-      "mtime_formatted": "26/10/2026 17:07",
+      "size": 75275,
+      "size_formatted": "73.5 KB",
+      "lines": 1552,
+      "mtime": 1793437968.871974,
+      "mtime_formatted": "31/10/2026 16:12",
       "desc": "SPA & DENTAL-MEDICAL VIDEO EDIT CLI V10 MASTER — STANDALONE PORTABLE ENGINE FOR STUDENTS"
+    },
+    {
+      "name": "student_onboarding.py",
+      "skill_id": "spa-edit",
+      "skill_name": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "size": 10864,
+      "size_formatted": "10.6 KB",
+      "lines": 233,
+      "mtime": 1793440713.7964933,
+      "mtime_formatted": "31/10/2026 16:58",
+      "desc": "STUDENT ONBOARDING & UNIFIED PROFILE MANAGER (`~/.mfx_v3/student_profile/`)"
     },
     {
       "name": "verify_6gates.py",
@@ -6593,15 +6670,114 @@ window.SKILL_LIVE_DATA = {
       "desc": "VERIFY READABILITY, COGNITIVE LOAD, CAMERA STABILITY, VERBATIM TRANSCRIPT, EYE-ANCHOR LOCK & VOICE GATE (7-GATE AUDITOR V10)"
     },
     {
+      "name": "bds_google_maps_arc_engine.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 62401,
+      "size_formatted": "60.9 KB",
+      "lines": 1483,
+      "mtime": 1793489504.5334108,
+      "mtime_formatted": "01/11/2026 06:31",
+      "desc": "============================================================================="
+    },
+    {
+      "name": "bds_lot_engine.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 43766,
+      "size_formatted": "42.7 KB",
+      "lines": 967,
+      "mtime": 1793445846.5291574,
+      "mtime_formatted": "31/10/2026 18:24",
+      "desc": "BDS 3D LOT TRACKING & VOLUMETRIC MOTION GRAPHICS ENGINE V1.2 (ULTRA-FAST ROI & MIPMAP BLOOM)"
+    },
+    {
+      "name": "build_posters_and_ab_matrix.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 39094,
+      "size_formatted": "38.2 KB",
+      "lines": 695,
+      "mtime": 1793383233.93142,
+      "mtime_formatted": "31/10/2026 01:00",
+      "desc": "Poster-First Motion Cutaway Engine V3.0 — Step B1..B4:"
+    },
+    {
       "name": "cut_stumbles_vad.py",
       "skill_id": "bds-edit",
-      "skill_name": "Kỹ năng Edit Video Bất Động Sản (BDS-Edit V1.0 Master — Mẫu 01 Chị Bùi Thị Hiền Vinhomes Hạ Long Xanh)",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
       "size": 12118,
       "size_formatted": "11.8 KB",
       "lines": 278,
       "mtime": 1793256317.6635945,
       "mtime_formatted": "29/10/2026 13:45",
       "desc": "cut_stumbles_vad.py — Bộ lọc tự động phát hiện & cắt đoạn nói vấp, ngập ngừng (\"ờ...\", \"à...\"),"
+    },
+    {
+      "name": "map_pyramid_core.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 17130,
+      "size_formatted": "16.7 KB",
+      "lines": 358,
+      "mtime": 1793438552.389396,
+      "mtime_formatted": "31/10/2026 16:22",
+      "desc": "Core Google Maps Retina Multi-Scale Pyramid & Exact Geo-Projection Engine"
+    },
+    {
+      "name": "render_5_bds_market_demos.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 52067,
+      "size_formatted": "50.8 KB",
+      "lines": 1025,
+      "mtime": 1793447541.5501485,
+      "mtime_formatted": "31/10/2026 18:52",
+      "desc": "============================================================================="
+    },
+    {
+      "name": "render_all_4_methods.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 37743,
+      "size_formatted": "36.9 KB",
+      "lines": 830,
+      "mtime": 1793438555.3523521,
+      "mtime_formatted": "31/10/2026 16:22",
+      "desc": "Master Renderer for 4 Real Estate (BDS) Google Maps Effect Methods"
+    },
+    {
+      "name": "render_curved_traffic_arcs_demos.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 40661,
+      "size_formatted": "39.7 KB",
+      "lines": 957,
+      "mtime": 1793453562.178542,
+      "mtime_formatted": "31/10/2026 20:32",
+      "desc": "============================================================================="
+    },
+    {
+      "name": "render_halong_xanh_5_combos.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 68259,
+      "size_formatted": "66.7 KB",
+      "lines": 1667,
+      "mtime": 1793464202.7952378,
+      "mtime_formatted": "31/10/2026 23:30",
+      "desc": "============================================================================="
+    },
+    {
+      "name": "render_halong_xanh_google_maps_demos.py",
+      "skill_id": "bds-edit",
+      "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "size": 44552,
+      "size_formatted": "43.5 KB",
+      "lines": 1024,
+      "mtime": 1793456852.4170206,
+      "mtime_formatted": "31/10/2026 21:27",
+      "desc": "============================================================================="
     },
     {
       "name": "build_diagram_motion_60fps.py",
@@ -6646,6 +6822,17 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1792742212.9806004,
       "mtime_formatted": "23/10/2026 14:56",
       "desc": "verifier_4gates.py"
+    },
+    {
+      "name": "voice_gate.py",
+      "skill_id": "so-do-motion",
+      "skill_name": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "size": 5517,
+      "size_formatted": "5.4 KB",
+      "lines": 135,
+      "mtime": 1793440127.4229794,
+      "mtime_formatted": "31/10/2026 16:48",
+      "desc": "voice_gate.py — Cổng Kiểm Định Văn Phong Trước Khi Render (Pre-Render Voice Gate)"
     },
     {
       "name": "ai_hook_engine.py",
@@ -6706,11 +6893,11 @@ window.SKILL_LIVE_DATA = {
       "name": "earth_zoom_master_v2.py",
       "skill_id": "ai-hook",
       "skill_name": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "size": 26812,
+      "size": 26806,
       "size_formatted": "26.2 KB",
       "lines": 664,
-      "mtime": 1792907047.366937,
-      "mtime_formatted": "25/10/2026 12:44",
+      "mtime": 1793436306.6044064,
+      "mtime_formatted": "31/10/2026 15:45",
       "desc": "Earth Zoom Master V2 Engine (`earth_zoom_master_v2.py`) — Chuẩn Hóa Từ Luồng 7ef7b16f-5b2b-46a2-bbe4-b4f587205229"
     },
     {
@@ -7090,36 +7277,228 @@ window.SKILL_LIVE_DATA = {
   ],
   "history": [
     {
-      "name": "scripts/cut_stumbles_vad.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video Bất Động Sản (BDS-Edit V1.0 Master — Mẫu 01 Chị Bùi Thị Hiền Vinhomes Hạ Long Xanh)",
-      "mtime": 1793256317.6635945,
-      "mtime_formatted": "29/10/2026 13:45",
-      "detail": "cut_stumbles_vad.py — Bộ lọc tự động phát hiện & cắt đoạn nói vấp, ngập ngừng (\"ờ...\", \"à...\"),"
+      "name": "evolution_log.json",
+      "type": "Evolution Registry",
+      "skill": "Auto-Evolve Hub",
+      "mtime": 1793506128.9616625,
+      "mtime_formatted": "01/11/2026 11:08",
+      "detail": "18 quy chuẩn • 22 studios"
     },
     {
       "name": "bds-edit/SKILL.md",
       "type": "Markdown Spec",
-      "skill": "Kỹ năng Edit Video Bất Động Sản (BDS-Edit V1.0 Master — Mẫu 01 Chị Bùi Thị Hiền Vinhomes Hạ Long Xanh)",
-      "mtime": 1793256265.860057,
-      "mtime_formatted": "29/10/2026 13:44",
-      "detail": "150 dòng • 5 mục chính"
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793489617.4428375,
+      "mtime_formatted": "01/11/2026 06:33",
+      "detail": "138 dòng • 5 mục chính"
+    },
+    {
+      "name": "scripts/bds_google_maps_arc_engine.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793489504.5334108,
+      "mtime_formatted": "01/11/2026 06:31",
+      "detail": "============================================================================="
+    },
+    {
+      "name": "scripts/render_halong_xanh_5_combos.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793464202.7952378,
+      "mtime_formatted": "31/10/2026 23:30",
+      "detail": "============================================================================="
+    },
+    {
+      "name": "scripts/render_halong_xanh_google_maps_demos.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793456852.4170206,
+      "mtime_formatted": "31/10/2026 21:27",
+      "detail": "============================================================================="
+    },
+    {
+      "name": "scripts/render_curved_traffic_arcs_demos.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793453562.178542,
+      "mtime_formatted": "31/10/2026 20:32",
+      "detail": "============================================================================="
+    },
+    {
+      "name": "scripts/render_5_bds_market_demos.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793447541.5501485,
+      "mtime_formatted": "31/10/2026 18:52",
+      "detail": "============================================================================="
+    },
+    {
+      "name": "scripts/bds_lot_engine.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793445846.5291574,
+      "mtime_formatted": "31/10/2026 18:24",
+      "detail": "BDS 3D LOT TRACKING & VOLUMETRIC MOTION GRAPHICS ENGINE V1.2 (ULTRA-FAST ROI & MIPMAP BLOOM)"
+    },
+    {
+      "name": "scripts/native_broll_motion.py",
+      "type": "Python Script",
+      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
+      "mtime": 1793440758.5987725,
+      "mtime_formatted": "31/10/2026 16:59",
+      "detail": "ANTIGRAVITY NATIVE IMAGE -> CINEMATIC MOTION VIDEO ENGINE (FALLBACK KHI KHÔNG CÓ GOOGLE FLOW)"
+    },
+    {
+      "name": "scripts/student_onboarding.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793440713.7964933,
+      "mtime_formatted": "31/10/2026 16:58",
+      "detail": "STUDENT ONBOARDING & UNIFIED PROFILE MANAGER (`~/.mfx_v3/student_profile/`)"
+    },
+    {
+      "name": "scripts/voice_gate.py",
+      "type": "Python Script",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1793440127.4229794,
+      "mtime_formatted": "31/10/2026 16:48",
+      "detail": "voice_gate.py — Cổng Kiểm Định Văn Phong Trước Khi Render (Pre-Render Voice Gate)"
+    },
+    {
+      "name": "scripts/voice_gate.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "mtime": 1793440127.4171617,
+      "mtime_formatted": "31/10/2026 16:48",
+      "detail": "voice_gate.py — Cổng Kiểm Định Văn Phong Trước Khi Render (Pre-Render Voice Gate)"
+    },
+    {
+      "name": "scripts/fedu_ota_client.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793440125.1532474,
+      "mtime_formatted": "31/10/2026 16:48",
+      "detail": "FEDU OTA AUTO-UPDATER CLIENT (ZERO-FRICTION SELF-UPDATE ON RUN)"
+    },
+    {
+      "name": "scripts/render_all_4_methods.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793438555.3523521,
+      "mtime_formatted": "31/10/2026 16:22",
+      "detail": "Master Renderer for 4 Real Estate (BDS) Google Maps Effect Methods"
+    },
+    {
+      "name": "scripts/map_pyramid_core.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793438552.389396,
+      "mtime_formatted": "31/10/2026 16:22",
+      "detail": "Core Google Maps Retina Multi-Scale Pyramid & Exact Geo-Projection Engine"
+    },
+    {
+      "name": "scripts/render_template.py",
+      "type": "Python Script",
+      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "mtime": 1793437982.921006,
+      "mtime_formatted": "31/10/2026 16:13",
+      "detail": "CLI ĐIỀU PHỐI HỢP NHẤT 3 TEMPLATE MOTION GRAPHIC (V7.1 — HỘI Ý CÙNG CLAUDE OPUS 5.5)"
+    },
+    {
+      "name": "scripts/spa_edit_cli.py",
+      "type": "Python Script",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793437968.871974,
+      "mtime_formatted": "31/10/2026 16:12",
+      "detail": "SPA & DENTAL-MEDICAL VIDEO EDIT CLI V10 MASTER — STANDALONE PORTABLE ENGINE FOR STUDENTS"
+    },
+    {
+      "name": "so-do-motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Element Sơ Đồ Motion 60fps (Explainer Flowchart & Beat-Locked Voice)",
+      "mtime": 1793436485.6569495,
+      "mtime_formatted": "31/10/2026 15:48",
+      "detail": "90 dòng • 4 mục chính"
     },
     {
       "name": "ai-hook/SKILL.md",
       "type": "Markdown Spec",
       "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1793130158.4912035,
-      "mtime_formatted": "28/10/2026 02:42",
+      "mtime": 1793436485.6562972,
+      "mtime_formatted": "31/10/2026 15:48",
       "detail": "140 dòng • 7 mục chính"
+    },
+    {
+      "name": "spa-edit/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
+      "mtime": 1793436485.6560779,
+      "mtime_formatted": "31/10/2026 15:48",
+      "detail": "118 dòng • 5 mục chính"
+    },
+    {
+      "name": "checkmotion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "CHECKMOTION v7.1 (1-Second Motion Inventory, 5 Trụ Cột P1..P5 & 16 Cổng Tất Định B6..B21 Đa Tỷ Lệ 16:9 & 9:16)",
+      "mtime": 1793436485.6557672,
+      "mtime_formatted": "31/10/2026 15:48",
+      "detail": "88 dòng • 3 mục chính"
+    },
+    {
+      "name": "motion/SKILL.md",
+      "type": "Markdown Spec",
+      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
+      "mtime": 1793436485.6553352,
+      "mtime_formatted": "31/10/2026 15:48",
+      "detail": "94 dòng • 3 mục chính"
+    },
+    {
+      "name": "scripts/earth_zoom_master_v2.py",
+      "type": "Python Script",
+      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
+      "mtime": 1793436306.6044064,
+      "mtime_formatted": "31/10/2026 15:45",
+      "detail": "Earth Zoom Master V2 Engine (`earth_zoom_master_v2.py`) — Chuẩn Hóa Từ Luồng 7ef7b16f-5b2b-46a2-bbe4-b4f587205229"
     },
     {
       "name": "auto-edit-video/SKILL.md",
       "type": "Markdown Spec",
       "skill": "Auto Edit Video V3 (Talking-Head Studio)",
-      "mtime": 1793130090.2075186,
-      "mtime_formatted": "28/10/2026 02:41",
-      "detail": "148 dòng • 7 mục chính"
+      "mtime": 1793383278.5760932,
+      "mtime_formatted": "31/10/2026 01:01",
+      "detail": "172 dòng • 8 mục chính"
+    },
+    {
+      "name": "scripts/build_posters_and_ab_matrix.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793383233.93142,
+      "mtime_formatted": "31/10/2026 01:00",
+      "detail": "Poster-First Motion Cutaway Engine V3.0 — Step B1..B4:"
+    },
+    {
+      "name": "compositions/ThamThoMotionPoster06.tsx",
+      "type": "Remotion .TSX",
+      "skill": "Remotion Studio 60fps",
+      "mtime": 1793364220.5890508,
+      "mtime_formatted": "30/10/2026 19:43",
+      "detail": "621 dòng • Composition"
+    },
+    {
+      "name": "scripts/generate_pre_edit_demo.py",
+      "type": "Python Script",
+      "skill": "Auto Edit Video V3 (Talking-Head Studio)",
+      "mtime": 1793271975.654685,
+      "mtime_formatted": "29/10/2026 18:06",
+      "detail": "Pre-Edit Interactive HTML Demo Generator (V2.0 — Co-designed with CLAUDE2 Opus 5.5)"
+    },
+    {
+      "name": "scripts/cut_stumbles_vad.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1793256317.6635945,
+      "mtime_formatted": "29/10/2026 13:45",
+      "detail": "cut_stumbles_vad.py — Bộ lọc tự động phát hiện & cắt đoạn nói vấp, ngập ngừng (\"ờ...\", \"à...\"),"
     },
     {
       "name": "scripts/check_motion.py",
@@ -7136,198 +7515,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1793097420.0732265,
       "mtime_formatted": "27/10/2026 17:37",
       "detail": "VERIFY ROOFTOP-JUMP MASTER V6.0 (7 Deterministic Gates RJ1..RJ7)"
-    },
-    {
-      "name": "scripts/rooftop_jump_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1793097368.8746793,
-      "mtime_formatted": "27/10/2026 17:36",
-      "detail": "ROOFTOP-JUMP MASTER ENGINE V7.0 (Native 24fps + >99% Face DNA + Hollywood Action Skyfall)"
-    },
-    {
-      "name": "scripts/rooftop_jump_v3_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1793097368.8746793,
-      "mtime_formatted": "27/10/2026 17:36",
-      "detail": "ROOFTOP-JUMP MASTER ENGINE V7.0 (Native 24fps + >99% Face DNA + Hollywood Action Skyfall)"
-    },
-    {
-      "name": "scripts/mfx_v3_universal_engine.py",
-      "type": "Python Script",
-      "skill": "Render V3 (Delta Patcher & EDL Engine)",
-      "mtime": 1793079968.998484,
-      "mtime_formatted": "27/10/2026 12:46",
-      "detail": "mfx_v3_universal_engine.py — Động Cơ Kết Xuất Video MFX V3.2 (2-Pass Low-RAM Streaming)"
-    },
-    {
-      "name": "evolution_log.json",
-      "type": "Evolution Registry",
-      "skill": "Auto-Evolve Hub",
-      "mtime": 1793063202.552466,
-      "mtime_formatted": "27/10/2026 08:06",
-      "detail": "17 quy chuẩn • 22 studios"
-    },
-    {
-      "name": "scripts/jib_down_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1793059580.351594,
-      "mtime_formatted": "27/10/2026 07:06",
-      "detail": "Jib-Down Engine V4.2 (`jib_down_engine.py`) — Google Flow Omni 1.1 Flash & Zero-Blur Self-Learning Verifier"
-    },
-    {
-      "name": "scripts/verify_12_principles.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1793027274.7546406,
-      "mtime_formatted": "26/10/2026 22:07",
-      "detail": "HỆ THỐNG KIỂM ĐỊNH & VÒNG LẶP TỰ HỌC 12 NGUYÊN LÝ CHUYỂN ĐỘNG VẬT LÝ + KHỚP ÂM THANH (verify_12_principles.py)"
-    },
-    {
-      "name": "spa-edit/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1793009372.263715,
-      "mtime_formatted": "26/10/2026 17:09",
-      "detail": "68 dòng • 3 mục chính"
-    },
-    {
-      "name": "scripts/interactive_wizard.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1793009302.7756574,
-      "mtime_formatted": "26/10/2026 17:08",
-      "detail": "INTERACTIVE 0-TOKEN WIZARD CHO HỌC VIÊN SPA & NHA KHOA"
-    },
-    {
-      "name": "scripts/doctor.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1793009300.402668,
-      "mtime_formatted": "26/10/2026 17:08",
-      "detail": "SPA-EDIT V10 SYSTEM DOCTOR — KIỂM TRA SỨC KHỎE MÔI TRƯỜNG CÀI ĐẶT (0 TOKEN)"
-    },
-    {
-      "name": "scripts/spa_edit_cli.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1793009264.3776498,
-      "mtime_formatted": "26/10/2026 17:07",
-      "detail": "SPA & DENTAL-MEDICAL VIDEO EDIT CLI V10 MASTER — STANDALONE PORTABLE ENGINE FOR STUDENTS"
-    },
-    {
-      "name": "scripts/content_brain.py",
-      "type": "Python Script",
-      "skill": "Kỹ năng Edit Video cho Spa (Spa-Edit V10 Master)",
-      "mtime": 1793009106.8891118,
-      "mtime_formatted": "26/10/2026 17:05",
-      "detail": "CONTENT BRAIN V10 — ZERO-TOKEN OFFLINE TOPIC ENGINE & VIETNAMESE COMPOUND HIGHLIGHTER"
-    },
-    {
-      "name": "scripts/render_template.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1793002566.2836692,
-      "mtime_formatted": "26/10/2026 15:16",
-      "detail": "CLI ĐIỀU PHỐI HỢP NHẤT 3 TEMPLATE MOTION GRAPHIC (V7.1 — HỘI Ý CÙNG CLAUDE OPUS 5.5)"
-    },
-    {
-      "name": "motion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1793001405.1960132,
-      "mtime_formatted": "26/10/2026 14:56",
-      "detail": "94 dòng • 3 mục chính"
-    },
-    {
-      "name": "checkmotion/SKILL.md",
-      "type": "Markdown Spec",
-      "skill": "CHECKMOTION v7.1 (1-Second Motion Inventory, 5 Trụ Cột P1..P5 & 16 Cổng Tất Định B6..B21 Đa Tỷ Lệ 16:9 & 9:16)",
-      "mtime": 1792987610.05663,
-      "mtime_formatted": "26/10/2026 11:06",
-      "detail": "88 dòng • 3 mục chính"
-    },
-    {
-      "name": "scripts/render_higgsfield_template.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1792987338.555392,
-      "mtime_formatted": "26/10/2026 11:02",
-      "detail": "CLI CÔNG NGHIỆP MẪU 03 MOTION GRAPHIC — HIGGSFIELD FIGMA SHOWCASE V7.1 (44.80S / 40.00S @ 30FPS)"
-    },
-    {
-      "name": "scripts/scan_broll_faces.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1792986184.350071,
-      "mtime_formatted": "26/10/2026 10:43",
-      "detail": "SCAN B-ROLL FACES, CEILING BANDS, HARD-CUTS & BURNED SUBTITLES (CheckMotion V7.1)"
-    },
-    {
-      "name": "scripts/render_adwave_template.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1792935422.4209125,
-      "mtime_formatted": "25/10/2026 20:37",
-      "detail": "render_adwave_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)"
-    },
-    {
-      "name": "scripts/ai_hook_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792933393.369749,
-      "mtime_formatted": "25/10/2026 20:03",
-      "detail": "AI Hook Engine (ai-hook) — Hệ thống đóng gói tự động hiệu ứng Vào Cảnh Đứng Nói (Gemini × CLAUDE2)"
-    },
-    {
-      "name": "scripts/earth_zoom_omni_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792928846.7060544,
-      "mtime_formatted": "25/10/2026 18:47",
-      "detail": "Earth Zoom V5.2 Omni Whip-Snap Self-Learning Engine (CLAUDE2 Verified Architecture)"
-    },
-    {
-      "name": "scripts/timelapse_freeze_engine.py",
-      "type": "Python Script",
-      "skill": "AI Hook Studio v3.0 (Zero-Collision Modular Registry hooks.d/ & 20 Presets: rooftop-jump, earth-zoom, display-transition, hero-cam, intermission, jib-down, pantone1, sticker-transition, flycam-transition, timelapse-freeze & +10 hooks)",
-      "mtime": 1792926706.4585593,
-      "mtime_formatted": "25/10/2026 18:11",
-      "detail": "Timelapse-Freeze AI Hook Engine V2.0 (`timelapse_freeze_engine.py`)"
-    },
-    {
-      "name": "compositions/Mau02HiggsfieldFigma_30fps.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792925057.676238,
-      "mtime_formatted": "25/10/2026 17:44",
-      "detail": "17 dòng • Composition"
-    },
-    {
-      "name": "compositions/AdwaveOffline0711_30fps.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792924780.694746,
-      "mtime_formatted": "25/10/2026 17:39",
-      "detail": "15 dòng • Composition"
-    },
-    {
-      "name": "compositions/AdwaveOffline61s_V5Master.tsx",
-      "type": "Remotion .TSX",
-      "skill": "Remotion Studio 60fps",
-      "mtime": 1792924659.887512,
-      "mtime_formatted": "25/10/2026 17:37",
-      "detail": "14 dòng • Composition"
-    },
-    {
-      "name": "scripts/render_paage_template.py",
-      "type": "Python Script",
-      "skill": "Motion Studio 30fps V7.1 (3 Templates Đóng Gói: Mẫu 01 Paage 70s • Mẫu 02 Adwave 61s • Mẫu 03 Higgsfield Figma 44.8s 16:9 & 9:16)",
-      "mtime": 1792922669.718782,
-      "mtime_formatted": "25/10/2026 17:04",
-      "detail": "render_paage_template.py — Trình quản lý & kết xuất Công Nghiệp (4 Cổng)"
     }
   ]
 };

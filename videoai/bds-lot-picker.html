@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BDS 3D Lot Studio · Công Cụ Chấm Góc Lô Đất & Tái Sử Dụng 2 Mức Độ</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M7%2052.5Q6%2052.5%206%2051.5V17.3Q6%2016.3%207%2016.3H16.7Q19.2%2016.3%2020.7%2016.9Q22.3%2017.5%2023.3%2018.6Q24.2%2019.6%2024.6%2020.9Q25%2022.2%2025%2023.6V27.5Q25%2028.5%2024.9%2029.5Q24.8%2030.5%2024.5%2031.4Q24.2%2032.2%2023.8%2032.9Q23.3%2033.6%2022.5%2033.9V34.2Q23.3%2034.5%2023.8%2035.2Q24.3%2035.8%2024.7%2036.6Q25%2037.4%2025.1%2038.2Q25.2%2039.1%2025.2%2039.9V44.6Q25.2%2046.1%2024.9%2047.5Q24.5%2048.9%2023.6%2050Q22.6%2051.1%2021%2051.8Q19.5%2052.5%2017%2052.5ZM14%2030.7H15.7Q16.7%2030.7%2017%2030.2Q17.3%2029.7%2017.3%2029V24.6Q17.3%2024.1%2017%2023.6Q16.6%2023.1%2015.8%2023.1H14ZM14%2045.7H15.8Q16.7%2045.7%2017%2045.2Q17.3%2044.7%2017.3%2044.2V38.9Q17.3%2038.2%2017%2037.7Q16.6%2037.2%2015.6%2037.2H14ZM37.2%2053Q34.4%2053%2032.6%2052.2Q30.8%2051.5%2029.8%2050.2Q28.8%2049%2028.4%2047.4Q28%2045.9%2028%2044.2V40.7Q28%2039.6%2029%2039.6H34.8Q35.8%2039.6%2035.8%2040.7V44.7Q35.8%2045.8%2036.2%2046.2Q36.5%2046.5%2037.2%2046.5Q37.9%2046.5%2038.3%2046.2Q38.7%2045.8%2038.7%2044.7V41.5Q38.7%2040.1%2038.5%2039.4Q38.2%2038.6%2037.9%2038.1Q37.5%2037.7%2037%2037.6Q36.4%2037.5%2035.9%2037.5H34.3Q33.3%2037.5%2033.3%2036.5V31.9Q33.3%2030.9%2034.3%2030.9H36Q36.7%2030.9%2037.2%2030.8Q37.7%2030.7%2038%2030.3Q38.3%2029.9%2038.5%2029.2Q38.7%2028.5%2038.7%2027.3V24.1Q38.7%2023.1%2038.3%2022.7Q37.9%2022.3%2037.2%2022.3Q36.5%2022.3%2036.2%2022.7Q35.8%2023.1%2035.8%2024.1V27.7Q35.8%2028.7%2034.8%2028.7H29.2Q28.2%2028.7%2028.2%2027.7V24.6Q28.2%2023%2028.6%2021.4Q28.9%2019.8%2029.9%2018.6Q30.9%2017.4%2032.7%2016.6Q34.4%2015.8%2037.2%2015.8Q40.1%2015.8%2041.8%2016.6Q43.6%2017.4%2044.6%2018.6Q45.6%2019.8%2045.9%2021.4Q46.3%2023%2046.3%2024.6V27.7Q46.3%2028.5%2046.2%2029.4Q46.1%2030.3%2045.7%2031.2Q45.3%2032%2044.6%2032.7Q43.9%2033.4%2042.8%2033.8V34Q43.9%2034.4%2044.6%2035Q45.4%2035.7%2045.8%2036.4Q46.2%2037.2%2046.4%2038.1Q46.5%2039%2046.5%2039.7V44.2Q46.5%2045.9%2046.1%2047.4Q45.7%2049%2044.7%2050.2Q43.7%2051.5%2041.9%2052.2Q40.1%2053%2037.2%2053Z'%20fill='%2338BDF8'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%2338BDF8'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card: #141b26;
+      --border: #263246;
+      --gold: #ffd018;
+      --cyan: #00b4ff;
+      --red: #ff3b30;
+      --text: #f5f7fa;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      min-height: 100vh;
+    }
+    @media (max-width: 960px) {
+      body { grid-template-columns: 1fr; }
+    }
+    .sidebar {
+      background: var(--card);
+      border-right: 1px solid var(--border);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      max-height: 100vh;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px var(--gold);
+    }
+    .brand h1 { font-size: 16px; font-weight: 800; letter-spacing: 0.4px; color: var(--gold); }
+    .section {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .section h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--gold);
+    }
+    label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 4px; }
+    input[type="text"], select, textarea {
+      width: 100%;
+      background: #0d131d;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    button {
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #1e293b;
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: 0.15s;
+    }
+    button:hover { border-color: var(--gold); }
+    button.primary {
+      background: var(--gold);
+      color: #0b0f17;
+      border-color: var(--gold);
+      font-weight: 800;
+    }
+    button.active-mode {
+      background: rgba(255, 208, 24, 0.18);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .main-stage {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: auto;
+    }
+    .canvas-wrap {
+      position: relative;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #05070b;
+      max-width: 100%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      cursor: crosshair;
+    }
+    .status-bar {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    pre {
+      background: #080b11;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 11px;
+      color: #a5f3fc;
+      max-height: 210px;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <h1>BDS 3D LOT STUDIO · V1.0</h1>
+    </div>
+
+    <div class="section">
+      <h2>1. Chọn Mức Độ Tái Sử Dụng</h2>
+      <div>
+        <label>Chế độ đầu vào</label>
+        <select id="pipelineMode" onchange="updateJSON()">
+          <option value="level2">Mức độ 2: Có sẵn Video Flycam (.mp4) ➔ Chỉ đánh dấu 3D</option>
+          <option value="level1">Mức độ 1: Ảnh Google Map (.jpg/.png) ➔ Google Flow tạo Flycam ➔ Đánh dấu 3D</option>
+        </select>
+      </div>
+      <div>
+        <label>Tải file Video Flycam (.mp4) hoặc Ảnh Google Maps (.jpg/.png)</label>
+        <input type="file" id="mediaInput" accept="video/*,image/*" />
+      </div>
+      <div>
+        <label>Tên dự án / Tiêu đề hiển thị</label>
+        <input type="text" id="projectTitle" value="KHU ĐÔ THỊ GREEN PARK · PHÂN LÔ SỔ ĐỎ" oninput="updateJSON()" />
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2. Chấm Đỉnh Lô Đất & Tuyến Đường</h2>
+      <div class="btn-row">
+        <button id="btnModeLot" class="active-mode" onclick="setDrawMode('lot')">📐 Chấm Đỉnh Lô Đất (4-8 góc)</button>
+        <button id="btnModeRoad" onclick="setDrawMode('road')">🛣️ Chấm 4 Góc Tuyến Đường</button>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <div>
+          <label>Diện tích lô đang chọn</label>
+          <input type="text" id="areaLabel" value="200 m²" oninput="updateJSON()" />
+        </div>
+        <div>
+          <label>Kích thước (Rộng × Dài)</label>
+          <input type="text" id="dimsLabel" value="10.0m, 20.0m" oninput="updateJSON()" />
+        </div>
+      </div>
+      <div>
+        <label>Tên lô / Pháp lý phụ đề</label>
+        <input type="text" id="subLabel" value="Sổ đỏ trao tay · Mặt tiền đường lớn" oninput="updateJSON()" />
+      </div>
+      <div>
+        <label>Tên đường giao thông (cho chế độ Đường)</label>
+        <input type="text" id="roadName" value="ĐƯỜNG NGUYỄN A · 24M" oninput="updateJSON()" />
+      </div>
+      <div class="btn-row">
+        <button onclick="finishCurrentShape()">✅ Khép Đa Giác Này & Thêm Lô Mới</button>
+        <button onclick="undoPoint()">↩️ Xóa Điểm Cuối</button>
+        <button onclick="clearAll()">🗑️ Làm Mới</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3. Xuất Cấu Hình & Lệnh Chạy 1 Chạm</h2>
+      <div class="btn-row">
+        <button class="primary" onclick="copyJSON()">📋 Copy lot_config.json</button>
+        <button onclick="downloadJSON()">💾 Tải file JSON</button>
+      </div>
+      <label>Lệnh CLI chạy tự động cả Phương án 1 (MapEffect 3D Wall) & Phương án 2 (CapCut 3D Ground Text):</label>
+      <pre id="cliBox">python3 bds_lot_engine.py --config lot_config.json --style both</pre>
+      <label>Nội dung JSON (`lot_config.json`):</label>
+      <pre id="jsonBox"></pre>
+    </div>
+  </div>
+
+  <div class="main-stage">
+    <div class="status-bar">
+      <span id="statusText">💡 Hướng dẫn: Chọn file Video Flycam hoặc Ảnh Google Map, sau đó click chuột trực tiếp lên hình để chấm các góc lô đất (chuẩn hệ tọa độ 1920×1080).</span>
+      <span id="coordText" style="color:var(--gold); font-weight:700;">X: 0, Y: 0</span>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="stageCanvas" width="1920" height="1080"></canvas>
+    </div>
+  </div>
+
+  <video id="hiddenVideo" style="display:none;" muted playsinline></video>
+
+  <script>
+    const canvas = document.getElementById('stageCanvas');
+    const ctx = canvas.getContext('2d');
+    const video = document.getElementById('hiddenVideo');
+    let bgImage = null;
+    let mediaFileName = "input_flycam.mp4";
+    let drawMode = 'lot'; // 'lot' | 'road'
+    let lots = [];
+    let roads = [];
+    let currentPts = [];
+
+    function setDrawMode(m) {
+      if (currentPts.length >= 3) finishCurrentShape();
+      currentPts = [];
+      drawMode = m;
+      document.getElementById('btnModeLot').classList.toggle('active-mode', m === 'lot');
+      document.getElementById('btnModeRoad').classList.toggle('active-mode', m === 'road');
+      renderCanvas();
+    }
+
+    document.getElementById('mediaInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      mediaFileName = file.name;
+      const url = URL.createObjectURL(file);
+      if (file.type.startsWith('video/')) {
+        video.src = url;
+        video.currentTime = 0.05;
+        video.onloadeddata = () => { video.currentTime = 0.05; };
+        video.onseeked = () => {
+          const off = document.createElement('canvas');
+          off.width = 1920; off.height = 1080;
+          off.getContext('2d').drawImage(video, 0, 0, 1920, 1080);
+          bgImage = off;
+          renderCanvas();
+          updateJSON();
+        };
+      } else {
+        const img = new Image();
+        img.onload = () => {
+          bgImage = img;
+          document.getElementById('pipelineMode').value = 'level1';
+          renderCanvas();
+          updateJSON();
+        };
+        img.src = url;
+      }
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = Math.round((e.clientX - rect.left) * (1920 / rect.width));
+      const y = Math.round((e.clientY - rect.top) * (1080 / rect.height));
+      document.getElementById('coordText').textContent = `X: ${x}, Y: ${y}`;
+    });
+
+    canvas.addEventListener('click', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = Math.round((e.clientX - rect.left) * (1920 / rect.width));
+      const y = Math.round((e.clientY - rect.top) * (1080 / rect.height));
+      currentPts.push([x, y]);
+      if (drawMode === 'road' && currentPts.length === 4) {
+        finishCurrentShape();
+      } else {
+        renderCanvas();
+        updateJSON();
+      }
+    });
+
+    function finishCurrentShape() {
+      if (currentPts.length < 3) return;
+      if (drawMode === 'lot') {
+        const dims = document.getElementById('dimsLabel').value.split(',').map(s => s.trim()).filter(Boolean);
+        lots.push({
+          id: `lot_${lots.length + 1}`,
+          title: `LÔ ĐẤT MẶT TIỀN VIP #${lots.length + 1}`,
+          area_label: document.getElementById('areaLabel').value,
+          sub_label: document.getElementById('subLabel').value,
+          dims: dims.length ? dims : ["10.0m", "20.0m"],
+          color_rgb: lots.length === 0 ? [255, 208, 24] : [255, 115, 20],
+          wall_height_px: 72.0,
+          show_callout: lots.length === 0,
+          corners_px: [...currentPts]
+        });
+      } else if (currentPts.length === 4) {
+        roads.push({
+          name: document.getElementById('roadName').value,
+          quad_px: [...currentPts]
+        });
+      }
+      currentPts = [];
+      renderCanvas();
+      updateJSON();
+    }
+
+    function undoPoint() {
+      if (currentPts.length > 0) currentPts.pop();
+      else if (drawMode === 'lot' && lots.length > 0) lots.pop();
+      else if (drawMode === 'road' && roads.length > 0) roads.pop();
+      renderCanvas();
+      updateJSON();
+    }
+
+    function clearAll() {
+      currentPts = []; lots = []; roads = [];
+      renderCanvas();
+      updateJSON();
+    }
+
+    function renderCanvas() {
+      ctx.fillStyle = '#090d14';
+      ctx.fillRect(0, 0, 1920, 1080);
+      if (bgImage) {
+        ctx.drawImage(bgImage, 0, 0, 1920, 1080);
+      } else {
+        ctx.strokeStyle = '#1e293b';
+        for (let x = 0; x < 1920; x += 120) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 1080); ctx.stroke(); }
+        for (let y = 0; y < 1080; y += 120) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1920, y); ctx.stroke(); }
+        ctx.fillStyle = '#64748b';
+        ctx.font = 'bold 28px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Tải file Video Flycam (.mp4) hoặc Ảnh Google Maps (.jpg) ở cột trái để chấm góc lô đất', 960, 540);
+      }
+
+      // Draw saved roads
+      roads.forEach(r => drawPoly(r.quad_px, 'rgba(0, 180, 255, 0.35)', '#00b4ff', r.name));
+      // Draw saved lots
+      lots.forEach(l => drawPoly(l.corners_px, 'rgba(255, 208, 24, 0.35)', '#ffd018', l.area_label));
+      // Draw active polygon
+      if (currentPts.length > 0) {
+        drawPoly(currentPts, drawMode === 'lot' ? 'rgba(255, 59, 48, 0.30)' : 'rgba(0, 180, 255, 0.25)', '#ffffff', 'Đang chấm...');
+      }
+    }
+
+    function drawPoly(pts, fillCol, strokeCol, label) {
+      if (!pts.length) return;
+      ctx.beginPath();
+      ctx.moveTo(pts[0][0], pts[0][1]);
+      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+      ctx.closePath();
+      ctx.fillStyle = fillCol;
+      ctx.fill();
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = strokeCol;
+      ctx.stroke();
+
+      let cx = 0, cy = 0;
+      pts.forEach((p, idx) => {
+        cx += p[0]; cy += p[1];
+        ctx.beginPath();
+        ctx.arc(p[0], p[1], 8, 0, Math.PI * 2);
+        ctx.fillStyle = strokeCol;
+        ctx.fill();
+      });
+      cx /= pts.length; cy /= pts.length;
+      if (label) {
+        ctx.font = 'bold 30px sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'center';
+        ctx.fillText(label, cx, cy);
+      }
+    }
+
+    function buildConfigObj() {
+      const mode = document.getElementById('pipelineMode').value;
+      const activeLots = [...lots];
+      if (drawMode === 'lot' && currentPts.length >= 3) {
+        activeLots.push({
+          id: `lot_${activeLots.length + 1}`,
+          title: `LÔ ĐẤT MẶT TIỀN VIP #${activeLots.length + 1}`,
+          area_label: document.getElementById('areaLabel').value,
+          sub_label: document.getElementById('subLabel').value,
+          dims: document.getElementById('dimsLabel').value.split(',').map(s => s.trim()),
+          color_rgb: [255, 208, 24],
+          wall_height_px: 72.0,
+          show_callout: true,
+          corners_px: [...currentPts]
+        });
+      }
+      const cfg = {
+        slug: "bds_custom_lot",
+        project_title: document.getElementById('projectTitle').value,
+        source: {
+          video: mode === 'level1' ? "generated_flycam_1080p.mp4" : mediaFileName
+        },
+        track: { scale: 960, sg_window: 15, reanchor_inlier: 0.45 },
+        lots: activeLots,
+        roads: roads
+      };
+      if (mode === 'level1') {
+        cfg.source.gen = {
+          map_image: mediaFileName,
+          model: "Omni 1.1 Flash",
+          duration: 8,
+          aspect: "16:9",
+          prompt: "Single continuous unbroken aerial drone shot, no scene cuts, no transitions. Smooth slow cinematic drone orbit and gentle forward push-in over the residential land plot and street intersection, preserving exact rigid ground geometry."
+        };
+      }
+      return cfg;
+    }
+
+    function updateJSON() {
+      const cfg = buildConfigObj();
+      document.getElementById('jsonBox').textContent = JSON.stringify(cfg, null, 2);
+    }
+
+    function copyJSON() {
+      navigator.clipboard.writeText(document.getElementById('jsonBox').textContent);
+      document.getElementById('statusText').textContent = "✅ Đã copy cấu hình lot_config.json vào Clipboard!";
+    }
+
+    function downloadJSON() {
+      const blob = new Blob([document.getElementById('jsonBox').textContent], { type: "application/json" });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = "lot_config.json";
+      a.click();
+    }
+
+    renderCanvas();
+    updateJSON();
+  </script>
+</body>
+</html>

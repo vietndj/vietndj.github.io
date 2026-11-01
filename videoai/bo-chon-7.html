@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Bộ Chọn 7 Kiểu Chuẩn Mobile V2 (5B-R Zero-Strikethrough) — FEDU Video AI</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M7%2052.5Q6%2052.5%206%2051.6V18.5Q6%2017.5%207%2017.5H16.3Q18.7%2017.5%2020.3%2018.1Q21.8%2018.7%2022.7%2019.7Q23.6%2020.6%2024%2021.9Q24.4%2023.2%2024.4%2024.6V28.4Q24.4%2029.3%2024.3%2030.2Q24.2%2031.2%2023.9%2032.1Q23.6%2032.9%2023.2%2033.5Q22.7%2034.2%2022%2034.5V34.8Q22.7%2035.1%2023.2%2035.7Q23.7%2036.4%2024.1%2037.1Q24.4%2037.9%2024.5%2038.7Q24.6%2039.5%2024.6%2040.3V44.9Q24.6%2046.3%2024.3%2047.6Q23.9%2049%2023%2050.1Q22.1%2051.2%2020.6%2051.8Q19%2052.5%2016.6%2052.5ZM13.7%2031.4H15.4Q16.3%2031.4%2016.6%2030.9Q16.9%2030.4%2016.9%2029.8V25.5Q16.9%2025%2016.6%2024.5Q16.3%2024.1%2015.5%2024.1H13.7ZM13.7%2046H15.5Q16.3%2046%2016.6%2045.5Q16.9%2045%2016.9%2044.5V39.4Q16.9%2038.7%2016.6%2038.2Q16.3%2037.7%2015.3%2037.7H13.7ZM37%2053Q34%2053%2032.2%2052.3Q30.3%2051.7%2029.3%2050.5Q28.3%2049.4%2027.9%2048.1Q27.6%2046.7%2027.6%2045.3V24.7Q27.6%2023.3%2027.9%2022Q28.3%2020.6%2029.3%2019.5Q30.3%2018.4%2032.2%2017.7Q34%2017%2037%2017Q40.1%2017%2042%2017.7Q43.8%2018.4%2044.8%2019.5Q45.8%2020.6%2046.2%2022Q46.5%2023.3%2046.5%2024.7V31.9Q46.5%2032.9%2045.5%2032.9H39.7Q38.7%2032.9%2038.7%2031.9V25.4Q38.7%2023.6%2037%2023.6Q36.1%2023.6%2035.8%2024.1Q35.5%2024.6%2035.5%2025.4V44.7Q35.5%2045.5%2035.8%2046Q36.1%2046.4%2037%2046.4Q38.7%2046.4%2038.7%2044.7V37.6Q38.7%2036.6%2039.7%2036.6H45.5Q46.5%2036.6%2046.5%2037.6V45.3Q46.5%2046.7%2046.2%2048.1Q45.8%2049.4%2044.8%2050.5Q43.8%2051.7%2042%2052.3Q40.1%2053%2037%2053Z'%20fill='%23FB923C'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%23FB923C'/%3E%3C/svg%3E">
+<style>
+  @font-face {
+    font-family: 'FDAeonik';
+    src: url('/assets/fonts/FDAeonik-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'FDAeonikBlack';
+    src: url('/assets/fonts/FDAeonik-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'SVNActa';
+    src: url('/assets/fonts/SVN-Acta-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'PlayfairVN';
+    src: url('/assets/fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0A0D12;
+    --card: #131822;
+    --card-active: #1C2433;
+    --gold: #FFD018;
+    --amber: #FF9914;
+    --cream: #F5F2EB;
+    --emerald: #10B981;
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+    --border: rgba(255,255,255,0.09);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'FDAeonik', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100dvh;
+    padding-bottom: 78px;
+    overflow-x: hidden;
+  }
+
+  /* COMPACT TOP BAR + TABS */
+  .top-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 13, 18, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 10px 6px;
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .brand-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .demo-jump-btn {
+    background: rgba(16, 185, 129, 0.16);
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    color: #34D399;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 99px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .tab-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    background: #141923;
+    padding: 3px;
+    border-radius: 10px;
+  }
+  .tab-btn {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 2px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.15s;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .tab-btn.active {
+    background: var(--gold);
+    color: #0B0D11;
+    box-shadow: 0 2px 8px rgba(255, 208, 24, 0.25);
+  }
+
+  /* LIVE PREVIEW STAGE ON REAL VIDEO FRAME */
+  .preview-wrapper {
+    padding: 8px 10px 4px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .video-stage {
+    position: relative;
+    width: 100%;
+    height: 215px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #161F2C;
+    border: 1.5px solid rgba(255, 208, 24, 0.32);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.55);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .stage-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    z-index: 0;
+    filter: brightness(0.92) contrast(1.04);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .stage-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,11,16,0.55) 0%, rgba(8,11,16,0.08) 45%, rgba(8,11,16,0.72) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Top controls inside stage */
+  .stage-top-bar {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+  .bg-switcher {
+    display: inline-flex;
+    background: rgba(10, 14, 20, 0.78);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 99px;
+    padding: 2px;
+    gap: 2px;
+  }
+  .bg-chip {
+    border: none;
+    background: transparent;
+    color: #CBD5E1;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 99px;
+    cursor: pointer;
+  }
+  .bg-chip.active {
+    background: var(--gold);
+    color: #000;
+  }
+  .zero-strike-pill {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #6EE7B7;
+    background: rgba(6, 78, 59, 0.82);
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    padding: 2px 7px;
+    border-radius: 99px;
+  }
+
+  /* Hero Opening Title inside stage */
+  .hero-preview-zone {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    margin-top: 2px;
+    transition: 0.2s;
+  }
+
+  /* Subtitle Preview Zone inside stage */
+  .sub-preview-zone {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sub-capsule {
+    width: 98%;
+    border-radius: 12px;
+    padding: 8px 12px 9px;
+    text-align: center;
+    position: relative;
+    transition: all 0.18s ease;
+    overflow: hidden;
+  }
+  .sub-capsule .top-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 16%;
+    right: 16%;
+    height: 3px;
+    border-radius: 0 0 3px 3px;
+  }
+  /* 5B-R Strict Zero-Strikethrough Baseline Lock */
+  .sub-line {
+    font-size: 16.5px;
+    line-height: 1.36;
+    letter-spacing: -0.01em;
+    display: block;
+    text-decoration: none !important;
+  }
+  .sub-line + .sub-line {
+    margin-top: 2px;
+  }
+  .sub-norm {
+    font-family: 'FDAeonik', sans-serif;
+    font-weight: 500;
+    text-decoration: none !important;
+  }
+  .sub-kw {
+    font-family: 'SVNActa', 'PlayfairVN', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 17.5px;
+    padding: 0 2px;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+
+  /* COMPACT 2-COLUMN SELECTOR GRID (ALL 7 VISIBLE WITHOUT HEAVY SCROLLING) */
+  .selector-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 4px 10px 12px;
+  }
+  .section-hint {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    margin: 4px 2px 6px;
+  }
+  .section-hint strong {
+    color: var(--gold);
+  }
+  .grid-7 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+  }
+  /* Featured #1 spans full width or top highlight */
+  .style-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 11px;
+    padding: 8px 9px;
+    cursor: pointer;
+    transition: 0.15s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 66px;
+  }
+  .style-card.featured-full {
+    grid-column: span 2;
+    min-height: 60px;
+    background: linear-gradient(90deg, rgba(255,208,24,0.11) 0%, rgba(19,24,34,0.95) 100%);
+  }
+  .style-card.active {
+    background: var(--card-active);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold), 0 4px 14px rgba(255, 208, 24, 0.16);
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    margin-bottom: 3px;
+  }
+  .card-code {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1.5px 6px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.08);
+    color: #E2E8F0;
+  }
+  .style-card.active .card-code {
+    background: var(--gold);
+    color: #000;
+  }
+  .card-badge {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1.5px 6px;
+    border-radius: 99px;
+  }
+  .badge-star { background: rgba(255, 208, 24, 0.2); color: var(--gold); border: 1px solid rgba(255,208,24,0.4); }
+  .badge-alt { background: rgba(16, 185, 129, 0.16); color: #34D399; }
+  .badge-opt { background: rgba(148, 163, 184, 0.12); color: #94A3B8; }
+
+  .card-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #FFF;
+    line-height: 1.22;
+    margin-bottom: 2px;
+  }
+  .card-micro {
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* STICKY BOTTOM CONFIRM BAR */
+  .sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: rgba(10, 13, 18, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 208, 24, 0.28);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  }
+  .footer-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .summary-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .summary-label {
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .summary-code {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--gold);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .action-btns {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .btn-copy {
+    border: none;
+    background: var(--gold);
+    color: #090C10;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 9px 13px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .btn-demo {
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    background: rgba(16, 185, 129, 0.18);
+    color: #34D399;
+    font-weight: 800;
+    font-size: 11.5px;
+    padding: 9px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-header">
+  <div class="brand-row">
+    <div class="brand-title">⚡ BỘ CHỌN 7 KIỂU CHUẨN MOBILE V2</div>
+    <a href="/demo/hien-halong-xanh.html" class="demo-jump-btn">🎬 Mở Demo Chị Hiền ↗</a>
+  </div>
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tab-sub" onclick="switchTab('sub')">💬 7 Phụ Đề</button>
+    <button class="tab-btn" id="tab-hero" onclick="switchTab('hero')">✨ 7 Mở Đầu</button>
+    <button class="tab-btn" id="tab-frame" onclick="switchTab('frame')">📐 7 Khung/2D</button>
+    <button class="tab-btn" id="tab-motion" onclick="switchTab('motion')">⚡ 7 Motion</button>
+  </div>
+</div>
+
+<div class="preview-wrapper">
+  <div class="video-stage" id="videoStage">
+    <img src="/assets/demo_hien/raw_aroll_wide.webp" alt="Preview Frame" class="stage-bg-img" id="stageBgImg" onerror="this.style.display='none'">
+    <div class="stage-bg-overlay"></div>
+
+    <div class="stage-top-bar">
+      <div class="bg-switcher">
+        <button class="bg-chip active" id="bg-wide" onclick="setBgMode('wide')">👤 Góc chuẩn</button>
+        <button class="bg-chip" id="bg-zoom" onclick="setBgMode('zoom')">🔍 Cận 1.18x</button>
+        <button class="bg-chip" id="bg-map" onclick="setBgMode('map')">🗺️ Sa bàn 2D</button>
+      </div>
+      <span class="zero-strike-pill">✓ 5B-R Không Gạch Xóa</span>
+    </div>
+
+    <!-- HERO OPENING PREVIEW -->
+    <div class="hero-preview-zone" id="heroPreviewZone"></div>
+
+    <!-- SUBTITLE 5B-R PREVIEW -->
+    <div class="sub-preview-zone">
+      <div class="sub-capsule" id="subCapsule">
+        <div class="top-accent-bar" id="subTopBar"></div>
+        <span class="sub-line" id="subLine1"></span>
+        <span class="sub-line" id="subLine2"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="selector-container">
+  <div class="section-hint">
+    <span id="sectionTitle">Chạm 1 ngón để thử trực tiếp trên khung hình thật:</span>
+    <strong>7 kiểu tinh gọn</strong>
+  </div>
+  <div class="grid-7" id="cardsGrid"></div>
+</div>
+
+<div class="sticky-footer">
+  <div class="footer-inner">
+    <div class="summary-pills">
+      <span class="summary-label">Đang chọn (Tự lưu vào link):</span>
+      <span class="summary-code" id="summaryCode">SUB:S01 · HERO:H01 · KHUNG:F01 · ZOOM:M01</span>
+    </div>
+    <div class="action-btns">
+      <a href="/demo/hien-halong-xanh.html" class="btn-demo" id="goToDemoBtn">Duyệt Demo ↗</a>
+      <button class="btn-copy" id="copyBtn" onclick="copySelection()">Chốt & Copy</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUB_STYLES = [
+  {
+    id: 'S01',
+    badge: '★ AI Chọn · BĐS',
+    badgeClass: 'badge-star',
+    featured: true,
+    name: '5B-R Luxury Gold (Không gạch chân)',
+    micro: 'Kính tối mờ · Chữ trắng + Vàng kim #FFD018 nghiêng đậm',
+    capsuleBg: 'rgba(12, 16, 23, 0.86)',
+    border: '1.5px solid rgba(255, 208, 24, 0.42)',
+    topBar: 'linear-gradient(90deg, transparent, #FF9914, #FFD018, #FF9914, transparent)',
+    normColor: '#FFFFFF',
+    kwColor: '#FFD018',
+    kwShadow: '0 2px 8px rgba(0,0,0,0.9)',
+    kwBg: 'transparent'
+  },
+  {
+    id: 'S02',
+    badge: 'Top 2 · Spa/Kem',
+    badgeClass: 'badge-alt',
+    name: '5B-Cream Editorial (#F5F2EB)',
+    micro: 'Thẻ kem sáng sang trọng · Nhấn nâu đồng #9A3412',
+    capsuleBg: 'rgba(245, 242, 235, 0.95)',
+    border: '1.5px solid rgba(180, 83, 9, 0.35)',
+    topBar: 'linear-gradient(90deg, transparent, #B45309, #D97706, transparent)',
+    normColor: '#1C1917',
+    kwColor: '#9A3412',
+    kwShadow: 'none',
+    kwBg: 'transparent'
+  },
+  {
+    id: 'S03',
+    badge: 'Top 3 · Y Khoa',
+    badgeClass: 'badge-alt',
+    name: '5B-Emerald Trust (Xanh Ngọc)',
+    micro: 'Kính tối sâu · Nhấn xanh ngọc #34D399 dịu mắt',
+    capsuleBg: 'rgba(10, 18, 24, 0.88)',
+    border: '1.5px solid rgba(52, 211, 153, 0.38)',
+    topBar: 'linear-gradient(90deg, transparent, #10B981, #34D399, transparent)',
+    normColor: '#F8FAFC',
+    kwColor: '#34D399',
+    kwShadow: '0 2px 6px rgba(0,0,0,0.85)',
+    kwBg: 'transparent'
+  },
+  {
+    id: 'S04',
+    badge: 'Điện ảnh',
+    badgeClass: 'badge-opt',
+    name: 'Cinema Pure Floating (Không hộp)',
+    micro: 'Chữ nổi trực tiếp đổ bóng sâu · Thoáng 100% khung hình',
+    capsuleBg: 'transparent',
+    border: '1px solid transparent',
+    topBar: 'transparent',
+    normColor: '#FFFFFF',
+    kwColor: '#FFD018',
+    kwShadow: '0 2px 10px rgba(0,0,0,0.98), 0 0 4px rgba(0,0,0,0.95)',
+    kwBg: 'transparent'
+  },
+  {
+    id: 'S05',
+    badge: 'Tối giản',
+    badgeClass: 'badge-opt',
+    name: 'Minimalist Amber Glow',
+    micro: 'Hộp đen mờ 75% · Nhấn cam hổ phách #FB923C ấm áp',
+    capsuleBg: 'rgba(15, 15, 20, 0.80)',
+    border: '1px solid rgba(251, 146, 60, 0.32)',
+    topBar: 'linear-gradient(90deg, transparent, #FB923C, transparent)',
+    normColor: '#F3F4F6',
+    kwColor: '#FDBA74',
+    kwShadow: '0 2px 6px rgba(0,0,0,0.85)',
+    kwBg: 'transparent'
+  },
+  {
+    id: 'S06',
+    badge: 'Tương phản cao',
+    badgeClass: 'badge-opt',
+    name: 'Soft Gold Pill (Đệm Bo Tròn)',
+    micro: 'Từ khóa bọc đệm bo tròn cao 38px (Không cắt dấu nặng)',
+    capsuleBg: 'rgba(13, 17, 23, 0.88)',
+    border: '1px solid rgba(255,255,255,0.14)',
+    topBar: 'transparent',
+    normColor: '#FFFFFF',
+    kwColor: '#0B0D11',
+    kwShadow: 'none',
+    kwBg: '#FFD018'
+  },
+  {
+    id: 'S07',
+    badge: 'Báo chí',
+    badgeClass: 'badge-opt',
+    name: 'Editorial Cyan Executive',
+    micro: 'Kính xanh đen · Nhấn xanh băng #38BDF8 sắc nét',
+    capsuleBg: 'rgba(11, 19, 32, 0.88)',
+    border: '1.5px solid rgba(56, 189, 248, 0.35)',
+    topBar: 'linear-gradient(90deg, transparent, #0284C7, #38BDF8, transparent)',
+    normColor: '#F8FAFC',
+    kwColor: '#38BDF8',
+    kwShadow: '0 2px 6px rgba(0,0,0,0.85)',
+    kwBg: 'transparent'
+  }
+];
+
+const HERO_STYLES = [
+  {
+    id: 'H01',
+    badge: '★ AI Chọn · BĐS',
+    badgeClass: 'badge-star',
+    featured: true,
+    name: 'STYLE-17: La Bàn Vàng Kim Luxury',
+    micro: 'Biểu tượng kiến trúc phát sáng + Chữ Serif Vàng Kim',
+    html: `<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(12,16,23,0.85);border:1px solid rgba(255,208,24,0.45);padding:3px 10px;border-radius:99px;font-size:10px;color:#FFD018;font-weight:700;margin-bottom:3px;">🧭 ĐẠI ĐÔ THỊ 4.110 HA</div>
+           <div style="font-family:'FDAeonikBlack',sans-serif;font-size:17px;color:#FFF;text-shadow:0 2px 10px rgba(0,0,0,0.9);letter-spacing:0.02em;">VINHOMES <span style="font-family:'SVNActa',serif;font-style:italic;color:#FFD018;">Hạ Long Xanh</span></div>`
+  },
+  {
+    id: 'H02',
+    badge: 'Top 2 · Editorial',
+    badgeClass: 'badge-alt',
+    name: 'STYLE-28: Thẻ Kem Tinh Hoa (#F5F2EB)',
+    micro: 'Hộp kem viền vàng đồng sang trọng chuẩn tạp chí',
+    html: `<div style="display:inline-block;background:#F5F2EB;color:#1C1917;padding:5px 14px;border-radius:10px;border:1.5px solid #B45309;box-shadow:0 6px 16px rgba(0,0,0,0.5);">
+             <div style="font-size:9px;font-weight:800;color:#B45309;letter-spacing:0.08em;">PHÂN TÍCH THỰC ĐỊA</div>
+             <div style="font-size:15px;font-weight:900;color:#1C1917;">HẠ LONG XANH <span style="font-family:'SVNActa',serif;font-style:italic;color:#9A3412;">4.110 Ha</span></div>
+           </div>`
+  },
+  {
+    id: 'H03',
+    badge: 'Top 3 · Hiện đại',
+    badgeClass: 'badge-alt',
+    name: 'STYLE-05: Kính Mờ Viền Vàng 3D',
+    micro: 'Khung Glassmorphism trong suốt + Nhãn Vàng nổi',
+    html: `<div style="display:inline-block;background:rgba(15,23,42,0.78);backdrop-filter:blur(8px);border:1.5px solid #FFD018;padding:5px 14px;border-radius:12px;">
+             <div style="font-size:15px;font-weight:900;color:#FFF;">TẦM NHÌN <span style="color:#FFD018;font-family:'SVNActa',serif;font-style:italic;">Dài Hạn 10 Năm</span></div>
+           </div>`
+  },
+  {
+    id: 'H04',
+    badge: 'Thể thao/Năng động',
+    badgeClass: 'badge-opt',
+    name: 'STYLE-12: Kinetic Gold Banner',
+    micro: 'Dải băng vàng kim năng động bắt mắt 3 giây đầu',
+    html: `<div style="display:inline-block;background:#FFD018;color:#090C10;padding:4px 13px;border-radius:8px;font-weight:900;font-size:15px;box-shadow:0 4px 14px rgba(255,208,24,0.4);">⚡ SIÊU DỰ ÁN 18 TỶ USD</div>`
+  },
+  {
+    id: 'H05',
+    badge: 'Chuyên gia',
+    badgeClass: 'badge-opt',
+    name: 'STYLE-21: Minimalist Top Pill',
+    micro: 'Viên nang mảnh phía trên đầu không che bối cảnh',
+    html: `<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.82);border:1px solid rgba(255,255,255,0.25);padding:5px 13px;border-radius:99px;font-size:12.5px;color:#FFF;font-weight:700;">📌 Góc Nhìn Đầu Tư: <span style="color:#FFD018;">Hạ Long Xanh</span></div>`
+  },
+  {
+    id: 'H06',
+    badge: 'Y Khoa/Spa',
+    badgeClass: 'badge-opt',
+    name: 'STYLE-09: Emerald Clinical Badge',
+    micro: 'Nhãn xanh ngọc chuẩn chuyên gia Spa / Bác sĩ',
+    html: `<div style="display:inline-block;background:rgba(6,78,59,0.9);border:1px solid #34D399;padding:5px 14px;border-radius:10px;color:#ECFDF5;font-size:14px;font-weight:800;">🌿 GIẢI PHẪU CHUYÊN SÂU</div>`
+  },
+  {
+    id: 'H07',
+    badge: 'Tối giản',
+    badgeClass: 'badge-opt',
+    name: 'STYLE-33: Clean Serif Cinema',
+    micro: 'Chữ nghệ thuật lớn không khung viền',
+    html: `<div style="font-family:'SVNActa',serif;font-style:italic;font-size:20px;color:#FFD018;text-shadow:0 2px 12px rgba(0,0,0,0.95);">Vinhomes Hạ Long Xanh</div>`
+  }
+];
+
+const FRAME_STYLES = [
+  { id: 'F01', badge: '★ AI Chọn', badgeClass: 'badge-star', featured: true, name: 'Full 9:16 + Bản Vẽ 2D Kem #F5F2EB', micro: 'Xen kẽ nhân vật 9:16 & Bản đồ quy hoạch 2D/3D sắc nét' },
+  { id: 'F02', badge: 'Top 2 · BĐS', badgeClass: 'badge-alt', name: 'Dual-Viewport (Trên Sa Bàn / Dưới Chuyên Gia)', micro: 'Chia 2 khung đồng thời: Trên chạy flycam, dưới chị Hiền nói' },
+  { id: 'F03', badge: 'Top 3 · Bento', badgeClass: 'badge-alt', name: '3-Tier Megapark Bento Showcase', micro: 'Ghép 3 đại công viên / tiện ích trên cùng 1 màn hình' },
+  { id: 'F04', badge: 'So sánh', badgeClass: 'badge-opt', name: 'Side-by-Side Trước / Sau (Nền Kem)', micro: '2 khung trái phải so sánh thực địa & phối cảnh tương lai' },
+  { id: 'F05', badge: 'PIP Tròn', badgeClass: 'badge-opt', name: 'Full B-Roll + Vòng Tròn Chuyên Gia Góc Dưới', micro: 'Cảnh dự án full màn hình, góc dưới giữ mặt người nói' },
+  { id: 'F06', badge: 'Atlas Y Khoa', badgeClass: 'badge-opt', name: 'Scientific Atlas 2D + Trục Lộ Trình Dọc', micro: 'Chuẩn Spa/Nha khoa giải thích cơ chế từng bước' },
+  { id: 'F07', badge: 'Cinema 100%', badgeClass: 'badge-opt', name: 'Cinematic Full-Bleed B-Roll (Không Khung Phụ)', micro: 'Chuyển hoàn toàn sang cảnh quay thực tế toàn màn hình' }
+];
+
+const MOTION_STYLES = [
+  { id: 'M01', badge: '★ AI Chọn', badgeClass: 'badge-star', featured: true, name: 'Whip-Snap Zoom 0.28s + Khóa Tâm Mặt', micro: 'Zoom 1.18x mượt 8.5 frames ngay nhịp lấy hơi + Cắt 100% nói vấp' },
+  { id: 'M02', badge: 'Top 2 · 2D/3D', badgeClass: 'badge-alt', name: '2D Transit Line (Đường Đỏ Cao Tốc Chạy Động)', micro: 'Vẽ tia sáng hành trình 1h20p Hà Nội → Hạ Long Xanh' },
+  { id: 'M03', badge: 'Top 3 · Bento', badgeClass: 'badge-alt', name: 'Spring Stagger Cards (Thẻ Số Liệu Nhún Nhịp)', micro: 'Các thẻ 4.110 Ha · 18 Tỷ USD · 3 Công Viên bật theo giọng đọc' },
+  { id: 'M04', badge: 'Đầu video', badgeClass: 'badge-opt', name: 'AI Hook Dolly-Out / Crane Jib-Down', micro: 'Hiệu ứng camera điện ảnh 2.3s mở màn ấn tượng' },
+  { id: 'M05', badge: 'Chuyển cảnh', badgeClass: 'badge-opt', name: ' Optical Smooth Cut + Chốt Kết Bài Executive', micro: 'Nối âm 12ms không giật + Màn hình tổng kết 3 trụ cột' },
+  { id: 'M06', badge: 'Nhẹ nhàng', badgeClass: 'badge-opt', name: 'Slow Push-In 1.08x (Zoom Chậm Điềm Tĩnh)', micro: 'Phù hợp đoạn tâm sự sâu, kể chuyện truyền cảm hứng' },
+  { id: 'M07', badge: 'Giữ tĩnh', badgeClass: 'badge-opt', name: 'Static Studio Lock (Không Zoom)', micro: 'Giữ nguyên khung hình gốc khi đã quay cận mặt sẵn' }
+];
+
+let state = {
+  tab: 'sub',
+  sub: 'S01',
+  hero: 'H01',
+  frame: 'F01',
+  motion: 'M01',
+  bg: 'wide'
+};
+
+function loadFromHash() {
+  const h = window.location.hash.replace('#', '');
+  if (!h) return;
+  const params = new URLSearchParams(h);
+  if (params.get('sub')) state.sub = params.get('sub');
+  if (params.get('hero')) state.hero = params.get('hero');
+  if (params.get('frame')) state.frame = params.get('frame');
+  if (params.get('motion')) state.motion = params.get('motion');
+}
+
+function saveToHash() {
+  const hash = `sub=${state.sub}&hero=${state.hero}&frame=${state.frame}&motion=${state.motion}`;
+  history.replaceState(null, '', '#' + hash);
+  document.getElementById('summaryCode').textContent = `SUB:${state.sub} · MỞ ĐẦU:${state.hero} · KHUNG:${state.frame} · ZOOM:${state.motion}`;
+  const demoBtn = document.getElementById('goToDemoBtn');
+  if (demoBtn) demoBtn.href = `/demo/hien-halong-xanh.html#${hash}`;
+}
+
+function setBgMode(mode) {
+  state.bg = mode;
+  document.querySelectorAll('.bg-chip').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('bg-' + mode);
+  if (btn) btn.classList.add('active');
+  const img = document.getElementById('stageBgImg');
+  if (!img) return;
+  if (mode === 'wide') {
+    img.src = '/assets/demo_hien/raw_aroll_wide.webp';
+    img.style.transform = 'scale(1)';
+  } else if (mode === 'zoom') {
+    img.src = '/assets/demo_hien/raw_aroll_zoom.webp';
+    img.style.transform = 'scale(1.04)';
+  } else {
+    img.src = '/assets/demo_hien/frame_slot1_map.webp';
+    img.style.transform = 'scale(1)';
+  }
+}
+
+function switchTab(tab) {
+  state.tab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  renderGrid();
+}
+
+function updateLivePreview() {
+  const s = SUB_STYLES.find(x => x.id === state.sub) || SUB_STYLES[0];
+  const h = HERO_STYLES.find(x => x.id === state.hero) || HERO_STYLES[0];
+
+  const heroZone = document.getElementById('heroPreviewZone');
+  heroZone.innerHTML = h.html;
+
+  const cap = document.getElementById('subCapsule');
+  const topBar = document.getElementById('subTopBar');
+  const l1 = document.getElementById('subLine1');
+  const l2 = document.getElementById('subLine2');
+
+  cap.style.background = s.capsuleBg;
+  cap.style.border = s.border;
+  topBar.style.background = s.topBar;
+
+  const kwStyle = `color:${s.kwColor};text-shadow:${s.kwShadow};background:${s.kwBg};${s.kwBg !== 'transparent' ? 'padding:2px 8px;border-radius:6px;display:inline-block;' : ''}`;
+
+  l1.innerHTML = `<span class="sub-norm" style="color:${s.normColor}">Siêu dự án </span><span class="sub-kw" style="${kwStyle}">4.110 ha</span><span class="sub-norm" style="color:${s.normColor}"> lớn gấp</span>`;
+  l2.innerHTML = `<span class="sub-norm" style="color:${s.normColor}">gần 10 lần </span><span class="sub-kw" style="${kwStyle}">Vinhomes Ocean Park</span>`;
+}
+
+function selectItem(id) {
+  if (state.tab === 'sub') state.sub = id;
+  else if (state.tab === 'hero') state.hero = id;
+  else if (state.tab === 'frame') {
+    state.frame = id;
+    if (id === 'F01' || id === 'F02' || id === 'F03') setBgMode('map');
+  } else if (state.tab === 'motion') {
+    state.motion = id;
+    if (id === 'M01' || id === 'M06') setBgMode('zoom');
+  }
+  saveToHash();
+  updateLivePreview();
+  renderGrid();
+}
+
+function renderGrid() {
+  const grid = document.getElementById('cardsGrid');
+  let list = SUB_STYLES;
+  let activeId = state.sub;
+  if (state.tab === 'hero') { list = HERO_STYLES; activeId = state.hero; }
+  else if (state.tab === 'frame') { list = FRAME_STYLES; activeId = state.frame; }
+  else if (state.tab === 'motion') { list = MOTION_STYLES; activeId = state.motion; }
+
+  grid.innerHTML = list.map(item => `
+    <div class="style-card ${item.featured ? 'featured-full' : ''} ${item.id === activeId ? 'active' : ''}" onclick="selectItem('${item.id}')">
+      <div class="card-top">
+        <span class="card-code">${item.id}</span>
+        <span class="card-badge ${item.badgeClass}">${item.badge}</span>
+      </div>
+      <div class="card-name">${item.name}</div>
+      <div class="card-micro">${item.micro}</div>
+    </div>
+  `).join('');
+}
+
+function copySelection() {
+  const msg = `CHỐT STYLE VIDEO AI: Phụ đề=${state.sub} | Mở đầu=${state.hero} | Khung=${state.frame} | Motion=${state.motion}`;
+  navigator.clipboard.writeText(msg).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ Đã Copy!';
+    btn.style.background = '#10B981';
+    btn.style.color = '#FFF';
+    setTimeout(() => {
+      btn.textContent = 'Chốt & Copy';
+      btn.style.background = 'var(--gold)';
+      btn.style.color = '#090C10';
+    }, 2000);
+  });
+}
+
+loadFromHash();
+saveToHash();
+updateLivePreview();
+renderGrid();
+</script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>3 Kịch Bản Ngắn Quay A-Roll (22s) — Hạ Long Xanh & Xưởng Gỗ</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M14.8%2053Q12.2%2053%2010.4%2052.3Q8.7%2051.5%207.7%2050.4Q6.8%2049.2%206.4%2047.7Q6%2046.2%206%2044.7V41.3Q6%2040.3%206.9%2040.3H12.5Q13.4%2040.3%2013.4%2041.3V45.1Q13.4%2046.1%2013.8%2046.5Q14.2%2046.8%2014.8%2046.8Q15.5%2046.8%2015.8%2046.5Q16.2%2046.1%2016.2%2045.1V42Q16.2%2040.8%2016%2040Q15.8%2039.3%2015.4%2038.8Q15.1%2038.4%2014.6%2038.3Q14.1%2038.2%2013.5%2038.2H12Q11.1%2038.2%2011.1%2037.3V32.9Q11.1%2031.9%2012%2031.9H13.7Q14.3%2031.9%2014.8%2031.9Q15.2%2031.8%2015.6%2031.4Q15.9%2031%2016%2030.4Q16.2%2029.7%2016.2%2028.5V25.5Q16.2%2024.5%2015.8%2024.2Q15.5%2023.8%2014.8%2023.8Q14.2%2023.8%2013.8%2024.2Q13.4%2024.5%2013.4%2025.5V28.9Q13.4%2029.9%2012.5%2029.9H7.2Q6.2%2029.9%206.2%2028.9V26Q6.2%2024.4%206.6%2022.9Q6.9%2021.4%207.8%2020.3Q8.8%2019.1%2010.5%2018.4Q12.2%2017.6%2014.8%2017.6Q17.5%2017.6%2019.2%2018.4Q20.8%2019.1%2021.8%2020.3Q22.7%2021.4%2023.1%2022.9Q23.4%2024.4%2023.4%2026V29Q23.4%2029.7%2023.3%2030.6Q23.2%2031.4%2022.9%2032.2Q22.5%2033%2021.8%2033.7Q21.2%2034.4%2020.1%2034.7V34.9Q21.2%2035.3%2021.9%2035.9Q22.5%2036.5%2022.9%2037.2Q23.4%2038%2023.5%2038.8Q23.6%2039.6%2023.6%2040.4V44.7Q23.6%2046.2%2023.3%2047.7Q22.9%2049.2%2021.9%2050.4Q20.9%2051.5%2019.2%2052.3Q17.5%2053%2014.8%2053ZM27.9%2052.5Q27%2052.5%2027%2051.6V19.1Q27%2018.1%2027.9%2018.1H33.8Q34.7%2018.1%2034.7%2019.1L34.7%2051.6Q34.7%2052.5%2033.7%2052.5ZM39.1%2052.5Q38.2%2052.5%2038.1%2051.7L35.2%2035.7Q35.1%2035.4%2035%2035.1Q35%2034.9%2035.1%2034.5L37.8%2019Q38%2018.1%2038.8%2018.1H45.3Q46.4%2018.1%2046.2%2019.1L42.1%2034.5Q42%2034.8%2042%2035.1Q42.1%2035.4%2042.2%2035.7L46.4%2051.5Q46.7%2052.5%2045.6%2052.5Z'%20fill='%2338BDF8'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%2338BDF8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #0B0F19;
+      --bg-card: #131B2E;
+      --bg-line: #1B253B;
+      --bg-line-active: #1E3A5F;
+      --bg-line-done: #0F172A;
+      --text-main: #FFFFFF;
+      --text-sub: #94A3B8;
+      --text-done: #475569;
+      --hl-gold: #FFD018;
+      --hl-cyan: #38BDF8;
+      --hl-emerald: #10B981;
+      --border: #26334D;
+      --font-scale: 1.08;
+    }
+
+    body.light-mode {
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-line: #F1F5F9;
+      --bg-line-active: #FEF08A;
+      --bg-line-done: #E2E8F0;
+      --text-main: #0F172A;
+      --text-sub: #475569;
+      --text-done: #94A3B8;
+      --hl-gold: #B45309;
+      --hl-cyan: #0369A1;
+      --hl-emerald: #047857;
+      --border: #CBD5E1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.45;
+      padding-bottom: 80px;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 12px;
+    }
+    body.light-mode .sticky-header {
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .app-title {
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .live-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #EF4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);
+    }
+
+    .tool-btns {
+      display: flex;
+      gap: 6px;
+    }
+
+    .tool-btn {
+      border: 1px solid var(--border);
+      background: var(--bg-line);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .tabs-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .tab-pill {
+      border: 1px solid var(--border);
+      background: var(--bg-line);
+      color: var(--text-sub);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 8px 4px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .tab-pill.active {
+      background: #2563EB;
+      color: #FFFFFF;
+      border-color: #3B82F6;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 12px auto;
+      padding: 0 10px;
+    }
+
+    .shot-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 12px;
+      margin-bottom: 18px;
+    }
+
+    .shot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .shot-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(245, 158, 11, 0.2);
+      color: #FBBF24;
+    }
+    body.light-mode .shot-tag {
+      color: #B45309;
+    }
+
+    .shot-time {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--hl-emerald);
+    }
+
+    .shot-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .line-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-line);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 12px 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .line-item.active-next {
+      background: var(--bg-line-active);
+      border-color: var(--hl-gold);
+    }
+
+    .line-item.done {
+      background: var(--bg-line-done);
+      opacity: 0.42;
+    }
+
+    .check-box {
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      border: 2px solid var(--text-sub);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--hl-cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .line-item.active-next .check-box {
+      border-color: var(--hl-gold);
+      background: rgba(255, 208, 24, 0.15);
+      color: var(--hl-gold);
+    }
+    .line-item.done .check-box {
+      background: var(--hl-emerald);
+      border-color: var(--hl-emerald);
+      color: #FFFFFF;
+    }
+
+    .line-text {
+      flex: 1;
+      font-size: calc(20px * var(--font-scale));
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-main);
+    }
+    .line-item.done .line-text {
+      text-decoration: line-through;
+      color: var(--text-done);
+    }
+
+    .hl {
+      color: var(--hl-gold);
+      font-weight: 800;
+    }
+
+    .oneline-box {
+      margin-top: 12px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    body.light-mode .oneline-box {
+      background: #F8FAFC;
+    }
+
+    .oneline-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .oneline-text {
+      font-size: calc(17px * var(--font-scale));
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--text-main);
+    }
+
+    .sep {
+      color: var(--hl-emerald);
+      font-weight: 800;
+      padding: 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="sticky-header">
+    <div class="header-top">
+      <div class="app-title">
+        <span class="live-dot"></span>
+        <span>3 KỊCH BẢN NGẮN (ĐỌC 1 HƠI / CÂU)</span>
+      </div>
+      <div class="tool-btns">
+        <button class="tool-btn" onclick="changeFont(-0.1)">A-</button>
+        <button class="tool-btn" onclick="changeFont(0.1)">A+</button>
+        <button class="tool-btn" onclick="toggleTheme()" id="themeBtn">☀️ Nền sáng</button>
+        <button class="tool-btn" onclick="resetAll()">↺</button>
+      </div>
+    </div>
+
+    <div class="tabs-row">
+      <button class="tab-pill active" onclick="filterShot('all', this)">Tất cả (3)</button>
+      <button class="tab-pill" onclick="filterShot('shot-1', this)">1. HLX Giới thiệu</button>
+      <button class="tab-pill" onclick="filterShot('shot-2', this)">2. HLX Voucher</button>
+      <button class="tab-pill" onclick="filterShot('shot-3', this)">3. Đồ Gỗ Xưởng</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- KỊCH BẢN 1: HẠ LONG XANH GIỚI THIỆU -->
+    <section class="shot-card" id="shot-1">
+      <div class="shot-header">
+        <span class="shot-tag">KỊCH BẢN 01 • HẠ LONG XANH GIỚI THIỆU</span>
+        <span class="shot-time">⏱ ~22 giây • 8 câu ngắn</span>
+      </div>
+      <h2 class="shot-title">Tổng Quan Quy Mô 6.200ha, Vốn 18 Tỷ Đô & Ga Tàu Điện 23 Phút</h2>
+
+      <div class="checklist">
+        <div class="line-item active-next" onclick="toggleLine(this, 1)">
+          <div class="check-box">1</div>
+          <div class="line-text">Vì sao <span class="hl">Vinhomes Hạ Long Xanh</span> đang nóng nhất miền Bắc?</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 2)">
+          <div class="check-box">2</div>
+          <div class="line-text">Quy mô lên tới <span class="hl">6.200 héc-ta</span>, tổng vốn <span class="hl">18 tỷ đô</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 3)">
+          <div class="check-box">3</div>
+          <div class="line-text">Nhưng <span class="hl">động lực tăng giá thật sự</span> nằm ở hạ tầng kết nối.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 4)">
+          <div class="check-box">4</div>
+          <div class="line-text">Điểm đắt giá nhất là <span class="hl">ga tàu điện tốc độ cao</span>...</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 5)">
+          <div class="check-box">5</div>
+          <div class="line-text">nối thẳng tuyến <span class="hl">cao tốc Hà Nội – Quảng Ninh</span>...</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 6)">
+          <div class="check-box">6</div>
+          <div class="line-text">rút ngắn thời gian di chuyển xuống chỉ còn <span class="hl">23 phút</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 7)">
+          <div class="check-box">7</div>
+          <div class="line-text">Bên trong là công viên <span class="hl">VinWonders 81 héc-ta</span> và <span class="hl">rừng ngập mặn</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 8)">
+          <div class="check-box">8</div>
+          <div class="line-text">Anh chị bấm bên dưới nhận <span class="hl">bản đồ quy hoạch</span> và <span class="hl">giá đợt đầu</span> nhé.</div>
+        </div>
+      </div>
+
+      <div class="oneline-box">
+        <div class="oneline-title">⚡ Đọc liền 1 dòng:</div>
+        <div class="oneline-text">
+          Vì sao <span class="hl">Vinhomes Hạ Long Xanh</span> đang nóng nhất miền Bắc? <span class="sep">/</span> Quy mô lên tới <span class="hl">6.200 héc-ta</span>, tổng vốn <span class="hl">18 tỷ đô</span> <span class="sep">/</span> Nhưng <span class="hl">động lực tăng giá thật sự</span> nằm ở hạ tầng kết nối <span class="sep">/</span> Điểm đắt giá nhất là <span class="hl">ga tàu điện tốc độ cao</span>... <span class="sep">/</span> nối thẳng tuyến <span class="hl">cao tốc Hà Nội – Quảng Ninh</span>... <span class="sep">/</span> rút ngắn thời gian di chuyển xuống chỉ còn <span class="hl">23 phút</span> <span class="sep">/</span> Bên trong là công viên <span class="hl">VinWonders 81 héc-ta</span> và <span class="hl">rừng ngập mặn</span> <span class="sep">/</span> Anh chị bấm bên dưới nhận <span class="hl">bản đồ quy hoạch</span> và <span class="hl">giá đợt đầu</span> nhé.
+        </div>
+      </div>
+    </section>
+
+    <!-- KỊCH BẢN 2: HẠ LONG XANH VOUCHER -->
+    <section class="shot-card" id="shot-2">
+      <div class="shot-header">
+        <span class="shot-tag">KỊCH BẢN 02 • HẠ LONG XANH VOUCHER 1–2 TỶ</span>
+        <span class="shot-time">⏱ ~24 giây • 9 câu ngắn</span>
+      </div>
+      <h2 class="shot-title">Bài Toán Áp Voucher 1–2 Tỷ Gánh Trọn 30% Vốn Đợt Đầu (1,2 Tỷ)</h2>
+
+      <div class="checklist">
+        <div class="line-item active-next" onclick="toggleLine(this, 1)">
+          <div class="check-box">1</div>
+          <div class="line-text">Có <span class="hl">voucher 1 đến 2 tỷ</span> Vinhomes, đừng để nằm yên tới lúc <span class="hl">hết hạn</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 2)">
+          <div class="check-box">2</div>
+          <div class="line-text">Một căn liền kề ở <span class="hl">Hạ Long Xanh</span> rộng <span class="hl">60 mét vuông</span>...</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 3)">
+          <div class="check-box">3</div>
+          <div class="line-text">mặt tiền <span class="hl">5 mét</span>, xây <span class="hl">4 tầng</span>, vừa ở vừa <span class="hl">kinh doanh</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 4)">
+          <div class="check-box">4</div>
+          <div class="line-text">Tổng giá khoảng <span class="hl">6 tỷ</span>, trong đó <span class="hl">phần đất là 4 tỷ</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 5)">
+          <div class="check-box">5</div>
+          <div class="line-text">Đợt một chỉ đóng <span class="hl">30% giá đất</span>, tức là <span class="hl">1,2 tỷ đồng</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 6)">
+          <div class="check-box">6</div>
+          <div class="line-text">Khi áp <span class="hl">voucher 1 đến 2 tỷ</span> vào, nó <span class="hl">trừ thẳng hết đợt một</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 7)">
+          <div class="check-box">7</div>
+          <div class="line-text">Nghĩa là tờ voucher đã <span class="hl">gánh trọn phần vốn ban đầu</span> cho anh chị.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 8)">
+          <div class="check-box">8</div>
+          <div class="line-text">Còn <span class="hl">70% phía sau</span> được chiết khấu sớm, hoặc <span class="hl">hỗ trợ lãi suất 36 tháng</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 9)">
+          <div class="check-box">9</div>
+          <div class="line-text">Anh chị bấm <span class="hl">nhận thông tin</span> để lấy <span class="hl">bảng tính khớp mệnh giá voucher</span> nhé.</div>
+        </div>
+      </div>
+
+      <div class="oneline-box">
+        <div class="oneline-title">⚡ Đọc liền 1 dòng:</div>
+        <div class="oneline-text">
+          Có <span class="hl">voucher 1 đến 2 tỷ</span> Vinhomes, đừng để nằm yên tới lúc <span class="hl">hết hạn</span> <span class="sep">/</span> Một căn liền kề ở <span class="hl">Hạ Long Xanh</span> rộng <span class="hl">60 mét vuông</span>... <span class="sep">/</span> mặt tiền <span class="hl">5 mét</span>, xây <span class="hl">4 tầng</span>, vừa ở vừa <span class="hl">kinh doanh</span> <span class="sep">/</span> Tổng giá khoảng <span class="hl">6 tỷ</span>, trong đó <span class="hl">phần đất là 4 tỷ</span> <span class="sep">/</span> Đợt một chỉ đóng <span class="hl">30% giá đất</span>, tức là <span class="hl">1,2 tỷ đồng</span> <span class="sep">/</span> Khi áp <span class="hl">voucher 1 đến 2 tỷ</span> vào, nó <span class="hl">trừ thẳng hết đợt một</span> <span class="sep">/</span> Nghĩa là tờ voucher đã <span class="hl">gánh trọn phần vốn ban đầu</span> cho anh chị <span class="sep">/</span> Còn <span class="hl">70% phía sau</span> được chiết khấu sớm, hoặc <span class="hl">hỗ trợ lãi suất 36 tháng</span> <span class="sep">/</span> Anh chị bấm <span class="hl">nhận thông tin</span> để lấy <span class="hl">bảng tính khớp mệnh giá voucher</span> nhé.
+        </div>
+      </div>
+    </section>
+
+    <!-- KỊCH BẢN 3: ĐỒ GỖ XƯỞNG OANH -->
+    <section class="shot-card" id="shot-3">
+      <div class="shot-header">
+        <span class="shot-tag">KỊCH BẢN 03 • XƯỞNG ĐỒ GỖ NỘI THẤT</span>
+        <span class="shot-time">⏱ ~22 giây • 8 câu ngắn</span>
+      </div>
+      <h2 class="shot-title">Vì Sao Đặt Thẳng Tại Xưởng Hữu Bằng Tiết Kiệm Ngay 30% Mà Nét Như 3D?</h2>
+
+      <div class="checklist">
+        <div class="line-item active-next" onclick="toggleLine(this, 1)">
+          <div class="check-box">1</div>
+          <div class="line-text">Cùng một <span class="hl">bản vẽ 3D căn hộ</span>, đặt thẳng tại xưởng <span class="hl">tiết kiệm ngay 30%</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 2)">
+          <div class="check-box">2</div>
+          <div class="line-text">Vì nhiều đơn vị <span class="hl">nhận thiết kế ngoài phố</span>...</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 3)">
+          <div class="check-box">3</div>
+          <div class="line-text">cuối cùng vẫn <span class="hl">chuyển file về Hữu Bằng</span> cắt trên <span class="hl">dàn máy CNC này</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 4)">
+          <div class="check-box">4</div>
+          <div class="line-text">Đặt trực tiếp tại <span class="hl">xưởng Đức Oanh</span>, bạn bỏ qua toàn bộ <span class="hl">phí trung gian</span>.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 5)">
+          <div class="check-box">5</div>
+          <div class="line-text">Xưởng nhập thẳng <span class="hl">ván lõi xanh chống ẩm</span>, cắt máy tự động <span class="hl">khít từng li</span>...</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 6)">
+          <div class="check-box">6</div>
+          <div class="line-text">bắt sẵn <span class="hl">ray bi ba tầng</span> và <span class="hl">dựng thử nguyên bộ</span> ngay tại nền xưởng.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 7)">
+          <div class="check-box">7</div>
+          <div class="line-text">Chuẩn từng đường bo cong rồi mới <span class="hl">bọc góc chở lên căn hộ</span> nhà bạn.</div>
+        </div>
+        <div class="line-item" onclick="toggleLine(this, 8)">
+          <div class="check-box">8</div>
+          <div class="line-text">Bạn <span class="hl">gửi mặt bằng qua Zalo</span> để nhận bản vẽ 3D và <span class="hl">giá gốc tận xưởng</span> nhé.</div>
+        </div>
+      </div>
+
+      <div class="oneline-box">
+        <div class="oneline-title">⚡ Đọc liền 1 dòng:</div>
+        <div class="oneline-text">
+          Cùng một <span class="hl">bản vẽ 3D căn hộ</span>, đặt thẳng tại xưởng <span class="hl">tiết kiệm ngay 30%</span> <span class="sep">/</span> Vì nhiều đơn vị <span class="hl">nhận thiết kế ngoài phố</span>... <span class="sep">/</span> cuối cùng vẫn <span class="hl">chuyển file về Hữu Bằng</span> cắt trên <span class="hl">dàn máy CNC này</span> <span class="sep">/</span> Đặt trực tiếp tại <span class="hl">xưởng Đức Oanh</span>, bạn bỏ qua toàn bộ <span class="hl">phí trung gian</span> <span class="sep">/</span> Xưởng nhập thẳng <span class="hl">ván lõi xanh chống ẩm</span>, cắt máy tự động <span class="hl">khít từng li</span>... <span class="sep">/</span> bắt sẵn <span class="hl">ray bi ba tầng</span> và <span class="hl">dựng thử nguyên bộ</span> ngay tại nền xưởng <span class="sep">/</span> Chuẩn từng đường bo cong rồi mới <span class="hl">bọc góc chở lên căn hộ</span> nhà bạn <span class="sep">/</span> Bạn <span class="hl">gửi mặt bằng qua Zalo</span> để nhận bản vẽ 3D và <span class="hl">giá gốc tận xưởng</span> nhé.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let fontScale = 1.08;
+
+    function changeFont(delta) {
+      fontScale = Math.max(0.85, Math.min(1.65, fontScale + delta));
+      document.documentElement.style.setProperty('--font-scale', fontScale.toFixed(2));
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      document.getElementById('themeBtn').innerText = isLight ? '🌙 Nền tối' : '☀️ Nền sáng';
+    }
+
+    function filterShot(targetId, btn) {
+      document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.shot-card').forEach(card => {
+        card.style.display = (targetId === 'all' || card.id === targetId) ? 'block' : 'none';
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleLine(el, num) {
+      const parent = el.closest('.checklist');
+      const items = Array.from(parent.querySelectorAll('.line-item'));
+      el.classList.toggle('done');
+      const box = el.querySelector('.check-box');
+      box.innerText = el.classList.contains('done') ? '✓' : num;
+
+      items.forEach(item => item.classList.remove('active-next'));
+      const firstUndone = items.find(item => !item.classList.contains('done'));
+      if (firstUndone) firstUndone.classList.add('active-next');
+    }
+
+    function resetAll() {
+      document.querySelectorAll('.checklist').forEach(list => {
+        const items = Array.from(list.querySelectorAll('.line-item'));
+        items.forEach((item, idx) => {
+          item.classList.remove('done', 'active-next');
+          item.querySelector('.check-box').innerText = idx + 1;
+          if (idx === 0) item.classList.add('active-next');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
