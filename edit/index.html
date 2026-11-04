@@ -419,7 +419,9 @@
       var ua = (navigator.userAgent || '').toLowerCase();
       var plat = (navigator.platform || '').toLowerCase();
       var isPhone = /iphone|ipod|android.*mobile|windows phone/.test(ua);
-      if (plat.indexOf('mac') !== -1 || (ua.indexOf('macintosh') !== -1 && navigator.maxTouchPoints <= 1)) {
+      if (ua.indexOf('windows') !== -1 || plat.indexOf('win') !== -1) {
+        currentOS = 'win';
+      } else if (ua.indexOf('macintosh') !== -1 || plat.indexOf('mac') !== -1) {
         currentOS = 'mac';
       } else {
         currentOS = 'win';
