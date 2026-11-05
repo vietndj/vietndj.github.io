@@ -16,7 +16,7 @@ import os
 
 BASE_DIR = '/Users/vietmac/Documents/CODE/vietndj.github.io'
 DB_PATH = os.path.join(BASE_DIR, 'broll_bank_master.json')
-HTML_OUT = os.path.join(BASE_DIR, 'index.html')
+HTML_OUT = os.path.join(BASE_DIR, 'brollbank.html')
 HTML_OUT_LEGACY = os.path.join(BASE_DIR, 'brollbank.html')
 
 with open(DB_PATH, 'r', encoding='utf-8') as f:
