@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="tiktok-developers-site-verification" content="0ZDntU4MgoLmAmMJorgO28qCbXTFL4jf">
   <meta name="tiktok-developers-site-verification" content="tiktok-developers-site-verification=0ZDntU4MgoLmAmMJorgO28qCbXTFL4jf">
-  <title>Nguyễn Đức Việt — Làm Video Thực Tế & Bản Chất Lòng Tin (FEDU)</title>
-  <meta name="description" content="Hồ sơ cá nhân Nguyễn Đức Việt — Giảng viên 15+ năm kinh nghiệm tại FPT & Đa phương tiện, người sáng lập hệ sinh thái đào tạo video thực chiến FEDU.">
+  <title>Nguyễn Đức Việt — Hồ Sơ Cá Nhân</title>
+  <meta name="description" content="Hồ sơ cá nhân Nguyễn Đức Việt — Giảng viên 15+ năm kinh nghiệm tại FPT & Đa phương tiện, đào tạo làm video thực tế.">
   <link rel="canonical" href="https://fedu.vn/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,6 @@
       --mute: #6E6D68;
       --line: #E6E2DA;
       --accent: #B45309;
-      --accent-soft: #FEF3C7;
       --sans: 'FD Aeonik', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --serif: 'Newsreader', Georgia, serif;
     }
@@ -60,21 +59,25 @@
       color: var(--ink);
       font-family: var(--sans);
       line-height: 1.65;
-      padding: 48px 20px 80px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
     }
 
     .wrap {
-      max-width: 760px;
+      width: 100%;
+      max-width: 720px;
       margin: 0 auto;
     }
 
-    /* Profile Header */
     .profile-card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 2px 12px rgba(20, 20, 19, 0.03);
+      border-radius: 22px;
+      padding: 44px;
+      box-shadow: 0 4px 20px rgba(20, 20, 19, 0.04);
     }
 
     .header-row {
@@ -142,7 +145,6 @@
       margin-bottom: 0;
     }
 
-    /* Stats / Milestones */
     .milestones {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -172,118 +174,73 @@
       line-height: 1.45;
     }
 
-    /* Section Title */
-    .sec-title {
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--mute);
-      margin: 36px 0 14px;
-    }
-
-    /* Primary Links */
-    .links-grid {
+    .social-section {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
 
-    .link-card {
+    .social-btn {
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 20px 22px;
+      padding: 16px 20px;
+      border-radius: 14px;
       text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
-    .link-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--ink);
-      box-shadow: 0 6px 20px rgba(20, 20, 19, 0.06);
-    }
-
-    .link-card.primary {
-      grid-column: 1 / -1;
+    .social-btn.fb {
       background: #141413;
       color: #FFFFFF;
-      border-color: #141413;
+      border: 1px solid #141413;
     }
 
-    .link-card.primary .lc-tag {
-      color: #FBBF24;
+    .social-btn.tiktok {
+      background: var(--bg);
+      color: var(--ink);
+      border: 1px solid var(--line);
     }
 
-    .link-card.primary .lc-desc {
-      color: #D6D3CD;
+    .social-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(20, 20, 19, 0.08);
     }
 
-    .link-card.primary .lc-url {
-      color: #FBBF24;
+    .social-btn.tiktok:hover {
+      border-color: var(--ink);
     }
 
-    .lc-tag {
+    .social-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .social-label {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
+      opacity: 0.7;
     }
 
-    .lc-title {
-      font-size: 17.5px;
+    .social-handle {
+      font-size: 15.5px;
       font-weight: 700;
-      margin-bottom: 6px;
     }
 
-    .lc-desc {
-      font-size: 14px;
-      color: var(--mute);
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
-
-    .lc-url {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    /* Contact / Socials */
-    .contact-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .contact-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-      text-decoration: none;
-      transition: background 0.15s ease, border-color 0.15s ease;
-    }
-
-    .contact-pill:hover {
-      background: #F1EFEA;
-      border-color: var(--ink);
+    .social-arrow {
+      font-size: 18px;
     }
 
     footer {
-      margin-top: 48px;
+      margin-top: 24px;
       text-align: center;
       font-size: 13px;
       color: var(--mute);
@@ -291,20 +248,20 @@
 
     @media (max-width: 640px) {
       body {
-        padding: 24px 16px 60px;
+        padding: 20px 14px;
       }
       .profile-card {
-        padding: 26px 22px;
+        padding: 26px 20px;
       }
       .header-row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 18px;
+        gap: 16px;
       }
       .milestones {
         grid-template-columns: 1fr;
       }
-      .links-grid {
+      .social-section {
         grid-template-columns: 1fr;
       }
     }
@@ -349,71 +306,25 @@
           <div class="ms-desc">Quay trực tiếp từ công việc hàng ngày, nói đúng thứ khách hàng đang trăn trở</div>
         </div>
       </div>
+
+      <div class="social-section">
+        <a href="https://www.facebook.com/nddviet" target="_blank" rel="noopener noreferrer" class="social-btn fb">
+          <div class="social-meta">
+            <span class="social-label">Facebook Cá Nhân</span>
+            <span class="social-handle">facebook.com/nddviet</span>
+          </div>
+          <span class="social-arrow">↗</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@nguyenducviet.viral" target="_blank" rel="noopener noreferrer" class="social-btn tiktok">
+          <div class="social-meta">
+            <span class="social-label">Kênh TikTok</span>
+            <span class="social-handle">@nguyenducviet.viral</span>
+          </div>
+          <span class="social-arrow">↗</span>
+        </a>
+      </div>
     </section>
-
-    <div class="sec-title">Hệ thống tri thức &amp; Lớp học</div>
-    <div class="links-grid">
-      <a href="https://kenh.fedu.vn/" class="link-card primary">
-        <div>
-          <div class="lc-tag">TRUNG TÂM TRI THỨC CỐT LÕI</div>
-          <div class="lc-title">Trung Tâm Logic Xây Kênh &amp; Bản Chất Niềm Tin</div>
-          <div class="lc-desc">Toàn bộ lộ trình từ tư duy gốc, tâm lý người xem thầm lặng (90-9-1), 4 định dạng video chủ lực đến giải phẫu các kênh thực tế.</div>
-        </div>
-        <div class="lc-url">kenh.fedu.vn →</div>
-      </a>
-
-      <a href="https://offline.fedu.vn/" class="link-card">
-        <div>
-          <div class="lc-tag">HUẤN LUYỆN TRỰC TIẾP</div>
-          <div class="lc-title">Khóa Học Offline 2 Ngày</div>
-          <div class="lc-desc">Cầm tay chỉ việc tại lớp: tự viết kịch bản, tự bấm máy quay và dựng hoàn chỉnh video trên điện thoại.</div>
-        </div>
-        <div class="lc-url">offline.fedu.vn ↗</div>
-      </a>
-
-      <a href="https://kho.fedu.vn/" class="link-card">
-        <div>
-          <div class="lc-tag">CẨM NANG &amp; HỎI ĐÁP</div>
-          <div class="lc-title">Kho Tri Thức &amp; Giải Mã Logic</div>
-          <div class="lc-desc">Thư viện các bài phân tích chuyên sâu về tâm lý khách hàng, ngôn ngữ cơ thể và cách gỡ bí ý tưởng.</div>
-        </div>
-        <div class="lc-url">kho.fedu.vn ↗</div>
-      </a>
-
-      <a href="https://video.fedu.vn/" class="link-card">
-        <div>
-          <div class="lc-tag">KỸ NĂNG DỰNG</div>
-          <div class="lc-title">Làm Chủ Dựng Video CapCut</div>
-          <div class="lc-desc">Hướng dẫn từng bước cắt ghép, nhịp dựng, chèn cảnh phủ (B-roll) và âm thanh sạch sẽ trên điện thoại.</div>
-        </div>
-        <div class="lc-url">video.fedu.vn ↗</div>
-      </a>
-
-      <a href="https://brollbank.fedu.vn/" class="link-card">
-        <div>
-          <div class="lc-tag">TÀI NGUYÊN HỖ TRỢ</div>
-          <div class="lc-title">Kho Tư Liệu B-Roll Bank</div>
-          <div class="lc-desc">Thư viện cảnh quay đời sống và công việc phục vụ học viên thực hành lắp ráp video.</div>
-        </div>
-        <div class="lc-url">brollbank.fedu.vn ↗</div>
-      </a>
-    </div>
-
-    <div class="sec-title">Kết nối trực tiếp</div>
-    <div class="contact-bar">
-      <a href="https://www.facebook.com/nddviet" target="_blank" rel="noopener" class="contact-pill">
-        <span>Facebook Cá Nhân</span>
-      </a>
-      <a href="https://www.facebook.com/nguyenducviet.video/reels/" target="_blank" rel="noopener" class="contact-pill">
-        <span>Kênh Video Reels</span>
-      </a>
-      <a href="https://www.tiktok.com/@nguyenducviet.viral" target="_blank" rel="noopener" class="contact-pill">
-        <span>TikTok (@nguyenducviet.viral)</span>
-      </a>
-      <a href="https://zalo.me/0934688632" target="_blank" rel="noopener" class="contact-pill">
-        <span>Zalo: 0934.688.632</span>
-      </a>
-    </div>
 
     <footer>
       © 2026 Nguyễn Đức Việt · fedu.vn
