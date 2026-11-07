@@ -1,12 +1,12 @@
 /**
  * skill_live_data.js - DỮ LIỆU SỐNG TỰ ĐỘNG ĐỒNG BỘ CHO VIDEOAI.FEDU.VN
- * Sinh tự động bởi sync_videoai.py vào lúc: 08/11/2026 00:54:17
+ * Sinh tự động bởi sync_videoai.py vào lúc: 08/11/2026 01:04:52
  * Chuẩn màu sắc sáng giấy ấm (#FDFCF9), tích hợp với hub.js và style.css của kenh.fedu.vn
  */
 
 window.SKILL_LIVE_DATA = {
-  "last_synced_formatted": "08/11/2026 00:54:17",
-  "last_synced_iso": "2026-11-08T00:54:17.100053",
+  "last_synced_formatted": "08/11/2026 01:04:52",
+  "last_synced_iso": "2026-11-08T01:04:52.197896",
   "summary": {
     "styles_count": 35,
     "motions_count": 16,
@@ -2692,11 +2692,11 @@ window.SKILL_LIVE_DATA = {
       "badge": "EDIT PRO V3.7 MASTER",
       "desc": "Hệ thống dựng video chuyên gia & chuỗi B-Roll đa góc máy tự động V3.7: 5 Nhịp EXPERT (Rough-Cut 0.000s drift, Seam-Locked Axial Cut +26%) + 3 Nhịp BROLL (R1..R6), tự động nhận diện 9+1 Style Ngành (G1..G3 + C4..C9 + F0), 5 Hook PA1..PA5, 6 Thẻ Đồ Họa Vector & 6 Bảng Tổng Kết Toàn Màn Hình O1..O6 có CTA Animation tự động.",
       "path": "/Users/vietmac/.gemini/config/skills/edit-video-pro/SKILL.md",
-      "size": 25409,
-      "size_formatted": "24.8 KB",
-      "lines_count": 168,
-      "mtime": 1794073865.55952,
-      "mtime_formatted": "08/11/2026 00:51",
+      "size": 26358,
+      "size_formatted": "25.7 KB",
+      "lines_count": 169,
+      "mtime": 1794074687.2657313,
+      "mtime_formatted": "08/11/2026 01:04",
       "headers": [
         "LUẬT BẮT BUỘC V3.6 (KHÔNG ĐƯỢC BỎ BƯỚC)",
         "BƯỚC 1 — QUÉT VIDEO/THƯ MỤC & CHUẨN BỊ ĐIỂM DỪNG 1",
@@ -6030,11 +6030,11 @@ window.SKILL_LIVE_DATA = {
       "name": "bds_vong_cung_3d_engine.py",
       "skill_id": "edit-video-pro",
       "skill_name": "Edit Video Pro V3.7 (Chuyên Gia EXPERT & Chuỗi B-Roll Đa Góc Máy V3.0 • 9+1 Style Ngành Tự Động • 5 Hook PA1→PA5 • 6 Outro Toàn Màn Hình + CTA Animation)",
-      "size": 60175,
-      "size_formatted": "58.8 KB",
-      "lines": 1432,
-      "mtime": 1794072180.1478505,
-      "mtime_formatted": "08/11/2026 00:23",
+      "size": 60846,
+      "size_formatted": "59.4 KB",
+      "lines": 1447,
+      "mtime": 1794074256.4459727,
+      "mtime_formatted": "08/11/2026 00:57",
       "desc": "============================================================================="
     },
     {
@@ -6855,11 +6855,11 @@ window.SKILL_LIVE_DATA = {
       "name": "render_m12_inside_out_funnel.py",
       "skill_id": "bds-edit",
       "skill_name": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
-      "size": 60175,
-      "size_formatted": "58.8 KB",
-      "lines": 1432,
-      "mtime": 1794072180.1478505,
-      "mtime_formatted": "08/11/2026 00:23",
+      "size": 60846,
+      "size_formatted": "59.4 KB",
+      "lines": 1447,
+      "mtime": 1794074256.4459727,
+      "mtime_formatted": "08/11/2026 00:57",
       "desc": "============================================================================="
     },
     {
@@ -7451,9 +7451,25 @@ window.SKILL_LIVE_DATA = {
       "name": "edit-video-pro/SKILL.md",
       "type": "Markdown Spec",
       "skill": "Edit Video Pro V3.7 (Chuyên Gia EXPERT & Chuỗi B-Roll Đa Góc Máy V3.0 • 9+1 Style Ngành Tự Động • 5 Hook PA1→PA5 • 6 Outro Toàn Màn Hình + CTA Animation)",
-      "mtime": 1794073865.55952,
-      "mtime_formatted": "08/11/2026 00:51",
-      "detail": "168 dòng • 5 mục chính"
+      "mtime": 1794074687.2657313,
+      "mtime_formatted": "08/11/2026 01:04",
+      "detail": "169 dòng • 5 mục chính"
+    },
+    {
+      "name": "scripts/bds_vong_cung_3d_engine.py",
+      "type": "Python Script",
+      "skill": "Edit Video Pro V3.7 (Chuyên Gia EXPERT & Chuỗi B-Roll Đa Góc Máy V3.0 • 9+1 Style Ngành Tự Động • 5 Hook PA1→PA5 • 6 Outro Toàn Màn Hình + CTA Animation)",
+      "mtime": 1794074256.4459727,
+      "mtime_formatted": "08/11/2026 00:57",
+      "detail": "============================================================================="
+    },
+    {
+      "name": "scripts/render_m12_inside_out_funnel.py",
+      "type": "Python Script",
+      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
+      "mtime": 1794074256.4459727,
+      "mtime_formatted": "08/11/2026 00:57",
+      "detail": "============================================================================="
     },
     {
       "name": "scripts/bds_fonts.py",
@@ -7534,22 +7550,6 @@ window.SKILL_LIVE_DATA = {
       "mtime": 1794072398.0718188,
       "mtime_formatted": "08/11/2026 00:26",
       "detail": "CONTENT-AWARE STYLE & DIAGRAM ROUTER V3.0 (9 STYLE PACKS: 3 GEMINI + 6 CLAUDE + F0 DEFAULT)"
-    },
-    {
-      "name": "scripts/bds_vong_cung_3d_engine.py",
-      "type": "Python Script",
-      "skill": "Edit Video Pro V3.7 (Chuyên Gia EXPERT & Chuỗi B-Roll Đa Góc Máy V3.0 • 9+1 Style Ngành Tự Động • 5 Hook PA1→PA5 • 6 Outro Toàn Màn Hình + CTA Animation)",
-      "mtime": 1794072180.1478505,
-      "mtime_formatted": "08/11/2026 00:23",
-      "detail": "============================================================================="
-    },
-    {
-      "name": "scripts/render_m12_inside_out_funnel.py",
-      "type": "Python Script",
-      "skill": "Bộ Kỹ Năng AI Video Bất Động Sản Toàn Diện (BDS-Edit V5.0 Master Suite — 12 Trụ Cột M1→M12)",
-      "mtime": 1794072180.1478505,
-      "mtime_formatted": "08/11/2026 00:23",
-      "detail": "============================================================================="
     },
     {
       "name": "evolution_log.json",
