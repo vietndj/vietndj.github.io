@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-08T06:16:34+07:00",
+  "generated_at": "2026-11-08T06:24:41+07:00",
   "total_scene_items": 418,
   "total_unique_ideas": 399,
   "total_active_ideas": 339,
@@ -76,8 +76,8 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 8,
-    "voice-over": 14,
+    "walk-and-talk": 9,
+    "voice-over": 13,
     "talking-head": 46,
     "storytelling": 40,
     "dien-anh": 165,
@@ -3160,15 +3160,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jade.got.curious_DfDgb_3xBNZ_Your_weird_interests_might_be_how_your_people",
       "shortcode": "DfDgb_3xBNZ",
-      "title_vi": "Your weird interests might be how your people",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Đan Xen Ngồi Cửa Sổ, Bước Đi Kho Hàng & Thao Tác Nghề Thật (@jade.got.curious)",
+      "quick_takeaway": "Cách kết hợp cảnh ngồi trò chuyện bên cửa sổ với cảnh bước đi trong kho, góc cao 90 độ nằm thảm và cảnh tay làm nghề thật để kể câu chuyện dài 75 giây cuốn hút.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "voice-over",
-        "name": "Lồng Tiếng",
-        "en_name": "Voice Over",
-        "icon": "🎙️",
-        "badge_color": "purple"
+        "id": "walk-and-talk",
+        "name": "Walk & Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
       },
       "industries": [
         {
@@ -3182,10 +3182,13 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Walk & Talk đan xen",
+        "Góc cao / Flatlay (chụp thẳng từ trên xuống)",
+        "Tracking (đi máy bám theo bước chân)"
       ],
       "country": {
         "id": "us_eu",
@@ -3196,10 +3199,13 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jade.got.curious",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting"
+        "Walk & Talk đan xen",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Góc cao / Flatlay (chụp thẳng từ trên xuống)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Tracking (đi máy bám theo bước chân)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3221,9 +3227,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@jade.got.curious_DfDgb_3xBNZ_Your_weird_interests_might_be_how_your_people.html",
         "shots_count": 65,
         "duration": "75.3s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": "qZQyWJupddk",
+        "youtube_embed": "https://www.youtube.com/embed/qZQyWJupddk",
+        "youtube_url": "https://youtu.be/qZQyWJupddk"
       },
       "complexity": {
         "id": "nang-cao",
@@ -12968,7 +12974,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -14524,7 +14530,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
