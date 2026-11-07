@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bộ Sưu Tập 38 Video So Sánh Trước–Sau (Trái: Nguyên Liệu • Phải: Kết Quả) — AI Video Edit FEDU</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M13.2%2052.5Q12.1%2052.5%2012.1%2051.4V23.1L10.6%2023.7Q9.4%2024.1%209.3%2023L8.5%2018.7Q8.3%2017.8%209.2%2017.4L15.1%2014.8Q15.6%2014.5%2016.4%2014.5H19.4Q20.4%2014.5%2020.4%2015.6V51.4Q20.4%2052.5%2019.4%2052.5ZM34.2%2053Q31.1%2053%2029.1%2052.2Q27.2%2051.4%2026.1%2050.1Q25.1%2048.8%2024.7%2047.1Q24.3%2045.5%2024.3%2043.7V37.6Q24.3%2036.8%2024.4%2035.9Q24.6%2035%2025%2034.1Q25.4%2033.3%2026.2%2032.6Q27%2032%2028.2%2031.6V31.4Q27%2031%2026.3%2030.3Q25.6%2029.6%2025.3%2028.7Q25%2027.7%2024.9%2026.7Q24.8%2025.7%2024.8%2024.7V23.2Q24.8%2021.5%2025.1%2019.8Q25.5%2018.2%2026.5%2016.9Q27.5%2015.6%2029.3%2014.8Q31.2%2014%2034.2%2014Q37.2%2014%2039%2014.8Q40.8%2015.6%2041.8%2016.9Q42.8%2018.2%2043.2%2019.8Q43.5%2021.5%2043.5%2023.2V24.7Q43.5%2025.7%2043.4%2026.7Q43.4%2027.7%2043%2028.7Q42.7%2029.6%2042%2030.3Q41.3%2031%2040.1%2031.4V31.6Q41.3%2032%2042.1%2032.7Q42.8%2033.3%2043.3%2034.2Q43.7%2035%2043.9%2035.9Q44%2036.8%2044%2037.6V43.7Q44%2045.5%2043.6%2047.1Q43.3%2048.8%2042.2%2050.1Q41.1%2051.4%2039.2%2052.2Q37.2%2053%2034.2%2053ZM34.2%2028.1Q34.9%2028.1%2035.3%2027.7Q35.7%2027.3%2035.7%2026.2V22.7Q35.7%2021.6%2035.3%2021.2Q34.9%2020.8%2034.2%2020.8Q33.4%2020.8%2033%2021.2Q32.6%2021.6%2032.6%2022.7V26.2Q32.6%2027.3%2033%2027.7Q33.4%2028.1%2034.2%2028.1ZM34.2%2046.2Q34.9%2046.2%2035.3%2045.8Q35.7%2045.4%2035.7%2044.3V36.7Q35.7%2035.6%2035.3%2035.3Q34.9%2034.9%2034.2%2034.9Q33.4%2034.9%2033%2035.3Q32.6%2035.6%2032.6%2036.7V44.3Q32.6%2045.4%2033%2045.8Q33.4%2046.2%2034.2%2046.2Z'%20fill='%23FB923C'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%23FB923C'/%3E%3C/svg%3E">
+  <link href="assets/style.css?v=20261104" rel="stylesheet"/>
+  <style>
+    .sbs-hero {
+      background: linear-gradient(135deg, #090d16 0%, #111827 52%, #1e1b4b 100%);
+      color: #f8fafc;
+      border-radius: 18px;
+      padding: 28px 26px;
+      border: 2px solid #f59e0b;
+      box-shadow: 0 20px 48px rgba(15, 23, 42, 0.22);
+      margin-bottom: 24px;
+    }
+    .sbs-hero .kicker {
+      color: #fbbf24 !important;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .sbs-hero h1 {
+      color: #ffffff !important;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+    .sbs-hero-lede {
+      font-size: 15.5px !important;
+      line-height: 1.65 !important;
+      color: #f1f5f9 !important;
+      margin: 0 0 18px !important;
+    }
+    .sbs-hero-lede strong {
+      color: #fde68a !important;
+      font-weight: 700 !important;
+    }
+    .sbs-hero-lede code {
+      background: rgba(251, 191, 36, 0.16) !important;
+      color: #fde68a !important;
+      border: 1px solid rgba(251, 191, 36, 0.38) !important;
+      padding: 2px 7px !important;
+      border-radius: 6px !important;
+    }
+    .sbs-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .sbs-stat-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .sbs-stat-card b {
+      display: block;
+      font: 800 20px/1.2 var(--sans);
+      color: #fbbf24;
+      margin-bottom: 4px;
+    }
+    .sbs-stat-card span {
+      font-size: 12.8px;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+    .sbs-hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .sbs-pl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font: 800 13.5px/1 var(--sans);
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      color: #ffffff !important;
+      text-decoration: none;
+      border: 1px solid rgba(252, 165, 165, 0.6);
+      box-shadow: 0 6px 18px rgba(220, 38, 38, 0.28);
+    }
+    .sbs-pl-btn:hover {
+      filter: brightness(1.08);
+    }
+
+    .sbs-toolbar {
+      position: sticky;
+      top: 58px;
+      z-index: 30;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sbs-filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+    }
+    .sbs-tab {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #1e293b;
+      font: 700 12.8px/1 var(--sans);
+      padding: 9px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .sbs-tab:hover {
+      border-color: #94a3b8;
+      background: #f1f5f9;
+    }
+    .sbs-tab.active {
+      background: #0f172a;
+      color: #fbbf24;
+      border-color: #0f172a;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+    }
+    .sbs-search-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .sbs-search-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font: 500 14px var(--sans);
+      color: #0f172a;
+      background: #ffffff;
+    }
+    .sbs-search-input:focus {
+      outline: none;
+      border-color: #d97706;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+    .sbs-count-live {
+      font: 700 13px var(--mono);
+      color: #475569;
+    }
+
+    .sbs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .sbs-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .sbs-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.11);
+      border-color: #cbd5e1;
+    }
+    .sbs-video-shell {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #090d16;
+      overflow: hidden;
+    }
+    .sbs-video-shell iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .sbs-yt-facade {
+      appearance: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #090d16;
+      cursor: pointer;
+      position: relative;
+      display: block;
+    }
+    .sbs-yt-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .sbs-yt-facade:hover img {
+      transform: scale(1.015);
+    }
+    .sbs-play-circle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(220, 38, 38, 0.94);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .sbs-yt-facade:hover .sbs-play-circle {
+      transform: translate(-50%, -50%) scale(1.08);
+      background: #ef4444;
+    }
+    .sbs-yt-chip {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(9, 13, 22, 0.84);
+      color: #f8fafc;
+      font: 700 11px/1 var(--sans);
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      white-space: nowrap;
+      backdrop-filter: blur(6px);
+    }
+    .sbs-top-badges {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .sbs-pill-new {
+      background: rgba(220, 38, 38, 0.92);
+      color: #ffffff;
+      font: 800 10.5px/1 var(--mono);
+      padding: 5px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+    .sbs-pill-lib {
+      background: rgba(15, 23, 42, 0.84);
+      color: #e2e8f0;
+      font: 700 10.5px/1 var(--mono);
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .sbs-pill-cat {
+      font: 700 10.5px/1 var(--sans);
+      padding: 5px 9px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+    .cat-spa { background: rgba(20, 83, 45, 0.88); color: #dcfce7; }
+    .cat-bds { background: rgba(30, 58, 138, 0.90); color: #fef08a; }
+    .cat-nongsan { background: rgba(120, 53, 15, 0.90); color: #fde68a; }
+    .cat-other { background: rgba(51, 65, 85, 0.90); color: #f1f5f9; }
+
+    .sbs-body {
+      padding: 13px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 7px;
+    }
+    .sbs-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+    .sbs-student {
+      font: 800 12px/1.2 var(--sans);
+      color: #b45309;
+    }
+    .sbs-tech {
+      font: 600 11.5px/1 var(--mono);
+      color: #64748b;
+      white-space: nowrap;
+    }
+    .sbs-title {
+      font: 700 14.5px/1.4 var(--sans) !important;
+      color: #0f172a !important;
+      margin: 0 0 6px !important;
+      flex: 1;
+    }
+    .sbs-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .sbs-btn-copy {
+      flex: 1;
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #0f172a;
+      font: 700 12px/1 var(--sans);
+      padding: 9px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .sbs-btn-copy:hover {
+      background: #fef3c7;
+      border-color: #f59e0b;
+      color: #92400e;
+    }
+    .sbs-btn-open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #0f172a;
+      color: #fbbf24 !important;
+      font: 700 12px/1 var(--sans);
+      padding: 9px 11px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    @media (max-width: 640px) {
+      .sbs-grid {
+        grid-template-columns: 1fr;
+      }
+      .sbs-toolbar {
+        top: 52px;
+        padding: 10px 11px;
+      }
+    }
+  </style>
+</head>
+<body data-page="so-sanh-truoc-sau">
+  <main class="main" style="display:none">
+    <div class="content">
+
+      <div class="sbs-hero">
+        <div class="kicker">— BỘ SƯU TẬP ĐỐI CHỨNG TRỰC QUAN • TRÁI: NGUYÊN LIỆU GỐC &bull; PHẢI: KẾT QUẢ AI EDIT</div>
+        <h1>Bộ Sưu Tập 38 Video So Sánh Trước &amp; Sau Khi AI Edit</h1>
+        <p class="sbs-hero-lede">
+          Mỗi video đặt song song <strong>khung Nguyên liệu thô bên trái</strong> và <strong>thành phẩm hoàn chỉnh bên phải</strong> để đối chứng trực tiếp: lọc sạch vấp &amp; khoảng nghỉ thừa, khóa tâm mắt <code>Y=650px</code>, phụ đề tiếng Việt chuẩn Editorial, chèn cảnh trám B-Roll, bản vẽ Atlas 2D và Poster Motion.
+        </p>
+        <div class="sbs-stat-grid">
+          <div class="sbs-stat-card">
+            <b>38 Video YouTube HD</b>
+            <span>Phát trực tiếp từ Playlist riêng <code>ai video edit</code> trên kênh Nguyễn Đức Việt</span>
+          </div>
+          <div class="sbs-stat-card">
+            <b>22 Bản Mới Dựng</b>
+            <span>Tổng hợp đầy đủ các bài dựng thực chiến học viên K4</span>
+          </div>
+          <div class="sbs-stat-card">
+            <b>16 Bản Thư Viện</b>
+            <span>Kho mẫu đối chứng Spa, Nha khoa, Hạ Long Xanh &amp; Prima Bay</span>
+          </div>
+          <div class="sbs-stat-card">
+            <b>1 Chạm Gửi Khách</b>
+            <span>Bấm Copy link YouTube từng video để gửi Zalo tư vấn ngay</span>
+          </div>
+        </div>
+        <div class="sbs-hero-cta-row">
+          <a href="https://www.youtube.com/playlist?list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-pl-btn">
+            ▶️ Mở Playlist YouTube: ai video edit (38 Videos) &nearr;
+          </a>
+        </div>
+      </div>
+
+      <div class="sbs-toolbar" id="sbs-filter-bar">
+        <div class="sbs-filter-row">
+          <button type="button" class="sbs-tab active" data-filter="all">Tất cả (38)</button>
+          <button type="button" class="sbs-tab" data-filter="new">✨ Mới dựng (22)</button>
+          <button type="button" class="sbs-tab" data-filter="spa">🌿 Spa &amp; Y Dược (18)</button>
+          <button type="button" class="sbs-tab" data-filter="bds">🏛️ Bất động sản (8)</button>
+          <button type="button" class="sbs-tab" data-filter="nongsan">🌸 Hoa &bull; Nông sản &bull; Thực dưỡng (4)</button>
+          <button type="button" class="sbs-tab" data-filter="other">🎬 Đa ngành (8)</button>
+        </div>
+        <div class="sbs-search-row">
+          <input type="search" id="sbs-search" class="sbs-search-input" placeholder="Tìm nhanh theo tên học viên hoặc chủ đề (VD: Alice, Huê Phạm, Hạ Long Xanh, Thắm Thỏ, Đoan Trang...)"/>
+          <span class="sbs-count-live" id="sbs-count-live">Đang hiển thị: 38/38 video</span>
+        </div>
+      </div>
+
+      <h2 id="nhom-moi-cap-nhat">1. Nhóm Video Trước–Sau Mới Dựng (22 Video Học Viên K4)</h2>
+      <p style="margin-bottom:16px; color:var(--mute); font-size:14.5px;">
+        Tổng hợp đầy đủ các bài dựng thực chiến mới nhất: bên trái giữ nguyên tư liệu thô học viên gửi, bên phải là kết quả sau khi qua dây chuyền AI Video Edit.
+      </p>
+      <div class="sbs-grid" id="grid-new">
+        
+        <article class="sbs-card" id="alice_pa2_v9_ban1" data-cat="spa" data-new="1" data-search="alice thanh hằng bản mẫu phun môi pa2-v9 (khóa tâm mắt &amp; logo mới) alice thanh hằng • bản mẫu phun môi pa2-v9 &amp; màn hình tổng kết spa • thẩm mỹ • y dược alice_pa2_v9_ban1 f0tjxdt2cko">
+          <div class="sbs-video-shell" data-yt-id="F0tJXDt2CKo" data-poster="assets/truoc-sau-posters/alice_pa2_v9_ban1_poster.jpg" data-title="Alice Thanh Hằng - Bản mẫu Phun môi PA2-V9 (Khóa tâm mắt &amp; Logo mới)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Bản mẫu Phun môi PA2-V9 (Khóa tâm mắt &amp; Logo mới)">
+              <img src="assets/truoc-sau-posters/alice_pa2_v9_ban1_poster.jpg" alt="Bản mẫu Phun môi PA2-V9 (Khóa tâm mắt &amp; Logo mới)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#01 • Alice Thanh Hằng</span>
+              <span class="sbs-tech">114.8s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Bản mẫu Phun môi PA2-V9 (Khóa tâm mắt &amp; Logo mới)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/F0tJXDt2CKo">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=F0tJXDt2CKo&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="alice_reel_3phut_pa2" data-cat="spa" data-new="1" data-search="alice thanh hằng tái cấu trúc facebook reel 3 phút chuẩn chuyên gia pa2 alice thanh hằng • lột xác reel 3 phút sang chuẩn pa2 editorial spa • thẩm mỹ • y dược alice_reel_3phut_pa2 ca7lh6pnao8">
+          <div class="sbs-video-shell" data-yt-id="cA7lH6pNaO8" data-poster="assets/truoc-sau-posters/alice_reel_3phut_pa2_poster.jpg" data-title="Alice Thanh Hằng - Tái cấu trúc Facebook Reel 3 phút chuẩn Chuyên gia PA2">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Tái cấu trúc Facebook Reel 3 phút chuẩn Chuyên gia PA2">
+              <img src="assets/truoc-sau-posters/alice_reel_3phut_pa2_poster.jpg" alt="Tái cấu trúc Facebook Reel 3 phút chuẩn Chuyên gia PA2" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#02 • Alice Thanh Hằng</span>
+              <span class="sbs-tech">188.0s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Tái cấu trúc Facebook Reel 3 phút chuẩn Chuyên gia PA2</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/cA7lH6pNaO8">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=cA7lH6pNaO8&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="alice_v08_4_dieu_chuan_bi" data-cat="spa" data-new="1" data-search="alice thanh hằng 4 điều chuẩn bị trước khi đi phun môi (pa2-v8) alice thanh hằng • 4 điều chuẩn bị trước khi phun môi spa • thẩm mỹ • y dược alice_v08_4_dieu_chuan_bi fd9q3ikirxi">
+          <div class="sbs-video-shell" data-yt-id="Fd9Q3iKIRXI" data-poster="assets/truoc-sau-posters/alice_v08_4_dieu_chuan_bi_poster.jpg" data-title="Alice Thanh Hằng - 4 điều chuẩn bị trước khi đi phun môi (PA2-V8)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video 4 điều chuẩn bị trước khi đi phun môi (PA2-V8)">
+              <img src="assets/truoc-sau-posters/alice_v08_4_dieu_chuan_bi_poster.jpg" alt="4 điều chuẩn bị trước khi đi phun môi (PA2-V8)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#03 • Alice Thanh Hằng</span>
+              <span class="sbs-tech">44.0s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">4 điều chuẩn bị trước khi đi phun môi (PA2-V8)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/Fd9Q3iKIRXI">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=Fd9Q3iKIRXI&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="alice_v09_hanh_trinh_60_ngay" data-cat="spa" data-new="1" data-search="alice thanh hằng hành trình 60 ngày môi phục hồi &amp; lên màu sau phun alice thanh hằng • hành trình 60 ngày môi phục hồi &amp; lên màu spa • thẩm mỹ • y dược alice_v09_hanh_trinh_60_ngay kh6xtg1d5u4">
+          <div class="sbs-video-shell" data-yt-id="kh6Xtg1D5U4" data-poster="assets/truoc-sau-posters/alice_v09_hanh_trinh_60_ngay_poster.jpg" data-title="Alice Thanh Hằng - Hành trình 60 ngày môi phục hồi &amp; lên màu sau phun">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Hành trình 60 ngày môi phục hồi &amp; lên màu sau phun">
+              <img src="assets/truoc-sau-posters/alice_v09_hanh_trinh_60_ngay_poster.jpg" alt="Hành trình 60 ngày môi phục hồi &amp; lên màu sau phun" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#04 • Alice Thanh Hằng</span>
+              <span class="sbs-tech">89.7s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Hành trình 60 ngày môi phục hồi &amp; lên màu sau phun</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/kh6Xtg1D5U4">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=kh6Xtg1D5U4&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="hue_pham_v1_peel_khoa_hoc" data-cat="spa" data-new="1" data-search="huê phạm beauty cơ chế peel da khoa học &amp; phác đồ kiểm soát sắc tố (v10) huê phạm beauty • giải mã peel da khoa học kèm bản vẽ atlas 2d spa • thẩm mỹ • y dược hue_pham_v1_peel_khoa_hoc b345myyseaq">
+          <div class="sbs-video-shell" data-yt-id="b345MyySeAQ" data-poster="assets/truoc-sau-posters/hue_pham_v1_peel_khoa_hoc_poster.jpg" data-title="Huê Phạm Beauty - Cơ chế Peel da khoa học &amp; Phác đồ kiểm soát sắc tố (V10)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Cơ chế Peel da khoa học &amp; Phác đồ kiểm soát sắc tố (V10)">
+              <img src="assets/truoc-sau-posters/hue_pham_v1_peel_khoa_hoc_poster.jpg" alt="Cơ chế Peel da khoa học &amp; Phác đồ kiểm soát sắc tố (V10)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#05 • Huê Phạm Beauty</span>
+              <span class="sbs-tech">56.3s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Cơ chế Peel da khoa học &amp; Phác đồ kiểm soát sắc tố (V10)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/b345MyySeAQ">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=b345MyySeAQ&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="hue_pham_v2_cam_thuong_suy_giap" data-cat="spa" data-new="1" data-search="huê phạm beauty sự đồng cảm với khách hàng nám nội tiết &amp; suy giáp (v10) huê phạm beauty • ca lâm sàng nám nội tiết trên nền suy giáp spa • thẩm mỹ • y dược hue_pham_v2_cam_thuong_suy_giap au7g4s_rrqm">
+          <div class="sbs-video-shell" data-yt-id="Au7g4S_rrQM" data-poster="assets/truoc-sau-posters/hue_pham_v2_cam_thuong_suy_giap_poster.jpg" data-title="Huê Phạm Beauty - Sự đồng cảm với khách hàng Nám nội tiết &amp; Suy giáp (V10)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Sự đồng cảm với khách hàng Nám nội tiết &amp; Suy giáp (V10)">
+              <img src="assets/truoc-sau-posters/hue_pham_v2_cam_thuong_suy_giap_poster.jpg" alt="Sự đồng cảm với khách hàng Nám nội tiết &amp; Suy giáp (V10)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#06 • Huê Phạm Beauty</span>
+              <span class="sbs-tech">54.3s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Sự đồng cảm với khách hàng Nám nội tiết &amp; Suy giáp (V10)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/Au7g4S_rrQM">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=Au7g4S_rrQM&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="hue_pham_v3_ca_u50_nam_tet" data-cat="spa" data-new="1" data-search="huê phạm beauty hồ sơ ca thật u50 phục hồi nám đón tết an toàn (v10) huê phạm beauty • nhật ký điều trị thực tế khách u50 nám lâu năm spa • thẩm mỹ • y dược hue_pham_v3_ca_u50_nam_tet mf_sn_vfhf8">
+          <div class="sbs-video-shell" data-yt-id="MF_Sn_VFhf8" data-poster="assets/truoc-sau-posters/hue_pham_v3_ca_u50_nam_tet_poster.jpg" data-title="Huê Phạm Beauty - Hồ sơ ca thật U50 phục hồi Nám đón Tết an toàn (V10)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Hồ sơ ca thật U50 phục hồi Nám đón Tết an toàn (V10)">
+              <img src="assets/truoc-sau-posters/hue_pham_v3_ca_u50_nam_tet_poster.jpg" alt="Hồ sơ ca thật U50 phục hồi Nám đón Tết an toàn (V10)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#07 • Huê Phạm Beauty</span>
+              <span class="sbs-tech">53.3s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Hồ sơ ca thật U50 phục hồi Nám đón Tết an toàn (V10)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/MF_Sn_VFhf8">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=MF_Sn_VFhf8&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="hue_pham_v4_thay_mun_ngung_boi" data-cat="spa" data-new="1" data-search="huê phạm beauty quy tắc vàng: thấy mụn ẩn trồi lên phải ngưng bôi gì? (v10) huê phạm beauty • quy tắc xử lý phản ứng đẩy mụn chuẩn y khoa spa • thẩm mỹ • y dược hue_pham_v4_thay_mun_ngung_boi 68tqrkyhyfi">
+          <div class="sbs-video-shell" data-yt-id="68TqrkYhyFI" data-poster="assets/truoc-sau-posters/hue_pham_v4_thay_mun_ngung_boi_poster.jpg" data-title="Huê Phạm Beauty - Quy tắc vàng: Thấy mụn ẩn trồi lên phải ngưng bôi gì? (V10)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Quy tắc vàng: Thấy mụn ẩn trồi lên phải ngưng bôi gì? (V10)">
+              <img src="assets/truoc-sau-posters/hue_pham_v4_thay_mun_ngung_boi_poster.jpg" alt="Quy tắc vàng: Thấy mụn ẩn trồi lên phải ngưng bôi gì? (V10)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#08 • Huê Phạm Beauty</span>
+              <span class="sbs-tech">50.1s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Quy tắc vàng: Thấy mụn ẩn trồi lên phải ngưng bôi gì? (V10)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/68TqrkYhyFI">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=68TqrkYhyFI&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="dung_muse_beauty_alice_v7" data-cat="spa" data-new="1" data-search="dung muse beauty dựng chuyên gia thẩm mỹ kèm cảnh trám poster động (pa2-v7) dung muse beauty • khóa tâm mắt &amp; poster động minh họa từ 1 góc máy spa • thẩm mỹ • y dược dung_muse_beauty_alice_v7 b-s3hog-gwo">
+          <div class="sbs-video-shell" data-yt-id="B-s3hOG-gwo" data-poster="assets/truoc-sau-posters/dung_muse_beauty_alice_v7_poster.jpg" data-title="Dung Muse Beauty - Dựng Chuyên gia Thẩm mỹ kèm Cảnh trám Poster động (PA2-V7)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Dựng Chuyên gia Thẩm mỹ kèm Cảnh trám Poster động (PA2-V7)">
+              <img src="assets/truoc-sau-posters/dung_muse_beauty_alice_v7_poster.jpg" alt="Dựng Chuyên gia Thẩm mỹ kèm Cảnh trám Poster động (PA2-V7)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#09 • Dung Muse Beauty</span>
+              <span class="sbs-tech">35.4s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Dựng Chuyên gia Thẩm mỹ kèm Cảnh trám Poster động (PA2-V7)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/B-s3hOG-gwo">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=B-s3hOG-gwo&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="thu_hien_bds_tay_ho" data-cat="bds" data-new="1" data-search="thu hiền bđs tây hồ bđs thổ cư tây hồ — phong cách monochrome luxury master thu hiền bđs • nâng tầm video phân tích thổ cư tây hồ chuẩn monochrome bất động sản thu_hien_bds_tay_ho 5z95e1y4_rq">
+          <div class="sbs-video-shell" data-yt-id="5z95e1y4_rQ" data-poster="assets/truoc-sau-posters/thu_hien_bds_tay_ho_poster.jpg" data-title="Thu Hiền BĐS Tây Hồ - BĐS Thổ Cư Tây Hồ — Phong cách Monochrome Luxury Master">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video BĐS Thổ Cư Tây Hồ — Phong cách Monochrome Luxury Master">
+              <img src="assets/truoc-sau-posters/thu_hien_bds_tay_ho_poster.jpg" alt="BĐS Thổ Cư Tây Hồ — Phong cách Monochrome Luxury Master" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#10 • Thu Hiền BĐS Tây Hồ</span>
+              <span class="sbs-tech">71.4s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">BĐS Thổ Cư Tây Hồ — Phong cách Monochrome Luxury Master</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/5z95e1y4_rQ">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=5z95e1y4_rQ&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="bui_thi_hien_halong_xanh_v2" data-cat="bds" data-new="1" data-search="bùi thị hiền phân tích vinhomes hạ long xanh — bản dựng bđs thực chiến v2 bùi thị hiền • biến tư liệu hiện trường thành video tư vấn hạ long xanh bất động sản bui_thi_hien_halong_xanh_v2 7i5djr7msw8">
+          <div class="sbs-video-shell" data-yt-id="7I5dJR7mSw8" data-poster="assets/truoc-sau-posters/bui_thi_hien_halong_xanh_v2_poster.jpg" data-title="Bùi Thị Hiền - Phân tích Vinhomes Hạ Long Xanh — Bản dựng BĐS thực chiến V2">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Phân tích Vinhomes Hạ Long Xanh — Bản dựng BĐS thực chiến V2">
+              <img src="assets/truoc-sau-posters/bui_thi_hien_halong_xanh_v2_poster.jpg" alt="Phân tích Vinhomes Hạ Long Xanh — Bản dựng BĐS thực chiến V2" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#11 • Bùi Thị Hiền</span>
+              <span class="sbs-tech">44.5s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Phân tích Vinhomes Hạ Long Xanh — Bản dựng BĐS thực chiến V2</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/7I5dJR7mSw8">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=7I5dJR7mSw8&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="chi_huong_voucher_halong_xanh_v3" data-cat="bds" data-new="1" data-search="chị hường bđs giải bài toán voucher hạ long xanh — cutaway poster motion v3 chị hường bđs • tích hợp poster motion giải thích đòn bẩy voucher bất động sản chi_huong_voucher_halong_xanh_v3 g9swoedsj58">
+          <div class="sbs-video-shell" data-yt-id="g9swOedsj58" data-poster="assets/truoc-sau-posters/chi_huong_voucher_halong_xanh_v3_poster.jpg" data-title="Chị Hường BĐS - Giải bài toán Voucher Hạ Long Xanh — Cutaway Poster Motion V3">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Giải bài toán Voucher Hạ Long Xanh — Cutaway Poster Motion V3">
+              <img src="assets/truoc-sau-posters/chi_huong_voucher_halong_xanh_v3_poster.jpg" alt="Giải bài toán Voucher Hạ Long Xanh — Cutaway Poster Motion V3" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#12 • Chị Hường BĐS</span>
+              <span class="sbs-tech">27.6s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Giải bài toán Voucher Hạ Long Xanh — Cutaway Poster Motion V3</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/g9swOedsj58">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=g9swOedsj58&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="hang_sachi_nong_nghiep_v01" data-cat="nongsan" data-new="1" data-search="hằng sachi từ những clip nông sản rời rạc thành phim ngắn thương hiệu (voice ai) hằng sachi • ghép b-roll nông trại thô &amp; lồng tiếng ai truyền cảm hoa • nông sản • thực dưỡng hang_sachi_nong_nghiep_v01 sqx9d7lu2ma">
+          <div class="sbs-video-shell" data-yt-id="Sqx9d7lu2mA" data-poster="assets/truoc-sau-posters/hang_sachi_nong_nghiep_v01_poster.jpg" data-title="Hằng Sachi - Từ những clip nông sản rời rạc thành Phim ngắn Thương hiệu (Voice AI)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-nongsan">🌸 Hoa • Nông sản • Thực dưỡng</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Từ những clip nông sản rời rạc thành Phim ngắn Thương hiệu (Voice AI)">
+              <img src="assets/truoc-sau-posters/hang_sachi_nong_nghiep_v01_poster.jpg" alt="Từ những clip nông sản rời rạc thành Phim ngắn Thương hiệu (Voice AI)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#13 • Hằng Sachi</span>
+              <span class="sbs-tech">42.7s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Từ những clip nông sản rời rạc thành Phim ngắn Thương hiệu (Voice AI)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/Sqx9d7lu2mA">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=Sqx9d7lu2mA&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="doan_trang_lan_ho_diep_dautay_v1" data-cat="nongsan" data-new="1" data-search="phạm đoan trang nghệ thuật lan hồ điệp — bản dựng style dâu tây v1 phạm đoan trang • chuyển thể clip quay vườn lan sang bố cục dâu tây hoa • nông sản • thực dưỡng doan_trang_lan_ho_diep_dautay_v1 xnlqih3-2he">
+          <div class="sbs-video-shell" data-yt-id="xNlqiH3-2HE" data-poster="assets/truoc-sau-posters/doan_trang_lan_ho_diep_dautay_v1_poster.jpg" data-title="Phạm Đoan Trang - Nghệ thuật Lan Hồ Điệp — Bản dựng Style Dâu Tây V1">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-nongsan">🌸 Hoa • Nông sản • Thực dưỡng</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Nghệ thuật Lan Hồ Điệp — Bản dựng Style Dâu Tây V1">
+              <img src="assets/truoc-sau-posters/doan_trang_lan_ho_diep_dautay_v1_poster.jpg" alt="Nghệ thuật Lan Hồ Điệp — Bản dựng Style Dâu Tây V1" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#14 • Phạm Đoan Trang</span>
+              <span class="sbs-tech">28.5s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Nghệ thuật Lan Hồ Điệp — Bản dựng Style Dâu Tây V1</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/xNlqiH3-2HE">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=xNlqiH3-2HE&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="doan_trang_lan_ho_diep_pa01_v3" data-cat="nongsan" data-new="1" data-search="phạm đoan trang nghệ thuật lan hồ điệp — bản dựng luxury editorial pa-01 v3 phạm đoan trang • phong cách luxury editorial pa-01 tôn vẻ đẹp hoa lan hoa • nông sản • thực dưỡng doan_trang_lan_ho_diep_pa01_v3 9wmvpwaw_vs">
+          <div class="sbs-video-shell" data-yt-id="9wmvpwAW_Vs" data-poster="assets/truoc-sau-posters/doan_trang_lan_ho_diep_pa01_v3_poster.jpg" data-title="Phạm Đoan Trang - Nghệ thuật Lan Hồ Điệp — Bản dựng Luxury Editorial PA-01 V3">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-nongsan">🌸 Hoa • Nông sản • Thực dưỡng</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Nghệ thuật Lan Hồ Điệp — Bản dựng Luxury Editorial PA-01 V3">
+              <img src="assets/truoc-sau-posters/doan_trang_lan_ho_diep_pa01_v3_poster.jpg" alt="Nghệ thuật Lan Hồ Điệp — Bản dựng Luxury Editorial PA-01 V3" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#15 • Phạm Đoan Trang</span>
+              <span class="sbs-tech">22.4s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Nghệ thuật Lan Hồ Điệp — Bản dựng Luxury Editorial PA-01 V3</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/9wmvpwAW_Vs">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=9wmvpwAW_Vs&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="linh_huong_thuc_duong_npd_30s" data-cat="nongsan" data-new="1" data-search="linh hương thực dưỡng gia vị thực dưỡng đông y 30s — kể chuyện căn bếp ấm cúng linh hương • cô đọng 4 phút clip bếp gia đình thành tvc thực dưỡng 30s hoa • nông sản • thực dưỡng linh_huong_thuc_duong_npd_30s n1ygtwffk4q">
+          <div class="sbs-video-shell" data-yt-id="N1yGTwfFK4Q" data-poster="assets/truoc-sau-posters/linh_huong_thuc_duong_npd_30s_poster.jpg" data-title="Linh Hương Thực Dưỡng - Gia vị Thực dưỡng Đông Y 30s — Kể chuyện căn bếp ấm cúng">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-nongsan">🌸 Hoa • Nông sản • Thực dưỡng</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Gia vị Thực dưỡng Đông Y 30s — Kể chuyện căn bếp ấm cúng">
+              <img src="assets/truoc-sau-posters/linh_huong_thuc_duong_npd_30s_poster.jpg" alt="Gia vị Thực dưỡng Đông Y 30s — Kể chuyện căn bếp ấm cúng" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#16 • Linh Hương Thực Dưỡng</span>
+              <span class="sbs-tech">30.5s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Gia vị Thực dưỡng Đông Y 30s — Kể chuyện căn bếp ấm cúng</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/N1yGTwfFK4Q">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=N1yGTwfFK4Q&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="trang_vu_video1_master_v3" data-cat="other" data-new="1" data-search="trang vũ bản dựng master edit v3 — nhịp điệu kể chuyện &amp; typography điện ảnh trang vũ • cắt nhịp tinh gọn &amp; phụ đề điện ảnh từ bản quay thô đa ngành &amp; kể chuyện trang_vu_video1_master_v3 xemawyvm5ne">
+          <div class="sbs-video-shell" data-yt-id="xemAwYvM5NE" data-poster="assets/truoc-sau-posters/trang_vu_video1_master_v3_poster.jpg" data-title="Trang Vũ - Bản dựng Master Edit V3 — Nhịp điệu kể chuyện &amp; Typography điện ảnh">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Bản dựng Master Edit V3 — Nhịp điệu kể chuyện &amp; Typography điện ảnh">
+              <img src="assets/truoc-sau-posters/trang_vu_video1_master_v3_poster.jpg" alt="Bản dựng Master Edit V3 — Nhịp điệu kể chuyện &amp; Typography điện ảnh" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#17 • Trang Vũ</span>
+              <span class="sbs-tech">96.6s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Bản dựng Master Edit V3 — Nhịp điệu kể chuyện &amp; Typography điện ảnh</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/xemAwYvM5NE">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=xemAwYvM5NE&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="trang_vu_video2_relax_poetic" data-cat="other" data-new="1" data-search="trang vũ bản dựng relax poetic — màu phim dịu nhẹ &amp; cảm xúc tự sự trang vũ • phong cách relax poetic giàu chất thơ từ clip gốc đa ngành &amp; kể chuyện trang_vu_video2_relax_poetic a_fcqprzj4q">
+          <div class="sbs-video-shell" data-yt-id="A_fcqpRzJ4Q" data-poster="assets/truoc-sau-posters/trang_vu_video2_relax_poetic_poster.jpg" data-title="Trang Vũ - Bản dựng Relax Poetic — Màu phim dịu nhẹ &amp; Cảm xúc tự sự">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Bản dựng Relax Poetic — Màu phim dịu nhẹ &amp; Cảm xúc tự sự">
+              <img src="assets/truoc-sau-posters/trang_vu_video2_relax_poetic_poster.jpg" alt="Bản dựng Relax Poetic — Màu phim dịu nhẹ &amp; Cảm xúc tự sự" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#18 • Trang Vũ</span>
+              <span class="sbs-tech">83.8s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Bản dựng Relax Poetic — Màu phim dịu nhẹ &amp; Cảm xúc tự sự</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/A_fcqpRzJ4Q">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=A_fcqpRzJ4Q&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="hanh_nguyen_katego_v1_obsidian" data-cat="other" data-new="1" data-search="hạnh nguyễn katego phương án 1: obsidian real-proof — đối chứng thực tế sắc sảo hạnh nguyễn katego • phương án obsidian real-proof tôn bằng chứng thật đa ngành &amp; kể chuyện hanh_nguyen_katego_v1_obsidian jhb898f8cr4">
+          <div class="sbs-video-shell" data-yt-id="JHB898F8Cr4" data-poster="assets/truoc-sau-posters/hanh_nguyen_katego_v1_obsidian_poster.jpg" data-title="Hạnh Nguyễn Katego - Phương án 1: Obsidian Real-Proof — Đối chứng thực tế sắc sảo">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Phương án 1: Obsidian Real-Proof — Đối chứng thực tế sắc sảo">
+              <img src="assets/truoc-sau-posters/hanh_nguyen_katego_v1_obsidian_poster.jpg" alt="Phương án 1: Obsidian Real-Proof — Đối chứng thực tế sắc sảo" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#19 • Hạnh Nguyễn Katego</span>
+              <span class="sbs-tech">34.6s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Phương án 1: Obsidian Real-Proof — Đối chứng thực tế sắc sảo</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/JHB898F8Cr4">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=JHB898F8Cr4&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="hanh_nguyen_katego_v2_atlas" data-cat="other" data-new="1" data-search="hạnh nguyễn katego phương án 2: academic atlas flowchart — sơ đồ giải thích cơ chế hạnh nguyễn katego • phương án academic atlas tích hợp sơ đồ chuyển động đa ngành &amp; kể chuyện hanh_nguyen_katego_v2_atlas ee7vked22ju">
+          <div class="sbs-video-shell" data-yt-id="Ee7Vked22jU" data-poster="assets/truoc-sau-posters/hanh_nguyen_katego_v2_atlas_poster.jpg" data-title="Hạnh Nguyễn Katego - Phương án 2: Academic Atlas Flowchart — Sơ đồ giải thích cơ chế">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Phương án 2: Academic Atlas Flowchart — Sơ đồ giải thích cơ chế">
+              <img src="assets/truoc-sau-posters/hanh_nguyen_katego_v2_atlas_poster.jpg" alt="Phương án 2: Academic Atlas Flowchart — Sơ đồ giải thích cơ chế" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#20 • Hạnh Nguyễn Katego</span>
+              <span class="sbs-tech">34.6s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Phương án 2: Academic Atlas Flowchart — Sơ đồ giải thích cơ chế</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/Ee7Vked22jU">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=Ee7Vked22jU&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="la_quynh_parenting_warm_v1" data-cat="other" data-new="1" data-search="la quỳnh parenting chuyện nuôi dạy con &amp; gia đình — bản dựng warm editorial v1 la quỳnh • tái thiết kế nhịp kể &amp; màu sắc ấm áp cho kênh gia đình đa ngành &amp; kể chuyện la_quynh_parenting_warm_v1 scxrn3nkqn0">
+          <div class="sbs-video-shell" data-yt-id="scxRn3nKqn0" data-poster="assets/truoc-sau-posters/la_quynh_parenting_warm_v1_poster.jpg" data-title="La Quỳnh Parenting - Chuyện nuôi dạy con &amp; Gia đình — Bản dựng Warm Editorial V1">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Chuyện nuôi dạy con &amp; Gia đình — Bản dựng Warm Editorial V1">
+              <img src="assets/truoc-sau-posters/la_quynh_parenting_warm_v1_poster.jpg" alt="Chuyện nuôi dạy con &amp; Gia đình — Bản dựng Warm Editorial V1" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#21 • La Quỳnh Parenting</span>
+              <span class="sbs-tech">44.5s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Chuyện nuôi dạy con &amp; Gia đình — Bản dựng Warm Editorial V1</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/scxRn3nKqn0">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=scxRn3nKqn0&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="img_9003_auto_spa_pa2" data-cat="spa" data-new="1" data-search="mẫu demo auto spa pa2 dựng tự động 1 chạm chuẩn spa pa2 từ file quay điện thoại auto spa pa2 • khóa tâm mắt &amp; phụ đề editorial từ clip thô img_9003 spa • thẩm mỹ • y dược img_9003_auto_spa_pa2 nvuoq6fekrm">
+          <div class="sbs-video-shell" data-yt-id="NvuoQ6FEKRM" data-poster="assets/truoc-sau-posters/img_9003_auto_spa_pa2_poster.jpg" data-title="Mẫu Demo Auto Spa PA2 - Dựng tự động 1 chạm chuẩn Spa PA2 từ file quay điện thoại">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-new">MỚI DỰNG</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Dựng tự động 1 chạm chuẩn Spa PA2 từ file quay điện thoại">
+              <img src="assets/truoc-sau-posters/img_9003_auto_spa_pa2_poster.jpg" alt="Dựng tự động 1 chạm chuẩn Spa PA2 từ file quay điện thoại" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#22 • Mẫu Demo Auto Spa PA2</span>
+              <span class="sbs-tech">22.7s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Dựng tự động 1 chạm chuẩn Spa PA2 từ file quay điện thoại</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/NvuoQ6FEKRM">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=NvuoQ6FEKRM&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+      </div>
+
+      <h2 id="nhom-thu-vien-da-co">2. Kho Video Trước–Sau Đã Có Trong Hệ Thống (16 Video Mẫu Chuẩn)</h2>
+      <p style="margin-bottom:16px; color:var(--mute); font-size:14.5px;">
+        Các bản đối chứng mẫu đã triển khai trước đó trên các nhóm ngành Spa Phun xăm, Nha khoa, Dược sĩ, Đồ gỗ mỹ nghệ và Bất động sản Đại đô thị.
+      </p>
+      <div class="sbs-grid" id="grid-lib">
+        
+        <article class="sbs-card" id="existing_01_duoc_si_ngoc" data-cat="spa" data-new="0" data-search="dược sĩ ngọc so sánh chỉ số đường huyết gạo lứt vs cơm trắng (bản mẫu y dược) so sánh chỉ số đường huyết gạo lứt vs cơm trắng (bản mẫu y dược) spa • thẩm mỹ • y dược existing_01_duoc_si_ngoc 3vzgtdhb5pi">
+          <div class="sbs-video-shell" data-yt-id="3vZgtDhB5PI" data-poster="assets/truoc-sau-posters/existing_01_duoc_si_ngoc_poster.jpg" data-title="Dược sĩ Ngọc - So sánh chỉ số đường huyết Gạo lứt vs Cơm trắng (Bản mẫu Y Dược)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video So sánh chỉ số đường huyết Gạo lứt vs Cơm trắng (Bản mẫu Y Dược)">
+              <img src="assets/truoc-sau-posters/existing_01_duoc_si_ngoc_poster.jpg" alt="So sánh chỉ số đường huyết Gạo lứt vs Cơm trắng (Bản mẫu Y Dược)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#23 • Dược sĩ Ngọc</span>
+              <span class="sbs-tech">24.0s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">So sánh chỉ số đường huyết Gạo lứt vs Cơm trắng (Bản mẫu Y Dược)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/3vZgtDhB5PI">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=3vZgtDhB5PI&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_02_duc_oanh_c0563" data-cat="other" data-new="0" data-search="xưởng đồ gỗ đức oanh bóc tách chất gỗ thật tại xưởng — c0563 side-by-side bóc tách chất gỗ thật tại xưởng — c0563 side-by-side đa ngành &amp; kể chuyện existing_02_duc_oanh_c0563 t5b5wbt1bie">
+          <div class="sbs-video-shell" data-yt-id="t5B5Wbt1biE" data-poster="assets/truoc-sau-posters/existing_02_duc_oanh_c0563_poster.jpg" data-title="Xưởng Đồ Gỗ Đức Oanh - Bóc tách chất gỗ thật tại xưởng — C0563 Side-by-Side">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Bóc tách chất gỗ thật tại xưởng — C0563 Side-by-Side">
+              <img src="assets/truoc-sau-posters/existing_02_duc_oanh_c0563_poster.jpg" alt="Bóc tách chất gỗ thật tại xưởng — C0563 Side-by-Side" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#24 • Xưởng Đồ Gỗ Đức Oanh</span>
+              <span class="sbs-tech">38.2s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Bóc tách chất gỗ thật tại xưởng — C0563 Side-by-Side</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/t5B5Wbt1biE">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=t5B5Wbt1biE&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_03_halong_xanh_c0562" data-cat="bds" data-new="0" data-search="vinhomes hạ long xanh phân tích quy hoạch hạ long xanh c0562 (bản v13) phân tích quy hoạch hạ long xanh c0562 (bản v13) bất động sản existing_03_halong_xanh_c0562 -so_xm1hx2i">
+          <div class="sbs-video-shell" data-yt-id="-SO_XM1Hx2I" data-poster="assets/truoc-sau-posters/existing_03_halong_xanh_c0562_poster.jpg" data-title="Vinhomes Hạ Long Xanh - Phân tích quy hoạch Hạ Long Xanh C0562 (Bản V13)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Phân tích quy hoạch Hạ Long Xanh C0562 (Bản V13)">
+              <img src="assets/truoc-sau-posters/existing_03_halong_xanh_c0562_poster.jpg" alt="Phân tích quy hoạch Hạ Long Xanh C0562 (Bản V13)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#25 • Vinhomes Hạ Long Xanh</span>
+              <span class="sbs-tech">25.8s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Phân tích quy hoạch Hạ Long Xanh C0562 (Bản V13)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/-SO_XM1Hx2I">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=-SO_XM1Hx2I&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_04_halong_xanh_c0564" data-cat="bds" data-new="0" data-search="vinhomes hạ long xanh đòn bẩy hạ tầng hạ long xanh c0564 (clean b&amp;w contrast v13) đòn bẩy hạ tầng hạ long xanh c0564 (clean b&amp;w contrast v13) bất động sản existing_04_halong_xanh_c0564 hv9c1p_0hhy">
+          <div class="sbs-video-shell" data-yt-id="Hv9C1P_0HhY" data-poster="assets/truoc-sau-posters/existing_04_halong_xanh_c0564_poster.jpg" data-title="Vinhomes Hạ Long Xanh - Đòn bẩy hạ tầng Hạ Long Xanh C0564 (Clean B&amp;W Contrast V13)">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Đòn bẩy hạ tầng Hạ Long Xanh C0564 (Clean B&amp;W Contrast V13)">
+              <img src="assets/truoc-sau-posters/existing_04_halong_xanh_c0564_poster.jpg" alt="Đòn bẩy hạ tầng Hạ Long Xanh C0564 (Clean B&amp;W Contrast V13)" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#26 • Vinhomes Hạ Long Xanh</span>
+              <span class="sbs-tech">37.4s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Đòn bẩy hạ tầng Hạ Long Xanh C0564 (Clean B&amp;W Contrast V13)</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/Hv9C1P_0HhY">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=Hv9C1P_0HhY&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_05_prima_bay_cach1" data-cat="bds" data-new="0" data-search="prima bay hạ long tổ hợp prima bay hạ long — phương án dựng cách 1 tổ hợp prima bay hạ long — phương án dựng cách 1 bất động sản existing_05_prima_bay_cach1 1w4sukfw75y">
+          <div class="sbs-video-shell" data-yt-id="1w4SUkfw75Y" data-poster="assets/truoc-sau-posters/existing_05_prima_bay_cach1_poster.jpg" data-title="Prima Bay Hạ Long - Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 1">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 1">
+              <img src="assets/truoc-sau-posters/existing_05_prima_bay_cach1_poster.jpg" alt="Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 1" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#27 • Prima Bay Hạ Long</span>
+              <span class="sbs-tech">23.7s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 1</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/1w4SUkfw75Y">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=1w4SUkfw75Y&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_06_prima_bay_cach2" data-cat="bds" data-new="0" data-search="prima bay hạ long tổ hợp prima bay hạ long — phương án dựng cách 2 tổ hợp prima bay hạ long — phương án dựng cách 2 bất động sản existing_06_prima_bay_cach2 hcqy68pgz_a">
+          <div class="sbs-video-shell" data-yt-id="hcqY68pGz_A" data-poster="assets/truoc-sau-posters/existing_06_prima_bay_cach2_poster.jpg" data-title="Prima Bay Hạ Long - Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 2">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 2">
+              <img src="assets/truoc-sau-posters/existing_06_prima_bay_cach2_poster.jpg" alt="Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 2" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#28 • Prima Bay Hạ Long</span>
+              <span class="sbs-tech">23.2s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Tổ hợp Prima Bay Hạ Long — Phương án dựng Cách 2</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/hcqY68pGz_A">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=hcqY68pGz_A&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_07_prima_bay_vietha" data-cat="bds" data-new="0" data-search="việt hà bđs (prima bay) review thực địa prima bay hạ long — bản việt hà review thực địa prima bay hạ long — bản việt hà bất động sản existing_07_prima_bay_vietha zjhedgtsft4">
+          <div class="sbs-video-shell" data-yt-id="ZJhEdgTsfT4" data-poster="assets/truoc-sau-posters/existing_07_prima_bay_vietha_poster.jpg" data-title="Việt Hà BĐS (Prima Bay) - Review thực địa Prima Bay Hạ Long — Bản Việt Hà">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-bds">🏛️ Bất động sản</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Review thực địa Prima Bay Hạ Long — Bản Việt Hà">
+              <img src="assets/truoc-sau-posters/existing_07_prima_bay_vietha_poster.jpg" alt="Review thực địa Prima Bay Hạ Long — Bản Việt Hà" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#29 • Việt Hà BĐS (Prima Bay)</span>
+              <span class="sbs-tech">26.6s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Review thực địa Prima Bay Hạ Long — Bản Việt Hà</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/ZJhEdgTsfT4">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=ZJhEdgTsfT4&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_08_thamtho_babylips_v12" data-cat="spa" data-new="0" data-search="thắm thỏ spa kỹ thuật phun môi baby lips — thiết kế đối chứng v12 kỹ thuật phun môi baby lips — thiết kế đối chứng v12 spa • thẩm mỹ • y dược existing_08_thamtho_babylips_v12 wlciw8ebi08">
+          <div class="sbs-video-shell" data-yt-id="WLCIw8EbI08" data-poster="assets/truoc-sau-posters/existing_08_thamtho_babylips_v12_poster.jpg" data-title="Thắm Thỏ Spa - Kỹ thuật Phun môi Baby Lips — Thiết kế đối chứng V12">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Kỹ thuật Phun môi Baby Lips — Thiết kế đối chứng V12">
+              <img src="assets/truoc-sau-posters/existing_08_thamtho_babylips_v12_poster.jpg" alt="Kỹ thuật Phun môi Baby Lips — Thiết kế đối chứng V12" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#30 • Thắm Thỏ Spa</span>
+              <span class="sbs-tech">18.8s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Kỹ thuật Phun môi Baby Lips — Thiết kế đối chứng V12</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/WLCIw8EbI08">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=WLCIw8EbI08&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_09_nga_joydy_case7" data-cat="other" data-new="0" data-search="mạc thị nga (joydy) thời trang &amp; phong cách joydy — case 7 trước &amp; sau thời trang &amp; phong cách joydy — case 7 trước &amp; sau đa ngành &amp; kể chuyện existing_09_nga_joydy_case7 2kg5-hxktzg">
+          <div class="sbs-video-shell" data-yt-id="2Kg5-HxktZg" data-poster="assets/truoc-sau-posters/existing_09_nga_joydy_case7_poster.jpg" data-title="Mạc Thị Nga (Joydy) - Thời trang &amp; Phong cách Joydy — Case 7 Trước &amp; Sau">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Thời trang &amp; Phong cách Joydy — Case 7 Trước &amp; Sau">
+              <img src="assets/truoc-sau-posters/existing_09_nga_joydy_case7_poster.jpg" alt="Thời trang &amp; Phong cách Joydy — Case 7 Trước &amp; Sau" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#31 • Mạc Thị Nga (Joydy)</span>
+              <span class="sbs-tech">39.0s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Thời trang &amp; Phong cách Joydy — Case 7 Trước &amp; Sau</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/2Kg5-HxktZg">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=2Kg5-HxktZg&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_10_thamtho_moi_son_l03" data-cat="spa" data-new="0" data-search="thắm thỏ spa giải đáp môi phun &amp; son lì — layout #03 v11 giải đáp môi phun &amp; son lì — layout #03 v11 spa • thẩm mỹ • y dược existing_10_thamtho_moi_son_l03 vlq1647klx8">
+          <div class="sbs-video-shell" data-yt-id="vlQ1647kLX8" data-poster="assets/truoc-sau-posters/existing_10_thamtho_moi_son_l03_poster.jpg" data-title="Thắm Thỏ Spa - Giải đáp Môi phun &amp; Son lì — Layout #03 V11">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Giải đáp Môi phun &amp; Son lì — Layout #03 V11">
+              <img src="assets/truoc-sau-posters/existing_10_thamtho_moi_son_l03_poster.jpg" alt="Giải đáp Môi phun &amp; Son lì — Layout #03 V11" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#32 • Thắm Thỏ Spa</span>
+              <span class="sbs-tech">41.0s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Giải đáp Môi phun &amp; Son lì — Layout #03 V11</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/vlQ1647kLX8">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=vlQ1647kLX8&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_11_thamtho_moi_cafe_l04" data-cat="spa" data-new="0" data-search="thắm thỏ spa phun môi xong uống cà phê được không? — layout #04 v11 phun môi xong uống cà phê được không? — layout #04 v11 spa • thẩm mỹ • y dược existing_11_thamtho_moi_cafe_l04 34vzgdy7y2s">
+          <div class="sbs-video-shell" data-yt-id="34vzgdy7y2s" data-poster="assets/truoc-sau-posters/existing_11_thamtho_moi_cafe_l04_poster.jpg" data-title="Thắm Thỏ Spa - Phun môi xong uống cà phê được không? — Layout #04 V11">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Phun môi xong uống cà phê được không? — Layout #04 V11">
+              <img src="assets/truoc-sau-posters/existing_11_thamtho_moi_cafe_l04_poster.jpg" alt="Phun môi xong uống cà phê được không? — Layout #04 V11" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#33 • Thắm Thỏ Spa</span>
+              <span class="sbs-tech">46.8s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Phun môi xong uống cà phê được không? — Layout #04 V11</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/34vzgdy7y2s">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=34vzgdy7y2s&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_12_thamtho_phun_moi_l02" data-cat="spa" data-new="0" data-search="thắm thỏ spa kiến thức chăm sóc phun môi — layout #02 v11 kiến thức chăm sóc phun môi — layout #02 v11 spa • thẩm mỹ • y dược existing_12_thamtho_phun_moi_l02 gf6cpyizneq">
+          <div class="sbs-video-shell" data-yt-id="Gf6cPyIZNeQ" data-poster="assets/truoc-sau-posters/existing_12_thamtho_phun_moi_l02_poster.jpg" data-title="Thắm Thỏ Spa - Kiến thức Chăm sóc Phun môi — Layout #02 V11">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Kiến thức Chăm sóc Phun môi — Layout #02 V11">
+              <img src="assets/truoc-sau-posters/existing_12_thamtho_phun_moi_l02_poster.jpg" alt="Kiến thức Chăm sóc Phun môi — Layout #02 V11" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#34 • Thắm Thỏ Spa</span>
+              <span class="sbs-tech">46.8s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Kiến thức Chăm sóc Phun môi — Layout #02 V11</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/Gf6cPyIZNeQ">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=Gf6cPyIZNeQ&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_13_tien_nha_si_v7" data-cat="spa" data-new="0" data-search="bác sĩ tiến nha sĩ tư vấn nha khoa chuyên sâu — giao diện medical ivory v7 tư vấn nha khoa chuyên sâu — giao diện medical ivory v7 spa • thẩm mỹ • y dược existing_13_tien_nha_si_v7 wvqfmmtvprc">
+          <div class="sbs-video-shell" data-yt-id="WVQFMmTvpRc" data-poster="assets/truoc-sau-posters/existing_13_tien_nha_si_v7_poster.jpg" data-title="Bác sĩ Tiến Nha Sĩ - Tư vấn Nha khoa chuyên sâu — Giao diện Medical Ivory V7">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Tư vấn Nha khoa chuyên sâu — Giao diện Medical Ivory V7">
+              <img src="assets/truoc-sau-posters/existing_13_tien_nha_si_v7_poster.jpg" alt="Tư vấn Nha khoa chuyên sâu — Giao diện Medical Ivory V7" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#35 • Bác sĩ Tiến Nha Sĩ</span>
+              <span class="sbs-tech">87.1s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Tư vấn Nha khoa chuyên sâu — Giao diện Medical Ivory V7</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/WVQFMmTvpRc">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=WVQFMmTvpRc&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_14_viet_8h_sang" data-cat="other" data-new="0" data-search="nguyễn việt (8h sáng) tản bộ times city 8h sáng — kể chuyện cá nhân v3 tản bộ times city 8h sáng — kể chuyện cá nhân v3 đa ngành &amp; kể chuyện existing_14_viet_8h_sang jaokynt5wpe">
+          <div class="sbs-video-shell" data-yt-id="jAOKYnt5wpE" data-poster="assets/truoc-sau-posters/existing_14_viet_8h_sang_poster.jpg" data-title="Nguyễn Việt (8h Sáng) - Tản bộ Times City 8h Sáng — Kể chuyện cá nhân V3">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-other">🎬 Đa ngành &amp; Kể chuyện</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Tản bộ Times City 8h Sáng — Kể chuyện cá nhân V3">
+              <img src="assets/truoc-sau-posters/existing_14_viet_8h_sang_poster.jpg" alt="Tản bộ Times City 8h Sáng — Kể chuyện cá nhân V3" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#36 • Nguyễn Việt (8h Sáng)</span>
+              <span class="sbs-tech">54.2s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Tản bộ Times City 8h Sáng — Kể chuyện cá nhân V3</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/jAOKYnt5wpE">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=jAOKYnt5wpE&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_15_thamtho_detox_1" data-cat="spa" data-new="0" data-search="thắm thỏ spa phác đồ khử thâm &amp; detox môi #1 — white ivory v10 phác đồ khử thâm &amp; detox môi #1 — white ivory v10 spa • thẩm mỹ • y dược existing_15_thamtho_detox_1 2jiizuvqejg">
+          <div class="sbs-video-shell" data-yt-id="2jiIzUvQEJg" data-poster="assets/truoc-sau-posters/existing_15_thamtho_detox_1_poster.jpg" data-title="Thắm Thỏ Spa - Phác đồ Khử thâm &amp; Detox Môi #1 — White Ivory V10">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Phác đồ Khử thâm &amp; Detox Môi #1 — White Ivory V10">
+              <img src="assets/truoc-sau-posters/existing_15_thamtho_detox_1_poster.jpg" alt="Phác đồ Khử thâm &amp; Detox Môi #1 — White Ivory V10" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#37 • Thắm Thỏ Spa</span>
+              <span class="sbs-tech">44.6s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Phác đồ Khử thâm &amp; Detox Môi #1 — White Ivory V10</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/2jiIzUvQEJg">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=2jiIzUvQEJg&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+
+        <article class="sbs-card" id="existing_16_thamtho_detox_2" data-cat="spa" data-new="0" data-search="thắm thỏ spa phác đồ khử thâm &amp; detox môi #2 — white ivory v10 phác đồ khử thâm &amp; detox môi #2 — white ivory v10 spa • thẩm mỹ • y dược existing_16_thamtho_detox_2 xxlzm1dxj7c">
+          <div class="sbs-video-shell" data-yt-id="xXlzM1DxJ7c" data-poster="assets/truoc-sau-posters/existing_16_thamtho_detox_2_poster.jpg" data-title="Thắm Thỏ Spa - Phác đồ Khử thâm &amp; Detox Môi #2 — White Ivory V10">
+            <div class="sbs-top-badges">
+              <span class="sbs-pill-lib">THƯ VIỆN</span>
+              <span class="sbs-pill-cat cat-spa">🌿 Spa • Thẩm mỹ • Y Dược</span>
+            </div>
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video Phác đồ Khử thâm &amp; Detox Môi #2 — White Ivory V10">
+              <img src="assets/truoc-sau-posters/existing_16_thamtho_detox_2_poster.jpg" alt="Phác đồ Khử thâm &amp; Detox Môi #2 — White Ivory V10" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          </div>
+          <div class="sbs-body">
+            <div class="sbs-meta-row">
+              <span class="sbs-student">#38 • Thắm Thỏ Spa</span>
+              <span class="sbs-tech">41.9s • YouTube</span>
+            </div>
+            <h3 class="sbs-title">Phác đồ Khử thâm &amp; Detox Môi #2 — White Ivory V10</h3>
+            <div class="sbs-actions">
+              <button type="button" class="sbs-btn-copy" data-copy-url="https://youtu.be/xXlzM1DxJ7c">📋 Copy link gửi khách</button>
+              <a href="https://www.youtube.com/watch?v=xXlzM1DxJ7c&amp;list=PLQtzIXDaOTug" target="_blank" rel="noopener" class="sbs-btn-open">▶️ YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+    
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/skill_live_data.js?v=20261104"></script>
+  <script src="assets/manifest.js?v=20261104"></script>
+  <script src="assets/hub.js?v=20261104"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const tabs = Array.from(document.querySelectorAll('.sbs-tab'));
+        const searchInput = document.getElementById('sbs-search');
+        const countEl = document.getElementById('sbs-count-live');
+        const cards = Array.from(document.querySelectorAll('.sbs-card'));
+        let currentFilter = 'all';
+
+        function resetShellToFacade(shell) {
+          if (!shell || !shell.querySelector('iframe')) return;
+          const poster = shell.getAttribute('data-poster') || '';
+          const title = shell.getAttribute('data-title') || 'Video';
+          const badges = shell.querySelector('.sbs-top-badges');
+          const badgesHtml = badges ? badges.outerHTML : '';
+          shell.innerHTML = badgesHtml + `
+            <button type="button" class="sbs-yt-facade" aria-label="Phát video">
+              <img src="${poster}" alt="${title.replace(/"/g, '&quot;')}" loading="lazy"/>
+              <span class="sbs-play-circle">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="sbs-yt-chip">▶ Bấm để phát (YouTube HD)</span>
+            </button>
+          `;
+          bindShellClick(shell);
+        }
+
+        function bindShellClick(shell) {
+          const btn = shell.querySelector('.sbs-yt-facade');
+          if (!btn) return;
+          btn.addEventListener('click', () => {
+            // Tắt các iframe đang phát ở thẻ khác để không bị chồng âm thanh
+            document.querySelectorAll('.sbs-video-shell').forEach(other => {
+              if (other !== shell) resetShellToFacade(other);
+            });
+            const ytId = shell.getAttribute('data-yt-id');
+            const title = shell.getAttribute('data-title') || 'YouTube Video';
+            btn.remove();
+            const ifr = document.createElement('iframe');
+            ifr.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
+            ifr.title = title;
+            ifr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            ifr.allowFullscreen = true;
+            shell.appendChild(ifr);
+          });
+        }
+
+        document.querySelectorAll('.sbs-video-shell').forEach(bindShellClick);
+
+        function applyFilters() {
+          const q = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let shown = 0;
+          cards.forEach(card => {
+            const cat = card.getAttribute('data-cat');
+            const isNew = card.getAttribute('data-new') === '1';
+            const blob = card.getAttribute('data-search') || '';
+            let matchTab = true;
+            if (currentFilter === 'new') matchTab = isNew;
+            else if (currentFilter !== 'all') matchTab = (cat === currentFilter);
+
+            const matchQ = !q || blob.includes(q);
+            const ok = matchTab && matchQ;
+            if (!ok) {
+              resetShellToFacade(card.querySelector('.sbs-video-shell'));
+            }
+            card.style.display = ok ? 'flex' : 'none';
+            if (ok) shown++;
+          });
+          if (countEl) countEl.textContent = `Đang hiển thị: ${shown}/${cards.length} video`;
+        }
+
+        tabs.forEach(btn => {
+          btn.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.getAttribute('data-filter') || 'all';
+            applyFilters();
+          });
+        });
+
+        if (searchInput) {
+          searchInput.addEventListener('input', applyFilters);
+        }
+
+        document.querySelectorAll('.sbs-btn-copy').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const url = btn.getAttribute('data-copy-url');
+            if (!url) return;
+            const orig = btn.textContent;
+            try {
+              await navigator.clipboard.writeText(url);
+              btn.textContent = '✅ Đã copy link YouTube!';
+            } catch (e) {
+              const ta = document.createElement('textarea');
+              ta.value = url;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              ta.remove();
+              btn.textContent = '✅ Đã copy link YouTube!';
+            }
+            setTimeout(() => { btn.textContent = orig; }, 1800);
+          });
+        });
+      }, 80);
+    });
+  </script>
+</body>
+</html>
