@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Pre-Edit Demo & Duyệt Trước Render: Chị Bùi Thị Hiền (Hạ Long Xanh) — FEDU Video AI</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M17.8%2014Q21.2%2014%2023.2%2014.8Q25.1%2015.5%2026.2%2016.7Q27.2%2018%2027.5%2019.5Q27.8%2021%2027.8%2022.6V31.8Q27.8%2033.3%2027.5%2034.9Q27.2%2036.4%2026.2%2037.6Q25.1%2038.9%2023.2%2039.7Q21.2%2040.4%2017.8%2040.4H15.5V51.9Q15.5%2053%2014.4%2053H7.8Q6.7%2053%206.7%2051.9V15.1Q6.7%2014%207.8%2014ZM19.1%2022.9Q19.1%2022.3%2018.7%2021.8Q18.3%2021.3%2017.4%2021.3H15.5V33.1H17.5Q18.4%2033.1%2018.7%2032.5Q19.1%2032%2019.1%2031.4ZM32.4%2053Q31.3%2053%2031.3%2051.9V15.1Q31.3%2014%2032.4%2014H44.7Q45.8%2014%2045.8%2015.1V20.2Q45.8%2021.3%2044.7%2021.3H40.1V29.5H44Q45%2029.5%2045%2030.6V35.8Q45%2036.8%2043.9%2036.8H40.1V45.7H44.7Q45.8%2045.7%2045.8%2046.8V51.9Q45.8%2053%2044.7%2053Z'%20fill='%23FB923C'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%23FB923C'/%3E%3C/svg%3E">
+<style>
+  @font-face {
+    font-family: 'FDAeonik';
+    src: url('/assets/fonts/FDAeonik-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'FDAeonikBlack';
+    src: url('/assets/fonts/FDAeonik-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'SVNActa';
+    src: url('/assets/fonts/SVN-Acta-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #090C10;
+    --panel: #121721;
+    --card: #171E2B;
+    --gold: #FFD018;
+    --amber: #FF9914;
+    --emerald: #10B981;
+    --red: #EF4444;
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+    --border: rgba(255,255,255,0.09);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'FDAeonik', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding-bottom: 92px;
+    line-height: 1.4;
+  }
+
+  /* STICKY HEADER */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(9, 12, 16, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+  }
+  .top-row {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .doc-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--gold);
+  }
+  .doc-sub {
+    font-size: 10.5px;
+    color: var(--muted);
+  }
+  .nav-link-pill {
+    background: rgba(255, 208, 24, 0.14);
+    border: 1px solid rgba(255, 208, 24, 0.4);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 99px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* QUICK JUMP ANCHOR BAR */
+  .step-bar {
+    max-width: 520px;
+    margin: 6px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+  .step-pill {
+    background: #151B26;
+    border: 1px solid var(--border);
+    color: #CBD5E1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 4px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .step-pill span { color: var(--gold); }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* BLOCK CARD */
+  .block-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+  .block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .block-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .block-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(16, 185, 129, 0.16);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+  }
+
+  /* BLOCK 1: TRUE-RENDER FRAME INSPECTOR */
+  .frame-viewer {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    background: #0D1117;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 208, 24, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .frame-viewer img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .frame-overlay-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(9, 12, 16, 0.85);
+    border: 1px solid rgba(255, 208, 24, 0.45);
+    color: var(--gold);
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+  .frame-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .frame-thumb-btn {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 5px 4px;
+    color: #CBD5E1;
+    font-size: 10.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+  }
+  .frame-thumb-btn.active {
+    border-color: var(--gold);
+    background: rgba(255, 208, 24, 0.15);
+    color: var(--gold);
+  }
+
+  /* QUICK STYLE PILLS IN DEMO */
+  .mini-selector-group {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .mini-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pill-row {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .pill-row::-webkit-scrollbar { display: none; }
+  .style-pill {
+    flex-shrink: 0;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    color: #E2E8F0;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .style-pill.active {
+    border-color: var(--gold);
+    background: rgba(255, 208, 24, 0.16);
+    color: var(--gold);
+  }
+
+  /* BLOCK 2: TRANSCRIPT, STUMBLE CUTS & WHIP-SNAP ZOOMS */
+  .legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+  }
+  .transcript-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .seg-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 12.5px;
+  }
+  .seg-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .seg-time {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: var(--gold);
+    background: rgba(255,208,24,0.12);
+    padding: 1.5px 6px;
+    border-radius: 5px;
+  }
+  .seg-toggles {
+    display: flex;
+    gap: 5px;
+  }
+  .toggle-chip {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.05);
+    color: #CBD5E1;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .toggle-chip.cut-on {
+    background: rgba(239, 68, 68, 0.18);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #FCA5A5;
+  }
+  .toggle-chip.cut-off {
+    background: rgba(16, 185, 129, 0.18);
+    border-color: rgba(16, 185, 129, 0.5);
+    color: #6EE7B7;
+  }
+  .toggle-chip.zoom-on {
+    background: rgba(255, 208, 24, 0.18);
+    border-color: rgba(255, 208, 24, 0.5);
+    color: var(--gold);
+  }
+  .stumble-tag {
+    display: inline-block;
+    background: rgba(239, 68, 68, 0.16);
+    color: #FCA5A5;
+    text-decoration: line-through;
+    padding: 0 5px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    margin-right: 4px;
+  }
+  .stumble-tag.restored {
+    background: rgba(16, 185, 129, 0.18);
+    color: #6EE7B7;
+    text-decoration: none;
+  }
+  .kw-gold {
+    color: var(--gold);
+    font-family: 'SVNActa', serif;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* BLOCK 3: B-ROLL & 2D ATLAS STORYBOARD SWAPPER */
+  .slot-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .slot-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 9px;
+  }
+  .slot-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .slot-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #FFF;
+  }
+  .slot-time {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .cand-box {
+    background: #10151E;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: 0.15s;
+  }
+  .cand-box.active {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+  .cand-box.warn {
+    border-color: rgba(239, 68, 68, 0.45);
+    opacity: 0.82;
+  }
+  .cand-img {
+    width: 100%;
+    height: 76px;
+    object-fit: cover;
+    display: block;
+  }
+  .cand-meta {
+    padding: 4px 5px;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .cand-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 1px 4px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+  }
+  .tag-picked { background: var(--gold); color: #000; }
+  .tag-alt { background: rgba(255,255,255,0.12); color: #CBD5E1; }
+  .tag-bad { background: rgba(239, 68, 68, 0.25); color: #FCA5A5; }
+
+  /* STICKY DELTA CONFIRM BAR */
+  .sticky-confirm {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: rgba(9, 12, 16, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1.5px solid rgba(255, 208, 24, 0.35);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  }
+  .confirm-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .delta-info {
+    min-width: 0;
+    flex: 1;
+  }
+  .delta-status {
+    font-size: 10.5px;
+    color: #34D399;
+    font-weight: 700;
+  }
+  .delta-code {
+    font-size: 11px;
+    color: var(--text);
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .confirm-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .btn-reset {
+    border: 1px solid var(--border);
+    background: #1A2230;
+    color: #CBD5E1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 9px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+  }
+  .btn-approve {
+    border: none;
+    background: var(--gold);
+    color: #090C10;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 9px 14px;
+    border-radius: 9px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(255, 208, 24, 0.3);
+  }
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <div class="top-row">
+    <div>
+      <div class="doc-title">🎬 PRE-EDIT DEMO: ALICE THANH HẰNG (SPA PHUN XĂM)</div>
+      <div class="doc-sub">Phun Môi Uống Cà Phê & 4 Yếu Tố Lên Màu · 107.7s · 6 Cảnh Trám + 2 Atlas 2D</div>
+    </div>
+    <a href="/bo-chon-7.html" class="nav-link-pill">🎨 Bộ Chọn 7 Kiểu ↗</a>
+  </div>
+  <div class="step-bar">
+    <a href="#block-frames" class="step-pill"><span>1.</span> Khung Hình Thật</a>
+    <a href="#block-cuts" class="step-pill"><span>2.</span> Cắt Vấp & Zoom</a>
+    <a href="#block-broll" class="step-pill"><span>3.</span> Đổi Cảnh Trám</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- BLOCK 1: TRUE-RENDER FRAME PREVIEW & STYLE SWITCH -->
+  <div class="block-card" id="block-frames">
+    <div class="block-header">
+      <div class="block-title">1️⃣ Ảnh Khung Hình Thật Từ Bộ Render</div>
+      <span class="block-badge">0% Gạch Xóa Chữ</span>
+    </div>
+
+    <div class="frame-viewer">
+      <span class="frame-overlay-tag" id="frameTag">02.2s · Khóa Mắt Affine Y=650px + Whip-Snap Zoom + Phụ Đề 5B</span>
+      <img src="/assets/demo_alice/frame_01_hero.webp" id="mainFrameImg" alt="Rendered Frame">
+    </div>
+
+    <div class="frame-strip">
+      <button class="frame-thumb-btn active" onclick="setFrame(0, '/assets/demo_alice/frame_01_hero.webp', '02.2s · Mở Đầu A-Roll Khóa Mắt Y=650px + Snap Zoom')">02s Mở đầu</button>
+      <button class="frame-thumb-btn" onclick="setFrame(1, '/assets/demo_alice/frame_02_broll1_camdao.webp', '16.0s · Cảnh Trám #1: Môi Hoàn Thiện Đỏ Cam Đào Căng Mọng')">16s Trám #1</button>
+      <button class="frame-thumb-btn" onclick="setFrame(2, '/assets/demo_alice/frame_03_broll5_academy.webp', '21.5s · Cảnh Trám #5: Toàn Cảnh ALICE BEAUTY ACADEMY 3 Giường')">21s Trám #5</button>
+      <button class="frame-thumb-btn" onclick="setFrame(3, '/assets/demo_alice/frame_04_broll2b_vientham.webp', '27.0s · Cảnh Trám #2B: Nhận Biết Cấp Độ Môi Gốc Viền Thâm')">27s Trám #2B</button>
+      <button class="frame-thumb-btn" onclick="setFrame(4, '/assets/demo_alice/frame_05_broll3_kiemtra.webp', '31.5s · Cảnh Trám #3: Chuyên Gia Kiểm Tra Màu Mực Hợp Nền Da')">31s Trám #3</button>
+      <button class="frame-thumb-btn" onclick="setFrame(5, '/assets/demo_alice/frame_06_broll6_chuyengia.webp', '38.0s · Cảnh Trám #6: Chuyên Gia Hằng Trực Tiếp Đi Môi Dưới Đèn')">38s Trám #6</button>
+      <button class="frame-thumb-btn" onclick="setFrame(6, '/assets/demo_alice/frame_07_broll4a_macrokim.webp', '44.0s · Cảnh Trám #4A: Cực Cận Macro Đầu Kim Kiểm Soát Lực')">44s Trám #4A</button>
+      <button class="frame-thumb-btn" onclick="setFrame(7, '/assets/demo_alice/frame_08_atlas1_homecare.webp', '58.0s · Bản Vẽ 2D Atlas #1: Vệ Sinh & Tránh Hấp Hơi Khẩu Trang')">58s Atlas #1</button>
+      <button class="frame-thumb-btn" onclick="setFrame(8, '/assets/demo_alice/frame_09_atlas2_codia.webp', '75.0s · Bản Vẽ 2D Atlas #2: Cơ Địa & Chu Kỳ Ổn Định Màu Sau Bong')">75s Atlas #2</button>
+      <button class="frame-thumb-btn" onclick="setFrame(9, '/assets/demo_alice/frame_10_broll2a_khutham.webp', '88.5s · Cảnh Trám #2A: Lần 1 Đi Kim Nano Khử Thâm Gốc')">88s Trám #2A</button>
+      <button class="frame-thumb-btn" onclick="setFrame(10, '/assets/demo_alice/frame_11_broll4b_vaomau.webp', '92.0s · Cảnh Trám #4B: Lần 2 Miết Kiểm Tra Độ Bám Màu Đỏ Hồng')">92s Trám #4B</button>
+      <button class="frame-thumb-btn" onclick="setFrame(11, '/assets/demo_alice/frame_12_cta.webp', '101.0s · Thẻ CTA Tư Vấn 1:1 + Top Logo ALICE BEAUTY ACADEMY')">101s Thẻ CTA</button>
+    </div>
+
+    <div class="mini-selector-group">
+      <div class="mini-label">
+        <span>Đổi nhanh Kiểu Phụ Đề cho dự án này:</span>
+        <a href="/bo-chon-7.html#sub=S01" style="color:var(--gold);text-decoration:none;font-weight:700;">Xem đủ 7 kiểu ↗</a>
+      </div>
+      <div class="pill-row" id="subPills"></div>
+
+      <div class="mini-label" style="margin-top:8px;">
+        <span>Đổi nhanh Chữ Mở Đầu (Hero Title):</span>
+      </div>
+      <div class="pill-row" id="heroPills"></div>
+    </div>
+  </div>
+
+  <!-- BLOCK 2: TRANSCRIPT, STUMBLE CUTS & WHIP-SNAP ZOOMS -->
+  <div class="block-card" id="block-cuts">
+    <div class="block-header">
+      <div class="block-title">2️⃣ Lời Thoại, Vết Cắt Vấp & Nhịp Zoom</div>
+      <span class="block-badge">Sửa 14 lỗi ASR & Cắt đuôi</span>
+    </div>
+    <div class="legend-row">
+      <span>✂️ <b>Chữ gạch đỏ:</b> Đoạn ngập ngừng/quên lời đã cắt (chạm để giữ/cắt)</span>
+      <span>⚡ <b>Zoom 1.18x:</b> Nhịp Whip-Snap 0.28s cận mặt câu nhấn</span>
+    </div>
+    <div class="transcript-list" id="transcriptList"></div>
+  </div>
+
+  <!-- BLOCK 3: B-ROLL & 2D ATLAS STORYBOARD SWAPPER -->
+  <div class="block-card" id="block-broll">
+    <div class="block-header">
+      <div class="block-title">3️⃣ Storyboard Cảnh Trám (Chạm Để Đổi)</div>
+      <span class="block-badge">9 Khe Cảnh Trám & Atlas 2D</span>
+    </div>
+    <div class="slot-list" id="slotList"></div>
+  </div>
+
+</div>
+
+<!-- STICKY BOTTOM CONFIRM BAR -->
+<div class="sticky-confirm">
+  <div class="confirm-inner">
+    <div class="delta-info">
+      <div class="delta-status" id="deltaStatus">✓ Chuẩn phương án AI đề xuất (0 thay đổi)</div>
+      <div class="delta-code" id="deltaCode">CONFIRM: alice-thanh-hang · v2 · DEFAULT</div>
+    </div>
+    <div class="confirm-actions">
+      <button class="btn-reset" onclick="resetDefaults()">Mặc định</button>
+      <button class="btn-approve" id="approveBtn" onclick="approveAndCopy()">✅ Chốt & Copy Lệnh</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUB_OPTIONS = [
+  { id: 'S01', label: '★ S01: 5B-R Luxury Gold (Không gạch)' },
+  { id: 'S02', label: 'S02: 5B-Cream Thẻ Kem #F5F2EB' },
+  { id: 'S03', label: 'S03: 5B-Emerald Xanh Ngọc' },
+  { id: 'S04', label: 'S04: Cinema Floating Không Hộp' },
+  { id: 'S05', label: 'S05: Amber Glow Cam Hổ Phách' },
+  { id: 'S06', label: 'S06: Soft Gold Pill Đệm Bo Tròn' },
+  { id: 'S07', label: 'S07: Cyan Executive Báo Chí' }
+];
+
+const HERO_OPTIONS = [
+  { id: 'H01', label: '★ H01: STYLE-17 La Bàn Vàng Kim' },
+  { id: 'H02', label: 'H02: STYLE-28 Thẻ Kem Tinh Hoa' },
+  { id: 'H03', label: 'H03: STYLE-05 Kính Mờ Viền Vàng' },
+  { id: 'H04', label: 'H04: STYLE-12 Dải Băng Vàng Năng Động' },
+  { id: 'H05', label: 'H05: STYLE-21 Viên Nang Tối Giản' }
+];
+
+const SEGMENTS = [{"id": "seg1", "time": "00.0s – 18.4s", "stumble": "ASR: bị thơm / hàng cho mọi người -> đã sửa chuẩn: bị thâm / Hằng cho mọi người", "text": "<b>[Mở đầu & Khẳng định]</b> Sau khi <span class=\"kw-gold\">phun môi</span> uống <span class=\"kw-gold\">cà phê</span> có bị thâm không? Hằng khẳng định uống mọi nước màu đen/nâu đều được, không ảnh hưởng màu môi. <i>(14.8s–18.4s: Chèn Cảnh Trám #1 Môi đỏ cam đào căng mọng)</i>.", "cutRemoved": true, "zoom": true}, {"id": "seg2", "time": "18.4s – 36.4s", "stumble": "ASR: thợ xâm / độ thơm / xa được / nền rào -> đã sửa: thợ xăm / độ thâm / pha được / nền da", "text": "<b>[Yếu tố 1: Tay nghề nhận diện thâm & Pha mực]</b> Do <span class=\"kw-gold\">người thợ xăm</span> có nhận biết được <span class=\"kw-gold\">cấp độ thâm</span> để <span class=\"kw-gold\">pha màu mực</span> khử thâm hợp <span class=\"kw-gold\">nền da</span> làm bật tông môi sáng lên. <i>(Chèn Trám #5 Toàn cảnh Academy + Trám #2B Môi viền thâm + Trám #3 Chuyên gia kiểm tra)</i>.", "cutRemoved": true, "zoom": true}, {"id": "seg3", "time": "36.4s – 48.4s", "stumble": "Chuyển cảnh Cut-in: Trung cảnh chị Hằng (Trám #6) -> Cực cận mũi kim (Trám #4A)", "text": "<b>[Yếu tố 2: Kỹ thuật đi kim & Kiểm soát lực]</b> Kỹ thuật đi trên môi có đủ <span class=\"kw-gold\">nhận mực</span> không, đi <span class=\"kw-gold\">nông hay sâu</span> và <span class=\"kw-gold\">kiểm soát được lực</span> dưới da theo từng loại da môi. <i>(36.4s–40.4s: Trám #6 Chị Hằng cầm máy; 40.4s–48.4s: Trám #4A Macro đầu kim đỏ)</i>.", "cutRemoved": true, "zoom": false}, {"id": "seg4", "time": "48.4s – 65.4s", "stumble": "Không có video quay cảnh đeo khẩu trang tại nhà -> Minh họa bằng Bản vẽ 2D Atlas #1", "text": "<b>[Yếu tố 3: Chăm sóc tại nhà của khách]</b> Ăn uống xong có <span class=\"kw-gold\">vệ sinh</span> không, có đeo nhiều khẩu trang gây <span class=\"kw-gold\">bị hấp hơi</span> hoặc lên <span class=\"kw-gold\">mụn nước</span> không. <i>(54.6s–63.5s: Chèn Bản vẽ Khoa học 2D #F5F2EB Atlas #1)</i>.", "cutRemoved": true, "zoom": true}, {"id": "seg5", "time": "65.4s – 83.2s", "stumble": "ASR: hết thơm -> đã sửa chuẩn: hết thâm", "text": "<b>[Yếu tố 4A: Cơ địa & Nền da trắng sáng]</b> Do <span class=\"kw-gold\">cơ địa</span> mỗi người sau khi bong chưa <span class=\"kw-gold\">ổn định màu</span> ngay. Người <span class=\"kw-gold\">da trắng sáng</span> làm xong màu môi rất <span class=\"kw-gold\">sáng và tươi</span>. <i>(71.9s–77.5s: Atlas #2 Chu kỳ bong; 79.4s–83.2s: Trám #1 Môi cam đào tươi sáng)</i>.", "cutRemoved": true, "zoom": true}, {"id": "seg6", "time": "83.2s – 93.8s", "stumble": "ASR: Quả tuyên nhân / kiên chỉ / khổ thâm -> đã sửa: Còn tuy nhiên / kiên trì / khử thâm", "text": "<b>[Yếu tố 4B: Lộ trình 2 lần cho Gốc môi thâm]</b> Người <span class=\"kw-gold\">gốc môi thâm</span> cần <span class=\"kw-gold\">kiên trì hơn</span>, đi nhiều lần: Lần 1 để <span class=\"kw-gold\">khử thâm</span> (<i>Trám #2A Đi kim nano</i>) và Lần 2 để <span class=\"kw-gold\">vào màu</span> (<i>Trám #4B Miết kiểm tra màu đỏ hồng</i>).", "cutRemoved": true, "zoom": true}, {"id": "seg7", "time": "93.8s – 107.7s", "stumble": "✂️ Đã cắt 1.21s cuối (107.72s–108.93s) lúc vươn tay chạm ống kính tắt máy quay", "text": "<b>[Kết luận & CTA + Outro]</b> Hằng <span class=\"kw-gold\">bác bỏ</span> quan điểm kiêng nước màu đen/nâu, ai <span class=\"kw-gold\">nghiện cà phê</span> cứ uống <span class=\"kw-gold\">thoải mái</span>, <span class=\"kw-gold\">uống tẹt đi!</span> <i>(Hiện Thẻ CTA + Màn hình đen Outro ALICE BEAUTY ACADEMY 3.2s)</i>.", "cutRemoved": true, "zoom": true}];
+const _OLD_SEGMENTS = [
+  {
+    id: 'seg1',
+    time: '00.0s – 04.9s',
+    stumble: 'ờ... đầu tiên thì...',
+    text: 'Dự án <span class="kw-gold">Vinhomes Hạ Long Xanh</span> là một dự án siêu đô thị của Vingroup tại Quảng Ninh.',
+    cutRemoved: true,
+    zoom: false
+  },
+  {
+    id: 'seg2',
+    time: '04.9s – 11.4s',
+    stumble: 'ừm... cái quy mô của nó...',
+    text: 'Với tổng diện tích lên tới <span class="kw-gold">4.110 ha</span>, tức là lớn gấp gần 10 lần <span class="kw-gold">Vinhomes Ocean Park 1</span>.',
+    cutRemoved: true,
+    zoom: true
+  },
+  {
+    id: 'seg3',
+    time: '11.4s – 16.5s',
+    stumble: 'thì... nhiều anh chị hỏi là...',
+    text: 'Một dự án lớn như thế này thì <span class="kw-gold">tầm nhìn triển khai</span> chắc chắn phải tính bằng <span class="kw-gold">10 năm</span>.',
+    cutRemoved: true,
+    zoom: true
+  },
+  {
+    id: 'seg4',
+    time: '16.5s – 20.1s',
+    stumble: 'à... về cái phần...',
+    text: 'Và điểm thay đổi cuộc chơi lớn nhất chính là <span class="kw-gold">hạ tầng kết nối</span>.',
+    cutRemoved: true,
+    zoom: true
+  },
+  {
+    id: 'seg5',
+    time: '20.1s – 33.1s',
+    stumble: 'ờ... khi mà tuyến...',
+    text: 'Khi tuyến <span class="kw-gold">đường sắt tốc độ cao</span> Hà Nội – Quảng Ninh hoàn thành, di chuyển chỉ còn hơn <span class="kw-gold">30 phút</span> đến <span class="kw-gold">1 giờ 20 phút</span>.',
+    cutRemoved: true,
+    zoom: false
+  },
+  {
+    id: 'seg6',
+    time: '33.1s – 35.2s',
+    stumble: 'tiếp theo là... ờ...',
+    text: 'Đặc biệt dự án quy hoạch <span class="kw-gold">3 đại công viên</span> sinh thái rừng và biển.',
+    cutRemoved: true,
+    zoom: true
+  },
+  {
+    id: 'seg7',
+    time: '35.2s – 41.4s',
+    stumble: 'công viên tự nhiên lại quên mất rồi...',
+    text: 'Kết hợp <span class="kw-gold">Vịnh biển tự nhiên</span>, <span class="kw-gold">Sân Golf chuẩn quốc tế</span> và <span class="kw-gold">Bến du thuyền hạng sang</span>.',
+    cutRemoved: true,
+    zoom: false
+  },
+  {
+    id: 'seg8',
+    time: '41.4s – 44.5s',
+    stumble: 'nghỉ trống cuối video 2.8s',
+    text: 'Màn hình kết bài <span class="kw-gold">Executive Verdict</span>: 3 Trụ cột đầu tư dài hạn Vinhomes Hạ Long Xanh.',
+    cutRemoved: true,
+    zoom: true
+  }
+];
+
+const BROLL_SLOTS = [{"id": "slot1", "title": "Khe 1 (14.8s–18.4s) · Minh Họa Phun Môi Lên Màu Đẹp Bất Chấp Cà Phê", "time": "B09 – B10 (3.65s)", "picked": "broll_1_camdao", "candidates": [{"id": "broll_1_camdao", "name": "Cảnh Trám #1: Môi Đỏ Cam Đào Căng Mọng", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_02_broll1_camdao.webp"}, {"id": "broll_4b_alt", "name": "Cảnh Trám #4B: Miết Môi Đỏ Hồng", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_11_broll4b_vaomau.webp"}, {"id": "aroll_keep1", "name": "Giữ A-Roll Chị Hằng Nói", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_01_hero.webp"}]}, {"id": "slot2", "title": "Khe 2 (20.3s–24.1s) · Mở Đầu Yếu Tố 1: Uy Tín Người Thợ Xăm", "time": "B12 – B13 (3.84s)", "picked": "broll_5_academy", "candidates": [{"id": "broll_5_academy", "name": "Cảnh Trám #5: Toàn Cảnh Academy 3 Giường & Cúp", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_03_broll5_academy.webp"}, {"id": "broll_6_alt", "name": "Cảnh Trám #6: Chị Hằng Cầm Máy Xăm", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_06_broll6_chuyengia.webp"}, {"id": "aroll_keep2", "name": "Giữ A-Roll Chị Hằng Nói", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_01_hero.webp"}]}, {"id": "slot3", "title": "Khe 3 (25.5s–30.3s) · Nhận Biết Cấp Độ Thâm Của Môi Khách", "time": "B15 – B17 (4.80s)", "picked": "broll_2b_vientham", "candidates": [{"id": "broll_2b_vientham", "name": "Cảnh Trám #2B (9.8s–16s): Môi Gốc Có Viền Thâm", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_04_broll2b_vientham.webp"}, {"id": "broll_2a_alt", "name": "Cảnh Trám #2A: Đi Kim Viền Môi Trên", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_10_broll2a_khutham.webp"}, {"id": "broll_3_alt", "name": "Cảnh Trám #3: Chuyên Gia Kiểm Tra Môi", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_05_broll3_kiemtra.webp"}]}, {"id": "slot4", "title": "Khe 4 (30.3s–34.4s) · Pha Màu Mực Đủ Hết Thâm & Hợp Nền Da", "time": "B18 – B19 (4.06s)", "picked": "broll_3_kiemtra", "candidates": [{"id": "broll_3_kiemtra", "name": "Cảnh Trám #3: Chị Hằng Thấm Bông Kiểm Tra Màu & Da", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_05_broll3_kiemtra.webp"}, {"id": "broll_6_alt2", "name": "Cảnh Trám #6: Chị Hằng Làm Dưới Đèn Ring Light", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_06_broll6_chuyengia.webp"}, {"id": "broll_1_alt2", "name": "Cảnh Trám #1: Môi Đỏ Cam Đào Bật Tông", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_02_broll1_camdao.webp"}]}, {"id": "slot5", "title": "Khe 5 (36.4s–40.4s) · Yếu Tố 2: Chuyên Gia Trực Tiếp Đi Môi (Medium Shot)", "time": "B21 – B22 (4.00s)", "picked": "broll_6_chuyengia", "candidates": [{"id": "broll_6_chuyengia", "name": "Cảnh Trám #6: Trung Cảnh Chị Hằng Cầm Máy Đi Môi", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_06_broll6_chuyengia.webp"}, {"id": "broll_5_alt2", "name": "Cảnh Trám #5: Toàn Cảnh Phòng Phun Xăm", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_03_broll5_academy.webp"}, {"id": "broll_3_alt2", "name": "Cảnh Trám #3: Góc Nghiêng Áo Blouse Trắng", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_05_broll3_kiemtra.webp"}]}, {"id": "slot6", "title": "Khe 6 (40.4s–48.4s) · Cut-in Cực Cận: Kiểm Soát Lực Đi Kim Nông/Sâu", "time": "B23 – B26 (7.96s)", "picked": "broll_4a_macrokim", "candidates": [{"id": "broll_4a_macrokim", "name": "Cảnh Trám #4A (0s–11s): Macro Đầu Kim Đi Mực Đỏ", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_07_broll4a_macrokim.webp"}, {"id": "broll_2a_alt2", "name": "Cảnh Trám #2A: Đi Kim Nano Môi Trên", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_10_broll2a_khutham.webp"}, {"id": "broll_4b_alt2", "name": "Cảnh Trám #4B: Miết Kiểm Tra Độ Bám Mực", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_11_broll4b_vaomau.webp"}]}, {"id": "slot7", "title": "Khe 7 (54.6s–63.5s) · Yếu Tố 3: Chăm Sóc Tại Nhà & Khẩu Trang Hấp Hơi", "time": "B31 – B35 (8.83s)", "picked": "atlas_1_homecare", "candidates": [{"id": "atlas_1_homecare", "name": "Bản Vẽ 2D Kem #F5F2EB: Vệ Sinh & Khẩu Trang", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_08_atlas1_homecare.webp"}, {"id": "aroll_keep7", "name": "Giữ A-Roll Chị Hằng Nói", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_01_hero.webp"}, {"id": "broll_1_alt7", "name": "Cảnh Trám #1 (11s–12.7s): Tăm Bông Vệ Sinh Môi", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_02_broll1_camdao.webp"}]}, {"id": "slot8", "title": "Khe 8 (71.9s–83.2s) · Yếu Tố 4A: Cơ Địa Sau Bong & Nền Da Trắng Sáng", "time": "B41 – B46 (11.2s)", "picked": "atlas2_plus_broll1", "candidates": [{"id": "atlas2_plus_broll1", "name": "Atlas #2 (71.9–77.5s) + Trám #1 Môi Sáng Tươi (79.4–83.2s)", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_09_atlas2_codia.webp"}, {"id": "broll_1_only", "name": "Chỉ Dùng Cảnh Trám #1 Môi Đỏ Cam Đào", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_02_broll1_camdao.webp"}, {"id": "aroll_keep8", "name": "Giữ A-Roll Chị Hằng Nói", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_01_hero.webp"}]}, {"id": "slot9", "title": "Khe 9 (84.9s–93.8s) · Yếu Tố 4B: Lộ Trình 2 Buổi (Lần 1 Khử Thâm + Lần 2 Vào Màu)", "time": "B48 – B52 (8.89s)", "picked": "broll2a_plus_4b", "candidates": [{"id": "broll2a_plus_4b", "name": "Trám #2A Khử Thâm (84.9–90.1s) + Trám #4B Vào Màu (90.1–93.8s)", "tag": "★ AI Chọn", "tagClass": "tag-picked", "img": "/assets/demo_alice/frame_10_broll2a_khutham.webp"}, {"id": "broll_4b_only", "name": "Cảnh Trám #4B: Miết Kiểm Tra Độ Lên Màu Đỏ Hồng", "tag": "Thay thế 1", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_11_broll4b_vaomau.webp"}, {"id": "broll_2b_only", "name": "Cảnh Trám #2B: Cận Môi Gốc Viền Thâm", "tag": "Thay thế 2", "tagClass": "tag-alt", "img": "/assets/demo_alice/frame_04_broll2b_vientham.webp"}]}];
+const _OLD_SLOTS = [
+  {
+    id: 'slot1',
+    title: 'Slot 1 · So Sánh Quy Mô 4.110 Ha vs Ocean Park',
+    time: '04.9s – 08.1s',
+    picked: 'atlas_scale',
+    candidates: [
+      { id: 'atlas_scale', name: 'Bản Vẽ 2D Kem #F5F2EB (4.110 Ha)', tag: '★ AI Chọn', tagClass: 'tag-picked', img: '/assets/demo_hien/frame_slot1_map.webp' },
+      { id: 'drone_01', name: 'Flycam Tổng Thể Vịnh Hạ Long', tag: 'Thay thế 1', tagClass: 'tag-alt', img: '/assets/demo_hien/doc_drone_01_t15s.webp' },
+      { id: 'doc_3d_00', name: 'Phối Cảnh 3D Toàn Khu', tag: 'Thay thế 2', tagClass: 'tag-alt', img: '/assets/demo_hien/doc_3d_00_t5s.webp' }
+    ]
+  },
+  {
+    id: 'slot2',
+    title: 'Slot 2 · Đại Sa Bàn & Quy Hoạch Thực Tế',
+    time: '08.1s – 11.4s',
+    picked: 'item_08_saban',
+    candidates: [
+      { id: 'item_08_saban', name: 'Sa Bàn Sắc Nét (item_08 + item_06)', tag: '★ AI Chọn', tagClass: 'tag-picked', img: '/assets/demo_hien/frame_slot2_model.webp' },
+      { id: 'item_06_hall', name: 'Toàn Cảnh Hội Trường Thẳng', tag: 'Thay thế 1', tagClass: 'tag-alt', img: '/assets/demo_hien/cand_it06_hoitruong.webp' },
+      { id: 'item_03_tilted', name: 'Cảnh Hội Trường Góc Nghiêng (item_03)', tag: '⚠️ Nghiêng (Đã loại)', tagClass: 'tag-bad', warn: true, img: '/assets/demo_hien/cand_it03_nghieng.webp' }
+    ]
+  },
+  {
+    id: 'slot3',
+    title: 'Slot 3 · Hạ Tầng Đường Sắt Tốc Độ Cao 3D',
+    time: '20.1s – 26.6s',
+    picked: 'rail_station_3d',
+    candidates: [
+      { id: 'rail_station_3d', name: '3D Ga Đường Sắt Cao Tốc + Bản Đồ', tag: '★ AI Chọn', tagClass: 'tag-picked', img: '/assets/demo_hien/frame_slot3_rail.webp' },
+      { id: 'doc_3d_05', name: 'Cầu Cạn & Trục Đại Lộ 3D', tag: 'Thay thế 1', tagClass: 'tag-alt', img: '/assets/demo_hien/doc_3d_05_t55s.webp' },
+      { id: 'drone_04', name: 'Flycam Nút Giao Cao Tốc Hạ Long', tag: 'Thay thế 2', tagClass: 'tag-alt', img: '/assets/demo_hien/doc_drone_04_t45s.webp' }
+    ]
+  },
+  {
+    id: 'slot4',
+    title: 'Slot 4 · Đoàn Tàu Cao Tốc & Rút Ngắn Thời Gian',
+    time: '26.6s – 33.1s',
+    picked: 'bullet_train_3d',
+    candidates: [
+      { id: 'bullet_train_3d', name: 'Đoàn Tàu Cao Tốc 3D + Mốc 1h20p', tag: '★ AI Chọn', tagClass: 'tag-picked', img: '/assets/demo_hien/frame_slot4_train.webp' },
+      { id: 'cand_it09', name: 'Thực Địa Hạ Tầng Đang Thi Công', tag: 'Thay thế 1', tagClass: 'tag-alt', img: '/assets/demo_hien/cand_it09_thucdia.webp' },
+      { id: 'drone_07', name: 'Flycam Ven Vịnh & Cao Tốc', tag: 'Thay thế 2', tagClass: 'tag-alt', img: '/assets/demo_hien/doc_drone_07_t75s.webp' }
+    ]
+  },
+  {
+    id: 'slot5',
+    title: 'Slot 5 · Bento 3 Đại Công Viên & Vịnh Du Thuyền',
+    time: '35.2s – 41.4s',
+    picked: 'megaparks_bento',
+    candidates: [
+      { id: 'megaparks_bento', name: 'Bento 3 Đại Công Viên + Du Thuyền', tag: '★ AI Chọn', tagClass: 'tag-picked', img: '/assets/demo_hien/frame_slot5_parks.webp' },
+      { id: 'cand_it04_bien', name: 'Bãi Biển & Vịnh Thực Tế (item_04)', tag: 'Thay thế 1', tagClass: 'tag-alt', img: '/assets/demo_hien/cand_it04_bien.webp' },
+      { id: 'doc_3d_01', name: 'Phối Cảnh 3D Bến Du Thuyền', tag: 'Thay thế 2', tagClass: 'tag-alt', img: '/assets/demo_hien/doc_3d_01_t15s.webp' }
+    ]
+  },
+  {
+    id: 'slot6',
+    title: 'Slot 6 · Màn Hình Tổng Kết Đầu Tư (Outro)',
+    time: '41.4s – 44.5s',
+    picked: 'exec_outro',
+    candidates: [
+      { id: 'exec_outro', name: 'Executive Verdict Card (3 Trụ Cột)', tag: '★ AI Chọn', tagClass: 'tag-picked', img: '/assets/demo_hien/frame_slot6_outro.webp' },
+      { id: 'drone_09', name: 'Hoàng Hôn Vịnh Hạ Long Xanh', tag: 'Thay thế 1', tagClass: 'tag-alt', img: '/assets/demo_hien/doc_drone_09_t95s.webp' },
+      { id: 'cand_it08_end', name: 'Cận Sa Bàn Đèn Sáng Rực Rỡ', tag: 'Thay thế 2', tagClass: 'tag-alt', img: '/assets/demo_hien/cand_it08_saban.webp' }
+    ]
+  }
+];
+
+let plan = {
+  sub: 'S01',
+  hero: 'H01',
+  cuts: {},
+  zooms: {},
+  slots: {}
+};
+
+function initDefaults() {
+  plan.sub = 'S01';
+  plan.hero = 'H01';
+  SEGMENTS.forEach(s => {
+    plan.cuts[s.id] = s.cutRemoved;
+    plan.zooms[s.id] = s.zoom;
+  });
+  BROLL_SLOTS.forEach(sl => {
+    plan.slots[sl.id] = sl.picked;
+  });
+}
+
+function setFrame(idx, src, tagText) {
+  document.getElementById('mainFrameImg').src = src;
+  document.getElementById('frameTag').textContent = tagText;
+  const btns = document.querySelectorAll('.frame-thumb-btn');
+  btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+}
+
+function renderPills() {
+  const subRow = document.getElementById('subPills');
+  subRow.innerHTML = SUB_OPTIONS.map(o => `
+    <button class="style-pill ${plan.sub === o.id ? 'active' : ''}" onclick="setSub('${o.id}')">${o.label}</button>
+  `).join('');
+
+  const heroRow = document.getElementById('heroPills');
+  heroRow.innerHTML = HERO_OPTIONS.map(o => `
+    <button class="style-pill ${plan.hero === o.id ? 'active' : ''}" onclick="setHero('${o.id}')">${o.label}</button>
+  `).join('');
+}
+
+function setSub(id) {
+  plan.sub = id;
+  renderPills();
+  updateDeltaBar();
+}
+
+function setHero(id) {
+  plan.hero = id;
+  renderPills();
+  updateDeltaBar();
+}
+
+function toggleCut(segId) {
+  plan.cuts[segId] = !plan.cuts[segId];
+  renderTranscript();
+  updateDeltaBar();
+}
+
+function toggleZoom(segId) {
+  plan.zooms[segId] = !plan.zooms[segId];
+  renderTranscript();
+  updateDeltaBar();
+}
+
+function renderTranscript() {
+  const box = document.getElementById('transcriptList');
+  box.innerHTML = SEGMENTS.map(s => {
+    const isCut = plan.cuts[s.id];
+    const isZoom = plan.zooms[s.id];
+    return `
+      <div class="seg-item">
+        <div class="seg-top">
+          <span class="seg-time">${s.time}</span>
+          <div class="seg-toggles">
+            <button class="toggle-chip ${isCut ? 'cut-on' : 'cut-off'}" onclick="toggleCut('${s.id}')">
+              ${isCut ? '✂️ Đã cắt vấp' : '⚠️ Đang giữ lại'}
+            </button>
+            <button class="toggle-chip ${isZoom ? 'zoom-on' : ''}" onclick="toggleZoom('${s.id}')">
+              ${isZoom ? '⚡ Zoom 1.18x' : 'Giữ tĩnh'}
+            </button>
+          </div>
+        </div>
+        <div>
+          <span class="stumble-tag ${isCut ? '' : 'restored'}">[${s.stumble}]</span>
+          <span>${s.text}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function selectSlotCand(slotId, candId, imgPath, title) {
+  plan.slots[slotId] = candId;
+  renderSlots();
+  updateDeltaBar();
+}
+
+function renderSlots() {
+  const box = document.getElementById('slotList');
+  box.innerHTML = BROLL_SLOTS.map(sl => {
+    const currentPick = plan.slots[sl.id];
+    return `
+      <div class="slot-card">
+        <div class="slot-head">
+          <span class="slot-title">${sl.title}</span>
+          <span class="slot-time">${sl.time}</span>
+        </div>
+        <div class="candidates-grid">
+          ${sl.candidates.map(c => {
+            const isPicked = currentPick === c.id;
+            return `
+              <div class="cand-box ${isPicked ? 'active' : ''} ${c.warn ? 'warn' : ''}" onclick="selectSlotCand('${sl.id}', '${c.id}', '${c.img}', '${sl.title}')">
+                <img src="${c.img}" class="cand-img" loading="lazy" alt="${c.name}">
+                <div class="cand-meta">
+                  <span class="cand-tag ${isPicked ? 'tag-picked' : c.tagClass}">${isPicked ? '✓ Đang chọn' : c.tag}</span>
+                  <div style="color:#E2E8F0;font-weight:600;">${c.name}</div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function computeDeltas() {
+  let deltas = [];
+  if (plan.sub !== 'S01') deltas.push(`sub=${plan.sub}`);
+  if (plan.hero !== 'H01') deltas.push(`hero=${plan.hero}`);
+  SEGMENTS.forEach(s => {
+    if (plan.cuts[s.id] !== s.cutRemoved) deltas.push(`cut_${s.id}=${plan.cuts[s.id] ? 'cut' : 'keep'}`);
+    if (plan.zooms[s.id] !== s.zoom) deltas.push(`zoom_${s.id}=${plan.zooms[s.id] ? 'on' : 'off'}`);
+  });
+  BROLL_SLOTS.forEach(sl => {
+    if (plan.slots[sl.id] !== sl.picked) deltas.push(`${sl.id}=${plan.slots[sl.id]}`);
+  });
+  return deltas;
+}
+
+function updateDeltaBar() {
+  const deltas = computeDeltas();
+  const statusEl = document.getElementById('deltaStatus');
+  const codeEl = document.getElementById('deltaCode');
+  if (deltas.length === 0) {
+    statusEl.textContent = '✓ Chuẩn phương án AI đề xuất (0 thay đổi)';
+    statusEl.style.color = '#34D399';
+    codeEl.textContent = 'CONFIRM: alice-thanh-hang · v2 · OK-DEFAULT';
+  } else {
+    statusEl.textContent = `⚡ Anh Việt đã đổi ${deltas.length} mục so với mặc định:`;
+    statusEl.style.color = '#FFD018';
+    codeEl.textContent = `CONFIRM: alice-thanh-hang · v2 · ${deltas.join(' · ')}`;
+  }
+}
+
+function resetDefaults() {
+  initDefaults();
+  renderPills();
+  renderTranscript();
+  renderSlots();
+  updateDeltaBar();
+}
+
+function approveAndCopy() {
+  const code = document.getElementById('deltaCode').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = document.getElementById('approveBtn');
+    btn.textContent = '✓ Đã Copy Lệnh Chốt!';
+    btn.style.background = '#10B981';
+    btn.style.color = '#FFF';
+    setTimeout(() => {
+      btn.textContent = '✅ Chốt & Copy Lệnh';
+      btn.style.background = 'var(--gold)';
+      btn.style.color = '#090C10';
+    }, 2200);
+  });
+}
+
+initDefaults();
+renderPills();
+renderTranscript();
+renderSlots();
+updateDeltaBar();
+</script>
+</body>
+</html>

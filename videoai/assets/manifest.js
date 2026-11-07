@@ -210,6 +210,54 @@ window.HUB = {
       stage: "motion",
       icon: "🗺️",
       q: "4 Phương án Google Maps Tọa Độ Thật (PA1→PA4) + Bản đồ Địa lý Sáng rõ hiện tên các tỉnh (M12 V5.0) & 5 Video Kết Hợp Thực Chiến tại Vinhomes Hạ Long Xanh"
+    },
+    {
+      id: "so-sanh-truoc-sau",
+      file: "18-so-sanh-truoc-sau.html",
+      group: "ref",
+      n: "18",
+      title: "Bộ Sưu Tập 38 Video So Sánh Trước–Sau (Trái: Nguyên Liệu • Phải: Kết Quả)",
+      short: "38 Video Trước–Sau",
+      stage: "studio",
+      icon: "⚖️",
+      q: "Đối chứng trực quan 38 Video AI Edit đa ngành: Bên trái Nguyên liệu gốc — Bên phải Kết quả hoàn chỉnh"
+    },
+    {
+      id: "truoc-sau-alias",
+      file: "truoc-sau.html",
+      group: "ref",
+      n: "18",
+      hiddenFromMenu: true,
+      activeMenuId: "so-sanh-truoc-sau",
+      title: "Bộ Sưu Tập 38 Video So Sánh Trước–Sau (Trái: Nguyên Liệu • Phải: Kết Quả)",
+      short: "38 Video Trước–Sau",
+      stage: "studio",
+      icon: "⚖️",
+      q: "Đối chứng trực quan 38 Video AI Edit đa ngành: Bên trái Nguyên liệu gốc — Bên phải Kết quả hoàn chỉnh"
+    }
+    ,{
+      id: "edit-video-pro",
+      file: "19-edit-video-pro.html",
+      group: "ref",
+      n: "19",
+      title: "Edit Video Pro V3.7 (Tổng Kết Các Nhịp • 9+1 Style Ngành • 5 Hook • 6 Outro Full-Screen)",
+      short: "Edit Video Pro V3.7",
+      stage: "motion",
+      icon: "⚡",
+      q: "Tổng kết toàn bộ các nhịp dựng (EXPERT & BROLL), 5 kiểu Text Hook (PA1→PA5), 9+1 Style Ngành tự động, 6 Thẻ Đồ Họa & 6 Bảng Tổng Kết Toàn Màn Hình có CTA Animation"
+    },
+    {
+      id: "edit-video-pro-alias",
+      file: "edit-video-pro.html",
+      group: "ref",
+      n: "19",
+      hiddenFromMenu: true,
+      activeMenuId: "edit-video-pro",
+      title: "Edit Video Pro V3.7 (Tổng Kết Các Nhịp • 9+1 Style Ngành • 5 Hook • 6 Outro Full-Screen)",
+      short: "Edit Video Pro V3.7",
+      stage: "motion",
+      icon: "⚡",
+      q: "Tổng kết toàn bộ các nhịp dựng (EXPERT & BROLL), 5 kiểu Text Hook (PA1→PA5), 9+1 Style Ngành tự động, 6 Thẻ Đồ Họa & 6 Bảng Tổng Kết Toàn Màn Hình có CTA Animation"
     }
   ]
 };
