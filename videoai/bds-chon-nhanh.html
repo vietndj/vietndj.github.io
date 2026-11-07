@@ -574,7 +574,8 @@
         <span class="brand-sub">· Chạm chọn 1 hoặc ghép nhiều kỹ năng ➔ Copy lệnh chạy thẳng 1 bước</span>
       </div>
       <div class="header-links">
-        <a href="bds-lot-picker.html" class="nav-pill highlight">📐 Chấm 4 Góc Lô Đất 3D ↗</a>
+        <a href="19-ban-do-orbit-3d-duong-vang-bds.html" class="nav-pill highlight">🌟 M13: Bản Đồ Xoay 3D & Đường Vàng ↗</a>
+        <a href="bds-lot-picker.html" class="nav-pill">📐 Chấm 4 Góc Lô Đất 3D ↗</a>
         <a href="17-google-maps-khoanh-lo-bds.html" class="nav-pill">🗺️ 5 Combo Hạ Long Xanh ↗</a>
         <a href="16-ung-dung-ai-video-bds.html" class="nav-pill">📖 Xem Bài Giảng Đầy Đủ ↗</a>
       </div>
@@ -636,6 +637,21 @@ const GROUPS = [
 ];
 
 const SKILLS = [
+  {
+    code: 'M13', group: 'map', isV2: true,
+    shortName: 'BẢN ĐỒ XOAY',
+    voiceCmd: 'bản đồ xoay',
+    fullName: 'Bản Đồ Vệ Tinh Tô Vùng + Đường Vàng Đa Trục + Orbit Tháp 3D (V3.0)',
+    desc: 'Tô vùng biển & ô tiện ích (0% lấn đường vàng) + chạy đường vàng đa trục (❯❯) + mọc 3 tòa tháp 3D xoay Orbit 80° cắt sang Flycam.',
+    need: 'Cần: Tên dự án + Flycam',
+    aliases: 'bản đồ xoay, orbit bds, đường vàng bản đồ, bản đồ xoay 3d, m13',
+    preview: 'assets/videos/sun_centro_town_map_orbit_pa1.mp4',
+    poster: 'assets/videos/v3_zoom_sunworld_and_font_check.jpg',
+    inputs: [
+      { key: 'project', label: '📍 Dự án / Tọa độ (M13)', placeholder: 'VD: Sun Centro Town Hạ Long', def: 'Sun Centro Town Hạ Long' },
+      { key: 'targets', label: '🛣️ Trục đường vàng & Tiện ích (M13)', placeholder: 'VD: Đường Hạ Long, Đường Kỳ Quan · Tổ Hợp Sun World, Sun Carnival Plaza', def: 'Đường Hạ Long, Đường Kỳ Quan · Tổ Hợp Sun World, Sun Carnival Plaza' }
+    ]
+  },
   {
     code: 'M12', group: 'map', isV2: true,
     shortName: 'VÒNG CUNG',

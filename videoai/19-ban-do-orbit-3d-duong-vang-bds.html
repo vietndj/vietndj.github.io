@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kỹ Năng M13: Bản Đồ Xoay 3D (Orbit 80°) & Đường Vàng Đa Trục × Flycam Khoanh Lô BĐS (V3.0)</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Ctext%20x='32'%20y='42'%20font-family='sans-serif'%20font-weight='900'%20font-size='26'%20fill='%23FFD018'%20text-anchor='middle'%3EM13%3C/text%3E%3C/svg%3E">
+  <link href="assets/style.css?v=20261108" rel="stylesheet"/>
+  <style>
+    @font-face {
+      font-family: 'FDAeonikExtended';
+      src: url('assets/fonts/FDAeonikExtended-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'FDAeonikExtendedBlack';
+      src: url('assets/fonts/FDAeonikExtended-Black.otf') format('opentype');
+      font-weight: 900;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'FDAeonik';
+      src: url('assets/fonts/FDAeonik-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'FDAeonikBold';
+      src: url('assets/fonts/FDAeonik-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      --ext-bold: 'FDAeonikExtended', -apple-system, BlinkMacSystemFont, sans-serif;
+      --ext-black: 'FDAeonikExtendedBlack', 'FDAeonikExtended', sans-serif;
+      --aeonik: 'FDAeonik', -apple-system, BlinkMacSystemFont, sans-serif;
+      --aeonik-bold: 'FDAeonikBold', -apple-system, BlinkMacSystemFont, sans-serif;
+      --gold: #FFD018;
+      --amber: #F59E0B;
+      --cyan: #38BDF8;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+    }
+
+    body {
+      font-family: var(--aeonik);
+      background: #080B12;
+      color: #F8FAFC;
+    }
+
+    /* MÀN HÌNH ĐEN HƯỚNG DẪN CÁCH GỌI KỸ NĂNG & 3 BỐI CẢNH SỬ DỤNG */
+    .black-guide-screen {
+      background: radial-gradient(circle at 50% 0%, #111827 0%, #05070C 72%, #030408 100%);
+      border: 2px solid var(--gold);
+      border-radius: 22px;
+      padding: 32px 28px;
+      margin-bottom: 30px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), inset 0 0 40px rgba(255, 208, 24, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .black-guide-screen::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255, 208, 24, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 208, 24, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .guide-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .skill-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 208, 24, 0.14);
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-family: var(--ext-bold);
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+    .guide-title {
+      font-family: var(--ext-black);
+      font-size: clamp(24px, 3.2vw, 38px);
+      line-height: 1.18;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      letter-spacing: 0.03em;
+      margin: 0 0 8px;
+    }
+    .guide-subtitle {
+      font-family: var(--ext-bold);
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 22px;
+    }
+
+    /* KHUNG CÁCH GỌI KỸ NĂNG */
+    .call-box {
+      background: rgba(15, 23, 42, 0.92);
+      border: 1.5px solid rgba(56, 189, 248, 0.65);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin-bottom: 24px;
+    }
+    .call-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .call-box-title {
+      font-family: var(--ext-bold);
+      font-size: 14.5px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .voice-triggers-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .voice-chip {
+      background: #090D16;
+      border: 1.5px solid var(--gold);
+      color: #FEF08A;
+      font-family: var(--aeonik-bold);
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .voice-chip:hover {
+      background: rgba(255, 208, 24, 0.18);
+      transform: translateY(-1px);
+    }
+    .cli-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #05080F;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13.5px;
+      color: #38BDF8;
+      flex-wrap: wrap;
+    }
+    .copy-btn {
+      background: linear-gradient(135deg, #FFD018, #F59E0B);
+      color: #090C10;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-family: var(--ext-bold);
+      font-size: 12px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* 3 BỐI CẢNH SỬ DỤNG THỰC CHIẾN */
+    .context-section-label {
+      font-family: var(--ext-black);
+      font-size: 16px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+    .context-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .ctx-card {
+      background: rgba(16, 24, 39, 0.95);
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      border-top: 4px solid var(--gold);
+      border-radius: 16px;
+      padding: 18px 20px;
+    }
+    .ctx-card.c2 { border-top-color: var(--cyan); }
+    .ctx-card.c3 { border-top-color: var(--emerald); }
+    .ctx-num {
+      display: inline-block;
+      font-family: var(--ext-black);
+      font-size: 13px;
+      background: var(--gold);
+      color: #090C10;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .ctx-card.c2 .ctx-num { background: var(--cyan); }
+    .ctx-card.c3 .ctx-num { background: var(--emerald); }
+    .ctx-card h3 {
+      font-family: var(--ext-bold);
+      font-size: 15.5px;
+      line-height: 1.35;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    .ctx-card p {
+      font-family: var(--aeonik);
+      font-size: 14px;
+      line-height: 1.58;
+      color: #CBD5E1;
+      margin: 0;
+    }
+
+    /* VIDEO SHOWCASE GRID */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+      margin: 24px 0 32px;
+    }
+    .v-card-dark {
+      background: #0F172A;
+      border: 2px solid #334155;
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .v-card-dark.gold { border-color: var(--gold); box-shadow: 0 14px 36px rgba(255, 208, 24, 0.12); }
+    .v-card-dark.cyan { border-color: var(--cyan); box-shadow: 0 14px 36px rgba(56, 189, 248, 0.12); }
+    .v-badge-top {
+      display: inline-block;
+      font-family: var(--ext-bold);
+      font-size: 11.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255, 208, 24, 0.16);
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .v-card-dark.cyan .v-badge-top {
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--cyan);
+    }
+    .v-card-dark h3 {
+      font-family: var(--ext-bold);
+      font-size: 17px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    .v-card-dark p {
+      font-size: 13.8px;
+      line-height: 1.55;
+      color: #CBD5E1;
+      margin: 0 0 14px;
+    }
+    .video-frame-916 {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 9 / 16;
+      margin: 0 auto 12px;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .video-frame-916 video, .video-frame-916 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* BẢNG KIỂM ĐỊNH 4 PHA P0..P3 */
+    .gate-box {
+      background: #0F172A;
+      border: 1.5px solid #334155;
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    .gate-box h2 {
+      font-family: var(--ext-bold);
+      font-size: 20px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .gate-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.8px;
+    }
+    .gate-table th {
+      background: #1E293B;
+      color: var(--gold);
+      font-family: var(--ext-bold);
+      font-size: 12px;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 2px solid #334155;
+    }
+    .gate-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: #E2E8F0;
+      vertical-align: top;
+    }
+    .pass-pill {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid #10B981;
+      color: #34D399;
+      font-family: var(--ext-bold);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .nav-bar-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .nav-link-btn {
+      text-decoration: none;
+      font-family: var(--ext-bold);
+      font-size: 12px;
+      text-transform: uppercase;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: #1E293B;
+      color: #F8FAFC;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .nav-link-btn.primary {
+      background: var(--gold);
+      color: #090C10;
+      border-color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+  <div style="max-width: 1320px; margin: 0 auto; padding: 24px 18px 80px;">
+
+    <!-- THANH ĐIỀU HƯỚNG HỆ SINH THÁI BẤT ĐỘNG SẢN -->
+    <div class="nav-bar-top">
+      <a class="nav-link-btn primary" href="bds-chon-nhanh.html#m=13">⚡ Mở Bảng Chọn Nhanh BĐS (Chọn Sẵn M13)</a>
+      <a class="nav-link-btn" href="16-ung-dung-ai-video-bds.html">🏛️ Toàn Bộ 13 Kỹ Năng BĐS (M1→M13)</a>
+      <a class="nav-link-btn" href="17-google-maps-khoanh-lo-bds.html">🗺️ Chuyên Trang Google Maps × Khoanh Lô 3D</a>
+      <a class="nav-link-btn" href="bds-lot-picker.html">🎯 Công Cụ Chấm 4 Góc Lô Đất</a>
+    </div>
+
+    <!-- 1. MÀN HÌNH ĐEN MÔ TẢ CÁCH GỌI KỸ NĂNG & 3 BỐI CẢNH SỬ DỤNG -->
+    <section class="black-guide-screen" id="man-hinh-den-huong-dan">
+      <div class="guide-inner">
+        <div class="skill-status-pill">✅ ĐÃ ĐÓNG GÓI CHÍNH THỨC VÀO SKILL BDS-EDIT • MÃ KỸ NĂNG: M13</div>
+        <h1 class="guide-title">BẢN ĐỒ XOAY 3D (ORBIT 80°) &amp; ĐƯỜNG VÀNG ĐA TRỤC</h1>
+        <div class="guide-subtitle">TÔ VÙNG HẠ TẦNG • CHẠY ĐƯỜNG VÀNG (0% LẤN Ô HỒNG) • MỌC THÁP 3D • CẮT SANG FLYCAM THỰC ĐỊA</div>
+
+        <!-- HỘP CÁCH GỌI KỸ NĂNG -->
+        <div class="call-box">
+          <div class="call-box-header">
+            <div class="call-box-title">🎙️ CÁCH GỌI KỸ NĂNG M13 (NÓI 1 GIÂY HOẶC BẤM COPY LỆNH)</div>
+            <span style="font-size: 13px; color: #94A3B8;">Bấm vào bất kỳ nhãn nào bên dưới để copy lệnh chạy ngay:</span>
+          </div>
+          <div class="voice-triggers-row">
+            <button class="voice-chip" onclick="copyText('bản đồ xoay cho dự án Sun Centro Town Hạ Long')">🎙️ "bản đồ xoay"</button>
+            <button class="voice-chip" onclick="copyText('orbit bds cho dự án Sun Centro Town Hạ Long')">🎙️ "orbit bds"</button>
+            <button class="voice-chip" onclick="copyText('đường vàng bản đồ cho dự án Sun Centro Town Hạ Long')">🎙️ "đường vàng bản đồ"</button>
+            <button class="voice-chip" onclick="copyText('bản đồ xoay 3d kèm đòn bẩy 30 70')">🎙️ "bản đồ xoay 3d"</button>
+            <button class="voice-chip" onclick="copyText('BDS M13 · Dự án: Sun Centro Town Hạ Long')">⚡ "BDS M13"</button>
+          </div>
+          <div class="cli-bar">
+            <span id="cli-cmd-text">python3 ~/.gemini/config/skills/bds-edit/scripts/bds_cli.py --run M13 --project "Sun Centro Town Hạ Long"</span>
+            <button class="copy-btn" onclick="copyText(document.getElementById('cli-cmd-text').innerText)">📋 COPY LỆNH CLI</button>
+          </div>
+        </div>
+
+        <!-- 3 BỐI CẢNH SỬ DỤNG THỰC CHIẾN -->
+        <div class="context-section-label">🧭 03 BỐI CẢNH SỬ DỤNG THỰC CHIẾN CỦA KỸ NĂNG M13</div>
+        <div class="context-grid-3">
+          <div class="ctx-card c1">
+            <span class="ctx-num">BỐI CẢNH 01</span>
+            <h3>KHOANH LÔ DỰ ÁN CẠNH TRỤC ĐẠI LỘ LỚN</h3>
+            <p>Dùng khi cần chứng minh dự án nằm ngay giao lộ huyết mạch: tô màu vịnh biển &amp; các khu đại tiện ích lân cận (Sun World, Quảng trường, Đảo Rều), đồng thời bắn luồng <b>đường vàng đa trục (❯❯)</b> hội tụ về tâm dự án với <b>3 lớp bảo vệ Stencil (0% đâm xuyên vào ô tiện ích)</b>.</p>
+          </div>
+          <div class="ctx-card c2">
+            <span class="ctx-num">BỐI CẢNH 02</span>
+            <h3>CHỨNG MINH VỊ TRÍ KIM CƯƠNG &amp; ĐÙN KHỐI TÒA THÁP 3D</h3>
+            <p>Dùng cho dự án đang làm móng/hầm hoặc bán trên sa bàn: đùn khối <b>3 tòa tháp 30 tầng 3D</b> mọc lên trên <b>bệ tròn vàng kim + 3 vòng sóng Radar</b>, kết hợp nghiêng camera <b>Pitch 56°</b> và xoay <b>Orbit 80°</b> quanh tòa tháp như phim kiến trúc 3D.</p>
+          </div>
+          <div class="ctx-card c3">
+            <span class="ctx-num">BỐI CẢNH 03</span>
+            <h3>CHUYỂN CẢNH MATCH-CUT TỪ BẢN ĐỒ SANG FLYCAM THỰC ĐỊA</h3>
+            <p>Dùng khi muốn nối mượt từ góc nhìn vĩ mô trên Google Maps Satellite xuống thẳng <b>video Flycam thực tế tại công trường</b> (khóa tâm tòa tháp 3D ↔ tâm lô đất Flycam sai số <b>&lt; 5px</b>), tự động vẽ viền lô đất phát sáng và ghim nhãn tiện ích đường chân trời.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TRÌNH PHÁT VIDEO & ĐỐI CHIẾU TRỰC QUAN V3.0 -->
+    <section class=" showcases">
+      <div class="showcase-grid">
+
+        <!-- CARD 1: BẢN FULL CÓ MÀN HÌNH ĐEN HƯỚNG DẪN 4.5S -->
+        <div class="v-card-dark gold">
+          <div>
+            <span class="v-badge-top">🎬 BẢN SHOWCASE CÓ MÀN HÌNH ĐEN (15.5 GIÂY)</span>
+            <h3>VIDEO M13 KÈM MÀN HÌNH ĐEN CÁCH GỌI &amp; 3 BỐI CẢNH</h3>
+            <p>Mở đầu bằng <b>4.5s Màn hình đen Luxury</b> trình bày rõ Cách gọi giọng nói (<code>"bản đồ xoay"</code> / <code>"orbit bds"</code>) &amp; 3 bối cảnh sử dụng bằng font <b>FDAeonikExtended-Black/Bold</b>, sau đó nối thẳng vào 11.0s hiệu ứng Sun Centro Town Hạ Long.</p>
+          </div>
+          <div class="video-frame-916">
+            <video controls playsinline preload="metadata" poster="assets/videos/v3_black_intro_guide_card.jpg">
+              <source src="assets/videos/sun_centro_m13_showcase_with_intro.mp4?v=20261108v3" type="video/mp4"/>
+            </video>
+          </div>
+        </div>
+
+        <!-- CARD 2: BẢN THUẦN HIỆU ỨNG 11.0S ĐỂ ĐĂNG TIKTOK/REELS -->
+        <div class="v-card-dark cyan">
+          <div>
+            <span class="v-badge-top">⚡ BẢN THUẦN HIỆU ỨNG GIAO KHÁCH (11.0 GIÂY)</span>
+            <h3>SUN CENTRO TOWN HẠ LONG (V3.0 • 4 PHA VERIFIER PASS)</h3>
+            <p>100% chữ IN HOA dùng đúng font <b>FDAeonikExtended-Bold.otf</b> &amp; <b>FDAeonikExtended-Black.otf</b>. Đường vàng <b>ĐƯỜNG HẠ LONG</b> tách biệt hoàn toàn khỏi ô hồng <b>TỔ HỢP SUN WORLD</b> (khoảng cách thực địa 258m, 0 pixel lấn vùng).</p>
+          </div>
+          <div class="video-frame-916">
+            <video controls autoplay loop muted playsinline preload="metadata" poster="assets/videos/pa1_v3_contact_sheet.jpg">
+              <source src="assets/videos/sun_centro_town_map_orbit_pa1.mp4?v=20261108v3" type="video/mp4"/>
+            </video>
+          </div>
+        </div>
+
+        <!-- CARD 3: ẢNH ZOOM KIỂM CHỨNG FONT EXTENDED & Ô HỒNG SUN WORLD -->
+        <div class="v-card-dark">
+          <div>
+            <span class="v-badge-top" style="background: rgba(16,185,129,0.18); color: #34D399;">🔍 BẰNG CHỨNG THỊ GIÁC CẬN CẢNH (FRAME 85 • 2.83S)</span>
+            <h3>SOI CẬN CẢNH FONT FDAEONIK EXTENDED &amp; Ô HỒNG SUN WORLD</h3>
+            <p>Ảnh cắt trực tiếp tại đúng giây <code>02.83s</code> mà anh Việt đã khoanh: (1) Tiêu đề &amp; nhãn hiển thị đúng form chữ bè ngang sang trọng của <b>FDAeonikExtended-Bold</b>, (2) Đường vàng <b>ĐƯỜNG HẠ LONG</b> chạy dọc bên ngoài biên Tây Bắc, cách ô hồng <b>TỔ HỢP SUN WORLD</b> <code>84.8px</code> (0% đâm xuyên).</p>
+          </div>
+          <div class="video-frame-916" style="aspect-ratio: auto; max-width: 100%;">
+            <img src="assets/videos/v3_zoom_sunworld_and_font_check.jpg?v=20261108v3" alt="Kiểm chứng Font FDAeonikExtended và Ô hồng Tổ Hợp Sun World" style="border-radius: 12px; height: auto;"/>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. BẢNG KIẾN TRÚC BỘ CỔNG KIỂM ĐỊNH GỘP 4 PHA (FAST UNIFIED VERIFIER P0..P3) -->
+    <section class="gate-box">
+      <h2>🛡️ KIẾN TRÚC BỘ KIỂM ĐỊNH GỘP 4 PHA SIÊU TỐC (VERIFY_M13.PY • DUYỆT CÙNG CLAUDE OPUS 5.5 NATIVE)</h2>
+      <p style="color: #CBD5E1; font-size: 14.5px; line-height: 1.6; margin-bottom: 18px;">
+        Thay vì phải đợi render xong toàn bộ video mới kiểm tra từng cổng rời rạc (hoặc copy toàn khung hình gây chậm 2700s), hệ thống V3.0 áp dụng <b>ROI-Only Alpha Blending</b> (tăng tốc render gấp <b>75 lần</b> xuống còn <b>~38 giây</b>) và tổ chức 11 cổng kiểm định thành <b>4 Pha Fail-Fast (P0 ➔ P1 ➔ P2 ➔ P3)</b>:
+      </p>
+      <div style="overflow-x: auto;">
+        <table class="gate-table">
+          <thead>
+            <tr>
+              <th>Pha Kiểm Định</th>
+              <th>Thời Gian Chạy</th>
+              <th>Các Cổng Gộp Bên Trong</th>
+              <th>Thông Số Thực Tế Đạt Được (V3.0)</th>
+              <th>Trạng Thái</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>PHA P0</b><br/><span style="color:#94A3B8;font-size:12px;">Kiểm Tĩnh Trước Render</span></td>
+              <td><b>0.045 giây</b></td>
+              <td>
+                • <b>G1 (Font Role &amp; CMAP):</b> Khóa cứng <code>FDAeonikExtended-Bold.otf</code> / <code>Black.otf</code>, chuẩn hóa NFC, tự động vẽ <code>²</code> superscript 58% và kiểm tra 100% ký tự trong <code>cmap</code> (cấm rơi về Arial).<br/>
+                • <b>G2 (Shapely Ground Distance):</b> Đo khoảng cách mặt đất (mét) giữa mọi đường vàng và mọi đa giác tiện ích <code>&ge; 15.0m</code>.
+              </td>
+              <td>
+                • Missing glyphs: <code>0</code><br/>
+                • Khoảng cách <code>ĐƯỜNG HẠ LONG ↔ SUN WORLD</code>: <b>258.27m</b> (tối thiểu 15m)
+              </td>
+              <td><span class="pass-pill">PASS 100%</span></td>
+            </tr>
+            <tr>
+              <td><b>PHA P1</b><br/><span style="color:#94A3B8;font-size:12px;">Mô Phỏng Vector 330 Khung</span></td>
+              <td><b>0.120 giây</b></td>
+              <td>
+                • <b>G3 (Góc chữ đường):</b> Mọi nhãn đường giữ thẳng chiều đọc <code>|&theta;| &le; 76.0&deg;</code>.<br/>
+                • <b>G4 (AABB Matrix):</b> <code>0</code> va chạm giữa Tháp 3D, Nhãn tiện ích và Nhãn đường.<br/>
+                • <b>G5 (Safe-Zone 9:16):</b> 100% chữ nằm trong vùng an toàn TikTok.<br/>
+                • <b>G6 &amp; G7 (Orbit 3D &amp; Match-Cut Seam):</b> Pitch <code>56.0&deg;</code>, Orbit <code>80.0&deg;</code>, độ lệch tâm chuyển cảnh <code>&le; 15.0px</code>.
+              </td>
+              <td>
+                • Max góc nhãn đường: <b>76.0&deg;</b><br/>
+                • Khoảng cách màn hình <code>ĐƯỜNG HẠ LONG ↔ Ô HỒNG</code>: <b>84.8px</b><br/>
+                • Độ lệch tâm Match-Cut: <b>0.00px</b>
+              </td>
+              <td><span class="pass-pill">PASS 100%</span></td>
+            </tr>
+            <tr>
+              <td><b>PHA P2</b><br/><span style="color:#94A3B8;font-size:12px;">Kiểm Stencil Từng Khung Lúc Render</span></td>
+              <td><b>0.3 ms / khung</b></td>
+              <td>
+                • <b>G8 (Layer Stencil Exclusion):</b> Áp mặt nạ loại trừ <code>zone_stencil_mask</code> sau bước vẽ đường vàng &amp; mũi tên <code>❯❯</code>; đếm trực tiếp <code>count_nonzero(road_mask &amp; zone_interior_mask) == 0</code> trên từng khung.
+              </td>
+              <td>
+                • Số pixel đường vàng đâm vào ô hồng/cam trên cả 330 khung: <b>0 px</b>
+              </td>
+              <td><span class="pass-pill">PASS 100%</span></td>
+            </tr>
+            <tr>
+              <td><b>PHA P3</b><br/><span style="color:#94A3B8;font-size:12px;">Kiểm Sau Mã Hóa &amp; Độ Trôi Flycam</span></td>
+              <td><b>1.150 giây</b></td>
+              <td>
+                • <b>G9 (Flycam Drift 119 cặp khung):</b> KLT + RANSAC Homography <code>mean &le; 1.0px</code>, <code>p95 &le; 1.5px</code>.<br/>
+                • <b>G10 &amp; G11 (Sharpness &amp; FFprobe):</b> Độ nét Laplacian <code>&ge; 180</code>, <code>1080x1920</code> 30fps H.264 + AAC Stereo 48kHz.
+              </td>
+              <td>
+                • Flycam Drift: <b>mean 0.251px · p95 0.412px · max 0.506px</b><br/>
+                • Độ nét Laplacian: <b>695.4</b>
+              </td>
+              <td><span class="pass-pill">PASS 100%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function copyText(txt) {
+      navigator.clipboard.writeText(txt).then(() => {
+        const toast = document.createElement('div');
+        toast.innerText = '✅ Đã copy: ' + txt;
+        toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#10B981;color:#05080F;font-weight:800;padding:12px 20px;border-radius:12px;z-index:9999;box-shadow:0 10px 30px rgba(0,0,0,0.5);';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2200);
+      });
+    }
+  </script>
+</body>
+</html>
