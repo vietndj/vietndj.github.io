@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-08T00:08:39+07:00",
-  "total_scene_items": 415,
-  "total_unique_ideas": 396,
-  "total_active_ideas": 336,
+  "generated_at": "2026-11-08T00:10:03+07:00",
+  "total_scene_items": 416,
+  "total_unique_ideas": 397,
+  "total_active_ideas": 337,
   "total_excluded_ideas": 60,
   "total_creators": 243,
   "shooting_styles": [
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 45,
     "storytelling": 40,
     "dien-anh": 165,
-    "chuyen-canh": 62,
+    "chuyen-canh": 63,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 32,
     "du-lich": 50,
     "cong-nghe": 25,
-    "kien-truc": 19,
+    "kien-truc": 20,
     "the-thao": 6,
     "ky-thuat-quay": 123,
     "ugc": 8
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 241,
+    "us_eu": 242,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -652,6 +652,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@1995shomedecor",
+      "name": "1995Shomedecor",
+      "profile_url": "https://www.instagram.com/1995shomedecor/",
+      "video_count": 2,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%401995shomedecor_7704316044847877397_Nh%C3%A0_b%C3%A0_n%C3%A0o_nhi%E1%BB%81u_gi%C3%A0y_th%C3%AC_tham_kh%E1%BA%A3o_d%E1%BA%A1ng_t%E1%BB%A7_g/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g",
+        "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu"
+      ]
+    },
+    {
       "handle": "@worldwithreece",
       "name": "Worldwithreece",
       "profile_url": "https://www.instagram.com/worldwithreece/",
@@ -877,17 +889,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
         "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
-      ]
-    },
-    {
-      "handle": "@1995shomedecor",
-      "name": "1995Shomedecor",
-      "profile_url": "https://www.instagram.com/1995shomedecor/",
-      "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%401995shomedecor_7703182807526395157_T%E1%BB%A7_qu%E1%BA%A7n_%C3%A1o_mini_c%C6%B0ng_x%E1%BB%89u_%2C_ph%E1%BB%91i_m%C3%A0u_theo_y%C3%AAu/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu"
       ]
     },
     {
@@ -3081,6 +3082,83 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g",
+      "shortcode": "IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g",
+      "title_vi": "Nhà bà nào nhiều giày thì tham khảo dạng tủ g",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @1995shomedecor",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@1995shomedecor",
+        "name": "1995Shomedecor",
+        "handle": "@1995shomedecor",
+        "profile_url": "https://www.instagram.com/1995shomedecor/"
+      },
+      "ig_url": "https://www.instagram.com/1995shomedecor/",
+      "gdrive_folder": "https://drive.google.com/open?id=1T3anfUP-yH2LWHZ8Lyb-pMXwZrNz4sZO",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%401995shomedecor_7704316044847877397_Nh%C3%A0_b%C3%A0_n%C3%A0o_nhi%E1%BB%81u_gi%C3%A0y_th%C3%AC_tham_kh%E1%BA%A3o_d%E1%BA%A1ng_t%E1%BB%A7_g/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%401995shomedecor_7704316044847877397_Nh%C3%A0_b%C3%A0_n%C3%A0o_nhi%E1%BB%81u_gi%C3%A0y_th%C3%AC_tham_kh%E1%BA%A3o_d%E1%BA%A1ng_t%E1%BB%A7_g/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/7704316044847877397.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/7704316044847877397.mp4",
+        "report_url": "reports/IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g.html",
+        "shots_count": 19,
+        "duration": "18.9s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu",
       "shortcode": "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu",
@@ -6074,7 +6152,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -14289,7 +14367,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -15467,7 +15545,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
