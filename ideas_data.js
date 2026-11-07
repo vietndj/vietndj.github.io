@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-08T06:24:41+07:00",
+  "generated_at": "2026-11-08T06:25:54+07:00",
   "total_scene_items": 418,
   "total_unique_ideas": 399,
   "total_active_ideas": 339,
@@ -76,9 +76,9 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 9,
+    "walk-and-talk": 10,
     "voice-over": 13,
-    "talking-head": 46,
+    "talking-head": 45,
     "storytelling": 40,
     "dien-anh": 165,
     "chuyen-canh": 64,
@@ -3087,15 +3087,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn’t_optional",
       "shortcode": "DRbJNaajYUd",
-      "title_vi": "Reminder 230 Rest isn’t optional",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Đổi Góc & Tư Thế Liên Hoàn Trong Nhà Từ Sofa Ra Cửa Kính Nắng (@jade.got.curious)",
+      "quick_takeaway": "Biến bài nói trong căn hộ thành chuỗi chuyển động mượt mà nhờ đổi tư thế trên sofa, bước đi mở cửa phòng, đặt ly gốm dưới vệt nắng và đứng ngược sáng bên cửa kính.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "walk-and-talk",
+        "name": "Walk & Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
       },
       "industries": [
         {
@@ -3109,9 +3109,13 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Đổi góc trong nhà",
+        "POV (góc nhìn mắt mình)",
+        "Ánh sáng tự nhiên cửa sổ",
+        "Cầm đạo cụ khi nói"
       ],
       "country": {
         "id": "us_eu",
@@ -3122,9 +3126,13 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jade.got.curious",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Đổi góc trong nhà",
+        "POV (góc nhìn mắt mình)",
+        "Ánh sáng tự nhiên cửa sổ",
+        "Cầm đạo cụ khi nói",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3146,9 +3154,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn’t_optional.html",
         "shots_count": 26,
         "duration": "51.4s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": "Kq2gPP1u7nw",
+        "youtube_embed": "https://www.youtube.com/embed/Kq2gPP1u7nw",
+        "youtube_url": "https://youtu.be/Kq2gPP1u7nw"
       },
       "complexity": {
         "id": "nang-cao",
@@ -14531,7 +14539,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
