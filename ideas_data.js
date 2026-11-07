@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-08T06:11:53+07:00",
-  "total_scene_items": 417,
-  "total_unique_ideas": 398,
-  "total_active_ideas": 338,
+  "generated_at": "2026-11-08T06:16:34+07:00",
+  "total_scene_items": 418,
+  "total_unique_ideas": 399,
+  "total_active_ideas": 339,
   "total_excluded_ideas": 60,
   "total_creators": 243,
   "shooting_styles": [
@@ -78,7 +78,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 8,
     "voice-over": 14,
-    "talking-head": 45,
+    "talking-head": 46,
     "storytelling": 40,
     "dien-anh": 165,
     "chuyen-canh": 64,
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 6,
-    "ky-thuat-quay": 124,
+    "ky-thuat-quay": 125,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 243,
+    "us_eu": 244,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -419,6 +419,21 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@jade.got.curious",
+      "name": "Jade Got Curious",
+      "profile_url": "https://www.instagram.com/jade.got.curious/",
+      "video_count": 5,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn%E2%80%99t_optional/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn’t_optional",
+        "IG_@jade.got.curious_DfDgb_3xBNZ_Your_weird_interests_might_be_how_your_people",
+        "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
+        "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
+        "IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling"
+      ]
+    },
+    {
       "handle": "@MasterClass",
       "name": "MasterClass",
       "profile_url": "https://www.instagram.com/MasterClass/",
@@ -461,20 +476,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
         "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
         "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
-      ]
-    },
-    {
-      "handle": "@jade.got.curious",
-      "name": "Jade Got Curious",
-      "profile_url": "https://www.instagram.com/jade.got.curious/",
-      "video_count": 4,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40jade.got.curious_DfDgb_3xBNZ_Your_weird_interests_might_be_how_your_people/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@jade.got.curious_DfDgb_3xBNZ_Your_weird_interests_might_be_how_your_people",
-        "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
-        "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
-        "IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling"
       ]
     },
     {
@@ -3083,6 +3084,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn’t_optional",
+      "shortcode": "DRbJNaajYUd",
+      "title_vi": "Reminder 230 Rest isn’t optional",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jade.got.curious",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@jade.got.curious",
+        "name": "Jade Got Curious",
+        "handle": "@jade.got.curious",
+        "profile_url": "https://www.instagram.com/jade.got.curious/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DRbJNaajYUd/",
+      "gdrive_folder": "https://drive.google.com/open?id=1HdrHKzWvXV0__rxHSnzhvGF9zqAqEc2M",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn%E2%80%99t_optional/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn%E2%80%99t_optional/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DRbJNaajYUd.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DRbJNaajYUd.mp4",
+        "report_url": "reports/IG_@jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn’t_optional.html",
+        "shots_count": 26,
+        "duration": "51.4s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@jade.got.curious_DfDgb_3xBNZ_Your_weird_interests_might_be_how_your_people",
       "shortcode": "DfDgb_3xBNZ",
@@ -6236,7 +6310,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -12894,7 +12968,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -14451,7 +14525,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
