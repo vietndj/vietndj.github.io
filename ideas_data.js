@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-09T07:10:16+07:00",
-  "total_scene_items": 421,
-  "total_unique_ideas": 402,
-  "total_active_ideas": 342,
+  "generated_at": "2026-11-09T07:14:11+07:00",
+  "total_scene_items": 422,
+  "total_unique_ideas": 403,
+  "total_active_ideas": 343,
   "total_excluded_ideas": 60,
   "total_creators": 244,
   "shooting_styles": [
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 44,
     "storytelling": 40,
     "dien-anh": 168,
-    "chuyen-canh": 64,
+    "chuyen-canh": 65,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 6,
-    "ky-thuat-quay": 127,
+    "ky-thuat-quay": 128,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 247,
+    "us_eu": 248,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -349,6 +349,24 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@joshdiazfilms",
+      "name": "Joshdiazfilms",
+      "profile_url": "https://www.instagram.com/joshdiazfilms/",
+      "video_count": 8,
+      "top_industry": "Xây kênh",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40joshdiazfilms_DfAcUx6NSDN_A_slow_day%E2%80%A6_with_a_suspicious_amount_of_thing/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@joshdiazfilms_DfAcUx6NSDN_A_slow_day…_with_a_suspicious_amount_of_thing",
+        "IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms",
+        "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
+        "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
+        "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
+        "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
+        "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
+        "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
+      ]
+    },
+    {
       "handle": "@iman.lizi",
       "name": "Iman Lizi",
       "profile_url": "https://www.instagram.com/iman.lizi/",
@@ -382,23 +400,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@withyuee_DUqQaPbkfcQ_Chinese_New_Year_Hong_Kong",
         "IG_@withyuee_DO8arRxEZvh_Hong_Kong_Visual_Rhythm_Carousel",
         "IG_@withyuee_DVQ3Gh6Efk1_Spring_in_Hong_Kong"
-      ]
-    },
-    {
-      "handle": "@joshdiazfilms",
-      "name": "Joshdiazfilms",
-      "profile_url": "https://www.instagram.com/joshdiazfilms/",
-      "video_count": 7,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms",
-        "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
-        "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
-        "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
-        "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
-        "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
-        "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
       ]
     },
     {
@@ -3097,6 +3098,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@joshdiazfilms_DfAcUx6NSDN_A_slow_day…_with_a_suspicious_amount_of_thing",
+      "shortcode": "DfAcUx6NSDN",
+      "title_vi": "A slow day… with a suspicious amount of thing",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @joshdiazfilms",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@joshdiazfilms",
+        "name": "Joshdiazfilms",
+        "handle": "@joshdiazfilms",
+        "profile_url": "https://www.instagram.com/joshdiazfilms/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DfAcUx6NSDN/",
+      "gdrive_folder": "https://drive.google.com/open?id=13DMoNONjHAXxiPQNk7iaQCa03781STXO",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40joshdiazfilms_DfAcUx6NSDN_A_slow_day%E2%80%A6_with_a_suspicious_amount_of_thing/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40joshdiazfilms_DfAcUx6NSDN_A_slow_day%E2%80%A6_with_a_suspicious_amount_of_thing/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DfAcUx6NSDN.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DfAcUx6NSDN.mp4",
+        "report_url": "reports/IG_@joshdiazfilms_DfAcUx6NSDN_A_slow_day…_with_a_suspicious_amount_of_thing.html",
+        "shots_count": 19,
+        "duration": "14.8s",
+        "youtube_id": "uExpsfsTBds",
+        "youtube_embed": "https://www.youtube.com/embed/uExpsfsTBds",
+        "youtube_url": "https://youtu.be/uExpsfsTBds"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life",
       "shortcode": "De2GhOEsg9s",
@@ -11243,7 +11317,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -15979,7 +16053,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
