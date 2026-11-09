@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-08T07:29:26+07:00",
-  "total_scene_items": 420,
-  "total_unique_ideas": 401,
-  "total_active_ideas": 341,
+  "generated_at": "2026-11-09T07:10:16+07:00",
+  "total_scene_items": 421,
+  "total_unique_ideas": 402,
+  "total_active_ideas": 342,
   "total_excluded_ideas": 60,
   "total_creators": 244,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 13,
     "talking-head": 44,
     "storytelling": 40,
-    "dien-anh": 167,
+    "dien-anh": 168,
     "chuyen-canh": 64,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -172,7 +172,7 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 42,
     "thoi-trang": 24,
     "am-thuc": 32,
-    "du-lich": 50,
+    "du-lich": 51,
     "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 6,
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 246,
+    "us_eu": 247,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -563,6 +563,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@worldwithreece",
+      "name": "Worldwithreece",
+      "profile_url": "https://www.instagram.com/worldwithreece/",
+      "video_count": 3,
+      "top_industry": "Du lịch",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life",
+        "IG_@worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life",
+        "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life"
+      ]
+    },
+    {
       "handle": "@byjxson",
       "name": "Byjxson",
       "profile_url": "https://www.instagram.com/byjxson/",
@@ -675,18 +688,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g",
         "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu"
-      ]
-    },
-    {
-      "handle": "@worldwithreece",
-      "name": "Worldwithreece",
-      "profile_url": "https://www.instagram.com/worldwithreece/",
-      "video_count": 2,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life",
-        "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life"
       ]
     },
     {
@@ -3096,6 +3097,85 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life",
+      "shortcode": "De2GhOEsg9s",
+      "title_vi": "Shot ideas you can use to film your life",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Góc máy • B-Roll Chỉn Chu • Góc Máy Đời Thường • Góc Nhìn POV • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Góc máy",
+        "B-Roll Chỉn Chu",
+        "Góc Máy Đời Thường",
+        "Góc Nhìn POV",
+        "Establishing Hook Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @worldwithreece",
+      "tech_tags": [
+        "Góc máy",
+        "B-Roll Chỉn Chu",
+        "Góc Máy Đời Thường",
+        "Góc Nhìn POV",
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Du lịch.",
+      "creator": {
+        "raw": "@worldwithreece",
+        "name": "Worldwithreece",
+        "handle": "@worldwithreece",
+        "profile_url": "https://www.instagram.com/worldwithreece/"
+      },
+      "ig_url": "https://www.instagram.com/reel/De2GhOEsg9s/",
+      "gdrive_folder": "https://drive.google.com/open?id=1F3jCr-ZfV8j91XbNNkG-M4ruJG8ZewYU",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/De2GhOEsg9s.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/De2GhOEsg9s.mp4",
+        "report_url": "reports/IG_@worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life.html",
+        "shots_count": 8,
+        "duration": "12.4s",
+        "youtube_id": "_qBeZy1_uXU",
+        "youtube_embed": "https://www.youtube.com/embed/_qBeZy1_uXU",
+        "youtube_url": "https://youtu.be/_qBeZy1_uXU"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@61580845559993_1122709573644424_Facebook",
       "shortcode": "1122709573644424",
@@ -11163,7 +11243,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -13164,7 +13244,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -14720,7 +14800,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
