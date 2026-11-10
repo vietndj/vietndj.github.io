@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-09T10:14:32+07:00",
-  "total_scene_items": 424,
-  "total_unique_ideas": 405,
-  "total_active_ideas": 345,
+  "generated_at": "2026-11-10T07:06:54+07:00",
+  "total_scene_items": 425,
+  "total_unique_ideas": 406,
+  "total_active_ideas": 346,
   "total_excluded_ideas": 60,
   "total_creators": 244,
   "shooting_styles": [
@@ -78,7 +78,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 11,
     "voice-over": 13,
-    "talking-head": 44,
+    "talking-head": 45,
     "storytelling": 41,
     "dien-anh": 170,
     "chuyen-canh": 64,
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 6,
-    "ky-thuat-quay": 130,
+    "ky-thuat-quay": 131,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 250,
+    "us_eu": 251,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -666,6 +666,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@omgadrian",
+      "name": "Omgadrian",
+      "profile_url": "https://www.instagram.com/omgadrian/",
+      "video_count": 2,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40omgadrian_DffQ8kCJDpJ_If_you_enjoyed_this%2C_comment_%E2%80%9CCRAFT%E2%80%9D_for_a_fr/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@omgadrian_DffQ8kCJDpJ_If_you_enjoyed_this,_comment_“CRAFT”_for_a_fr",
+        "IG_@omgadrian_DcqzVfno5Al_Travel_Sequence_Formula"
       ]
     },
     {
@@ -2835,17 +2847,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@omgadrian",
-      "name": "Omgadrian",
-      "profile_url": "https://www.instagram.com/omgadrian/",
-      "video_count": 1,
-      "top_industry": "Du lịch",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40omgadrian_DcqzVfno5Al_Travel_Sequence_Formula/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@omgadrian_DcqzVfno5Al_Travel_Sequence_Formula"
-      ]
-    },
-    {
       "handle": "@Andrei_Kostromskikh",
       "name": "Andrei_Kostromskikh",
       "profile_url": "https://www.instagram.com/Andrei_Kostromskikh/",
@@ -3100,6 +3101,83 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@omgadrian_DffQ8kCJDpJ_If_you_enjoyed_this,_comment_“CRAFT”_for_a_fr",
+      "shortcode": "DffQ8kCJDpJ",
+      "title_vi": "If you enjoyed this, comment “CRAFT” for a fr",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Khi quay góc rộng khung dọc, luôn bố trí một trục chuyển động hoặc đường dẫn (Leading Lines) về trung tâm.",
+      "key_tech": "Establishing Hook Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Wide Establishing Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @omgadrian",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Wide Establishing Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@omgadrian",
+        "name": "Omgadrian",
+        "handle": "@omgadrian",
+        "profile_url": "https://www.instagram.com/omgadrian/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DffQ8kCJDpJ/",
+      "gdrive_folder": "https://drive.google.com/open?id=1tmmR6Q84hX6ToMiNMAe26PqcQHP1Qlm4",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40omgadrian_DffQ8kCJDpJ_If_you_enjoyed_this%2C_comment_%E2%80%9CCRAFT%E2%80%9D_for_a_fr/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40omgadrian_DffQ8kCJDpJ_If_you_enjoyed_this%2C_comment_%E2%80%9CCRAFT%E2%80%9D_for_a_fr/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/AOdb9hGdgEA",
+        "video_url_original": "https://media.fedu.vn/videos/AOdb9hGdgEA",
+        "report_url": "reports/IG_@omgadrian_DffQ8kCJDpJ_If_you_enjoyed_this,_comment_“CRAFT”_for_a_fr.html",
+        "shots_count": 12,
+        "duration": "21.9s",
+        "youtube_id": "AOdb9hGdgEA",
+        "youtube_embed": "https://www.youtube.com/embed/AOdb9hGdgEA",
+        "youtube_url": "https://youtu.be/AOdb9hGdgEA"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@megantanhweewen_DfcXCsIDxbz_Carousel_Analysis",
       "shortcode": "DfcXCsIDxbz_Carousel_Analysis",
@@ -6141,7 +6219,7 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @qfroost",
+      "purpose": "Mẫu bài tập Kỹ Thuật Chuyển Cảnh & Nhịp Điệu ứng dụng cho ngành Bố cục (🔴 Level 3 · Nâng cao)",
       "tech_tags": [
         "Bố cục 1/3",
         "Ánh sáng tự nhiên",
@@ -6837,7 +6915,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -11494,7 +11572,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -15052,7 +15130,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
