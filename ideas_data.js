@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-10T15:50:42+07:00",
-  "total_scene_items": 429,
-  "total_unique_ideas": 410,
-  "total_active_ideas": 350,
+  "generated_at": "2026-11-10T15:57:51+07:00",
+  "total_scene_items": 430,
+  "total_unique_ideas": 411,
+  "total_active_ideas": 351,
   "total_excluded_ideas": 60,
   "total_creators": 246,
   "shooting_styles": [
@@ -78,7 +78,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 11,
     "voice-over": 14,
-    "talking-head": 44,
+    "talking-head": 45,
     "storytelling": 41,
     "dien-anh": 172,
     "chuyen-canh": 66,
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 6,
-    "ky-thuat-quay": 134,
+    "ky-thuat-quay": 135,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 255,
+    "us_eu": 256,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -575,6 +575,19 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
+      ]
+    },
+    {
+      "handle": "@neolumo.uralsk",
+      "name": "Neolumo Uralsk",
+      "profile_url": "https://www.instagram.com/neolumo.uralsk/",
+      "video_count": 3,
+      "top_industry": "Làm đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40neolumo.uralsk_DfZnR-dMeSl_%F0%9F%92%89_%D0%91%D0%BE%D1%82%D0%BE%D0%BA%D1%81%D1%82%D0%B0%D0%BD_%D2%9B%D0%BE%D1%80%D2%9B%D1%83%D0%B4%D1%8B%D2%A3_%D2%9B%D0%B0%D0%B6%D0%B5%D1%82%D1%96_%D0%B6%D0%BE%D2%9B/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@neolumo.uralsk_DfZnR-dMeSl_💉_Ботокстан_қорқудың_қажеті_жоқ",
+        "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
+        "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
       ]
     },
     {
@@ -942,18 +955,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
-      ]
-    },
-    {
-      "handle": "@neolumo.uralsk",
-      "name": "Neolumo Luxury Club (Uralsk, Kazakhstan)",
-      "profile_url": "https://www.instagram.com/neolumo.uralsk/",
-      "video_count": 2,
-      "top_industry": "Làm đẹp",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
-        "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
       ]
     },
     {
@@ -3125,6 +3126,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@neolumo.uralsk_DfZnR-dMeSl_💉_Ботокстан_қорқудың_қажеті_жоқ",
+      "shortcode": "DfZnR-dMeSl",
+      "title_vi": "💉 Ботокстан қорқудың қажеті жоқ",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @neolumo.uralsk",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@neolumo.uralsk",
+        "name": "Neolumo Uralsk",
+        "handle": "@neolumo.uralsk",
+        "profile_url": "https://www.instagram.com/neolumo.uralsk/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DfZnR-dMeSl/",
+      "gdrive_folder": "https://drive.google.com/open?id=1CYCBgL4FRt9Q-91lbyrVybVR2Wk31Dg0",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40neolumo.uralsk_DfZnR-dMeSl_%F0%9F%92%89_%D0%91%D0%BE%D1%82%D0%BE%D0%BA%D1%81%D1%82%D0%B0%D0%BD_%D2%9B%D0%BE%D1%80%D2%9B%D1%83%D0%B4%D1%8B%D2%A3_%D2%9B%D0%B0%D0%B6%D0%B5%D1%82%D1%96_%D0%B6%D0%BE%D2%9B/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40neolumo.uralsk_DfZnR-dMeSl_%F0%9F%92%89_%D0%91%D0%BE%D1%82%D0%BE%D0%BA%D1%81%D1%82%D0%B0%D0%BD_%D2%9B%D0%BE%D1%80%D2%9B%D1%83%D0%B4%D1%8B%D2%A3_%D2%9B%D0%B0%D0%B6%D0%B5%D1%82%D1%96_%D0%B6%D0%BE%D2%9B/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/Troo71Ry5pM",
+        "video_url_original": "https://media.fedu.vn/videos/Troo71Ry5pM",
+        "report_url": "reports/IG_@neolumo.uralsk_DfZnR-dMeSl_💉_Ботокстан_қорқудың_қажеті_жоқ.html",
+        "shots_count": 13,
+        "duration": "79.9s",
+        "youtube_id": "Troo71Ry5pM",
+        "youtube_embed": "https://www.youtube.com/embed/Troo71Ry5pM",
+        "youtube_url": "https://youtu.be/Troo71Ry5pM"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@roldangilbuena_DfVygOjybeD_Art_of_using_Rule_of_Thirds",
       "shortcode": "DfVygOjybeD",
@@ -11910,7 +11984,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -15468,7 +15542,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -16646,7 +16720,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
