@@ -1214,6 +1214,23 @@
         right: 16px;
     }
 }
+    
+        .open-yt-tab-btn, .open-ig-tab-btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            width: 100%; min-height: 42px; padding: 10px 14px; border-radius: 10px;
+            font-size: 13px; font-weight: 700; text-decoration: none;
+            transition: all 0.18s ease; box-sizing: border-box;
+        }
+        .open-yt-tab-btn {
+            background: #dc2626; color: #ffffff !important;
+            border: 1px solid #ef4444; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+        }
+        .open-yt-tab-btn:hover { background: #b91c1c; transform: translateY(-1px); }
+        .open-ig-tab-btn {
+            background: #f1f5f9; color: #1e293b !important; border: 1px solid #cbd5e1;
+        }
+        .open-ig-tab-btn:hover { background: #e2e8f0; }
+
     </style>
 </head>
 <body>
@@ -1223,6 +1240,7 @@
         <div class="video-wrap">
             <iframe id="mainPlayer" src="https://www.youtube.com/embed/NzTg7-1QFDQ?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
+        <!--OPEN_EXT_BTN--><a id="openExternalVideoBtn" href="https://www.youtube.com/watch?v=NzTg7-1QFDQ" target="_blank" rel="noopener noreferrer" class="open-yt-tab-btn"><span>▶️ Mở riêng trên YouTube (Tab mới) ↗</span></a><!--/OPEN_EXT_BTN-->
         <div class="video-controls">
             <div class="speed-row">
                 <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
