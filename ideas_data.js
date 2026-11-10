@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-10T15:35:43+07:00",
-  "total_scene_items": 427,
-  "total_unique_ideas": 408,
-  "total_active_ideas": 348,
+  "generated_at": "2026-11-10T15:40:44+07:00",
+  "total_scene_items": 428,
+  "total_unique_ideas": 409,
+  "total_active_ideas": 349,
   "total_excluded_ideas": 60,
   "total_creators": 245,
   "shooting_styles": [
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 44,
     "storytelling": 41,
     "dien-anh": 172,
-    "chuyen-canh": 64,
+    "chuyen-canh": 65,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 6,
-    "ky-thuat-quay": 132,
+    "ky-thuat-quay": 133,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 253,
+    "us_eu": 254,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -669,6 +669,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@bryanadamc",
+      "name": "Bryanadamc",
+      "profile_url": "https://www.instagram.com/bryanadamc/",
+      "video_count": 2,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40bryanadamc_De2raaLB1Yx_when_No_Service_is_a_viiibe_%F0%9F%A6%A6/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@bryanadamc_De2raaLB1Yx_when_No_Service_is_a_viiibe_🦦",
+        "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥"
+      ]
+    },
+    {
       "handle": "@ajit_rathore886",
       "name": "Ajit_Rathore886",
       "profile_url": "https://www.instagram.com/ajit_rathore886/",
@@ -1052,17 +1064,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://media.fedu.vn/images/IG_%40khan.ayan9_DeUMZwQtAHM_blink/shot_01_mid.webp",
       "video_ids": [
         "IG_@khan.ayan9_DeUMZwQtAHM_blink"
-      ]
-    },
-    {
-      "handle": "@bryanadamc",
-      "name": "Bryanadamc",
-      "profile_url": "https://www.instagram.com/bryanadamc/",
-      "video_count": 1,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40bryanadamc_DeQYfOdpUdk_dreamin%E2%80%99_bout_ya_%F0%9F%8E%A5/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥"
       ]
     },
     {
@@ -3114,17 +3115,92 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@so.wonish_DfOm26EOI-2_카페_사장_일주일_착장_모음.zip",
-      "shortcode": "DfOm26EOI-2",
-      "title_vi": "카페 사장 일주일 착장 모음.zip",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
-      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "id": "IG_@bryanadamc_De2raaLB1Yx_when_No_Service_is_a_viiibe_🦦",
+      "shortcode": "De2raaLB1Yx",
+      "title_vi": "when No Service is a viiibe 🦦",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Chỉn Chu",
         "en_name": "Cinematic Mastery",
         "icon": "🎬",
         "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @bryanadamc",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@bryanadamc",
+        "name": "Bryanadamc",
+        "handle": "@bryanadamc",
+        "profile_url": "https://www.instagram.com/bryanadamc/"
+      },
+      "ig_url": "https://www.instagram.com/reel/De2raaLB1Yx/",
+      "gdrive_folder": "https://drive.google.com/open?id=1L0SEBdji2iAPzKfAFSg_Uz3rG5oZahWJ",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40bryanadamc_De2raaLB1Yx_when_No_Service_is_a_viiibe_%F0%9F%A6%A6/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40bryanadamc_De2raaLB1Yx_when_No_Service_is_a_viiibe_%F0%9F%A6%A6/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/yTXjtbCxYc8",
+        "video_url_original": "https://media.fedu.vn/videos/yTXjtbCxYc8",
+        "report_url": "reports/IG_@bryanadamc_De2raaLB1Yx_when_No_Service_is_a_viiibe_🦦.html",
+        "shots_count": 11,
+        "duration": "14.0s",
+        "youtube_id": "yTXjtbCxYc8",
+        "youtube_embed": "https://www.youtube.com/embed/yTXjtbCxYc8",
+        "youtube_url": "https://youtu.be/yTXjtbCxYc8"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@so.wonish_DfOm26EOI-2_카페_사장_일주일_착장_모음.zip",
+      "shortcode": "DfOm26EOI-2",
+      "title_vi": "Tổng hợp 6 trang phục đi làm của chủ quán cà phê với 1 góc máy cố định",
+      "quick_takeaway": "💡 Điểm ăn tiền: Đặt cố định điện thoại ở một góc quầy pha chế suốt cả tuần, mỗi ngày ghi lại 1 giây thao tác làm việc để ghép thành chuỗi thay đổi 6 bộ trang phục mượt mà.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industries": [
         {
@@ -3138,9 +3214,13 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Góc toàn thân (Full Shot)",
+        "Đặt máy cố định (Tripod)",
+        "Match Cut (cắt nối khớp chuyển động)",
+        "Phối đồ đi làm (Outfit)"
       ],
       "country": {
         "id": "us_eu",
@@ -3149,11 +3229,15 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @so.wonish",
+      "purpose": "🎯 Áp dụng thực tế: Chủ quán cà phê, tiệm bánh hoặc shop thời trang tự quay series phối đồ đi làm hằng ngày chỉ bằng một chiếc chân máy cố định mà không cần người quay phụ hay nói trước ống kính.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Góc toàn thân (Full Shot)",
+        "Đặt máy cố định (Tripod)",
+        "Match Cut (cắt nối khớp chuyển động)",
+        "Phối đồ đi làm (Outfit)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Cận cảnh (CU: quay sát chi tiết)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -11732,7 +11816,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -15289,8 +15373,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
