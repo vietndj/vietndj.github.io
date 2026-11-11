@@ -237,14 +237,27 @@ window.HUB = {
     }
     ,{
       id: "edit-video-pro",
+      file: "edivideopro.html",
+      group: "ref",
+      n: "19",
+      title: "Edit Video Pro V4.2 (Tổng Quan Trực Quan • 10 Hook 3D • Đầu Vào → Đầu Ra)",
+      short: "Edit Video Pro",
+      stage: "motion",
+      icon: "⚡",
+      q: "BẢN ĐỒ THỊ GIÁC LƯỚT NHANH • ĐẦU VÀO → ĐẦU RA • 10 TRƯỜNG PHÁI HOOK 3D (M1→M10) • CẢNH TRÁM & OUTRO"
+    },
+    {
+      id: "edit-video-pro-legacy",
       file: "19-edit-video-pro.html",
       group: "ref",
       n: "19",
-      title: "Edit Video Pro V3.7 (Tổng Kết Các Nhịp • 9+1 Style Ngành • 5 Hook • 6 Outro Full-Screen)",
-      short: "Edit Video Pro V3.7",
+      hiddenFromMenu: true,
+      activeMenuId: "edit-video-pro",
+      title: "Edit Video Pro V4.2",
+      short: "Edit Video Pro",
       stage: "motion",
       icon: "⚡",
-      q: "Tổng kết toàn bộ các nhịp dựng (EXPERT & BROLL), 5 kiểu Text Hook (PA1→PA5), 9+1 Style Ngành tự động, 6 Thẻ Đồ Họa & 6 Bảng Tổng Kết Toàn Màn Hình có CTA Animation"
+      q: "Chuyển hướng tới edivideopro.html"
     },
     {
       id: "edit-video-pro-alias",
@@ -253,11 +266,11 @@ window.HUB = {
       n: "19",
       hiddenFromMenu: true,
       activeMenuId: "edit-video-pro",
-      title: "Edit Video Pro V3.7 (Tổng Kết Các Nhịp • 9+1 Style Ngành • 5 Hook • 6 Outro Full-Screen)",
-      short: "Edit Video Pro V3.7",
+      title: "Edit Video Pro V4.2",
+      short: "Edit Video Pro",
       stage: "motion",
       icon: "⚡",
-      q: "Tổng kết toàn bộ các nhịp dựng (EXPERT & BROLL), 5 kiểu Text Hook (PA1→PA5), 9+1 Style Ngành tự động, 6 Thẻ Đồ Họa & 6 Bảng Tổng Kết Toàn Màn Hình có CTA Animation"
+      q: "Chuyển hướng tới edivideopro.html"
     }
   ]
 };
