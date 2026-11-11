@@ -1004,3 +1004,13 @@ details.tech-drawer .tech-body pre code {
   margin-bottom: 4px;
   letter-spacing: 0.05em;
 }
+
+
+/* ---------- GALLERY FULL / IMAGE-FIRST CINEMA MODE (edivideopro.html) ---------- */
+.side-collapse-toggle{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;border:1.5px solid #0284c7;background:#f0f9ff;color:#0369a1;border-radius:8px;padding:6px 12px;font:700 12.5px var(--sans);cursor:pointer;margin-left:8px;transition:all .15s ease}
+.side-collapse-toggle:hover{background:#0284c7;color:#fff}
+body.gallery-full-mode .rail{display:none!important}
+body.gallery-full-mode .main,body.gallery-full-mode .main.wide{grid-template-columns:minmax(0,1480px)!important;padding:28px 32px 100px!important;gap:0!important}
+body.gallery-full-mode.sidebar-collapsed .shell{grid-template-columns:minmax(0,1fr)!important}
+body.gallery-full-mode.sidebar-collapsed .side{display:none!important}
+@media(max-width:900px){.side-collapse-toggle{display:none}}

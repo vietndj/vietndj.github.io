@@ -76,10 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mục lục "Trên trang này" cho cột phải: gán id cho h2/h3
+    // Mục lục "Trên trang này" cho cột phải (ẩn hoàn toàn khi data-layout="gallery-full" để mở rộng tối đa vùng xem hình/video)
+    const isGalleryFull = document.body.getAttribute('data-layout') === 'gallery-full';
     const heads = [...tmp.querySelectorAll('h2')];
     heads.forEach((h, i) => { if (!h.id) h.id = 'sec-' + (i + 1); });
-    const tocHtml = heads.length > 1
+    const tocHtml = (!isGalleryFull && heads.length > 1)
         ? `<h6>Trên trang này</h6><nav class="otp">${heads.map(h => `<a href="#${h.id}">${h.textContent.trim()}</a>`).join('')}</nav>`
         : '';
 
@@ -105,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="logo">AI</div>
                 <div class="t">Video<small>AI Video Edit</small></div>
             </a>
+            ${isGalleryFull ? `<button type="button" class="side-collapse-toggle" id="side-collapse-toggle" title="Đóng/mở danh mục trang bên trái">☰ Danh mục trang</button>` : ''}
             <div class="stepper">${stepperHtml}</div>
             
             <div class="hub-crosslinks" style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
@@ -256,7 +258,22 @@ document.addEventListener('DOMContentLoaded', () => {
         oldScript.parentNode.replaceChild(newScript, oldScript);
     });
 
-    // --- 1. Xử lý nút Menu Drawer trên Mobile ---
+    // --- 1. Xử lý nút Menu Drawer trên Mobile & Nút Đóng/Mở Sidebar trên Gallery Full ---
+    if (isGalleryFull) {
+        document.body.classList.add('gallery-full-mode', 'sidebar-collapsed');
+        const sideToggle = document.getElementById('side-collapse-toggle');
+        if (sideToggle) {
+            const syncLabel = () => {
+                const isCol = document.body.classList.contains('sidebar-collapsed');
+                sideToggle.innerHTML = isCol ? '☰ Mở Menu Trái' : '⇤ Thu gọn Menu Trái';
+            };
+            syncLabel();
+            sideToggle.addEventListener('click', () => {
+                document.body.classList.toggle('sidebar-collapsed');
+                syncLabel();
+            });
+        }
+    }
     const menuBtn = document.querySelector('.menubtn');
     if (menuBtn) {
         menuBtn.addEventListener('click', () => {
