@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-12T17:23:53+07:00",
+  "generated_at": "2026-11-12T17:31:35+07:00",
   "total_scene_items": 435,
   "total_unique_ideas": 416,
   "total_active_ideas": 356,
@@ -80,8 +80,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 14,
     "talking-head": 45,
     "storytelling": 41,
-    "dien-anh": 178,
-    "chuyen-canh": 65,
+    "dien-anh": 176,
+    "chuyen-canh": 67,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -170,13 +170,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 8,
     "thuong-hieu": 43,
-    "thoi-trang": 25,
+    "thoi-trang": 27,
     "am-thuc": 33,
     "du-lich": 51,
     "cong-nghe": 25,
     "kien-truc": 21,
     "the-thao": 6,
-    "ky-thuat-quay": 136,
+    "ky-thuat-quay": 134,
     "ugc": 8
   },
   "x_factors": [
@@ -246,8 +246,8 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 261,
-    "korea": 10,
+    "us_eu": 260,
+    "korea": 11,
     "india": 3,
     "japan": 7,
     "vietnam": 6,
@@ -974,7 +974,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Mila_Sfc5",
       "profile_url": "https://www.instagram.com/mila_sfc5/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Thời trang",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40mila_sfc5_DfE8iTOikCn_%F0%9F%AA%80%F0%9F%8E%B1/shot_01_mid.webp",
       "video_ids": [
         "IG_@mila_sfc5_DfE8iTOikCn_🪀🎱"
@@ -985,7 +985,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Hcooll",
       "profile_url": "https://www.instagram.com/hcooll/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Thời trang",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40hcooll_DeB8mRYvdRM_Video_by_hcooll/shot_01_mid.webp",
       "video_ids": [
         "IG_@hcooll_DeB8mRYvdRM_Video_by_hcooll"
@@ -3174,31 +3174,35 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mila_sfc5_DfE8iTOikCn_🪀🎱",
       "shortcode": "DfE8iTOikCn",
-      "title_vi": "@mila sfc5 DfE8iTOikCn 🪀🎱",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "title_vi": "Tự Quay Phối Đồ 1 Chân Máy Cố Định: Vẩy Mũ Che Ống Kính & Đổi Cỡ Cảnh Bằng Bước Chân",
+      "quick_takeaway": "Chỉ đặt điện thoại cố định một góc trước bậc thềm, tự thay đổi khoảng cách đứng và dùng mũ lưỡi trai che ống kính để biến cảnh mặc đồ 8 giây thành chuỗi hình ảnh cuốn mắt.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thoi-trang",
+          "name": "Thời trang",
+          "en_name": "Fashion & Style",
+          "icon": "👔",
+          "badge_color": "pink",
+          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Static Tripod (chân máy cố định tự quay 1 mình)",
+        "Wipe / Masking (chuyển cảnh che ống kính)",
+        "Match Cut (cắt nối khớp chuyển động)",
+        "Full Shot (góc toàn khoe trọn phom đồ)"
       ],
       "country": {
         "id": "us_eu",
@@ -3207,11 +3211,15 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mila_sfc5",
+      "purpose": "Áp dụng cho chủ shop quần áo, phụ kiện tự quay video phối đồ 1 mình trước hiên tiệm mà không cần người cầm máy đi theo.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Static Tripod (chân máy cố định tự quay 1 mình)",
+        "Wipe / Masking (chuyển cảnh che ống kính)",
+        "Match Cut (cắt nối khớp chuyển động)",
+        "Full Shot (góc toàn khoe trọn phom đồ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3247,46 +3255,48 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hcooll_DeB8mRYvdRM_Video_by_hcooll",
       "shortcode": "DeB8mRYvdRM",
-      "title_vi": "Video by hcooll",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Tự Quay Khoe Trang Phục 1 Mình Bằng Chân Máy Tĩnh: Kỹ Thuật Cắt Nhảy Cận – Toàn Tạo Nhịp Co Giãn Không Cần Người Quay Phụ",
+      "quick_takeaway": "💡 Điểm ăn tiền: Chỉ khóa cố định 1 chân máy ngoài con dốc nhỏ, người mẫu tự bước tiến sát ống kính (góc cận chỉnh máy, vuốt tóc, khoanh tay cười) xen kẽ lùi xa 3.5m (góc toàn khoe trọn phom sơ mi bò và quần suông) để tạo 9 nhịp co giãn cuốn mắt trong 12 giây.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thoi-trang",
+          "name": "Thời trang",
+          "en_name": "Fashion & Style",
+          "icon": "👔",
+          "badge_color": "pink",
+          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Wide Establishing Shot",
-        "Medium Tracking Shot"
+        "Tự quay 1 mình bằng chân máy (Static Tripod)",
+        "Nhịp co giãn Cận – Toàn (Breathe In-Out)",
+        "Jump Cut (cắt bỏ khoảng nghỉ giữ nhịp nhanh)",
+        "Phối đồ đường phố Hàn Quốc (OOTD)",
+        "Vòng lặp mượt đầu cuối (Seamless Loop)"
       ],
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @hcooll",
+      "purpose": "🎯 Áp dụng cho chủ shop Thời trang, Phụ kiện hoặc kênh Đời sống muốn tự quay Lookbook / OOTD (video phối đồ hằng ngày) một mình ngoài phố bằng 1 chân máy điện thoại mà không cần thợ quay hay nói thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Wide Establishing Shot",
-        "Medium Tracking Shot"
+        "Tự quay 1 mình bằng chân máy (Static Tripod)",
+        "Nhịp co giãn Cận – Toàn (Breathe In-Out)",
+        "Jump Cut (cắt bỏ khoảng nghỉ giữ nhịp nhanh)",
+        "Phối đồ đường phố Hàn Quốc (OOTD)",
+        "Vòng lặp mượt đầu cuối (Seamless Loop)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3308,9 +3318,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@hcooll_DeB8mRYvdRM_Video_by_hcooll.html",
         "shots_count": 9,
         "duration": "12.1s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": "6dJI8egNwmA",
+        "youtube_embed": "https://www.youtube.com/embed/6dJI8egNwmA",
+        "youtube_url": "https://youtu.be/6dJI8egNwmA"
       },
       "complexity": {
         "id": "trung-binh",
@@ -12430,7 +12440,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -15987,7 +15997,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
