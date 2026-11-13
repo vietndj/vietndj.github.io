@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-13T11:44:43+07:00",
-  "total_scene_items": 437,
-  "total_unique_ideas": 418,
-  "total_active_ideas": 358,
+  "generated_at": "2026-11-13T11:57:52+07:00",
+  "total_scene_items": 438,
+  "total_unique_ideas": 419,
+  "total_active_ideas": 359,
   "total_excluded_ideas": 60,
-  "total_creators": 252,
+  "total_creators": 253,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 14,
     "talking-head": 46,
     "storytelling": 41,
-    "dien-anh": 177,
+    "dien-anh": 178,
     "chuyen-canh": 67,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -168,7 +168,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 8,
+    "spa-lam-dep": 9,
     "thuong-hieu": 44,
     "thoi-trang": 27,
     "am-thuc": 33,
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 262,
+    "us_eu": 263,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -967,6 +967,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@fotober_media",
+      "name": "Fotober_Media",
+      "profile_url": "https://www.instagram.com/fotober_media/",
+      "video_count": 1,
+      "top_industry": "Làm đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40fotober_media_DUEJTZWCWj5_Every_space_deserves_a_premium_cinematic_edit/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@fotober_media_DUEJTZWCWj5_Every_space_deserves_a_premium_cinematic_edit"
       ]
     },
     {
@@ -3193,6 +3204,83 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@fotober_media_DUEJTZWCWj5_Every_space_deserves_a_premium_cinematic_edit",
+      "shortcode": "DUEJTZWCWj5",
+      "title_vi": "Every space deserves a premium cinematic edit",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "spa-lam-dep",
+          "name": "Làm đẹp",
+          "en_name": "Beauty & Spa",
+          "icon": "💆",
+          "badge_color": "rose",
+          "desc": "Dịch vụ spa, phòng khám thẩm mỹ, da liễu Before/After, phẫu thuật, Flash Sale dịch vụ."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting",
+        "Wide Establishing Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @fotober_media",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Làm Đẹp & Spa / Y Tế.",
+      "creator": {
+        "raw": "@fotober_media",
+        "name": "Fotober_Media",
+        "handle": "@fotober_media",
+        "profile_url": "https://www.instagram.com/fotober_media/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DUEJTZWCWj5/",
+      "gdrive_folder": "https://drive.google.com/open?id=1bdKacVkcWx8vv6ii6EnQGPKi-gz-JNyl",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40fotober_media_DUEJTZWCWj5_Every_space_deserves_a_premium_cinematic_edit/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40fotober_media_DUEJTZWCWj5_Every_space_deserves_a_premium_cinematic_edit/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/aurFbXsZa_Y",
+        "video_url_original": "https://media.fedu.vn/videos/aurFbXsZa_Y",
+        "report_url": "reports/IG_@fotober_media_DUEJTZWCWj5_Every_space_deserves_a_premium_cinematic_edit.html",
+        "shots_count": 35,
+        "duration": "45.1s",
+        "youtube_id": "aurFbXsZa_Y",
+        "youtube_embed": "https://www.youtube.com/embed/aurFbXsZa_Y",
+        "youtube_url": "https://youtu.be/aurFbXsZa_Y"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@sellingsocial.co_DXHO0hYkWMd_Realtors…_your_home_tours_aren’t_underperform",
       "shortcode": "DXHO0hYkWMd",
@@ -7962,7 +8050,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -14620,7 +14708,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -16176,8 +16264,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -17355,7 +17443,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
