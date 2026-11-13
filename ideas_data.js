@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-13T11:57:52+07:00",
+  "generated_at": "2026-11-13T12:03:59+07:00",
   "total_scene_items": 438,
   "total_unique_ideas": 419,
   "total_active_ideas": 359,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -3284,8 +3284,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sellingsocial.co_DXHO0hYkWMd_Realtors…_your_home_tours_aren’t_underperform",
       "shortcode": "DXHO0hYkWMd",
-      "title_vi": "Realtors… your home tours aren’t underperform",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "title_vi": "Công Thức 17 Cảnh Quay Tour Nhà Đất Gọn Đẹp Bằng Điện Thoại (Mỗi Phòng Đúng 3 Góc: Toàn - Trung - Cận)",
+      "quick_takeaway": "💡 Chia bất kỳ căn nhà nào thành 5 cụm cố định (Mặt tiền, Bếp, Phòng khách, Phòng ngủ, Phòng tắm), mỗi phòng chỉ quay đúng 3 cỡ cảnh từ rộng vào chi tiết trong 1,5 giây/cảnh và khép vòng lặp ở cửa chính.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3306,10 +3306,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Wide Establishing Shot",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Push-in (đẩy máy tiến sát chủ thể)",
+        "Pan / Whip Pan (lia máy ngang / vẩy máy nhanh)",
+        "Ánh sáng tự nhiên cửa sổ"
       ],
       "country": {
         "id": "us_eu",
@@ -3318,12 +3320,14 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @sellingsocial.co",
+      "purpose": "🎯 Môi giới nhà đất, kiến trúc sư, chủ homestay hoặc showroom nội thất cầm điện thoại tự quay tour giới thiệu không gian 27 giây chỉn chu mà không cần lộ mặt nói thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Wide Establishing Shot",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Push-in (đẩy máy tiến sát chủ thể)",
+        "Pan / Whip Pan (lia máy ngang / vẩy máy nhanh)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Ánh sáng tự nhiên cửa sổ",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3344,10 +3348,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://media.fedu.vn/videos/DXHO0hYkWMd.mp4",
         "report_url": "reports/IG_@sellingsocial.co_DXHO0hYkWMd_Realtors…_your_home_tours_aren’t_underperform.html",
         "shots_count": 17,
-        "duration": "26.9s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "duration": "27.0s",
+        "youtube_id": "BgKBL0SdhY0",
+        "youtube_embed": "https://www.youtube.com/embed/BgKBL0SdhY0",
+        "youtube_url": "https://youtu.be/BgKBL0SdhY0"
       },
       "complexity": {
         "id": "trung-binh",
@@ -8050,7 +8054,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -14708,7 +14712,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -16264,8 +16268,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
