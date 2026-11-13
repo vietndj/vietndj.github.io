@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-12T19:10:08+07:00",
-  "total_scene_items": 436,
-  "total_unique_ideas": 417,
-  "total_active_ideas": 357,
+  "generated_at": "2026-11-13T11:44:43+07:00",
+  "total_scene_items": 437,
+  "total_unique_ideas": 418,
+  "total_active_ideas": 358,
   "total_excluded_ideas": 60,
-  "total_creators": 251,
+  "total_creators": 252,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 14,
     "talking-head": 46,
     "storytelling": 41,
-    "dien-anh": 176,
+    "dien-anh": 177,
     "chuyen-canh": 67,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 33,
     "du-lich": 51,
     "cong-nghe": 25,
-    "kien-truc": 21,
+    "kien-truc": 22,
     "the-thao": 6,
     "ky-thuat-quay": 134,
     "ugc": 8
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 261,
+    "us_eu": 262,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -967,6 +967,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@sellingsocial.co",
+      "name": "Sellingsocial Co",
+      "profile_url": "https://www.instagram.com/sellingsocial.co/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40sellingsocial.co_DXHO0hYkWMd_Realtors%E2%80%A6_your_home_tours_aren%E2%80%99t_underperform/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@sellingsocial.co_DXHO0hYkWMd_Realtors…_your_home_tours_aren’t_underperform"
       ]
     },
     {
@@ -3182,6 +3193,81 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@sellingsocial.co_DXHO0hYkWMd_Realtors…_your_home_tours_aren’t_underperform",
+      "shortcode": "DXHO0hYkWMd",
+      "title_vi": "Realtors… your home tours aren’t underperform",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @sellingsocial.co",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@sellingsocial.co",
+        "name": "Sellingsocial Co",
+        "handle": "@sellingsocial.co",
+        "profile_url": "https://www.instagram.com/sellingsocial.co/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DXHO0hYkWMd/",
+      "gdrive_folder": "https://drive.google.com/open?id=1jvsN3N2yd2hwm2IPGenQqAoMWaT0RFZ3",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40sellingsocial.co_DXHO0hYkWMd_Realtors%E2%80%A6_your_home_tours_aren%E2%80%99t_underperform/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40sellingsocial.co_DXHO0hYkWMd_Realtors%E2%80%A6_your_home_tours_aren%E2%80%99t_underperform/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DXHO0hYkWMd.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DXHO0hYkWMd.mp4",
+        "report_url": "reports/IG_@sellingsocial.co_DXHO0hYkWMd_Realtors…_your_home_tours_aren’t_underperform.html",
+        "shots_count": 17,
+        "duration": "26.9s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@100066937796361_2314960032674880_Salman_Rushdie_Teaches_Storytelling_and_Writi",
       "shortcode": "IG_@100066937796361_2314960032674880_Salman_Rushdie_Teaches_Storytelling_and_Writi",
@@ -14534,7 +14620,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -16090,8 +16176,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -17269,7 +17355,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
