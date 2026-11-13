@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-13T13:59:18+07:00",
-  "total_scene_items": 440,
-  "total_unique_ideas": 421,
-  "total_active_ideas": 361,
+  "generated_at": "2026-11-13T14:39:30+07:00",
+  "total_scene_items": 441,
+  "total_unique_ideas": 422,
+  "total_active_ideas": 362,
   "total_excluded_ideas": 60,
   "total_creators": 255,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 14,
     "talking-head": 46,
     "storytelling": 41,
-    "dien-anh": 180,
+    "dien-anh": 181,
     "chuyen-canh": 67,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 33,
     "du-lich": 51,
     "cong-nghe": 25,
-    "kien-truc": 24,
+    "kien-truc": 25,
     "the-thao": 6,
     "ky-thuat-quay": 134,
     "ugc": 8
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 265,
+    "us_eu": 266,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -349,6 +349,25 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@iman.lizi",
+      "name": "Iman Lizi",
+      "profile_url": "https://www.instagram.com/iman.lizi/",
+      "video_count": 9,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40iman.lizi_DfZtLuUI0iQ_gloomy_november_mornings_are_made_for_staying/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@iman.lizi_DfZtLuUI0iQ_gloomy_november_mornings_are_made_for_staying",
+        "IG_@iman.lizi_DdTsZzToLPQ_Moments_at_home_🤍",
+        "IG_@iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_🕯️",
+        "IG_@iman.lizi_Ddv7PoCo2AA_weekend_plans_coffee_by_the_window,_crisp_aut",
+        "IG_@iman.lizi_Dd9JnIBNJs7_welcoming_October_with_slow_days_at_home,_war",
+        "IG_@iman.lizi_DeZJOgZoRew_the_evening_rule_little_lights_only_🕯️",
+        "IG_@iman.lizi_DejopHOIoW5_autumn_at_home_🍂",
+        "IG_@iman.lizi_DbYrq6gIPtC_Summer_at_home_🌞",
+        "IG_@iman.lizi_Dc6qXoKoYKh"
+      ]
+    },
+    {
       "handle": "@joshdiazfilms",
       "name": "Joshdiazfilms",
       "profile_url": "https://www.instagram.com/joshdiazfilms/",
@@ -364,24 +383,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
         "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
         "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
-      ]
-    },
-    {
-      "handle": "@iman.lizi",
-      "name": "Iman Lizi",
-      "profile_url": "https://www.instagram.com/iman.lizi/",
-      "video_count": 8,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40iman.lizi_DdTsZzToLPQ_Moments_at_home_%F0%9F%A4%8D/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@iman.lizi_DdTsZzToLPQ_Moments_at_home_🤍",
-        "IG_@iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_🕯️",
-        "IG_@iman.lizi_Ddv7PoCo2AA_weekend_plans_coffee_by_the_window,_crisp_aut",
-        "IG_@iman.lizi_Dd9JnIBNJs7_welcoming_October_with_slow_days_at_home,_war",
-        "IG_@iman.lizi_DeZJOgZoRew_the_evening_rule_little_lights_only_🕯️",
-        "IG_@iman.lizi_DejopHOIoW5_autumn_at_home_🍂",
-        "IG_@iman.lizi_DbYrq6gIPtC_Summer_at_home_🌞",
-        "IG_@iman.lizi_Dc6qXoKoYKh"
       ]
     },
     {
@@ -3226,6 +3227,77 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@iman.lizi_DfZtLuUI0iQ_gloomy_november_mornings_are_made_for_staying",
+      "shortcode": "DfZtLuUI0iQ",
+      "title_vi": "gloomy november mornings are made for staying",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iman.lizi",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@iman.lizi",
+        "name": "Iman Lizi",
+        "handle": "@iman.lizi",
+        "profile_url": "https://www.instagram.com/iman.lizi/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DfZtLuUI0iQ/",
+      "gdrive_folder": "https://drive.google.com/open?id=1VkJ6QyIKY2CmDRkdkHvQV6CLNmHM66mC",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40iman.lizi_DfZtLuUI0iQ_gloomy_november_mornings_are_made_for_staying/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40iman.lizi_DfZtLuUI0iQ_gloomy_november_mornings_are_made_for_staying/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/1IQ8T2qMcQw",
+        "video_url_original": "https://media.fedu.vn/videos/1IQ8T2qMcQw",
+        "report_url": "reports/IG_@iman.lizi_DfZtLuUI0iQ_gloomy_november_mornings_are_made_for_staying.html",
+        "shots_count": 11,
+        "duration": "10.8s",
+        "youtube_id": "1IQ8T2qMcQw",
+        "youtube_embed": "https://www.youtube.com/embed/1IQ8T2qMcQw",
+        "youtube_url": "https://youtu.be/1IQ8T2qMcQw"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@mikaasmr7_DfM2NcMDEkh_ASMR💆‍♀_400만_명이_본_한국_토탈_바디케어,_다시_다녀왔어요_분당",
       "shortcode": "DfM2NcMDEkh",
@@ -8243,7 +8315,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -16457,8 +16529,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
