@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-13T15:12:21+07:00",
-  "total_scene_items": 442,
-  "total_unique_ideas": 423,
-  "total_active_ideas": 363,
+  "generated_at": "2026-11-13T15:22:24+07:00",
+  "total_scene_items": 443,
+  "total_unique_ideas": 424,
+  "total_active_ideas": 364,
   "total_excluded_ideas": 60,
-  "total_creators": 256,
+  "total_creators": 257,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 47,
     "storytelling": 41,
     "dien-anh": 181,
-    "chuyen-canh": 67,
+    "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 135,
+    "ky-thuat-quay": 136,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 267,
+    "us_eu": 268,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -968,6 +968,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@elliottsauvage",
+      "name": "Elliottsauvage",
+      "profile_url": "https://www.instagram.com/elliottsauvage/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_%40ericazol/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_@ericazol"
       ]
     },
     {
@@ -3238,6 +3249,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_@ericazol",
+      "shortcode": "DfopErwpZT-",
+      "title_vi": "Sunny morning in the big apple with @ericazol",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @elliottsauvage",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@elliottsauvage",
+        "name": "Elliottsauvage",
+        "handle": "@elliottsauvage",
+        "profile_url": "https://www.instagram.com/elliottsauvage/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DfopErwpZT-/",
+      "gdrive_folder": "https://drive.google.com/open?id=1TwVonvS2RnFcd43xpGsUL-e0EBza-e-U",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_%40ericazol/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_%40ericazol/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/VlvVXg1jyGA",
+        "video_url_original": "https://media.fedu.vn/videos/VlvVXg1jyGA",
+        "report_url": "reports/IG_@elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_@ericazol.html",
+        "shots_count": 38,
+        "duration": "22.2s",
+        "youtube_id": "VlvVXg1jyGA",
+        "youtube_embed": "https://www.youtube.com/embed/VlvVXg1jyGA",
+        "youtube_url": "https://youtu.be/VlvVXg1jyGA"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@lankypov_De3Sy5LoTUY_Possibly_the_best_camera_setup_I’ve_built",
       "shortcode": "De3Sy5LoTUY",
@@ -16626,8 +16710,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
