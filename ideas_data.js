@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-14T12:05:06+07:00",
-  "total_scene_items": 448,
-  "total_unique_ideas": 429,
-  "total_active_ideas": 369,
+  "generated_at": "2026-11-14T12:07:58+07:00",
+  "total_scene_items": 449,
+  "total_unique_ideas": 430,
+  "total_active_ideas": 370,
   "total_excluded_ideas": 60,
   "total_creators": 261,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 14,
     "talking-head": 47,
     "storytelling": 42,
-    "dien-anh": 186,
+    "dien-anh": 187,
     "chuyen-canh": 67,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 138,
+    "ky-thuat-quay": 139,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 273,
+    "us_eu": 274,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -579,6 +579,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@yula_andrieieva",
+      "name": "Yula_Andrieieva",
+      "profile_url": "https://www.instagram.com/yula_andrieieva/",
+      "video_count": 3,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
+        "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…"
+      ]
+    },
+    {
       "handle": "@neolumo.uralsk",
       "name": "Neolumo Uralsk",
       "profile_url": "https://www.instagram.com/neolumo.uralsk/",
@@ -776,18 +789,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g",
         "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu"
-      ]
-    },
-    {
-      "handle": "@yula_andrieieva",
-      "name": "Yula_Andrieieva",
-      "profile_url": "https://www.instagram.com/yula_andrieieva/",
-      "video_count": 2,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DezFNT-s1Ny_You_don%E2%80%99t_need_a_complicated_scene_to_make_a/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
-        "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…"
       ]
     },
     {
@@ -3294,6 +3295,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
+      "shortcode": "DeXjubJxklb",
+      "title_vi": "day 4 of learning cinematography…",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yula_andrieieva",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@yula_andrieieva",
+        "name": "Yula_Andrieieva",
+        "handle": "@yula_andrieieva",
+        "profile_url": "https://www.instagram.com/yula_andrieieva/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DeXjubJxklb/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Gl1Iq-wJGVvyABiNX-7MgS-3c4T9rU79",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography%E2%80%A6/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/kNNRaFBA2WI",
+        "video_url_original": "https://media.fedu.vn/videos/kNNRaFBA2WI",
+        "report_url": "reports/IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography….html",
+        "shots_count": 11,
+        "duration": "15.3s",
+        "youtube_id": "kNNRaFBA2WI",
+        "youtube_embed": "https://www.youtube.com/embed/kNNRaFBA2WI",
+        "youtube_url": "https://youtu.be/kNNRaFBA2WI"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That’s_one_of_the_hard",
       "shortcode": "DfrY4ZuoFs-",
@@ -8988,7 +9062,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -17202,8 +17276,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
