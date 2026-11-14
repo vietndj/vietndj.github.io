@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-14T12:11:52+07:00",
+  "generated_at": "2026-11-14T15:17:27+07:00",
   "total_scene_items": 449,
   "total_unique_ideas": 430,
   "total_active_ideas": 370,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -3892,8 +3892,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lankypov_De3Sy5LoTUY_Possibly_the_best_camera_setup_I’ve_built",
       "shortcode": "De3Sy5LoTUY",
-      "title_vi": "Mồi Âm Thanh Lắp Máy 3 Giây & Đồ Họa Thẻ Động Giữ Nhịp Talking-Head (Nói Trực Diện) 2 Phút Không Rơi Người Xem",
-      "quick_takeaway": "Video mẫu của @lankypov giải bài toán 'càng bày nhiều thiết bị càng ngại bấm quay' bằng hệ góc máy gọn cố định tại bàn (DJI Osmo Pocket 4 Pro gắn ngàm bàn, thu âm Shure SM7B qua RØDECaster Duo vào thẳng cổng USB-C và gắn kính lọc nam châm NEEWER). Mở màn bằng chuỗi 4 cảnh cận thao tác lắp máy có âm thanh thật ASMR (tiếng động hiện trường) gói gọn trong 2.9 giây, sau đó đan xen nhịp nói trực diện với các bảng đồ họa chuyển động nền kem giữ khung tròn mặt người nói ở góc dưới, giúp giữ mắt suốt 124 giây và thu hút bình luận từ khóa 'color' tự nhiên.",
+      "title_vi": "Giữ Chân Trọn 2 Phút Video Giới Thiệu Thiết Bị Nhờ Đan Xen Nói Trực Diện Với 11 Sơ Đồ Chuyển Động Nền Kem Và Cảnh Thử Thật",
+      "quick_takeaway": "Video dài 124 giây của kênh @lankypov giải quyết bài toán lớn nhất của người tự làm nội dung: bộ máy quay càng rườm rà thì càng lười bấm nút ghi hình. Thay vì chỉ ngồi nói một góc máy dễ gây buồn ngủ trong suốt 2 phút, tác giả phối hợp chặt chẽ 3 lớp hình ảnh: mở màn 3 giây bằng chuỗi âm thanh hiện trường ASMR (tiếng tách cắm máy DJI Osmo Pocket 4 Pro, cắm cáp USB-C, bật nguồn bàn trộn RØDECaster Duo), đan xen nhịp nói trực diện tại bàn (Talking Head - giữ sự tin cậy của người thật) với 11 bảng đồ họa chuyển động nền kem ấm (Motion Graphics - biến các khái niệm trừu tượng như độ trễ tâm lý, luồng dây âm thanh XLR sang USB-C, vòng xoay kính lọc ND thành sơ đồ nhìn hiểu ngay), kèm 2 pha chứng minh thực tế bằng mắt thường (quét màu Trước/Sau để bán mềm bộ màu FilmTone qua bình luận ở phút 1:14 và gắn trực tiếp kính lọc tản sáng Neewer 1/4 lên ống kính lúc đang quay). Cuối bài đúc kết 3 nguyên tắc chọn thiết bị và đóng lại bằng khung chia đôi tổng hợp trọn bộ 5 món đồ nghề để kích thích người xem bấm lưu bài.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
         "id": "talking-head",
@@ -3920,7 +3920,8 @@ var FEDU_IDEAS_DATABASE = {
         "Hook 2s đầu (cảnh mở màn giữ chân người xem)",
         "asmr-sound-design",
         "static-tripod",
-        "visual-prop-demo"
+        "visual-prop-demo",
+        "eye-level-intimate"
       ],
       "country": {
         "id": "us_eu",
@@ -3929,15 +3930,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Chia Sẻ Kinh Nghiệm & Giới Thiệu Thiết Bị",
+      "purpose": "Chia Sẻ Kinh Nghiệm & Review Thiết Bị",
       "tech_tags": [
         "Hook 2s đầu (cảnh mở màn giữ chân người xem)",
         "asmr-sound-design",
-        "Cận cảnh (CU: quay sát chi tiết)",
         "static-tripod",
+        "eye-level-intimate",
+        "Cận cảnh (CU: quay sát chi tiết)",
         "visual-prop-demo",
-        "before-after-reveal",
         "pain-point-contrast",
+        "before-after-reveal",
         "soft-sell-lifestyle",
         "Toàn cảnh (WS: lấy trọn không gian)",
         "Key Light 45° (đèn chính đặt chéo 45 độ)"
@@ -9072,7 +9074,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -13729,7 +13731,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -17286,8 +17288,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
