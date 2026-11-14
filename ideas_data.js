@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-14T11:56:50+07:00",
-  "total_scene_items": 447,
-  "total_unique_ideas": 428,
-  "total_active_ideas": 368,
+  "generated_at": "2026-11-14T12:00:06+07:00",
+  "total_scene_items": 448,
+  "total_unique_ideas": 429,
+  "total_active_ideas": 369,
   "total_excluded_ideas": 60,
   "total_creators": 261,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 14,
     "talking-head": 47,
     "storytelling": 42,
-    "dien-anh": 185,
+    "dien-anh": 186,
     "chuyen-canh": 67,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 137,
+    "ky-thuat-quay": 138,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 272,
+    "us_eu": 273,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -680,6 +680,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@bryanhynes",
+      "name": "Bryanhynes",
+      "profile_url": "https://www.instagram.com/bryanhynes/",
+      "video_count": 2,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That%E2%80%99s_one_of_the_hard/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That’s_one_of_the_hard",
+        "IG_@bryanhynes_DacaMHwzEm3_Visual_Sequence"
       ]
     },
     {
@@ -3248,17 +3260,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@bryanhynes",
-      "name": "Bryan Hynes",
-      "profile_url": "https://www.instagram.com/bryanhynes/",
-      "video_count": 1,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://media.fedu.vn/images/The_Art_of_Visual_Sequence_-_%40bryanhynes/img_080_ae283717.webp",
-      "video_ids": [
-        "IG_@bryanhynes_DacaMHwzEm3_Visual_Sequence"
-      ]
-    },
-    {
       "handle": "@kenshoji.visuals",
       "name": "Ken Shoji - Tokyo Videographer",
       "profile_url": "https://www.instagram.com/kenshoji.visuals/",
@@ -3293,6 +3294,81 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That’s_one_of_the_hard",
+      "shortcode": "DfrY4ZuoFs-",
+      "title_vi": "how do I frame my shot That’s one of the hard",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @bryanhynes",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@bryanhynes",
+        "name": "Bryanhynes",
+        "handle": "@bryanhynes",
+        "profile_url": "https://www.instagram.com/bryanhynes/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DfrY4ZuoFs-/",
+      "gdrive_folder": "https://drive.google.com/open?id=1grq6dRm5WDAhZz_Ct67fEvw3worfedgB",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That%E2%80%99s_one_of_the_hard/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That%E2%80%99s_one_of_the_hard/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/vOTSI5h-EDc",
+        "video_url_original": "https://media.fedu.vn/videos/vOTSI5h-EDc",
+        "report_url": "reports/IG_@bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That’s_one_of_the_hard.html",
+        "shots_count": 24,
+        "duration": "28.4s",
+        "youtube_id": "vOTSI5h-EDc",
+        "youtube_embed": "https://www.youtube.com/embed/vOTSI5h-EDc",
+        "youtube_url": "https://youtu.be/vOTSI5h-EDc"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@jasper_zangz_DfmZStjznBN_mini_vlog_🙌",
       "shortcode": "DfmZStjznBN",
@@ -15562,7 +15638,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -17118,7 +17194,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -18297,7 +18373,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
