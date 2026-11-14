@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-13T16:42:20+07:00",
+  "generated_at": "2026-11-14T11:16:00+07:00",
   "total_scene_items": 444,
   "total_unique_ideas": 425,
   "total_active_ideas": 365,
@@ -171,8 +171,8 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 9,
     "thuong-hieu": 44,
     "thoi-trang": 27,
-    "am-thuc": 33,
-    "du-lich": 52,
+    "am-thuc": 34,
+    "du-lich": 51,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -975,7 +975,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Hami Mommy",
       "profile_url": "https://www.instagram.com/hami.mommy/",
       "video_count": 1,
-      "top_industry": "Du lịch",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40hami.mommy_DfUOyUPBtga_New_Vlog_%F0%9F%8D%82/shot_01_mid.webp",
       "video_ids": [
         "IG_@hami.mommy_DfUOyUPBtga_New_Vlog_🍂"
@@ -3263,8 +3263,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hami.mommy_DfUOyUPBtga_New_Vlog_🍂",
       "shortcode": "DfUOyUPBtga",
-      "title_vi": "Chuỗi 19 Cảnh B-Roll (Cảnh Trám) Nhịp 0.8 Giây Kết Hợp Âm Thanh Hiện Trường ASMR Kể Trọn Ngày Thu Gia Đình Không Cần Lộ Mặt Nói",
-      "quick_takeaway": "Video ghép 18 cảnh ngắn trung bình 0.8 giây từ vườn rau vào gian bếp, ra hiên nhà rồi kết bằng 1 cảnh dài 9.5 giây tại nhà hát múa ballet mà không dùng bất kỳ câu thoại nào. Nhờ đổi góc máy trên 30 độ sau mỗi cú cắt và giữ nguyên tiếng động thật tại hiện trường (tiếng nhổ củ cải, tiếng kéo cắt rau, tiếng chổi quét lá khô, tiếng cười trẻ nhỏ, tiếng vỗ tay khán phòng) lồng trên nền đàn guitar mộc, người xem tự nối được mạch chuyện một ngày mùa thu chỉn chu của gia đình.",
+      "title_vi": "Nghệ thuật kể chuyện qua B-roll đời thường chỉn chu",
+      "quick_takeaway": "Video là chuỗi các cảnh quay B-roll (cảnh quay phụ hỗ trợ) cực kỳ chỉn chu về cuộc sống gia đình, từ làm vườn đến nấu nướng.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -3275,12 +3275,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "du-lich",
-          "name": "Du lịch",
-          "en_name": "Travel & Culture",
-          "icon": "✈️",
-          "badge_color": "sky",
-          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
@@ -3293,7 +3293,12 @@ var FEDU_IDEAS_DATABASE = {
         "Tiền cảnh mờ tạo chiều sâu (Depth Layer)",
         "Jump Cut (cắt bỏ khoảng nghỉ giữ nhịp nhanh)",
         "Âm thanh hiện trường ASMR (Tiếng nấu ăn/thao tác)",
-        "Ánh sáng tự nhiên cửa sổ"
+        "Ánh sáng tự nhiên cửa sổ",
+        "vlog đời thường",
+        "chữa lành",
+        "b-roll nấu ăn",
+        "làm vườn",
+        "mùa thu"
       ],
       "country": {
         "id": "us_eu",
@@ -3302,8 +3307,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Vlog Đời Sống",
+      "purpose": "Học viên có thể áp dụng cách quay cận cảnh (Close-up) các hành động nhỏ để tạo nên một vlog có chiều sâu và cảm xúc.",
       "tech_tags": [
+        "vlog đời thường",
+        "chữa lành",
+        "b-roll nấu ăn",
+        "làm vườn",
+        "mùa thu",
         "Cận cảnh (CU: quay sát chi tiết)",
         "Góc máy cố định Tripod (Tự quay 1 mình)",
         "Tiền cảnh mờ tạo chiều sâu (Depth Layer)",
@@ -8602,7 +8612,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -13259,7 +13269,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -16816,8 +16826,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -17995,7 +18005,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
