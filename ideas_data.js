@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T08:02:23+07:00",
+  "generated_at": "2026-11-15T08:10:23+07:00",
   "total_scene_items": 458,
   "total_unique_ideas": 439,
   "total_active_ideas": 379,
@@ -169,14 +169,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 9,
-    "thuong-hieu": 45,
+    "thuong-hieu": 46,
     "thoi-trang": 30,
     "am-thuc": 35,
     "du-lich": 52,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 144,
+    "ky-thuat-quay": 143,
     "ugc": 8
   },
   "x_factors": [
@@ -1068,7 +1068,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Seungahne",
       "profile_url": "https://www.instagram.com/seungahne/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40seungahne_DdDpqnUBQHU_%EC%97%AC%EB%A6%84_%EC%A1%B0%EA%B0%81_%EB%AA%A8%EC%9D%8C/shot_01_mid.webp",
       "video_ids": [
         "IG_@seungahne_DdDpqnUBQHU_여름_조각_모음"
@@ -4375,8 +4375,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@seungahne_DdDpqnUBQHU_여름_조각_모음",
       "shortcode": "DdDpqnUBQHU",
-      "title_vi": "Nghệ thuật quay B-roll đời thường chuẩn chỉn chu",
-      "quick_takeaway": "Video sử dụng ánh sáng tự nhiên và góc máy đa dạng để biến những hoạt động bình thường thành thước phim nghệ thuật.",
+      "title_vi": "28 Cảnh Ghép Nhanh Mùa Hè Ở Nhà Chỉn Chu Bằng Ánh Nắng Tự Nhiên",
+      "quick_takeaway": "Ghép 28 cảnh tĩnh dưới 1 giây quay bằng chân máy cố định và nắng cửa sổ tự nhiên, kết hợp khung ngang có chữ cố định hai bên để biến sinh hoạt thường ngày tại nhà thành video chỉn chu giữ mắt đến giây cuối.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -4387,12 +4387,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -4404,7 +4404,12 @@ var FEDU_IDEAS_DATABASE = {
         "b-roll",
         "lifestyle",
         "quay-dien-thoai",
-        "anh-sang-tu-nhien"
+        "anh-sang-tu-nhien",
+        "mùa hè ở nhà",
+        "cảnh phụ đời thường",
+        "ánh sáng cửa sổ",
+        "vlog không lời",
+        "cắt cảnh nhanh"
       ],
       "country": {
         "id": "us_eu",
@@ -4413,8 +4418,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Học cách sắp xếp bố cục và tận dụng ánh sáng cửa sổ để quay vlog đời thường.",
+      "purpose": "Học viên biết cách đặt điện thoại lên chân máy cạnh cửa sổ, đan xen nhịp nhàng giữa cảnh toàn căn phòng và cảnh cận thao tác tay để xây kênh cá nhân thu hút mà không cần lộ mặt nói thoại.",
       "tech_tags": [
+        "mùa hè ở nhà",
+        "cảnh phụ đời thường",
+        "ánh sáng cửa sổ",
+        "vlog không lời",
+        "cắt cảnh nhanh",
         "b-roll",
         "lifestyle",
         "quay-dien-thoai",
@@ -18150,7 +18160,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
