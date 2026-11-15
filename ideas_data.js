@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T09:29:31+07:00",
-  "total_scene_items": 462,
-  "total_unique_ideas": 443,
-  "total_active_ideas": 383,
+  "generated_at": "2026-11-15T09:35:16+07:00",
+  "total_scene_items": 463,
+  "total_unique_ideas": 444,
+  "total_active_ideas": 384,
   "total_excluded_ideas": 60,
-  "total_creators": 270,
+  "total_creators": 271,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 16,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 196,
+    "dien-anh": 197,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 36,
     "du-lich": 53,
     "cong-nghe": 26,
-    "kien-truc": 24,
+    "kien-truc": 25,
     "the-thao": 6,
     "ky-thuat-quay": 143,
     "ugc": 8
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 287,
+    "us_eu": 288,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -996,6 +996,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@huesofdays",
+      "name": "Huesofdays",
+      "profile_url": "https://www.instagram.com/huesofdays/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40huesofdays_Dd6Vo4Tgxgy_Life_at_home/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@huesofdays_Dd6Vo4Tgxgy_Life_at_home"
       ]
     },
     {
@@ -3398,6 +3409,79 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@huesofdays_Dd6Vo4Tgxgy_Life_at_home",
+      "shortcode": "Dd6Vo4Tgxgy",
+      "title_vi": "Life at home",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @huesofdays",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@huesofdays",
+        "name": "Huesofdays",
+        "handle": "@huesofdays",
+        "profile_url": "https://www.instagram.com/huesofdays/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dd6Vo4Tgxgy/",
+      "gdrive_folder": "https://drive.google.com/open?id=12_wVLaFb4asF8--U-ST6bb6pOaZXf2Q6",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40huesofdays_Dd6Vo4Tgxgy_Life_at_home/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40huesofdays_Dd6Vo4Tgxgy_Life_at_home/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/Dd6Vo4Tgxgy.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/Dd6Vo4Tgxgy.mp4",
+        "report_url": "reports/IG_@huesofdays_Dd6Vo4Tgxgy_Life_at_home.html",
+        "shots_count": 15,
+        "duration": "20.0s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape🍵",
       "shortcode": "Deg-i6YPJai",
@@ -18548,7 +18632,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
