@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T08:10:23+07:00",
+  "generated_at": "2026-11-15T08:13:49+07:00",
   "total_scene_items": 458,
   "total_unique_ideas": 439,
   "total_active_ideas": 379,
@@ -79,8 +79,8 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 11,
     "voice-over": 15,
     "talking-head": 47,
-    "storytelling": 43,
-    "dien-anh": 193,
+    "storytelling": 42,
+    "dien-anh": 194,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -169,14 +169,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 9,
-    "thuong-hieu": 46,
+    "thuong-hieu": 47,
     "thoi-trang": 30,
     "am-thuc": 35,
     "du-lich": 52,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 143,
+    "ky-thuat-quay": 142,
     "ugc": 8
   },
   "x_factors": [
@@ -1057,7 +1057,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Jasper_Zangz",
       "profile_url": "https://www.instagram.com/jasper_zangz/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40jasper_zangz_DfmZStjznBN_mini_vlog_%F0%9F%99%8C/shot_01_mid.webp",
       "video_ids": [
         "IG_@jasper_zangz_DfmZStjznBN_mini_vlog_🙌"
@@ -4290,24 +4290,24 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jasper_zangz_DfmZStjznBN_mini_vlog_🙌",
       "shortcode": "DfmZStjznBN",
-      "title_vi": "Kể chuyện buổi sáng qua ánh sáng và bóng đổ",
-      "quick_takeaway": "Video sử dụng triệt để ánh sáng tự nhiên và các góc máy tĩnh để tạo nên một mini vlog bình yên, chỉn chu.",
+      "title_vi": "Công thức 29 cảnh tự quay nhật ký buổi sáng chỉn chu bằng nắng cửa sổ không cần thoại",
+      "quick_takeaway": "Video dài 29 cảnh không lời thoại dùng toàn bộ chân máy cố định, tận dụng nắng xiên qua cửa kính, bóng đổ trên tường và vài dòng chữ ngắn để kể câu chuyện buổi sáng nửa tỉnh nửa mê đầy cuốn hút.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "storytelling",
-        "name": "Kể Chuyện",
-        "en_name": "Storytelling",
-        "icon": "📖",
-        "badge_color": "amber"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
@@ -4320,7 +4320,12 @@ var FEDU_IDEAS_DATABASE = {
         "ánh sáng tự nhiên",
         "vlog đời thường",
         "góc máy tĩnh",
-        "shadow play"
+        "shadow play",
+        "nhật ký buổi sáng",
+        "tự quay một mình",
+        "ánh sáng cửa sổ",
+        "góc máy chỉn chu",
+        "kể chuyện không thoại"
       ],
       "country": {
         "id": "us_eu",
@@ -4329,8 +4334,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Học viên học được cách tận dụng nắng cửa sổ, quay bóng đổ và bố cục khung hình trong gương.",
+      "purpose": "Học viên học được cách đặt chân máy tự quay một mình tại nhà, phối xen kẽ cảnh toàn không gian với cận cảnh tay và bóng tường để làm video đời thường chỉn chu mà không cần thu âm hay lộ mặt nói chuyện.",
       "tech_tags": [
+        "nhật ký buổi sáng",
+        "tự quay một mình",
+        "ánh sáng cửa sổ",
+        "góc máy chỉn chu",
+        "kể chuyện không thoại",
         "b-roll",
         "ánh sáng tự nhiên",
         "vlog đời thường",
@@ -9946,7 +9956,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -18160,7 +18170,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -19339,7 +19349,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
