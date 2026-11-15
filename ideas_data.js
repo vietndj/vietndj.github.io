@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T16:51:25+07:00",
-  "total_scene_items": 465,
-  "total_unique_ideas": 446,
-  "total_active_ideas": 386,
+  "generated_at": "2026-11-15T17:14:17+07:00",
+  "total_scene_items": 466,
+  "total_unique_ideas": 447,
+  "total_active_ideas": 387,
   "total_excluded_ideas": 60,
   "total_creators": 272,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 17,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 198,
+    "dien-anh": 199,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 145,
+    "ky-thuat-quay": 146,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 290,
+    "us_eu": 291,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -405,6 +405,23 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@yula_andrieieva",
+      "name": "Yula_Andrieieva",
+      "profile_url": "https://www.instagram.com/yula_andrieieva/",
+      "video_count": 7,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography",
+        "IG_@yula_andrieieva_Dfsa_mQR_N9_day_25_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DfkufM6RNef_answering_your_most_frequently_asked_question",
+        "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
+        "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…"
+      ]
+    },
+    {
       "handle": "@jazziesillona",
       "name": "Jazzie Sillona",
       "profile_url": "https://www.instagram.com/jazziesillona/",
@@ -419,22 +436,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jazziesillona_DWrDUymD4_a_Carousel_Analysis",
         "IG_@Jazzie_DU2CTKzEqvl_Carousel_Analysis",
         "IG_@jazziesillona_DbIA2jwPHCV"
-      ]
-    },
-    {
-      "handle": "@yula_andrieieva",
-      "name": "Yula_Andrieieva",
-      "profile_url": "https://www.instagram.com/yula_andrieieva/",
-      "video_count": 6,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography",
-        "IG_@yula_andrieieva_Dfsa_mQR_N9_day_25_of_learning_cinematography…",
-        "IG_@yula_andrieieva_DfkufM6RNef_answering_your_most_frequently_asked_question",
-        "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
-        "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
-        "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…"
       ]
     },
     {
@@ -3422,9 +3423,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography",
-      "shortcode": "DfZgNkZRl7Q",
-      "title_vi": "day 22 of learning cinematography",
+      "id": "IG_@yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography…",
+      "shortcode": "DfRdoejxPbo",
+      "title_vi": "day 20 of learning cinematography…",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -3462,6 +3463,97 @@ var FEDU_IDEAS_DATABASE = {
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@yula_andrieieva",
+        "name": "Yula_Andrieieva",
+        "handle": "@yula_andrieieva",
+        "profile_url": "https://www.instagram.com/yula_andrieieva/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DfRdoejxPbo/",
+      "gdrive_folder": "https://drive.google.com/open?id=1H1gQ4na_aGf2lGtNP7TKOeHaKNc9jGAd",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography%E2%80%A6/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DfRdoejxPbo.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DfRdoejxPbo.mp4",
+        "report_url": "reports/IG_@yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography….html",
+        "shots_count": 7,
+        "duration": "20.4s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography",
+      "shortcode": "DfZgNkZRl7Q",
+      "title_vi": "Bí quyết quay B-Roll đời thường chỉn chu tại nhà",
+      "quick_takeaway": "Video trình diễn các kỹ thuật quay B-Roll (Cảnh quay phụ) với ánh sáng ấm và bố cục đa dạng để tạo không khí bình yên.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "ánh sáng đèn ấm",
+        "quay phòng tối",
+        "tạo chiều sâu khung hình",
+        "góc máy tại nhà",
+        "quay chỉn chu",
+        "quay phim cơ bản",
+        "ánh sáng ấm",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "b-roll đời thường"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Giúp học viên biết cách tận dụng đèn bàn, nến và các góc máy cận để nâng tầm video quay tại nhà.",
+      "tech_tags": [
+        "quay phim cơ bản",
+        "ánh sáng ấm",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "b-roll đời thường",
+        "ánh sáng đèn ấm",
+        "quay phòng tối",
+        "tạo chiều sâu khung hình",
+        "góc máy tại nhà",
+        "quay chỉn chu",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -17254,7 +17346,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
