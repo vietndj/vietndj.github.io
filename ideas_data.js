@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T18:03:22+07:00",
-  "total_scene_items": 468,
-  "total_unique_ideas": 449,
-  "total_active_ideas": 389,
+  "generated_at": "2026-11-15T18:10:09+07:00",
+  "total_scene_items": 469,
+  "total_unique_ideas": 450,
+  "total_active_ideas": 390,
   "total_excluded_ideas": 60,
   "total_creators": 272,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 17,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 201,
+    "dien-anh": 202,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 148,
+    "ky-thuat-quay": 149,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 293,
+    "us_eu": 294,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -329,6 +329,26 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@yula_andrieieva",
+      "name": "Yula_Andrieieva",
+      "profile_url": "https://www.instagram.com/yula_andrieieva/",
+      "video_count": 10,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40yula_andrieieva_De_w-W7xR0b_day_15_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@yula_andrieieva_De_w-W7xR0b_day_15_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DfFJotmRRJo_day_17_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra",
+        "IG_@yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography",
+        "IG_@yula_andrieieva_Dfsa_mQR_N9_day_25_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DfkufM6RNef_answering_your_most_frequently_asked_question",
+        "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
+        "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
+        "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…"
+      ]
+    },
+    {
       "handle": "@iman.lizi",
       "name": "Iman Lizi",
       "profile_url": "https://www.instagram.com/iman.lizi/",
@@ -366,25 +386,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
         "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
         "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
-      ]
-    },
-    {
-      "handle": "@yula_andrieieva",
-      "name": "Yula_Andrieieva",
-      "profile_url": "https://www.instagram.com/yula_andrieieva/",
-      "video_count": 9,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DfFJotmRRJo_day_17_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@yula_andrieieva_DfFJotmRRJo_day_17_of_learning_cinematography…",
-        "IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra",
-        "IG_@yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography…",
-        "IG_@yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography",
-        "IG_@yula_andrieieva_Dfsa_mQR_N9_day_25_of_learning_cinematography…",
-        "IG_@yula_andrieieva_DfkufM6RNef_answering_your_most_frequently_asked_question",
-        "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
-        "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
-        "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…"
       ]
     },
     {
@@ -3425,6 +3426,83 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@yula_andrieieva_De_w-W7xR0b_day_15_of_learning_cinematography…",
+      "shortcode": "De_w-W7xR0b",
+      "title_vi": "Luyện quay B-roll chỉn chu tại bàn làm việc với ánh sáng ấm",
+      "quick_takeaway": "Video thực hành quay B-roll đời thường với ánh sáng vàng ấm cúng tạo cảm giác chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "B-roll",
+        "ánh sáng ấm",
+        "luyện quay phim",
+        "góc máy",
+        "kể chuyện"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Học cách sắp xếp góc máy và ánh sáng để biến không gian làm việc thành cảnh quay đẹp.",
+      "tech_tags": [
+        "B-roll",
+        "ánh sáng ấm",
+        "luyện quay phim",
+        "góc máy",
+        "kể chuyện"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@yula_andrieieva",
+        "name": "Yula_Andrieieva",
+        "handle": "@yula_andrieieva",
+        "profile_url": "https://www.instagram.com/yula_andrieieva/"
+      },
+      "ig_url": "https://www.instagram.com/reel/De_w-W7xR0b/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40yula_andrieieva_De_w-W7xR0b_day_15_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40yula_andrieieva_De_w-W7xR0b_day_15_of_learning_cinematography%E2%80%A6/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/ChXA7O32O20",
+        "video_url_original": "https://media.fedu.vn/videos/ChXA7O32O20",
+        "report_url": "reports/IG_@yula_andrieieva_De_w-W7xR0b_day_15_of_learning_cinematography….html",
+        "shots_count": 11,
+        "duration": "24.8s",
+        "youtube_id": "ChXA7O32O20",
+        "youtube_embed": "https://www.youtube.com/embed/ChXA7O32O20",
+        "youtube_url": "https://youtu.be/ChXA7O32O20"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@yula_andrieieva_DfFJotmRRJo_day_17_of_learning_cinematography…",
       "shortcode": "DfFJotmRRJo",
       "title_vi": "Nâng cấp video đọc sách với 10 góc quay chỉn chu",
@@ -3520,8 +3598,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra",
       "shortcode": "DfHrFg1RDZU",
-      "title_vi": "yula andrieievaday 18 of learning cinematogra",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Bí quyết quay B-Roll phòng ngủ chỉn chu với ánh sáng xanh cam",
+      "quick_takeaway": "Video thực hành kỹ thuật quay B-Roll (Cảnh quay phụ) trong phòng ngủ, tập trung vào phối màu tương phản và góc máy cận.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -3542,9 +3620,13 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "ánh sáng xanh cam",
+        "quay b-roll",
+        "setup phòng ngủ",
+        "kỹ thuật quay phim"
       ],
       "country": {
         "id": "us_eu",
@@ -3553,11 +3635,15 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yula_andrieieva",
+      "purpose": "Giúp học viên biết cách setup đèn màu cơ bản và quay các hành động nhỏ để tạo video kể chuyện chuyên nghiệp.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "ánh sáng xanh cam",
+        "quay b-roll",
+        "setup phòng ngủ",
+        "kỹ thuật quay phim",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3579,9 +3665,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra.html",
         "shots_count": 8,
         "duration": "20.5s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": "nKyx13Stncg",
+        "youtube_embed": "https://www.youtube.com/embed/nKyx13Stncg",
+        "youtube_url": "https://youtu.be/nKyx13Stncg"
       },
       "complexity": {
         "id": "de",
@@ -10876,7 +10962,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -19090,8 +19176,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",

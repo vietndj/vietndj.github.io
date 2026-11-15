@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yula_andrieieva - yula andrieievaday 18 of learning cinematogra</title>
+    <title>Bí quyết quay B-Roll phòng ngủ chỉn chu với ánh sáng xanh cam</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1259,9 +1259,9 @@
 <div class="app-container">
     <div class="video-sidebar">
         <div class="video-wrap">
-            <video id="mainPlayer" data-yt-config="enablejsapi=1" src="https://media.fedu.vn/videos/DfHrFg1RDZU.mp4" controls autoplay muted playsinline preload="auto" loop style="width:100%;aspect-ratio:9/16;border-radius:12px;background:#000;"></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/nKyx13Stncg?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
-        <!--OPEN_EXT_BTN--><a id="openExternalVideoBtn" href="https://www.instagram.com/reel/DfHrFg1RDZU/" target="_blank" rel="noopener noreferrer" class="open-ig-tab-btn"><span>🔗 Mở bài gốc trên Instagram (Tab mới) ↗</span></a><!--/OPEN_EXT_BTN-->
+        <!--OPEN_EXT_BTN--><a id="openExternalVideoBtn" href="https://www.youtube.com/watch?v=nKyx13Stncg" target="_blank" rel="noopener noreferrer" class="open-yt-tab-btn"><span>▶️ Mở riêng trên YouTube (Tab mới) ↗</span></a><!--/OPEN_EXT_BTN-->
         <div class="video-controls">
             <div class="speed-row">
                 <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
@@ -1281,9 +1281,9 @@
 
     <div class="content-column">
         <header class="report-header">
-            <div class="header-badges"><span class="badge">STORYBOARD BREAKDOWN</span></div>
+            <div class="header-badges"><span class="badge">Kỹ Thuật Quay Dựng &amp; Điện Ảnh</span> <span class="badge badge-alt">Chỉn Chu (Cinematic)</span></div>
             <h1 class="report-title">
-                <a href="https://www.instagram.com/reel/DfHrFg1RDZU/" target="_blank" rel="noopener">@yula_andrieieva - yula andrieievaday 18 of learning cinematogra</a>
+                <a href="https://www.instagram.com/reel/DfHrFg1RDZU/?exln=c250dWwxc2xwcWpt" target="_blank" rel="noopener">Bí quyết quay B-Roll phòng ngủ chỉn chu với ánh sáng xanh cam</a>
             </h1>
             <div class="header-meta">
                 <span>Nguồn: <a href="https://www.instagram.com/yula_andrieieva/" target="_blank" class="creator-link">@yula_andrieieva ↗</a></span>
@@ -1296,12 +1296,59 @@
         </header>
 
         
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">Mở đầu: Điện thoại trên bàn -&gt; Thân bài: Các góc quay nhân vật sử dụng điện thoại trong bóng tối -&gt; Kết: Đặt điện thoại về chỗ cũ.</div>
+        </section>
 
         <div class="overview-card">
-            ⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.
+            Video thực hành kỹ thuật quay B-Roll (Cảnh quay phụ) trong phòng ngủ, tập trung vào phối màu tương phản và góc máy cận.
         </div>
 
         
+        <div class="remake-prompt-card" id="remakePromptCard">
+            <div class="prompt-accordion-header" onclick="togglePromptAccordion(this)">
+                <div class="prompt-left">
+                    <span class="prompt-badge">CÚ MÁY STU</span>
+                    <span class="prompt-title">Ánh xạ kỹ thuật quay sang ngành nghề của bạn</span>
+                </div>
+                <div class="prompt-right">
+                    <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép</button>
+                    <div class="prompt-toggle">
+                        <span class="toggle-icon">▼</span>
+                        <span class="toggle-label">Mở xem</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-accordion-body" style="display: none;">
+                <p class="prompt-desc">Video kỹ thuật quay thuần túy (không thoại). Sao chép Prompt để AI hướng dẫn áp dụng cú máy vào quay sản phẩm thực tế.</p>
+                <div class="prompt-code-wrap">
+                    <div class="prompt-code-bar">
+                        <span>MEGA_PROMPT_TECHNIQUE_REMAKE_GEMINI.md</span>
+                        <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép Prompt</button>
+                    </div>
+                    <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Hình ảnh &amp; Chuyên gia Hướng Dẫn Thao Tác Cú Máy Thực Chiến.
+
+Tôi vừa học được kỹ thuật quay đắt giá: @yula_andrieieva - yula andrieievaday 18 of learning cinematogra.
+Video này KHÔNG CÓ LỜI THOẠI, sức hút nằm ở góc đặt máy, tiêu cự và chuyển động camera.
+
+=== QUY TẮC ===
+- CẤM BỊA KỊCH BẢN NÓI. Tôi cần hướng dẫn cầm điện thoại quay gì, lia máy hướng nào.
+- CẤM VĂN MẪU AI.
+- VĂN PHONG MỘC MẠC: Xưng mình - bạn.
+
+=== HƯỚNG DẪN ===
+Nếu tôi chưa ghi ngành, hỏi 1 câu:
+1. Làm đẹp &amp; Spa (quay kem, thao tác tay, máy soi da)
+2. Nội thất / Decor (quay lia thớ gỗ/mẫu đá sang không gian)
+3. Ẩm thực &amp; F&amp;B (quay lia quanh món ăn, đổ sốt, khói)
+4. Nông nghiệp / Sức khỏe (kiểm tra lá cây, hạt giống, bao bì)
+5. Ngành khác: [Tên nghề] + [Sản phẩm muốn quay]
+
+Sau khi chọn → xuất 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY!</div>
+                </div>
+            </div>
+        </div>
 
         <div class="toolbar">
             <div class="tab-group">
@@ -1324,19 +1371,19 @@
                     <span class="shot-num">SHOT 01</span>
                     <span class="shot-dur">2.67s</span>
                 </div>
-                <h4 class="shot-headline">Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh</h4>
-                <p class="shot-insight">Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.</p>
+                <h4 class="shot-headline">Điện thoại đặt trên cuốn sách dưới ánh đèn vàng ấm áp</h4>
+                <p class="shot-insight">Đặt điện thoại lên sách, dùng đèn bàn vàng tạo không khí ấm áp</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Establishing Hook Shot (Góc toàn định vị bối cảnh)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (đầu giường)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-up (Cận cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng vàng ấm (Warm light) từ đèn bàn</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">None (Bắt đầu)</span></div>
                     </div>
-                    <div class="critique-good">Tạo điểm nhấn thị giác ngay trung tâm; ánh sáng Balanced Diffused Lighting  dẫn hướng mắt người xem hoàn hảo. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Thời lượng shot ngắn nên người xem dễ bị trôi qua nếu chi tiết chữ/đối tượng phân bổ quá sát góc viền. Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Mở màn định vị không gian và nhịp thở của toàn bộ video, thu hút sự chú ý tức thì.</div>
+                    <div class="critique-good">Bố cục 1/3 với ánh sáng vàng tạo cảm giác ấm cúng, tĩnh lặng</div>
+                    <div class="critique-warn">Vùng tối phía sau hơi bệt, cần thêm một chút ánh sáng ven để tách chân đèn</div>
+                    <div class="shot-narrative">Điện thoại iPhone đang đặt trên cuốn sách của Rick Rubin, cạnh chân đèn bàn</div>
                 </details>
             </div>
         </div>
@@ -1352,19 +1399,19 @@
                     <span class="shot-num">SHOT 02</span>
                     <span class="shot-dur">4.21s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Nhân vật nằm xem điện thoại với ánh sáng tương phản xanh cam</h4>
+                <p class="shot-insight">Dùng đèn LED xanh làm nền, đèn vàng hắt mặt tạo tương phản</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (trên giường)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Medium Shot (Trung cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Tương phản xanh (môi trường) và cam (màn hình/đèn ngủ)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut (Cắt cảnh)</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Phối màu Teal &amp; Orange (Xanh và Cam) tạo chiều sâu thị giác cực tốt</div>
+                    <div class="critique-warn">Phần chữ đè lên mặt nhân vật, nên đặt ở khoảng trống bên dưới</div>
+                    <div class="shot-narrative">Cô gái nằm trên gối, nhìn vào màn hình điện thoại, có chữ Day 18 hiện trên màn hình</div>
                 </details>
             </div>
         </div>
@@ -1380,19 +1427,19 @@
                     <span class="shot-num">SHOT 03</span>
                     <span class="shot-dur">1.67s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Cận cảnh gương mặt nhân vật khi đang lướt điện thoại</h4>
+                <p class="shot-insight">Quay sát mặt, lấy nét vào mắt để truyền tải cảm xúc</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (trên giường)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-up (Cận cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng cam dịu hắt từ phía dưới</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut (Cắt cảnh)</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Góc máy thấp (Low angle) tạo cảm giác riêng tư, gần gũi</div>
+                    <div class="critique-warn">Tiêu cự quá mỏng làm phần tay cầm điện thoại bị nhòe mạnh</div>
+                    <div class="shot-narrative">Cô gái nằm nghiêng, ánh sáng cam từ điện thoại hắt nhẹ lên mặt</div>
                 </details>
             </div>
         </div>
@@ -1408,19 +1455,19 @@
                     <span class="shot-num">SHOT 04</span>
                     <span class="shot-dur">1.54s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Nhân vật ngồi dậy tiếp tục sử dụng điện thoại</h4>
+                <p class="shot-insight">Tận dụng vật cản che bớt ống kính để tạo chiều sâu</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (trên giường)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Medium Shot (Trung cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng cam từ đèn ngủ hắt ngang mặt</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut (Cắt cảnh)</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Sử dụng tiền cảnh (Foreground) là cạnh tủ để tạo chiều sâu cho khung hình</div>
+                    <div class="critique-warn">Vùng tối bên trái chiếm diện tích lớn, dễ làm người xem phân tâm</div>
+                    <div class="shot-narrative">Cô gái ngồi dựa lưng vào thành giường, hai tay cầm điện thoại</div>
                 </details>
             </div>
         </div>
@@ -1436,19 +1483,19 @@
                     <span class="shot-num">SHOT 05</span>
                     <span class="shot-dur">3.25s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Toàn cảnh căn phòng với sự kết hợp màu sắc tinh tế</h4>
+                <p class="shot-insight">Đặt đèn ngủ ở góc 1/3 phía sau để tạo khối cho nhân vật</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (phòng ngủ)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Wide Shot (Toàn cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Kết hợp xanh dương lạnh và vàng ấm áp</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut (Cắt cảnh)</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Bố cục trung tâm với điểm sáng là chiếc đèn ngủ làm điểm nhấn</div>
+                    <div class="critique-warn">Phần dưới khung hình quá tối, mất chi tiết ga giường</div>
+                    <div class="shot-narrative">Nhân vật ngồi thu chân trên giường trong không gian tối</div>
                 </details>
             </div>
         </div>
@@ -1464,19 +1511,19 @@
                     <span class="shot-num">SHOT 06</span>
                     <span class="shot-dur">3.75s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Cận cảnh đôi tay cầm điện thoại màu đỏ nổi bật</h4>
+                <p class="shot-insight">Dùng điện thoại màu nổi làm đạo cụ để thu hút ánh nhìn</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (trên giường)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-up (Cận cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng cam mạnh hắt trực diện vào tay</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut (Cắt cảnh)</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Tạo cảm giác bí ẩn, tăng độ tương phản kịch tính (Dramatic Contrast) giữa vùng sáng và bóng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Vùng shadow dễ bị bết hoặc nhiễu hạt (noise) nếu màn hình điện thoại người xem để độ sáng thấp.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Màu đỏ của điện thoại làm điểm nhấn màu sắc (Color pop) trên nền trung tính</div>
+                    <div class="critique-warn">Tay nhân vật hơi bị cháy sáng do đèn đặt quá gần</div>
+                    <div class="shot-narrative">Đôi tay cầm iPhone màu đỏ, nhân vật mỉm cười nhẹ ở hậu cảnh</div>
                 </details>
             </div>
         </div>
@@ -1492,19 +1539,19 @@
                     <span class="shot-num">SHOT 07</span>
                     <span class="shot-dur">1.75s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Bàn tay nhấc điện thoại lên khỏi cuốn sách</h4>
+                <p class="shot-insight">Di chuyển tay chậm khi quay cận cảnh để giữ độ nét</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (đầu giường)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-up (Cận cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng vàng từ đèn bàn phía trên</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut (Cắt cảnh)</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Đường dẫn từ cánh tay hướng thẳng vào chủ thể chính là điện thoại</div>
+                    <div class="critique-warn">Chuyển động tay hơi nhanh gây nhòe hình (Motion blur) quá mức</div>
+                    <div class="shot-narrative">Nhân vật với tay lấy điện thoại đang đặt trên cuốn sách</div>
                 </details>
             </div>
         </div>
@@ -1520,19 +1567,19 @@
                     <span class="shot-num">SHOT 08</span>
                     <span class="shot-dur">1.62s</span>
                 </div>
-                <h4 class="shot-headline">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế</h4>
-                <p class="shot-insight">Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.</p>
+                <h4 class="shot-headline">Kết thúc bằng hình ảnh điện thoại nằm yên trên sách</h4>
+                <p class="shot-insight">Quay shot đầu và cuối cùng một góc máy để tạo vòng lặp</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
                     <div class="shot-meta-grid">
-                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bối cảnh thực tế</span></div>
-                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-Up / Macro Detail Shot (Cận cảnh đặc tả)</span></div>
-                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div>
-                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut / Direct Cut theo nhịp chuyển động</span></div>
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">studio-setup (đầu giường)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Close-up (Cận cảnh)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng vàng ấm áp đồng nhất</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut (Cắt cảnh)</span></div>
                     </div>
-                    <div class="critique-good">Xóa phông mượt mà (Bokeh), tách biệt chủ thể hoàn toàn khỏi hậu cảnh lộn xộn. Chuyển sắc mượt mà giữa các dải tông màu, bảo toàn chi tiết cả vùng sáng lẫn vùng tối.</div>
-                    <div class="critique-warn">Khung hình bị bó hẹp, nếu chủ thể cử động quá nhanh dễ bị trượt ra ngoài vùng nét (Depth of Field mỏng). Độ kịch tính thị giác ở mức vừa phải, cần chuyển động máy hoặc chủ thể bù đắp nhịp điệu.</div>
-                    <div class="shot-narrative">Chủ thể được phóng đại cận cảnh, đặc tả hành động hoặc bề mặt chất liệu sắc nét.</div>
+                    <div class="critique-good">Match Cut (Cắt khớp) về vị trí so với shot đầu tạo tính chu kỳ</div>
+                    <div class="critique-warn">Góc máy hơi cao hơn shot 1 một chút, làm giảm hiệu ứng lặp lại</div>
+                    <div class="shot-narrative">Điện thoại đặt lại vị trí cũ trên cuốn sách, màn hình đã tắt</div>
                 </details>
             </div>
         </div>
@@ -1545,9 +1592,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
                 <span class="grid-num">SHOT 01</span>
                 <span class="grid-time">0.0s – 2.6s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_01_mid.webp', 'SHOT 01 • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_01_mid.webp', 'SHOT 01 • Điện thoại đặt trên cuốn sách dưới ánh đèn vàng ấm áp')">⊕</button>
             </div>
-            <div class="grid-title">Visual Hook Mở Màn: Giữ chân người xem n</div>
+            <div class="grid-title">Điện thoại đặt trên cuốn sách dưới ánh đ</div>
         </div>
 
         <div class="grid-item" onclick="playShot(2.67, 6.83, 'SHOT 02')">
@@ -1555,9 +1602,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_02_mid.webp" alt="SHOT 02" loading="lazy" />
                 <span class="grid-num">SHOT 02</span>
                 <span class="grid-time">2.7s – 6.8s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_02_mid.webp', 'SHOT 02 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_02_mid.webp', 'SHOT 02 • Nhân vật nằm xem điện thoại với ánh sáng tương phản xanh cam')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Nhân vật nằm xem điện thoại với ánh sáng</div>
         </div>
 
         <div class="grid-item" onclick="playShot(6.88, 8.5, 'SHOT 03')">
@@ -1565,9 +1612,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_03_mid.webp" alt="SHOT 03" loading="lazy" />
                 <span class="grid-num">SHOT 03</span>
                 <span class="grid-time">6.9s – 8.5s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_03_mid.webp', 'SHOT 03 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_03_mid.webp', 'SHOT 03 • Cận cảnh gương mặt nhân vật khi đang lướt điện thoại')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Cận cảnh gương mặt nhân vật khi đang lướ</div>
         </div>
 
         <div class="grid-item" onclick="playShot(8.54, 10.04, 'SHOT 04')">
@@ -1575,9 +1622,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_04_mid.webp" alt="SHOT 04" loading="lazy" />
                 <span class="grid-num">SHOT 04</span>
                 <span class="grid-time">8.5s – 10.0s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_04_mid.webp', 'SHOT 04 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_04_mid.webp', 'SHOT 04 • Nhân vật ngồi dậy tiếp tục sử dụng điện thoại')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Nhân vật ngồi dậy tiếp tục sử dụng điện </div>
         </div>
 
         <div class="grid-item" onclick="playShot(10.08, 13.29, 'SHOT 05')">
@@ -1585,9 +1632,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_05_mid.webp" alt="SHOT 05" loading="lazy" />
                 <span class="grid-num">SHOT 05</span>
                 <span class="grid-time">10.1s – 13.3s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_05_mid.webp', 'SHOT 05 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_05_mid.webp', 'SHOT 05 • Toàn cảnh căn phòng với sự kết hợp màu sắc tinh tế')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Toàn cảnh căn phòng với sự kết hợp màu s</div>
         </div>
 
         <div class="grid-item" onclick="playShot(13.33, 17.04, 'SHOT 06')">
@@ -1595,9 +1642,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_06_mid.webp" alt="SHOT 06" loading="lazy" />
                 <span class="grid-num">SHOT 06</span>
                 <span class="grid-time">13.3s – 17.0s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_06_mid.webp', 'SHOT 06 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_06_mid.webp', 'SHOT 06 • Cận cảnh đôi tay cầm điện thoại màu đỏ nổi bật')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Cận cảnh đôi tay cầm điện thoại màu đỏ n</div>
         </div>
 
         <div class="grid-item" onclick="playShot(17.08, 18.79, 'SHOT 07')">
@@ -1605,9 +1652,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_07_mid.webp" alt="SHOT 07" loading="lazy" />
                 <span class="grid-num">SHOT 07</span>
                 <span class="grid-time">17.1s – 18.8s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_07_mid.webp', 'SHOT 07 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_07_mid.webp', 'SHOT 07 • Bàn tay nhấc điện thoại lên khỏi cuốn sách')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Bàn tay nhấc điện thoại lên khỏi cuốn sá</div>
         </div>
 
         <div class="grid-item" onclick="playShot(18.83, 20.42, 'SHOT 08')">
@@ -1615,9 +1662,9 @@
                 <img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_08_mid.webp" alt="SHOT 08" loading="lazy" />
                 <span class="grid-num">SHOT 08</span>
                 <span class="grid-time">18.8s – 20.4s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_08_mid.webp', 'SHOT 08 • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_08_mid.webp', 'SHOT 08 • Kết thúc bằng hình ảnh điện thoại nằm yên trên sách')">⊕</button>
             </div>
-            <div class="grid-title">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Deta</div>
+            <div class="grid-title">Kết thúc bằng hình ảnh điện thoại nằm yê</div>
         </div>
         </div>
     </div>
@@ -1634,7 +1681,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_01_mid.webp" alt="SHOT 01" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 01</div>
-                <div class="drawer-shot-hl">Visual Hook Mở Màn: Giữ chân người xem nga</div>
+                <div class="drawer-shot-hl">Điện thoại đặt trên cuốn sách dưới ánh đèn</div>
                 <div class="drawer-shot-time">0.00s – 2.62s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1644,7 +1691,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_02_mid.webp" alt="SHOT 02" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 02</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Nhân vật nằm xem điện thoại với ánh sáng t</div>
                 <div class="drawer-shot-time">2.67s – 6.83s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1654,7 +1701,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_03_mid.webp" alt="SHOT 03" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 03</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Cận cảnh gương mặt nhân vật khi đang lướt </div>
                 <div class="drawer-shot-time">6.88s – 8.50s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1664,7 +1711,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_04_mid.webp" alt="SHOT 04" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 04</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Nhân vật ngồi dậy tiếp tục sử dụng điện th</div>
                 <div class="drawer-shot-time">8.54s – 10.04s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1674,7 +1721,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_05_mid.webp" alt="SHOT 05" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 05</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Toàn cảnh căn phòng với sự kết hợp màu sắc</div>
                 <div class="drawer-shot-time">10.08s – 13.29s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1684,7 +1731,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_06_mid.webp" alt="SHOT 06" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 06</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Cận cảnh đôi tay cầm điện thoại màu đỏ nổi</div>
                 <div class="drawer-shot-time">13.33s – 17.04s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1694,7 +1741,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_07_mid.webp" alt="SHOT 07" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 07</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Bàn tay nhấc điện thoại lên khỏi cuốn sách</div>
                 <div class="drawer-shot-time">17.08s – 18.79s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1704,7 +1751,7 @@
             <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra/shot_08_mid.webp" alt="SHOT 08" loading="lazy" /></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 08</div>
-                <div class="drawer-shot-hl">Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail</div>
+                <div class="drawer-shot-hl">Kết thúc bằng hình ảnh điện thoại nằm yên </div>
                 <div class="drawer-shot-time">18.83s – 20.42s</div>
             </div>
             <div class="drawer-arrow">▶</div>
@@ -1793,7 +1840,7 @@
 
 <script>
 // Video source resolution - try multiple paths
-const rawVideoSrc = 'https://media.fedu.vn/videos/DfHrFg1RDZU.mp4';
+const rawVideoSrc = 'https://www.youtube.com/embed/nKyx13Stncg';
 let currentEndTime = null;
 
 function getCandidateUrls(src) {
