@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T08:59:27+07:00",
+  "generated_at": "2026-11-15T09:08:27+07:00",
   "total_scene_items": 460,
   "total_unique_ideas": 441,
   "total_active_ideas": 381,
@@ -80,8 +80,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 16,
     "talking-head": 47,
     "storytelling": 42,
-    "dien-anh": 194,
-    "chuyen-canh": 69,
+    "dien-anh": 195,
+    "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -3389,15 +3389,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lifewith.ren_Dfry6LeR2Vy_Ep._2_of_cooking_dishes_you_recommended_🌙_Chi",
       "shortcode": "Dfry6LeR2Vy",
-      "title_vi": "Ep. 2 of cooking dishes you recommended 🌙 Chi",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "title_vi": "Bóc tách 28 cảnh vlog nấu ăn chỉn chu bằng đèn bàn ấm và góc cận thao tác bếp",
+      "quick_takeaway": "Chuỗi 28 cảnh nấu ăn không lời thoại giữ mắt người xem nhờ nhịp cắt gọn 0.5-1.5 giây theo từng bước pha sốt và cách bày đèn ngủ vàng ấm ngay trên mặt bếp để tách khối nguyên liệu.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
@@ -3411,10 +3411,15 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "vlog nấu ăn",
+        "b-roll nhà bếp",
+        "ánh sáng đèn bàn",
+        "cắt nhảy theo nhịp",
+        "ướp gà"
       ],
       "country": {
         "id": "us_eu",
@@ -3423,12 +3428,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @lifewith.ren",
+      "purpose": "Học viên biết cách tận dụng 2-3 chiếc đèn ngủ nhỏ thay đèn quay đắt tiền và dùng chân máy cố định quay nối tiếp các bước pha chế, sơ chế món ăn sạch đẹp chỉ bằng một chiếc điện thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "vlog nấu ăn",
+        "b-roll nhà bếp",
+        "ánh sáng đèn bàn",
+        "cắt nhảy theo nhịp",
+        "ướp gà",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -10146,7 +10156,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -16804,7 +16814,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -18360,7 +18370,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
