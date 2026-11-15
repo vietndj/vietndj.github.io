@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T08:00:06+07:00",
+  "generated_at": "2026-11-15T08:02:23+07:00",
   "total_scene_items": 458,
   "total_unique_ideas": 439,
   "total_active_ideas": 379,
@@ -4197,8 +4197,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That’s_one_of_the_hard",
       "shortcode": "DfrY4ZuoFs-",
-      "title_vi": "Bí kíp đa dạng góc máy cho video kể chuyện chỉn chu",
-      "quick_takeaway": "Video hướng dẫn cách thay đổi linh hoạt từ góc toàn đến góc cận để tạo chiều sâu cho câu chuyện đời thường.",
+      "title_vi": "Công thức phối 5 cỡ cảnh tự quay khoảnh khắc đời thường chỉn chu một mình",
+      "quick_takeaway": "Video minh họa trực quan cách chia nhỏ thao tác đời thường như lấy sách, chọn củi thành chuỗi cảnh toàn, trung, cận và Reverse POV (Góc nhìn ngược từ đạo cụ) kèm chữ chú thích công dụng từng góc ngay trên hình.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -4226,7 +4226,12 @@ var FEDU_IDEAS_DATABASE = {
         "b-roll",
         "kể chuyện",
         "quay phim",
-        "hướng dẫn"
+        "hướng dẫn",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "tự quay một mình",
+        "đa cỡ cảnh",
+        "góc nhìn đạo cụ",
+        "kể chuyện hình ảnh"
       ],
       "country": {
         "id": "us_eu",
@@ -4235,8 +4240,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Giúp học viên biết cách đặt máy và chọn cỡ cảnh để video không bị nhàm chán khi tự quay một mình.",
+      "purpose": "Học viên tự cầm điện thoại và một chiếc chân máy áp dụng ngay cách đổi 3 đến 5 cỡ cảnh cho một hành động đơn giản tại nhà để quay chuỗi B-Roll (Cảnh quay phụ kể chuyện) cuốn hút mà không cần người quay hộ.",
       "tech_tags": [
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "tự quay một mình",
+        "đa cỡ cảnh",
+        "góc nhìn đạo cụ",
+        "kể chuyện hình ảnh",
         "góc máy",
         "b-roll",
         "kể chuyện",
@@ -14583,7 +14593,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -16584,7 +16594,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
