@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T09:17:11+07:00",
-  "total_scene_items": 461,
-  "total_unique_ideas": 442,
-  "total_active_ideas": 382,
+  "generated_at": "2026-11-15T09:21:59+07:00",
+  "total_scene_items": 462,
+  "total_unique_ideas": 443,
+  "total_active_ideas": 383,
   "total_excluded_ideas": 60,
-  "total_creators": 269,
+  "total_creators": 270,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 47,
     "storytelling": 43,
     "dien-anh": 195,
-    "chuyen-canh": 68,
+    "chuyen-canh": 69,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 143,
+    "ky-thuat-quay": 144,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 286,
+    "us_eu": 287,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -996,6 +996,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@evlnlarisa",
+      "name": "Evlnlarisa",
+      "profile_url": "https://www.instagram.com/evlnlarisa/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape%F0%9F%8D%B5/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape🍵"
       ]
     },
     {
@@ -3387,6 +3398,83 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape🍵",
+      "shortcode": "Deg-i6YPJai",
+      "title_vi": "a little kyoto escape🍵",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot",
+        "Medium Tracking Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @evlnlarisa",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@evlnlarisa",
+        "name": "Evlnlarisa",
+        "handle": "@evlnlarisa",
+        "profile_url": "https://www.instagram.com/evlnlarisa/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Deg-i6YPJai/",
+      "gdrive_folder": "https://drive.google.com/open?id=1ZT-6EzbWwzae3uopQLv6RVvhzRPn_15U",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape%F0%9F%8D%B5/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape%F0%9F%8D%B5/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/Deg-i6YPJai.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/Deg-i6YPJai.mp4",
+        "report_url": "reports/IG_@evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape🍵.html",
+        "shots_count": 14,
+        "duration": "11.0s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@nadineklercq_DffR9U3IuGE_Starting_a_new_series_Let’s_Talk_🤍",
       "shortcode": "DffR9U3IuGE",
@@ -10238,7 +10326,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
