@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T07:24:21+07:00",
+  "generated_at": "2026-11-15T07:46:36+07:00",
   "total_scene_items": 458,
   "total_unique_ideas": 439,
   "total_active_ideas": 379,
@@ -4104,8 +4104,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
       "shortcode": "DeXjubJxklb",
-      "title_vi": "Học cách quay B-Roll chỉn chu tại bàn làm việc",
-      "quick_takeaway": "Video thực hành các góc máy B-Roll đa dạng từ cận cảnh đến toàn cảnh trong không gian làm việc ấm cúng.",
+      "title_vi": "11 góc máy chỉn chu quanh bàn làm việc cho người mới tự tập quay một mình",
+      "quick_takeaway": "Biến một góc bàn làm việc bình thường thành 11 khung hình có chiều sâu chỉ bằng cách tận dụng khe cửa phòng, chậu cây che mờ phía trước ống kính và ánh sáng cửa sổ kết hợp đèn bàn vàng ấm.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -4133,7 +4133,12 @@ var FEDU_IDEAS_DATABASE = {
         "học quay phim",
         "góc máy đẹp",
         "ánh sáng ấm",
-        "setup bàn làm việc"
+        "setup bàn làm việc",
+        "góc máy tại bàn",
+        "khung trong khung",
+        "tập quay chỉn chu",
+        "ánh sáng cửa sổ",
+        "tự quay một mình"
       ],
       "country": {
         "id": "us_eu",
@@ -4142,8 +4147,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Học viên biết cách tận dụng đồ vật quanh bàn làm việc để tạo ra những thước phim có chiều sâu và nghệ thuật.",
+      "purpose": "Học viên chỉ cần điện thoại và một chân máy là tự quay được ngay chuỗi cảnh làm việc chỉn chu tại nhà mà không cần nói trước ống kính hay bày biện phòng quay đắt tiền.",
       "tech_tags": [
+        "góc máy tại bàn",
+        "khung trong khung",
+        "tập quay chỉn chu",
+        "ánh sáng cửa sổ",
+        "tự quay một mình",
         "b-roll",
         "học quay phim",
         "góc máy đẹp",
@@ -4438,8 +4448,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mukgenie_DfmbzVhKMNW_미친_미박삼겹_땜에_을지로_다시_가야_됨_초불집",
       "shortcode": "DfmbzVhKMNW",
-      "title_vi": "Bí quyết quay B-Roll thịt nướng Hàn Quốc cực 'cháy'",
-      "quick_takeaway": "Video sử dụng các góc quay cực cận (Close-up) và hành động tương tác đồ ăn liên tục để tạo cảm giác thèm ăn mãnh liệt.",
+      "title_vi": "14 nhịp lắp ghép thịt ba chỉ nướng và cơm canh Hàn Quốc cuốn mắt trong 10 giây",
+      "quick_takeaway": "Dựng chuỗi 14 cảnh B-Roll (cảnh quay chi tiết món ăn) cắt thẳng khớp nhịp trống 0.67 giây/cảnh, liên tục xếp chồng thịt nướng, rưới sốt và nhấn ngập canh không có 1 giây chết.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -4466,7 +4476,10 @@ var FEDU_IDEAS_DATABASE = {
         "thịt nướng",
         "b-roll ẩm thực",
         "đồ ăn hàn quốc",
-        "kỹ thuật quay đồ ăn"
+        "kỹ thuật quay đồ ăn",
+        "thịt nướng Hàn Quốc",
+        "quay đồ ăn tại bàn",
+        "cắt theo nhịp nhạc"
       ],
       "country": {
         "id": "us_eu",
@@ -4475,12 +4488,15 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Học viên học được cách sắp xếp bố cục chồng tầng, kỹ thuật đổ sốt và múc đồ ăn sát máy ảnh để tạo hiệu ứng thị giác.",
+      "purpose": "Học viên cầm điện thoại quay ngay tại bàn quán ăn theo chuỗi hành động 3 bước: xếp món lên cơm - rưới hoặc nhấn sốt - xúc đưa sát ống kính rồi cắt khớp nhịp nhạc.",
       "tech_tags": [
+        "thịt nướng Hàn Quốc",
+        "quay đồ ăn tại bàn",
+        "cắt theo nhịp nhạc",
+        "Cận cảnh (CU: quay sát chi tiết)",
         "thịt nướng",
         "b-roll ẩm thực",
         "đồ ăn hàn quốc",
-        "Cận cảnh (CU: quay sát chi tiết)",
         "kỹ thuật quay đồ ăn",
         "Toàn cảnh (WS: lấy trọn không gian)",
         "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
@@ -9900,7 +9916,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -14557,7 +14573,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -16558,7 +16574,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -18114,8 +18130,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
