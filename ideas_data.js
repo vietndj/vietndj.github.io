@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-15T08:13:49+07:00",
+  "generated_at": "2026-11-15T08:21:42+07:00",
   "total_scene_items": 458,
   "total_unique_ideas": 439,
   "total_active_ideas": 379,
@@ -170,13 +170,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 9,
     "thuong-hieu": 47,
-    "thoi-trang": 30,
+    "thoi-trang": 29,
     "am-thuc": 35,
     "du-lich": 52,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 142,
+    "ky-thuat-quay": 143,
     "ugc": 8
   },
   "x_factors": [
@@ -1101,7 +1101,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Elliottsauvage",
       "profile_url": "https://www.instagram.com/elliottsauvage/",
       "video_count": 1,
-      "top_industry": "Thời trang",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_%40ericazol/shot_01_mid.webp",
       "video_ids": [
         "IG_@elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_@ericazol"
@@ -4671,8 +4671,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_@ericazol",
       "shortcode": "DfopErwpZT-",
-      "title_vi": "Bí kíp quay B-Roll đường phố chỉn chu như phim",
-      "quick_takeaway": "Video sử dụng ánh sáng ngược (Backlit) và các cú lia máy nhanh (Whip Pan) để tạo nên không khí sôi động của New York.",
+      "title_vi": "38 cảnh dạo phố ngược nắng sớm: Cách đan xen B-Roll (cảnh phụ) nhịp nhanh cực cuốn",
+      "quick_takeaway": "Điểm ăn tiền của trọn bộ 38 cảnh nằm ở việc tận dụng nắng sớm chiếu ngược tách viền tóc kết hợp đan xen nhịp bước đi của mẫu với các cảnh đệm đường phố dưới 0.8 giây mỗi cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -4683,12 +4683,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "thoi-trang",
-          "name": "Thời trang",
-          "en_name": "Fashion & Style",
-          "icon": "👔",
-          "badge_color": "pink",
-          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -4700,7 +4700,12 @@ var FEDU_IDEAS_DATABASE = {
         "ánh sáng ngược",
         "lifestyle",
         "quay phim điện thoại",
-        "cinematic"
+        "cinematic",
+        "quay cảnh phụ đường phố",
+        "Ánh sáng tự nhiên cửa sổ",
+        "cắt theo nhịp",
+        "Pan / Whip Pan (lia máy ngang / vẩy máy nhanh)",
+        "chân dung chỉn chu"
       ],
       "country": {
         "id": "us_eu",
@@ -4709,8 +4714,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Học viên biết cách tận dụng ánh sáng tự nhiên và chuyển động của đô thị để làm video lifestyle chuyên nghiệp.",
+      "purpose": "Học viên nắm ngay công thức quay dạo phố buổi sáng bằng điện thoại: chọn giờ nắng xiên ngược sáng, quay 3 cỡ cảnh tiến dần trên cùng một bước đi và chêm cảnh tàu xe, chim bay để nối nhịp.",
       "tech_tags": [
+        "quay cảnh phụ đường phố",
+        "Ánh sáng tự nhiên cửa sổ",
+        "cắt theo nhịp",
+        "Pan / Whip Pan (lia máy ngang / vẩy máy nhanh)",
+        "chân dung chỉn chu",
         "b-roll đường phố",
         "ánh sáng ngược",
         "lifestyle",
@@ -9956,7 +9966,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -16614,7 +16624,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -18170,7 +18180,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
