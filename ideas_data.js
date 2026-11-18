@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-18T15:39:48+07:00",
+  "generated_at": "2026-11-18T15:45:26+07:00",
   "total_scene_items": 476,
   "total_unique_ideas": 457,
   "total_active_ideas": 397,
@@ -3931,8 +3931,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bellaview_7_DfkgAeSsvVt_life_as_a_movie._🎬",
       "shortcode": "DfkgAeSsvVt",
-      "title_vi": "life as a movie. 🎬",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Cách quay 11 cảnh làm việc tại bàn chỉn chu có chiều sâu không cần lộ mặt nói",
+      "quick_takeaway": "Biến góc bàn làm việc bình thường thành chuỗi B-Roll (cảnh quay phụ đặc tả hành động) cuốn hút nhờ hai đèn bàn vàng ấm, tiền cảnh che mờ mép khung hình và hai pha nối chuyển động tay mượt mà.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3953,8 +3953,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "b-roll bàn làm việc",
+        "quay chỉn chu tại nhà",
+        "ánh sáng đèn vàng",
+        "chuyển cảnh gập laptop"
       ],
       "country": {
         "id": "us_eu",
@@ -3963,10 +3967,14 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @bellaview_7",
+      "purpose": "Học viên tự đặt một chiếc điện thoại trên chân máy để quay trọn quy trình làm việc tại bàn có mở đầu và kết thúc liền mạch mà không cần nói trước ống kính.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot"
+        "b-roll bàn làm việc",
+        "quay chỉn chu tại nhà",
+        "ánh sáng đèn vàng",
+        "chuyển cảnh gập laptop",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -11619,7 +11627,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -16276,7 +16284,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -18277,7 +18285,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -19833,7 +19841,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -21012,7 +21020,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
