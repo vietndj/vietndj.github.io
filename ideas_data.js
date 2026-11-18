@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-18T20:16:54+07:00",
-  "total_scene_items": 478,
-  "total_unique_ideas": 459,
-  "total_active_ideas": 399,
+  "generated_at": "2026-11-18T20:33:17+07:00",
+  "total_scene_items": 479,
+  "total_unique_ideas": 460,
+  "total_active_ideas": 400,
   "total_excluded_ideas": 60,
   "total_creators": 279,
   "shooting_styles": [
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 47,
     "storytelling": 43,
     "dien-anh": 209,
-    "chuyen-canh": 68,
+    "chuyen-canh": 69,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 36,
     "du-lich": 54,
     "cong-nghe": 26,
-    "kien-truc": 24,
+    "kien-truc": 25,
     "the-thao": 6,
     "ky-thuat-quay": 154,
     "ugc": 8
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 303,
+    "us_eu": 304,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -703,6 +703,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@jessbrrd",
+      "name": "Jessbrrd",
+      "profile_url": "https://www.instagram.com/jessbrrd/",
+      "video_count": 2,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace",
+        "IG_@jessbrrd_DfUkgfmgXsI_Home_is_where_I_love_being_me"
       ]
     },
     {
@@ -1333,17 +1345,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://media.fedu.vn/images/IG_%40hcooll_DeB8mRYvdRM_Video_by_hcooll/shot_01_mid.webp",
       "video_ids": [
         "IG_@hcooll_DeB8mRYvdRM_Video_by_hcooll"
-      ]
-    },
-    {
-      "handle": "@jessbrrd",
-      "name": "Jessbrrd",
-      "profile_url": "https://www.instagram.com/jessbrrd/",
-      "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40jessbrrd_DfUkgfmgXsI_Home_is_where_I_love_being_me/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@jessbrrd_DfUkgfmgXsI_Home_is_where_I_love_being_me"
       ]
     },
     {
@@ -3504,6 +3505,81 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace",
+      "shortcode": "Dfe6H2cgPHd",
+      "title_vi": "Home is where I feel most at peace",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jessbrrd",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@jessbrrd",
+        "name": "Jessbrrd",
+        "handle": "@jessbrrd",
+        "profile_url": "https://www.instagram.com/jessbrrd/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dfe6H2cgPHd/",
+      "gdrive_folder": "https://drive.google.com/open?id=1KMo43ZSqFQ6B4pqApAscW6H6HOFa2aDn",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/b330aQg6SR4",
+        "video_url_original": "https://media.fedu.vn/videos/b330aQg6SR4",
+        "report_url": "reports/IG_@jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace.html",
+        "shots_count": 22,
+        "duration": "21.8s",
+        "youtube_id": "b330aQg6SR4",
+        "youtube_embed": "https://www.youtube.com/embed/b330aQg6SR4",
+        "youtube_url": "https://youtu.be/b330aQg6SR4"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@roior.2_DdZcbswIvm6_I_don’t_want_to_forget",
       "shortcode": "DdZcbswIvm6",
@@ -11809,7 +11885,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -20023,8 +20099,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
