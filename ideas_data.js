@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-18T20:09:08+07:00",
-  "total_scene_items": 477,
-  "total_unique_ideas": 458,
-  "total_active_ideas": 398,
+  "generated_at": "2026-11-18T20:16:54+07:00",
+  "total_scene_items": 478,
+  "total_unique_ideas": 459,
+  "total_active_ideas": 399,
   "total_excluded_ideas": 60,
-  "total_creators": 278,
+  "total_creators": 279,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -77,10 +77,10 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "shooting_style_stats": {
     "walk-and-talk": 11,
-    "voice-over": 18,
-    "talking-head": 48,
+    "voice-over": 19,
+    "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 208,
+    "dien-anh": 209,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -169,14 +169,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 9,
-    "thuong-hieu": 51,
+    "thuong-hieu": 53,
     "thoi-trang": 29,
     "am-thuc": 36,
     "du-lich": 54,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 155,
+    "ky-thuat-quay": 154,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 302,
+    "us_eu": 303,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -1006,11 +1006,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@roior.2",
+      "name": "Roior 2",
+      "profile_url": "https://www.instagram.com/roior.2/",
+      "video_count": 1,
+      "top_industry": "Xây kênh",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40roior.2_DdZcbswIvm6_I_don%E2%80%99t_want_to_forget/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@roior.2_DdZcbswIvm6_I_don’t_want_to_forget"
+      ]
+    },
+    {
       "handle": "@dzanxfss",
       "name": "Dzanxfss",
       "profile_url": "https://www.instagram.com/dzanxfss/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40dzanxfss_De16GmzS2zE_%D0%A5%D0%BE%D1%87%D0%B5%D1%88%D1%8C_%D0%BD%D0%B0%D1%83%D1%87%D0%B8%D1%82%D1%8C%D1%81%D1%8F_%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C_%D1%82%D0%B0%D0%BA%D0%B8%D0%B5_%D0%B6%D0%B5_%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D1%84%D0%B8%D0%BB%D1%8C/shot_01_mid.webp",
       "video_ids": [
         "IG_@dzanxfss_De16GmzS2zE_Хочешь_научиться_создавать_такие_же_мультфиль"
@@ -3494,33 +3505,37 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@dzanxfss_De16GmzS2zE_Хочешь_научиться_создавать_такие_же_мультфиль",
-      "shortcode": "De16GmzS2zE",
-      "title_vi": "Хочешь научиться создавать такие же мультфиль",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "id": "IG_@roior.2_DdZcbswIvm6_I_don’t_want_to_forget",
+      "shortcode": "DdZcbswIvm6",
+      "title_vi": "4 Cảnh Cận Cảnh Sạc Thiết Bị Bẻ Lái Sang Thông Điệp Tự Nghỉ Ngơi",
+      "quick_takeaway": "Dùng 3 cảnh cắm sạc thiết bị dồn dập kết hợp câu chữ tách nhịp giữa màn hình để bẻ lái sang cảnh đọc sách nghỉ ngơi đầy lắng đọng ở cuối.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "chỉn chu",
+        "kể chuyện bằng chữ",
+        "cân bằng cuộc sống",
+        "quay tại bàn"
       ],
       "country": {
         "id": "us_eu",
@@ -3529,11 +3544,94 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @dzanxfss",
+      "purpose": "Học cách ghép 4 cảnh B-Roll (cảnh quay đặc tả hành động) ngay tại bàn làm việc và giường ngủ cùng một câu chữ chia nhỏ để truyền tải quan điểm sống mà không cần lộ mặt nói thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "chỉn chu",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "kể chuyện bằng chữ",
+        "cân bằng cuộc sống",
+        "quay tại bàn",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@roior.2",
+        "name": "Roior 2",
+        "handle": "@roior.2",
+        "profile_url": "https://www.instagram.com/roior.2/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdZcbswIvm6/",
+      "gdrive_folder": "https://drive.google.com/open?id=1DZEiBhUaFGO5RJXBnKMMNWUAwtb0Pin8",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40roior.2_DdZcbswIvm6_I_don%E2%80%99t_want_to_forget/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40roior.2_DdZcbswIvm6_I_don%E2%80%99t_want_to_forget/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/7WKLhmaOGDw",
+        "video_url_original": "https://media.fedu.vn/videos/7WKLhmaOGDw",
+        "report_url": "reports/IG_@roior.2_DdZcbswIvm6_I_don’t_want_to_forget.html",
+        "shots_count": 4,
+        "duration": "11.8s",
+        "youtube_id": "7WKLhmaOGDw",
+        "youtube_embed": "https://www.youtube.com/embed/7WKLhmaOGDw",
+        "youtube_url": "https://youtu.be/7WKLhmaOGDw"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@dzanxfss_De16GmzS2zE_Хочешь_научиться_создавать_такие_же_мультфиль",
+      "shortcode": "De16GmzS2zE",
+      "title_vi": "Cách quay 3 cảnh làm việc buổi tối tại bàn ghép lời lồng tiếng chỉn chu",
+      "quick_takeaway": "Video chỉ dùng 3 cảnh B-Roll (cảnh quay phụ minh họa hành động) tại bàn làm việc buổi tối nhưng giữ chân người xem nhờ độ tương phản sáng ấm lạnh chỉn chu, kết hợp Voice-over (giọng đọc lồng tiếng) và phụ đề nhảy từng chữ ngay khoảng tối chính giữa khung hình.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "voice-over",
+        "name": "Lồng Tiếng",
+        "en_name": "Voice Over",
+        "icon": "🎙️",
+        "badge_color": "purple"
+      },
+      "industries": [
+        {
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "lồng tiếng truyền động lực",
+        "quay tại bàn buổi tối",
+        "thương hiệu cá nhân"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Chủ shop và người xây kênh cá nhân học được cách tận dụng ánh sáng màn hình laptop đối lập với đèn bàn vàng để quay video tâm sự nghề hoặc chia sẻ kỷ luật làm việc ngay tại nhà bằng một chiếc điện thoại gắn chân máy.",
+      "tech_tags": [
+        "lồng tiếng truyền động lực",
+        "quay tại bàn buổi tối",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "thương hiệu cá nhân",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -18369,7 +18467,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -19925,8 +20023,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -21104,7 +21202,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
