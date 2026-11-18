@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-18T06:57:13+07:00",
-  "total_scene_items": 472,
-  "total_unique_ideas": 453,
-  "total_active_ideas": 393,
+  "generated_at": "2026-11-18T07:07:14+07:00",
+  "total_scene_items": 473,
+  "total_unique_ideas": 454,
+  "total_active_ideas": 394,
   "total_excluded_ideas": 60,
   "total_creators": 274,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 17,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 205,
+    "dien-anh": 206,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 152,
+    "ky-thuat-quay": 153,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 297,
+    "us_eu": 298,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -503,6 +503,20 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@worldwithreece",
+      "name": "Worldwithreece",
+      "profile_url": "https://www.instagram.com/worldwithreece/",
+      "video_count": 4,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02",
+        "IG_@worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life",
+        "IG_@worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life",
+        "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life"
+      ]
+    },
+    {
       "handle": "@megantanhweewen",
       "name": "Megantanhweewen",
       "profile_url": "https://www.instagram.com/megantanhweewen/",
@@ -611,19 +625,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@neolumo.uralsk_DfZnR-dMeSl_💉_Ботокстан_қорқудың_қажеті_жоқ",
         "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
         "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
-      ]
-    },
-    {
-      "handle": "@worldwithreece",
-      "name": "Worldwithreece",
-      "profile_url": "https://www.instagram.com/worldwithreece/",
-      "video_count": 3,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life",
-        "IG_@worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life",
-        "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life"
       ]
     },
     {
@@ -3449,10 +3450,108 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02",
+      "shortcode": "Df0GeOJiA0W",
+      "title_vi": "Nâng cấp Vlog với 9 góc máy B-Roll (Cảnh phụ) cực chill",
+      "quick_takeaway": "Video trình diễn các góc quay đặc tả (Detail shots) tinh tế về thói quen buổi sáng như uống cà phê và đọc sách.",
+      "key_tech": "Góc máy • B-Roll Chỉn Chu • Góc Máy Đời Thường • Góc Nhìn POV • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Góc máy",
+        "B-Roll Chỉn Chu",
+        "Góc Máy Đời Thường",
+        "POV (góc nhìn mắt mình)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "cảnh chi tiết",
+        "góc cận",
+        "ánh sáng cửa sổ",
+        "quay tại bàn",
+        "b-roll cà phê",
+        "b-roll",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "ánh sáng tự nhiên",
+        "cà phê",
+        "đọc sách"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Giúp học viên biết cách sắp xếp bố cục và tận dụng ánh sáng cửa sổ để tạo ra những thước phim chỉn chu.",
+      "tech_tags": [
+        "b-roll",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "ánh sáng tự nhiên",
+        "cà phê",
+        "đọc sách",
+        "cảnh chi tiết",
+        "góc cận",
+        "ánh sáng cửa sổ",
+        "quay tại bàn",
+        "b-roll cà phê",
+        "Góc máy",
+        "B-Roll Chỉn Chu",
+        "Góc Máy Đời Thường",
+        "POV (góc nhìn mắt mình)",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Du lịch.",
+      "creator": {
+        "raw": "@worldwithreece",
+        "name": "Worldwithreece",
+        "handle": "@worldwithreece",
+        "profile_url": "https://www.instagram.com/worldwithreece/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Df0GeOJiA0W/",
+      "gdrive_folder": "https://drive.google.com/open?id=1mQA8-EGS_VICjrnac2540zgOb0tD_8OE",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/gIFofjlk2B4",
+        "video_url_original": "https://media.fedu.vn/videos/gIFofjlk2B4",
+        "report_url": "reports/IG_@worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02.html",
+        "shots_count": 9,
+        "duration": "9.9s",
+        "youtube_id": "gIFofjlk2B4",
+        "youtube_embed": "https://www.youtube.com/embed/gIFofjlk2B4",
+        "youtube_url": "https://youtu.be/gIFofjlk2B4"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@imustafakucuk_Dd2DoW7u55z_Can’t_sleep",
       "shortcode": "Dd2DoW7u55z",
-      "title_vi": "8 Cảnh B-Roll (Cảnh Phụ) Dựng Phim Đêm Khuya Khép Vòng Lặp Mượt Tại Bàn",
-      "quick_takeaway": "Chuỗi 8 cảnh quay chỉn chu tại bàn không lời thoại dùng tương phản sáng tối từ màn hình và đèn cầu vàng, mở đầu bằng mở nắp máy và kết thúc bằng gập nắp máy tạo Seamless Loop (vòng lặp khép kín nối mượt về đầu).",
+      "title_vi": "Cách quay B-Roll kể chuyện làm việc đêm cực cuốn",
+      "quick_takeaway": "Video sử dụng các góc quay cận cảnh (Close-up) và ánh sáng tương phản để kể chuyện làm việc muộn.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3480,7 +3579,12 @@ var FEDU_IDEAS_DATABASE = {
         "dựng phim đêm",
         "ánh sáng tối",
         "vòng lặp mượt",
-        "góc máy cận"
+        "góc máy cận",
+        "dựng phim",
+        "b-roll",
+        "ánh sáng",
+        "làm việc đêm",
+        "premiere pro"
       ],
       "country": {
         "id": "us_eu",
@@ -3489,8 +3593,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Học viên áp dụng ngay công thức 8 góc máy quay ca làm việc đêm tại bàn chỉ với 1 đèn vàng nhỏ, 2 chiếc điện thoại và mẹo mở - gập nắp laptop cùng một góc máy để giữ người xem xem lại nhiều lần.",
+      "purpose": "Học viên biết cách sắp xếp các góc máy B-roll quanh bàn làm việc để tạo không khí chuyên nghiệp.",
       "tech_tags": [
+        "dựng phim",
+        "b-roll",
+        "ánh sáng",
+        "làm việc đêm",
+        "premiere pro",
         "quay tại bàn",
         "dựng phim đêm",
         "ánh sáng tối",
@@ -15889,7 +15998,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -17890,7 +17999,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -19447,7 +19556,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
