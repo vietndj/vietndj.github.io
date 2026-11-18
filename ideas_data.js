@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-18T07:07:14+07:00",
-  "total_scene_items": 473,
-  "total_unique_ideas": 454,
-  "total_active_ideas": 394,
+  "generated_at": "2026-11-18T07:20:20+07:00",
+  "total_scene_items": 474,
+  "total_unique_ideas": 455,
+  "total_active_ideas": 395,
   "total_excluded_ideas": 60,
-  "total_creators": 274,
+  "total_creators": 275,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 17,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 206,
+    "dien-anh": 207,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -172,7 +172,7 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 50,
     "thoi-trang": 29,
     "am-thuc": 36,
-    "du-lich": 53,
+    "du-lich": 54,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 298,
+    "us_eu": 299,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -1003,6 +1003,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@chirrr",
+      "name": "Chirrr",
+      "profile_url": "https://www.instagram.com/chirrr/",
+      "video_count": 1,
+      "top_industry": "Du lịch",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40chirrr_Df1PK8YDU1Z_Carousel_Analysis/slide_01_mid.webp",
+      "video_ids": [
+        "IG_@chirrr_Df1PK8YDU1Z_Carousel_Analysis"
       ]
     },
     {
@@ -3450,6 +3461,87 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@chirrr_Df1PK8YDU1Z_Carousel_Analysis",
+      "shortcode": "Df1PK8YDU1Z_Carousel_Analysis",
+      "title_vi": "Bộ 4 video du lịch Đài Loan chỉn chu: Giữ mắt nhờ tương phản và góc máy",
+      "quick_takeaway": "Bộ 4 thước phim ngắn khai thác trọn vẹn Đài Loan qua 4 lát cắt từ dạo hẻm một mình, đi phố cùng người thân, lặn biển đến trò chuyện bên hồ với bố cục tương phản giàu chiều sâu.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "du lịch Đài Loan",
+        "quay chỉn chu",
+        "góc máy thấp",
+        "kể chuyện hành trình"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Học viên học được cách tận dụng mái hiên tối làm khung tiền cảnh, quay nhòe chuyển động tạo điểm dừng mắt 3 giây đầu và đan xen thoại đời thực với Voice-Over (lồng tiếng rời) cho video du lịch.",
+      "tech_tags": [
+        "du lịch Đài Loan",
+        "quay chỉn chu",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "góc máy thấp",
+        "kể chuyện hành trình",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@chirrr",
+        "name": "Chirrr",
+        "handle": "@chirrr",
+        "profile_url": "https://www.instagram.com/chirrr/"
+      },
+      "ig_url": "https://www.instagram.com/chirrr/",
+      "gdrive_folder": "https://drive.google.com/open?id=1SZ9oBx19_5u8iGdAgARrsr1Yq0E4XDBS",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40chirrr_Df1PK8YDU1Z_Carousel_Analysis/slide_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40chirrr_Df1PK8YDU1Z_Carousel_Analysis/slide_03_mid.webp",
+        "video_url": "https://drive.google.com/uc?id=1OdaG7XZYuiDZHiQBJFjv_2UGX72heP3c&export=download",
+        "video_url_original": "https://drive.google.com/uc?id=1OdaG7XZYuiDZHiQBJFjv_2UGX72heP3c&export=download",
+        "report_url": "reports/IG_@chirrr_Df1PK8YDU1Z_Carousel_Analysis.html",
+        "shots_count": 4,
+        "duration": "200.5s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02",
       "shortcode": "Df0GeOJiA0W",
       "title_vi": "Nâng cấp Vlog với 9 góc máy B-Roll (Cảnh phụ) cực chill",
@@ -3488,7 +3580,8 @@ var FEDU_IDEAS_DATABASE = {
         "Cận cảnh (CU: quay sát chi tiết)",
         "ánh sáng tự nhiên",
         "cà phê",
-        "đọc sách"
+        "đọc sách",
+        "test"
       ],
       "country": {
         "id": "us_eu",
@@ -3499,6 +3592,7 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Giúp học viên biết cách sắp xếp bố cục và tận dụng ánh sáng cửa sổ để tạo ra những thước phim chỉn chu.",
       "tech_tags": [
+        "test",
         "b-roll",
         "Cận cảnh (CU: quay sát chi tiết)",
         "ánh sáng tự nhiên",
@@ -15998,7 +16092,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -17999,7 +18093,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -20734,7 +20828,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
