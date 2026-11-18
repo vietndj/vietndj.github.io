@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-18T07:37:32+07:00",
+  "generated_at": "2026-11-18T07:42:29+07:00",
   "total_scene_items": 476,
   "total_unique_ideas": 457,
   "total_active_ideas": 397,
@@ -169,14 +169,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 9,
-    "thuong-hieu": 50,
+    "thuong-hieu": 51,
     "thoi-trang": 29,
     "am-thuc": 36,
     "du-lich": 54,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 155,
+    "ky-thuat-quay": 154,
     "ugc": 8
   },
   "x_factors": [
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -1010,7 +1010,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Thequietlifepages",
       "profile_url": "https://www.instagram.com/thequietlifepages/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40thequietlifepages_DfXogjqINs4_Some_days_I%E2%80%99m_motivated._Some_days_I%E2%80%99m_tired%2C/shot_01_mid.webp",
       "video_ids": [
         "IG_@thequietlifepages_DfXogjqINs4_Some_days_I’m_motivated._Some_days_I’m_tired,"
@@ -3485,8 +3485,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@thequietlifepages_DfXogjqINs4_Some_days_I’m_motivated._Some_days_I’m_tired,",
       "shortcode": "DfXogjqINs4",
-      "title_vi": "Some days I’m motivated. Some days I’m tired,",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "11 Cảnh Quay Tại Bàn Không Lộ Mặt: Biến Thao Tác Mở Laptop Thành Thông Điệp Kỷ Luật",
+      "quick_takeaway": "Ghép 10 cú Match Cut (cắt nối đồng dạng) mở nắp laptop qua nhiều ngày với 1 cảnh góc cao gõ phím trên nền Voice-over (giọng đọc lồng tiếng) để truyền tải tinh thần làm việc bất chấp cảm xúc.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "voice-over",
@@ -3497,19 +3497,24 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "kỷ luật bản thân",
+        "cắt nối đồng dạng",
+        "quay tại bàn",
+        "không lộ mặt",
+        "lồng tiếng động lực"
       ],
       "country": {
         "id": "us_eu",
@@ -3518,11 +3523,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @thequietlifepages",
+      "purpose": "Học viên ngại lộ mặt hoặc ngại nói trước ống kính có thể quay tích lũy mỗi ngày 1 giây mở máy tính tại bàn rồi ghép theo nhịp âm thanh có sẵn để xây kênh thương hiệu cá nhân chỉn chu.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "kỷ luật bản thân",
+        "cắt nối đồng dạng",
+        "quay tại bàn",
+        "không lộ mặt",
+        "lồng tiếng động lực",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3722,8 +3732,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02",
       "shortcode": "Df0GeOJiA0W",
-      "title_vi": "Nâng cấp Vlog với 9 góc máy B-Roll (Cảnh phụ) cực chill",
-      "quick_takeaway": "Video trình diễn các góc quay đặc tả (Detail shots) tinh tế về thói quen buổi sáng như uống cà phê và đọc sách.",
+      "title_vi": "Công thức quay 9 nhịp cận cảnh chi tiết đón nắng cửa sổ chỉn chu ngay tại bàn",
+      "quick_takeaway": "Biến những vật dụng quen thuộc trên bàn như ly cà phê, cuốn sách và ánh mắt thành chuỗi B-Roll (cảnh quay phụ minh họa) cuốn hút nhờ đặt máy sát vật thể kết hợp nắng xiên tương phản mạnh.",
       "key_tech": "Góc máy • B-Roll Chỉn Chu • Góc Máy Đời Thường • Góc Nhìn POV • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -3759,7 +3769,10 @@ var FEDU_IDEAS_DATABASE = {
         "ánh sáng tự nhiên",
         "cà phê",
         "đọc sách",
-        "test"
+        "test",
+        "cảnh cận chi tiết",
+        "b-roll đời thường",
+        "góc máy chỉn chu"
       ],
       "country": {
         "id": "us_eu",
@@ -3768,8 +3781,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Giúp học viên biết cách sắp xếp bố cục và tận dụng ánh sáng cửa sổ để tạo ra những thước phim chỉn chu.",
+      "purpose": "Học viên biết cách tận dụng nắng cửa sổ và khóa nét điện thoại ở cự ly gần để tự quay bộ cảnh cận chi tiết chuyên nghiệp ngay trong phòng mà không cần đèn hay đạo cụ đắt tiền.",
       "tech_tags": [
+        "cảnh cận chi tiết",
+        "ánh sáng cửa sổ",
+        "quay tại bàn",
+        "b-roll đời thường",
+        "góc máy chỉn chu",
         "test",
         "b-roll",
         "Cận cảnh (CU: quay sát chi tiết)",
@@ -3778,8 +3796,6 @@ var FEDU_IDEAS_DATABASE = {
         "đọc sách",
         "cảnh chi tiết",
         "góc cận",
-        "ánh sáng cửa sổ",
-        "quay tại bàn",
         "b-roll cà phê",
         "Góc máy",
         "B-Roll Chỉn Chu",
@@ -11613,7 +11629,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -18271,7 +18287,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
