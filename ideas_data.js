@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-19T18:50:20+07:00",
+  "generated_at": "2026-11-19T18:53:01+07:00",
   "total_scene_items": 485,
   "total_unique_ideas": 466,
   "total_active_ideas": 406,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -4644,8 +4644,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@imustafakucuk_Dd2DoW7u55z_Can’t_sleep",
       "shortcode": "Dd2DoW7u55z",
-      "title_vi": "Cách quay B-Roll kể chuyện làm việc đêm cực cuốn",
-      "quick_takeaway": "Video sử dụng các góc quay cận cảnh (Close-up) và ánh sáng tương phản để kể chuyện làm việc muộn.",
+      "title_vi": "8 cảnh B-Roll (cảnh quay phụ) bàn làm việc đêm khuya chỉn chu nối vòng lặp mượt",
+      "quick_takeaway": "Kể trọn tâm trạng thức khuya làm việc lúc 00:01 không cần lời thoại nhờ 8 góc cận cảnh ánh sáng ấm áp và thủ thuật mở - đóng nắp laptop tạo vòng lặp vô tận.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -4678,7 +4678,11 @@ var FEDU_IDEAS_DATABASE = {
         "b-roll",
         "ánh sáng",
         "làm việc đêm",
-        "premiere pro"
+        "premiere pro",
+        "b-roll bàn làm việc",
+        "quay thiếu sáng",
+        "ánh sáng đèn vàng",
+        "vòng lặp video"
       ],
       "country": {
         "id": "us_eu",
@@ -4687,15 +4691,19 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Học viên biết cách sắp xếp các góc máy B-roll quanh bàn làm việc để tạo không khí chuyên nghiệp.",
+      "purpose": "Học viên áp dụng ngay cách tắt đèn trần, dùng 1 đèn ngủ vàng ấm kết hợp ánh sáng màn hình để tự quay chuỗi cảnh làm việc tại bàn chỉn chu bằng điện thoại.",
       "tech_tags": [
+        "b-roll bàn làm việc",
+        "quay thiếu sáng",
+        "dựng phim đêm",
+        "ánh sáng đèn vàng",
+        "vòng lặp video",
         "dựng phim",
         "b-roll",
         "ánh sáng",
         "làm việc đêm",
         "premiere pro",
         "quay tại bàn",
-        "dựng phim đêm",
         "ánh sáng tối",
         "vòng lặp mượt",
         "góc máy cận",
@@ -12441,7 +12449,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -20655,7 +20663,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -21834,7 +21842,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
