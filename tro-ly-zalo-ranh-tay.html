@@ -35,21 +35,31 @@
   <style>
     /* ===================================================
        TYPOGRAPHY SYSTEM (INTEGRAL REGULAR + POPPINS + ACTA)
-       - Tiêu đề ngắn (<= 8 từ): SVN-Integral CF Regular (400)
+       - Tiêu đề ngắn (<= 8 từ): Archivo Regular (400)
        - Tiêu đề dài (> 8 từ): SVN-Poppins SemiBold (600) / Bold (700)
        - Thân bài & Đọc: SVN-Poppins (400/500/600)
-       - Trích dẫn & Hook: SVN-Acta / Playfair Display (Italic)
+       - Trích dẫn & Hook: FD Newsreader / Playfair Display (Italic)
        - Mã code / Timestamp: JetBrains Mono
        =================================================== */
-    @font-face {
-      font-family: "SVN-Integral";
-      src: url("./fonts/SVN-IntegralCF-Regular.ttf") format("truetype"),
-           url("./assets/fonts/SVN-IntegralCF-Regular.ttf") format("truetype"),
-           local("SVN-Integral CF Regular"), local("SVN-IntegralCF-Regular");
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
+    /* SIL Open Font License 1.1 Webfonts */
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-ExtraBold.woff2') format('woff2'); font-weight: 800 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Archivo'; src: url('https://font.fedu.vn/fonts/Archivo-Variable.woff2') format('woff2'); font-weight: 100 900; font-stretch: 115%; font-style: normal; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('https://font.fedu.vn/fonts/JetBrainsMono-Variable.woff2') format('woff2'); font-weight: 100 800; font-style: normal; font-display: swap; }
+@font-face {
       font-family: "SVN-Poppins";
       src: url("./assets/fonts/SVN-Poppins-Regular.ttf") format("truetype"),
            local("SVN-Poppins-Regular"), local("SVN-Poppins");
@@ -77,18 +87,10 @@
       font-weight: 700;
       font-style: normal;
     }
-    @font-face {
-      font-family: "SVN-Acta";
-      src: url("./fonts/SVN-Acta-BookItalic.ttf") format("truetype"),
-           local("SVN-Acta-BookItalic"), local("SVN-Acta");
-      font-weight: 400;
-      font-style: italic;
-    }
-
     :root {
-      --font-integral: "SVN-Integral", sans-serif;
+      --font-integral: "Archivo", sans-serif;
       --font-poppins: "SVN-Poppins", "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-acta: "SVN-Acta", "Playfair Display", Georgia, serif;
+      --font-acta: "FD Newsreader", "Playfair Display", Georgia, serif;
       --font-mono: "JetBrains Mono", monospace;
     }
 

@@ -12,11 +12,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-@font-face { font-family: 'FD Aeonik Extended'; src: url('https://fedu.vn/k/fonts/FDAeonikExtended-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-@font-face { font-family: 'FD Aeonik'; src: url('https://fedu.vn/k/fonts/FDAeonikExtended-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'FD Aeonik'; src: url('https://fedu.vn/k/fonts/FDAeonikRegular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Tiempos Text'; src: url('https://fedu.vn/k/fonts/FDTiemposText-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-
+/* SIL Open Font License 1.1 Webfonts */
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-ExtraBold.woff2') format('woff2'); font-weight: 800 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Archivo'; src: url('https://font.fedu.vn/fonts/Archivo-Variable.woff2') format('woff2'); font-weight: 100 900; font-stretch: 115%; font-style: normal; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('https://font.fedu.vn/fonts/JetBrainsMono-Variable.woff2') format('woff2'); font-weight: 100 800; font-style: normal; font-display: swap; }
 :root {
     --bg: #ffffff;
     --bg-tint: #f8fafc;
@@ -25,16 +38,16 @@
     --accent: #0f62fe;
     --border: #e2e8f0;
 }
-body { margin: 0; padding: 0; font-family: 'Tiempos Text', serif; color: var(--text-body); background: var(--bg); line-height: 1.82; font-size: 17px; }
-.nav-bar { height: 60px; border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 24px; font-family: 'FD Aeonik', sans-serif; font-size: 13px; font-weight: 600; background: var(--bg-tint); }
+body { margin: 0; padding: 0; font-family: 'FD Newsreader', serif; color: var(--text-body); background: var(--bg); line-height: 1.82; font-size: 17px; }
+.nav-bar { height: 60px; border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 24px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 13px; font-weight: 600; background: var(--bg-tint); }
 .nav-bar a { color: var(--text-main); text-decoration: none; }
 .container { max-width: 720px; margin: 60px auto; padding: 0 24px 120px; }
 .badge { display: inline-block; padding: 4px 10px; background: rgba(15,98,254,0.1); color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; border-radius: 99px; margin-bottom: 16px; letter-spacing: 0.05em; }
-h1 { font-family: 'FD Aeonik Extended', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.01em; margin: 0 0 32px 0; color: var(--text-main); text-wrap: balance; }
+h1 { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.01em; margin: 0 0 32px 0; color: var(--text-main); text-wrap: balance; }
 .content p { margin-bottom: 24px; }
 .content ul { margin-bottom: 24px; padding-left: 20px; }
 .content li { margin-bottom: 12px; }
-.content b, .content strong { font-family: 'FD Aeonik', sans-serif; font-weight: 600; color: var(--text-main); }
+.content b, .content strong { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 600; color: var(--text-main); }
 .content i { font-style: italic; color: #475569; }
 </style>
 </head>

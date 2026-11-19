@@ -363,7 +363,7 @@ const ShowcaseVideoCanvas: React.FC<{
           />
           <span
             style={{
-              fontFamily: "'SVN-Aeonik', sans-serif",
+              fontFamily: "'Be Vietnam Pro', sans-serif",
               fontSize: isPortraitLayout ? 22 : 20,
               fontWeight: 700,
               letterSpacing: '0.08em',
@@ -586,7 +586,7 @@ const SuiPlayStudioDevice3D: React.FC<{
             >
               <div
                 style={{
-                  fontFamily: "'SVN-Aeonik', sans-serif",
+                  fontFamily: "'Be Vietnam Pro', sans-serif",
                   fontSize: isPortraitLayout ? 54 : 68,
                   fontWeight: 700,
                   color: '#FFFFFF',
@@ -603,7 +603,7 @@ const SuiPlayStudioDevice3D: React.FC<{
               {subText ? (
                 <div
                   style={{
-                    fontFamily: "'SVN-Aeonik', sans-serif",
+                    fontFamily: "'Be Vietnam Pro', sans-serif",
                     fontSize: isPortraitLayout ? 22 : 25,
                     fontWeight: 500,
                     color: '#A5B4FC',
@@ -632,7 +632,7 @@ const SuiPlayStudioDevice3D: React.FC<{
             >
               <span
                 style={{
-                  fontFamily: "'SVN-Aeonik', sans-serif",
+                  fontFamily: "'Be Vietnam Pro', sans-serif",
                   fontSize: 18,
                   fontWeight: 700,
                   letterSpacing: '0.08em',
@@ -691,7 +691,7 @@ const SuiPlayStudioDevice3D: React.FC<{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    fontFamily: "'SVN-Aeonik', sans-serif",
+                    fontFamily: "'Be Vietnam Pro', sans-serif",
                     fontSize: 12,
                     fontWeight: 700,
                     color: '#FFFFFF',
@@ -885,7 +885,7 @@ export const VietSuiPlayLaunch20s: React.FC<VietSuiPlayLaunchProps> = (rawProps)
       style={{
         backgroundColor: props.bgDeep,
         overflow: 'hidden',
-        fontFamily: "'SVN-Aeonik', -apple-system, BlinkMacSystemFont, sans-serif",
+        fontFamily: "'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif",
       }}
     >
       {/* Bản nhạc gốc giữ nguyên 100% */}
@@ -1006,7 +1006,7 @@ export const VietSuiPlayLaunch20s: React.FC<VietSuiPlayLaunchProps> = (rawProps)
                 y="112"
                 textAnchor={isPortrait ? 'middle' : 'start'}
                 style={{
-                  fontFamily: "'SVN-Aeonik', sans-serif",
+                  fontFamily: "'Be Vietnam Pro', sans-serif",
                   fontSize: isPortrait ? 96 : 112,
                   fontWeight: 700,
                   fill: 'rgba(255,255,255,0.04)',

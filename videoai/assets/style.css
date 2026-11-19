@@ -2,16 +2,24 @@
    TRUNG TÂM LOGIC XÂY KÊNH — Design system (INKDOC)
    Monochrome slate · Tiempos (đọc) · Aeonik (tiêu đề) · Zero-animation
    ========================================================= */
-@font-face{font-family:'FD Aeonik Extended';src:url('fonts/FDAeonikExtended-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
-@font-face{font-family:'FD Aeonik Extended';src:url('fonts/FDAeonikExtended-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
-@font-face{font-family:'FD Aeonik';src:url('fonts/FDAeonik-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
-@font-face{font-family:'FD Aeonik';src:url('fonts/FDAeonik-Medium.ttf') format('truetype');font-weight:500 600;font-display:swap}
-@font-face{font-family:'FD Aeonik';src:url('fonts/FDAeonik-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
-@font-face{font-family:'Tiempos Text';src:url('fonts/FDTiemposText-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'Tiempos Text';src:url('fonts/FDTiemposText-RegularItalic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:'Tiempos Text';src:url('fonts/FDTiemposText-Semibold.woff2') format('woff2');font-weight:600;font-display:swap}
-@font-face{font-family:'Tiempos Text';src:url('fonts/FDTiemposText-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
-
+/* SIL Open Font License 1.1 Webfonts */
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-ExtraBold.woff2') format('woff2'); font-weight: 800 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Archivo'; src: url('https://font.fedu.vn/fonts/Archivo-Variable.woff2') format('woff2'); font-weight: 100 900; font-stretch: 115%; font-style: normal; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('https://font.fedu.vn/fonts/JetBrainsMono-Variable.woff2') format('woff2'); font-weight: 100 800; font-style: normal; font-display: swap; }
 :root{
   --ink:#0f172a; --ink2:#1e293b; --ink3:#334155; --mute:#64748b; --mute2:#94a3b8;
   --line:#e2e8f0; --line2:#cbd5e1; --bg:#ffffff; --bg2:#f8fafc; --bg3:#f1f5f9;
@@ -19,9 +27,9 @@
   /* màu theo chặng */
   --c-tuduy:#7c3aed; --c-batdau:#0891b2; --c-logic:#2563eb; --c-niemtin:#db2777;
   --c-dinhdang:#ea580c; --c-kynang:#16a34a; --c-thuchanh:#ca8a04; --c-tainguyen:#0f766e; --c-dulieu:#9333ea; --c-case:#0284c7;
-  --serif:'Tiempos Text',Georgia,'Times New Roman',serif;
-  --sans:'FD Aeonik',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;
-  --display:'FD Aeonik Extended','FD Aeonik',-apple-system,sans-serif;
+  --serif:'FD Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;
+  --display:'Archivo','Be Vietnam Pro',-apple-system,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   --side:290px; --top:56px;
 }
@@ -248,7 +256,7 @@ table.t td:first-child{font-weight:600;color:var(--ink)}
 .side .mh b{display:block;font:700 15px/1.25 var(--display);text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
 .side .mh p{margin:6px 0 0;font:400 12.5px/1.4 var(--sans);color:var(--mute)}
 .side a.pg .t{line-height:1.35}
-.content h1.title{font-family:'FD Aeonik Extended','FD Aeonik',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(26px,3.2vw,38px);line-height:1.1;text-wrap:balance;margin:0 0 22px;color:var(--ink)}
+.content h1.title{font-family:'Archivo','Be Vietnam Pro',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(26px,3.2vw,38px);line-height:1.1;text-wrap:balance;margin:0 0 22px;color:var(--ink)}
 .content .hero{padding:20px 24px;margin:0 0 28px}
 .content .hero>*:last-child{margin-bottom:0}
 .rail .otp a{display:block;text-decoration:none;color:var(--mute);padding:5px 0 5px 12px;border-left:2px solid var(--line);font:500 13px/1.4 var(--sans)}

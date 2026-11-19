@@ -17,23 +17,29 @@
   <style>
     /* ===================================================
        STRICT TYPOGRAPHY STACK (3 FONTS EXCLUSIVE)
-       1. SVN-Integral CF (Heading, Display, Badges)
+       1. Archivo (Heading, Display, Badges)
        2. SVN-Poppins (Body Text, UI, Buttons)
-       3. SVN-Acta (Quotes, Hooks, Editorial, Highlights)
+       3. FD Newsreader (Quotes, Hooks, Editorial, Highlights)
        =================================================== */
-    @font-face {
-      font-family: 'SVN-Integral CF';
-      src: local('SVN-Integral CF'), local('SVN-IntegralCF-Bold'), local('SVN-IntegralCF-Regular'), local('Integral CF');
-      font-weight: 700;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'SVN-Integral CF';
-      src: local('SVN-IntegralCF-Heavy'), local('IntegralCF-Heavy');
-      font-weight: 900;
-      font-style: normal;
-    }
-    @font-face {
+    /* SIL Open Font License 1.1 Webfonts */
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-ExtraBold.woff2') format('woff2'); font-weight: 800 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Archivo'; src: url('https://font.fedu.vn/fonts/Archivo-Variable.woff2') format('woff2'); font-weight: 100 900; font-stretch: 115%; font-style: normal; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('https://font.fedu.vn/fonts/JetBrainsMono-Variable.woff2') format('woff2'); font-weight: 100 800; font-style: normal; font-display: swap; }
+@font-face {
       font-family: 'SVN-Poppins';
       src: local('SVN-Poppins-Regular'), local('SVN-Poppins'), local('Poppins-Regular');
       font-weight: 400;
@@ -57,29 +63,10 @@
       font-weight: 700;
       font-style: normal;
     }
-    @font-face {
-      font-family: 'SVN-Acta';
-      src: local('SVN-Acta-Book'), local('SVN-Acta'), local('Acta-Book');
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'SVN-Acta';
-      src: local('SVN-Acta-BookItalic'), local('Acta-BookItalic');
-      font-weight: 400;
-      font-style: italic;
-    }
-    @font-face {
-      font-family: 'SVN-Acta';
-      src: local('SVN-Acta-Bold'), local('Acta-Bold');
-      font-weight: 700;
-      font-style: normal;
-    }
-
     :root {
-      --font-heading: 'SVN-Integral CF', 'Integral CF', sans-serif;
+      --font-heading: 'Archivo', 'Integral CF', sans-serif;
       --font-body: 'SVN-Poppins', 'Poppins', sans-serif;
-      --font-quote: 'SVN-Acta', 'Acta', serif;
+      --font-quote: 'FD Newsreader', 'Acta', serif;
     }
 
     body {
@@ -127,8 +114,8 @@
         extend: {
           fontFamily: {
             sans: ['"SVN-Poppins"', '"Poppins"', 'sans-serif'],
-            display: ['"SVN-Integral CF"', '"Integral CF"', 'sans-serif'],
-            editorial: ['"SVN-Acta"', '"Acta"', 'serif'],
+            display: ['"Archivo"', '"Integral CF"', 'sans-serif'],
+            editorial: ['"FD Newsreader"', '"Acta"', 'serif'],
           },
           colors: {
             brand: {
@@ -564,7 +551,7 @@
         beforeTime: '90 Phút Thiết Kế',
         beforeDesc: 'Có bài viết hay nhưng đăng chữ dài không ai đọc, mở Canva chia từng trang, gõ chữ căn chỉnh màu sắc mất cả buổi chiều.',
         afterTime: '1 Phút',
-        afterDesc: 'Thả bài viết vào -> AI tự cô đọng thành 5 slide súc tích, tự dàn trang với font SVN-Integral CF & SVN-Poppins và xuất bộ ảnh vuông/dọc.',
+        afterDesc: 'Thả bài viết vào -> AI tự cô đọng thành 5 slide súc tích, tự dàn trang với font Archivo & SVN-Poppins và xuất bộ ảnh vuông/dọc.',
         prompt: 'Chuyển bài viết này thành bộ ảnh Carousel 5 trang giao diện tối sang xịn để đăng Facebook/Instagram.',
         badge: 'CAROUSEL SIÊU TỐC'
       },

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trạm Tạo Cover Hook 3D 1-Chạm & Mega Prompt K1–K4 — FEDU Video AI</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M13.4%2053Q12.3%2053%2012.3%2051.9V21.3H9.1Q8%2021.3%208%2020.2V15.1Q8%2014%209.1%2014H24.3Q25.4%2014%2025.4%2015.1V20.2Q25.4%2021.3%2024.3%2021.3H21V51.9Q21%2053%2020%2053ZM32.5%2053Q31.5%2053%2031.5%2051.9V21.3H28.2Q27.1%2021.3%2027.1%2020.2V15.1Q27.1%2014%2028.2%2014H43.4Q44.5%2014%2044.5%2015.1V20.2Q44.5%2021.3%2043.4%2021.3H40.2V51.9Q40.2%2053%2039.1%2053Z'%20fill='%23FB923C'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%23FB923C'/%3E%3C/svg%3E">
+  <style>
+    /* SIL Open Font License 1.1 Webfonts */
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader Display'; src: url('https://font.fedu.vn/fonts/FDNewsreaderDisplay-ExtraBold.woff2') format('woff2'); font-weight: 800 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'FD Newsreader'; src: url('https://font.fedu.vn/fonts/FDNewsreader-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Be Vietnam Pro'; src: url('https://font.fedu.vn/fonts/BeVietnamPro-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Archivo'; src: url('https://font.fedu.vn/fonts/Archivo-Variable.woff2') format('woff2'); font-weight: 100 900; font-stretch: 115%; font-style: normal; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('https://font.fedu.vn/fonts/JetBrainsMono-Variable.woff2') format('woff2'); font-weight: 100 800; font-style: normal; font-display: swap; }
+:root{--bg:#f8fafc;--card:#ffffff;--ink:#0f172a;--mute:#475569;--line:#e2e8f0;--acc:#0284c7;--acc2:#0f766e;--warn:#b45309}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5}
+    .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
+    .brand-badge{background:#0f172a;color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;letter-spacing:.04em}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-btn{text-decoration:none;color:var(--ink);border:1px solid var(--line);background:#fff;padding:7px 13px;border-radius:9px;font-size:13.5px;font-weight:600}
+    .nav-btn.primary{background:#0284c7;border-color:#0284c7;color:#fff}
+    .wrap{max-width:1240px;margin:0 auto;padding:24px 18px 64px}
+    .hero{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:20px}
+    .hero h1{margin:6px 0 8px;font-size:26px;line-height:1.25}
+    .hero p{margin:0;color:var(--mute);font-size:15px}
+    .tabs{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+    .tab-btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 18px;border-radius:11px;font-size:14.5px;font-weight:700;cursor:pointer}
+    .tab-btn.active{background:#0f172a;border-color:#0f172a;color:#fff}
+    .grid-studio{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+    @media(max-width:960px){.grid-studio{grid-template-columns:1fr}}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+    .panel h2{margin:0 0 12px;font-size:17px}
+    .field{margin-bottom:13px}
+    .field label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:#334155;margin-bottom:5px}
+    .field input[type=text],.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:9px 12px;font-size:14.5px;font-family:inherit;color:var(--ink);background:#fff}
+    .field input[type=range]{width:100%}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .arch-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+    @media(max-width:600px){.arch-grid{grid-template-columns:repeat(2,1fr)}}
+    .arch-chip{border:1px solid var(--line);background:#f8fafc;border-radius:10px;padding:8px 6px;text-align:center;cursor:pointer;font-size:12.5px;font-weight:600;color:var(--ink)}
+    .arch-chip.active{background:#0284c7;border-color:#0284c7;color:#fff}
+    .arch-chip small{display:block;font-weight:400;opacity:.85;font-size:11px}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+    .btn-dark{background:#0f172a;color:#fff}
+    .btn-blue{background:#0284c7;color:#fff}
+    .btn-teal{background:#0f766e;color:#fff}
+    .btn-ghost{background:#f1f5f9;color:#0f172a;border:1px solid #cbd5e1}
+    .canvas-box{background:#0b1120;border-radius:16px;padding:14px;display:flex;flex-direction:column;align-items:center}
+    canvas#previewCanvas{width:100%;max-width:390px;aspect-ratio:9/16;border-radius:12px;background:#020617;box-shadow:0 12px 32px rgba(2,6,23,.45)}
+    .status-pill{margin-top:10px;font-size:13px;color:#cbd5e1;text-align:center}
+    .prompt-box{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;max-height:540px;overflow:auto}
+    .note-card{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;border-radius:12px;padding:12px 14px;font-size:13.5px;margin-bottom:14px}
+    .hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-badge">FEDU K1–K4</span>
+      <span>Trạm Hook 3D Phân Tầng &amp; Mega Prompt 2 Chế Độ</span>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-btn" href="edivideopro.html">← Quay lại Edit Video Pro</a>
+      <a class="nav-btn" href="edivideopro.html#buoc4">Xem 6 Màn Kết &amp; 6 Outro</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div style="font-size:12.5px;font-weight:700;color:#0284c7;letter-spacing:.04em">PHƯƠNG ÁN ÍT MA SÁT NHẤT CHO HỌC VIÊN KHÔNG CÀI ANTIGRAVITY</div>
+      <h1>Tạo Cover Hook 3D Phân Tầng (M1 → M10) Ngay Trên Trình Duyệt</h1>
+      <p><strong>Đường A (Khuyên dùng · 100% đúng mặt thật):</strong> Chọn ảnh/video và tách nền ngay trên máy để cài chữ ra sau đầu/vai. <strong>Đường B (Dùng với Gemini / ChatGPT bản miễn phí):</strong> Copy Mega Prompt 2 Chế Độ ở Tab 2 để AI gọt chữ 3 tầng và dựng bối cảnh mới.</p>
+    </section>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('studio', this)">1. Ghép Hook 3D 1-Chạm (Giữ 100% Mặt Thật)</button>
+      <button class="tab-btn" onclick="switchTab('prompt', this)">2. Copy Mega Prompt 2 Chế Độ (Gemini / ChatGPT Free)</button>
+    </div>
+
+    <section id="tab-studio" class="grid-studio">
+      <div class="panel">
+        <h2>Bước 1 · Chọn khung hình hoặc ảnh chân dung</h2>
+        <div class="row2">
+          <div class="field">
+            <label>Tải Ảnh Gốc (.JPG/.PNG)</label>
+            <input type="file" id="imgInput" accept="image/*"/>
+          </div>
+          <div class="field">
+            <label>Hoặc Bắt Frame từ Video (.MP4/.MOV)</label>
+            <input type="file" id="vidInput" accept="video/*"/>
+          </div>
+        </div>
+        <div id="vidSeekWrap" class="field hidden">
+          <label>Chọn giây lấy nét đầu video <span id="vidTimeLbl">0.0s</span></label>
+          <input type="range" id="vidSeek" min="0" max="5" step="0.05" value="0"/>
+        </div>
+        <div class="btn-row" style="margin-bottom:16px">
+          <button type="button" class="btn btn-teal" id="btnCutout" onclick="runCutout()">✂️ Tách Nền Người 3D (Chữ ra sau đầu)</button>
+          <button type="button" class="btn btn-ghost" onclick="toggleLayerMode()" id="btnLayerMode">Chế độ: Đặt Chữ Ra Sau Người</button>
+          <button type="button" class="btn btn-ghost" onclick="loadSampleFrame()">Dùng ảnh mẫu</button>
+        </div>
+
+        <h2>Bước 2 · Chọn 1 trong 10 kiểu Hook 3D (M1 → M10)</h2>
+        <div class="arch-grid" id="archGrid"></div>
+
+        <h2>Bước 3 · Nhập chữ 3 tầng (Khóa chuẩn độ dài, 0 rớt từ)</h2>
+        <div class="row2">
+          <div class="field">
+            <label>Tầng 1 · Kicker (IN HOA ≤ 4 từ) <span id="cntK">0/28</span></label>
+            <input type="text" id="inKicker" maxlength="32" value="HẬU KÌ K4 THỰC CHIẾN"/>
+          </div>
+          <div class="field">
+            <label>Số / Nhãn Sau Đầu (M3, M4, M5, M8)</label>
+            <input type="text" id="inBigNum" maxlength="6" value="03"/>
+          </div>
+        </div>
+        <div class="field">
+          <label>Tầng 2 · Tiêu đề chính (IN HOA ≤ 22 ký tự) <span id="cntL1">19/22</span></label>
+          <input type="text" id="inL1" maxlength="28" value="CHỈNH 3 GIÂY ĐẦU VIDEO"/>
+        </div>
+        <div class="field">
+          <label>Tầng 3 · Hệ quả gọn (Sentence case ≤ 30 ký tự) <span id="cntL2">26/30</span></label>
+          <input type="text" id="inL2" maxlength="40" value="Khách dừng tay nghe hết câu"/>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label>Vị trí dọc của cụm chữ (<span id="lblPosY">34%</span>)</label>
+            <input type="range" id="rngPosY" min="16" max="76" value="34"/>
+          </div>
+          <div class="field">
+            <label>Cỡ chữ chính (<span id="lblScale">100%</span>)</label>
+            <input type="range" id="rngScale" min="72" max="128" value="100"/>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label>Độ tối nền sau người (<span id="lblDim">22%</span>)</label>
+            <input type="range" id="rngDim" min="0" max="65" value="22"/>
+          </div>
+          <div class="field">
+            <label>Độ mịn viền tóc tách lớp (<span id="lblFeather">1.5px</span>)</label>
+            <input type="range" id="rngFeather" min="0" max="4" step="0.5" value="1.5"/>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-dark" onclick="downloadCover()">⬇️ Tải Ảnh Cover 9:16 (.JPG)</button>
+          <button type="button" class="btn btn-blue" onclick="downloadTextLayer()">⬇️ Tải Lớp Chữ Trong Suốt (.PNG ghép CapCut)</button>
+        </div>
+      </div>
+
+      <div class="panel canvas-box">
+        <canvas id="previewCanvas" width="1080" height="1920"></canvas>
+        <div class="status-pill" id="statusPill">Sẵn sàng: Bấm "Dùng ảnh mẫu" hoặc tải ảnh/video của anh chị lên.</div>
+      </div>
+    </section>
+
+    <section id="tab-prompt" class="panel hidden">
+      <div class="note-card">
+        <strong>Cách dùng nhanh trên điện thoại với ChatGPT hoặc Gemini bản miễn phí:</strong> Bấm nút <b>Copy toàn bộ Mega Prompt</b> bên dưới → dán vào khung chat mới kèm đoạn kịch bản (Chế độ 1: Gọt chữ) hoặc gửi kèm 1 ảnh chân dung sáng rõ để yêu cầu vẽ Cover 9:16 (Chế độ 2). Nếu AI vẽ bị lệch mặt hoặc sai dấu tiếng Việt, copy 3 dòng chữ AI vừa gọt dán quay lại <b>Tab 1</b> để giữ nguyên 100% mặt thật.
+      </div>
+      <div class="btn-row" style="margin-bottom:14px">
+        <button type="button" class="btn btn-blue" onclick="copyMegaPrompt(this)">📋 Copy Toàn Bộ Mega Prompt 2 Chế Độ</button>
+        <button type="button" class="btn btn-ghost" onclick="switchTab('studio', document.querySelectorAll('.tab-btn')[0])">↩ Quay lại Ghép Trên Ảnh Thật</button>
+      </div>
+      <pre class="prompt-box" id="megaPromptBox">[VAI TRÒ &amp; NGUYÊN TẮC BẮT BUỘC]
+Bạn là Trợ lý Thiết kế Mở đầu Video (Hook 3D) chuẩn thực chiến K4.
+Mục tiêu của bạn là giúp người dùng không rành kỹ thuật tạo được chữ mở đầu sắc nét và ảnh Cover dọc 9:16 đúng mặt thật, không sai dấu tiếng Việt.
+
+LUẬT CỨNG KHÔNG ĐƯỢC VI PHẠM:
+1. KHÔNG BỊA CON SỐ: Tuyệt đối không tự bịa ra phần trăm (%), số năm kinh nghiệm, số tiền, số khách hàng hay cam kết nếu người dùng không cung cấp trong nội dung gốc. Nếu thiếu số thật mà câu cần sức nặng, hãy dùng từ mô tả cơ chế/hành động cụ thể hoặc hỏi lại tối đa 1 câu ngắn.
+2. KHÔNG DÙNG TỪ SÁO / CÂU RÁC: Cấm dùng những câu sáo rỗng, ồn ào phô trương hoặc các dòng hệ thống thừa thãi như "bảng đối chiếu nhanh", "01 lưu giữ ngay", hay dấu ba chấm "...". Viết tiếng Việt tự nhiên, gãy gọn như lời nói trực tiếp với khách hàng.
+3. CHỐNG RỚT TỪ MỒ CÔI: Nếu một tầng chữ phải xuống 2 dòng, mỗi dòng bắt buộc có ít nhất 2 từ trở lên (cấm để 1 chữ đơn lẻ đứng trơ trọi ở dòng cuối).
+4. CHUẨN 3 TẦNG CHỮ HOOK:
+   - Tầng 1 (Kicker — nhãn bối cảnh): IN HOA, tối đa 4 từ.
+   - Tầng 2 (L1 — điểm neo chính): IN HOA, tối đa 22 ký tự (kể cả dấu cách).
+   - Tầng 3 (L2 — hệ quả hoặc gợi mở): Sentence case (chỉ viết hoa chữ đầu câu và tên riêng), tối đa 30 ký tự, không dấu ba chấm "...".
+
+[KHO 10 KIỂU HOOK 3D CHUẨN (M1..M10) ĐỂ GỢI Ý &amp; CHỌN]
+- M1 · CapCut 3D Gốc: Chữ trắng cỡ lớn góc trên, tóc/đỉnh đầu người đè nhẹ góc dưới chữ.
+- M2 · Tòa Soạn TIME: Chữ nén cao tràn ngang đỉnh khung, đầu người cắt ngang chân chữ đầy uy quyền.
+- M3 · Luxury Serif: Dải chữ chân mềm phía dưới ngực, con số vàng nổi bật phía sau vai.
+- M4 · Noir Tượng Đài: Nền đen trắng điện ảnh, con số hoặc điểm nhấn đỏ đặt phía sau đầu.
+- M5 · Swiss-Tech 3D: Số và chữ khóa thẳng hàng 0px trên đường đáy, đèn ven xanh lạnh sau lưng.
+- M6 · Tạp Chí Chia Đôi: Khung giấy ngà sang trọng một bên, chủ thể vắt tay hoặc vai chạm mép phân tách 3D.
+- M7 · Kính Mờ Không Gian: Thẻ kính mờ băng giá bo góc cài ngay phía sau đầu.
+- M8 · Dải Băng Thụy Sĩ: Dải băng vàng vắt ngang sau vai kèm thẻ đen-vàng sắc cạnh.
+- M9 · Khung Vòm Vogue: Viền khung vòm màu Champagne mảnh, vai chủ thể phá tràn ra ngoài viền.
+- M10 · Lưới Dữ Liệu HUD: Lưới tọa độ xanh ngọc lục bảo và vòng radar công nghệ đặt sau lưng.
+
+[QUY TRÌNH LÀM VIỆC 2 CHẾ ĐỘ]
+▶ CHẾ ĐỘ 1: GỌT CHỮ HOOK 3 TẦNG (Mặc định chạy trước khi người dùng chưa chốt chữ)
+- Đầu vào: 1 đoạn kịch bản, ý tưởng video, hoặc mô tả nghề nghiệp/sản phẩm.
+- Việc cần làm:
+  1. Lọc lấy đúng sự thật có trong bài (nếu người dùng chưa đưa con số thật nào, ghi chú rõ "Không dùng số liệu ước đoán").
+  2. Đề xuất đúng 3 Phương án chữ 3 tầng (A: Đánh thẳng lỗi sai thường gặp · B: Lật ngược thói quen cũ · C: Cơ chế thực tế dễ làm), mỗi phương án đủ Tầng 1 (<= 4 từ), Tầng 2 (<= 22 ký tự), Tầng 3 (<= 30 ký tự).
+  3. Gợi ý 2 mã Hook 3D hợp ngành nhất trong danh sách M1..M10 (nêu lý do 1 câu).
+  4. Hỏi đúng 1 câu kết thúc Chế độ 1:
+     "Anh/chị chọn Phương án chữ nào (A/B/C), muốn giữ mã Hook 3D nào (M1..M10), và đã đính kèm ảnh chân dung gốc để sang Chế độ 2 vẽ Cover 9:16 chưa? (Nếu muốn giữ 100% mặt thật không qua AI vẽ lại, hãy copy 3 dòng chữ này dán vào web videoai.fedu.vn/hook3d.html)."
+
+▶ CHẾ ĐỘ 2: VẼ ẢNH COVER 3D PHÂN TẦNG 9:16 (Chạy ngay khi đã chốt Phương án + Mã M1..M10 + Có ảnh gốc)
+- Nếu chưa chọn M1..M10: PHẢI hỏi chọn mã M1..M10 trước khi sinh ảnh, trừ khi người dùng ghi rõ "tự chọn giúp".
+- Khi đã đủ chữ 3 tầng + mã M1..M10 + ảnh tham chiếu, tuân thủ tuyệt đối 4 khóa:
+  1. KHÓA NÉT MẶT 100%: Giữ nguyên tuyệt đối cấu trúc xương mặt, khoảng cách hai mắt, sống mũi, dáng môi, nụ cười, nốt ruồi, màu da thật và kiểu tóc từ ảnh tham chiếu. Cấm gọt cằm, cấm bóp mặt, cấm làm đẹp ảo kiểu AI.
+  2. KHÓA PHÂN LỚP 3D (Z-ORDER): Đặt khối chữ hoặc khung/thẻ của mã M1..M10 nằm Ở LỚP PHÍA SAU đỉnh đầu, gáy hoặc vai của nhân vật. Nhân vật đứng ở lớp tiền cảnh che nhẹ 10–15% cạnh chữ để tạo chiều sâu, nhưng tuyệt đối không che khuất dấu thanh hoặc chữ cái chính của L1 và L2.
+  3. KHÓA VÙNG AN TOÀN 9:16 (SAFE ZONE): Toàn bộ chữ nằm trong vùng 16% đến 74% chiều cao khung hình, cách mép trái/phải tối thiểu 10%.
+  4. KHÓA CHÍNH TẢ TIẾNG VIỆT: Vẽ chữ hình học nét sạch, không phát sáng nhòe, giữ nguyên vẹn từng dấu sắc, huyền, hỏi, ngã, nặng đúng theo 3 dòng đã chốt.
+- Sau khi xuất ảnh, đính kèm đúng 3 dòng tự kiểm:
+  "Kiểm tra nhanh 3 điểm trước khi dùng:
+  (1) Mắt, mũi, khóe miệng có giống 100% ảnh gốc không?
+  (2) Tất cả dấu tiếng Việt trên Kicker, L1, L2 đã đủ và sắc nét chưa?
+  (3) Nếu mặt bị lệch hoặc sai dấu, giữ nguyên 3 dòng chữ trên ghép lên ảnh thật tại videoai.fedu.vn/hook3d.html."</pre>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js" crossorigin="anonymous"></script>
+  <script>
+    const ARCHS = [
+      { id: 'M1', name: 'CapCut 3D Gốc', desc: 'Chữ trắng lớn sau đầu', y: 20, dark: 22 },
+      { id: 'M2', name: 'Tòa Soạn TIME', desc: 'Chữ nén cao tràn đỉnh', y: 18, dark: 26 },
+      { id: 'M3', name: 'Luxury Serif', desc: 'Số vàng sau vai · Serif', y: 58, dark: 30 },
+      { id: 'M4', name: 'Noir Tượng Đài', desc: 'Đen trắng · Số đỏ sau đầu', y: 52, dark: 45 },
+      { id: 'M5', name: 'Swiss-Tech 3D', desc: 'Số khóa 0px · Viền xanh', y: 26, dark: 34 },
+      { id: 'M6', name: 'Tạp Chí Chia Đôi', desc: 'Mảng giấy ngà phía sau', y: 24, dark: 18 },
+      { id: 'M7', name: 'Kính Mờ Không Gian', desc: 'Thẻ kính mờ sau vai', y: 24, dark: 26 },
+      { id: 'M8', name: 'Dải Băng Thụy Sĩ', desc: 'Băng vàng vắt ngang', y: 56, dark: 28 },
+      { id: 'M9', name: 'Khung Vòm Vogue', desc: 'Vòm Champagne sau lưng', y: 60, dark: 35 },
+      { id: 'M10', name: 'Lưới Dữ Liệu HUD', desc: 'Lưới xanh ngọc & radar', y: 24, dark: 38 }
+    ];
+    let curArch = 'M1';
+    let textBehindPerson = true;
+    let srcCanvas = document.createElement('canvas');
+    let fgCanvas = null;
+    let segmenter = null;
+    const cv = document.getElementById('previewCanvas');
+    const ctx = cv.getContext('2d');
+
+    function setStatus(msg) { document.getElementById('statusPill').textContent = msg; }
+
+    function switchTab(name, btn) {
+      document.getElementById('tab-studio').classList.toggle('hidden', name !== 'studio');
+      document.getElementById('tab-prompt').classList.toggle('hidden', name !== 'prompt');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function initArchGrid() {
+      const box = document.getElementById('archGrid');
+      box.innerHTML = ARCHS.map(a =>
+        `<div class="arch-chip ${a.id === curArch ? 'active' : ''}" onclick="selectArch('${a.id}')">${a.id} · ${a.name}<small>${a.desc}</small></div>`
+      ).join('');
+    }
+
+    function selectArch(id) {
+      curArch = id;
+      const a = ARCHS.find(x => x.id === id);
+      if (a) {
+        document.getElementById('rngPosY').value = a.y;
+        document.getElementById('rngDim').value = a.dark;
+      }
+      initArchGrid();
+      drawScene();
+    }
+
+    function toggleLayerMode() {
+      textBehindPerson = !textBehindPerson;
+      document.getElementById('btnLayerMode').textContent = textBehindPerson
+        ? 'Chế độ: Đặt Chữ Ra Sau Người' : 'Chế độ: Đặt Chữ Đè Trước Nền';
+      drawScene();
+    }
+
+    function fitCover(source) {
+      srcCanvas.width = 1080;
+      srcCanvas.height = 1920;
+      const sctx = srcCanvas.getContext('2d');
+      const sw = source.videoWidth || source.naturalWidth || source.width;
+      const sh = source.videoHeight || source.naturalHeight || source.height;
+      const sc = Math.max(1080 / sw, 1920 / sh);
+      const dw = sw * sc, dh = sh * sc;
+      sctx.clearRect(0, 0, 1080, 1920);
+      sctx.drawImage(source, (1080 - dw) / 2, (1920 - dh) * 0.25, dw, dh);
+      fgCanvas = null;
+      drawScene();
+    }
+
+    function loadSampleFrame() {
+      const im = new Image();
+      im.onload = () => { fitCover(im); setStatus('Đã nạp ảnh mẫu. Bấm "Tách Nền Người 3D" để chữ luồn sau đầu!'); };
+      im.onerror = () => setStatus('Không tải được ảnh mẫu, vui lòng chọn ảnh từ máy.');
+      im.src = 'assets/demo_doantrang/aroll_open.webp';
+    }
+
+    async function runCutout() {
+      if (!srcCanvas.width) { setStatus('Vui lòng chọn ảnh hoặc video trước.'); return; }
+      const btn = document.getElementById('btnCutout');
+      btn.disabled = true;
+      btn.textContent = '⏳ Đang tách người khỏi nền...';
+      try {
+        if (typeof SelfieSegmentation === 'undefined') throw new Error('CDN chưa tải');
+        if (!segmenter) {
+          segmenter = new SelfieSegmentation({
+            locateFile: f => `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${f}`
+          });
+          segmenter.setOptions({ modelSelection: 1 });
+        }
+        const maskImg = await new Promise((resolve, reject) => {
+          segmenter.onResults(res => resolve(res.segmentationMask));
+          segmenter.send({ image: srcCanvas }).catch(reject);
+        });
+        const feather = parseFloat(document.getElementById('rngFeather').value || '1.5');
+        fgCanvas = document.createElement('canvas');
+        fgCanvas.width = 1080; fgCanvas.height = 1920;
+        const fctx = fgCanvas.getContext('2d');
+        fctx.save();
+        if (feather > 0) fctx.filter = `blur(${feather}px)`;
+        fctx.drawImage(maskImg, 0, 0, 1080, 1920);
+        fctx.restore();
+        fctx.globalCompositeOperation = 'source-in';
+        fctx.drawImage(srcCanvas, 0, 0);
+        fctx.globalCompositeOperation = 'source-over';
+        textBehindPerson = true;
+        document.getElementById('btnLayerMode').textContent = 'Chế độ: Đặt Chữ Ra Sau Người';
+        drawScene();
+        setStatus('Tách nền 3D xong! Chỉnh vị trí/cỡ chữ rồi tải Cover .JPG hoặc chữ .PNG.');
+      } catch (e) {
+        setStatus('Mạng yếu nên chưa tải bộ tách nền AI. Hãy chuyển chế độ Chữ Đè Trước hoặc thử lại.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '✂️ Tách Nền Người 3D (Chữ ra sau đầu)';
+      }
+    }
+
+    function wrapNoOrphanJS(c, text, maxW) {
+      const words = (text || '').trim().split(/\s+/).filter(Boolean);
+      const lines = []; let cur = '';
+      for (const w of words) {
+        const cand = cur ? `${cur} ${w}` : w;
+        if (c.measureText(cand).width <= maxW) cur = cand;
+        else { if (cur) lines.push(cur); cur = w; }
+      }
+      if (cur) lines.push(cur);
+      if (lines.length >= 2) {
+        const prev = lines[lines.length - 2].split(' ');
+        const last = lines[lines.length - 1].split(' ');
+        if (last.length === 1 && prev.length >= 3) {
+          const moved = `${prev[prev.length - 1]} ${last[0]}`;
+          if (c.measureText(moved).width <= maxW) {
+            lines[lines.length - 2] = prev.slice(0, -1).join(' ');
+            lines[lines.length - 1] = moved;
+          }
+        }
+      }
+      return lines;
+    }
+    function drawHookLayer(c) {
+      const k = (document.getElementById('inKicker').value || '').trim().toUpperCase();
+      const l1 = (document.getElementById('inL1').value || '').trim();
+      const l2 = (document.getElementById('inL2').value || '').trim();
+      const num = (document.getElementById('inBigNum').value || '').trim();
+      const posY = Math.round(1920 * (parseInt(document.getElementById('rngPosY').value, 10) / 100));
+      const sc = parseInt(document.getElementById('rngScale').value, 10) / 100;
+      c.save();
+      c.textAlign = 'center';
+
+      if (curArch === 'M4' || curArch === 'M5' || curArch === 'M3') {
+        const bgNum = num || '03';
+        c.font = `800 ${Math.round(420 * sc)}px 'Archivo', 'Be Vietnam Pro', sans-serif`;
+        c.fillStyle = curArch === 'M4' ? 'rgba(220,38,38,0.88)' : curArch === 'M3' ? 'rgba(234,179,8,0.86)' : 'rgba(56,189,248,0.34)';
+        c.fillText(bgNum, curArch === 'M3' ? 320 : 540, Math.round(posY + 120));
+      }
+      if (curArch === 'M6') {
+        c.fillStyle = '#F5F0E6';
+        c.fillRect(0, 0, 440, 1920);
+      } else if (curArch === 'M7') {
+        c.fillStyle = 'rgba(15,23,42,0.58)';
+        c.strokeStyle = 'rgba(255,255,255,0.45)';
+        c.lineWidth = 4;
+        c.beginPath(); c.roundRect(80, posY - 110, 920, Math.round(370 * sc), 36); c.fill(); c.stroke();
+      } else if (curArch === 'M8') {
+        c.fillStyle = '#FACC15';
+        c.fillRect(0, posY - 40, 1080, 96);
+        c.fillStyle = '#0F172A';
+        c.font = `700 42px 'FD Aeonik Ext', sans-serif`;
+        c.fillText(`// ${k || 'CHÚ Ý'} //`, 540, posY + 24);
+      } else if (curArch === 'M9') {
+        c.strokeStyle = 'rgba(229,184,92,0.85)';
+        c.lineWidth = 5;
+        c.beginPath();
+        c.roundRect(84, 190, 912, 1380, [456, 456, 40, 40]);
+        c.stroke();
+      } else if (curArch === 'M10') {
+        c.strokeStyle = 'rgba(16,185,129,0.28)';
+        c.lineWidth = 2;
+        for (let gx = 90; gx < 1080; gx += 150) { c.beginPath(); c.moveTo(gx, 0); c.lineTo(gx, 1920); c.stroke(); }
+        for (let gy = 120; gy < 1920; gy += 150) { c.beginPath(); c.moveTo(0, gy); c.lineTo(1080, gy); c.stroke(); }
+        c.beginPath(); c.arc(540, posY + 60, 290, 0, Math.PI * 2); c.stroke();
+      }
+
+      const darkBg = curArch === 'M6';
+      const pri = darkBg ? '#0F172A' : '#FFFFFF';
+      const acc = curArch === 'M4' ? '#EF4444' : curArch === 'M5' ? '#38BDF8' : curArch === 'M10' ? '#34D399' : '#FACC15';
+      c.shadowColor = darkBg ? 'rgba(0,0,0,0)' : 'rgba(0,0,0,0.65)';
+      c.shadowBlur = darkBg ? 0 : 28;
+
+      let yCursor = posY;
+      if (k && curArch !== 'M8') {
+        c.font = `700 ${Math.round(30 * sc)}px 'FD Aeonik Ext', sans-serif`;
+        c.fillStyle = acc;
+        c.fillText(k, curArch === 'M6' ? 230 : 540, yCursor);
+        yCursor += Math.round(78 * sc);
+      }
+
+      const txCenter = curArch === 'M6' ? 230 : 540;
+      const maxW = curArch === 'M6' ? 390 : 880;
+      const isTime = curArch === 'M2';
+      const isSerif = curArch === 'M3' || curArch === 'M9';
+      const fSize = Math.round((isTime ? 112 : 84) * sc);
+      c.font = isSerif ? `700 ${fSize}px 'FD Newsreader', Georgia, serif`
+        : `${isTime ? 800 : 700} ${fSize}px 'FD Aeonik Ext', 'Be Vietnam Pro', sans-serif`;
+      const lines = wrapNoOrphanJS(c, l1.toUpperCase(), maxW);
+      lines.forEach((ln, idx) => {
+        c.fillStyle = idx === lines.length - 1 && (curArch === 'M1' || curArch === 'M5') ? acc : pri;
+        c.fillText(ln, txCenter, yCursor);
+        yCursor += Math.round(fSize * 1.12);
+      });
+
+      if (l2) {
+        c.font = `italic 400 ${Math.round(42 * sc)}px 'FD Newsreader', Georgia, serif`;
+        c.fillStyle = curArch === 'M3' || curArch === 'M9' ? '#FDE68A' : (darkBg ? '#334155' : '#E2E8F0');
+        wrapNoOrphanJS(c, l2, maxW).forEach(ln => {
+          c.fillText(ln, txCenter, yCursor + 8);
+          yCursor += Math.round(52 * sc);
+        });
+      }
+      c.restore();
+    }
+
+    function drawScene() {
+      ctx.clearRect(0, 0, 1080, 1920);
+      if (srcCanvas.width) {
+        ctx.save();
+        if (curArch === 'M4') ctx.filter = 'grayscale(100%) contrast(1.12)';
+        ctx.drawImage(srcCanvas, 0, 0);
+        ctx.restore();
+      }
+      const dim = parseInt(document.getElementById('rngDim').value, 10) / 100;
+      if (dim > 0) {
+        ctx.fillStyle = `rgba(2,6,23,${dim})`;
+        ctx.fillRect(0, 0, 1080, 1920);
+      }
+      drawHookLayer(ctx);
+      if (textBehindPerson && fgCanvas) ctx.drawImage(fgCanvas, 0, 0);
+    }
+
+    function updateCounters() {
+      const k = document.getElementById('inKicker').value.trim();
+      const l1 = document.getElementById('inL1').value.trim();
+      const l2 = document.getElementById('inL2').value.trim();
+      const kw = k ? k.split(/\s+/).length : 0;
+      document.getElementById('cntK').textContent = `${kw}/4 từ`;
+      document.getElementById('cntL1').textContent = `${l1.length}/22`;
+      document.getElementById('cntL1').style.color = l1.length > 22 ? '#dc2626' : '#0f766e';
+      document.getElementById('cntL2').textContent = `${l2.length}/30`;
+      document.getElementById('cntL2').style.color = l2.length > 30 ? '#dc2626' : '#0f766e';
+      document.getElementById('lblPosY').textContent = `${document.getElementById('rngPosY').value}%`;
+      document.getElementById('lblScale').textContent = `${document.getElementById('rngScale').value}%`;
+      document.getElementById('lblDim').textContent = `${document.getElementById('rngDim').value}%`;
+      document.getElementById('lblFeather').textContent = `${document.getElementById('rngFeather').value}px`;
+      drawScene();
+    }
+
+    function downloadCover() {
+      const a = document.createElement('a');
+      a.download = `cover_${curArch}_9x16.jpg`;
+      a.href = cv.toDataURL('image/jpeg', 0.93);
+      a.click();
+    }
+
+    function downloadTextLayer() {
+      const tmp = document.createElement('canvas');
+      tmp.width = 1080; tmp.height = 1920;
+      drawHookLayer(tmp.getContext('2d'));
+      const a = document.createElement('a');
+      a.download = `lop_chu_${curArch}_trong_suot.png`;
+      a.href = tmp.toDataURL('image/png');
+      a.click();
+    }
+
+    function copyMegaPrompt(btn) {
+      navigator.clipboard.writeText(document.getElementById('megaPromptBox').textContent);
+      const old = btn.textContent;
+      btn.textContent = '✓ Đã Copy Mega Prompt 2 Chế Độ!';
+      setTimeout(() => { btn.textContent = old; }, 2000);
+    }
+
+    document.getElementById('imgInput').addEventListener('change', e => {
+      const f = e.target.files[0]; if (!f) return;
+      const im = new Image();
+      im.onload = () => { fitCover(im); setStatus('Đã nạp ảnh gốc. Bấm "Tách Nền Người 3D" để xếp chữ ra sau đầu.'); };
+      im.src = URL.createObjectURL(f);
+    });
+
+    const vidEl = document.createElement('video');
+    vidEl.muted = true; vidEl.playsInline = true;
+    document.getElementById('vidInput').addEventListener('change', e => {
+      const f = e.target.files[0]; if (!f) return;
+      vidEl.src = URL.createObjectURL(f);
+      vidEl.onloadedmetadata = () => {
+        const sk = document.getElementById('vidSeek');
+        sk.max = Math.min(8, vidEl.duration || 5).toFixed(2);
+        sk.value = '0';
+        document.getElementById('vidSeekWrap').classList.remove('hidden');
+        vidEl.currentTime = 0.05;
+      };
+      vidEl.onseeked = () => { fitCover(vidEl); setStatus('Đã bắt frame video. Kéo thanh giây nếu cần rồi bấm "Tách Nền Người 3D".'); };
+    });
+    document.getElementById('vidSeek').addEventListener('input', e => {
+      document.getElementById('vidTimeLbl').textContent = `${parseFloat(e.target.value).toFixed(2)}s`;
+      vidEl.currentTime = parseFloat(e.target.value);
+    });
+
+    ['inKicker', 'inBigNum', 'inL1', 'inL2', 'rngPosY', 'rngScale', 'rngDim', 'rngFeather'].forEach(id => {
+      document.getElementById(id).addEventListener('input', updateCounters);
+    });
+    document.fonts.ready.then(() => {
+      initArchGrid(); updateCounters(); loadSampleFrame();
+      if (location.hash === '#tab-prompt' || localStorage.getItem('hook3d_tab') === 'prompt') {
+        localStorage.removeItem('hook3d_tab');
+        switchTab('prompt', document.querySelectorAll('.tab-btn')[1]);
+      }
+    });
+  </script>
+</body>
+</html>

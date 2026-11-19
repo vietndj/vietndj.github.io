@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Edit Video Pro V4.2 — Bản Đồ Trực Quan Đầu Vào → Đầu Ra &amp; 10 Trường Phái Hook 3D</title>
-  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%2307090E'/%3E%3Cpath%20d='M7.5%2053Q6.4%2053%206.4%2051.9V15.1Q6.4%2014%207.5%2014H19.8Q20.9%2014%2020.9%2015.1V20.2Q20.9%2021.3%2019.8%2021.3H15.2V29.5H19.1Q20.1%2029.5%2020.1%2030.6V35.8Q20.1%2036.8%2019%2036.8H15.2V45.7H19.8Q20.9%2045.7%2020.9%2046.8V51.9Q20.9%2053%2019.8%2053ZM31.7%2053Q30.7%2053%2030.5%2052.1L22.5%2015.2Q22.3%2014%2023.5%2014H30.5Q31.5%2014%2031.7%2015L34.4%2036.1H34.6L36.9%2015Q36.9%2014.4%2037.3%2014.2Q37.6%2014%2038.1%2014H45.1Q46.3%2014%2046%2015.2L38.1%2052.1Q37.9%2053%2036.9%2053Z'%20fill='%23FB923C'/%3E%3Ccircle%20cx='52'%20cy='13'%20r='4.2'%20fill='%23FB923C'/%3E%3C/svg%3E">
   <link href="assets/style.css?v=20261111" rel="stylesheet"/>
   <style>
     .evp-top-pipeline {
@@ -135,12 +135,36 @@
     }
     .v-thumb.ratio-9-16 { aspect-ratio: 9 / 16; }
     .v-thumb.ratio-4-3 { aspect-ratio: 4 / 3; background: #f1f5f9; }
-    .v-thumb img {
+    .v-thumb.is-video { cursor: default; }
+    .v-thumb img, .v-thumb video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
+    .evp-tool-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #0c4a6e 100%);
+      color: #f8fafc;
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 0 0 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .evp-tool-banner h3 { margin: 0 0 4px; font: 800 18px/1.3 var(--sans); color: #fff; }
+    .evp-tool-banner p { margin: 0; font: 500 14px/1.5 var(--sans); color: #bae6fd; }
+    .evp-tool-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .evp-btn-cta { text-decoration: none; background: #38bdf8; color: #0f172a; font: 700 13.5px/1 var(--sans); padding: 11px 16px; border-radius: 10px; border: none; cursor: pointer; }
+    .evp-btn-sec { text-decoration: none; background: rgba(255,255,255,.12); color: #fff; font: 600 13.5px/1 var(--sans); padding: 11px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.28); cursor: pointer; }
+    .evp-checklist { background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 16px; padding: 20px 22px; margin: 18px 0 36px; }
+    .evp-checklist h3 { margin: 0 0 10px; font: 800 18px/1.3 var(--sans); color: #0f172a; }
+    .evp-check-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 14px 0; }
+    @media (max-width: 900px) { .evp-check-grid { grid-template-columns: 1fr; } }
+    .evp-check-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; font: 500 13px/1.5 var(--sans); color: #334155; }
+    .evp-check-item b { display: block; color: #0284c7; margin-bottom: 4px; font-size: 13.5px; }
     .v-thumb.contain img { object-fit: contain; }
     .v-code-chip {
       position: absolute;
@@ -340,6 +364,18 @@
         </div>
       </div>
 
+      <!-- CÔNG CỤ CHO HỌC VIÊN KHÔNG CÀI ANTIGRAVITY -->
+      <div class="evp-tool-banner">
+        <div>
+          <h3>Học viên làm Cover Hook 3D (M1 → M10) không cần cài đặt phần mềm</h3>
+          <p>Dùng ngay ảnh/video của mình để tách nền chữ luồn sau đầu (giữ 100% mặt thật) hoặc copy Mega Prompt 2 Chế Độ chạy trên Gemini / ChatGPT miễn phí.</p>
+        </div>
+        <div class="evp-tool-actions">
+          <a class="evp-btn-cta" href="hook3d.html">Mở Trạm Tạo Cover Hook 3D 1-Chạm ↗</a>
+          <a class="evp-btn-sec" href="hook3d.html#tab-prompt" onclick="localStorage.setItem('hook3d_tab','prompt')">Lấy Mega Prompt 2 Chế Độ</a>
+        </div>
+      </div>
+
       <!-- 5 KIỂU HOOK PHỔ THÔNG PA1 -> PA5 -->
       <div class="evp-sec-bar">
         <h2>1B · 5 Kiểu Mở Đầu Phổ Thông (PA1 → PA5)</h2>
@@ -397,22 +433,52 @@
         <div class="v-card"><div class="v-thumb ratio-9-16" data-zoom="assets/edit_video_pro/style_F0_classic_editorial.jpg"><img src="assets/edit_video_pro/style_F0_classic_editorial.jpg" alt="F0"/><span class="v-code-chip">F0</span></div><div class="v-meta"><div class="v-meta-text"><b>Tạp Chí Cổ Điển</b><span>Giấy kem thanh lịch</span></div></div></div>
       </div>
 
-      <!-- BƯỚC 4: 6 MÀN HÌNH KẾT (O1 -> O6) -->
-      <div class="evp-sec-bar">
-        <h2>Bước 4 · 6 Màn Hình Kết &amp; Kêu Gọi Hành Động (O1 → O6)</h2>
+      <!-- BƯỚC 4: 6 MÀN HÌNH KẾT THỰC CHIẾN THEO 6 NHÓM NGÀNH K1-K4 (MK1 -> MK6) -->
+      <div class="evp-sec-bar" id="buoc4">
+        <h2>Bước 4 · 6 Màn Hình Kết Thực Chiến Theo Ngành K1–K4 (MK1 → MK6)</h2>
         <div class="evp-io-pills">
-          <span class="evp-io-in">Đầu vào: Tên kênh / Số điện thoại</span>
+          <span class="evp-io-in">Đầu vào: Ý chốt của video</span>
           <span class="evp-io-arr">→</span>
-          <span class="evp-io-out">Đầu ra: Màn hình kết tự vẽ Logo &amp; nút bấm</span>
+          <span class="evp-io-out">Đầu ra: Bảng đúc kết động chuẩn 12 nguyên lý</span>
         </div>
       </div>
       <div class="evp-grid-3">
-        <div class="v-card"><div class="v-thumb ratio-9-16" data-zoom="assets/edit_video_pro/outro_O1_executive_seal.jpg"><img src="assets/edit_video_pro/outro_O1_executive_seal.jpg" alt="O1"/><span class="v-code-chip">O1</span></div><div class="v-meta"><div class="v-meta-text"><b>O1 · Con Dấu Chuyên Gia</b><span>Trang trọng · Chuẩn doanh nhân</span></div><button class="v-copy-mini" data-copy="--outro O1">Copy</button></div></div>
-        <div class="v-card"><div class="v-thumb ratio-9-16" data-zoom="assets/edit_video_pro/outro_O2_editorial_digest.jpg"><img src="assets/edit_video_pro/outro_O2_editorial_digest.jpg" alt="O2"/><span class="v-code-chip">O2</span></div><div class="v-meta"><div class="v-meta-text"><b>O2 · Tóm Tắt Tạp Chí</b><span>Đúc kết 3 ý chính cuối bài</span></div><button class="v-copy-mini" data-copy="--outro O2">Copy</button></div></div>
-        <div class="v-card"><div class="v-thumb ratio-9-16" data-zoom="assets/edit_video_pro/outro_O3_blueprint_grid.jpg"><img src="assets/edit_video_pro/outro_O3_blueprint_grid.jpg" alt="O3"/><span class="v-code-chip">O3</span></div><div class="v-meta"><div class="v-meta-text"><b>O3 · Bản Vẽ Công Nghệ</b><span>Hợp chủ đề AI &amp; Hệ thống</span></div><button class="v-copy-mini" data-copy="--outro O3">Copy</button></div></div>
-        <div class="v-card"><div class="v-thumb ratio-9-16" data-zoom="assets/edit_video_pro/outro_O4_split_glass_card.jpg"><img src="assets/edit_video_pro/outro_O4_split_glass_card.jpg" alt="O4"/><span class="v-code-chip">O4</span></div><div class="v-meta"><div class="v-meta-text"><b>O4 · Thẻ Kính Đôi</b><span>Nổi bật ảnh đại diện &amp; nút gọi</span></div><button class="v-copy-mini" data-copy="--outro O4">Copy</button></div></div>
-        <div class="v-card"><div class="v-thumb ratio-9-16" data-zoom="assets/edit_video_pro/outro_O5_action_roadmap.jpg"><img src="assets/edit_video_pro/outro_O5_action_roadmap.jpg" alt="O5"/><span class="v-code-chip">O5</span></div><div class="v-meta"><div class="v-meta-text"><b>O5 · Lộ Trình Hành Động</b><span>Điều hướng bước tiếp theo</span></div><button class="v-copy-mini" data-copy="--outro O5">Copy</button></div></div>
-        <div class="v-card"><div class="v-thumb ratio-9-16" data-zoom="assets/edit_video_pro/outro_O6_minimal_quote_sig.jpg"><img src="assets/edit_video_pro/outro_O6_minimal_quote_sig.jpg" alt="O6"/><span class="v-code-chip">O6</span></div><div class="v-meta"><div class="v-meta-text"><b>O6 · Chữ Ký Cá Nhân</b><span>Tinh gọn · Đậm dấu ấn riêng</span></div><button class="v-copy-mini" data-copy="--outro O6">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/mk1.jpg" src="assets/edit_video_pro/outro_v2/mk1.mp4"></video><span class="v-code-chip">MK1</span></div><div class="v-meta"><div class="v-meta-text"><b>MK1 · Silk Ivory Y Khoa (Spa &amp; Da liễu)</b><span>Cung Arc êm · Ánh ngọc · Nút Muted Rose</span></div><button class="v-copy-mini" data-copy="--outro MK1">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/mk2.jpg" src="assets/edit_video_pro/outro_v2/mk2.mp4"></video><span class="v-code-chip">MK2</span></div><div class="v-meta"><div class="v-meta-text"><b>MK2 · Thẩm Định BĐS &amp; Nội Thất</b><span>Obsidian &amp; Vàng · Kéo thước quy hoạch</span></div><button class="v-copy-mini" data-copy="--outro MK2">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/mk3.jpg" src="assets/edit_video_pro/outro_v2/mk3.mp4"></video><span class="v-code-chip">MK3</span></div><div class="v-meta"><div class="v-meta-text"><b>MK3 · Hồ Sơ Tin Cậy (Thuế, Luật, Y Dược)</b><span>Xanh lục bảo · Nảy tích bảo chứng từng dòng</span></div><button class="v-copy-mini" data-copy="--outro MK3">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/mk4.jpg" src="assets/edit_video_pro/outro_v2/mk4.mp4"></video><span class="v-code-chip">MK4</span><span class="v-new-chip">CỐ VẤN</span></div><div class="v-meta"><div class="v-meta-text"><b>MK4 · Sổ Tay Lộ Trình (Giáo dục &amp; AI)</b><span>Trục bước 01→03 · Điểm sáng dẫn mắt đọc</span></div><button class="v-copy-mini" data-copy="--outro MK4">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/mk5.jpg" src="assets/edit_video_pro/outro_v2/mk5.mp4"></video><span class="v-code-chip">MK5</span><span class="v-new-chip">CỐ VẤN</span></div><div class="v-meta"><div class="v-meta-text"><b>MK5 · Bento Thông Số (Bán lẻ &amp; Xe điện)</b><span>Bento đối xứng · Thẻ Than Đen đầm chắc</span></div><button class="v-copy-mini" data-copy="--outro MK5">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/mk6.jpg" src="assets/edit_video_pro/outro_v2/mk6.mp4"></video><span class="v-code-chip">MK6</span><span class="v-new-chip">CỐ VẤN</span></div><div class="v-meta"><div class="v-meta-text"><b>MK6 · Phiếu Mùa Vụ (Nông sản, F&amp;B, Hoa)</b><span>Giấy lanh ấm · Chữ ký viết mực chạy tay</span></div><button class="v-copy-mini" data-copy="--outro MK6">Copy</button></div></div>
+      </div>
+
+      <!-- BƯỚC 5: 6 OUTRO ANIMATION ĐỘC BẢN (OT1 -> OT6) & BIỂU MẪU 5 TRƯỜNG -->
+      <div class="evp-sec-bar" id="buoc5">
+        <h2>Bước 5 · 6 Outro Animation Thương Hiệu (.MP4 30fps · OT1 → OT6)</h2>
+        <div class="evp-io-pills">
+          <span class="evp-io-in">Nhận 1 lần · Ghép đuôi CapCut cả năm</span>
+          <span class="evp-io-arr">→</span>
+          <a class="evp-io-out" style="text-decoration:none" href="studios/showcase_6_man_ket_6_outro_k1_k4.mp4" target="_blank">▶ Xem Video Tổng Hợp 12 Mẫu ↗</a>
+        </div>
+      </div>
+      <div class="evp-grid-3">
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/ot1.jpg" src="assets/edit_video_pro/outro_v2/ot1.mp4"></video><span class="v-code-chip">OT1</span></div><div class="v-meta"><div class="v-meta-text"><b>OT1 · Pearl Bloom (Spa Logo-Only)</b><span>Nở đẳng hướng · Ánh sáng quét từ tâm</span></div><button class="v-copy-mini" data-copy="--outro-brand OT1">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/ot2.jpg" src="assets/edit_video_pro/outro_v2/ot2.mp4"></video><span class="v-code-chip">OT2</span></div><div class="v-meta"><div class="v-meta-text"><b>OT2 · La Bàn Trụ Tháp (BĐS &amp; Kiến trúc)</b><span>Xoay định vị Bắc · Trụ vươn Follow-Through</span></div><button class="v-copy-mini" data-copy="--outro-brand OT2">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/ot3.jpg" src="assets/edit_video_pro/outro_v2/ot3.mp4"></video><span class="v-code-chip">OT3</span></div><div class="v-meta"><div class="v-meta-text"><b>OT3 · Ấn Chương Bảo Chứng (Thuế &amp; Luật)</b><span>Vẽ khiên · Đóng dấu ✓ gợn sóng đồng tâm</span></div><button class="v-copy-mini" data-copy="--outro-brand OT3">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/ot4.jpg" src="assets/edit_video_pro/outro_v2/ot4.mp4"></video><span class="v-code-chip">OT4</span><span class="v-new-chip">CỐ VẤN</span></div><div class="v-meta"><div class="v-meta-text"><b>OT4 · Danh Thiếp Học Viện (Đào tạo &amp; AI)</b><span>Chân dung vuông · Nhịp nhấn CTA lịch sự L2</span></div><button class="v-copy-mini" data-copy="--outro-brand OT4">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/ot5.jpg" src="assets/edit_video_pro/outro_v2/ot5.mp4"></video><span class="v-code-chip">OT5</span><span class="v-new-chip">CỐ VẤN</span></div><div class="v-meta"><div class="v-meta-text"><b>OT5 · Công Tắc Chốt Đơn (Bán lẻ &amp; Xe)</b><span>Đối chiều 3D · Công tắc vàng Volt L3</span></div><button class="v-copy-mini" data-copy="--outro-brand OT5">Copy</button></div></div>
+        <div class="v-card"><div class="v-thumb ratio-9-16 is-video"><video controls playsinline preload="metadata" poster="assets/edit_video_pro/outro_v2/ot6.jpg" src="assets/edit_video_pro/outro_v2/ot6.mp4"></video><span class="v-code-chip">OT6</span><span class="v-new-chip">CỐ VẤN</span></div><div class="v-meta"><div class="v-meta-text"><b>OT6 · Thiệp Vòm Chữ Ký (Nông sản &amp; Hoa)</b><span>Khung vòm mềm · Chữ ký viết tay + Tem mộc</span></div><button class="v-copy-mini" data-copy="--outro-brand OT6">Copy</button></div></div>
+      </div>
+
+      <div class="evp-checklist">
+        <h3>Checklist 5 thông tin học viên gửi để nhận file Outro .MP4 riêng (Không phải hỏi lại)</h3>
+        <div class="evp-check-grid">
+          <div class="evp-check-item"><b>1. Ngành &amp; Mã chọn</b>Chọn 1 cặp <code>MK1/OT1</code> → <code>MK6/OT6</code> hợp ngành mình.</div>
+          <div class="evp-check-item"><b>2. Ảnh chân dung gốc</b>Cạnh ngắn ≥ 1080px, sáng mặt, chừa thoáng trên đỉnh đầu ≥ 15%.</div>
+          <div class="evp-check-item"><b>3. Logo PNG nền trong</b>File <code>.PNG</code> tách nền ≥ 500px (hoặc bỏ trống để tự sinh Monogram).</div>
+          <div class="evp-check-item"><b>4. Tên &amp; Định vị ngắn</b>Tên kênh ≤ 22 ký tự · Dòng định vị ≤ 36 ký tự (Sentence case).</div>
+          <div class="evp-check-item"><b>5. Nút CTA hoặc Logo-Only</b>1 câu kêu gọi ≤ 28 ký tự (như <i>Nhắn Thảo chọn xe →</i>) hoặc ghi <code>LOGO_ONLY</code>.</div>
+        </div>
+        <button class="evp-btn-cta" style="background:#0f172a;color:#fff" type="button" data-copy='{"slug":"ten_kenh","industry_group":4,"outro_code":"OT4","mk_code":"MK4","brand_name":"Tên Thương Hiệu (<=22kt)","positioning":"Định vị ngành gọn rõ (<=36kt)","monogram":"TH","cta":"Nhắn mình nhận tư vấn →"}'>📋 Copy Khung JSON 5 Trường Để Gửi Thầy Chạy Batch</button>
       </div>
 
     </div>
