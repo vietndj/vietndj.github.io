@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-19T16:56:04+07:00",
+  "generated_at": "2026-11-19T17:01:24+07:00",
   "total_scene_items": 482,
   "total_unique_ideas": 463,
   "total_active_ideas": 403,
@@ -171,12 +171,12 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 9,
     "thuong-hieu": 54,
     "thoi-trang": 29,
-    "am-thuc": 37,
+    "am-thuc": 38,
     "du-lich": 54,
     "cong-nghe": 26,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 156,
+    "ky-thuat-quay": 155,
     "ugc": 8
   },
   "x_factors": [
@@ -1023,7 +1023,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Caffeinerush Cr",
       "profile_url": "https://www.instagram.com/caffeinerush.cr/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40caffeinerush.cr_DYO_vzzDNoW_Video_by_caffeinerush.cr/shot_01_mid.webp",
       "video_ids": [
         "IG_@caffeinerush.cr_DYO_vzzDNoW_Video_by_caffeinerush.cr"
@@ -3531,8 +3531,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@caffeinerush.cr_DYO_vzzDNoW_Video_by_caffeinerush.cr",
       "shortcode": "DYO_vzzDNoW",
-      "title_vi": "Video by caffeinerush.cr",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "12 Cảnh Quay Quán Cà Phê Chỉn Chu: Từ Mặt Tiền Hút Mắt Đến Quầy Pha Chế",
+      "quick_takeaway": "Video dùng chân máy cố định kết hợp bố cục khung trong khung và chuỗi 4 cảnh pha chế liên hoàn trên cùng một góc đặt máy để tôn trọn vẹn chất nghệ nhân lẫn không khí đông khách thật của quán mà không cần một câu lời thoại.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -3543,19 +3543,24 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "quán cà phê",
+        "pha chế đồ uống",
+        "không gian quán",
+        "khung trong khung",
+        "quay chỉn chu"
       ],
       "country": {
         "id": "us_eu",
@@ -3564,11 +3569,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @caffeinerush.cr",
+      "purpose": "Chủ quán cà phê, trà sữa học được cách đứng lùi sau khung cửa quay khách tự nhiên và giữ nguyên một góc chân máy ở quầy bar để cắt ghép nhanh chuỗi làm ra 3 món nước ngon mắt.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "quán cà phê",
+        "pha chế đồ uống",
+        "không gian quán",
+        "khung trong khung",
+        "quay chỉn chu",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -20371,7 +20381,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -21550,7 +21560,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
