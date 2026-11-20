@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T22:00:11+07:00",
+  "generated_at": "2026-11-20T22:05:39+07:00",
   "total_scene_items": 500,
   "total_unique_ideas": 481,
   "total_active_ideas": 421,
@@ -171,12 +171,12 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 10,
     "thuong-hieu": 56,
     "thoi-trang": 29,
-    "am-thuc": 39,
+    "am-thuc": 40,
     "du-lich": 59,
     "cong-nghe": 27,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 163,
+    "ky-thuat-quay": 162,
     "ugc": 8
   },
   "x_factors": [
@@ -1097,7 +1097,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Pholua Official",
       "profile_url": "https://www.instagram.com/pholua.official/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "F&B",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40pholua.official_Deq3H1Xs6ZI_Video_by_pholua.official/shot_01_mid.webp",
       "video_ids": [
         "IG_@pholua.official_Deq3H1Xs6ZI_Video_by_pholua.official"
@@ -3722,8 +3722,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@pholua.official_Deq3H1Xs6ZI_Video_by_pholua.official",
       "shortcode": "Deq3H1Xs6ZI",
-      "title_vi": "Video by pholua.official",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Quy trình 13 cảnh quay phở gà từ bếp ra bàn ăn giữ mắt không cần lời thoại",
+      "quick_takeaway": "Kể trọn hành trình một tô phở gà trong 13 cảnh bằng chuỗi B-Roll (cảnh quay đặc tả hành động) nối Cross Dissolve (chuyển mờ chồng lớp) và Match Cut (cắt khớp vị trí tô) từ nồi trụng trong bếp ra thẳng bàn ăn sân vườn.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3734,20 +3734,25 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "am-thuc",
+          "name": "F&B",
+          "en_name": "Food & Beverage",
+          "icon": "🍜",
+          "badge_color": "amber",
+          "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "High-key Lighting",
-        "Medium Tracking Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "quay ẩm thực",
+        "phở gà",
+        "bếp nhà hàng",
+        "chuyển cảnh mờ chồng",
+        "không lời thoại"
       ],
       "country": {
         "id": "us_eu",
@@ -3756,12 +3761,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @pholua.official",
+      "purpose": "Chủ quán ăn áp dụng được ngay công thức cầm điện thoại quay quy trình bếp sạch - nguyên liệu tươi - bưng ra bàn chỉ với chân máy cố định và hiệu ứng chồng mờ cơ bản.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "High-key Lighting",
-        "Medium Tracking Shot"
+        "quay ẩm thực",
+        "phở gà",
+        "bếp nhà hàng",
+        "chuyển cảnh mờ chồng",
+        "không lời thoại",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -13781,7 +13791,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -21995,8 +22005,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -23174,7 +23184,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
