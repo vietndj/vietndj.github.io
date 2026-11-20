@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T20:44:01+07:00",
-  "total_scene_items": 492,
-  "total_unique_ideas": 473,
-  "total_active_ideas": 413,
+  "generated_at": "2026-11-20T20:48:00+07:00",
+  "total_scene_items": 493,
+  "total_unique_ideas": 474,
+  "total_active_ideas": 414,
   "total_excluded_ideas": 60,
   "total_creators": 286,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 20,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 222,
+    "dien-anh": 223,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 27,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 160,
+    "ky-thuat-quay": 161,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 317,
+    "us_eu": 318,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -520,6 +520,20 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ioana_iftode",
+      "name": "Ioana_Iftode",
+      "profile_url": "https://www.instagram.com/ioana_iftode/",
+      "video_count": 4,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40ioana_iftode_DfRmZK3DBGf_Carousel_Analysis/slide_01_mid.webp",
+      "video_ids": [
+        "IG_@ioana_iftode_DfRmZK3DBGf_Carousel_Analysis",
+        "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
+        "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
+        "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
       "handle": "@worldwithreece",
       "name": "Worldwithreece",
       "profile_url": "https://www.instagram.com/worldwithreece/",
@@ -693,19 +707,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City",
         "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
         "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
-      ]
-    },
-    {
-      "handle": "@ioana_iftode",
-      "name": "Ioana_Iftode",
-      "profile_url": "https://www.instagram.com/ioana_iftode/",
-      "video_count": 3,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
-        "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
-        "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
       ]
     },
     {
@@ -3589,9 +3590,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@jxframes_Df7Y2mOlh3F_Carousel_Analysis",
-      "shortcode": "Df7Y2mOlh3F_Carousel_Analysis",
-      "title_vi": "The art of framing 📸",
+      "id": "IG_@ioana_iftode_DfRmZK3DBGf_Carousel_Analysis",
+      "shortcode": "DfRmZK3DBGf_Carousel_Analysis",
+      "title_vi": "memories of a slow day in Uji 😌✨ moments like",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -3625,12 +3626,97 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jxframes",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ioana_iftode",
       "tech_tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
         "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@ioana_iftode",
+        "name": "Ioana_Iftode",
+        "handle": "@ioana_iftode",
+        "profile_url": "https://www.instagram.com/ioana_iftode/"
+      },
+      "ig_url": "https://www.instagram.com/ioana_iftode/",
+      "gdrive_folder": "https://drive.google.com/open?id=15UFOvs13WuTkhgLMfTpvhD4Oas1X1rIJ",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40ioana_iftode_DfRmZK3DBGf_Carousel_Analysis/slide_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ioana_iftode_DfRmZK3DBGf_Carousel_Analysis/slide_03_mid.webp",
+        "video_url": "https://drive.google.com/uc?id=1OdaG7XZYuiDZHiQBJFjv_2UGX72heP3c&export=download",
+        "video_url_original": "https://drive.google.com/uc?id=1OdaG7XZYuiDZHiQBJFjv_2UGX72heP3c&export=download",
+        "report_url": "reports/IG_@ioana_iftode_DfRmZK3DBGf_Carousel_Analysis.html",
+        "shots_count": 10,
+        "duration": "61.1s",
+        "youtube_id": "-s-VO__BKE4",
+        "youtube_embed": "https://www.youtube.com/embed/-s-VO__BKE4",
+        "youtube_url": "https://youtu.be/-s-VO__BKE4"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@jxframes_Df7Y2mOlh3F_Carousel_Analysis",
+      "shortcode": "Df7Y2mOlh3F_Carousel_Analysis",
+      "title_vi": "7 cách dùng khung tự nhiên và kiến trúc tạo chiều sâu chỉn chu cho cảnh ngoại thất",
+      "quick_takeaway": "Tận dụng thân cây, khung cửa phà, ngõ hẹp và dầm cầu ở tiền cảnh tối để đóng khung chủ thể ngoài sáng, tạo chiều sâu thị giác cuốn hút dù máy quay đứng yên hoàn toàn.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "kỹ thuật đóng khung",
+        "quay ngoại cảnh chỉn chu",
+        "góc máy cố định",
+        "ánh sáng hoàng hôn"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Học viên biết cách lùi lại vài bước tìm khung cửa, tán cây hoặc khe lan can có sẵn ngoài phố để biến cảnh quay tĩnh bằng điện thoại thành thước phim có chiều sâu chỉn chu.",
+      "tech_tags": [
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "kỹ thuật đóng khung",
+        "quay ngoại cảnh chỉn chu",
+        "góc máy cố định",
+        "ánh sáng hoàng hôn",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -13059,7 +13145,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -19717,7 +19803,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
