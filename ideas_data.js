@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T22:50:37+07:00",
+  "generated_at": "2026-11-20T22:55:49+07:00",
   "total_scene_items": 506,
   "total_unique_ideas": 487,
   "total_active_ideas": 427,
@@ -80,8 +80,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 20,
     "talking-head": 47,
     "storytelling": 44,
-    "dien-anh": 233,
-    "chuyen-canh": 70,
+    "dien-anh": 235,
+    "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -169,12 +169,12 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 10,
-    "thuong-hieu": 57,
+    "thuong-hieu": 58,
     "thoi-trang": 29,
     "am-thuc": 40,
     "du-lich": 59,
     "cong-nghe": 27,
-    "kien-truc": 26,
+    "kien-truc": 25,
     "the-thao": 6,
     "ky-thuat-quay": 165,
     "ugc": 8
@@ -638,7 +638,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Jessbrrd",
       "profile_url": "https://www.instagram.com/jessbrrd/",
       "video_count": 3,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home/shot_01_mid.webp",
       "video_ids": [
         "IG_@jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home",
@@ -3675,15 +3675,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_Df6BDmwhz57_Nothing_like_a_calm_day—walking_the_dog,_wash",
       "shortcode": "Df6BDmwhz57",
-      "title_vi": "Nothing like a calm day—walking the dog, wash",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kể trọn một ngày bình yên qua 29 cảnh hành động nhỏ không cần một câu thoại",
+      "quick_takeaway": "Video chuỗi 29 cảnh B-Roll (Cảnh quay phụ đặc tả hành động) nhịp ~0.7 giây/cảnh đan xen khéo léo 3 góc máy: Top-Down (Từ trên thẳng xuống), Fisheye (Ống kính mắt cá siêu rộng) và góc thấp đón nắng xiên để biến các việc vặt buổi sáng thành câu chuyện cuốn hút.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
@@ -3697,10 +3697,15 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "góc quay đời thường",
+        "ống kính mắt cá",
+        "góc từ trên xuống",
+        "kể chuyện bằng hình",
+        "chuyển cảnh hành động"
       ],
       "country": {
         "id": "us_eu",
@@ -3709,12 +3714,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @joshdiazfilms",
+      "purpose": "Học viên áp dụng ngay công thức luân phiên góc chúc thẳng đứng, góc sát mặt bàn và ống kính mắt cá để tự quay nhật ký một ngày làm việc hoặc chăm sóc gia đình chỉn chu bằng điện thoại mà không cần viết lời thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "góc quay đời thường",
+        "ống kính mắt cá",
+        "góc từ trên xuống",
+        "kể chuyện bằng hình",
+        "chuyển cảnh hành động",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3750,32 +3760,37 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home",
       "shortcode": "Df2Ae0hgqOP",
-      "title_vi": "My favorite feeling is being home",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kể Chuyện Ở Nhà Bình Yên Bằng Chuỗi 25 Cảnh Cắt Nhanh Và Phối Sáng Ấm",
+      "quick_takeaway": "Video tổng 25 cảnh mở màn bằng 3 giây Fast Cut (cắt cảnh nhịp nhanh) nhá trước các khoảnh khắc ấm cúng kèm dòng chữ neo mắt giữa khung hình, sau đó giãn nhịp chậm rãi với các cặp cảnh nối tiếp chuyển động và tương phản ánh sáng xanh chiều tà - vàng đèn ấm.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "góc nhà ấm cúng",
+        "cắt cảnh nhịp nhanh",
+        "phối sáng nóng lạnh",
+        "kể chuyện hình ảnh",
+        "phong cách chỉn chu"
       ],
       "country": {
         "id": "us_eu",
@@ -3784,12 +3799,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jessbrrd",
+      "purpose": "Học viên áp dụng được công thức dựng nhá nhanh 5-6 cảnh đầu dưới 0.5 giây để giữ chân người xem, rồi dùng chân máy cố định quay các hành động đời thường tại nhà như pha trà, bật đèn, đọc sách và cắt trái cây theo cặp nối tiếp mượt mắt.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting"
+        "góc nhà ấm cúng",
+        "cắt cảnh nhịp nhanh",
+        "phối sáng nóng lạnh",
+        "kể chuyện hình ảnh",
+        "phong cách chỉn chu",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -20965,7 +20985,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -22522,7 +22542,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
