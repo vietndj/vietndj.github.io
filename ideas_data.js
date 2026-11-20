@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T20:51:27+07:00",
+  "generated_at": "2026-11-20T20:54:56+07:00",
   "total_scene_items": 494,
   "total_unique_ideas": 475,
   "total_active_ideas": 415,
@@ -172,11 +172,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 55,
     "thoi-trang": 29,
     "am-thuc": 38,
-    "du-lich": 56,
+    "du-lich": 57,
     "cong-nghe": 27,
     "kien-truc": 24,
     "the-thao": 6,
-    "ky-thuat-quay": 162,
+    "ky-thuat-quay": 161,
     "ugc": 8
   },
   "x_factors": [
@@ -524,7 +524,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ioana_Iftode",
       "profile_url": "https://www.instagram.com/ioana_iftode/",
       "video_count": 4,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40ioana_iftode_DfRmZK3DBGf_Carousel_Analysis/slide_01_mid.webp",
       "video_ids": [
         "IG_@ioana_iftode_DfRmZK3DBGf_Carousel_Analysis",
@@ -3668,8 +3668,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ioana_iftode_DfRmZK3DBGf_Carousel_Analysis",
       "shortcode": "DfRmZK3DBGf_Carousel_Analysis",
-      "title_vi": "memories of a slow day in Uji 😌✨ moments like",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nhật ký 1 ngày đi Uji bằng 10 cụm cảnh B-Roll (cảnh phụ) chỉn chu từ sớm tới đêm",
+      "quick_takeaway": "Kể trọn hành trình một ngày từ sáng sớm đến đêm muộn qua 10 cụm cảnh ngắn ghép nối theo trình tự thời gian, dùng dòng chữ nhỏ cố định làm mạch dẫn thay lời nói.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3680,20 +3680,25 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "nhật ký hành trình",
+        "quay cảnh du lịch",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "ánh sáng hoàng hôn",
+        "kể chuyện bằng chữ"
       ],
       "country": {
         "id": "us_eu",
@@ -3702,12 +3707,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ioana_iftode",
+      "purpose": "Học viên áp dụng ngay công thức nhật ký theo mốc giờ từ lúc đi tàu, ghé quán ăn đến lúc dạo chiều và lên đèn để dựng video du lịch hoặc trải nghiệm dịch vụ không cần lộ mặt nói thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "nhật ký hành trình",
+        "quay cảnh du lịch",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "ánh sáng hoàng hôn",
+        "kể chuyện bằng chữ",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -13221,7 +13231,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -21435,8 +21445,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
