@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T20:40:21+07:00",
-  "total_scene_items": 491,
-  "total_unique_ideas": 472,
-  "total_active_ideas": 412,
+  "generated_at": "2026-11-20T20:44:01+07:00",
+  "total_scene_items": 492,
+  "total_unique_ideas": 473,
+  "total_active_ideas": 413,
   "total_excluded_ideas": 60,
-  "total_creators": 285,
+  "total_creators": 286,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 20,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 221,
+    "dien-anh": 222,
     "chuyen-canh": 68,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -172,7 +172,7 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 55,
     "thoi-trang": 29,
     "am-thuc": 38,
-    "du-lich": 55,
+    "du-lich": 56,
     "cong-nghe": 27,
     "kien-truc": 24,
     "the-thao": 6,
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 316,
+    "us_eu": 317,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -713,7 +713,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Gakuyen",
       "profile_url": "https://www.instagram.com/gakuyen/",
       "video_count": 2,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40gakuyen_DfgvESoEwlh_Carousel_Analysis/slide_01_mid.webp",
       "video_ids": [
         "IG_@gakuyen_DfgvESoEwlh_Carousel_Analysis",
@@ -1054,6 +1054,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@jxframes",
+      "name": "Jxframes",
+      "profile_url": "https://www.instagram.com/jxframes/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40jxframes_Df7Y2mOlh3F_Carousel_Analysis/slide_01_mid.webp",
+      "video_ids": [
+        "IG_@jxframes_Df7Y2mOlh3F_Carousel_Analysis"
       ]
     },
     {
@@ -3578,6 +3589,81 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@jxframes_Df7Y2mOlh3F_Carousel_Analysis",
+      "shortcode": "Df7Y2mOlh3F_Carousel_Analysis",
+      "title_vi": "The art of framing 📸",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jxframes",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@jxframes",
+        "name": "Jxframes",
+        "handle": "@jxframes",
+        "profile_url": "https://www.instagram.com/jxframes/"
+      },
+      "ig_url": "https://www.instagram.com/jxframes/",
+      "gdrive_folder": "https://drive.google.com/open?id=1sSpfBwKnJ97bP8lNoswQL3-cg2HXMlaY",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40jxframes_Df7Y2mOlh3F_Carousel_Analysis/slide_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40jxframes_Df7Y2mOlh3F_Carousel_Analysis/slide_03_mid.webp",
+        "video_url": "https://drive.google.com/uc?id=1OdaG7XZYuiDZHiQBJFjv_2UGX72heP3c&export=download",
+        "video_url_original": "https://drive.google.com/uc?id=1OdaG7XZYuiDZHiQBJFjv_2UGX72heP3c&export=download",
+        "report_url": "reports/IG_@jxframes_Df7Y2mOlh3F_Carousel_Analysis.html",
+        "shots_count": 7,
+        "duration": "77.4s",
+        "youtube_id": "wz6VYVsnvic",
+        "youtube_embed": "https://www.youtube.com/embed/wz6VYVsnvic",
+        "youtube_url": "https://youtu.be/wz6VYVsnvic"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame@skylarvp_of_c",
       "shortcode": "DfAbG-rkch0",
       "title_vi": "Quảng cáo nước hoa 2 cảnh chỉn chu: Kể chuyện tình bên bồn tắm nối cận cảnh đáy chai",
@@ -3661,8 +3747,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@gakuyen_DfgvESoEwlh_Carousel_Analysis",
       "shortcode": "DfgvESoEwlh_Carousel_Analysis",
-      "title_vi": "the leaves are starting to turn 🍂",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "12 Cảnh Quay Chỉn Chu Bắt Trọn Chất Thu Nhật Bản Bằng Ánh Sáng Và Bố Cục",
+      "quick_takeaway": "Chuỗi 12 cảnh quay chỉn chu không lời thoại đan xen mượt mà giữa đặc tả thiên nhiên ngược nắng, chi tiết đường phố và nhịp bước chân du ký mùa thu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3673,21 +3759,24 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Wide Establishing Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "du lịch mùa thu",
+        "quay chỉn chu",
+        "ánh sáng ngược",
+        "Bố cục 1/3 & Đường dẫn mắt"
       ],
       "country": {
         "id": "us_eu",
@@ -3696,13 +3785,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @gakuyen",
+      "purpose": "Học viên áp dụng ngay cách phối hợp cỡ cảnh rộng - trung - cận, tận dụng nắng ngược và vật cản tiền cảnh để dựng video du lịch có chiều sâu bằng điện thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Wide Establishing Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot"
+        "du lịch mùa thu",
+        "quay chỉn chu",
+        "ánh sáng ngược",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -19625,7 +19717,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -22360,7 +22452,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
