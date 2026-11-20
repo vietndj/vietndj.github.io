@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T20:54:56+07:00",
+  "generated_at": "2026-11-20T20:58:19+07:00",
   "total_scene_items": 494,
   "total_unique_ideas": 475,
   "total_active_ideas": 415,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -3593,8 +3593,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@doddsfilms_Df3d1Exlt_V_Carousel_Analysis",
       "shortcode": "Df3d1Exlt_V_Carousel_Analysis",
-      "title_vi": "This is how I film myself while making it cin",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Công Thức 8 Cảnh Tự Quay Bản Thân Chỉn Chu Bằng Bố Cục Và Tương Phản Màu",
+      "quick_takeaway": "Chuỗi 8 cảnh dạng thẻ lướt minh họa trực quan 6 nguyên tắc giúp video tự quay trông chỉn chu ngay tại điểm tham quan: giữ nhịp máy tĩnh, đặc tả chi tiết, mượn tiền cảnh tạo chiều sâu, ngửa góc rộng lấy trần, phối màu nóng lạnh đối lập và lia vòng cung bắt khoảnh khắc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3615,10 +3615,14 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)",
+        "tự quay chỉn chu",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "đặc tả chi tiết",
+        "góc máy thư viện"
       ],
       "country": {
         "id": "us_eu",
@@ -3627,12 +3631,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @doddsfilms",
+      "purpose": "Học viên nắm ngay danh sách 6 góc máy thực tế để khi đi một mình hoặc hai người vào hiệu sách, bảo tàng, quán cà phê cổ điển có thể rút điện thoại quay đủ bộ cảnh có chiều sâu mà không cần thiết bị cầu kỳ.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "tự quay chỉn chu",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "đặc tả chi tiết",
+        "góc máy thư viện",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Trung cảnh (MS: lấy từ thắt lưng trở lên)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3899,7 +3907,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=11vu3OpH9_OhpFSQw7pG30sKqsN_mjXTA",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/swec_CEijzE",
         "video_url_original": "https://media.fedu.vn/videos/swec_CEijzE",
         "report_url": "reports/IG_@maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame@skylarvp_of_c.html",
@@ -17888,7 +17896,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -21446,7 +21454,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
