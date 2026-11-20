@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T21:46:29+07:00",
-  "total_scene_items": 499,
-  "total_unique_ideas": 480,
-  "total_active_ideas": 420,
+  "generated_at": "2026-11-20T21:50:45+07:00",
+  "total_scene_items": 500,
+  "total_unique_ideas": 481,
+  "total_active_ideas": 421,
   "total_excluded_ideas": 60,
-  "total_creators": 290,
+  "total_creators": 291,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 20,
     "talking-head": 47,
     "storytelling": 43,
-    "dien-anh": 227,
+    "dien-anh": 228,
     "chuyen-canh": 70,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -176,7 +176,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 27,
     "kien-truc": 25,
     "the-thao": 6,
-    "ky-thuat-quay": 164,
+    "ky-thuat-quay": 165,
     "ugc": 8
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 324,
+    "us_eu": 325,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -1079,6 +1079,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit"
+      ]
+    },
+    {
+      "handle": "@goneovietnam",
+      "name": "Goneovietnam",
+      "profile_url": "https://www.instagram.com/goneovietnam/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40goneovietnam_Df7TPy9As69_Video_by_goneovietnam/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@goneovietnam_Df7TPy9As69_Video_by_goneovietnam"
       ]
     },
     {
@@ -3636,6 +3647,79 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@goneovietnam_Df7TPy9As69_Video_by_goneovietnam",
+      "shortcode": "Df7TPy9As69",
+      "title_vi": "Video by goneovietnam",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @goneovietnam",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@goneovietnam",
+        "name": "Goneovietnam",
+        "handle": "@goneovietnam",
+        "profile_url": "https://www.instagram.com/goneovietnam/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Df7TPy9As69/",
+      "gdrive_folder": "https://drive.google.com/open?id=1esRdi048RuHpZaWk-7JAJ-kwbjbx8Wg3",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40goneovietnam_Df7TPy9As69_Video_by_goneovietnam/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40goneovietnam_Df7TPy9As69_Video_by_goneovietnam/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/lmqt0tjfroM",
+        "video_url_original": "https://media.fedu.vn/videos/lmqt0tjfroM",
+        "report_url": "reports/IG_@goneovietnam_Df7TPy9As69_Video_by_goneovietnam.html",
+        "shots_count": 21,
+        "duration": "26.9s",
+        "youtube_id": "lmqt0tjfroM",
+        "youtube_embed": "https://www.youtube.com/embed/lmqt0tjfroM",
+        "youtube_url": "https://youtu.be/lmqt0tjfroM"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@pholua.official_Deq3H1Xs6ZI_Video_by_pholua.official",
       "shortcode": "Deq3H1Xs6ZI",
       "title_vi": "Video by pholua.official",
@@ -4339,7 +4423,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=11vu3OpH9_OhpFSQw7pG30sKqsN_mjXTA",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/swec_CEijzE",
         "video_url_original": "https://media.fedu.vn/videos/swec_CEijzE",
         "report_url": "reports/IG_@maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame@skylarvp_of_c.html",
@@ -18328,7 +18412,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -20329,7 +20413,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -21886,7 +21970,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
