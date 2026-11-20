@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-20T22:43:15+07:00",
-  "total_scene_items": 504,
-  "total_unique_ideas": 485,
-  "total_active_ideas": 425,
+  "generated_at": "2026-11-20T22:47:03+07:00",
+  "total_scene_items": 505,
+  "total_unique_ideas": 486,
+  "total_active_ideas": 426,
   "total_excluded_ideas": 60,
   "total_creators": 293,
   "shooting_styles": [
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 47,
     "storytelling": 44,
     "dien-anh": 233,
-    "chuyen-canh": 68,
+    "chuyen-canh": 69,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 40,
     "du-lich": 59,
     "cong-nghe": 27,
-    "kien-truc": 25,
+    "kien-truc": 26,
     "the-thao": 6,
     "ky-thuat-quay": 164,
     "ugc": 8
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 329,
+    "us_eu": 330,
     "korea": 11,
     "india": 3,
     "japan": 7,
@@ -633,6 +633,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@jessbrrd",
+      "name": "Jessbrrd",
+      "profile_url": "https://www.instagram.com/jessbrrd/",
+      "video_count": 3,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home",
+        "IG_@jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace",
+        "IG_@jessbrrd_DfUkgfmgXsI_Home_is_where_I_love_being_me"
+      ]
+    },
+    {
       "handle": "@neolumo.uralsk",
       "name": "Neolumo Uralsk",
       "profile_url": "https://www.instagram.com/neolumo.uralsk/",
@@ -780,18 +793,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@maydaymedia_au_Df9JpCGpYxJ_Carousel_Analysis",
         "IG_@maydaymedia_au_DegIkbrDAUB_Carousel_Analysis"
-      ]
-    },
-    {
-      "handle": "@jessbrrd",
-      "name": "Jessbrrd",
-      "profile_url": "https://www.instagram.com/jessbrrd/",
-      "video_count": 2,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace",
-        "IG_@jessbrrd_DfUkgfmgXsI_Home_is_where_I_love_being_me"
       ]
     },
     {
@@ -3671,10 +3672,85 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home",
+      "shortcode": "Df2Ae0hgqOP",
+      "title_vi": "My favorite feeling is being home",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jessbrrd",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@jessbrrd",
+        "name": "Jessbrrd",
+        "handle": "@jessbrrd",
+        "profile_url": "https://www.instagram.com/jessbrrd/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Df2Ae0hgqOP/",
+      "gdrive_folder": "https://drive.google.com/open?id=1QQOQ4r1a9FNYI8M4iPGqcbYLqiQPRkqO",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/xkQ1JJ6j6R8",
+        "video_url_original": "https://media.fedu.vn/videos/xkQ1JJ6j6R8",
+        "report_url": "reports/IG_@jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home.html",
+        "shots_count": 25,
+        "duration": "20.8s",
+        "youtube_id": "xkQ1JJ6j6R8",
+        "youtube_embed": "https://www.youtube.com/embed/xkQ1JJ6j6R8",
+        "youtube_url": "https://youtu.be/xkQ1JJ6j6R8"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@canyonahika_DfzqB0cRr6v_183_A_self-reminder",
       "shortcode": "DfzqB0cRr6v",
-      "title_vi": "183 A self-reminder",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Cách Luyện Tay Nghề Quay Dựng Mỗi Ngày Ngay Tại Gian Bếp Qua 7 Cảnh Pha Cà Phê",
+      "quick_takeaway": "Đối lập góc hậu trường khung dọc đầu video với chuỗi B-Roll (cảnh phụ minh họa) khung ngang chỉn chu từ chuyện pha cà phê thường ngày.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -3695,9 +3771,14 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "luyện quay cảnh phụ",
+        "góc máy pha cà phê",
+        "ánh sáng cửa sổ",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "kể chuyện bằng chữ"
       ],
       "country": {
         "id": "us_eu",
@@ -3706,11 +3787,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @canyonahika",
+      "purpose": "Học viên biết tận dụng ánh sáng cửa sổ gian bếp và chia nhỏ một việc quen thuộc thành nhiều cỡ cảnh rộng - trung - cận để luyện tay nghề quay mỗi ngày.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "luyện quay cảnh phụ",
+        "góc máy pha cà phê",
+        "ánh sáng cửa sổ",
+        "Bố cục 1/3 & Đường dẫn mắt",
+        "kể chuyện bằng chữ",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3746,8 +3832,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@slaohuairen_DfzbNNoSywy_小城夏天",
       "shortcode": "DfzbNNoSywy",
-      "title_vi": "@slaohuairen DfzbNNoSywy 小城夏天",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "5 góc máy tĩnh tận dụng nắng cửa sổ tạo thước phim mùa hè chỉn chu ngay tại phòng",
+      "quick_takeaway": "Chuỗi 5 cảnh B-Roll (cảnh quay phụ giàu hình ảnh) đặt chân máy cố định, tắt hết đèn trong nhà để tận dụng ánh nắng cửa sổ tương phản với nền phòng tối tạo chiều sâu chỉn chu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -3768,9 +3854,14 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "ánh sáng cửa sổ",
+        "quay chỉn chu",
+        "khung trong khung",
+        "góc máy tĩnh",
+        "kể chuyện hình ảnh"
       ],
       "country": {
         "id": "us_eu",
@@ -3779,11 +3870,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @slaohuairen",
+      "purpose": "Học viên áp dụng ngay cách tắt đèn trần, khóa sáng theo nắng cửa sổ và dùng khung cửa tối làm tiền cảnh để quay video cá nhân có chiều sâu bằng điện thoại.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "ánh sáng cửa sổ",
+        "quay chỉn chu",
+        "khung trong khung",
+        "góc máy tĩnh",
+        "kể chuyện hình ảnh",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -18792,7 +18888,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -20793,7 +20889,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -22349,8 +22445,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
