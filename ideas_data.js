@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-25T10:41:14+07:00",
+  "generated_at": "2026-11-25T10:51:47+07:00",
   "total_scene_items": 508,
   "total_unique_ideas": 489,
   "total_active_ideas": 429,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -2632,7 +2632,7 @@ var FEDU_IDEAS_DATABASE = {
       "profile_url": "https://www.instagram.com/yuuxeun/",
       "video_count": 1,
       "top_industry": "Thời trang",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid_thumb.webp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid.webp",
       "video_ids": [
         "IG_@신_유은_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun"
       ]
@@ -3768,8 +3768,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DgHoOfvxkgp_day_29_of_learning_cinematography…",
       "shortcode": "DgHoOfvxkgp",
-      "title_vi": "day 29 of learning cinematography…",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kỹ thuật quay B-Roll đặc tả thao tác máy tính chỉn chu",
+      "quick_takeaway": "Video thực hành các góc máy cận cảnh (Macro) và đặc tả (Extreme Close-up) để kể chuyện về quá trình làm việc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -3790,9 +3790,13 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "b-roll máy tính",
+        "ánh sáng ấm",
+        "kỹ thuật đặc tả",
+        "luyện tập quay phim"
       ],
       "country": {
         "id": "us_eu",
@@ -3801,11 +3805,15 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yula_andrieieva",
+      "purpose": "Học viên biết cách thay đổi cỡ cảnh linh hoạt để tạo nhịp điệu cho các cảnh quay tĩnh tại bàn.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "b-roll máy tính",
+        "ánh sáng ấm",
+        "kỹ thuật đặc tả",
+        "luyện tập quay phim",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Key Light 45° (đèn chính đặt chéo 45 độ)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -21151,7 +21159,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid_thumb.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -22708,7 +22716,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid_thumb.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -23886,7 +23894,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
@@ -24867,8 +24875,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdQwL3Ahci1/",
       "gdrive_folder": "https://drive.google.com/open?id=1gkuAgqETeupD5LAnmo3D_fF1Vrs6OuVi",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid_thumb.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_03_mid_thumb.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_03_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1lGJO0xQWVDaI52hP2-Xd1r6tePvGJBOF&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1lGJO0xQWVDaI52hP2-Xd1r6tePvGJBOF&export=download",
         "report_url": "reports/IG_@신_유은_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun.html",
