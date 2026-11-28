@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-28T17:10:34+07:00",
+  "generated_at": "2026-11-28T17:21:18+07:00",
   "total_scene_items": 512,
   "total_unique_ideas": 493,
   "total_active_ideas": 433,
@@ -76,9 +76,9 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 11,
+    "walk-and-talk": 12,
     "voice-over": 20,
-    "talking-head": 49,
+    "talking-head": 48,
     "storytelling": 44,
     "dien-anh": 240,
     "chuyen-canh": 67,
@@ -169,14 +169,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 10,
-    "thuong-hieu": 58,
+    "thuong-hieu": 59,
     "thoi-trang": 28,
     "am-thuc": 40,
     "du-lich": 59,
     "cong-nghe": 27,
     "kien-truc": 26,
     "the-thao": 6,
-    "ky-thuat-quay": 172,
+    "ky-thuat-quay": 171,
     "ugc": 7
   },
   "x_factors": [
@@ -1104,7 +1104,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "100004411368773",
       "profile_url": "https://www.instagram.com/100004411368773/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Xây kênh",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40100004411368773_2152154579020934_9.6K_views_%C2%B7_71_reactions_M%E1%BB%99t_trong_nh%C6%B0ng_d%E1%BA%A1n/shot_01_mid.webp",
       "video_ids": [
         "IG_@100004411368773_2152154579020934_9.6K_views_·_71_reactions_Một_trong_nhưng_dạn"
@@ -2656,7 +2656,7 @@ var FEDU_IDEAS_DATABASE = {
       "profile_url": "https://www.instagram.com/yuuxeun/",
       "video_count": 1,
       "top_industry": "Thời trang",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid_thumb.webp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid.webp",
       "video_ids": [
         "IG_@신_유은_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun"
       ]
@@ -3711,30 +3711,36 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@100004411368773_2152154579020934_9.6K_views_·_71_reactions_Một_trong_nhưng_dạn",
       "shortcode": "2152154579020934",
-      "title_vi": "9.6K views · 71 reactions một trong nhưng dạn",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Giơ điện thoại ngang mặt vừa thử quả vừa nói ngoài vườn",
+      "quick_takeaway": "Cầm điện thoại 1 tay ở cự ly 50cm kết hợp mic cài áo bắt tiếng cắn giòn thật, xoay người đổi phông nền hơn 90 độ ngay giây đầu và dùng 11 vết cắt khít khoảng nghỉ (Jump Cut) để giữ nhịp nói truyền cảm hứng suốt 43 giây.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "walk-and-talk",
+        "name": "Walk & Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "thuong-hieu",
+          "name": "Xây kênh",
+          "en_name": "Personal Brand",
+          "icon": "💼",
+          "badge_color": "indigo",
+          "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot"
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)",
+        "Cầm máy selfie 1 tay",
+        "Vừa đi vừa nói (Walk & Talk)",
+        "Jump Cut (cắt bỏ khoảng nghỉ giữ nhịp nhanh)",
+        "Thu tiếng thật (ASMR)",
+        "Đạo cụ trên tay",
+        "Xoay người đổi nền"
       ],
       "country": {
         "id": "us_eu",
@@ -3745,8 +3751,15 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @100004411368773",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot"
+        "Cầm máy selfie 1 tay",
+        "Vừa đi vừa nói (Walk & Talk)",
+        "Jump Cut (cắt bỏ khoảng nghỉ giữ nhịp nhanh)",
+        "Thu tiếng thật (ASMR)",
+        "Đạo cụ trên tay",
+        "Xoay người đổi nền",
+        "Ánh sáng tự nhiên",
+        "Toàn cảnh (WS: lấy trọn không gian)",
+        "Cận cảnh (CU: quay sát chi tiết)"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -19510,7 +19523,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -21511,7 +21524,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid_thumb.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -23067,8 +23080,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid_thumb.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid_thumb.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -24007,7 +24020,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1brLILpFYjHRn6bKUZbfgAS3fxVbdER6D",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs/shot_01_mid_thumb.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1cLJn5nqj8aZCrJsYOeoHVv40BGsPzCOl&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1cLJn5nqj8aZCrJsYOeoHVv40BGsPzCOl&export=download",
         "report_url": "reports/IG_@JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs.html",
@@ -24324,7 +24337,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=11ygVMIp2N-AbkDYAQ-nfVkRVAqmtcXq0",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40%EA%B1%B0%EB%B6%81%EC%9D%B4_%EC%86%8C%EC%98%81_Db0tHr8Bs7x_Video_by_slowkoreanvlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40%EA%B1%B0%EB%B6%81%EC%9D%B4_%EC%86%8C%EC%98%81_Db0tHr8Bs7x_Video_by_slowkoreanvlog/shot_01_mid_thumb.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40%EA%B1%B0%EB%B6%81%EC%9D%B4_%EC%86%8C%EC%98%81_Db0tHr8Bs7x_Video_by_slowkoreanvlog/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1o9gqk252zhKePStPv_M_t6CKvsTGJtXy&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1o9gqk252zhKePStPv_M_t6CKvsTGJtXy&export=download",
         "report_url": "reports/IG_@거북이_소영_Db0tHr8Bs7x_Video_by_slowkoreanvlog.html",
@@ -25227,7 +25240,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdQwL3Ahci1/",
       "gdrive_folder": "https://drive.google.com/open?id=1gkuAgqETeupD5LAnmo3D_fF1Vrs6OuVi",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid_thumb.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40%EC%8B%A0_%E1%84%8B%E1%85%B2%E1%84%8B%E1%85%B3%E1%86%AB_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun/shot_03_mid_thumb.webp",
         "video_url": "https://drive.google.com/uc?id=1lGJO0xQWVDaI52hP2-Xd1r6tePvGJBOF&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1lGJO0xQWVDaI52hP2-Xd1r6tePvGJBOF&export=download",
