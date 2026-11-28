@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-11-25T10:51:47+07:00",
-  "total_scene_items": 508,
-  "total_unique_ideas": 489,
-  "total_active_ideas": 429,
+  "generated_at": "2026-11-28T12:55:35+07:00",
+  "total_scene_items": 509,
+  "total_unique_ideas": 490,
+  "total_active_ideas": 430,
   "total_excluded_ideas": 60,
   "total_creators": 294,
   "shooting_styles": [
@@ -78,10 +78,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 11,
     "voice-over": 20,
-    "talking-head": 47,
+    "talking-head": 48,
     "storytelling": 44,
-    "dien-anh": 237,
-    "chuyen-canh": 68,
+    "dien-anh": 238,
+    "chuyen-canh": 67,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -170,14 +170,14 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 10,
     "thuong-hieu": 58,
-    "thoi-trang": 29,
+    "thoi-trang": 28,
     "am-thuc": 40,
     "du-lich": 59,
     "cong-nghe": 27,
-    "kien-truc": 25,
+    "kien-truc": 26,
     "the-thao": 6,
-    "ky-thuat-quay": 167,
-    "ugc": 8
+    "ky-thuat-quay": 169,
+    "ugc": 7
   },
   "x_factors": [
     "Biểu cảm Body language",
@@ -246,12 +246,12 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 333,
+    "us_eu": 335,
     "korea": 11,
     "india": 3,
     "japan": 7,
     "vietnam": 6,
-    "asia_other": 29
+    "asia_other": 28
   },
   "transition_stats": {
     "level_1_count": 5,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 5
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -448,6 +448,21 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@qfroost",
+      "name": "Qfroost",
+      "profile_url": "https://www.instagram.com/qfroost/",
+      "video_count": 5,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40qfroost_DgPaLEhNuIE_Seoul%2C_South_Korea_with_the_Galaxy_S26_Ultra/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@qfroost_DgPaLEhNuIE_Seoul,_South_Korea_with_the_Galaxy_S26_Ultra",
+        "IG_@qfroost_DejfEazN6QT_don’t_get_me_wrong,_i_still_use_ai_for_my_cre",
+        "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
+        "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
+        "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
       "handle": "@arturbr",
       "name": "Arturbr",
       "profile_url": "https://www.instagram.com/arturbr/",
@@ -576,20 +591,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with",
         "IG_@by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp",
         "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic"
-      ]
-    },
-    {
-      "handle": "@qfroost",
-      "name": "Qfroost",
-      "profile_url": "https://www.instagram.com/qfroost/",
-      "video_count": 4,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40qfroost_DejfEazN6QT_don%E2%80%99t_get_me_wrong%2C_i_still_use_ai_for_my_cre/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@qfroost_DejfEazN6QT_don’t_get_me_wrong,_i_still_use_ai_for_my_cre",
-        "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
-        "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
-        "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
       ]
     },
     {
@@ -2000,14 +2001,14 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@mariapark",
-      "name": "Mariapark",
-      "profile_url": "https://www.instagram.com/mariapark/",
+      "handle": "@_mariapark",
+      "name": "Маша_Пак_Фешн-Инфлюенсер",
+      "profile_url": "https://www.instagram.com/_mariapark/",
       "video_count": 1,
-      "top_industry": "Thời trang",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40mariapark_DdeYvmLsms6_%D0%A7%D0%B0%D0%BA%D1%80%D0%B0_%D0%BD%D0%B0_%D0%BE%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%8B_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0_%F0%9F%A4%A9_%D0%A1%D1%82%D0%B0%D0%B2%D1%8C_%D0%BE%D0%B3%D0%BE%D0%BD%D1%8C/shot_01_mid.webp",
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@mariapark_DdeYvmLsms6_Чакра_на_осенние_образы_открыта_🤩_Ставь_огонь"
+        "IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark"
       ]
     },
     {
@@ -2741,7 +2742,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Charlotte Arsenault",
       "profile_url": "https://www.instagram.com/charlotte.arsenault/",
       "video_count": 1,
-      "top_industry": "UGC",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40charlotte.arsenault_DdHGBpZOzIm/shot_01_mid.webp",
       "video_ids": [
         "IG_@charlotte.arsenault_DdHGBpZOzIm"
@@ -3685,9 +3686,92 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@qfroost_DgPaLEhNuIE_Seoul,_South_Korea_with_the_Galaxy_S26_Ultra",
+      "shortcode": "DgPaLEhNuIE",
+      "title_vi": "Seoul, south korea with the galaxy S26 ultra",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Toàn cảnh (Wide) • Hook thị giác 3s • Đi bộ theo (Tracking) • Đặc tả (Macro) • Cận cảnh (Close-up) • Low-key Lighting • Kỹ thuật ghép phân thân • Cố định (Tripod)",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Toàn cảnh (Wide)",
+        "Hook thị giác 3s",
+        "Đi bộ theo (Tracking)",
+        "Đặc tả (Macro)",
+        "Cận cảnh (Close-up)"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @qfroost",
+      "tech_tags": [
+        "Toàn cảnh (Wide)",
+        "Hook thị giác 3s",
+        "Đi bộ theo (Tracking)",
+        "Đặc tả (Macro)",
+        "Cận cảnh (Close-up)",
+        "Low-key Lighting",
+        "Kỹ thuật ghép phân thân",
+        "Cố định (Tripod)",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Bố cục.",
+      "creator": {
+        "raw": "@qfroost",
+        "name": "Qfroost",
+        "handle": "@qfroost",
+        "profile_url": "https://www.instagram.com/qfroost/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DgPaLEhNuIE/",
+      "gdrive_folder": "https://drive.google.com/open?id=1d8a3CzSMRuHt5goP64_rrNzB63N7Qdjk",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40qfroost_DgPaLEhNuIE_Seoul%2C_South_Korea_with_the_Galaxy_S26_Ultra/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40qfroost_DgPaLEhNuIE_Seoul%2C_South_Korea_with_the_Galaxy_S26_Ultra/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/whJOcdL46yw",
+        "video_url_original": "https://media.fedu.vn/videos/whJOcdL46yw",
+        "report_url": "reports/IG_@qfroost_DgPaLEhNuIE_Seoul,_South_Korea_with_the_Galaxy_S26_Ultra.html",
+        "shots_count": 17,
+        "duration": "18.1s",
+        "youtube_id": "whJOcdL46yw",
+        "youtube_embed": "https://www.youtube.com/embed/whJOcdL46yw",
+        "youtube_url": "https://youtu.be/whJOcdL46yw"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@simeonkraeft_DgA8UTpgjJ0_Carousel_Analysis",
       "shortcode": "DgA8UTpgjJ0_Carousel_Analysis",
-      "title_vi": "5 cách quay không gian nghỉ dưỡng chỉn chu từ sáng đến tối qua 6 thẻ",
+      "title_vi": "5 mẹo quay phòng nghỉ và quán đẹp chỉn chu chỉ với nắng tự nhiên",
       "quick_takeaway": "Hệ thống hóa trọn bộ 6 thẻ video thành 5 nguyên tắc quay không gian dễ làm: dựng theo trình tự sáng-tối, bắt bóng nắng tường, giữ nhịp máy tĩnh, dí cận chất liệu và khóa góc kiến trúc đặc trưng.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -3768,7 +3852,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DgHoOfvxkgp_day_29_of_learning_cinematography…",
       "shortcode": "DgHoOfvxkgp",
-      "title_vi": "Kỹ thuật quay B-Roll đặc tả thao tác máy tính chỉn chu",
+      "title_vi": "Quay B-Roll cận thao tác bàn phím và màn hình làm việc",
       "quick_takeaway": "Video thực hành các góc máy cận cảnh (Macro) và đặc tả (Extreme Close-up) để kể chuyện về quá trình làm việc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -3849,7 +3933,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_Df6BDmwhz57_Nothing_like_a_calm_day—walking_the_dog,_wash",
       "shortcode": "Df6BDmwhz57",
-      "title_vi": "Kể trọn một ngày bình yên qua 29 cảnh hành động nhỏ không cần một câu thoại",
+      "title_vi": "Kể trọn một ngày bình yên ở nhà bằng chuỗi cảnh ngắn không thoại",
       "quick_takeaway": "Video chuỗi 29 cảnh B-Roll (Cảnh quay phụ đặc tả hành động) nhịp ~0.7 giây/cảnh đan xen khéo léo 3 góc máy: Top-Down (Từ trên thẳng xuống), Fisheye (Ống kính mắt cá siêu rộng) và góc thấp đón nắng xiên để biến các việc vặt buổi sáng thành câu chuyện cuốn hút.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -3934,7 +4018,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jessbrrd_Df2Ae0hgqOP_My_favorite_feeling_is_being_home",
       "shortcode": "Df2Ae0hgqOP",
-      "title_vi": "Kể Chuyện Ở Nhà Bình Yên Bằng Chuỗi 25 Cảnh Cắt Nhanh Và Phối Sáng Ấm",
+      "title_vi": "Quay chuỗi cảnh buổi tối ấm cúng tại nhà bằng ánh đèn vàng và nến",
       "quick_takeaway": "Video tổng 25 cảnh mở màn bằng 3 giây Fast Cut (cắt cảnh nhịp nhanh) nhá trước các khoảnh khắc ấm cúng kèm dòng chữ neo mắt giữa khung hình, sau đó giãn nhịp chậm rãi với các cặp cảnh nối tiếp chuyển động và tương phản ánh sáng xanh chiều tà - vàng đèn ấm.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -4019,7 +4103,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@canyonahika_DfzqB0cRr6v_183_A_self-reminder",
       "shortcode": "DfzqB0cRr6v",
-      "title_vi": "Cách Luyện Tay Nghề Quay Dựng Mỗi Ngày Ngay Tại Gian Bếp Qua 7 Cảnh Pha Cà Phê",
+      "title_vi": "Luyện tay nghề quay dựng mỗi ngày qua bảy cảnh tự pha cà phê tại bếp",
       "quick_takeaway": "Đối lập góc hậu trường khung dọc đầu video với chuỗi B-Roll (cảnh phụ minh họa) khung ngang chỉn chu từ chuyện pha cà phê thường ngày.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -4102,7 +4186,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@slaohuairen_DfzbNNoSywy_小城夏天",
       "shortcode": "DfzbNNoSywy",
-      "title_vi": "5 góc máy tĩnh tận dụng nắng cửa sổ tạo thước phim mùa hè chỉn chu ngay tại phòng",
+      "title_vi": "Năm góc máy tĩnh đón nắng cửa sổ tạo thước phim êm đềm ngay tại phòng",
       "quick_takeaway": "Chuỗi 5 cảnh B-Roll (cảnh quay phụ giàu hình ảnh) đặt chân máy cố định, tắt hết đèn trong nhà để tận dụng ánh nắng cửa sổ tương phản với nền phòng tối tạo chiều sâu chỉn chu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -4185,7 +4269,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_Df7QOGHoLpa_the_little_comforts_I_never_get_tired_of_☕️",
       "shortcode": "Df7QOGHoLpa",
-      "title_vi": "8 Góc Máy B-Roll (Cảnh Quay Phụ) Tĩnh Tại Nhà Đẹp Chỉn Chu Không Cần Thoại",
+      "title_vi": "Tám góc máy tĩnh bắt khói trầm, ánh nến và nắng xiên ấm áp trong nhà",
       "quick_takeaway": "Chuỗi 8 cảnh khóa cứng chân máy tận dụng chuyển động nhỏ của dòng cà phê, lửa nến, khói trầm và nắng xiên để giữ mắt người xem trọn 9 giây mà không cần lộ mặt hay lời thoại.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -4266,7 +4350,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@madie_DfFfg0HoP84_One_resolution_finally_coming_true._See_you_t",
       "shortcode": "DfFfg0HoP84",
-      "title_vi": "Kể chuyện 3 năm trì hoãn qua 7 cảnh lật sổ để thông báo ra mắt kênh mới",
+      "title_vi": "Kể chuyện ba năm trì hoãn bằng bảy cảnh lật sổ để bắt đầu làm thật",
       "quick_takeaway": "Kết hợp 7 cảnh đan xen giữa lật sổ ghi các mốc năm thất bại và hành động vò giấy bấm nút ghi hình để biến lời hứa đầu năm thành màn thông báo trở lại thuyết phục.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -4349,7 +4433,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@goneovietnam_Df7TPy9As69_Video_by_goneovietnam",
       "shortcode": "Df7TPy9As69",
-      "title_vi": "Kể chuyện 21 cảnh thói quen sáng tối tôn vẻ đẹp công tắc ổ cắm âm tường",
+      "title_vi": "Quay ổ cắm âm tường qua thói quen sinh hoạt trước gương mỗi sáng",
       "quick_takeaway": "Đan xen góc phản chiếu qua gương và cảnh cận B-Roll (Cảnh quay phụ minh họa hành động) thao tác bật tắt, cắm rút thiết bị cá nhân qua 21 cảnh ngắn không lời thoại, biến ổ cắm điện khô khan thành điểm nhấn thẩm mỹ gắn liền nhịp sống mỗi ngày.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -4432,7 +4516,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@pholua.official_Deq3H1Xs6ZI_Video_by_pholua.official",
       "shortcode": "Deq3H1Xs6ZI",
-      "title_vi": "Quy trình 13 cảnh quay phở gà từ bếp ra bàn ăn giữ mắt không cần lời thoại",
+      "title_vi": "Mười ba cảnh quay tô phở gà từ nồi nước dùng trong bếp ra bàn ăn",
       "quick_takeaway": "Kể trọn hành trình một tô phở gà trong 13 cảnh bằng chuỗi B-Roll (cảnh quay đặc tả hành động) nối Cross Dissolve (chuyển mờ chồng lớp) và Match Cut (cắt khớp vị trí tô) từ nồi trụng trong bếp ra thẳng bàn ăn sân vườn.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -4517,7 +4601,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@isovlogs_De9jhfISMZ2_stills_of_kamakura",
       "shortcode": "De9jhfISMZ2",
-      "title_vi": "13 khung hình tĩnh có chuyển động kể trọn chuyến đi Kamakura chỉ trong 17 giây",
+      "title_vi": "Mười ba khung hình tĩnh kể trọn chuyến dạo phố biển từ sáng đến chiều",
       "quick_takeaway": "Khóa máy tĩnh như bưu thiếp sống kết hợp đoạn giữa cắt chớp nhoáng khớp nhịp trống giúp 13 cảnh dạo phố biển không cần lời thoại vẫn cuốn mắt từ sáng tới hoàng hôn.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -4602,7 +4686,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@adzijabruna_DfcU3wuxqA3_if_you_wait_a_few_seconds_you_will_see_me_sne",
       "shortcode": "DfcU3wuxqA3",
-      "title_vi": "Kể chuyện pha cà phê sáng không lời thoại bằng 25 cảnh cắt nhanh giữ mắt đến phút chót",
+      "title_vi": "Quay chuyện pha cà phê sáng không thoại giữ mắt bằng khoảnh khắc thật",
       "quick_takeaway": "Biến thói quen mặc đồ và pha cà phê lặp lại mỗi sáng thành chuỗi 25 cảnh B-Roll (cảnh quay phụ không thoại) cuốn hút nhờ chân máy cố định kết hợp Jump Cut (cắt nhảy bỏ khoảng trống) dồn nhịp và giữ lại cả cú hắt hơi thật.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -4685,7 +4769,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@itsannalay_DcuYF9mS_4L_I’ve_been_struggling_with_this_feeling_that_I",
       "shortcode": "DcuYF9mS_4L",
-      "title_vi": "Kể chuyện 16 cảnh nhắm mắt thoát khỏi bàn làm việc mở ra hành trình du lịch",
+      "title_vi": "Kể chuyện nhắm mắt rời bàn làm việc mở ra hành trình xê dịch tự do",
       "quick_takeaway": "Dùng cặp cảnh nhắm mắt trong phòng tối và hành động gập laptop ở cuối làm khung kẹp cho 11 cảnh B-Roll (cảnh quay phụ minh họa) du lịch cắt nhanh theo cao trào nhạc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -4770,7 +4854,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iamlinaangelina_De6ydltAJym_sunday_cooking_club,_on_today’s_menu_homemade",
       "shortcode": "De6ydltAJym",
-      "title_vi": "27 Cảnh Quay Chỉn Chu Món Bánh Táo Lê Nướng Giữ Nhịp Xem Không Cần Lời Thoại",
+      "title_vi": "Quay công thức làm bánh táo lê nướng tại bếp không cần lời thoại",
       "quick_takeaway": "Chuỗi 27 cảnh B-Roll (cảnh quay phụ đặc tả thao tác) kết hợp nhịp cắt nháy nhá hàng 1.5 giây đầu với các cụm góc chụp thẳng 90 độ từ trên xuống cố định trục máy, biến công thức làm bánh tại nhà thành câu chuyện hình ảnh ấm cúng mà không cần lời thoại.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting • Wide Establishing Shot",
       "shooting_style": {
@@ -4855,7 +4939,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@doddsfilms_Df3d1Exlt_V_Carousel_Analysis",
       "shortcode": "Df3d1Exlt_V_Carousel_Analysis",
-      "title_vi": "Công Thức 8 Cảnh Tự Quay Bản Thân Chỉn Chu Bằng Bố Cục Và Tương Phản Màu",
+      "title_vi": "Sáu mẹo chọn bố cục và góc máy giúp video tự quay trông chỉn chu",
       "quick_takeaway": "Chuỗi 8 cảnh dạng thẻ lướt minh họa trực quan 6 nguyên tắc giúp video tự quay trông chỉn chu ngay tại điểm tham quan: giữ nhịp máy tĩnh, đặc tả chi tiết, mượn tiền cảnh tạo chiều sâu, ngửa góc rộng lấy trần, phối màu nóng lạnh đối lập và lia vòng cung bắt khoảnh khắc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -4938,7 +5022,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ioana_iftode_DfRmZK3DBGf_Carousel_Analysis",
       "shortcode": "DfRmZK3DBGf_Carousel_Analysis",
-      "title_vi": "Nhật ký 1 ngày đi Uji bằng 10 cụm cảnh B-Roll (cảnh phụ) chỉn chu từ sớm tới đêm",
+      "title_vi": "Nhật ký một ngày đi tàu dạo phố cổ và uống trà từ sáng tới đêm",
       "quick_takeaway": "Kể trọn hành trình một ngày từ sáng sớm đến đêm muộn qua 10 cụm cảnh ngắn ghép nối theo trình tự thời gian, dùng dòng chữ nhỏ cố định làm mạch dẫn thay lời nói.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -5023,7 +5107,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jxframes_Df7Y2mOlh3F_Carousel_Analysis",
       "shortcode": "Df7Y2mOlh3F_Carousel_Analysis",
-      "title_vi": "7 cách dùng khung tự nhiên và kiến trúc tạo chiều sâu chỉn chu cho cảnh ngoại thất",
+      "title_vi": "Bảy cách mượn khung cây và vòm cửa tạo chiều sâu cho cảnh ngoài trời",
       "quick_takeaway": "Tận dụng thân cây, khung cửa phà, ngõ hẹp và dầm cầu ở tiền cảnh tối để đóng khung chủ thể ngoài sáng, tạo chiều sâu thị giác cuốn hút dù máy quay đứng yên hoàn toàn.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -5108,7 +5192,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame@skylarvp_of_c",
       "shortcode": "DfAbG-rkch0",
-      "title_vi": "Quảng cáo nước hoa 2 cảnh chỉn chu: Kể chuyện tình bên bồn tắm nối cận cảnh đáy chai",
+      "title_vi": "Quảng cáo nước hoa hai cảnh: Kể chuyện tình ấm áp nối cận cảnh chai",
       "quick_takeaway": "Kết hợp 1 cảnh dài 10 giây kể chuyện đôi lứa ấm áp bằng giọng đọc sách và 1 cảnh đặc tả chai nước hoa 0.6 giây dùng Match Cut (khớp vị trí) để bán cảm xúc trước khi lộ sản phẩm.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -5169,7 +5253,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=11vu3OpH9_OhpFSQw7pG30sKqsN_mjXTA",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_01_mid_thumb.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame%40skylarvp_of_c/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/swec_CEijzE",
         "video_url_original": "https://media.fedu.vn/videos/swec_CEijzE",
         "report_url": "reports/IG_@maxgoldberg_DfAbG-rkch0_maxgoldbergSKYLAR_-_Fated_Flame@skylarvp_of_c.html",
@@ -5189,7 +5273,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@gakuyen_DfgvESoEwlh_Carousel_Analysis",
       "shortcode": "DfgvESoEwlh_Carousel_Analysis",
-      "title_vi": "12 Cảnh Quay Chỉn Chu Bắt Trọn Chất Thu Nhật Bản Bằng Ánh Sáng Và Bố Cục",
+      "title_vi": "Mười hai cảnh dạo bước mùa thu bắt nắng ngược qua tán lá và phố cổ",
       "quick_takeaway": "Chuỗi 12 cảnh quay chỉn chu không lời thoại đan xen mượt mà giữa đặc tả thiên nhiên ngược nắng, chi tiết đường phố và nhịp bước chân du ký mùa thu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -5272,7 +5356,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kienobifilms_DffO5hGRnAd_Turn_on_your_camera_grid._Put_your_eyes_on_th",
       "shortcode": "DffO5hGRnAd",
-      "title_vi": "5 cách đặt chủ thể lên khung lưới 9 ô giúp cảnh quay chỉn chu ngay trên điện thoại",
+      "title_vi": "Năm cách bật lưới chín ô căn vị trí mắt giúp cảnh quay cân đối ngay",
       "quick_takeaway": "Trực quan hóa quy tắc 1/3 bằng đường lưới nháy sáng xanh lá ngay trên 5 bối cảnh thật, giúp người xem thấy rõ vị trí đặt người và đặt mắt chỉ sau 15 giây.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -5353,7 +5437,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@prabhhaattt_DfZxS1lR71v_This_Dhanteras,_taking_a_small_step_towards_s",
       "shortcode": "DfZxS1lR71v",
-      "title_vi": "Biến chủ đề đầu tư khô khan thành 30 cảnh kể chuyện sinh động ngay trên bàn làm việc",
+      "title_vi": "Kể chuyện tài chính khô khan bằng đạo cụ giấy thủ công ngay tại bàn",
       "quick_takeaway": "Kết hợp Voice-Over (thu âm lồng tiếng) với chuỗi 30 cảnh đạo cụ thủ công trên mặt bàn (giấy nhớ, mô hình nhà giấy, cuộn số viết tay, gạch xếp hình) để biến câu chuyện đầu tư nhỏ dịp lễ hội thành hình ảnh trực quan cuốn hút.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -5434,7 +5518,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@parallax_collective_DfoM-jckn-H_Carousel_Analysis",
       "shortcode": "DfoM-jckn-H_Carousel_Analysis",
-      "title_vi": "Kể chuyện ngày cưới không lời thoại qua 7 cụm cảnh Match Cut (ghép đồng dạng) chỉn chu",
+      "title_vi": "Kể chuyện gia đình ngày cưới không thoại qua bảy cụm cảnh đồng dạng",
       "quick_takeaway": "Dùng chiếc hộp gỗ gia truyền và cái ngoái nhìn của người con làm sợi dây xuyên suốt 7 cụm cảnh, đan cài quá khứ và hiện tại mượt mà không cần một câu thoại.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -5515,7 +5599,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@maydaymedia_au_Df9JpCGpYxJ_Carousel_Analysis",
       "shortcode": "Df9JpCGpYxJ_Carousel_Analysis",
-      "title_vi": "Bóc Tách 15 Cảnh Dạy 12 Góc Máy Quay Nhà Mẫu Và Nội Thất Chỉn Chu",
+      "title_vi": "Mười hai góc máy di chuyển quay nhà mẫu và nội thất có chiều sâu",
       "quick_takeaway": "Chuỗi 15 cảnh thị phạm trực quan 12 kỹ thuật chọn góc, dẫn hướng mắt và di chuyển máy giúp video quay nhà mẫu có chiều sâu, sang trọng mà không cần lời thoại.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -5596,7 +5680,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@arturbr_DfmF7R1qLEO_If_I_have_time_between_shoots_in_Barcelona,_I",
       "shortcode": "DfmF7R1qLEO",
-      "title_vi": "Cách lồng ghép sạc dự phòng tự nhiên vào 25 cảnh một ngày dạo phố làm việc",
+      "title_vi": "Lồng ghép pin dự phòng tự nhiên vào chuyến đi bộ làm việc ngoài quán",
       "quick_takeaway": "Không đọc thông số khô khan từ đầu, cả video 25 cảnh dẫn dắt bằng nhịp chuẩn bị đồ nghề buổi sáng và cuốc đi bộ xuyên phố Barcelona rồi mới biến cục sạc dự phòng thành món đồ cứu nguy tự nhiên khi ghé quán cà phê thiếu ổ cắm.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -5681,7 +5765,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jazziesillona_DfkDMLeS3OX_here’s_a_guide_to_help_you_film_and_edit_with",
       "shortcode": "DfkDMLeS3OX",
-      "title_vi": "Công Thức 5 Góc Máy Tĩnh Kể Trọn Chuyến Đi Chỉn Chu Không Cần Lời Thoại",
+      "title_vi": "Năm góc đặt máy tĩnh kể trọn chuyến đi tàu bằng ánh sáng cửa sổ",
       "quick_takeaway": "Video dài 14 cảnh hướng dẫn trọn bộ công thức 5 góc máy đặt tĩnh cơ bản giúp biến bất kỳ chuyến đi tàu xe nào thành một câu chuyện hình ảnh có đầu có cuối chỉ bằng ánh sáng cửa sổ tự nhiên.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -5764,7 +5848,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@tokyodiary365_DfdQmweJaZd_The_beauty_of_an_ordinary_day_in_Tokyo.⁡",
       "shortcode": "DfdQmweJaZd",
-      "title_vi": "7 góc máy tĩnh bắt trọn nắng chiều và nhịp sống đường phố Tokyo chỉn chu",
+      "title_vi": "Bảy góc máy tĩnh bắt nắng chiều và nhịp sống bình dị ngoài đường phố",
       "quick_takeaway": "Video giữ nguyên khung máy cố định ở cả 7 cảnh, kết hợp nắng xiên buổi chiều với các vòm cây và bóng râm làm khung bao tự nhiên để biến cảnh xe chạy, người đi bộ bình thường ở Tokyo thành thước phim chỉn chu.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -5849,7 +5933,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@caffeinerush.cr_DYO_vzzDNoW_Video_by_caffeinerush.cr",
       "shortcode": "DYO_vzzDNoW",
-      "title_vi": "12 Cảnh Quay Quán Cà Phê Chỉn Chu: Từ Mặt Tiền Hút Mắt Đến Quầy Pha Chế",
+      "title_vi": "Mười hai cảnh tĩnh quay quán cà phê từ mặt tiền đến quầy pha chế",
       "quick_takeaway": "Video dùng chân máy cố định kết hợp bố cục khung trong khung và chuỗi 4 cảnh pha chế liên hoàn trên cùng một góc đặt máy để tôn trọn vẹn chất nghệ nhân lẫn không khí đông khách thật của quán mà không cần một câu lời thoại.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -5932,7 +6016,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sheratonhanoi_DfgXy19gGEP_Video_by_sheratonhanoi",
       "shortcode": "DfgXy19gGEP",
-      "title_vi": "Công thức 17 cảnh quay chỉn chu từ lửa bếp ra bàn tiệc hút khách đặt bàn nhà hàng",
+      "title_vi": "Mười bảy cảnh quay món nướng từ lửa bếp mở ra bàn tiệc nhà hàng",
       "quick_takeaway": "Video dẫn dắt thị giác qua 17 cảnh B-Roll (cảnh quay đặc tả minh họa) nối mượt từ sức nóng gian bếp lửa khói sang trải nghiệm cắt bít tết hồng mọng và rưới sốt ngay tại bàn mà không cần lời thuyết minh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -6017,7 +6101,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_Df117cvIze3_the_light_this_time_of_year_3",
       "shortcode": "Df117cvIze3",
-      "title_vi": "Cách Tận Dụng Nắng Xiên Cửa Sổ Qua 11 Cảnh B-Roll (Cảnh Phụ) Tại Nhà",
+      "title_vi": "Mười một cảnh tĩnh tận dụng nắng xiên cửa sổ cho góc cà phê tại nhà",
       "quick_takeaway": "Kết hợp nắng xiên tự nhiên qua khung cửa sổ với khói trầm, ánh nến và thao tác pha cà phê chậm rãi để biến căn phòng quen thuộc thành chuỗi 11 cảnh B-Roll (cảnh quay phụ đặc tả chi tiết) có chiều sâu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -6100,7 +6184,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jessbrrd_Dfe6H2cgPHd_Home_is_where_I_feel_most_at_peace",
       "shortcode": "Dfe6H2cgPHd",
-      "title_vi": "Dựng 22 cảnh ở nhà chỉn chu: Nhá nhanh 2 giây đầu giữ mắt rồi thả chậm ấm áp",
+      "title_vi": "Hai mươi hai cảnh ở nhà bình yên: Nhá nhanh đầu video rồi thả chậm",
       "quick_takeaway": "Đối lập ánh sáng cửa sổ xanh lạnh với đèn bàn vàng ấm trên khung ngang viền đen, dùng 2 giây đầu nhá dồn dập rồi giãn nhịp chậm qua tổng cộng 22 cảnh sinh hoạt bình yên tại nhà.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -6183,7 +6267,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@roior.2_DdZcbswIvm6_I_don’t_want_to_forget",
       "shortcode": "DdZcbswIvm6",
-      "title_vi": "4 Cảnh Cận Cảnh Sạc Thiết Bị Bẻ Lái Sang Thông Điệp Tự Nghỉ Ngơi",
+      "title_vi": "Bốn cảnh cận cắm sạc thiết bị bẻ lái sang thông điệp tự nghỉ ngơi",
       "quick_takeaway": "Dùng 3 cảnh cắm sạc thiết bị dồn dập kết hợp câu chữ tách nhịp giữa màn hình để bẻ lái sang cảnh đọc sách nghỉ ngơi đầy lắng đọng ở cuối.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -6264,7 +6348,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dzanxfss_De16GmzS2zE_Хочешь_научиться_создавать_такие_же_мультфиль",
       "shortcode": "De16GmzS2zE",
-      "title_vi": "Cách quay 3 cảnh làm việc buổi tối tại bàn ghép lời lồng tiếng chỉn chu",
+      "title_vi": "Ba cảnh ngồi làm việc buổi tối tại bàn ghép lời lồng tiếng tâm sự",
       "quick_takeaway": "Video chỉ dùng 3 cảnh B-Roll (cảnh quay phụ minh họa hành động) tại bàn làm việc buổi tối nhưng giữ chân người xem nhờ độ tương phản sáng ấm lạnh chỉn chu, kết hợp Voice-over (giọng đọc lồng tiếng) và phụ đề nhảy từng chữ ngay khoảng tối chính giữa khung hình.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -6343,7 +6427,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@thequietlifepages_DfXogjqINs4_Some_days_I’m_motivated._Some_days_I’m_tired,",
       "shortcode": "DfXogjqINs4",
-      "title_vi": "11 Cảnh Quay Tại Bàn Không Lộ Mặt: Biến Thao Tác Mở Laptop Thành Thông Điệp Kỷ Luật",
+      "title_vi": "Ghép 10 lần mở máy tính qua nhiều ngày thành thông điệp kỷ luật",
       "quick_takeaway": "Ghép 10 cú Match Cut (cắt nối đồng dạng) mở nắp laptop qua nhiều ngày với 1 cảnh góc cao gõ phím trên nền Voice-over (giọng đọc lồng tiếng) để truyền tải tinh thần làm việc bất chấp cảm xúc.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -6426,7 +6510,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@gottagoh_DfUnzbpJZ3t_POV_Your_dinner_gets_cold_because_you’re_a_fi",
       "shortcode": "DfUnzbpJZ3t",
-      "title_vi": "Phối 37 cảnh quay nấu ăn chỉn chu biến bữa tối đời thường thành phim ngắn cuốn mắt",
+      "title_vi": "Chuyện người mê quay phim nấu ăn xong mải lắp ống kính tới nguội món",
       "quick_takeaway": "Chuỗi 37 cảnh B-Roll (cảnh phụ minh họa) nấu ăn không lời thoại kết hợp góc máy lạ sát mặt thớt, ánh sáng xiên tách khói và nhịp cắt nhanh dưới 1 giây để giữ chặt mắt người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -6509,7 +6593,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@chirrr_Df1PK8YDU1Z_Carousel_Analysis",
       "shortcode": "Df1PK8YDU1Z_Carousel_Analysis",
-      "title_vi": "Bộ 4 video du lịch Đài Loan chỉn chu: Giữ mắt nhờ tương phản và góc máy",
+      "title_vi": "Bốn lát cắt du lịch giữ mắt nhờ tương phản sáng tối và góc máy thấp",
       "quick_takeaway": "Bộ 4 thước phim ngắn khai thác trọn vẹn Đài Loan qua 4 lát cắt từ dạo hẻm một mình, đi phố cùng người thân, lặn biển đến trò chuyện bên hồ với bố cục tương phản giàu chiều sâu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
       "shooting_style": {
@@ -6590,7 +6674,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@worldwithreece_Df0GeOJiA0W_Use_this_shot_for_your_next_video_02",
       "shortcode": "Df0GeOJiA0W",
-      "title_vi": "Công thức quay 9 nhịp cận cảnh chi tiết đón nắng cửa sổ chỉn chu ngay tại bàn",
+      "title_vi": "Chín góc cận chi tiết đón nắng cửa sổ cho đồ uống và sách tại bàn",
       "quick_takeaway": "Biến những vật dụng quen thuộc trên bàn như ly cà phê, cuốn sách và ánh mắt thành chuỗi B-Roll (cảnh quay phụ minh họa) cuốn hút nhờ đặt máy sát vật thể kết hợp nắng xiên tương phản mạnh.",
       "key_tech": "Góc máy • B-Roll Chỉn Chu • Góc Máy Đời Thường • Góc Nhìn POV • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -6696,7 +6780,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@imustafakucuk_Dd2DoW7u55z_Can’t_sleep",
       "shortcode": "Dd2DoW7u55z",
-      "title_vi": "8 cảnh B-Roll (cảnh quay phụ) bàn làm việc đêm khuya chỉn chu nối vòng lặp mượt",
+      "title_vi": "Tám góc cận làm việc đêm khuya tại bàn nối vòng lặp mở đóng máy tính",
       "quick_takeaway": "Kể trọn tâm trạng thức khuya làm việc lúc 00:01 không cần lời thoại nhờ 8 góc cận cảnh ánh sáng ấm áp và thủ thuật mở - đóng nắp laptop tạo vòng lặp vô tận.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -6797,7 +6881,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bellaview_7_DfkgAeSsvVt_life_as_a_movie._🎬",
       "shortcode": "DfkgAeSsvVt",
-      "title_vi": "Cách quay 11 cảnh làm việc tại bàn chỉn chu có chiều sâu không cần lộ mặt nói",
+      "title_vi": "11 góc quay làm việc tại bàn có chiều sâu nhờ tiền cảnh và đèn ấm",
       "quick_takeaway": "Biến góc bàn làm việc bình thường thành chuỗi B-Roll (cảnh quay phụ đặc tả hành động) cuốn hút nhờ hai đèn bàn vàng ấm, tiền cảnh che mờ mép khung hình và hai pha nối chuyển động tay mượt mà.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -6876,7 +6960,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_Dd67m24O4_Q_Day_30_learning_cinematography",
       "shortcode": "Dd67m24O4_Q",
-      "title_vi": "10 góc máy tự quay buổi chiều ở nhà chỉn chu bằng ánh sáng đèn vàng và nắng xiên",
+      "title_vi": "Mười góc máy buổi chiều ở nhà kết hợp nắng ngược và đèn vàng ấm",
       "quick_takeaway": "Biến chuỗi sinh hoạt bình thường ở nhà như chọn nhạc, pha nước, lấy sách thành video 10 cảnh cuốn hút nhờ tắt đèn trần giữ đèn vàng ấm và tận dụng tiền cảnh tạo chiều sâu.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -6967,7 +7051,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_De_w-W7xR0b_day_15_of_learning_cinematography…",
       "shortcode": "De_w-W7xR0b",
-      "title_vi": "Luyện quay B-roll chỉn chu tại bàn làm việc với ánh sáng ấm",
+      "title_vi": "Mười một góc tĩnh tự quay buổi làm việc tại bàn với ánh đèn ấm",
       "quick_takeaway": "Video thực hành quay B-roll đời thường với ánh sáng vàng ấm cúng tạo cảm giác chuyên nghiệp.",
       "key_tech": "Cinematic Lighting, Composition Mastery, Storyboard Rhythm",
       "shooting_style": {
@@ -7044,7 +7128,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DfFJotmRRJo_day_17_of_learning_cinematography…",
       "shortcode": "DfFJotmRRJo",
-      "title_vi": "Nâng cấp video đọc sách với 10 góc quay chỉn chu",
+      "title_vi": "Mười góc quay đọc sách và uống cà phê có chiều sâu ngay tại nhà",
       "quick_takeaway": "Video hướng dẫn thực hành quay B-roll (cảnh phụ) đời thường với ánh sáng ấm và bố cục có chiều sâu.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -7137,7 +7221,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DfHrFg1RDZU_yula_andrieievaday_18_of_learning_cinematogra",
       "shortcode": "DfHrFg1RDZU",
-      "title_vi": "Bí quyết quay B-Roll phòng ngủ chỉn chu với ánh sáng xanh cam",
+      "title_vi": "8 góc quay phòng ngủ buổi tối tận dụng ánh sáng đèn bàn và màn hình",
       "quick_takeaway": "Video thực hành kỹ thuật quay B-Roll (Cảnh quay phụ) trong phòng ngủ, tập trung vào phối màu tương phản và góc máy cận.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -7218,7 +7302,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DfRdoejxPbo_day_20_of_learning_cinematography…",
       "shortcode": "DfRdoejxPbo",
-      "title_vi": "Bí quyết quay B-Roll chỉn chu tại bàn làm việc với ánh sáng tím",
+      "title_vi": "7 góc quay viết sổ tại bàn phối đèn màu hắt tường và đèn bàn vàng",
       "quick_takeaway": "Video hướng dẫn cách sắp xếp ánh sáng và đa dạng góc máy để tạo ra những thước phim nghệ thuật ngay tại nhà.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -7311,7 +7395,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DfZgNkZRl7Q_day_22_of_learning_cinematography",
       "shortcode": "DfZgNkZRl7Q",
-      "title_vi": "Bí quyết quay B-Roll đời thường chỉn chu tại nhà",
+      "title_vi": "Chín góc quay phòng khách buổi tối ấm cúng với đèn vàng và ngọn nến",
       "quick_takeaway": "Video trình diễn các kỹ thuật quay B-Roll (Cảnh quay phụ) với ánh sáng ấm và bố cục đa dạng để tạo không khí bình yên.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -7402,7 +7486,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@octavianbarbu_DfutuLzNk6s_need_more_stories_to_tell",
       "shortcode": "DfutuLzNk6s",
-      "title_vi": "4 bước kể chuyện cuốn hút qua 24 cảnh quay làm mẫu ngay trong căn hộ",
+      "title_vi": "4 bước kể chuyện bằng hình ảnh vừa đọc lời giảng vừa làm mẫu thật",
       "quick_takeaway": "Dàn dựng 24 cảnh cắt nhanh vừa giảng vừa làm mẫu trực tiếp bằng hình ảnh: lời đọc nhắc tới cỡ cảnh cận, trung hay rộng là khung hình nhảy đúng sang cỡ cảnh đó ngay lập tức.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -7485,7 +7569,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@huesofdays_Dd6Vo4Tgxgy_Life_at_home",
       "shortcode": "Dd6Vo4Tgxgy",
-      "title_vi": "15 cảnh tự quay bữa tối tại nhà chỉn chu chỉ với 1 chân máy cố định",
+      "title_vi": "Mười lăm cảnh tự quay bữa tối tại nhà chỉ bằng một chân máy cố định",
       "quick_takeaway": "Chuỗi 15 cảnh B-Roll (cảnh quay phụ đặc tả hành động) không lời thoại kể trọn bữa tối tự nấu tại nhà bằng cách phối hợp 1 góc máy rộng cố định làm khung sườn với các góc cận 2x quay sát chảo và bàn làm việc đèn vàng ấm.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -7568,7 +7652,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@evlnlarisa_Deg-i6YPJai_a_little_kyoto_escape🍵",
       "shortcode": "Deg-i6YPJai",
-      "title_vi": "14 cảnh B-Roll (cảnh minh họa) Kyoto giữ máy đứng yên ghép khớp nhịp đàn ukulele",
+      "title_vi": "Mười bốn cảnh phố xá và món ăn giữ máy đứng yên cắt khớp nhịp đàn",
       "quick_takeaway": "Toàn bộ 14 cảnh trong video hầu như chỉ giữ điện thoại đứng yên 1 chỗ để người qua đường, khói nướng bánh, mặt nước tự chuyển động trong khung hình chuẩn xác rồi cắt thẳng đúng tiếng gẩy đàn.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -7653,7 +7737,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nadineklercq_DffR9U3IuGE_Starting_a_new_series_Let’s_Talk_🤍",
       "shortcode": "DffR9U3IuGE",
-      "title_vi": "Mở chuỗi video cá nhân bằng 11 cảnh đan xen ngồi nói và sinh hoạt tại nhà",
+      "title_vi": "Mở đầu chuỗi tâm sự bằng góc ngồi nói trực diện xen cảnh sinh hoạt",
       "quick_takeaway": "Video 11 cảnh kết hợp 1 góc ngồi nói trực diện A-Roll (cảnh nói chính) với chuỗi B-Roll (cảnh phụ minh họa) tự quay quanh nhà bằng ánh sáng cửa sổ để ra mắt chuỗi tâm sự cá nhân trong 31 giây.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -7734,7 +7818,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lifewith.ren_Dfry6LeR2Vy_Ep._2_of_cooking_dishes_you_recommended_🌙_Chi",
       "shortcode": "Dfry6LeR2Vy",
-      "title_vi": "Bóc tách 28 cảnh vlog nấu ăn chỉn chu bằng đèn bàn ấm và góc cận thao tác bếp",
+      "title_vi": "Quay quá trình ướp và áp chảo món gà bằng đèn bàn ấm đặt trên bếp",
       "quick_takeaway": "Chuỗi 28 cảnh nấu ăn không lời thoại giữ mắt người xem nhờ nhịp cắt gọn 0.5-1.5 giây theo từng bước pha sốt và cách bày đèn ngủ vàng ấm ngay trên mặt bếp để tách khối nguyên liệu.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -7819,7 +7903,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nadineklercq_DfXj02VIebd_I_decided_to_stop_being_so_hard_on_myself",
       "shortcode": "DfXj02VIebd",
-      "title_vi": "Kể chuyện tự sự ngoài trời chỉn chu bằng 6 cảnh tĩnh động đan xen và lời thu âm",
+      "title_vi": "Kể chuyện tự sự ngoài trời bằng 5 góc máy tĩnh trên cầu kèm giọng đọc",
       "quick_takeaway": "Video kết hợp 6 cảnh quay tĩnh lặng trên cầu mùa thu với giọng thu âm chậm rãi, dùng chiếc áo sáng màu tách nhân vật khỏi đám đông để giữ mắt người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -7902,7 +7986,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@annett.mov_Dft8Py0gkrS_One_shot_per_day_in_one_week._It_gives_me_suc",
       "shortcode": "Dft8Py0gkrS",
-      "title_vi": "Thử Thách Mỗi Ngày 1 Góc Máy Tĩnh Biến Cảnh Đời Thường Thành Video Chỉn Chu",
+      "title_vi": "Mỗi ngày một góc máy tĩnh đặt ở vị trí lạ suốt bảy ngày trong tuần",
       "quick_takeaway": "Không cần lời thoại hay lia máy phức tạp, video giữ mắt người xem nhờ đặt máy cố định ở những vị trí lạ như trong tủ lạnh, sát bàn gỗ, sau mâm đĩa than kết hợp tiền cảnh có chiều sâu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -7987,7 +8071,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_Dfsa_mQR_N9_day_25_of_learning_cinematography…",
       "shortcode": "Dfsa_mQR_N9",
-      "title_vi": "11 Góc Máy B-Roll (Cảnh Minh Họa) Quay Tại Bàn Làm Việc Chỉn Chu Với Đèn Vàng Ấm",
+      "title_vi": "Mười một góc quay đeo tai nghe làm việc tại bàn dưới ánh đèn vàng ấm",
       "quick_takeaway": "💡 Chỉ từ một góc bàn làm việc, video đổi liên tục 11 cỡ cảnh từ cận tai nghe, qua vai, trên cao đến lồng khung cửa kết thúc mà vẫn giữ nguyên mạch ánh sáng vàng ấm.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -8066,7 +8150,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@matiasderada_DfVNoQRNmzQ_El_resultado_de_un_fashion_film_que_grabamos",
       "shortcode": "DfVNoQRNmzQ",
-      "title_vi": "El resultado de un fashion film que grabamos",
+      "title_vi": "Phim thời trang cắt nhanh đặc tả chất liệu kèm chuyển cảnh ghép lớp",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -8141,7 +8225,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@caphex.vn_DevxmCGs6M-_Video_by_caphex.vn",
       "shortcode": "DevxmCGs6M-",
-      "title_vi": "Nghệ thuật quay B-Roll cà phê trứng chỉn chu",
+      "title_vi": "Quay trọn quy trình tách trứng đánh kem và chiết cà phê tại quầy quán",
       "quick_takeaway": "Video sử dụng các góc quay đặc tả (Extreme Close-up) và trung cảnh để mô tả quy trình pha chế cà phê trứng đầy tính nghệ thuật và chuyên nghiệp.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -8224,7 +8308,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DfkufM6RNef_answering_your_most_frequently_asked_question",
       "shortcode": "DfkufM6RNef",
-      "title_vi": "Bí kíp setup máy ảnh và ánh sáng cho video chỉn chu",
+      "title_vi": "Chia sẻ bộ máy quay thông số và cách lắp đèn làm mềm sáng tại nhà",
       "quick_takeaway": "Video hướng dẫn chi tiết từ thiết bị (Canon R6, lens 50mm) đến thông số kỹ thuật và cách setup đèn chuyên dụng.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -8307,7 +8391,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@doddsfilms_DfnEOL-yxDN_This_is_how_you_can_make_anything_look_cinema",
       "shortcode": "DfnEOL-yxDN",
-      "title_vi": "8 Góc Máy Biến Cảnh Quay Đời Thường Trở Nên Chỉn Chu",
+      "title_vi": "8 góc máy cơ bản ngoài sân nắng giúp cảnh vận động trông cuốn mắt",
       "quick_takeaway": "Video hướng dẫn cách sử dụng các góc máy cơ bản và tận dụng ánh sáng tự nhiên để tạo ra những thước phim có chiều sâu.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -8392,7 +8476,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_Dfj5RUro7oG_the_table,_where_my_favorite_part_of_the_day",
       "shortcode": "Dfj5RUro7oG",
-      "title_vi": "Nghệ thuật quay B-Roll buổi sáng chỉn chu tại bàn làm việc",
+      "title_vi": "Chín góc tĩnh buổi sáng bên bàn gỗ với khói trầm và ấm rót cà phê",
       "quick_takeaway": "Video sử dụng chuỗi cảnh quay phụ (B-Roll) với ánh sáng tự nhiên và đạo cụ tối giản để tạo không khí bình yên.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -8473,7 +8557,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@gizzdear_DfZsat0NtRF_เมื่อเพื่อนบิด…",
       "shortcode": "DfZsat0NtRF",
-      "title_vi": "Kỹ thuật quay B-Roll chỉn chu cho video GRWM",
+      "title_vi": "Hành trình lên đồ trước gương rồi một mình cầm máy ảnh dạo phố cả ngày",
       "quick_takeaway": "Video sử dụng đa dạng góc máy cận cảnh để kể câu chuyện chuẩn bị trang phục một cách chỉn chu và cuốn hút.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -8558,7 +8642,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nata_kravchunas_DeWup5NInz0_The_beauty_of_Budapest,_static_shots",
       "shortcode": "DeWup5NInz0",
-      "title_vi": "Nghệ thuật quay B-Roll tĩnh (Static Shots) tại Budapest",
+      "title_vi": "Mười khung hình giữ máy đứng yên ghi lại kiến trúc và nhịp sống phố xá",
       "quick_takeaway": "Video là một bộ sưu tập các góc máy tĩnh (static shots) được sắp xếp tinh tế, tôn vinh vẻ đẹp kiến trúc và nhịp sống chậm tại Budapest.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -8639,7 +8723,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DeXjubJxklb_day_4_of_learning_cinematography…",
       "shortcode": "DeXjubJxklb",
-      "title_vi": "11 góc máy chỉn chu quanh bàn làm việc cho người mới tự tập quay một mình",
+      "title_vi": "Mười một góc máy quanh bàn làm việc có chiều sâu nhờ nhìn qua khe cửa",
       "quick_takeaway": "Biến một góc bàn làm việc bình thường thành 11 khung hình có chiều sâu chỉ bằng cách tận dụng khe cửa phòng, chậu cây che mờ phía trước ống kính và ánh sáng cửa sổ kết hợp đèn bàn vàng ấm.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -8732,7 +8816,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bryanhynes_DfrY4ZuoFs-_how_do_I_frame_my_shot_That’s_one_of_the_hard",
       "shortcode": "DfrY4ZuoFs-",
-      "title_vi": "Công thức phối 5 cỡ cảnh tự quay khoảnh khắc đời thường chỉn chu một mình",
+      "title_vi": "Phối năm cỡ cảnh từ mở tủ lấy sách đến ra kho nhặt củi nhóm lò",
       "quick_takeaway": "Video minh họa trực quan cách chia nhỏ thao tác đời thường như lấy sách, chọn củi thành chuỗi cảnh toàn, trung, cận và Reverse POV (Góc nhìn ngược từ đạo cụ) kèm chữ chú thích công dụng từng góc ngay trên hình.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -8825,7 +8909,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jasper_zangz_DfmZStjznBN_mini_vlog_🙌",
       "shortcode": "DfmZStjznBN",
-      "title_vi": "Công thức 29 cảnh tự quay nhật ký buổi sáng chỉn chu bằng nắng cửa sổ không cần thoại",
+      "title_vi": "Nhật ký buổi sáng tự quay tĩnh bằng nắng cửa sổ và bóng hoa trên tường",
       "quick_takeaway": "Video dài 29 cảnh không lời thoại dùng toàn bộ chân máy cố định, tận dụng nắng xiên qua cửa kính, bóng đổ trên tường và vài dòng chữ ngắn để kể câu chuyện buổi sáng nửa tỉnh nửa mê đầy cuốn hút.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -8920,7 +9004,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@seungahne_DdDpqnUBQHU_여름_조각_모음",
       "shortcode": "DdDpqnUBQHU",
-      "title_vi": "28 Cảnh Ghép Nhanh Mùa Hè Ở Nhà Chỉn Chu Bằng Ánh Nắng Tự Nhiên",
+      "title_vi": "Ghép 28 cảnh tĩnh mùa hè ở nhà đón nắng tự nhiên không cần lời thoại",
       "quick_takeaway": "Ghép 28 cảnh tĩnh dưới 1 giây quay bằng chân máy cố định và nắng cửa sổ tự nhiên, kết hợp khung ngang có chữ cố định hai bên để biến sinh hoạt thường ngày tại nhà thành video chỉn chu giữ mắt đến giây cuối.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -9013,7 +9097,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mukgenie_DfmbzVhKMNW_미친_미박삼겹_땜에_을지로_다시_가야_됨_초불집",
       "shortcode": "DfmbzVhKMNW",
-      "title_vi": "14 nhịp lắp ghép thịt ba chỉ nướng và cơm canh Hàn Quốc cuốn mắt trong 10 giây",
+      "title_vi": "14 cảnh cận xếp thịt nướng, rưới sốt và xúc cơm canh cắt khớp trống",
       "quick_takeaway": "Dựng chuỗi 14 cảnh B-Roll (cảnh quay chi tiết món ăn) cắt thẳng khớp nhịp trống 0.67 giây/cảnh, liên tục xếp chồng thịt nướng, rưới sốt và nhấn ngập canh không có 1 giây chết.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -9100,7 +9184,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hami.mommy_DfUOyUPBtga_New_Vlog_🍂",
       "shortcode": "DfUOyUPBtga",
-      "title_vi": "Ghép 19 cảnh ngắn 0.7 giây kể trọn ngày thu từ vườn vào bếp chuẩn chỉn chu",
+      "title_vi": "Ghép 19 cảnh ngắn kể một ngày từ ra vườn hái rau đến vào bếp nấu ăn",
       "quick_takeaway": "Ăn tiền ở nhịp dựng nhanh dưới 1 giây mỗi cảnh kết hợp xen kẽ góc rộng lấy bối cảnh và góc cận B-Roll (cảnh quay phụ đặc tả hành động) đôi tay kèm tiếng động thật.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -9206,7 +9290,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@elliottsauvage_DfopErwpZT-_Sunny_morning_in_the_big_apple_with_@ericazol",
       "shortcode": "DfopErwpZT-",
-      "title_vi": "38 cảnh dạo phố ngược nắng sớm: Cách đan xen B-Roll (cảnh phụ) nhịp nhanh cực cuốn",
+      "title_vi": "38 cảnh quay mẫu dạo phố ngược nắng sớm đan xen cảnh đệm đường phố",
       "quick_takeaway": "Điểm ăn tiền của trọn bộ 38 cảnh nằm ở việc tận dụng nắng sớm chiếu ngược tách viền tóc kết hợp đan xen nhịp bước đi của mẫu với các cảnh đệm đường phố dưới 0.8 giây mỗi cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -9299,7 +9383,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lankypov_De3Sy5LoTUY_Possibly_the_best_camera_setup_I’ve_built",
       "shortcode": "De3Sy5LoTUY",
-      "title_vi": "Giữ Chân Trọn 2 Phút Video Giới Thiệu Thiết Bị Nhờ Đan Xen Nói Trực Diện Với 11 Sơ Đồ Chuyển Động Nền Kem Và Cảnh Thử Thật",
+      "title_vi": "Ngồi chia sẻ bộ máy quay kết hợp sơ đồ minh họa và cảnh thử trực tiếp",
       "quick_takeaway": "Video dài 124 giây của kênh @lankypov giải quyết bài toán lớn nhất của người tự làm nội dung: bộ máy quay càng rườm rà thì càng lười bấm nút ghi hình. Thay vì chỉ ngồi nói một góc máy dễ gây buồn ngủ trong suốt 2 phút, tác giả phối hợp chặt chẽ 3 lớp hình ảnh: mở màn 3 giây bằng chuỗi âm thanh hiện trường ASMR (tiếng tách cắm máy DJI Osmo Pocket 4 Pro, cắm cáp USB-C, bật nguồn bàn trộn RØDECaster Duo), đan xen nhịp nói trực diện tại bàn (Talking Head - giữ sự tin cậy của người thật) với 11 bảng đồ họa chuyển động nền kem ấm (Motion Graphics - biến các khái niệm trừu tượng như độ trễ tâm lý, luồng dây âm thanh XLR sang USB-C, vòng xoay kính lọc ND thành sơ đồ nhìn hiểu ngay), kèm 2 pha chứng minh thực tế bằng mắt thường (quét màu Trước/Sau để bán mềm bộ màu FilmTone qua bình luận ở phút 1:14 và gắn trực tiếp kính lọc tản sáng Neewer 1/4 lên ống kính lúc đang quay). Cuối bài đúc kết 3 nguyên tắc chọn thiết bị và đóng lại bằng khung chia đôi tổng hợp trọn bộ 5 món đồ nghề để kích thích người xem bấm lưu bài.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -9385,7 +9469,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_DfZtLuUI0iQ_gloomy_november_mornings_are_made_for_staying",
       "shortcode": "DfZtLuUI0iQ",
-      "title_vi": "11 Góc Tripod (Chân Máy Tĩnh) Kể Chuyện Sáng Thu Trong Phòng Ngủ Bằng Đối Lập Sáng Ấm - Lạnh & Cảnh Chèn 0.75s",
+      "title_vi": "11 góc chân máy tĩnh quay sáng ngày mưa trong phòng ngủ với nến ấm",
       "quick_takeaway": "Bài mẫu tự quay B-Roll (cảnh quay chi tiết) 1 mình trong phòng ngủ không lộ mặt chỉ với chân máy tĩnh 100%: dùng 11 nhịp cắt ngắn dưới 1.2 giây trên nền piano không lời, phối đối lập ánh sáng lạnh ngày thu ngoài cửa sổ với đốm lửa nến, đèn ngủ vàng ấm và thủ pháp Cutaway (cảnh chèn cành lá) để giấu mượt vết cắt thời gian.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -9467,7 +9551,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mikaasmr7_DfM2NcMDEkh_ASMR💆‍♀_400만_명이_본_한국_토탈_바디케어,_다시_다녀왔어요_분당",
       "shortcode": "DfM2NcMDEkh",
-      "title_vi": "Bí quyết quay B-Roll dịch vụ Spa chỉn chu bằng điện thoại",
+      "title_vi": "Quay quy trình chăm sóc chân và gội đầu thư giãn tại spa không lộ mặt",
       "quick_takeaway": "Video sử dụng chuỗi B-roll cắt nhanh, đa dạng góc máy từ trung cảnh đến đặc tả để mô tả quy trình chăm sóc cơ thể.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -9550,7 +9634,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@maydaymedia_au_DegIkbrDAUB_Carousel_Analysis",
       "shortcode": "DegIkbrDAUB_Carousel_Analysis",
-      "title_vi": "12 Khung Hình Quay Bất Động Sản Cao Cấp: Từ Đẩy Máy Mặt Tiền Đến Chơi Bóng Nắng & Tạo Sóng Hồ Bơi",
+      "title_vi": "12 góc quay biệt thự sinh động nhờ sóng nước, bóng nắng và máy bay",
       "quick_takeaway": "💡 Biến căn nhà đứng yên thành không gian sống động nhờ cài chuyển động tự nhiên (sóng hồ bơi, bóng nắng trôi, cửa mở, vệt bước chân chậm) xen kẽ góc toàn chứng minh vị trí đắc địa.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -9635,7 +9719,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@fotober_media_DUEJTZWCWj5_Every_space_deserves_a_premium_cinematic_edit",
       "shortcode": "DUEJTZWCWj5",
-      "title_vi": "Chuyển Cảnh Ngày – Đêm Trùng Khít Góc Máy & Bố Cục Đối Xứng Nâng Tầm Biệt Thự Nghỉ Dưỡng",
+      "title_vi": "Quay biệt thự chuyển cảnh ngày sang đêm trùng khít góc máy tại hồ bơi",
       "quick_takeaway": "💡 Điểm ăn tiền: Kết hợp trượt Gimbal (tay cầm chống rung) xuyên lớp tiền cảnh với 3 pha Match Cut (nối cảnh trùng góc) biến hình từ trưa nắng sang đêm rực đèn, giúp người xem cảm nhận trọn vẹn giá trị căn biệt thự cả 24 giờ chỉ trong 45 giây.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting • Wide Establishing Shot",
       "shooting_style": {
@@ -9721,7 +9805,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sellingsocial.co_DXHO0hYkWMd_Realtors…_your_home_tours_aren’t_underperform",
       "shortcode": "DXHO0hYkWMd",
-      "title_vi": "Công Thức 17 Cảnh Quay Tour Nhà Đất Gọn Đẹp Bằng Điện Thoại (Mỗi Phòng Đúng 3 Góc: Toàn - Trung - Cận)",
+      "title_vi": "Quay nhà bằng điện thoại gọn đẹp: mỗi phòng 3 góc toàn, trung và cận",
       "quick_takeaway": "💡 Chia bất kỳ căn nhà nào thành 5 cụm cố định (Mặt tiền, Bếp, Phòng khách, Phòng ngủ, Phòng tắm), mỗi phòng chỉ quay đúng 3 cỡ cảnh từ rộng vào chi tiết trong 1,5 giây/cảnh và khép vòng lặp ở cửa chính.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -9800,7 +9884,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@100066937796361_2314960032674880_Salman_Rushdie_Teaches_Storytelling_and_Writi",
       "shortcode": "IG_@100066937796361_2314960032674880_Salman_Rushdie_Teaches_Storytelling_and_Writi",
-      "title_vi": "Trailer Bậc Thầy: Cấu Trúc Đổi Góc 2 Máy & B-Roll Bản Thảo Đánh Máy Đắt Giá Của MasterClass",
+      "title_vi": "Giới thiệu khóa học bằng 2 góc ngồi nói xen cận cảnh bản thảo sửa tay",
       "quick_takeaway": "Phân tích cấu trúc video khóa học MasterClass của tiểu thuyết gia Salman Rushdie: kết hợp nhịp nói trực diện 2 góc máy (Cam chính diện & Cam nghiêng 3/4) với chuỗi B-Roll tư liệu độc bản (bản thảo gạch xóa bút đỏ, phác thảo tay, tranh dân gian) và Graphic Title Card dồn dập.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -9882,7 +9966,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mila_sfc5_DfE8iTOikCn_🪀🎱",
       "shortcode": "DfE8iTOikCn",
-      "title_vi": "Tự Quay Phối Đồ 1 Chân Máy Cố Định: Vẩy Mũ Che Ống Kính & Đổi Cỡ Cảnh Bằng Bước Chân",
+      "title_vi": "Tự quay phối đồ một mình bằng cách đưa mũ che kín ống kính",
       "quick_takeaway": "Chỉ đặt điện thoại cố định một góc trước bậc thềm, tự thay đổi khoảng cách đứng và dùng mũ lưỡi trai che ống kính để biến cảnh mặc đồ 8 giây thành chuỗi hình ảnh cuốn mắt.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -9963,7 +10047,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hcooll_DeB8mRYvdRM_Video_by_hcooll",
       "shortcode": "DeB8mRYvdRM",
-      "title_vi": "Tự Quay Khoe Trang Phục 1 Mình Bằng Chân Máy Tĩnh: Kỹ Thuật Cắt Nhảy Cận – Toàn Tạo Nhịp Co Giãn Không Cần Người Quay Phụ",
+      "title_vi": "Tự quay trang phục một mình bằng cách bước gần rồi lùi xa chân máy",
       "quick_takeaway": "💡 Điểm ăn tiền: Chỉ khóa cố định 1 chân máy ngoài con dốc nhỏ, người mẫu tự bước tiến sát ống kính (góc cận chỉnh máy, vuốt tóc, khoanh tay cười) xen kẽ lùi xa 3.5m (góc toàn khoe trọn phom sơ mi bò và quần suông) để tạo 9 nhịp co giãn cuốn mắt trong 12 giây.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -10040,7 +10124,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jessbrrd_DfUkgfmgXsI_Home_is_where_I_love_being_me",
       "shortcode": "DfUkgfmgXsI",
-      "title_vi": "Tổ Ấm Bốn Mùa Chỉn Chu: Nhá Hàng 6 Cảnh Cắt Nhanh 0.4s & Đối Lập Đèn Vàng Ấm – Cửa Sổ Chiều Xanh",
+      "title_vi": "Quay góc nhà ấm áp: nhá nhanh 6 cảnh đầu rồi thả chậm dưới đèn vàng",
       "quick_takeaway": "Giữ chân 3 giây đầu bằng chuỗi 6 cảnh cắt nhanh 0.4s (nhá hàng mở đầu), sau đó thả chậm nhịp B-Roll (cảnh quay phụ đặc tả) không lộ mặt với tương phản đèn ngủ vàng ấm và ánh chiều xanh ngoài cửa sổ.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -10123,7 +10207,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hana.konichiwa_Dfjy8D6IBY4_🏡🍩🍃🌼",
       "shortcode": "Dfjy8D6IBY4",
-      "title_vi": "Vlog Làm Bánh Donut Matcha & Hái Rau Sân Vườn: Chuỗi B-Roll (cảnh quay phụ minh họa) 0.7 Giây Đan Xen Nắng Vườn Và Bếp Ấm",
+      "title_vi": "Ghép 35 cảnh ngắn từ hái rau sân vườn đến làm bánh ngọt và uống trà",
       "quick_takeaway": "💡 Điểm ăn tiền: Cắt nhịp nhanh 0.6-0.9 giây qua 34 góc cận - trung đan xen giữa nắng vườn và bếp ấm, kết hợp bố cục 3 lớp có vật cản mờ phía trước ống kính giúp video không cần lời thoại vẫn cuốn mắt từ đầu đến cuối.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -10204,7 +10288,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@itsannalay_Dc9qCTmyG6G_The_best_decision_I_made_in_Taiwan_was_stayin",
       "shortcode": "Dc9qCTmyG6G",
-      "title_vi": "B-Roll Du Lịch Phố Cổ Cửu Phần Sương Sớm: Tương Phản Đèn Lồng Đỏ & Đường Dẫn Bậc Thang",
+      "title_vi": "Quay 12 góc dạo bộ con dốc phố cổ với bậc thang và đèn lồng",
       "quick_takeaway": "Tận dụng chuỗi đèn lồng đỏ và bậc thang đá hẹp làm đường dẫn mắt (Leading Lines), kết hợp trang phục váy trắng nổi bật trên nền phố cổ sương mù xanh xám lạnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -10281,7 +10365,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@neolumo.uralsk_DfZnR-dMeSl_💉_Ботокстан_қорқудың_қажеті_жоқ",
       "shortcode": "DfZnR-dMeSl",
-      "title_vi": "Chuyên Viên Thẩm Mỹ Giải Tỏa Nỗi Sợ Tiêm Botox Bằng Đạo Cụ Thật & Đa Góc Máy Phòng Khám",
+      "title_vi": "Chuyên viên thẩm mỹ cầm hộp thuốc và kim tiêm thật giải đáp nỗi sợ",
       "quick_takeaway": "💡 Điểm ăn tiền: Đập tan tâm lý sợ đau của khách làm đẹp bằng cách giơ trực tiếp hộp thuốc, quay cận cảnh đầu kim siêu mảnh và đổi 6 góc bối cảnh trong phòng khám để giữ mắt người xem suốt 80 giây.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -10360,7 +10444,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@roldangilbuena_DfVygOjybeD_Art_of_using_Rule_of_Thirds",
       "shortcode": "DfVygOjybeD",
-      "title_vi": "Nghệ Thuật Bố Cục Quy Tắc 1/3 (Rule of Thirds): 14 Cách Đặt Chủ Thể Vào Giao Điểm Vàng Giữa Đời Thường",
+      "title_vi": "14 cách bật lưới chín ô đặt đồ vật và người đi đường đúng bố cục",
       "quick_takeaway": "Bật lưới 9 ô và khóa chính xác đồ vật, khung cửa hoặc dòng xe chạy vào đúng các đường kẻ và 4 giao điểm vàng để biến cảnh đường phố bình thường thành khung hình chỉn chu.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -10441,7 +10525,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bryanadamc_De2raaLB1Yx_when_No_Service_is_a_viiibe_🦦",
       "shortcode": "De2raaLB1Yx",
-      "title_vi": "Kể Chuyện Qua Cột Sóng Wi-Fi Đến 'No Service': Kỹ Thuật Neo Chữ Giữa Tâm & Đối Lập Nhịp Dựng",
+      "title_vi": "Kể chuyện rời bàn làm việc ra bãi cỏ nghỉ ngơi qua vạch sóng mạng",
       "quick_takeaway": "💡 Neo cố định biểu tượng sóng mạng (Wi-Fi ➔ 5G ➔ 4G ➔ 3G ➔ No Service) ngay tâm khung hình làm sợi dây dẫn chuyện, kết hợp cắt nhanh 0.4 giây ở các cảnh công việc ngột ngạt rồi giãn nhịp 2–6 giây khi nằm thư giãn trên cỏ.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -10524,7 +10608,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@so.wonish_DfOm26EOI-2_카페_사장_일주일_착장_모음.zip",
       "shortcode": "DfOm26EOI-2",
-      "title_vi": "Tổng hợp 6 trang phục đi làm của chủ quán cà phê với 1 góc máy cố định",
+      "title_vi": "Đặt cố định một góc máy tại quầy ghi lại sáu ngày làm việc",
       "quick_takeaway": "💡 Điểm ăn tiền: Đặt cố định điện thoại ở một góc quầy pha chế suốt cả tuần, mỗi ngày ghi lại 1 giây thao tác làm việc để ghép thành chuỗi thay đổi 6 bộ trang phục mượt mà.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -10605,7 +10689,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ajit_rathore886_DeQoLg1PKUP_Aspect_ratio_📽️",
       "shortcode": "DeQoLg1PKUP",
-      "title_vi": "Bí mật đằng sau các tỉ lệ khung hình chỉn chu",
+      "title_vi": "So sánh cảm nhận khung hình ngang và dọc trên cùng một cảnh tĩnh",
       "quick_takeaway": "Video hướng dẫn cách thay đổi tỉ lệ khung hình (Aspect Ratio) để tạo ra các cảm xúc thị giác khác nhau.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -10686,7 +10770,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@omgadrian_DffQ8kCJDpJ_If_you_enjoyed_this,_comment_“CRAFT”_for_a_fr",
       "shortcode": "DffQ8kCJDpJ",
-      "title_vi": "Công Thức 5 Cỡ Cảnh Kể Chuyện & Cụm 3 Cận Cảnh Chuyển Địa Điểm Mượt Mà",
+      "title_vi": "Công thức năm cỡ cảnh kể chuyện và ba góc cận chuyển địa điểm",
       "quick_takeaway": "💡 Nắm trọn khung xương 5 cỡ cảnh (Toàn ➔ Trung ➔ Nhìn từ mắt ➔ Cận chi tiết ➔ Biểu cảm) kết hợp cụm 3 góc cận 0.5 giây để chuyển địa điểm tự nhiên không cần hiệu ứng giật lắc.",
       "key_tech": "Establishing Hook Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -10767,7 +10851,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@megantanhweewen_DfcXCsIDxbz_Carousel_Analysis",
       "shortcode": "DfcXCsIDxbz_Carousel_Analysis",
-      "title_vi": "Nhật Ký Workshop Chia Đôi Màn Hình (Split-Screen Carousel): Kể Trọn Buổi Học Từ Bản Vẽ Đến Thành Quả Trong 4 Slide",
+      "title_vi": "Kể lại buổi dạy học thực tế bằng bố cục chia đôi màn hình trên dưới",
       "quick_takeaway": "Mở màn bằng 1 câu nói trực diện nhảy cỡ cảnh (Axial Cut) rồi dùng bố cục chia đôi trên dưới (Split-Screen) ở 3 slide sau để vừa khoe không khí đông vui của lớp học, vừa đối chiếu quy trình từ bản vẽ giấy ra sản phẩm thật.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -10850,7 +10934,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@watch.gabe_DfIqz6goGiM_Carousel_Analysis",
       "shortcode": "DfIqz6goGiM_Carousel_Analysis",
-      "title_vi": "Quy Trình 6 Bước Tự Quay Kho B-Roll (Cảnh Phụ) Dùng Cả Tháng Chỉ Trong 1 Ngày",
+      "title_vi": "Bảy góc đặt chân máy cố định trong phòng để gom sẵn kho cảnh phụ",
       "quick_takeaway": "💡 Điểm ăn tiền: Kết hợp 7 đoạn video B-Roll (cảnh phụ) đặt máy tĩnh có chiều sâu ánh sáng tự nhiên làm nền chuyển động nhẹ, giúp người xem vừa đọc hết 6 bước hướng dẫn vừa thấy ngay ví dụ mẫu trên hình.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -10931,7 +11015,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_DfAcUx6NSDN_A_slow_day…_with_a_suspicious_amount_of_thing",
       "shortcode": "DfAcUx6NSDN",
-      "title_vi": "Nghệ Thuật Đổi Góc Vuông Góc (Top-Down × Cận Cảnh) Biến 5 Việc Vặt Buổi Sáng Thành Chuỗi Phim Chỉn Chu 15 Giây",
+      "title_vi": "Đan xen góc chụp thẳng từ trên cao với góc ngang mặt bàn nhịp nhanh",
       "quick_takeaway": "💡 Đan xen góc nhìn thẳng từ đỉnh đầu (Top-Down) với góc cận ngang mặt bàn và góc siêu rộng (0.5x), kết hợp cắt nối khớp vị trí đồ vật (Match Cut) mỗi 0.5 giây giúp chuỗi 5 việc nhà quen thuộc cuốn hút không rời mắt.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -11010,7 +11094,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@worldwithreece_De2GhOEsg9s_Shot_ideas_you_can_use_to_film_your_life",
       "shortcode": "De2GhOEsg9s",
-      "title_vi": "5 góc quay B-Roll (cảnh phụ minh họa) ghi lại một ngày làm việc và sinh hoạt chỉn chu bằng chân máy cố định",
+      "title_vi": "Tám góc đặt chân máy cố định tự quay cảnh làm việc tại bàn và ra xe",
       "quick_takeaway": "Biến 5 hoạt động quen thuộc (mở laptop, viết sổ, nghe nhạc, ăn sáng, ra xe) thành chuỗi hình ảnh có chiều sâu nhờ đặt máy ngược sáng cửa sổ và chọn góc máy lạ mắt.",
       "key_tech": "Góc máy • B-Roll Chỉn Chu • Góc Máy Đời Thường • Góc Nhìn POV • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -11094,7 +11178,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@61580845559993_1122709573644424_Facebook",
       "shortcode": "1122709573644424",
-      "title_vi": "Nguyễn Đức Việt · Thực Chiến Bố Cục Sạch #1: Nắng Xiên Sớm Mai, Tiền Cảnh 3 Lớp & Đặc Tả 3x Tách Nền",
+      "title_vi": "Luyện khóa máy tĩnh mức phóng 2x–3x đón nắng sớm và tiền cảnh lá cây",
       "quick_takeaway": "Chuỗi 17 phân cảnh thực chiến tại công viên buổi sớm của Nguyễn Đức Việt minh họa trọn bộ 6 quy tắc Đường – Động – Sáng – Giờ – Tĩnh – Vào: bấm 2x–3x cắt rác, mượn tiền cảnh lá cây mở 3 lớp chiều sâu, đón nắng xiên hạ -0,7 EV và khóa tĩnh máy.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -11179,7 +11263,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@61580845559993_2128206841114053_Facebook",
       "shortcode": "2128206841114053",
-      "title_vi": "Nguyễn Đức Việt · Thực Chiến Bố Cục Sạch #2: Nhịp Chạy Bình Minh Ngược Nắng, Khung Tĩnh Bắt Chuyển Động & Vào Cảnh Mốc 30%",
+      "title_vi": "Quay buổi chạy bộ bình minh ngược nắng kết hợp khóa máy tĩnh sau lá",
       "quick_takeaway": "Chuỗi 13 phân cảnh thực chiến chạy bộ và dạo công viên lúc bình minh của Nguyễn Đức Việt: vào thẳng cảnh lúc đang chạy (mốc 30%), khóa máy tĩnh sau tán cây bắt dòng người lướt qua, ngược nắng bình minh 135° và hạ -0,7 EV tách nền.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -11264,7 +11348,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jade.got.curious_DRbJNaajYUd_Reminder_230_Rest_isn’t_optional",
       "shortcode": "DRbJNaajYUd",
-      "title_vi": "Đổi Góc & Tư Thế Liên Hoàn Trong Nhà Từ Sofa Ra Cửa Kính Nắng (@jade.got.curious)",
+      "title_vi": "Đổi nhiều góc ngồi và tư thế trên ghế dài khi quay video tâm sự",
       "quick_takeaway": "Biến bài nói trong căn hộ thành chuỗi chuyển động mượt mà nhờ đổi tư thế trên sofa, bước đi mở cửa phòng, đặt ly gốm dưới vệt nắng và đứng ngược sáng bên cửa kính.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -11345,7 +11429,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jade.got.curious_DfDgb_3xBNZ_Your_weird_interests_might_be_how_your_people",
       "shortcode": "DfDgb_3xBNZ",
-      "title_vi": "Đan Xen Ngồi Cửa Sổ, Bước Đi Kho Hàng & Thao Tác Nghề Thật (@jade.got.curious)",
+      "title_vi": "Ngồi cạnh cửa sổ kể chuyện nghề đan xen dày đặc cảnh làm thủ công",
       "quick_takeaway": "Cách kết hợp cảnh ngồi trò chuyện bên cửa sổ với cảnh bước đi trong kho, góc cao 90 độ nằm thảm và cảnh tay làm nghề thật để kể câu chuyện dài 75 giây cuốn hút.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -11426,7 +11510,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g",
       "shortcode": "IG_@1995shomedecor_7704316044847877397_Nhà_bà_nào_nhiều_giày_thì_tham_khảo_dạng_tủ_g",
-      "title_vi": "Biến Hình Góc Tường Trống Thành Tủ Giày Kịch Trần & Freeze Frame Pop-up Đồ Đạc",
+      "title_vi": "Biến góc tường trống thành tủ giày kèm hiệu ứng hiện đồ từng ngăn",
       "quick_takeaway": "Biến hình góc tường trống thành tủ giày kịch trần, kết hợp Freeze Frame hiện đồ từng ngăn, đổi màu vân gỗ và quay cận đèn LED.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -11507,7 +11591,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu",
       "shortcode": "IG_@1995shomedecor_7703182807526395157_Tủ_quần_áo_mini_cưng_xỉu_,_phối_màu_theo_yêu",
-      "title_vi": "Đòn Bẩy Freeze Frame: Đóng Băng Hình Nhồi Đồ Vào Tủ & Đổi 5 Màu Sơn Tại Xưởng",
+      "title_vi": "Quay tủ quần áo tại xưởng kèm hiệu ứng ghép đồ và đổi năm màu sơn",
       "quick_takeaway": "Quay tủ quần áo tại xưởng kết hợp Freeze Frame ghép đồ PNG và đổi 5 màu sơn pastel cực nhanh không cần đạo cụ thật.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • High-key Lighting • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -11588,7 +11672,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_DdTsZzToLPQ_Moments_at_home_🤍",
       "shortcode": "DdTsZzToLPQ",
-      "title_vi": "Chuỗi B-Roll (cảnh quay phụ) 11 góc máy tĩnh tại phòng khách: Phản chiếu gương tròn, bắt bóng nắng & đảo vùng nét qua tách trà",
+      "title_vi": "Quay 11 góc tĩnh quanh bàn trà với gương nhỏ và nắng cửa sổ",
       "quick_takeaway": "💡 Biến một góc phòng khách thành 11 cảnh B-Roll (cảnh quay phụ) cuốn mắt mà không cần lộ mặt: Kết hợp góc quay phản chiếu qua gương tròn, bắt vệt nắng rèm bay, trang sách tự lật và đảo vùng lấy nét qua tách trà nóng ngược sáng.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -11669,7 +11753,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_Ddg5dqqIrYs_an_evening_made_for_staying_in_🕯️",
       "shortcode": "Ddg5dqqIrYs",
-      "title_vi": "Chuỗi B-Roll (cảnh quay phụ) 8 góc máy tĩnh tại bàn: Phối ánh nến vàng ấm với cửa sổ mưa xanh lạnh",
+      "title_vi": "Quay 8 góc máy tĩnh tại bàn phối ánh nến ấm với cửa sổ chiều mưa",
       "quick_takeaway": "💡 Đặt các điểm sáng vàng ấm (nến thơm, đèn bàn) ở tiền cảnh đối lập với nền cây xanh ướt mưa ngoài cửa sổ, xen kẽ góc cận 1 giây tạo nhịp thở thư thái mà chỉ cần máy tĩnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -11748,7 +11832,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ssmbx_22_De66aAuyeE-_DASHIMAKI_dual_pov🍳",
       "shortcode": "De66aAuyeE-",
-      "title_vi": "Kỹ Thuật Chia Đôi Màn Hình Dual POV (Hai Góc Nhìn Song Song) Quay Món Trứng Cuộn Nhật Bản & Hộp Cơm Bento",
+      "title_vi": "Ghép hai góc quay cùng lúc cảnh tráng trứng cuộn và xếp hộp cơm",
       "quick_takeaway": "💡 Ghép đồng bộ góc quay thẳng từ trên xuống (Top-down) và góc trung ngang hông giúp người xem vừa thấy rõ mặt trứng sôi trong chảo vừa học được thao tác cổ tay của đầu bếp.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -11829,7 +11913,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sitmeiteng_DePB4HDBRzf_Welcome_to_Kyrgyzstan🇰🇬",
       "shortcode": "DePB4HDBRzf",
-      "title_vi": "Chuyển Cảnh Hộ Chiếu Từ Sân Bay Sang Quảng Trường & Chuỗi Góc Quay Khám Phá Kyrgyzstan",
+      "title_vi": "Chuyển cảnh thả hộ chiếu từ sân bay sang điểm du lịch ngoài trời",
       "quick_takeaway": "Mở màn bằng kỹ thuật Match Cut (chuyển cảnh khớp vị trí) thả hộ chiếu ở sảnh sân bay rồi nhặt lên tại quảng trường nước ngoài, nối tiếp bằng chuỗi cảnh thiên nhiên cắt nhanh 0.5 giây theo nhịp nhạc.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -11910,7 +11994,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@tuctatuctac_Degcxl-MRSa_Slowly,_slowly",
       "shortcode": "Degcxl-MRSa",
-      "title_vi": "Cách Quay B-Roll (Cảnh Đặc Tả) Bày Cây Cảnh Để Bàn Đa Góc Máy Dưới Nắng Tự Nhiên — Không Cần Lộ Mặt",
+      "title_vi": "Quay cảnh bày chậu cây lên mặt bàn dưới nắng cửa sổ không cần lộ mặt",
       "quick_takeaway": "💡 Điểm ăn tiền: Chỉ với một góc bàn trải vải kem cạnh cửa sổ nắng, tác giả đổi luân phiên góc chụp thẳng từ trên xuống (Top-down) và góc nghiêng 45 độ theo từng nhịp đặt chậu cầu rêu lên đĩa gốm, biến việc bày cây đơn giản thành chuỗi hình ảnh cực kỳ cuốn mắt.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting • Low-key Lighting",
       "shooting_style": {
@@ -11991,7 +12075,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@worldwithreece_Der2Xm_skf9_Shot_ideas_you_can_use_to_film_your_life",
       "shortcode": "Der2Xm_skf9",
-      "title_vi": "5 Góc Máy B-Roll (Cảnh phụ minh họa) Dễ Áp Dụng Để Tự Quay Cuộc Sống Hàng Ngày Chỉn Chu",
+      "title_vi": "Năm góc đặt điện thoại lạ mắt từ ngăn tủ lạnh đến gương xe ngoài phố",
       "quick_takeaway": "Biến 5 khoảnh khắc đời thường thành thước phim có chiều sâu nhờ đặt máy trong tủ lạnh, tận dụng vũng nước phản chiếu, khung gương ô tô, vật cản tiền cảnh và ngược sáng hoàng hôn.",
       "key_tech": "Góc máy • B-Roll Chỉn Chu • Góc Máy Đời Thường • Góc Nhìn POV • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -12075,7 +12159,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@anna_kuchkova_DdmLA9JBFOt_POV_you_said_you_wanted_a_productive_day",
       "shortcode": "DdmLA9JBFOt",
-      "title_vi": "Kể Chuyện Một Ngày Năng Suất Từ 05:30 Đến 21:00 Chỉ Bằng Góc Mắt Tự Nhìn Và Gương Phản Chiếu",
+      "title_vi": "Kể chuyện một ngày từ sáng tới tối bằng góc mắt nhìn và qua gương",
       "quick_takeaway": "💡 Điểm ăn tiền: Dùng mốc giờ cố định chính giữa màn hình dẫn dắt 10 cảnh ngắn ~1.5 giây, đặc biệt cảnh mở đầu 05:30 và cảnh kết 21:00 lặp lại đúng một góc cửa sổ cùng chiếc cốc sứ hoa tulip tạo vòng tròn khép kín.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -12158,7 +12242,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@xamza_abdulbakiyev_De1nCRhtKzi_Issiq_salat_tayorlab_ko’ring😍👇🏻",
       "shortcode": "De1nCRhtKzi",
-      "title_vi": "Chế Biến Salad Gà Nóng Bốc Khói Với 43 Cú Cắt Khớp Nhịp Sắc Nét",
+      "title_vi": "Quay đầu bếp chế biến món salad gà nóng bốc khói dưới ánh đèn cam ấm",
       "quick_takeaway": "Kết hợp màn mở đầu nguyên liệu bay lơ lửng với chuỗi góc cận thái, tung, xào nối khớp chuyển động liên hoàn giữa làn khói và ánh đèn cam ấm.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -12235,7 +12319,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@by.bennnj_Det8KYKxp3y_Morning_coffee_routine_on_the_@rocketespresso",
       "shortcode": "Det8KYKxp3y",
-      "title_vi": "Quy Trình Pha Cà Phê Sáng Bằng Chân Máy Cố Định: Mở Đầu Bằng Cảnh Dựng Máy & 11 Góc Cận Chỉn Chu",
+      "title_vi": "Tự quay 12 góc tĩnh pha cà phê mở đầu bằng cảnh dựng chân máy",
       "quick_takeaway": "Mở đầu bằng cảnh tự lắp máy ảnh lên chân máy để tạo sự tò mò, sau đó nối 11 góc quay tĩnh đa cự ly từ ngửi hạt, xay bột, san phẳng cà phê đến góc siêu cận hất ngược bắt dòng espresso chảy sánh đặc mà không cần nói một lời.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -12310,7 +12394,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DezFNT-s1Ny_You_don’t_need_a_complicated_scene_to_make_a",
       "shortcode": "DezFNT-s1Ny",
-      "title_vi": "You don’t need a complicated scene to make a",
+      "title_vi": "Biến cảnh tưới cây tại quầy bếp thành tám góc máy đẹp mắt",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -12393,7 +12477,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@meliabavi_DSHAu2WjARf_Step_into_the_vibrant_world_of_Melia,_where_c",
       "shortcode": "DSHAu2WjARf",
-      "title_vi": "Bố Cục Chia Đôi Bảng Màu (Split-Screen Color Symphony): Biến Cảnh Rừng Núi & Hồ Bơi Thành Thước Phim Nghỉ Dưỡng Chỉn Chu",
+      "title_vi": "Chia đôi màn hình ghép cảnh cận chất liệu và không gian theo bốn màu",
       "quick_takeaway": "Kỹ thuật kể chuyện thị giác không lời thoại bằng bố cục chia đôi màn hình trên-dưới (Top-Bottom Split Screen), đối lập giữa góc siêu cận chất liệu (Macro) và góc trung bối cảnh theo 4 gam màu chủ đạo: Lush Green, Burnt Amber, Crystal Blue và Ruby Pink.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -12476,7 +12560,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@byjxson_Dewpd4AAULi_Life_moves_fast,_but_the_moments_stay_fresh_w",
       "shortcode": "Dewpd4AAULi",
-      "title_vi": "Nghệ Thuật Kể Chuyện 1 Ngày Bằng 35 Cú Máy B-Roll Đa Lớp & Lồng Ghép Sản Phẩm Tinh Tế - @byjxson",
+      "title_vi": "Kể chuyện một ngày bận rộn kết hợp lồng ghép sản phẩm tự nhiên",
       "quick_takeaway": "⚡ 01. Bố Cục Tiền Cảnh 3 Lớp: Đặt máy lùi sau mép tường, tán lá cây, bình hoa ở tiền cảnh mờ tạo chiều sâu không gian sống động. ➔ ⚡ 02. Nhịp Đan Xen Toàn - Cận (Cut-in on Action): Nối cảnh rộng sinh hoạt gia đình/làm việc với cú máy cực cận thao tác tay (tắt báo thức, pha cà phê, gập laptop) giúp mạch chuyện 35 cảnh cuốn hút không cần lời thoại. ➔ ⚡ 03. Ánh Sáng & Đặt Sản Phẩm Tinh Tế: Đánh sáng tương phản ấm-lạnh làm nổi khối tia nước/bọt xà phòng và đặt sản phẩm ở hậu cảnh mờ tự nhiên.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -12555,7 +12639,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@arturbr_DesDiSBqq-N_Every_day_feels_like_a_new_day._Except_someho",
       "shortcode": "DesDiSBqq-N",
-      "title_vi": "Vòng Lặp Sáng Tạo Không Lời Thoại: 53 Cú Cắt Tăng Tốc Khắc Họa Hội Chứng Bí Ý Tưởng Bằng Chi Tiết Chỉn Chu",
+      "title_vi": "Kể chuyện ngày làm việc lặp lại khi bí ý tưởng bằng nhịp cắt tăng tốc",
       "quick_takeaway": "Thị phạm kỹ thuật dựng Montage Vòng Lặp Thời Gian (Accelerating Time-Loop) với 53 cú cắt đa góc máy (Macro, Top-Down 90°, High-Angle, Through-Lens Filter) không cần lời thoại, lột tả vòng xoáy lặp lại mỗi ngày và nỗi trăn trở tìm ý tưởng của người làm sáng tạo.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -12634,7 +12718,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@susuletas_DdE2qP1o3hQ_Huzuru_evinde_bulanlar_🌿🫶🏻",
       "shortcode": "DdE2qP1o3hQ",
-      "title_vi": "Huzuru evinde bulanlar 🌿🫶🏻",
+      "title_vi": "Quay 15 cảnh góc nhà chuyển từ nắng chiều sang ánh nến ấm buổi tối",
       "quick_takeaway": "Chuỗi 15 cú máy B-Roll tĩnh vật và tương tác nhẹ (~0.7s/shot) dẫn dắt thị giác đi từ ánh nắng ban ngày (cây xanh đọng sương, bóng rèm voan, bát nho xanh) sang không gian tối ấm cúng (khói nến, khói trầm, nhặt trứng cút, xem phim và chong chóng nến xoay).",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -12715,7 +12799,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_qFv8s_BOYA_mini_2_micro_không_dây_micro_thu_âm_micr",
       "shortcode": "IG_@ulanzi_qFv8s_BOYA_mini_2_micro_không_dây_micro_thu_âm_micr",
-      "title_vi": "BOYA mini 2 micro không dây micro thu âm micr",
+      "title_vi": "Giới thiệu micro không dây qua nhiều tình huống thử âm thanh thực tế",
       "quick_takeaway": "Check out BOYA mini 2 Wireless Microphone AI Noise Cancelling Mic Mini Lapel Mic Vlogging Microphone for iPhone Android PC iPhone 15/16/17. Get it on Lazada now!",
       "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -12800,7 +12884,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@100002166591390_1073399245568378_Video",
       "shortcode": "1073399245568378",
-      "title_vi": "Cấu Trúc Kịch Bản 5 Nhịp Chạy Ads Dịch Vụ Spa (Detox Môi Hỏng) & Điểm Nghẽn Khung Hình Tĩnh 31s",
+      "title_vi": "Kịch bản 5 bước giới thiệu dịch vụ xử lý môi phun thâm hỏng",
       "quick_takeaway": "Video chạy quảng cáo dịch vụ Detox môi phun hỏng (Nhà Thắm Thỏ): Cấu trúc kịch bản 5 bước rất gọn (Nỗi đau môi phun hỏng thâm xỉn -> Cơ chế detox bóc mực cũ & sắc tố thâm -> Ca khách thật sau 2 buổi -> Xóa nỗi sợ hết cách -> Ưu đãi 499k), nhưng phần hình ảnh chỉ ngồi tĩnh 1 góc suốt 31 giây kèm 1 ảnh ghép cố định.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -12879,7 +12963,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@khan.ayan9_DeUMZwQtAHM_blink",
       "shortcode": "DeUMZwQtAHM",
-      "title_vi": "Thủ Thuật Graphic Match Cut Trong 1 Cái Chớp Mắt: Khóa Tâm Hình Tròn Nối 8 Vật Thể Từ Bàn Học Xuống Gian Bếp",
+      "title_vi": "Chuyển cảnh nối tám đồ vật hình tròn trùng tâm từ bàn học xuống bếp",
       "quick_takeaway": "Kỹ thuật Graphic Match Cut đồng dạng hình tròn trong 1 cái chớp mắt (Blink): Khóa tâm điểm tròng mắt hổ phách ở chính giữa khung hình rồi cắt nối liên hoàn 0.4s/cảnh qua 8 vật thể hình tròn từ bàn học xuống bếp pha trà đêm khuya trước khi nhắm mắt khép vòng lặp.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -12958,7 +13042,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@al_dante_channel_Dd4AKzcRdFG_Shakshuka",
       "shortcode": "Dd4AKzcRdFG",
-      "title_vi": "Kỹ Thuật Quay B-Roll Nấu Ăn Cận Cảnh (Shakshuka): Phối Góc Dao Cắt Macro, Chảo Sốt Top-Down & Kéo Sợi Phô Mai",
+      "title_vi": "Quay cận cảnh nấu trứng sốt cà chua từ lúc thái đến lúc chấm bánh mì",
       "quick_takeaway": "broll quay • Kỹ thuật quay B-Roll ẩm thực nhịp nhanh 43 cảnh: Mở màn bằng cú cắt Macro sát lưỡi dao xẻ cà chua đỏ mọng, nối tiếp chuỗi Action Shot trút nguyên liệu phân lớp màu sắc và kết thúc bằng khoảnh khắc chấm bánh mì kéo sợi phô mai tan chảy.",
       "key_tech": "Broll Quay • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13037,7 +13121,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_Ddv7PoCo2AA_weekend_plans_coffee_by_the_window,_crisp_aut",
       "shortcode": "Ddv7PoCo2AA",
-      "title_vi": "Nghệ Thuật Khép Vòng Thị Giác (Visual Bookending) & Phối Ánh Sáng Đèn Bàn Giữa Ban Ngày: 10 Cú Máy B-Roll Thưởng Thức Cà Phê Cuối Tuần Bên Cửa Sổ",
+      "title_vi": "Quay mười góc tĩnh pha cà phê bên cửa sổ kết hợp bật đèn bàn ấm áp",
       "quick_takeaway": "Chuỗi 10 cảnh B-Roll không gian sống chỉn chu nhịp ~1 giây/cảnh (11.2s): Mở đầu bằng hành động đẩy cửa sổ đón gió thu, lấy cốc gốm thủ công trên kệ gỗ, rót cà phê nóng bốc khói bên cửa sổ, bật đèn bàn đá cẩm thạch phối đèn sàn ấm áp, lật trang tạp chí và khép lại bằng cảnh rèm voan trắng bay nhẹ trong gió.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13116,7 +13200,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_Dd9JnIBNJs7_welcoming_October_with_slow_days_at_home,_war",
       "shortcode": "Dd9JnIBNJs7",
-      "title_vi": "Bố Cục Ánh Sáng Ấm & Nhịp Dựng Tĩnh Vật Mùa Thu Tại Nhà (Slow Autumn B-Roll)",
+      "title_vi": "Quay 12 cảnh tĩnh pha trà và đốt trầm ấm cúng bên cửa sổ mùa thu",
       "quick_takeaway": "Nghệ thuật kể chuyện không lời qua 12 cú máy B-Roll tĩnh vật tại nhà ngày thu: phối hợp ánh sáng đèn vàng ấm với ánh sáng tự nhiên cửa sổ, đan xen nhịp thở cận cảnh (rót trà nóng, châm nhang, lật trang sách) với góc toàn không gian sống và tán lá phong đổi màu ngoài trời.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13195,7 +13279,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_DeZJOgZoRew_the_evening_rule_little_lights_only_🕯️",
       "shortcode": "DeZJOgZoRew",
-      "title_vi": "Nghệ Thuật Phối Ánh Sáng Điểm (Little Lights) & Chuỗi B-Roll Tĩnh Vật Tạo Không Gian Ấm Cúng Lúc 6 Giờ Tối",
+      "title_vi": "Tắt đèn trần chỉ bật đèn nhỏ và nến thơm để quay góc bàn trà buổi tối",
       "quick_takeaway": "Chuỗi 9 cảnh B-Roll ngắn (9.5 giây) khắc họa quy tắc thư giãn buổi tối tại nhà (6pm at home): tắt đèn trần lớn, chỉ thắp sáng các nguồn đèn nhỏ (đèn sàn vải linen, đèn lồng giấy Akari, nến thơm) kết hợp hành động viết nhật ký và pha trà nóng.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -13274,7 +13358,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_DejopHOIoW5_autumn_at_home_🍂",
       "shortcode": "DejopHOIoW5",
-      "title_vi": "Nghệ Thuật Phối Ánh Sáng Nóng - Lạnh & Nhịp Thở B-Roll 1 Giây: Biến Góc Nhà Tĩnh Lặng Thành Thước Phim Mùa Thu Chạm Đa Giác Quan",
+      "title_vi": "Quay tám cảnh tĩnh một giây phối ánh nến ấm với cây xanh sau cơn mưa",
       "quick_takeaway": "Chuỗi 8 cảnh B-Roll không gian sống chỉn chu nhịp 1 giây/cảnh: Phối hợp ánh sáng đèn/nến ấm áp (2700K) với sắc lạnh ngoài cửa sổ, đan xen chuyển động rót trà nóng, lá phong đỏ đọng mưa và khói trầm để truyền tải trọn vẹn cảm giác mùa thu bình yên tại nhà.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13353,7 +13437,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_DbYrq6gIPtC_Summer_at_home_🌞",
       "shortcode": "DbYrq6gIPtC",
-      "title_vi": "Nghệ Thuật Bắt Nắng & Tương Phản Chất Liệu Trong Không Gian Sống Tối Giản (Slow Summer At Home)",
+      "title_vi": "Quay 11 cảnh góc nhà mùa hè bắt vệt nắng cửa sổ và rửa trái cây tươi",
       "quick_takeaway": "Chuỗi 11 phân cảnh B-Roll nhịp nhanh (~0.8s/shot) khắc họa mùa hè bình yên tại nhà qua sự giao thoa giữa ánh nắng cửa sổ, chất liệu nội thất mộc mạc (rèm voan, vải linen, ghế lông cừu, gốm thô) và các cử chỉ sinh hoạt đời thường.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -13432,7 +13516,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@al_dante_channel_DeelURgxPjp_Apple_Braided_Buns",
       "shortcode": "DeelURgxPjp",
-      "title_vi": "Kỹ Thuật Quay B-Roll Ẩm Thực Tương Phản Tối (Chiaroscuro): Cắt Nhịp 49 Cảnh Làm Bánh Táo Tết Bím",
+      "title_vi": "Quay cảnh làm bánh táo trên nền tối với đèn chiếu ngang nổi màu sắc",
       "quick_takeaway": "B-Roll ẩm thực phong cách Low-key Chiaroscuro: Dùng nền tối và nguồn sáng tạt ngang 45° làm bừng sáng sắc đỏ quả táo, kết hợp góc 90° Overhead khi cán bột/tết bím và cú máy bẻ đôi chiếc bánh nướng vàng ruộm ở cuối video.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13511,7 +13595,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
       "shortcode": "DepzH7jxO0z",
-      "title_vi": "Nghệ Thuật Phép Trừ Khi Đóng Khung (Framing & Zoom): Biến 3 Cảnh Đời Thường Lộn Xộn Thành Thước Phim Chỉn Chu",
+      "title_vi": "So sánh góc rộng lộn xộn với góc phóng cận cắt bỏ vật thừa rối mắt",
       "quick_takeaway": "Bài tập thực chiến về nghệ thuật Phép Trừ trong bố cục (Framing & Telephoto Zoom): Đặt 3 bối cảnh đời thường lộn xộn (quán cà phê, cây ven đường, đài phun nước cạnh xe ủi công trường) đối chiếu trực diện với cú máy zoom cận 3x-5x và ngược sáng giờ vàng, kết lại bằng khoảnh khắc hậu trường người bố cùng cầm điện thoại tập quay.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -13590,7 +13674,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥",
       "shortcode": "DeQYfOdpUdk",
-      "title_vi": "Nghệ Thuật Graphic Match Cut Hình Tròn & Đảo Trục Xoay Máy 360° POV Đỉnh Cao",
+      "title_vi": "Chuyển cảnh mười lăm vật hình tròn trùng tâm kèm xoay máy độc đáo",
       "quick_takeaway": "Bậc thầy chuyển cảnh đồng dạng hình học (Graphic Match Cut) kết hợp xoay máy 360 độ POV: khởi đầu từ lòng đỏ trứng tròn trong chảo, nối tiếp liên hoàn qua 15 vật thể hình tròn đặt đúng tâm khung hình (cốc cà phê, hũ nến, mặt trời, mặt trăng, đĩa than, gợn sóng, nét vẽ, viên kẹo, nắp lon, bóng rổ, gương, cánh quạt, núm TV, núm preamp, lồng máy giặt) trước khi đảo trục xoay máy 360 độ theo gương mặt nhân vật và khép lại bằng vòng lặp vô tận (Seamless Loop).",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13673,7 +13757,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@georgepabaker_DeHtnziInQn_Simple_as_that",
       "shortcode": "DeHtnziInQn",
-      "title_vi": "B-Roll Practice Bàn Làm Việc: 13 Cú Cắt Cực Cận Biến Thao Tác Nhỏ Thành Nhịp Điệu Chỉn Chu",
+      "title_vi": "Quay 13 góc cận thao tác gõ phím và viết sổ ngay tại bàn làm việc",
       "quick_takeaway": "Bài tập thực hành quay B-Roll (B-Roll Practice) xuất sắc ngay tại góc bàn làm việc trong 8 giây: phối hợp nhịp thở Co - Giãn (Breathe-In Macro đặc tả mắt, ngòi bút, phím tắt B-Z, click chuột, sóng màu DaVinci Resolve xen kẽ Breathe-Out góc qua vai và nhìn xuyên tán lá) để truyền tải thông điệp 'Obsession beats talent'.",
       "key_tech": "Broll Practicw • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -13754,7 +13838,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@qfroost_DejfEazN6QT_don’t_get_me_wrong,_i_still_use_ai_for_my_cre",
       "shortcode": "DejfEazN6QT",
-      "title_vi": "Thủ Thuật Phân Thân Không Dùng AI: Khóa Cứng Chân Máy & Đối Lập Trang Phục Tạo Đội Quân Bản Sao",
+      "title_vi": "Khóa cứng chân máy tự quay nhiều vị trí để ghép hiệu ứng phân thân",
       "quick_takeaway": "Kỹ thuật tự quay hiệu ứng nhân bản (Clone Army) hơn 50 người hoàn toàn thủ công bằng chân máy khóa cứng và đổi trang phục, kết hợp chuỗi góc máy chỉn chu từ hậu trường đến thành phẩm.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -13863,7 +13947,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@al_dante_channel_DdHMQmrxQca_Potato_Croquets",
       "shortcode": "DdHMQmrxQca",
-      "title_vi": "Công Thức Băm Nhịp ASMR 0.4 Giây & Cú Twist Thú Cưng Cuối Video Khiến Món Khoai Tây Phô Mai Đạt Triệu View",
+      "title_vi": "Quay 33 cảnh nhanh làm bánh khoai tây chiên kéo sợi phô mai giòn rụm",
       "quick_takeaway": "⚡ Nghệ thuật cắt dựng ASMR ẩm thực siêu tốc 0.4s/shot kết hợp cú Twist kéo sợi phô mai cùng thú cưng giữ chân người xem đến giây cuối.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13946,7 +14030,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jigummmmm_DbtuUwvzi5c_“그래서_감성릴스_어떻게_찍는_건데⁉️”",
       "shortcode": "DbtuUwvzi5c",
-      "title_vi": "Công Thức '1 Cảnh Quay 3 Góc': Tự Quay Reels Đọc Sách Chỉn Chu Bằng iPhone 2x Trong Góc Phòng Nhỏ",
+      "title_vi": "Tự quay một thao tác ở ba góc máy bằng điện thoại mức phóng 2x",
       "quick_takeaway": "Bí quyết tự quay Reels đọc sách chỉn chu một mình chỉ với 1 chiếc iPhone trên chân máy: Bật chế độ xóa phông 2x khóa nét AF, quay lặp lại đúng 1 hành động từ 3 vị trí (Chính diện ngang bàn - Góc ngang cao chúc xuống - Góc qua vai từ sau lưng) để xóa sạch đồ bừa bộn xung quanh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -14027,7 +14111,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@arturbr_Deb_OOxqZbl_Loop",
       "shortcode": "Deb_OOxqZbl",
-      "title_vi": "Vòng Lặp 24 Giờ Không Lời Thoại: 21 Cú Cắt 0.4 Giây Kể Trọn Một Ngày Bằng Chi Tiết Chỉn Chu",
+      "title_vi": "Kể trọn một ngày bận rộn bằng chuỗi cảnh cắt nhanh nối vòng lặp",
       "quick_takeaway": "⚡ Cận cảnh đồng hồ 6:00 AM mở màn ➔ 19 nhịp cắt nhanh 0.4s đa góc máy (Macro, POV trong tủ đồ, Top-Down) ➔ Ngả lưng xuống giường cạnh đồng hồ khép kín vòng lặp Infinite Loop.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -14110,7 +14194,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DemoZWsuTjr_October_but_cinematic🍂",
       "shortcode": "DemoZWsuTjr",
-      "title_vi": "Công Thức Tự Quay B-Roll Dạo Bộ Mùa Thu Chỉn Chu: Đặt Máy Cố Định Bước Vào Khung & Bắt Nắng Xuyên Tán Lá",
+      "title_vi": "Tự quay chuỗi cảnh dạo bộ ngoài trời một mình với máy đặt cố định",
       "quick_takeaway": "⚡ Công thức tự quay B-Roll dạo bộ mùa thu chỉn chu một mình: Mở màn bằng khung máy cố định có vòm cây dẫn hướng cho nhân vật tự bước vào khung, sau đó nối chuỗi 6 góc cận - toàn đan xen bắt nắng xuyên tán lá (Sun Flare), phơi sáng nền tối và đặt máy sát mặt đất.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -14187,7 +14271,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@junko_livlog_DebgMp_SYGv_⁡",
       "shortcode": "DebgMp_SYGv",
-      "title_vi": "Nghệ Thuật B-Roll Buổi Sáng Mùa Thu Tại Nhà: Giữ Chữ Xuyên Cảnh & Phối Ánh Sáng Ngược Cửa Sổ",
+      "title_vi": "Quay chuỗi cảnh buổi sáng bình yên tại nhà với ánh sáng cửa sổ",
       "quick_takeaway": "⚡ Góc Qua Vai Mở Màn Gian Bếp & Rót Cà Phê Giữ Chữ Tiêu Đề ➔ Chuỗi Micro-Actions Xúc Đá, Lật Lịch Da, Tương Tác Mèo & Đọc Sách Ngược Nắng",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -14272,7 +14356,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…",
       "shortcode": "DeaMdF4RjPv",
-      "title_vi": "Biến Cảnh Lấy Nước Tủ Lạnh Thành Thước Phim Chỉn Chu Nhờ Góc Máy POV & Chuỗi Cận Cảnh Bọt Gas",
+      "title_vi": "Quay cảnh mở tủ lạnh lấy nước và rót ra cốc bằng góc nhìn lạ",
       "quick_takeaway": "Bài tập thực hành quay dựng chỉn chu (Day 5) biến hành động lấy lon Pepsi trong tủ lạnh và rót ra cốc thành chuỗi hình ảnh giàu cảm xúc nhờ góc máy POV bên trong tủ lạnh, chuyển cảnh che ống kính (Hand-Block Wipe), kỹ thuật cắt nối hành động (Cut-on-Action) và 3 cấp độ cận cảnh ngược sáng đặc tả bọt gas.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -14357,7 +14441,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life",
       "shortcode": "DeXSJttMxAv",
-      "title_vi": "5 Góc Máy B-Roll Chỉn Chu Biến Thói Quen Buổi Sáng Thành Thước Phim Đắt Giá",
+      "title_vi": "Năm góc đặt điện thoại tự quay thói quen buổi sáng không cần người phụ",
       "quick_takeaway": "5 công thức đặt góc máy B-Roll chỉn chu giúp biến chuỗi thói quen buổi sáng đời thường (tắt báo thức, mở tủ lấy áo, lướt chọn nhạc, đeo tai nghe, cầm cà phê dạo phố) thành thước phim cuốn hút mà không cần người quay hộ.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -14442,7 +14526,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone",
       "shortcode": "DeNRxHJPgse",
-      "title_vi": "Đòn Bẩy Hook Bán Sách: Thủ Pháp Thò Tay Phóng To Chữ Giả Lập Không Gian & Hạ Kính Râm Theo Beat Nhạc",
+      "title_vi": "Đặt máy cố định dùng tay kéo phóng to dòng chữ nhỏ theo nhịp nhạc",
       "quick_takeaway": "⚡ Mồi Mắt Tương Tác Không Gian (Fake UI Pinch-to-Zoom): Bước vào khung hình & thò tay 'kéo' dòng chữ nhỏ ở xa đập thẳng vào ống kính ➔ Cú Đấm Thái Độ & Chốt Hạ Hành Động (Prop Stunt & Exit CTA): Hạ kính râm rơi xuống sống mũi theo beat nhạc rồi ôm chồng sách bước đi",
       "key_tech": "Cinematic Lighting, Composition Mastery, Storyboard Rhythm",
       "shooting_style": {
@@ -14501,7 +14585,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid_thumb.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -14521,7 +14605,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@khaochobtiew6_Dd5zh4sqpuA_เที่ยวเชียงดาวคนเดียว_ฉบับ_One_Day_Trip",
       "shortcode": "Dd5zh4sqpuA",
-      "title_vi": "Khoe Sức Mạnh Camera Bằng Vlog Chữa Lành",
+      "title_vi": "Hành trình dạo chơi một ngày giữa thiên nhiên với nhiều cỡ cảnh",
       "quick_takeaway": "Một ngày dạo bước Chiang Dao với những góc máy cinematic chữa lành, bí mật là màn khoe khả năng nhiếp ảnh ấn tượng của smartphone.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -14594,7 +14678,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
       "shortcode": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
-      "title_vi": "Đế Gập MagSafe Ulanzi MA50: Đòn Bẩy Thị Giác Từ Cơ Chế Đa Khớp Đến Hệ Sinh Thái Quay Chụp Chuyên Nghiệp",
+      "title_vi": "Giới thiệu phụ kiện điện thoại gấp gọn qua sáu cảnh thao tác thực tế",
       "quick_takeaway": "Video quảng cáo thương mại tinh gọn giới thiệu giá đỡ điện thoại nhôm gập từ tính Ulanzi MA50 (hệ Uka). Đòn bẩy thị giác đến từ việc khoe kích thước siêu mỏng bỏ túi ở 2s đầu, phô diễn cơ chế gập đa khớp cơ học, chứng minh tính vững chãi khi dựng bàn lướt TikTok, và chốt hạ bằng khả năng hít tủ sắt cùng ngàm ren 1/4 tương thích hệ sinh thái máy ảnh chuyên nghiệp.",
       "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
@@ -14672,7 +14756,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@pablogalafat_DdxIiI-C4KI_Varía_los_planos",
       "shortcode": "DdxIiI-C4KI",
-      "title_vi": "Nghệ Thuật Đổi Cỡ Cảnh & Phông Nền: Diệt Trừ Jump Cut Nhàm Chán (@pablogalafat)",
+      "title_vi": "Cách đổi cỡ cảnh từ cận sang toàn để video nói chuyện bớt nhàm chán",
       "quick_takeaway": "Thị phạm đối sánh giữa sai lầm Jump Cut chết người (giữ nguyên cỡ cảnh & phông nền) và đòn bẩy thay đổi cỡ cảnh liên tục (Toàn - Cận - Ngước) giúp video bùng nổ nhịp điệu và chống nhàm chán.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -14750,7 +14834,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sheratonsaigon_Dd_sDyfMRjd_Saigon’s_best-kept_luxury_secret_👀",
       "shortcode": "Dd_sDyfMRjd",
-      "title_vi": "Khám phá &#x27;Bí mật xa xỉ&#x27; giữa lòng Sài Gòn cùng Sheraton",
+      "title_vi": "Giới thiệu không gian và dịch vụ khách sạn qua hành trình trải nghiệm",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -14828,7 +14912,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c",
       "shortcode": "Dd8gb9ss84q",
-      "title_vi": "Nghệ thuật quảng bá trải nghiệm Stopover: Khi Layover trở thành một kỳ nghỉ ngàn đô",
+      "title_vi": "Kể hành trình dừng chân du lịch từ lúc đặt lịch đến khi lên máy bay",
       "quick_takeaway": "Quảng bá chương trình Stopover của Turkish Airlines với góc nhìn POV cá nhân hóa, kết hợp giữa sự sang trọng của dịch vụ và nét cổ kính của Istanbul.",
       "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
@@ -14905,7 +14989,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty",
       "shortcode": "DdGa4hxzlJi",
-      "title_vi": "Nghệ Thuật Kể Chuyện Ký Ức Tuổi Thơ Bằng Hương Thơm",
+      "title_vi": "Quảng cáo nước hoa bằng câu chuyện ký ức tuổi thơ và bước chạy",
       "quick_takeaway": "Quảng cáo Prada Paradigme bằng thủ pháp kết nối hoài niệm tuổi thơ và sự chuyển mình của người đàn ông trưởng thành.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -14980,7 +15064,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hana.konichiwa_Dd1A6GRz1QN_A_slow_day_between_sunshine_and_rain_🍃🌦️",
       "shortcode": "Dd1A6GRz1QN",
-      "title_vi": "hana.konichiwa Dd1A6GRz1QN A slow day between sunshine and rain 🍃🌦️",
+      "title_vi": "Ghi lại một ngày nấu ăn và chăm vườn bình yên từ nắng sớm đến tối",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 42 phân cảnh.",
       "key_tech": "Slow Living • ASMR Cooking • Japanese Aesthetic • Food Styling • Montage Rhythm",
       "shooting_style": {
@@ -15045,7 +15129,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_👀",
       "shortcode": "Dd08G0PBtKk",
-      "title_vi": "Đòn Bẩy Thị Giác: 5 Góc Máy Sáng Tạo Với Magic Arm (K&F Concept)",
+      "title_vi": "Năm vị trí kẹp điện thoại tạo góc nhìn lạ ngay trong phòng nhỏ",
       "quick_takeaway": "Video giới thiệu 5 góc máy độc đáo và sáng tạo với K&F Concept Magic Arm, kết hợp giữa góc sát sàn, góc đỉnh đầu và object-POV.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -15122,7 +15206,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
       "shortcode": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
-      "title_vi": "Phô diễn sức mạnh cơ khí 1-Chạm: Kích hoạt chân Quadpod Ulanzi MT86",
+      "title_vi": "Giới thiệu chân máy tự bung bốn chân qua các góc quay sát mặt đất",
       "quick_takeaway": "Video review Tripod & Gậy Selfie Ulanzi MT86 tự động bung 4 chân Quadpod.",
       "key_tech": "1.52m Height • Quadpod Base. Get it on Lazada now! • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
@@ -15197,7 +15281,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
       "shortcode": "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
-      "title_vi": "Review Chân Đế Máy Ảnh Nhẹ và Đa Năng Ulanzi oSa57",
+      "title_vi": "Quay đánh giá chân máy nhỏ gọn từ lúc rút khỏi túi đến khi dùng thật",
       "quick_takeaway": "Video UGC review chân máy ảnh mini gập gọn của Ulanzi, nhắm vào sự tiện dụng và đa năng.",
       "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -15275,7 +15359,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside",
       "shortcode": "DbDAdZShiS9",
-      "title_vi": "Tuyệt Kỹ Match Cut Phi Đĩa F&B: Phá Vỡ Quy Chuẩn Bưng Bê Để Giật 100% Chú Ý Về Món Ăn",
+      "title_vi": "Chuyển cảnh phi đĩa rỗng hóa mâm gà nướng đầy đặn ngay trước cửa quán",
       "quick_takeaway": "Cú phi đĩa frisbee giật mình kết hợp Action Match Cut 0.3s hoán đổi đĩa rỗng thành mâm gà nướng sốt nấm vàng giòn cực phẩm.",
       "key_tech": "Chuyển Cảnh (Transition) • Match Cut • Action Cut • Ẩm Thực & F&B",
       "shooting_style": {
@@ -15353,7 +15437,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет",
       "shortcode": "DdT9nr_o_SP",
-      "title_vi": "Nghệ Thuật Match Cut: Chuyển Cảnh Mượt Mà Trong Video Ẩm Thực",
+      "title_vi": "Quay thực đơn bữa sáng bằng cách xoay đĩa đồng tâm và cắt cận nhân bánh",
       "quick_takeaway": "Video review đồ ăn sáng với kỹ thuật chuyển cảnh mượt mà, sử dụng Match Cut và Macro để tôn lên chất lượng món ăn (Chuyển cảnh 1).",
       "key_tech": "Chuyển cảnh 1 • Spin Match Cut • Macro Food Porn • Visual Hook • Yolk Ooze Money Shot",
       "shooting_style": {
@@ -15430,7 +15514,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca",
       "shortcode": "Dc0iEdiuYZ-",
-      "title_vi": "Nghệ Thuật Khơi Gợi Vị Giác Qua Từng Cú Chạm Góc Máy",
+      "title_vi": "Quay hành trình khách ghé quán từ bước chân mở cửa đến lúc uống cạn ly",
       "quick_takeaway": "Trải nghiệm không gian cafe tối giản với điểm nhấn là món Nitro Matcha sủi bọt và bánh ngàn lớp.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -15505,7 +15589,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
       "shortcode": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-      "title_vi": "Gậy Tự Sướng Ulanzi MT85 Magsafe (UGC Lazada)",
+      "title_vi": "Quay nhanh ba tính năng chính của gậy chụp ảnh kèm đèn trợ sáng nhỏ",
       "quick_takeaway": "UGC video khoe tính năng gậy tự sướng Ulanzi MT85 tích hợp ngàm Magsafe và đèn LED mini siêu sáng, hướng luồng traffic mua hàng Lazada.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting • Low-key Lighting",
       "shooting_style": {
@@ -15583,7 +15667,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
       "shortcode": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
-      "title_vi": "Ulanzi MagSafe Tripod: Gậy Selfie Biến Hình Siêu Tốc",
+      "title_vi": "Tám cảnh quay gậy ba chân Ulanzi hít từ tính dưới vệt nắng rèm",
       "quick_takeaway": "Video trình diễn tính năng gậy selfie tripod MagSafe của Ulanzi với hiệu ứng bóng rèm (Orange Gobo).",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -15658,7 +15742,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis",
       "shortcode": "DdRGI36Aj0X_Carousel_Analysis",
-      "title_vi": "Góc Máy Điện Ảnh Biến B-roll Đồ Gia Dụng Thành Cú Đấm Thị Giác",
+      "title_vi": "Bảy góc máy lạ biến cảnh lắp ráp quạt điện thành thước phim bắt mắt",
       "quick_takeaway": "Hướng dẫn quay dựng video B-roll mượt mà khi set up chiếc quạt điện",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -15733,7 +15817,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai,",
       "shortcode": "Ddga9BDzenm",
-      "title_vi": "Bóc Trần Kỹ Thuật Đánh Sáng Gobo & Setup Góc Máy Quay F&B",
+      "title_vi": "Hậu trường đánh đèn giả nắng xiên và chọn phông chữ cho video nấu ăn",
       "quick_takeaway": "Video hậu trường hướng dẫn cách setup ánh sáng giả nắng bằng Gobo, thiết lập góc máy và chia sẻ 4 cặp font chữ (Advercase, Britti Sans, Strong, Playfair) thường dùng cho video nấu ăn F&B.",
       "key_tech": "F N B • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -15810,7 +15894,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_🥰✨",
       "shortcode": "DeEiCwlhMwT",
-      "title_vi": "Phân Tích Reel: Nhịp Sống Đa Sắc Màu Tại Việt Nam",
+      "title_vi": "Chuỗi cảnh cắt nhanh ghi lại màu sắc và nhịp sống đường phố Việt Nam",
       "quick_takeaway": "Bức tranh rực rỡ sắc màu về những góc phố và nhịp sống đời thường tại Việt Nam, sử dụng kỹ thuật cắt cảnh nhanh (fast-paced) để liên tục kích thích thị giác.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -15885,7 +15969,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with",
       "shortcode": "Ddfa3zCu3kj",
-      "title_vi": "Vẻ Đẹp Điện Ảnh Tự Nhiên & Sức Mạnh 'Straight Out Of Camera'",
+      "title_vi": "Chín cảnh ngoại cảnh đón nắng sớm và hoàng hôn không cần chỉnh màu",
       "quick_takeaway": "Vẻ đẹp điện ảnh tự nhiên với máy ảnh Sony a6400, phô diễn ánh sáng Blue Hour và Golden Hour.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Wide Establishing Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -15960,7 +16044,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@100033115395865_2304710183702297_Video",
       "shortcode": "2304710183702297",
-      "title_vi": "Phân Tích Kỹ Thuật B-Roll Nấu Ăn & Chuyển Cảnh",
+      "title_vi": "Bài tập quay chế biến món ăn kết hợp tiền cảnh và đổi cỡ cảnh trong bếp",
       "quick_takeaway": "Bài thực hành quay dựng video nấu ăn của học viên Quỳnh Anh Le Kitchen, ứng dụng kỹ thuật chuyển cảnh, thay đổi góc máy và tiền cảnh.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
       "shooting_style": {
@@ -16035,7 +16119,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera",
       "shortcode": "DcwPu99sDKI",
-      "title_vi": "how to yap on camera",
+      "title_vi": "Ngồi nói trực diện hướng dẫn cách chia sẻ tự nhiên trước ống kính",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -16108,7 +16192,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi",
       "shortcode": "nNkE1fK9eQs",
-      "title_vi": "Coach K Teaches Values-Driven Leadership Official Trailer",
+      "title_vi": "Đoạn giới thiệu lớp học kỹ năng lãnh đạo theo phong cách phỏng vấn sâu",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh",
       "key_tech": "ngồi nói trực tiếp",
       "shooting_style": {
@@ -16177,7 +16261,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@MasterClass_UOAgJxrGKzk_Make_the_Markets_Work_for_You_With_Ray_Dalio",
       "shortcode": "UOAgJxrGKzk",
-      "title_vi": "Make the Markets Work for You With Ray Dalio",
+      "title_vi": "Chuyên gia ngồi chia sẻ kinh nghiệm đầu tư trong phòng quay chỉn chu",
       "quick_takeaway": "Phân tích tự động",
       "key_tech": "ngồi nói trực tiếp",
       "shooting_style": {
@@ -16246,7 +16330,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@TheConflictPlaybook_uU8uPchm7is_uU8uPchm7is",
       "shortcode": "IG_@TheConflictPlaybook_uU8uPchm7is_uU8uPchm7is",
-      "title_vi": "The Conflict Playbook",
+      "title_vi": "Chuyên gia ngồi nói trực diện xen cảnh minh họa tình huống tranh cãi",
       "quick_takeaway": "Phân tích tự động",
       "key_tech": "ngồi nói trực tiếp",
       "shooting_style": {
@@ -16315,7 +16399,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off",
       "shortcode": "q8rX4GUZSsU",
-      "title_vi": "Nghệ Thuật Xây Dựng Uy Quyền (Authority) Từ Cựu Chuyên Gia FBI",
+      "title_vi": "Chuyên gia ngồi chia sẻ nghề kết hợp cận cảnh hồ sơ thật và đối thoại",
       "quick_takeaway": "Bậc thầy đàm phán Chris Voss sử dụng phong cách Talking Head chuyên nghiệp kết hợp documentary footage (hiện trường tác chiến) và typography để xây dựng uy quyền tuyệt đối.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -16390,7 +16474,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi",
       "shortcode": "vw77HWoTdoA",
-      "title_vi": "Nghệ Thuật Kể Chuyện Đa Góc Máy: Mổ xẻ Setup Talking Head Kinh Điển Của MasterClass",
+      "title_vi": "Ngồi chia sẻ kinh doanh bằng hai góc máy thẳng và nghiêng chữa nói vấp",
       "quick_takeaway": "Kỹ thuật setup 2 góc máy (trực diện & góc nghiêng) kết hợp ngắt nhịp bằng text (Title Card) tạo sự lôi cuốn cho video phỏng vấn/giảng dạy dài.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -16463,7 +16547,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@MasterClass_6nDfNUb-28I_Certificates",
       "shortcode": "IG_@MasterClass_6nDfNUb-28I_Certificates",
-      "title_vi": "Introducing： MasterClass Certificates [6nDfNU",
+      "title_vi": "Giới thiệu chương trình đào tạo bằng chuỗi chuyển cảnh ghép lớp hậu kỳ",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -16538,7 +16622,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe",
       "shortcode": "Dah5Tp8oji1",
-      "title_vi": "Bí Quyết Điện Ảnh: Kỹ Thuật J-Cut Giúp Chuyển Cảnh Mượt Mà Bằng Âm Thanh",
+      "title_vi": "Cách cho âm thanh đi trước hình ảnh giúp chuyển cảnh mượt tự nhiên",
       "quick_takeaway": "Bóc tách kỹ thuật J-cut, cho âm thanh đi trước hình ảnh để chuyển cảnh mượt mà chuẩn điện ảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -16611,7 +16695,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future",
       "shortcode": "Db1jadggnGA",
-      "title_vi": "Kỹ Thuật Walk and Talk Đa Bối Cảnh - Dynamic Anchor Pacing",
+      "title_vi": "Vừa đi bộ vừa trả lời câu hỏi kết hợp cảnh ngồi làm việc thực tế",
       "quick_takeaway": "Video kết hợp kỹ thuật walk and talk và b-roll lifestyle (vibe coding), thay đổi bối cảnh liên tục để truyền tải thông điệp về công việc creator.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
@@ -16686,7 +16770,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction",
       "shortcode": "DbbVPaTsaun",
-      "title_vi": "Vòng Lặp The Age of Distraction",
+      "title_vi": "Kể vòng lặp một ngày áp lực chỉ bằng năm góc máy tĩnh tại nhà",
       "quick_takeaway": "Video mô tả nhịp sống hối hả hiện đại với cấu trúc lặp (loop)",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -16761,7 +16845,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@anatta.ha_Dd6kWLjxNQJ_solo_date_to_the_bookstore_😗",
       "shortcode": "Dd6kWLjxNQJ",
-      "title_vi": "Tự thưởng bản thân (Solo Date) / Kỷ luật bản thân (Romanticize your life)",
+      "title_vi": "Hành trình lên đồ ở nhà và tự đi dạo hiệu sách thư giãn cuối tuần",
       "quick_takeaway": "Vlog ghi lại hành trình chuẩn bị và đi đến nhà sách thư giãn (solo date), truyền tải thông điệp 'romanticize your life' qua các góc quay đẹp và chuyển cảnh mượt mà.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -16834,7 +16918,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog",
       "shortcode": "Ddac5QTtTFH",
-      "title_vi": "Kỹ thuật Anchor Text & Montage: Cắt vào hành động 2s đầu",
+      "title_vi": "Mở đầu nhật ký video bằng chữ giữ cố định giữa chuỗi cảnh cắt nhanh",
       "quick_takeaway": "Video vlog mở đầu bằng kỹ thuật neo thị giác (giữ nguyên Text chữ #VLOG) kết hợp với chuỗi chuyển cảnh cực nhanh (Montage), băm nhỏ bối cảnh để tạo nhịp điệu dồn dập ngay 2 giây đầu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot • Low-key Lighting",
       "shooting_style": {
@@ -16909,7 +16993,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@therealmarcozavala_DcSXWp_O1JQ_Comment_“shot”_for_a_list_of_10",
       "shortcode": "DcSXWp_O1JQ",
-      "title_vi": "Hiệu ứng Walk and Talk giữ chân người xem liên tục",
+      "title_vi": "Vừa đi bộ trên vỉa hè vừa nói chuyện liên tục để giữ mắt người xem",
       "quick_takeaway": "Cách sử dụng chuyển động đi bộ liên tục (Walk and talk) để duy trì sự chú ý của người xem trong suốt video chia sẻ kiến thức.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -16984,7 +17068,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mendozallopis_Dd4L578RNhz_The_Assembling",
       "shortcode": "Dd4L578RNhz",
-      "title_vi": "Nghệ Thuật Lắp Ráp LEGO Cinematic: Tối Đa Hóa Cảm Xúc Bằng Nhịp Cắt Siêu Nhanh & Góc Cận Đặc Tả",
+      "title_vi": "Quay quá trình lắp ráp mô hình trên bàn tối với nhịp cắt nhanh dứt khoát",
       "quick_takeaway": "Video lắp ráp LEGO Nintendo Game Boy với nhịp điệu dồn dập, kết hợp các góc máy siêu cận (macro) vào ánh mắt và chi tiết mảnh ghép, dưới ánh sáng low-key đậm chất điện ảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -17062,7 +17146,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@austinwhite711_DdUK7JNtjGG_is_this_“allowed”_🤷🏻‍♂️",
       "shortcode": "DdUK7JNtjGG",
-      "title_vi": "Kỹ thuật Split Screen & B-roll Nhấn Nhịp Cực Nhanh",
+      "title_vi": "Hướng dẫn làm nhạc kết hợp ngồi nói, hình vẽ tay và chia đôi màn hình",
       "quick_takeaway": "Video hướng dẫn làm beat nhạc với nhịp độ cắt cảnh cực nhanh kết hợp kỹ thuật Split Screen và Talking Head.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -17135,7 +17219,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sametxhunter_DdwxosERt7n_It’s_Now_or_Never",
       "shortcode": "DdwxosERt7n",
-      "title_vi": "It’s Now or Never",
+      "title_vi": "Chuỗi chuyển cảnh nhịp nhanh kết hợp ghép lớp hình ảnh ở khâu dựng",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -17210,7 +17294,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀",
       "shortcode": "DduU6THJQ8y",
-      "title_vi": "Phỏng vấn sự kiện (Event Interview) - Walk & Talk Hook",
+      "title_vi": "Vừa đi vừa mở lời rồi cầm micro hỏi nhanh ý kiến khách tại sự kiện",
       "quick_takeaway": "Mở màn bằng kỹ thuật Walk & Talk năng lượng cao để hút sự chú ý, sau đó chuyển sang format phỏng vấn chớp nhoáng khách mời tại sự kiện Hotmart Fire.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -17283,7 +17367,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ajit_rathore886_DdsodC0hSmZ_Static_Shots🔥📽️",
       "shortcode": "DdsodC0hSmZ",
-      "title_vi": "Giải Phẫu Bố Cục Máy Tĩnh (Static Shots)",
+      "title_vi": "Mười khung hình giữ máy đứng yên ghi lại cảnh làm nghề ngoài chợ đông",
       "quick_takeaway": "Nghệ thuật sử dụng máy tĩnh (Static Shots) để lột tả nhịp sống đường phố Ấn Độ: lộn xộn nhưng đầy chất điện ảnh qua từng góc máy, ánh sáng và khung hình.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -17358,7 +17442,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@alexmegino_DdzHC1ljMjk_Carousel_Analysis",
       "shortcode": "DdzHC1ljMjk_Carousel_Analysis",
-      "title_vi": "Kỷ Luật Thép Của Kẻ Hành Động: Cách Dùng Thời Gian Để Kể Chuyện",
+      "title_vi": "Kể một ngày làm việc kỷ luật bằng các mốc giờ từ sáng sớm đến đêm",
       "quick_takeaway": "Khắc họa một ngày kỷ luật thép (từ 8:08 sáng đến 19:59 tối) thông qua chuỗi không gian tối giản, nhịp điệu từ tốn và cách chơi ánh sáng Low-key xuất sắc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -17435,7 +17519,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
       "shortcode": "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
-      "title_vi": "Gậy Chụp Hình Tripod MagSafe Ulanzi Đa Năng 2 Trong 1: Cú Đấm Thị Giác Cơ Học & Trải Nghiệm Đời Thực",
+      "title_vi": "Quay chi tiết từng khớp khóa và cách dùng thực tế của chân máy đa năng",
       "quick_takeaway": "Cấu trúc kịch bản review thiết bị công nghệ mẫu mực: Đi thẳng từ đòn bẩy cơ học (MagSafe, mở ngàm), chứng minh tải trọng bằng góc Top-down và chân kiềng kép, biến hình thành trạm làm vlog di động và chốt hạ bằng kích thước gập gọn thanh lịch.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting",
       "shooting_style": {
@@ -17513,7 +17597,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdZb-x1OuDw_Day_20_learning_cinematography",
       "shortcode": "DdZb-x1OuDw",
-      "title_vi": "Tận Dụng Nắng Xiên Và Shadow Để Tạo Cinematic Look",
+      "title_vi": "Chín góc máy tĩnh tận dụng nắng xiên cửa sổ quay đồ uống và góc nhà",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -17586,7 +17670,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdW1eYoO7Nb_Day_19_learning_cinematography",
       "shortcode": "DdW1eYoO7Nb",
-      "title_vi": "Nghệ Thuật Khai Thác Ánh Sáng Tự Nhiên & Bóng Đổ (Shadow Play)",
+      "title_vi": "Tập bắt vệt nắng cửa sổ và bóng đổ hình học quanh góc phòng buổi sáng",
       "quick_takeaway": "Bài học về cách tận dụng ánh sáng tự nhiên và bóng đổ hình học.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -17659,7 +17743,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdejCP_tg7G_Day_22_learning_cinematography",
       "shortcode": "DdejCP_tg7G",
-      "title_vi": "Nghệ Thuật Cinematic Vlog: Chơi Đùa Với Ánh Sáng Low-Key & Nhịp Sống Chậm",
+      "title_vi": "Quay buổi sáng tại nhà có chiều sâu nhờ tắt đèn trần chỉ bật đèn hắt bếp",
       "quick_takeaway": "Một thước phim Cinematic vlog ghi lại buổi sáng tĩnh lặng với sự kết hợp tuyệt vời giữa ánh sáng Low-key và ánh sáng tự nhiên.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -17732,7 +17816,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DcwVaP0Of8D_Day_5_learning_cinematography",
       "shortcode": "DcwVaP0Of8D",
-      "title_vi": "Day 5 learning cinematography",
+      "title_vi": "Bài tập sáu góc máy tĩnh lấy đủ cỡ cảnh toàn, trung và cận cơ bản",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -17805,7 +17889,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdMh8uRukGJ_Day_16_learning_cinematography",
       "shortcode": "DdMh8uRukGJ",
-      "title_vi": "DAY 16 LEARNING CINEMATOGRAPHY: LÀM CHỦ ÁNH SÁNG & BÓNG TỐI",
+      "title_vi": "Quay cốc nước nóng bốc khói nổi bật nhờ chọn nền tối và vệt nắng hẹp",
       "quick_takeaway": "Thực hành ánh sáng Cinematic (Learning Cinematography) từ việc setup máy ảnh đến tận dụng nguồn sáng phụ (vệt nắng, bóng râm) cho cảnh tĩnh vật.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -17878,7 +17962,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography",
       "shortcode": "DdPQJLvulmd",
-      "title_vi": "Thực Hành Cinematic Vlog: Định Vị Bối Cảnh & Kiểm Soát Ánh Sáng Low-key",
+      "title_vi": "Tám cảnh sinh hoạt ấm cúng tại nhà phối giữa nắng cửa sổ và đèn vàng",
       "quick_takeaway": "Video thực hành quay cinematic vlog với ánh sáng tự nhiên và bối cảnh trong nhà, tập trung vào góc máy và nhịp thở thị giác.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -17951,7 +18035,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
       "shortcode": "DdcH-N-ONJw",
-      "title_vi": "Khắc Họa Cuộc Sống Qua Khung Hình Điện Ảnh",
+      "title_vi": "Quay góc bếp buổi sáng với bình hoa bên cửa sổ và ly cà phê ngược nắng",
       "quick_takeaway": "Khắc họa vẻ đẹp của ánh sáng tự nhiên qua những góc cận cảnh sinh hoạt đời thường",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -18024,7 +18108,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
       "shortcode": "DdhHCL6OOfK",
-      "title_vi": "Bóc Tách Kỹ Thuật Cinematic B-roll & Khai Thác Nắng Sớm",
+      "title_vi": "Chín cảnh tự quay bữa sáng bánh mì trứng bốc khói dưới nắng cửa sổ",
       "quick_takeaway": "Video thực hành quay Cinematic Lifestyle với ánh sáng tự nhiên, rim light và shadow cực đẹp mắt.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -18097,7 +18181,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography",
       "shortcode": "DdjxG1Hu8P6",
-      "title_vi": "B-Roll Điện Ảnh: Khai thác sức mạnh của ánh sáng tự nhiên",
+      "title_vi": "Chín cảnh tĩnh vật trên bệ cửa sổ đón ánh nắng vàng lúc chiều muộn",
       "quick_takeaway": "Khám phá vẻ đẹp điện ảnh từ ánh sáng tự nhiên qua các chi tiết thường nhật.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -18170,7 +18254,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_🕶️_#fitcheck_#l",
       "shortcode": "DdgqYzZM67T",
-      "title_vi": "Bóc Tách Góc Máy Lookbook Đường Phố: Cách Show Trang Phục Quyền Lực",
+      "title_vi": "Bốn góc máy thấp ngoài vỉa hè làm rõ phom quần áo và kính",
       "quick_takeaway": "Video khoe trang phục đường phố cực chất với các góc máy low angle và chuyển cảnh dứt khoát.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -18243,7 +18327,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jackwebstter_DdtKOH-TN_c_How_to_film_cinematic_running_shots_part_2",
       "shortcode": "DdtKOH-TN_c",
-      "title_vi": "Bóc tách kỹ thuật quay video chạy bộ Cinematic",
+      "title_vi": "Bốn góc đặt máy thấp và lia lên giúp quay cảnh chạy bộ giàu năng lượng",
       "quick_takeaway": "Phân tích kỹ thuật quay góc thấp, góc toàn và lia máy để tạo ra những khung hình chạy bộ chuẩn điện ảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -18314,34 +18398,32 @@ var FEDU_IDEAS_DATABASE = {
       "is_excluded": false
     },
     {
-      "id": "IG_@mariapark_DdeYvmLsms6_Чакра_на_осенние_образы_открыта_🤩_Ставь_огонь",
+      "id": "IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark",
       "shortcode": "DdeYvmLsms6",
-      "title_vi": "Nghệ Thuật Match-Cut Thời Trang & Catwalk Hầm Xe: Kỹ Thuật Biến Hình Từ Váy Ngủ Sang Set Đồ Thu Edgy (@mariapark_)",
-      "quick_takeaway": "Đòn bẩy Match-Cut đối lập từ phòng ngủ ra hầm xe, kết hợp chuyển động layer áo bomber da, sải bước catwalk và micro-reactions nháy mắt giữ chân người xem 100%.",
+      "title_vi": "Giơ tay nối cảnh từ phòng bếp ra hầm xe đổi trang phục thu",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
       },
       "industries": [
         {
-          "id": "thoi-trang",
-          "name": "Thời trang",
-          "en_name": "Fashion & Style",
-          "icon": "👔",
-          "badge_color": "pink",
-          "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
         }
       ],
       "x_factors": [],
       "tags": [
-        "Match Cut",
-        "Fast-Cut Beat Sync",
-        "Outfit Transition",
-        "Editorial Dutch Tilt",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
         "Low-key Lighting"
       ],
       "country": {
@@ -18351,35 +18433,32 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mariapark",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР",
       "tech_tags": [
-        "Match Cut",
-        "Fast-Cut Beat Sync",
-        "Outfit Transition",
-        "Editorial Dutch Tilt",
-        "Low-key Lighting",
-        "Catwalk Leading Lines"
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
       "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
-        "raw": "@mariapark",
-        "name": "Mariapark",
-        "handle": "@mariapark",
-        "profile_url": "https://www.instagram.com/mariapark/"
+        "raw": "@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР",
+        "name": "Маша_Пак_Фешн-Инфлюенсер",
+        "handle": "@_mariapark",
+        "profile_url": "https://www.instagram.com/_mariapark/"
       },
       "ig_url": "https://www.instagram.com/reel/DdeYvmLsms6/",
-      "gdrive_folder": "https://drive.google.com/open?id=1s3gHzDTW7z54g7HT2ZzXW9g-ScJEPZtD",
+      "gdrive_folder": "https://drive.google.com/open?id=12nNGR0hvF8lHvGMcZSDPXkEUVz1Jfsvr",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40mariapark_DdeYvmLsms6_%D0%A7%D0%B0%D0%BA%D1%80%D0%B0_%D0%BD%D0%B0_%D0%BE%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%8B_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0_%F0%9F%A4%A9_%D0%A1%D1%82%D0%B0%D0%B2%D1%8C_%D0%BE%D0%B3%D0%BE%D0%BD%D1%8C/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40mariapark_DdeYvmLsms6_%D0%A7%D0%B0%D0%BA%D1%80%D0%B0_%D0%BD%D0%B0_%D0%BE%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%8B_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0_%F0%9F%A4%A9_%D0%A1%D1%82%D0%B0%D0%B2%D1%8C_%D0%BE%D0%B3%D0%BE%D0%BD%D1%8C/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdeYvmLsms6.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdeYvmLsms6.mp4",
-        "report_url": "reports/IG_@mariapark_DdeYvmLsms6_Чакра_на_осенние_образы_открыта_🤩_Ставь_огонь.html",
+        "report_url": "reports/IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark.html",
         "shots_count": 9,
-        "duration": "10.7s",
+        "duration": "18.0s",
         "youtube_id": "sxtLWq0KqAo",
         "youtube_embed": "https://www.youtube.com/embed/sxtLWq0KqAo",
         "youtube_url": "https://youtu.be/sxtLWq0KqAo"
@@ -18394,7 +18473,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI",
       "shortcode": "DdGx-fkPeeU",
-      "title_vi": "Bậc Thầy Gài Gắm Sản Phẩm Ẩn Danh (Stealth Product Placement): Nghệ Thuật Kể Chuyện 37 Shots Dẫn Dắt Qua 9 Tọa Độ Chiang Mai - @pausehereii",
+      "title_vi": "Lồng ghép khéo chiếc túi xách qua hành trình một ngày dạo phố cổ",
       "quick_takeaway": "Một ngày dạo quanh 9 tọa độ biểu tượng khu phố Chang Moi (Chiang Mai) được kể bằng ngôn ngữ điện ảnh 37 shots dồn dập, khéo léo gài cắm chiếc túi xách da nâu AN-A-ERA làm bạn đồng hành xuyên suốt mà không lộ liễu bán hàng.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -18474,7 +18553,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@KUZYA_монтаж_Reels_DdYHuz_sXs0_Video_by_kuzya.tm",
       "shortcode": "DdYHuz_sXs0",
-      "title_vi": "@KUZYA_монтаж_Reels - Video by kuzya.tm",
+      "title_vi": "Sáu cảnh quay tĩnh cơ bản đan xen góc toàn, trung và cận cảnh",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 12 Of 18 • By @kuzya.tm • Shared September 16 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -18554,7 +18633,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@AŁEC_RIJKS_DdPESzcNS-W_Video_by_alecrijks",
       "shortcode": "DdPESzcNS-W",
-      "title_vi": "@AŁEC_RIJKS - Video by alecrijks",
+      "title_vi": "Ngồi chia sẻ trực diện kết hợp chèn cảnh minh họa theo nhịp nói",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 5 Of 18 • By @alecrijks_ • Shared September 13 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -18635,7 +18714,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Harry_DdlmRIcBw81_Video_by_hdnimedia",
       "shortcode": "DdlmRIcBw81",
-      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 16 Cảnh Ngành Góc nhà đẹp (Harry)",
+      "title_vi": "Ngồi trò chuyện chia sẻ về không gian nhà đẹp kết hợp cảnh minh họa",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 2 Of 18 • By @hdnimedia • Shared September 22 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -18715,7 +18794,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@takashi.film_DddqrBQy8lQ_One_day,_Vietnam._🇻🇳",
       "shortcode": "DddqrBQy8lQ",
-      "title_vi": "Bố Cục Đối Xứng Và Điểm Nghỉ Chân Dung Trong Nhịp Dựng Điện Ảnh Bản Địa - @takashi.film",
+      "title_vi": "Mười một khung hình đối xứng ghi lại vẻ đẹp làng nghề và đồng quê Việt",
       "quick_takeaway": "Một ngày tại Việt Nam qua lăng kính điện ảnh: nghệ thuật kết hợp giữa hoa văn hình học làng nghề bản địa và chân dung con người lao động mộc mạc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -18792,7 +18871,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota",
       "shortcode": "Dblr-88PjlJ",
-      "title_vi": "Đòn Bẩy Kể Chuyện HUD Timeline & Cú Cắt Nhảy Rotoscope Biến Căn Phòng Thành Tác Phẩm Điện Ảnh - @qaqu_uu",
+      "title_vi": "Nhật ký một ngày năng động từ lúc dậy trang điểm đến tối đi ăn chơi",
       "quick_takeaway": "⚡ Biến lịch trình 1 ngày thành cuộc phiêu lưu điện ảnh bằng hệ thống HUD Timeline ghim 2 cánh, đòn bẩy Rotoscope biến hình và cú cắt nhảy đĩa sạch trơn đầy dí dỏm.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -18869,7 +18948,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@cinematic_lee_Dbd8gmqRAc3_It’s_a_constant_struggle_😅",
       "shortcode": "Dbd8gmqRAc3",
-      "title_vi": "Nghệ Thuật Bố Cục Không Lời: Kỹ Thuật Đan Xen Cỡ Cảnh & Punchline Thị Giác Trong Solo Filmmaking - @cinematic_lee",
+      "title_vi": "Tiểu phẩm không lời hài hước kể chuyện lên kế hoạch tìm khách tại phòng",
       "quick_takeaway": "Mổ xẻ bậc thầy bố cục đối xứng, kỹ thuật đan xen cỡ cảnh dồn dập (Breathe In - Breathe Out) và cú chốt hạ không lời châm biếm sâu sắc nỗi khổ tìm khách của Solo Filmmaker.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Low-key Lighting",
       "shooting_style": {
@@ -18947,7 +19026,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dvdnguyen_DdXbbBiEq7P_Carousel_Analysis",
       "shortcode": "DdXbbBiEq7P_Carousel_Analysis",
-      "title_vi": "8 Lát Cắt Điện Ảnh Ẩm Thực Đường Phố Mùa Mưa Sài Gòn — Cú Đấm Vị Giác & Nghệ Thuật Ánh Sáng Thực Chiến - @dvdnguyen",
+      "title_vi": "Tám góc máy cận cảnh món ăn nóng hổi và quầy bếp đường phố ngày mưa",
       "quick_takeaway": "⚡ Gợn Sóng Vũng Nước Mưa Sài Gòn ➔ Rót Nước Cốt Dừa Trắng Muốt: Hành trình 8 lát cắt điện ảnh ẩm thực đường phố mùa mưa Sài Gòn đỉnh cao của @dvdnguyen.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -19027,7 +19106,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@shotsbyzaid_DdkimD5DPNL_Carousel_Analysis",
       "shortcode": "DdkimD5DPNL_Carousel_Analysis",
-      "title_vi": "5 Góc Quay Điện Ảnh Đột Phá Nâng Cấp Video Của Bạn (5 Shots To Improve Your Content) - @shotsbyzaid",
+      "title_vi": "Năm góc đặt máy lạ từ sát sàn nhà đến thẳng từ trần xuống bàn làm việc",
       "quick_takeaway": "⚡ Visual Hook màng nước tốc độ cao ghì chặt mắt ➔ 5 góc quay đột phá (Gắn vô lăng, Sát sàn, Cận đặc tả, Đại cảnh, Match Cut Top-down) ➔ Vòng lặp Seamless Loop kích hoạt Save & Share.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -19107,7 +19186,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak",
       "shortcode": "Ddb6rA7NwQd",
-      "title_vi": "@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲 - Video by elenabuntushak",
+      "title_vi": "Video ngắn hai cảnh ngồi chia sẻ gọn gàng với máy đặt cố định tại bàn",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -19158,7 +19237,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -19178,7 +19257,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jsnhow_DdncdgVRBIp_Soft_sounds,_quiet_minds,_and_a_moment_to_jus",
       "shortcode": "DdncdgVRBIp",
-      "title_vi": "Bí Kíp Dựng Video Chữa Lành Nghệ Thuật: Công Thức Băm Nhịp Breathe In - Breathe Out Của Điện Ảnh Nhật Bản - @jsnhow",
+      "title_vi": "Đan xen cảnh cận ngắn và toàn cảnh dài tạo cảm giác thư thái ngoài trời",
       "quick_takeaway": "Mổ xẻ công thức băm nhịp 20 phân cảnh chuẩn điện ảnh Nhật Bản: đan xen tinh tế giữa các cú cắt siêu nhanh (0.3s) đánh thức xúc giác và các nốt lặng toàn cảnh (>3s-5s) giúp người xem thực sự thở và ngấm trọn vẹn cảm xúc bình yên.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -19257,7 +19336,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳)",
       "shortcode": "DajU5I5AKIu",
-      "title_vi": "Vlog Đời Sống LA: Nghệ Thuật Chuyển Cảnh Cut On Action & Nhịp Thở Đa Bối Cảnh - @celfstudies",
+      "title_vi": "Nhật ký dạo phố một ngày nối mượt từ lúc chọn đồ đến bữa tối về nhà",
       "quick_takeaway": "⚡ Cú máy chuyển cảnh Cut on Action nhịp nhàng ➔ Đan xen khéo léo giữa OOTD, Cafe, Shopping và Ẩm thực giữ trọn vẹn nhịp thở cuốn hút.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -19334,7 +19413,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@minghan1004_DdESxNlE2Ay_Carousel_Analysis",
       "shortcode": "DdESxNlE2Ay_Carousel_Analysis",
-      "title_vi": "10 Bố Cục Khung Hình Điện Ảnh & Tuyệt Kỹ Quay Phố Bằng Insta360 - @minghan1004",
+      "title_vi": "Mười bố cục quay đường phố đối chiếu song song hậu trường và thành phẩm",
       "quick_takeaway": "Mở màn bằng Hook thị giác kép đối chiếu POV thực địa ➔ Khắc hoạ kiến trúc kim cổ và đường cong đô thị qua 10 bố cục nhiếp ảnh đắt giá.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -19412,7 +19491,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nana_icroom_DdoJCWrT0Do_vlog撮影、どんな画角で何を撮ったらいいかわかんない…",
       "shortcode": "DdoJCWrT0Do",
-      "title_vi": "5 Góc Quay & Bố Cục Thần Thánh Cứu Cánh Mọi Video Vlog Khi Bí Ý Tưởng - @nana_icroom",
+      "title_vi": "Năm công thức đặt góc máy trong bếp giúp người mới hết bí ý tưởng quay",
       "quick_takeaway": "5 đòn bẩy thị giác kinh điển biến mọi sinh hoạt gia đình thành thước phim điện ảnh thư thái chuẩn phong cách sống tối giản",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Low-key Lighting",
       "shooting_style": {
@@ -19489,7 +19568,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hu321938_DdrKmGFBMzc_拍出中秋节的氛围感",
       "shortcode": "DdrKmGFBMzc",
-      "title_vi": "8 Kỹ Thuật Quay Chụp Bánh Trung Thu Triệu View Bằng Điện Thoại (Split Screen Hậu Trường) - @hu321938",
+      "title_vi": "Tám mẹo tự quay bánh trung thu đẹp mắt bằng điện thoại và đồ sẵn ở nhà",
       "quick_takeaway": "Bóc tách 8 kỹ thuật quay chụp bánh Trung Thu đỉnh cao bằng điện thoại với màn hình chia đôi Hậu trường vs Thành phẩm, từ đòn bẩy thị giác xuyên thấu đến cú twist mặt trăng vắt mì tôm viral.",
       "key_tech": "Split Screen • Kỹ Thuật Điện Thoại • Ẩm Thực F&B • Visual Gag • Trung Thu • Setup Tại Nhà",
       "shooting_style": {
@@ -19567,7 +19646,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@alenkabalenka_DaJofHTvQw3_1010_would_hit_that_corner_again",
       "shortcode": "DaJofHTvQw3",
-      "title_vi": "Đòn Bẩy Lột Xác Thời Trang: Kỹ thuật Match Cut & Nhịp Thở Co Giãn Giữ Chân Khán Giả - @alenkabalenka",
+      "title_vi": "Năm cảnh đổi từ đồ mặc nhà sang đồ dạo phố tại góc phòng",
       "quick_takeaway": "Cú biến hình thời trang kinh điển: Hạ thấp kỳ vọng bằng đồ mặc nhà xuề xòa trước khi tung cú snap cut lột xác sang street chic tương phản Trắng - Đen, dồn dập 2 micro-cut khoe form lưng và phụ kiện túi kẹp nách rồi chốt hạ toàn cảnh fit check đỉnh cao.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -19644,7 +19723,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa",
       "shortcode": "DcYZMc7Sc49",
-      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 10 Cảnh Ngành Góc nhà đẹp (Sodam Kim)",
+      "title_vi": "Ngồi tại bàn chia sẻ ngắn trong mười một giây với góc máy cố định",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -19717,7 +19796,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@holberrydietitian_DcODbRTu-E1_sunday_morn_=_🥖🍓🫐🍯☕️",
       "shortcode": "DcODbRTu-E1",
-      "title_vi": "Góc Máy POV Lọt Lòng Độc Bản & Cắt Cảnh Xúc Giác Đa Chiều (Sunday Morning French Toast) - @holberrydietitian",
+      "title_vi": "Quay làm bữa sáng đầy năng lượng bằng góc sát sàn và góc thẳng trên bếp",
       "quick_takeaway": "Bữa sáng Chủ nhật tràn đầy năng lượng với nghệ thuật dựng phim nhịp nhanh 0.4s/shot, khai thác triệt để các góc máy POV độc bản: đặt camera trong ly nước, lòng tô đập trứng và cú đớp ngoạm ống kính đầy kích thích.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -19796,7 +19875,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@rubtsov.a_DdkHw7gIXLj_В_библиотеку",
       "shortcode": "DdkHw7gIXLj",
-      "title_vi": "Biến Hình Dark Academia Đi Thư Viện: Kỹ Thuật Match Cut Quán Tính Tay & Outro Phá Cách - @rubtsov.a",
+      "title_vi": "Vung hai tay cắt khớp hình đổi từ khăn tắm sang đồ lịch sự",
       "quick_takeaway": "⚡ Hook Mở Màn Tương Phản: Quấn khăn tắm mặt mộc tạo tiền đề bùng nổ biến hình ➔ Outro Phá Cách Hóm Hỉnh: Nháy mắt bĩu môi quirky face kích hoạt tỷ lệ xem lại",
       "key_tech": "Chuyen canh 1 • Biến Hình • Match Cut • Dark Academia • Geek Chic • OOTD • Visual Hook",
       "shooting_style": {
@@ -19875,7 +19954,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@starsinmycam_DddgEE5R2CW_i_blink_and_it’s_night_time",
       "shortcode": "DddgEE5R2CW",
-      "title_vi": "Kể Chuyện Bằng Chuỗi Hành Động Vi Mô & Chuyển Đổi Ánh Sáng Tương Phản (After-Work Micro Routine) - @starsinmycam",
+      "title_vi": "Kể buổi tối tan làm về nhà thư giãn bằng chuỗi hành động nhỏ và ánh đèn",
       "quick_takeaway": "Kể chuyện không lời bằng chuỗi hành động vi mô đời thường ➔ Cú Match Cut chuyển đổi ánh sáng nén thời gian",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -19954,7 +20033,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Flying_DdplzLRytOA_Video_by_loveqinghe",
       "shortcode": "DdplzLRytOA",
-      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 10 Cảnh Ngành Góc nhà đẹp (Flying)",
+      "title_vi": "Ngồi chia sẻ nhanh mười một giây trong không gian phòng gọn gàng",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -20029,7 +20108,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀",
       "shortcode": "Ddqo7-eTI2A",
-      "title_vi": "Kỹ Thuật Chuyển Cảnh Khung Cửa Vòm & Cắt Theo Nhịp Điệu (Rhythm Cut) Trong Lookbook Ralph Lauren KLCC - @lisha_ho",
+      "title_vi": "Dẫn người xem khám phá cửa hàng thời trang kết hợp quầy cà phê bánh ngọt",
       "quick_takeaway": "Bóc tách 26 phân cảnh chuyển đổi nhịp thở bậc thầy: từ Visual Hook cửa vòm, cắt dồn dập đồ vật thương hiệu, bẻ cua trải nghiệm Ralph's Coffee đến khép màn rèm nhung điện ảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -20107,7 +20186,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I",
       "shortcode": "DdrBPIwIpg-",
-      "title_vi": "Nghệ Thuật Giả Lập Drone FPV Bằng Máy Bay Giấy: Bí Quyết Chia Đôi Màn Hình The Shot vs BTS Giữ Chân Người Xem 100% - @aangelazunigaa",
+      "title_vi": "Hậu trường dùng máy bay giấy gắn trước ống kính tạo cảnh bay xuyên phố",
       "quick_takeaway": "⚡ Top-down Origami Hook ➔ Paper Airplane POV xé gió xuyên hành lang và cú đáp đất chốt CTA liên hoan phim",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -20185,7 +20264,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel",
       "shortcode": "DcvZ-FowD_A",
-      "title_vi": "Smooth Criminal • Cú Đấm Chuyển Cảnh Xuyên Không Gian Lên Đỉnh Núi",
+      "title_vi": "Chuyển cảnh tung nắm đấm che ống kính nhảy từ phòng làm việc ra đỉnh núi",
       "quick_takeaway": "Bóc tách trọn vẹn 6 phân cảnh mẫu mực trong video Reel của @bysuncan: Nghệ thuật In-Camera Action Match Cut dùng cú đấm trực diện che ống kính (Physical Occlusion Transition) để chuyển cảnh từ phòng làm việc ra đỉnh núi lửa hoang sơ theo...",
       "key_tech": "In-Camera Fist Wipe Match Cut, Momentum Kinetic Transition, Beat-Synced Action, Domestic-to-Epic Contrast, Symmetrical Hero Pose",
       "shooting_style": {
@@ -20250,7 +20329,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@adz.mov_DdGQQL-ih_O_the_land_of_smiles_🇹🇭_#thailand_#cinematograp",
       "shortcode": "DdGQQL-ih_O",
-      "title_vi": "the land of smiles 🇹🇭 #thailand #cinematograp",
+      "title_vi": "Chuỗi cảnh ngắn ghi lại vẻ đẹp đường phố và con người Thái Lan theo nhạc",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -20325,7 +20404,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iamaayushswamy_DdpxcaOMaQS_caption_placement",
       "shortcode": "DdpxcaOMaQS",
-      "title_vi": "Nghệ Thuật Bố Cục Chữ Không Gian (Spatial Typography) & Kỹ Thuật Walk & Talk Vòng Lặp Vô Tận - @iamaayushswamy",
+      "title_vi": "Hướng dẫn cách đặt vị trí phụ đề kết hợp đổi nhiều góc nói trong phòng",
       "quick_takeaway": "⚡ Visual Hook Mở Màn: Góc Bird-Eye View từ trần nhà phá vỡ hoàn toàn góc quay talking head truyền thống ➔ Vòng Lặp Vô Tận (Seamless Loop Closure): Khóa đuôi bằng góc Top-Down trùng khớp 100% với mở màn",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -20402,7 +20481,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jxnjuvv_Dc-d8hKRMQm_A_city_full_of_joy_everywhere_I_go_♥️",
       "shortcode": "Dc-d8hKRMQm",
-      "title_vi": "A city full of joy everywhere I go ♥️",
+      "title_vi": "Nối mượt dáng bước đi từ sau lưng qua nhiều góc phố và bộ trang phục",
       "quick_takeaway": "⚡ Visual Hook 'So... how was Shanghai?': Mồi câu chuyện bằng câu hỏi bỏ ngỏ và dáng kéo vali ➔ Chốt hạ cao trào (Outro Payoff): Quay lại đối diện ống kính, nhảy múa tự do trong niềm vui trọn vẹn",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -20480,7 +20559,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@acupper_DdoYrPsy9g-_hello_is_konnichiwa",
       "shortcode": "DdoYrPsy9g-",
-      "title_vi": "Nghệ Thuật Chuyển Cảnh Level 1 (Cut On Action): Mượn Tiền Cảnh Đời Thường Nối Mạch Video Siêu Mượt - @acupper",
+      "title_vi": "Mở đầu bằng cảnh làm tóc qua gương rồi dạo phố với tiền cảnh xe lướt qua",
       "quick_takeaway": "⚡ Soi gương búi tóc kimono: Neo giữ ánh mắt với Visual Hook hậu trường cá nhân ➔ Ngước nhìn vòm lá xanh đón nắng: Khép lại hành trình bằng nụ cười an yên",
       "key_tech": "Establishing Hook Shot • Wide Establishing Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -20559,7 +20638,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_👀",
       "shortcode": "DdoWrpERdvD",
-      "title_vi": "can you guess the theme 👀",
+      "title_vi": "Vừa đi bộ ngoài trời vừa tâm sự chuyện nghề kết hợp chèn ảnh kỷ niệm cũ",
       "quick_takeaway": "⚡ Visual Hook Mở Màn: Vừa bước đi vừa trò chuyện (Walk & Talk) ngoài trời dưới nắng xiên ➔ Nụ Cười Kết Mở (Open Loop Hook): Đón nắng hoàng hôn thôi thúc đón chờ tập sau",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -20637,7 +20716,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yongandmike_DdolqWHEsws_Carousel_Analysis",
       "shortcode": "DdolqWHEsws_Carousel_Analysis",
-      "title_vi": "BỐ CỤC ĐIỆN ẢNH NGHỈ DƯỠNG: CÔNG THỨC 10 PHÂN CẢNH CAROUSEL DU LỊCH ĐA TẦNG CỦA YONG &amp; MIKE (CHIANG RAI)",
+      "title_vi": "Mười bố cục tĩnh có chiều sâu giới thiệu trọn vẹn không gian nghỉ dưỡng",
       "quick_takeaway": "Chuỗi 10 phân cảnh carousel kết hợp video tĩnh và chuyển động vi mô tại Chiang Rai, làm chủ kỹ thuật phân tầng tiền - trung - hậu cảnh, bố cục một điểm tụ và ánh sáng chiaroscuro ẩm thực.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -20714,7 +20793,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._🇯🇵",
       "shortcode": "DdpIITJKrmR",
-      "title_vi": "An escape from the noise of Tokyo. 🇯🇵",
+      "title_vi": "Chuỗi cảnh khu phố nhỏ yên bình chuyển dần từ nắng chiều sang đêm ấm",
       "quick_takeaway": "⚡ Hook Ngược Dòng: Người phụ nữ cầm ô đen sải bước qua vạch kẻ đường hẻm cổ Yanaka ➔ Lắng Đọng Phút Cuối: Bóng người dắt xe đạp chìm dần vào con ngõ tĩnh lặng",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -20791,7 +20870,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@laylaa_398_Ddj6wlTxAAJ_♥️",
       "shortcode": "Ddj6wlTxAAJ",
-      "title_vi": "Ddj6wlTxAAJ ♥️",
+      "title_vi": "Chuỗi cảnh mùa thu dạo phố và ngồi quán cà phê cắt nhanh theo nhạc",
       "quick_takeaway": "⚡ POV Bước Chân Mùa Thu: Mở màn thị giác bằng bước đi trên thảm lá rụng Copenhagen ➔ Đại Cảnh Vòng Xoay Bầu Trời: Vòng đu quay văng nghiêng và hàng cờ Đan Mạch",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -20869,7 +20948,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hena_film_vlog_DdlmZczPsCE_혼자_만드는데_촬영은_누가_하냐고요🤷🏻‍♀️_제품제공",
       "shortcode": "DdlmZczPsCE",
-      "title_vi": "vlog DdlmZczPsCE 혼자 만드는데 촬영은 누가 하냐고요🤷🏻‍♀️ 제품제공",
+      "title_vi": "Bốn cách tự quay pha chế một mình nhờ máy quay nhỏ có màn hình rời",
       "quick_takeaway": "⚡ Visual Hook bí mật hậu trường: Đập tan thắc mắc \"Làm 1 mình ai quay cho?\" ➔ Nụ cười rạng rỡ & Cú Thumbs-Up đanh thép: Khẳng định sự tự tin của một Solo Creator chuyên nghiệp",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -20947,7 +21026,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jigummmmm_DdnqexOTN8A_설거지하는_모습도_예쁘게_찍을_수_있냐고요",
       "shortcode": "DdnqexOTN8A",
-      "title_vi": "Nghệ Thuật Băm Nhỏ Chuyển Động (Micro-Actions) & ASMR B-Roll Đời Thường - @jigummmmm",
+      "title_vi": "Biến cảnh rửa ly chén quen thuộc thành mười khung hình cận cảnh bắt mắt",
       "quick_takeaway": "⚡ Mở Màn Đảo Khung Hình: Nhìn xuyên giàn inox úp ly thủy tinh trong suốt ➔ Cú Chốt Cảm Xúc: Tráng ly thủy tinh dưới chùm tia sen trong suốt như pha lê",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -21024,7 +21103,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_🎥",
       "shortcode": "DdpZ0RvhwXu",
-      "title_vi": "Art of Static Shots 🎥",
+      "title_vi": "Sáu khung hình giữ máy đứng yên dùng kiến trúc và người qua lại tạo chiều sâu",
       "quick_takeaway": "⚡ Đối Xứng Trục Trung Tâm & Title Card: Khóa chặt góc nhìn tĩnh bằng kiến trúc đối xứng ➔ Bố Cục Nan Hoa Đồng Tâm (Radial Focus): Điểm tựa tĩnh lặng ngắm nhìn vòng quay thời gian",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -21101,7 +21180,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot",
       "shortcode": "DdoooYmq-cd",
-      "title_vi": "Get ready for the shoot",
+      "title_vi": "Hai cảnh đưa tay che ống kính để đổi trang phục và kiểu tóc",
       "quick_takeaway": "⚡ Hook Vũ Điệu Bàn Tay (Tân Thủ): Mượn nhịp bài hát làm đòn bẩy giữ mắt và nạp đà chuyển cảnh ➔ Cú Đấm Biến Hình Level 1: Rút tay hé lộ diện mạo chuẩn Lookbook và chốt hạ thần thái",
       "key_tech": "Establishing Hook Shot • Low-key Lighting",
       "shooting_style": {
@@ -21159,7 +21238,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -21179,7 +21258,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis",
       "shortcode": "Ddo3aQxjMeq_Carousel_Analysis",
-      "title_vi": "Carousel Analysis",
+      "title_vi": "Mười một góc máy đời thường nhìn qua khe bàn, cửa trượt và từ tầng cao",
       "quick_takeaway": "⚡ Hook Mở Màn Đời Thường: Tĩnh lặng định vị chủ đề ghi lại cuộc sống ➔ Chốt Hạ & Kêu Gọi Hành Động (CTA): Mỹ Cảm Thị Giác Giữ Chân Người Xem",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -21259,7 +21338,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms",
       "shortcode": "Ddo-TSWMZpG",
-      "title_vi": "Video by joshdiazfilms",
+      "title_vi": "Đánh giá ô tô từ cốp đồ nghề đến bảng tính trả góp",
       "quick_takeaway": "⚡ Mở Màn Fisheye Cá Tính — Khóa Chặt Nhận Diện Xe & Đại Sứ Thương Hiệu ➔ Khóa Nhận Diện Thương Hiệu — Logo Ford Credit Đơn Giản & Đẳng Cấp",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -21338,7 +21417,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yifan.liii_Dap0s2RhySa_summer_in_florence_🤍",
       "shortcode": "Dap0s2RhySa",
-      "title_vi": "summer in florence 🤍",
+      "title_vi": "Nối bảy cảnh bước đi ngang đổi trang phục rồi bước thẳng vào máy ở cuối",
       "quick_takeaway": "⚡ Visual Hook Ga Tàu: Mở đầu chậm rãi thiết lập không gian hành trình Florence ➔ Bẻ Trục & Chốt Hạ (Outro Climax): Đi thẳng vào ống kính, khóa chặt ánh nhìn",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting • Wide Establishing Shot",
       "shooting_style": {
@@ -21415,7 +21494,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@la6vish_DakwX2NBYs1_Fukuoka_🇯🇵",
       "shortcode": "DakwX2NBYs1",
-      "title_vi": "Fukuoka 🇯🇵",
+      "title_vi": "Ba cảnh che tay vào ống kính chuyển thẳng từ sân bay sang phố đêm lên đồ",
       "quick_takeaway": "⚡ Visual Hook Mở Màn: Áp sát mặt ở sảnh sân bay trước khi che kín camera ➔ Cú Bung Thị Giác: Lùi bước khoe outfit áo yếm vàng giữa ngã tư phố đêm náo nhiệt",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -21493,7 +21572,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
       "shortcode": "Desktop_Stan",
-      "title_vi": "Magnetic Phone Tripod Desktop Stand",
+      "title_vi": "Mở đầu bằng cách xòe bảy màu sản phẩm rồi chứng minh độ mỏng và độ chắc",
       "quick_takeaway": "⚡ Xòe cánh quạt 7 màu sắc thái: Kích hoạt thị giác sở hữu ngay giây đầu ➔ Khóa đuôi nhận diện thương hiệu: Khẳng định vị thế số 1 toàn cầu và bảo chứng cam kết",
       "key_tech": "Ulanzi • MagSafe Tripod • Lifestyle B-Roll • Product Demo • Overhead Shot • Worm’s-eye View",
       "shooting_style": {
@@ -21571,7 +21650,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
       "shortcode": "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
-      "title_vi": "MT86 Auto-Deploy Tripod &amp; Selfie Stick, 1.52m",
+      "title_vi": "Mười cảnh quay chân máy Ulanzi MT86 tự bung bốn chân ngoài phố",
       "quick_takeaway": "⚡ Hook Đời Thường Ngoài Phố: Định vị nhân vật năng động và nhịp bước tự nhiên ➔ Khẳng Định Vị Thế Thương Hiệu: Đóng dấu nhận diện Ulanzi trong tâm trí khách hàng",
       "key_tech": "Auto-Deploy Quadpod • Cold Shoe Mount • Bluetooth Remote • 1.52m Extension • Micro-Beat Pacing",
       "shooting_style": {
@@ -21648,7 +21727,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
       "shortcode": "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
-      "title_vi": "Easy Open Portable Aluminum Trigopod",
+      "title_vi": "Chứng minh độ vững và thao tác mở nhanh của chân máy ở bến tàu, quảng trường",
       "quick_takeaway": "⚡ Visual Hook Mở Màn: Đặt tripod sừng sững giữa quảng trường rộng lớn khẳng định độ thăng bằng ➔ Outro Thương Hiệu: Đóng dấu nhận diện ngắn gọn và súc tích để định vị thương hiệu",
       "key_tech": "Establishing Hook Shot • High-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -21725,7 +21804,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam",
       "shortcode": "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam",
-      "title_vi": "Quick Release Folding L Bracket and Plate Cam",
+      "title_vi": "Lật dọc máy ảnh trong nửa giây mở đầu video ngàm gấp bỏ túi",
       "quick_takeaway": "⚡ Hook thị giác: Lật máy quay dọc ngay trên trục trung tâm tripod ➔ Outro nhận diện: Logo Ulanzi và cam kết thương hiệu số 1",
       "key_tech": "Establishing Hook Shot",
       "shooting_style": {
@@ -21803,7 +21882,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
       "shortcode": "DdnXgxUyok1",
-      "title_vi": "South Korea stills - Final Series",
+      "title_vi": "Hai mươi chín khung hình đối xứng ghi lại kiến trúc và nhịp sống Seoul",
       "quick_takeaway": "⚡ Khung Hình Toàn Cảnh Cầu Vượt - Khởi Đầu Điện Ảnh Với Logo A24 Ghim Tâm ➔ Bước Đi Trầm Ngâm Kết Thúc - Dư Âm Lặng Lẽ Của Thành Phố",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -21881,7 +21960,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@maxryman_DdlVIp9S9zv_day_in_the_life_☕️",
       "shortcode": "DdlVIp9S9zv",
-      "title_vi": "Day In The Life ☕️: Công Thức Split-Kinetic Typography &amp; Nhịp Cắt Siêu Nhanh (Micro-Montage)",
+      "title_vi": "Kể gọn một ngày đi làm trong 17 giây bằng các cảnh một giây",
       "quick_takeaway": "⚡ Mở màn bằng sinh hoạt đời thường ➔ Chuyển tiếp cơ học & POV ➔ Bố cục đối xứng Deep Work tĩnh lặng.",
       "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -21959,7 +22038,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mcjacoub_Ddlh5pagYie_Carousel_Analysis",
       "shortcode": "Ddlh5pagYie_Carousel_Analysis",
-      "title_vi": "5 film techniques yang menurut gue worth bang",
+      "title_vi": "Năm kỹ thuật góc máy đáng tập giúp khung hình có chiều sâu hơn",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -22034,7 +22113,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@EcomBrand_ECOM_Ulanzi_Ulanzi",
       "shortcode": "ECOM_Ulanzi",
-      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 16 Cảnh Ngành Đồ công nghệ (Ecombrand)",
+      "title_vi": "Ngồi nói giới thiệu phụ kiện công nghệ kết hợp chèn cảnh thao tác thật",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • High-key Lighting",
       "shooting_style": {
@@ -22111,7 +22190,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your",
       "shortcode": "DcgEuvwx47P",
-      "title_vi": "Mario Prawira • Kỹ Thuật Match-Cut Before/After Bằng Đạo Cụ Cành Hoa",
+      "title_vi": "Dùng cành hoa che ống kính tạo chuyển cảnh trước và sau khi sửa tiệm",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -22186,7 +22265,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mario.prawira_Ddga_xPq9fE_Jutsu_Transition_Shisha_Version",
       "shortcode": "Ddga_xPq9fE",
-      "title_vi": "Jutsu Transition Shisha Version",
+      "title_vi": "Chuyển cảnh tại bàn bằng động tác đan tay kết hợp làn khói che",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -22259,7 +22338,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room",
       "shortcode": "DdXdf-aBCMu",
-      "title_vi": "How to film your solo travels in a hotel room",
+      "title_vi": "Hướng dẫn người mới tự quay và nối cảnh một mình trong phòng khách sạn",
       "quick_takeaway": "Chuyển cảnh 1, tân thủ",
       "key_tech": "Chuyển Cảnh 1 • Tân Thủ • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -22337,7 +22416,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@pauline_폴린_ᥫ᭡。༘⋆✿_DdlWfRSMioH_Video_by_pau.liine",
       "shortcode": "DdlWfRSMioH",
-      "title_vi": "Tạo Dáng Thần Thái & Chuyển Cảnh Lookbook Sân Ga (17 Phân Cảnh) - @pauline_폴린_ᥫ᭡。༘⋆✿",
+      "title_vi": "Dùng động tác vén tóc và chỉnh cổ áo nối mượt góc cận sang góc toàn",
       "quick_takeaway": "⚡ Cử chỉ vi mô vén tóc & chỉnh ve áo làm mồi chuyển nhịp ➔ Co giãn góc Cận - Toàn (Breathe in - Breathe out) định hình thần thái tự nhiên cho tân thủ.",
       "key_tech": "Thần Thái • Chuyển Cảnh • Tân Thủ • Tạo Dáng Mẫu • Lookbook Sân Ga • Kính Râm Phụ Kiện • Breathe In Breathe Out • Pose by Pose • Match Cut Jump Cut • Lighting Sân Ga",
       "shooting_style": {
@@ -22419,7 +22498,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun",
       "shortcode": "DcA80Aez6Aw",
-      "title_vi": "5 Visual Hooks - 5 Kiểu Diễn Mở Màn Tự Nhiên Chặn Feed (@yok.lagun) - @หยก.ละกัน_ꔛ",
+      "title_vi": "Năm kiểu cử động mở đầu tự nhiên giúp giữ chân người xem ba giây đầu",
       "quick_takeaway": "5 chiêu diễn Hook động thái tự nhiên: Biến camera thành đồ vật trong túi xách, vừa nói vừa thả người ngồi xuống ghế lười, hoặc hất vạt áo khoác tạo swipe che khung hình thay vì kỹ xảo giả tạo.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -22502,7 +22581,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Жамьяна_Осознанный_стилист_UGC_DdeWMWLsaHA_Video_by_zhamyana",
       "shortcode": "DdeWMWLsaHA",
-      "title_vi": "Biến hình thời trang đường phố Worm&#x27;s-Eye",
+      "title_vi": "Đặt máy ngửa dưới sàn thả áo trùm ống kính nối cảnh ra phố",
       "quick_takeaway": "Đặt camera sát sàn ngửa lên 85-90 độ mở màn bằng cú tung đồ mồi tò mò. Dùng động tác hất tóc lấy đà để che vết cắt chuyển cảnh sang ngoại cảnh đối lập 180 độ.",
       "key_tech": "Hook • Diễn • Worm's-Eye • Match-Action • Hair Flip • Biến hình • UGC",
       "shooting_style": {
@@ -22582,7 +22661,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Megan_Tan_DdgwV6dsxcS_Video_by_megantanhweewen",
       "shortcode": "DdgwV6dsxcS",
-      "title_vi": "Đừng Để Tương Lai Đánh Cắp Hiện Tại - Bí Quyết Giải Phóng Thời Gian Cùng Claude AI (@megantanhweewen) - @Megan_Tan",
+      "title_vi": "Tâm sự chuyện tiết kiệm thời gian làm việc bằng nhịp cắt theo từng chữ",
       "quick_takeaway": "⚡ Sử dụng nhịp cắt chuyển cảnh theo âm tiết (Cut on Syllable) kết hợp Double Exposure để giữ nhịp thở nội tâm. ➔ Đưa công nghệ vào cuối như chiếc chìa khóa giải phóng thời gian sống.",
       "key_tech": "Chuyển Cảnh (Transition) • Phơi Sáng Kép Double Exposure • Match Cut Đời Thường • Extreme Close-Up Phin Cafe",
       "shooting_style": {
@@ -22659,7 +22738,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공",
       "shortcode": "DdbCdHFKZsP",
-      "title_vi": "Setup Đèn Quay Cận Cảnh Ẩm Thực Nhà Thiếu Sáng",
+      "title_vi": "Cách dùng một chiếc đèn nhỏ rọi chéo để quay món ăn ngon mắt ở phòng tối",
       "quick_takeaway": "Nhà không có ánh sáng tự nhiên vẫn quay đồ ăn ngon mắt bằng cách dùng 1 đèn LED spot đánh chéo tạo khối và tương phản.",
       "key_tech": "Macro Detail Shot • Tabletop Lighting • Food Cinematography • Side Lighting 45°",
       "shooting_style": {
@@ -22716,7 +22795,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -22736,7 +22815,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul",
       "shortcode": "DdiSb5Rp2LB",
-      "title_vi": "Lost in Seoul",
+      "title_vi": "Đặt nhân vật đứng yên giữa dòng người đi ngang tạo chiều sâu đường phố",
       "quick_takeaway": "⚡ Tận dụng người qua lại làm lớp tiền cảnh chuyển động (Wipe transition) tự nhiên, dùng góc cận xen kẽ góc toàn để tạo nhịp thở thị giác.",
       "key_tech": "Visual Hook • Foreground Motion Wipe • Telephoto Compression • Dirty Foreground",
       "shooting_style": {
@@ -22814,7 +22893,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind",
       "shortcode": "DdeCKRRRGvd",
-      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 21 Cảnh Ngành Bố cục (Mylene Mae)",
+      "title_vi": "Ngồi chia sẻ câu chuyện dài không chán nhờ đan xen góc cận bàn làm việc",
       "quick_takeaway": "⚡ Dùng talking head kết hợp B-roll cận cảnh bàn làm việc ➔ Chặn feed người xem bằng nhịp chuyển đổi khung hình liên tục. ➔ ⚡ Thực chiến: Xen kẽ góc máy chính diện và góc cận bàn làm việc/màn hình edit, đổi khung hình mỗi 2-3 giây để chống nhàm chán khi chia sẻ câu chuyện dài.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
@@ -22891,7 +22970,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Saro_Deele_DXjRnwCISNU_Video_by_sarodeele",
       "shortcode": "DXjRnwCISNU",
-      "title_vi": "Thời trang, chuyển cảnh — Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu (Saro Deele)",
+      "title_vi": "Xoay người cắt nối liên hoàn 5 bộ trang phục theo phách nhạc",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 23 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -22964,7 +23043,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Leticia_Quadros_DYXXgkbxPj7_Video_by_leticiaqdrs",
       "shortcode": "DYXXgkbxPj7",
-      "title_vi": "Mục chuyển cảnh . điểm nhấn chuyển cảnh cấp 2 — Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu (Leticia Quadros)",
+      "title_vi": "Bài tập bảy cảnh luyện điểm nhấn chuyển cảnh mượt mà ở mức độ vừa sức",
       "quick_takeaway": "mục chuyển cảnh . điểm nhấn chuyển cảnh cấp 2",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -23039,7 +23118,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DclWb98PiK_Video_by_nemo_ooo",
       "shortcode": "DclWb98PiK_V",
-      "title_vi": "Trải Nghiệm Triển Lãm Nghệ Thuật Số Arte Museum Busan.",
+      "title_vi": "Lồng tiếng kể lại buổi tham quan triển lãm ánh sáng từ góc mạnh đến tĩnh",
       "quick_takeaway": "Kết hợp nhịp dồn dập của sóng 3D với nhịp tĩnh gương đối xứng và voice over mộc mạc chia sẻ kinh nghiệm thẻ Busan Pass.",
       "key_tech": "Voice Over • Anamorphic Wave • Góc Nhìn POV • Phản Chiếu Gương Đối Xứng • B-Roll Không Gian Số",
       "shooting_style": {
@@ -23116,7 +23195,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@XÍU_ĐI_ĂN_DazzVqPBfje_Video_by_xiudian",
       "shortcode": "DazzVqPBfje",
-      "title_vi": "@XÍU_ĐI_ĂN - Video by xiudian",
+      "title_vi": "Quay 7 cảnh món ăn tĩnh đủ góc rộng đến cận cảnh",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 17 Of 18 • By @xiudian_ • Shared July 15 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -23196,7 +23275,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@misa｜築40年マンション暮らし_Db-xDk4vWNQ_Video_by_mi_no_ie_39",
       "shortcode": "Db-xDk4vWNQ",
-      "title_vi": "@misa｜築40年マンション暮らし - Video by mi no ie 39",
+      "title_vi": "Quay 7 góc tĩnh gọn gàng trong căn hộ nhỏ",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 15 Of 18 • By @mi_no_ie_39 • Shared August 13 • 2026 • Establishing Hook Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -23275,7 +23354,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua",
       "shortcode": "DdOu2yRsmDy",
-      "title_vi": "Phân Tích Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu: Nhịp Dựng 14 Cảnh Ngành Đồ công nghệ (Studio Berdua)",
+      "title_vi": "Nối 14 cảnh đồ công nghệ bằng lia máy nhanh và cắt khớp hình",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 13 Of 18 • By @studioberdua • Shared September 13 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -23355,7 +23434,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Rika_ビオトープめだか植物のある暮らし_Da5KgjAxfOG_Video_by_r_6cafe",
       "shortcode": "Da5KgjAxfOG",
-      "title_vi": "@Rika_ビオトープめだか植物のある暮らし - Video by r 6cafe",
+      "title_vi": "Quay góc cây xanh và đồ uống ở nhà nối bằng chuyển cảnh mượt",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 11 Of 18 • By @r_6cafe • Shared July 17 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -23435,7 +23514,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Eugenia_Syd_UGC_creator_DdA1ErpRMg2_Video_by_eugcreates.ugc",
       "shortcode": "DdA1ErpRMg2",
-      "title_vi": "Phân Tích Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu: Nhịp Dựng 9 Cảnh Ngành UGC (Eugenia Syd Ugc Creator)",
+      "title_vi": "Quay 9 cảnh giới thiệu sản phẩm nối nhanh bằng cắt khớp hình",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 9 Of 18 • By @eugcreates.ugc • Shared September 7 • 2026 • Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -23515,7 +23594,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Hayden_Slow_Korean_&_Daily_Life_Daz3Po8zHIE_Video_by_haydenkorean",
       "shortcode": "Daz3Po8zHIE",
-      "title_vi": "@Hayden_Slow_Korean_&amp;_Daily_Life - Video by haydenkorean",
+      "title_vi": "Quay 7 cảnh sinh hoạt đời thường nhịp chậm bằng góc máy tĩnh",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 7 Of 18 • By @haydenkorean • Shared July 15 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -23596,7 +23675,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs",
       "shortcode": "DdWa3o2zc0w",
-      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 1 Cảnh Ngành Góc nhà đẹp (Jaehyung)",
+      "title_vi": "Đặt máy tĩnh 12 giây ghi lại góc phòng đón nắng tự nhiên",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
       "key_tech": "Instagram Liked 24h: Video • 5 Of 18 • By @_hyungs • Shared September 16 • 2026 • Establishing Hook Shot • Low-key Lighting",
       "shooting_style": {
@@ -23675,7 +23754,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Indang_Ayu_DccpHbETFSr_Video_by_indanayuu",
       "shortcode": "DccpHbETFSr",
-      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 8 Cảnh Ngành Góc nhà đẹp (Indang Ayu)",
+      "title_vi": "Quay 8 cảnh tĩnh các góc nhỏ ấm cúng trong nhà",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 4 Of 18 • By @indanayuu • Shared August 24 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -23755,7 +23834,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@UME_📍минск-мир_DcVnyJyNWGY_Video_by_ume.izakaya",
       "shortcode": "DcVnyJyNWGY",
-      "title_vi": "@UME_📍минск-мир - Video by ume.izakaya",
+      "title_vi": "Quay 9 cảnh không gian và món ăn quán Nhật nối chuyển cảnh nhanh",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 3 Of 18 • By @ume.izakaya • Shared August 22 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -23835,7 +23914,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg",
       "shortcode": "DcxcVGtxjNl",
-      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 2 Cảnh Ngành Góc nhà đẹp (Five Oars Coffee Roasters)",
+      "title_vi": "Hai góc máy tĩnh quay không gian quán cà phê rộng và thoáng",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @focr.sg • Shared September 2 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -23914,7 +23993,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@거북이_소영_Db0tHr8Bs7x_Video_by_slowkoreanvlog",
       "shortcode": "Db0tHr8Bs7x",
-      "title_vi": "@거북이_소영 - Video by slowkoreanvlog",
+      "title_vi": "Ngồi tại bàn trò chuyện thẳng vào máy liền một cảnh một phút",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
       "key_tech": "Instagram Liked 24h: Video • 5 Of 18 • By @slowkoreanvlog • Shared August 9 • 2026 • Establishing Hook Shot",
       "shooting_style": {
@@ -23972,7 +24051,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=11ygVMIp2N-AbkDYAQ-nfVkRVAqmtcXq0",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40%EA%B1%B0%EB%B6%81%EC%9D%B4_%EC%86%8C%EC%98%81_Db0tHr8Bs7x_Video_by_slowkoreanvlog/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40%EA%B1%B0%EB%B6%81%EC%9D%B4_%EC%86%8C%EC%98%81_Db0tHr8Bs7x_Video_by_slowkoreanvlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40%EA%B1%B0%EB%B6%81%EC%9D%B4_%EC%86%8C%EC%98%81_Db0tHr8Bs7x_Video_by_slowkoreanvlog/shot_01_mid_thumb.webp",
         "video_url": "https://drive.google.com/uc?id=1o9gqk252zhKePStPv_M_t6CKvsTGJtXy&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1o9gqk252zhKePStPv_M_t6CKvsTGJtXy&export=download",
         "report_url": "reports/IG_@거북이_소영_Db0tHr8Bs7x_Video_by_slowkoreanvlog.html",
@@ -23992,7 +24071,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@규리🍊ㅣCorporate_Girlie🇰🇷_DdTZsoxTVFz_Video_by_gyuree_k",
       "shortcode": "DdTZsoxTVFz",
-      "title_vi": "@규리🍊ㅣCorporate_Girlie🇰🇷 - Video by gyuree k",
+      "title_vi": "Ngồi nói trước máy xen kẽ cảnh cận đạo cụ giữ nhịp nhanh",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 4 Of 18 • By @gyuree_k • Shared September 15 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -24072,7 +24151,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Jenny_Yoo_🇰🇷_DZ8w6MsSMAw_Video_by_yooinoz",
       "shortcode": "DZ8w6MsSMAw",
-      "title_vi": "@Jenny_Yoo_🇰🇷 - Video by yooinoz",
+      "title_vi": "Chia sẻ chuyện nhà cửa và nội thất xen cảnh minh họa trực quan",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 3 Of 18 • By @yooinoz • Shared June 23 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -24155,7 +24234,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@drea_(이현)_DaClEhzB5WC_Video_by_dreakwon",
       "shortcode": "DaClEhzB5WC",
-      "title_vi": "@drea_(이현) - Video by dreakwon",
+      "title_vi": "Chuỗi 38 cảnh du lịch ngoài trời dựng đổi tốc độ nhanh chậm",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 2 Of 18 • By @dreakwon • Shared June 26 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -24238,7 +24317,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Korea_Street_Views_DcBXsaezmjo_Video_by_korea_street_views",
       "shortcode": "DcBXsaezmjo",
-      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 3 Cảnh Ngành Du lịch (Korea Street Views)",
+      "title_vi": "Quay 3 cảnh đường phố tĩnh từ góc toàn cảnh đến chi tiết",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Khi quay góc rộng khung dọc, luôn bố trí một trục chuyển động hoặc đường dẫn (Leading Lines) về trung tâm.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @korea_street_views • Shared August 14 • 2026 • Establishing Hook Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -24320,7 +24399,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis",
       "shortcode": "Dc0-FXlE4kV_Carousel_Analysis",
-      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 6 Cảnh Ngành Bố cục (Banh Shimano)",
+      "title_vi": "Luyện bố cục 6 khung hình tĩnh xen kẽ góc trung và cận cảnh",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 6 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -24399,7 +24478,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@creator_DdVBqUzj3o5_Video_DdVBqUzj3o5",
       "shortcode": "DdVBqUzj3o5",
-      "title_vi": "Hayan Cook • ASMR Nấu Ăn Bếp Nhà Hàn Quốc & Nghệ Thuật Ánh Sáng Tự Nhiên Cạnh Cửa Sổ - @creator",
+      "title_vi": "Quay 3 cảnh nấu ăn cạnh cửa sổ thu tiếng xèo xào tự nhiên",
       "quick_takeaway": "⚡ Nghệ thuật quay ASMR ẩm thực mộc: Đặt bếp nấu đón trọn ánh sáng xiên cửa sổ, bóc tách âm thanh lách tách tự nhiên và góc quay cận macro kích thích vị giác người xem.",
       "key_tech": "3 Of 18 • By @hayan_cook • Shared September 15 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -24483,7 +24562,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@𝐂𝐢𝐧𝐝𝐲🌼_DcgQDZ_JNIr_Video_by_clarissaacindy",
       "shortcode": "DcgQDZ_JNIr",
-      "title_vi": "Clarissa Cindy • 10 Bố Cục Thơ Mộng Dạo Phố & Chuyển Cảnh Giao Thoa Ánh Sáng Hoàng Hôn - @𝐂𝐢𝐧𝐝𝐲🌼",
+      "title_vi": "Mười cảnh dạo phố ngược nắng chiều làm rõ độ bay trang phục",
       "quick_takeaway": "⚡ Khai thác giờ vàng (Golden Hour) bắt vệt sáng ngược: Kết hợp bước đi tự do với cú xoay máy 45 độ quanh chủ thể để biến trang phục đời thường thành thước phim điện ảnh.",
       "key_tech": "Instagram Liked 24h: Video • 2 Of 18 • By @clarissaacindy • Shared August 26 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -24566,7 +24645,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Jackson_Sword_DdU4rBeMXZt_Video_by_byjacksonsword",
       "shortcode": "DdU4rBeMXZt",
-      "title_vi": "Jackson Sword • Kỹ Thuật Đặt Máy Chân Dung Mộc & Nghệ Thuật Kể Chuyện Bằng Âm Thanh Giọng Nói - @Jackson_Sword",
+      "title_vi": "Đặt điện thoại trên bàn ngồi trò chuyện gần gũi như hai người bạn",
       "quick_takeaway": "⚡ Cú máy góc rộng tĩnh đặt bàn xóa tan khoảng cách: Dùng ánh mắt trực diện kết hợp âm thanh thu mộc cự ly gần để tạo cảm giác thân mật như hai người bạn ngồi đối thoại.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @byjacksonsword • Shared September 15 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -24648,7 +24727,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Pascal_Blaurock_DdT9CF7tGzn_Video_by_pascal_blaurock",
       "shortcode": "DdT9CF7tGzn",
-      "title_vi": "Pascal Blaurock • Bí Quyết Biến iPhone Thành Máy Quay Điện Ảnh Bằng Lens Anamorphic - @Pascal_Blaurock",
+      "title_vi": "Thử gắn ống kính rời cho điện thoại rồi nối 5 cảnh ngoài phố",
       "quick_takeaway": "⚡ Biến iPhone thành máy quay điện ảnh: Dùng hook treo lơ lửng máy trong studio để chặn feed ➔ Cắt sang cảnh lộn ngược bóng nước bắt trọn vệt flare anamorphic ngoài trời.",
       "key_tech": "Instagram Liked 24h: Video • 9 Of 18 • By @pascal_blaurock • Shared September 15 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -24731,7 +24810,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Megan_Tan_DdT4EOzveQL_Video_by_megantanhweewen",
       "shortcode": "DdT4EOzveQL",
-      "title_vi": "Megan Tan • Nghệ Thuật Lồng Ghép Tài Trợ Công Nghệ Vào Phong Cách Sống Tự Do - @Megan_Tan",
+      "title_vi": "Kể chuyện làm việc tự do ngoài thiên nhiên để lồng ghép máy tính",
       "quick_takeaway": "⚡ Bán phong cách sống thay vì bán sản phẩm: Khóa góc máy nhìn qua khe cửa dẫn vào cảnh gõ laptop ngay trên thuyền kayak giữa hồ để quảng cáo công nghệ tự nhiên 100%.",
       "key_tech": "Instagram Liked 24h: Video • 7 Of 18 • By @megantanhweewen • Shared September 15 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -24814,7 +24893,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@신_유은_yueun_shin_DdQwL3Ahci1_Video_by_yuuxeun",
       "shortcode": "DdQwL3Ahci1",
-      "title_vi": "Shin Yueun • Cú Máy Tracking Đi Lùi Lookbook Dạo Phố Cổ Điển Hàn Quốc - @신_유은_yueun_shin",
+      "title_vi": "Cầm máy đi lùi một cảnh dài quay trang phục trước tiệm cổ điển",
       "quick_takeaway": "⚡ Cú máy tracking đi lùi Lookbook 1 shot: Tận dụng chiều sâu tiệm tạp hóa retro làm nền, khóa chặt ánh mắt giao tiếp và cử chỉ vuốt tóc tự nhiên để giữ chân người xem.",
       "key_tech": "Instagram Liked 24h: Video • 5 Of 18 • By @yuuxeun • Shared September 14 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -24896,7 +24975,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@3413882081_Dcx7pQpS6zs_Video_by_syooaann",
       "shortcode": "Dcx7pQpS6zs",
-      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 1 Cảnh Ngành Bố cục (3413882081)",
+      "title_vi": "Quay một cảnh tĩnh 10 giây luyện căn khung hình cân đối",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 1 phân cảnh.",
       "key_tech": "Instagram Liked 24h: Video • 3 Of 18 • By @syooaann • Shared September 2 • 2026 • Establishing Hook Shot",
       "shooting_style": {
@@ -24974,7 +25053,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen",
       "shortcode": "DOd8XMMjxcH",
-      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 4 Cảnh Ngành Bố cục (Megan Tan)",
+      "title_vi": "Ngồi tại bàn nói chuyện trực diện 4 cảnh gọn gàng dễ làm",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 4 phân cảnh.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @megantanhweewen • Shared September 11 • 2025 • Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -25055,7 +25134,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@AL,_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle",
       "shortcode": "DdTeHleIqkg",
-      "title_vi": "Director&#x27;s Report • Director&#x27;s Report",
+      "title_vi": "Ngồi chia sẻ nghề quay phim xen cảnh lia máy giới thiệu phòng làm việc",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 24 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -25130,7 +25209,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iman.lizi_Dc6qXoKoYKh",
       "shortcode": "Dc6qXoKoYKh",
-      "title_vi": "Iman Lizi • ASMR Trà Chiều & B-Roll Đời Sống Chậm Cozy Homebody - @iman.lizi",
+      "title_vi": "Quay 6 cảnh pha trà chiều tại bàn thu tiếng nước rót êm dịu",
       "quick_takeaway": "Không cần nói một lời nào, chỉ cần khóa ánh sáng tự nhiên một góc bàn và thu âm foley cực nét (tiếng nước rót, tiếng ấm đặt xuống bàn) là video tự khắc đạt hàng trăm ngàn lượt xem.",
       "key_tech": "Kiến Trúc & Không Gian / Nội Thất • ASMR Sound Design • Natural Light Window • Macro Tea Pouring • Cozy Aesthetics",
       "shooting_style": {
@@ -25212,7 +25291,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hayancook_DdSUI9BvhqR",
       "shortcode": "DdSUI9BvhqR",
-      "title_vi": "Hayan Cook • Công Thức Thịt Viên Sốt Cà Chua Cho Bé 22 Tháng & Nhịp Dựng Nấu Ăn Nhanh - @hayancook",
+      "title_vi": "Quay 6 bước làm thịt viên sốt cà chua kèm chữ công thức rõ ràng",
       "quick_takeaway": "Với video ẩm thực hướng dẫn, công thức phải hiện to rõ ở 3s đầu, kèm tiếng chiên xào xèo xèo thật to để kích thích vị giác người xem ngay lập tức.",
       "key_tech": "Ẩm Thực & F&B • Top-Down Cooking • Fast-Cut Prep Shots • Voice-Over Recipe • Subtitle Ingredients",
       "shooting_style": {
@@ -25294,7 +25373,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@cushygarden_DdL6pHDSKRc",
       "shortcode": "DdL6pHDSKRc",
-      "title_vi": "Cushy Garden • Nhật Ký Làm Vườn Mỗi Ngày & Kỹ Thuật Macro Chăm Cây Chữa Lành - @cushygarden",
+      "title_vi": "Quay cận cảnh tay chăm cây ngoài vườn ghép giọng kể nhẹ nhàng",
       "quick_takeaway": "Nội dung chữa lành (healing) phải mộc mạc, không dùng nhạc giật gân, nhịp nói chậm rãi và màu sắc cây cỏ phải được giữ độ tươi tự nhiên.",
       "key_tech": "Đời Thường & Chữa Lành • Macro Plant Textures • Gentle Voiceover • Morning Sunlight • Greenery Color Grade",
       "shooting_style": {
@@ -25376,7 +25455,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dev_zero_Db-S8i1hXwF",
       "shortcode": "Db-S8i1hXwF",
-      "title_vi": "Zero Dev • Routine Sau Giờ Làm: Tự Học Code, Đàn Guitar & Kỷ Luật Bản Thân - @dev_zero",
+      "title_vi": "Kể chuyện buổi tối tự học và chơi đàn ở nhà bằng 6 góc máy tĩnh",
       "quick_takeaway": "Xây dựng thương hiệu chuyên gia không nhất thiết phải thuyết giảng. Đôi khi chỉ cần quay một chuỗi hành động kỷ luật trong không gian làm việc sạch sẽ là đủ tạo niềm tin.",
       "key_tech": "Công Nghệ & Lập Trình • Desk Setup B-Roll • Time-lapse Study • Guitar Foley Cut • Subtle Screen Glow",
       "shooting_style": {
@@ -25458,7 +25537,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nagisa.decor_Dco_DevvUla",
       "shortcode": "Dco_DevvUla",
-      "title_vi": "Nagisa • Nghệ Thuật Decor Căn Hộ Phong Cách Japandi & Phối Màu Cây Xanh Tinh Tế - @nagisa.decor",
+      "title_vi": "Quay 6 cảnh căn hộ phối cây xanh từ nắng ngày sang đèn đêm",
       "quick_takeaway": "Quay nội thất phải tôn trọng tỷ lệ không gian: Tránh dùng góc siêu rộng 0.5x làm méo tường, hãy dùng tiêu cự 24mm - 35mm và lia máy thật đằm tay.",
       "key_tech": "Kiến Trúc & Không Gian / Nội Thất • Wide Establishing Shot • Slow Panning Movement • Warm Neutral Tones • Architectural Lines",
       "shooting_style": {
@@ -25540,7 +25619,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yuto_creator_DdBlAWRO1Hl",
       "shortcode": "DdBlAWRO1Hl",
-      "title_vi": "Yuto • Cảnh Sắc Mùa Hè Nagano & Gifu: Nghệ Thuật Quay Phong Cảnh Điện Ảnh Trong Ngày Mưa - @yuto_creator",
+      "title_vi": "Quay 6 cảnh cây cối và không gian ngày mưa bằng góc máy tĩnh",
       "quick_takeaway": "Đừng sợ trời mưa hay âm u khi đi quay! Thời tiết u tối chính là lúc ánh sáng tán xạ đều nhất, giúp màu xanh thiên nhiên lên phim sâu và điện ảnh nhất.",
       "key_tech": "Du Lịch & Văn Hóa • Cinematic Mood Weather • Foreground Plant Layering • Slow Push-In • Moody Japanese Grade",
       "shooting_style": {
@@ -25622,7 +25701,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@beixin_DdRGd8evPK-",
       "shortcode": "DdRGd8evPK-",
-      "title_vi": "Beixin • 4 Mẹo Bố Cục Nâng Tầm Video Du Lịch Ngay Tức Thì (@beixin)",
+      "title_vi": "Hướng dẫn 4 mẹo căn bố cục bằng cách đặt cạnh cảnh sai và đúng",
       "quick_takeaway": "Dạng video so sánh Trước / Sau (Before vs After) hoặc Sai vs Đúng luôn có tỷ lệ lưu bài (Save rate) cao nhất vì cung cấp giá trị tức thì cho người xem.",
       "key_tech": "Kỹ Thuật Quay Dựng • Composition Rule of Thirds • Leading Lines • Foreground Depth Hack • Visual Comparison Split",
       "shooting_style": {
@@ -25704,7 +25783,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@layton_video_DdKGq2TMhf4",
       "shortcode": "DdKGq2TMhf4",
-      "title_vi": "Layton • Sự Thật Khắc Nghiệt Khi Làm Creator: Cứ Làm Đi Thay Vì Dạy Đời - @layton_video",
+      "title_vi": "Ngồi chia sẻ thẳng thắn bài học làm nghề cho người mới bắt đầu",
       "quick_takeaway": "Không cần cố gắng đóng vai chuyên gia ngay từ đầu. Hãy cứ làm, sai và sửa trong một khoảng thời gian đủ dài, ý tưởng sẽ tự động xuất hiện.",
       "key_tech": "Thương Hiệu Cá Nhân & Dịch Vụ • Contrarian Hook • Talking Head Confidence • Kinetic Subtitles • Authentic Transparency",
       "shooting_style": {
@@ -25786,7 +25865,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kienobifilms_DdPLvUpBwCl",
       "shortcode": "DdPLvUpBwCl",
-      "title_vi": "Kien Nguyen • Cách Chuyển Động Camera Thao Túng Cảm Xúc Khán Giả (Dolly-In & Push) - @kienobifilms",
+      "title_vi": "Minh họa cách đẩy máy tiến chậm để kéo sự chú ý vào chủ thể",
       "quick_takeaway": "Mọi cú máy chuyển động đều phải có lý do cảm xúc: Muốn khán giả chú ý vào bí mật hay nội tâm của nhân vật, hãy đẩy camera chậm dần về phía họ.",
       "key_tech": "Kỹ Thuật Quay Dựng • Dolly-In Push Movement • Emotional Camera Language • Studio Key Lighting • Visual Proof Demonstration",
       "shooting_style": {
@@ -25868,7 +25947,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@aki_japan_DaDFH_TSii8",
       "shortcode": "DaDFH_TSii8",
-      "title_vi": "Aki • Kỹ Thuật Match Cut Đổi Trang Phục Siêu Mượt Của Barista Đường Phố",
+      "title_vi": "Cắt khớp hình đổi trang phục của người pha chế bên quầy đường phố",
       "quick_takeaway": "Video tự sự cảm xúc không cần hiệu ứng hào nhoáng. Sự chân thành trong câu chữ kết hợp khung hình tĩnh có chiều sâu sẽ giữ chân người xem đến giây cuối cùng.",
       "key_tech": "Match Cut Transition • Outfit Change • Coffee Brewing • Fixed Camera Angle • Seamless Loop",
       "shooting_style": {
@@ -25950,7 +26029,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nathanael.lct_DdRg_ybtlKI",
       "shortcode": "DdRg_ybtlKI",
-      "title_vi": "Nathanael • Thử Thách Phối Đồ Thu Dưới €150 & Kỹ Thuật Hook 3s Đổi Outfit Siêu Tốc - @nathanael.lct",
+      "title_vi": "Thử thách phối đồ trong tầm giá kèm chuyển cảnh thay đồ nhanh",
       "quick_takeaway": "Bán hàng thời trang hiệu quả nhất là bọc trong một thử thách có giới hạn (tiền bạc hoặc thời gian): Vừa tạo tính giải trí, vừa xóa tan rào cản giá đắt trong đầu khách.",
       "key_tech": "Thời Trang & Phụ Kiện • Budget Challenge Hook • Snap Outfit Match Cut • Upbeat Pacing • Zalando Commercial Collaboration",
       "shooting_style": {
@@ -26032,7 +26111,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@c.j.visuals_DdMrb4ARxHv",
       "shortcode": "DdMrb4ARxHv",
-      "title_vi": "CJ • 5 Ý Tưởng Góc Máy Du Lịch Siêu Dễ Bằng Điện Thoại Không Cần Thiết Bị Phụ Trợ - @c.j.visuals",
+      "title_vi": "Hướng dẫn 5 cách che ống kính qua cột đèn và bờ tường để chuyển cảnh",
       "quick_takeaway": "Không cần gimbal xịn: Hãy dùng các vật thể có sẵn ngoài đường (vũng nước, cột đèn, kẽ tường) làm điểm che (natural wipe) để chuyển cảnh mượt mà.",
       "key_tech": "Kỹ Thuật Quay Dựng • Low-Angle Ground Slide • Puddle Reflection Match Cut • Forward Push Through Object • Phone Handheld Gimbal Hack",
       "shooting_style": {
@@ -26114,7 +26193,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@genya_jp_Dc3PgRbBp-m",
       "shortcode": "Dc3PgRbBp-m",
-      "title_vi": "Genya • Khám Phá Ẩm Thực Vùng Núi Hakone & Nghệ Thuật Quay Đồ Ăn Xúc Giác Nóng Hổi - @genya_jp",
+      "title_vi": "Quay cận món ăn bốc khói ngược sáng kèm khoảnh khắc thưởng thức",
       "quick_takeaway": "Quay đồ ăn muốn ngon mắt thì chìa khóa là Ánh Sáng Ngược (Backlight) và Chuyển Động Xúc Giác (gắp lên, bẻ đôi, rưới sốt).",
       "key_tech": "Ẩm Thực & F&B • Food Macro Glaze • Steam Capture Lighting • Chopstick Lift Action • Warm Wooden Background",
       "shooting_style": {
@@ -26196,7 +26275,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@charlotte.arsenault_DdHGBpZOzIm",
       "shortcode": "DdHGBpZOzIm",
-      "title_vi": "Charlotte • Chiến Lược Xây Kho B-Roll Du Lịch Để Dùng Dần Cho Cả Năm Làm Content UGC - @charlotte.arsenault",
+      "title_vi": "Cách quay sẵn 5 cảnh sinh hoạt ngắn để làm kho hình dùng dần",
       "quick_takeaway": "Đừng đợi có ý tưởng mới đi quay B-roll. Đi đâu cũng hãy quay sẵn 5 kiểu shot cơ bản (bước chân, cầm ly nước, góc nhìn qua cửa sổ, gõ máy tính) để làm kho dự trữ.",
       "key_tech": "UGC & Quảng Cáo • B-Roll Bank Strategy • CTA Lead Magnet Hook • Relatable Creator Pain • Multi-Angle Stockpile",
       "shooting_style": {
@@ -26208,12 +26287,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ugc",
-          "name": "UGC",
-          "en_name": "UGC & Ads",
-          "icon": "📱",
-          "badge_color": "amber",
-          "desc": "Video quảng cáo UGC sàn TMĐT (Shopee, Lazada...) chuẩn công thức AIDA: Gây chú ý, khơi gợi nhu cầu, thúc đẩy chuyển đổi."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -26278,7 +26357,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@arturbr_DdO2XLIKiXo",
       "shortcode": "DdO2XLIKiXo",
-      "title_vi": "ArturBr • Visual Hook Điện Ảnh Đỉnh Cao: Match Cut Đổi Góc Nhìn Barcelona Trong 1 Nốt Nhạc",
+      "title_vi": "Cắt khớp tốc độ lia máy để chuyển mượt qua các góc phố Barcelona",
       "quick_takeaway": "Chuyển cảnh đắt giá không phải do plugin After Effects mà nằm ở việc canh đúng vận tốc chuyển động (speed matching) giữa 2 cảnh quay thực tế.",
       "key_tech": "Kỹ Thuật Quay Dựng • Whip Pan Zoom Match Cut • Architectural Landmark Lock • Sound Design Bass Impact • Kinetic Urban Energy",
       "shooting_style": {
@@ -26360,7 +26439,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jazziesillona_Dc6Cxf-QRWh",
       "shortcode": "Dc6Cxf-QRWh",
-      "title_vi": "Jazzie • Cẩm Nang Quay Phim Bằng iPhone Chuyên Nghiệp Từ Ngày Đầu Tiên Đến Nay - @jazziesillona",
+      "title_vi": "Chia sẻ mẹo lau ống kính và khóa sáng để quay điện thoại nét ngay",
       "quick_takeaway": "Nhiều người nghĩ máy ảnh xịn mới quay đẹp, nhưng 90% video bị mờ đục là do không lau kính camera điện thoại và để camera tự động nhảy sáng liên tục.",
       "key_tech": "Kỹ Thuật Quay Dựng • iPhone Camera Settings • Exposure Lock Mastery • 4K 24fps Cinematic Rule • Clean Lens Habit",
       "shooting_style": {
@@ -26442,7 +26521,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@c.j.visuals_DdR7dEIxzT9",
       "shortcode": "DdR7dEIxzT9",
-      "title_vi": "CJ • Thử Thách Góc Quay Điện Thoại Mùa iPhone Mới: Đẩy Camera Qua Khung Kính Ô Tô - @c.j.visuals",
+      "title_vi": "Đẩy điện thoại xuyên qua khe cửa và khung kính tạo góc quay lạ",
       "quick_takeaway": "Ưu điểm lớn nhất của điện thoại so với máy ảnh lớn là sự nhỏ gọn. Hãy cho điện thoại chui vào những nơi máy ảnh to không vào được (gầm bàn, khe cửa, kẽ lá).",
       "key_tech": "Kỹ Thuật Quay Dựng • Car Window Transition • Seamless Hand-off • Motion Blur Pass • Dynamic Street Perspective",
       "shooting_style": {
@@ -26524,7 +26603,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jusorok_korea_DdBr6LZqkFd",
       "shortcode": "DdBr6LZqkFd",
-      "title_vi": "Jusorok • Review Quán Cafe Ô Cửa Kính Khổng Lồ Ôm Trọn Thiên Nhiên Xanh Gwangju - @jusorok_korea",
+      "title_vi": "Sáu góc máy tĩnh lấy trọn ô cửa kính xanh mát quán cà phê",
       "quick_takeaway": "Review quán cafe muốn đông khách không nên quay lia liên tục. Hãy đặt camera tĩnh ngắm trọn góc đắt giá nhất của quán (view cửa sổ) để khách thấy sự thư thái.",
       "key_tech": "Ẩm Thực & F&B • Panoramic Window Frame • Slow Push-In Seating • Pastry & Coffee Pairing • Natural Ambient Greenery",
       "shooting_style": {
@@ -26606,7 +26685,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@arianballate_DdRe4-xpHs2",
       "shortcode": "DdRe4-xpHs2",
-      "title_vi": "Arian • Quảng Cáo Trang Phục Chạy Bộ Gymshark Elite: Phong Cách Năng Động Cả Khi Không Chạy - @arianballate",
+      "title_vi": "Quay đồ tập thể thao lúc chạy nước rút nối sang cảnh mặc dạo phố",
       "quick_takeaway": "Quảng cáo đồ thể thao phải cho thấy sản phẩm hoạt động trong trạng thái căng nhất: Chạy nước rút, kéo căng vải, mồ hôi rơi... Khách hàng mua năng lượng đó.",
       "key_tech": "Thời Trang & Phụ Kiện • Athletic Slow-Mo • Fabric Stretch Texture • Urban Running Track • Gymshark UGC Commercial",
       "shooting_style": {
@@ -26688,7 +26767,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@genya_jp_DdD_QqPB7aW",
       "shortcode": "DdD_QqPB7aW",
-      "title_vi": "Genya • Chuẩn Bị Trang Phục Mùa Thu Tối Giản: Nghệ Thuật Phối Đồ Len V-Neck & Phụ Kiện Tinh Tế - @genya_jp",
+      "title_vi": "Quay cận chất liệu áo len và phụ kiện trước khi mặc lên người",
       "quick_takeaway": "Thời trang cao cấp (Quiet Luxury) thu hút bằng chất liệu xúc giác: Hãy quay thật gần sợi len, đường may và phụ kiện thay vì chỉ đứng tạo dáng chung chung.",
       "key_tech": "Thời Trang & Phụ Kiện • Minimalist Outfit Framing • Knitwear Texture Close-Up • Jewelry Reflection Detail • Subtle Natural Posing",
       "shooting_style": {
@@ -26770,7 +26849,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,_",
       "shortcode": "LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,_",
-      "title_vi": "Ulanzi | Đèn LED Thanh Bơm Hơi UA20, 20W Bi-Color, Tích Hợp Pin",
+      "title_vi": "Quay mở hộp và thử độ sáng thực tế đèn bơm hơi tại bàn",
       "quick_takeaway": "Mẫu video quảng cáo UGC chuẩn AIDA từ Lazada: Trực quan, tập trung vào trải nghiệm công năng thực tế và kích thích tỷ lệ chuyển đổi.",
       "key_tech": "Inflatable Tube Light, Magnetic Mounting N52, Full Spectrum CRI 95+, Bi-Color 2700K-5600K, Commercial B-Roll Rhythm, Night Street Portrait",
       "shooting_style": {
@@ -26843,7 +26922,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
       "shortcode": "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
-      "title_vi": "Ulanzi | Chân Đế Tự Sướng Có Từ Tính với Hỗ Trợ Camera Điện Thoại, Đa Năng và Di Động",
+      "title_vi": "Quay mở hộp và thử lực hít nam châm của chân đế điện thoại",
       "quick_takeaway": "Mẫu video quảng cáo UGC chuẩn AIDA từ Lazada: Trực quan, tập trung vào trải nghiệm công năng thực tế và kích thích tỷ lệ chuyển đổi.",
       "key_tech": "UGC, Quảng cáo, AIDA",
       "shooting_style": {
@@ -26916,7 +26995,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency",
       "shortcode": "DatbbgJviTV",
-      "title_vi": "Nghệ Thuật Điều Hòa Hệ Thần Kinh - Giải Phóng Cơn Vội Vã Vô Thức (@kawoon.lee)",
+      "title_vi": "Kể chuyện dừng lại hít thở sâu giữa lúc vội vã kèm chữ suy ngẫm",
       "quick_takeaway": "Nghệ thuật giảm tốc nhịp điệu (Deceleration): Bắt đầu bằng hành vi vội vã để chặn feed, dùng ánh mắt chính diện và hơi thở xả van áp lực, kết thúc bằng một thẻ khẳng định tâm lý trên con đường vắng.",
       "key_tech": "Somatic Pattern Interrupt • Pacing Whiplash • Deceleration Arc • Direct-to-Lens Gaze • Ambient Sound Chant • Micro Jump-Cut • Affirmation Reveal Anchor",
       "shooting_style": {
@@ -26997,7 +27076,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho",
       "shortcode": "DbQtoVPRMWk",
-      "title_vi": "5 Cenas Criativas Trabalho • Nghệ Thuật Tự Quay B-Roll & Góc Làm Việc Chỉ Bằng Điện Thoại",
+      "title_vi": "Hướng dẫn 5 góc tự đặt điện thoại quay cảnh làm việc tại bàn",
       "quick_takeaway": "Không cần gimbal hay ekip đắt tiền: Tận dụng camera góc rộng úp ngược, kẹp mép laptop và ánh sáng cửa sổ tạt ngang để biến mọi bàn làm việc thành studio điện ảnh.",
       "key_tech": "BTS to Result Formula • Self-Shooting Desk Hacks • Low-Angle Keyboard Macro • Top-Down Laptop Screen Clamp • Eye Reflection Macro Catchlight",
       "shooting_style": {
@@ -27084,7 +27163,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount",
       "shortcode": "DdBorQ2KEli",
-      "title_vi": "How I Film Alone in a Cafe - UGC Suction Mount - @turapinaanastasiia",
+      "title_vi": "Quay quy trình dùng đế hít kính tự ghi hình một mình ở quán cà phê",
       "quick_takeaway": "Quy tắc vàng của video UGC bán phụ kiện/công nghệ: Đừng nói về thông số, hãy cho người xem thấy quy trình 'Gắn 1 chạm -> Kết quả góc quay xịn như có cameraman đi cùng' và kết thúc bằng việc cất vào túi xách để kích hoạt mong muốn sở hữu ngay lập tức.",
       "key_tech": "UGC BTS vs Result Pair • Vacuum Suction Cup Mount • High-Angle Downward Window • Frame-in-Frame Camera Phone • Tabletop Mini Tripod Placement",
       "shooting_style": {
@@ -27169,7 +27248,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@vicgaibar_DaGGMTdtawm_Cannes_Street_Fit_Check_Tripod_OOTD",
       "shortcode": "DaGGMTdtawm",
-      "title_vi": "Cannes Street Fit Check - @vicgaibar",
+      "title_vi": "Mở chân máy ngoài vỉa hè nối sang 6 cảnh tự quay trang phục",
       "quick_takeaway": "Cấu trúc 2 nhịp BTS Setup ➔ Result Lookbook: Khoe thao tác chuẩn bị công cụ kích thích tò mò, chuyển mượt sang khung hình điện ảnh 2.39:1 mãn nhãn.",
       "key_tech": "BTS to Cinema Result Structure • Self-Shooting Tripod Mastery • Phone-in-Scene Framing • Widescreen 2.39:1 Letterbox • Street Catwalk Pacing • Pastel Palette Color Grading • Infinite Loop Walk-Past",
       "shooting_style": {
@@ -27253,7 +27332,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey",
       "shortcode": "DdLedJjsbNW",
-      "title_vi": "Asian Dragon Tattoo Journey • Hannya Tattoo Hà Nội - @hannya.tattoos",
+      "title_vi": "Kể hành trình làm dịch vụ từ lúc rót trà đón khách đến thành phẩm",
       "quick_takeaway": "Nghệ thuật kể chuyện giữ chân người xem bằng nghi thức mở đầu tĩnh lặng, chuyển động macro mượt mà và kết thúc bằng thành phẩm rực rỡ trên cẳng tay kết hợp lời bình giàu cảm xúc.",
       "key_tech": "Irezumi Japanese Tattoo • Dragon & Katana • White Ink Highlights • Phố Cổ Hà Nội • Voice-Over Storytelling • ASMR Wipe",
       "shooting_style": {
@@ -27332,7 +27411,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions",
       "shortcode": "DdN_aljAIY0",
-      "title_vi": "25 Phân Cảnh Kỹ Thuật Speed Ramp & Beat-Sync Dựng Day In My Life Cực Cuốn - @celfstudies",
+      "title_vi": "Dựng nhật ký một ngày 25 cảnh bằng cắt khớp hình và đổi tốc độ",
       "quick_takeaway": "Ứng dụng nhịp mở màn 4 nhịp Staccato Teaser (0.2s/shot) để kích hoạt dopamine thị giác tức thì, sau đó kết hợp Action Match Cut và Speed Ramp biến mọi hoạt động đời thường thành tác phẩm điện ảnh sống động.",
       "key_tech": "Staccato Beat Teaser • Frame-in-Frame Mirror • Tactile Speed Ramp • Low-Angle Ninja Walk • Transit Whip-Zoom • Aesthetic Flatlay • Sensory Scoop Macro • Horizontal Shelf Scan • Color Pop Array • Interactive App Showcase • Climax Pouring Pull • Circular Narrative Loop",
       "shooting_style": {
@@ -27410,7 +27489,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha",
       "shortcode": "DdHf_1yA4WQ",
-      "title_vi": "Combo Thư Thái Hà Nội: Chiều Spa Trị Liệu & Trà Matcha Tea Space - @hanoi.liebe",
+      "title_vi": "Quay trải nghiệm kết hợp làm đẹp tại spa và thưởng trà chiều",
       "quick_takeaway": "Combo thư thái Hà Nội: 30 phân cảnh chuẩn đạo diễn kết hợp giữa trị liệu đá bazan Chiều Spa và nghệ thuật pha chế matcha Tea Space, mẫu mực cho kịch bản B-Roll review kép chuyển đổi cao.",
       "key_tech": "7-Beat Sensory Hook • Dual-Experience Lifestyle Pairing • Tactical Hot Stone Basalt • Chasen Whisking ASMR • Latte Marbling Pour • Seamless Walk Bridge • High-Converting DM Voucher CTA",
       "shooting_style": {
@@ -27490,7 +27569,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@vnexpress_hanoi_DdAyywnSxU8_Autumn_In_Hanoi",
       "shortcode": "DdAyywnSxU8",
-      "title_vi": "8 Cú Máy B-Roll Beat-Sync Khám Phá Sắc Thu Hà Nội Tuyệt Sắc - @vnexpress_hanoi - @vnexpress_hanoi",
+      "title_vi": "Ghép 8 cảnh sắc thu Hà Nội cắt đều đặn theo đúng phách nhạc",
       "quick_takeaway": "Ứng dụng công thức 'Iconic 8-Shot Destination Reel': Đồng bộ nhịp cắt 100% theo beat nhạc (1.3s/shot), kết hợp khéo léo giữa tiền cảnh ẩm thực kích thích xúc giác, vòm cây điểm tụ một điểm, xe hoa biểu tượng và nốt kết khóa mỏ neo tại di sản nghìn năm để biến 14 giây thành bức tranh mùa thu khó cưỡng.",
       "key_tech": "Fast-Cut Beat Sync • Balcony Sensory Hook • One-Point Tree Canopy Tunnel • Street Food Sensory Contrast • Blossom Foreground Framing • Telephoto Urban Compression • Iconic Autumn Flower Cart • Heritage Anchor Outro",
       "shooting_style": {
@@ -27571,7 +27650,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour",
       "shortcode": "DdAYPcwgfv1",
-      "title_vi": "UTS Vietnam Open Day Campus Tour - @utsint",
+      "title_vi": "Vừa đi vừa nói dẫn khách tham quan không gian trường và sự kiện",
       "quick_takeaway": "Khi làm video tuyển sinh hoặc giới thiệu thương hiệu quốc tế cho thị trường bản địa, hãy khóa chặt sự chú ý trong 2 giây đầu bằng biểu tượng văn hóa/quốc kỳ, biến kịch bản thành chuyến dẫn tour đi lùi sống động và kết thúc bằng title card thông tin đa khối chuẩn tương phản.",
       "key_tech": "National Flag Hook • Backward Walk-and-Talk Tracking • Atrium Low-Angle Power Dynamic • Library Study Pod Reveal • Cozy Alumni Corner • Multi-Level Mezzanine Skyward Angle • Mascot Pop-Up Joy • Looping Outro Anchor • Hero Architecture Title Card",
       "shooting_style": {
@@ -27652,7 +27731,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@the.isaacelguera_DdNKlIqPagO_Kien_Truc_Chuoi_Canh_Sequence",
       "shortcode": "DdNKlIqPagO",
-      "title_vi": "Kiến Trúc Chuỗi Cảnh Điện Ảnh (Sequence Filmmaking): Công Thức 3 Nhịp Wide-Medium-Close & Nghệ Thuật Dẫn Mắt Xúc Giác - @the.isaacelguera",
+      "title_vi": "Hướng dẫn ghép chuỗi 3 cỡ cảnh rộng trung cận cho liền mạch",
       "quick_takeaway": "Đừng bao giờ hỏi 'mình có thể quay cảnh ngầu nào tiếp theo' mà hãy hỏi 'cảnh nào đưa người xem tiến qua câu chuyện'. Mọi cú máy phải là mảnh ghép của cùng một chuyển động.",
       "key_tech": "Sequence Filmmaking • Wide-Medium-Close Formula • In-Camera Continuity • Trunk POV Natural Framing • Tactile Touchpoint • Walk-and-Talk Selfie Hook • Motion Parallax • High-Angle Intimacy",
       "shooting_style": {
@@ -27729,7 +27808,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hairpositiveofficial_DbOMM0Pu1HA_House_of_Hair_One_Take_Curly_Runway",
       "shortcode": "DbOMM0Pu1HA",
-      "title_vi": "House of Hair • Nghệ Thuật One-Take Runway Phô Diễn Suối Tóc Xoăn Bồng Bềnh Tự Nhiên - @hairpositiveofficial",
+      "title_vi": "Đi lùi máy 10 giây ngoài phố bắt độ bồng bềnh của tóc xoăn",
       "quick_takeaway": "Áp dụng công thức 'One-Take Tactile Catwalk': Đưa dịch vụ làm đẹp ra khỏi 4 bức tường salon, biến đường phố thành sàn catwalk và dùng thao tác xúc giác (luồn tay nâng lọn tóc) làm đòn bẩy thuyết phục khách hàng mà không cần nói một lời quảng cáo.",
       "key_tech": "One-Take Plan Séquence, Carrie Bradshaw Style Runway, Urban Catwalk Pacing, Reverse Moonwalk Beat, Close-Up Push-In Transition, Tactile Hair Play & Curl Bounce, Monochromatic Slate Backdrop, Seamless Infinite Loop Outro",
       "shooting_style": {
@@ -27809,7 +27888,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@moodme.sg_DdL904CMnq3_Slow_Living_Scent_Giftspace",
       "shortcode": "DdL904CMnq3",
-      "title_vi": "12 Cú Máy B-Roll Beat-Sync Khám Phá Không Gian Mùi Hương & Quà Tặng - @moodme.sg",
+      "title_vi": "Quay 12 cảnh giới thiệu tiệm quà tặng cắt đều theo phách nhạc",
       "quick_takeaway": "Ứng dụng nhịp cắt Beat-Sync 1.2s kết hợp cú máy tiền cảnh decal kính và tương tác cầm tay để biến video giới thiệu tiệm thành chuyến du hành xúc giác lôi cuốn.",
       "key_tech": "Decal Glass Framing • Action Match Cut Door Push • Multi-Layer Reflection • Symmetrical Shelf Grid • Scent Notes Pedestal • Earthy Tone Staggering • Whimsical Pop-Up • Tactile Handheld Showcase • Chromatic Array • Modern Local Accessory • Herbal Sanctuary • Facade Outro Anchor",
       "shooting_style": {
@@ -27886,7 +27965,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jassminechi_DdFBLQMOTwM_Shanghai_Coffee_Guide",
       "shortcode": "DdFBLQMOTwM",
-      "title_vi": "Cẩm Nang 15 Quán Cà Phê Đặc Sản Thượng Hải • The Ultimate Shanghai Coffee Guide - @jassminechi",
+      "title_vi": "Tổng hợp nhanh 15 quán cà phê cắt dồn dập 0.8 giây theo trống",
       "quick_takeaway": "Áp dụng công thức 'Fast-Cut Curated Guide': Đồng bộ nhịp cắt cảnh 100% theo từng beat trống (0.8s), đan xen nhịp nhàng giữa cảnh toàn không gian sống (Lifestyle Atmosphere) và cảnh cận hành động xúc giác (Sensory Detail) để tạo cảm giác no nê thị giác trong 12 giây.",
       "key_tech": "Fast-Cut Beat Sync, Shanghai Al-Fresco Lifestyle, Frontal Symmetry, Sensory Action Close-Up, Look-Through Framing, Social Proof Staging, Narrative Outro",
       "shooting_style": {
@@ -27968,7 +28047,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
       "shortcode": "Db-mZWEKECo",
-      "title_vi": "4 Cú Máy Siêu Thị Bằng Giá Đỡ Điện Thoại Ulanzi MA38 & MT85 - @hena_film_vlog",
+      "title_vi": "Hướng dẫn 4 góc tự quay trong siêu thị bằng giá đỡ nam châm",
       "quick_takeaway": "Tận dụng xe đẩy làm dolly và vách kim loại tủ đông làm chân máy nam châm để quay vlog đời thường chuẩn điện ảnh mà không cần ai cầm máy giúp.",
       "key_tech": "Pattern Interrupt Question Hook • Gear Demonstration Macro • 0.5x Ultra-Wide High-Angle • Cart Handle Dolly POV • Tactile Produce Pick-Up • Magnetic Surface Snap • Hands-Free Dual Hand Interaction • Mini Tripod Floor Grounding • Low-Angle Hero Pass-By • Personal Brand CTA",
       "shooting_style": {
@@ -28045,7 +28124,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog",
       "shortcode": "Dc3ifsHTIhL",
-      "title_vi": "A Day in the Life of an Introverted Freelancer - @lee.rabo",
+      "title_vi": "Nhật ký một ngày làm việc tại nhà không lời kèm mốc thời gian",
       "quick_takeaway": "Xây dựng thương hiệu cá nhân bằng Daily Routine không cần nói một lời nào: Hãy kết hợp mốc thời gian typography tối giản với các chi tiết xúc giác đời thường (ly sinh tố, đĩa salad sung, phần mềm thiết kế chuyên nghiệp) để chứng minh năng lực và phong cách sống đẳng cấp một cách tự nhiên nhất.",
       "key_tech": "Digital Diary Timeline • Whip Blur Passing • Half-Face Conceal Mirror • Dual-Layer Screen & Keyboard • Overhead Flat Lay Food",
       "shooting_style": {
@@ -28130,7 +28209,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk",
       "shortcode": "DdGp4XftvIn",
-      "title_vi": "5 Bộ Phục Trang Phố Thị Moscow: Kỹ Thuật Match-Cut Bước Chân Động Năng Biến Hình Vô Tận - @naohasa",
+      "title_vi": "Bước đi trên phố cắt khớp nhịp chân chạm đất đổi 5 bộ đồ",
       "quick_takeaway": "Bí quyết của video lookbook triệu view là động năng thị giác (Kinetic Momentum): Không quay đứng yên, hãy để người mẫu sải bước tự tin về phía ống kính và cắt cảnh đúng vào nhịp chân chạm đất để giấu hoàn toàn vết cắt biên tập.",
       "key_tech": "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop",
       "shooting_style": {
@@ -28209,7 +28288,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation",
       "shortcode": "Dcxi128sxO9",
-      "title_vi": "Dancing to the Beat • Phân Tích 17 Phân Cảnh B-Roll Gym Điện Ảnh & Tài Trợ Khéo Léo",
+      "title_vi": "Dựng 17 cảnh tập thể hình cắt khớp nhịp nhạc từ cận đến rộng",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "Thể Thao • Gym Motivation • Chuyển Cảnh • Beat Sync • Product Placement",
       "shooting_style": {
@@ -28288,7 +28367,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process",
       "shortcode": "DdHMOB0xfd1",
-      "title_vi": "Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View (Whip-Pan & Spin-On-Beat) - @lizzypalios",
+      "title_vi": "Hướng dẫn 6 bước lia máy nhanh và xoay theo nhạc để nối cảnh",
       "quick_takeaway": "Bóc tách 21 phân cảnh bậc thầy về nghệ thuật sáng tạo nội dung phong cách sống 'A Day In The Life' của Business & Marketing Coach Lizzy Palios. Video thị phạm chi tiết 6 bước kỹ thuật: Lia máy Phải sang Trái, Tăng tốc đoạn lia 2-3x (Whip...",
       "key_tech": "Day In The Life Formula, Pan Right-to-Left Continuity, Speed Ramping 2-3x Whip-Pan, Centered Timestamp Anchors, Spin-on-Beat Audio-Visual Sync, Work & Downtime Balance",
       "shooting_style": {
@@ -28369,7 +28448,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church",
       "shortcode": "DcoGfdghNwd",
-      "title_vi": "Bring A Friend To Church Skit • Đỉnh Cao Hài Hước Nghĩa Đen (Literal Comedy) & Hook 2 Nhịp Kêu Gọi Tham Dự Sự Kiện",
+      "title_vi": "Tiểu phẩm vui nhắc rủ bạn đi cùng để mời khách ghé sự kiện",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "Comedy Skit • Event Promotion • Literal Comedy • Church Community • Visual Pun",
       "shooting_style": {
@@ -28446,7 +28525,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC",
       "shortcode": "DcJM7AWOa",
-      "title_vi": "Bản Hòa Âm Cà Phê Mới Tại New York • Tuyệt Kỹ Video F&B Triệu View Bằng ASMR",
+      "title_vi": "Giới thiệu tiệm bánh cà phê mới bằng 12 cảnh thu âm thanh thật",
       "quick_takeaway": "Bóc tách 12 phân cảnh chuẩn đạo diễn trong video quảng bá điểm đến F&B triệu view của Tatte Bakery (@tattebakery) tại New York: Nghệ thuật dùng âm thanh xúc giác (Tactile ASMR Soundscape) thay thế hoàn toàn lời bình, nhịp cắt tiết tấu nh...",
       "key_tech": "Tactile ASMR Soundscape, NYC Street Reveal Hook, Macro Food Textures, Barista Craftsmanship, Sensory Foley Sync-Cut, 1.02s Fast Pacing, Hero Closing Branding",
       "shooting_style": {
@@ -28511,7 +28590,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Casual But Make It Bomb Outfit Transition - @kristinagoose",
       "shortcode": "Dcmav1VBv4H",
-      "title_vi": "Casual But Make It Bomb • Kỹ Thuật Chuyển Cảnh Match Cut Đồ Vật (Bag Wipe Transition) & Trình Diễn Thời Trang Viral Cực Bén",
+      "title_vi": "Đổi trang phục nhanh bằng động tác vung túi xách che ống kính",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "Fashion Transition • Match Cut • Bag Occlusion Wipe • Kinetic Typography • Clean Girl Style",
       "shooting_style": {
@@ -28588,7 +28667,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog",
       "shortcode": "DbH76S5yg5W",
-      "title_vi": "A Little Hong Kong A Lot Of Happiness • Nghệ Thuật Vlog Du Lịch Hè Góc Thấp Đầy Bản Sắc",
+      "title_vi": "Đặt điện thoại góc thấp trên băng chuyền nối mượt cảnh du lịch",
       "quick_takeaway": "Bóc tách 6 phân cảnh mẫu mực trong video Reel của @saebomoh: Thao lược góc máy thấp góc siêu rộng (Low-Angle Ultra-Wide POV) kết hợp chuyển động băng chuyền sân bay mượt mà như dolly track, kỹ thuật Match-Cut định hướng chuyển động (Moti...",
       "key_tech": "Low-Angle Ultra-Wide POV, Travelator Natural Dolly, Motion Match-Cut, Urban Canyon Scale Shock, Seamless Outfit Switch, Wong Kar-wai Retro Street Aesthetic, Infinite Loop Narrative",
       "shooting_style": {
@@ -28611,11 +28690,11 @@ var FEDU_IDEAS_DATABASE = {
       "x_factors": [],
       "tags": [],
       "country": {
-        "id": "asia_other",
-        "name": "Châu Á Khác",
-        "en_name": "Other Asia",
-        "flag": "🌏",
-        "badge_color": "sky"
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Showcase thị giác & Thẩm mỹ",
       "tech_tags": [],
@@ -28653,7 +28732,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion",
       "shortcode": "DcxgmP1zZPk",
-      "title_vi": "Allblack Is My Dominion • Nghệ Thuật Biến Hình Cú Đá Vô Hình & Thời Trang Nam Tối Giản",
+      "title_vi": "Đổi sang bộ đồ đen lịch lãm bằng cú đá chân cắt khớp hình",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "Thời Trang • Chuyển Cảnh • Match Cut • All Black • Lifestyle",
       "shooting_style": {
@@ -28730,7 +28809,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist",
       "shortcode": "DdBnto_O0He",
-      "title_vi": "Nghịch Lý Ăn Kiêng & Quả Chuối Giấu Thanh Socola Snickers",
+      "title_vi": "Tiểu phẩm vui giả vờ ăn kiêng với thanh socola giấu trong vỏ chuối",
       "quick_takeaway": "Phân tích 6 phân cảnh nghệ thuật tạo tiếng cười từ sự tự trào (Relatable Humor), bố cục đạo cụ đối lập và cú lật tẩy vật lý (Physical Gag Twist) siêu thực giấu socola trong vỏ chuối.",
       "key_tech": "Visual Misdirection, Prop Juxtaposition, Suspense Build-up, Relatable Humor, Infinite Loop",
       "shooting_style": {
@@ -28795,7 +28874,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run",
       "shortcode": "DdH6HGNxEYT",
-      "title_vi": "Time To Go For A Run • Nghệ Thuật Kể Chuyện Thói Quen Chạy Bộ Điện Ảnh",
+      "title_vi": "Hành trình dậy xỏ giày ra đường chạy bộ dựng nhịp cắt dồn dập",
       "quick_takeaway": "Bóc tách trọn vẹn 16 phân cảnh mẫu mực trong video Reel của @quinematic: Đỉnh cao nghệ thuật dựng phim nhịp điệu (Fast Montage) đồng bộ 9 frame/shot kết hợp âm thanh ASMR vi mô đời thường, chuyển hóa không gian ngoạn mục từ căn phòng ngủ...",
       "key_tech": "Fast 9-Frame Montage, Temporal Hook (7:00 AM), Silhouette Chiaroscuro, Macro Ritual Details, POV Shadow Play, Extreme Wide Landscape Scale Shock, Side & Front Dynamic Tracking, Golden Rim Light Climax",
       "shooting_style": {
@@ -28860,7 +28939,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut",
       "shortcode": "Dc3DUsvpkrP",
-      "title_vi": "Nghệ Thuật Match-Cut Từ Căn Hộ Lên Đỉnh Núi Sumbing (@dimasyudhystira)",
+      "title_vi": "Cắt khớp bước chân chuyển thẳng từ căn hộ lên đỉnh núi sương mù",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu 8 phân cảnh mẫu mực trong video 15.3s của Dimas Yudhystira: Tuyệt kỹ Match-Cut chuyển động vi mô (Micro-Motion Match Cut) dịch chuyển tức thời từ căn hộ lên chân núi Sumbing, bứt phá qua rừng thông sương mờ v...",
       "key_tech": "Micro-Motion Match Cut • Teleportation Hook • Spatial Convergence • Gear Foreshadowing • Summit Hero Contrast • Kinetic Jump Cut • Closed-Loop Visual Rhythm",
       "shooting_style": {
@@ -28925,7 +29004,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ju_seobang_DbA22ywhMSI_Steal_Father_In_Law_Snacks",
       "shortcode": "DbA22ywhMSI",
-      "title_vi": "Cách 'Câu' Kẹo Của Bố Vợ • Tuyệt Kỹ Hài Tình Huống Triệu View",
+      "title_vi": "Tiểu phẩm vui lấy vụng đồ ăn vặt trên bàn bếp gây cười tự nhiên",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "Comedy • Family Skit • Slapstick Gag • Misdirection • Viral Short",
       "shooting_style": {
@@ -29002,7 +29081,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@allure.cafebar_DdF81brAiIj_The_Place_You_Wanna_Be",
       "shortcode": "DdF81brAiIj",
-      "title_vi": "The Place You Wanna Be • Nghệ Thuật Kể Chuyện Không Gian Cafe & Barista Showmanship",
+      "title_vi": "Quay 17 cảnh quầy pha chế mở sôi động và bàn bánh nước bắt mắt",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "Ẩm Thực • Cafe • Barista • Lifestyle • Showcase",
       "shooting_style": {
@@ -29079,7 +29158,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
       "shortcode": "DaBLA-QJcrk",
-      "title_vi": "Giấc Mơ Thức Dậy Ảo (False Awakening) & Cú Búa Siri Reality Check",
+      "title_vi": "Tiểu phẩm 3 cảnh vươn vai dậy sớm hóa ra chỉ là đang nằm mơ",
       "quick_takeaway": "Bóc tách 3 phân cảnh chuẩn đạo diễn trong kiệt tác hài short-form của Steven Vuu (@steven.vuu): Nghệ thuật đánh lừa kỳ vọng người xem (False Expectations Hook) bằng thói quen buổi sáng mẫu mực, cú ngắt nhịp kịch tính (The Comic Beat Paus...",
       "key_tech": "False Expectations Hook, The Comic Beat Pause, Match-Location Punchline, Hard Cut Reality Check, Lock-Off Camera Contrast, Micro-Expression Freeze, Tactile ASMR Sound",
       "shooting_style": {
@@ -29144,7 +29223,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV",
       "shortcode": "DdGRCKwsaaI",
-      "title_vi": "Kamera 0.5x Ultra-Wide Food POV: Phối Hợp Hậu Trường & Thành Phẩm Điện Ảnh",
+      "title_vi": "Ghép cảnh hậu trường cầm điện thoại góc rộng 0.5x sang cảnh món ăn",
       "quick_takeaway": "Báo cáo phân tích đạo diễn chuyên sâu về kỹ thuật quay POV ẩm thực bằng ống kính góc siêu rộng 0.5x của smartphone kết hợp mồi nhử hậu trường Behind-the-scenes (BTS) và cú bùng nổ chuyển cảnh thành phẩm (Result).",
       "key_tech": "Ultra-Wide 0.5x Smartphone POV, Behind-The-Scenes Hook, Rhythm Match Cut, Whip Zoom Transition, Sensory Food Visuals",
       "shooting_style": {
@@ -29209,7 +29288,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase",
       "shortcode": "DdLsL-cSekL",
-      "title_vi": "Outdoor Fashion Match Cut Gear Showcase • Nghệ Thuật Match Cut Biến Hình & Trưng Bày Đồ Dã Ngoại Siêu Cuốn",
+      "title_vi": "Đá giày cắt khớp chuyển động đổi đồ mặc nhà sang đồ dã ngoại",
       "quick_takeaway": "Bóc tách trọn vẹn 7 phân cảnh mẫu mực trong video Reel của @hsuan_yunn (鍾瑄芸Shanny): Nghệ thuật kết hợp In-Camera Action Match Cut biến hình trang phục từ mặc nhà sang set đồ dã ngoại thể thao (Gorpcore/Athleisure) chỉ trong 0.43s, đồng t...",
       "key_tech": "In-Camera Action Match Cut, Low-Angle Squat Visual Anchor, Prop Kicking Visual Hook, Athleisure Styling Harmony, Over-the-Shoulder Bag Reveal",
       "shooting_style": {
@@ -29274,7 +29353,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@breth.co_DdK6GtHJPrH_Viral_Skateboard_Booth_Tour_Central_Market",
       "shortcode": "DdK6GtHJPrH",
-      "title_vi": "Where Is Your Booth? • Nghệ Thuật Dẫn Đường Pop-Up Store Bằng Ván Trượt Độc Lạ",
+      "title_vi": "Dẫn đường tìm gian hàng trong chợ bằng ván trượt và kết hài hước",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "Viral Marketing • Humor • Pop-up Store • Skateboard • Commercial",
       "shooting_style": {
@@ -29351,7 +29430,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
       "shortcode": "DdM7gO4yD-c",
-      "title_vi": "Kính Thông Minh Meta Ray-Ban vs Trị Mụn Hero Cosmetics Skit • Nghệ Thuật Lồng Ghép Quảng Cáo Skit Comedy Đỉnh Cao",
+      "title_vi": "Tiểu phẩm vui dùng kính thông minh nhắc chuyện trị mụn tự nhiên",
       "quick_takeaway": "Bóc tách 10 phân cảnh mẫu mực về nghệ thuật lồng ghép quảng cáo tự nhiên (Native Advertising) trong video skit hài hước của Steven Vuu: Sử dụng kính thông minh Meta Ray-Ban làm nhân vật phản biện chê mụn phũ phàng, chuyển tiếp khéo léo s...",
       "key_tech": "POV Speculative AI Fiction, Sensory Macro POV Dispense, Bathroom Mirror Routine, Subversive Comedy Punchline, Action Match Cut",
       "shooting_style": {
@@ -29416,7 +29495,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City",
       "shortcode": "DdJaKjQCMTm",
-      "title_vi": "How To Film Yourself In City • Công Thức 9 Phân Cảnh B-Roll Điện Ảnh",
+      "title_vi": "Công thức 9 góc tự đặt điện thoại quay bản thân ngoài phố",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu công thức 9 phân cảnh kinh điển quay phim bản thân giữa lòng đô thị của creator Yegor.Sky.",
       "key_tech": "Urban Self-Filming Formula, 9-Shot Montage, 1x & 2x Focal Shift",
       "shooting_style": {
@@ -29481,7 +29560,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
       "shortcode": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
-      "title_vi": "Ulanzi UA20 Đèn LED Thanh Bơm Hơi 20W Bi-Color Tích Hợp Pin",
+      "title_vi": "Quay giới thiệu đèn thanh bơm hơi từ lúc mở hộp đến bật sáng",
       "quick_takeaway": "Mẫu video quảng cáo UGC chuẩn AIDA: Trực quan, tập trung vào điểm khác biệt độc lạ và ứng dụng thực tế để chuyển đổi đơn hàng.",
       "key_tech": "UGC, Quảng cáo, AIDA",
       "shooting_style": {
@@ -29564,7 +29643,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
       "shortcode": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
-      "title_vi": "ULANZI MT80 Chân Máy Tripod Cao 213cm Tải Trọng 5kg",
+      "title_vi": "Quay thử độ cao hơn 2 mét và sức chịu tải thật của chân máy",
       "quick_takeaway": "Mẫu video UGC Shopee chuẩn AIDA: Khẳng định uy tín sản phẩm qua bài test chịu tải thực tế 5kg và chiều cao 213cm.",
       "key_tech": "UGC, Quảng cáo, AIDA",
       "shooting_style": {
@@ -29647,7 +29726,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing",
       "shortcode": "DaB-gO6hvPX",
-      "title_vi": "Jenny Tsang • Nghệ Thuật Mở Hộp Rương Mùa Hè Tory Burch & Phối Đồ Điện Ảnh - @tsangtastic",
+      "title_vi": "Mở hộp rương đồ hiệu mùa hè nối sang cảnh phối đồ bước ra phố",
       "quick_takeaway": "Nghệ thuật đập hộp thời trang cao cấp kết hợp dạo phố Lookbook: Sự hòa quyện giữa macro chi tiết da thuộc, chuyển động cơ thể nhẹ nhàng và tone màu điện ảnh ấm áp.",
       "key_tech": "Luxury PR Trunk Unboxing • Tracking Dolly Walk • Action Match Cut • Multi-Tier Drawer Reveal • Macro Accessory Showcase • Dreamy Pool Fantasy Cut",
       "shooting_style": {
@@ -29730,7 +29809,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant",
       "shortcode": "DdCRQnBI4ny",
-      "title_vi": "Triết Lý Fast Food Outsells Restaurant: Ẩn Dụ Thị Giác & Giữ Chân Khán Giả - @shogentle",
+      "title_vi": "Kể bài học kinh doanh qua hình ảnh ẩn dụ trong phòng ánh sáng tối",
       "quick_takeaway": "Nghệ thuật truyền tải bài học kinh doanh qua hình ảnh ẩn dụ: Ánh sáng Chiaroscuro tương phản sâu, nhịp cắt đanh thép và thông điệp thực chiến chạm trần nhận thức.",
       "key_tech": "Visual Metaphor, Proof Stacking, Pattern Interrupt, Scale Match Cut, Kinetic Typography Slate, Trapdoor Pun, Silhouette Crowd Dissolve, Zero-G Clones",
       "shooting_style": {
@@ -29812,7 +29891,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook",
       "shortcode": "DcQy-eEOIHc",
-      "title_vi": "Aidana • Tornado Kick Martial Arts Kinetic Hook & Match Action Chân Máy",
+      "title_vi": "Đặt chân máy cố định lặp lại cú đá xoay để chuyển giữa hai bối cảnh",
       "quick_takeaway": "Mẫu chuyển cảnh Level 2 chuẩn mực: Điện thoại đặt chân máy cố định, lặp lại cú đá xoay 2 lần ở 2 bối cảnh khác nhau tạo thành cú Match Cut giật gân triệu view.",
       "key_tech": "Martial Arts Tornado Kick Hook • Peak Momentum Action Match Cut • Editorial Stare Transition • Fluid Silk Fabric Physics • Over-The-Shoulder Silhouette • Intimate Hero Walk-In",
       "shooting_style": {
@@ -29897,7 +29976,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency",
       "shortcode": "DcxwKHYoBFv",
-      "title_vi": "Critos Pro • The Art of Consistency: Bàn Làm Việc Công Nghệ & Match Cut Cố Định",
+      "title_vi": "Cố định máy chiếu thẳng xuống bàn cắt theo từng nhịp tay thao tác",
       "quick_takeaway": "Nghệ thuật dựng video bàn làm việc công nghệ: Đặt điện thoại cố định trên chân máy, cắt cảnh theo từng cú chạm tay dứt khoát 15 micro-beats.",
       "key_tech": "Micro-Staccato Speed Cut, Day-to-Night Match Cut, Desk Setup B-Roll, Dual Amber Accent Lighting, Closed-Loop Visual Rhythm, Multi-Angle Consistency, Audio Sensory Trigger",
       "shooting_style": {
@@ -29981,7 +30060,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion",
       "shortcode": "DawDiT2M1p8",
-      "title_vi": "Jamison Lange • Coffee + Outfit Match Cut Transition: Biến Hình Thời Trang Chân Máy",
+      "title_vi": "Đặt chân máy nâng ly cà phê và dậm chân để đổi bộ trang phục",
       "quick_takeaway": "Bài tập kinh điển của khóa học video.fedu.vn: Điện thoại để chân máy, nâng ly cà phê hoặc dậm chân 2 lần thành chuyển cảnh biến hình thời trang triệu view.",
       "key_tech": "Match Cut Transitions, Visual Sub-framing, Tactile Macro Shots, Wardrobe Continuity, Symmetrical Framing, Dopamine Pacing",
       "shooting_style": {
@@ -30065,7 +30144,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mako__go_DaH7X34NTNX_Palermo_Sicily",
       "shortcode": "DaH7X34NTNX",
-      "title_vi": "Mako • Khung Hình Tĩnh Đón Dòng Người Palermo Sicily - @mako__go",
+      "title_vi": "Đặt khung hình tĩnh qua cổng vòm đón dòng người và xe qua lại",
       "quick_takeaway": "Nghệ thuật đóng khung tĩnh: Hãy để khung hình cố định hoàn toàn và biến dòng chảy đời sống (người đi bộ, xe cộ, rèm bay trong gió) thành nhân vật chính. Khung hình tĩnh nhưng tâm trí người xem chuyển động.",
       "key_tech": "Static Camera Framing • Natural Archway Framing • Z-Axis Perspective Compression • Wes Anderson Symmetry • Organic Movement",
       "shooting_style": {
@@ -30148,7 +30227,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
       "shortcode": "DdEshZtz9Rb",
-      "title_vi": "Josh Diaz • Lifestyle Habit & Cinematic B-Roll Routine",
+      "title_vi": "Kể chuyện chuẩn bị làm việc chăm chỉ rồi bất ngờ leo lên ngủ tiếp",
       "quick_takeaway": "Nghệ thuật giữ chân người xem bằng Visual Punchline: Thiết lập kỳ vọng nhân vật chuẩn bị làm việc hăng say, rồi bất ngờ cắt phắt trở lại giường ngủ tiếp — sự đối lập giữa hình ảnh và thông điệp tạo hiệu ứng viral tột độ.",
       "key_tech": "Overhead Top-Down, Fisheye Vignette, Dappled Light, Visual Punchline Twist",
       "shooting_style": {
@@ -30232,7 +30311,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
       "shortcode": "DdF-qr0s4Kk",
-      "title_vi": "Neolumo • Phóng Sự Trị Liệu Da Liễu Y Khoa & Thẩm Mỹ - @neolumo.uralsk",
+      "title_vi": "Bác sĩ bước ra chào khách xen cảnh cận làm sạch da tại phòng khám",
       "quick_takeaway": "Trong video spa y khoa, hãy để bác sĩ tự tin bước ra chào đón ở 3 giây đầu, dùng góc Macro cận cảnh chứng minh hiệu quả lấy sạch bã nhờn, và kết thúc bằng góc Talking Head nhìn thẳng vào mắt khách hàng để kêu gọi inbox.",
       "key_tech": "Sterile Clinic Walk-and-Talk Hook • Talking Head Medical Authority • Ultrasonic Peeling Micro-Vibration • Sterile Gauze Mechanical Extraction • Uno Loop Macro Visual Proof • Alginate Soothing Gel Therapy • Minimalist Marble Luxury Outro",
       "shooting_style": {
@@ -30317,7 +30396,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@watch.gabe_Dc3immEILSE_Build_B_Roll_Library_Year",
       "shortcode": "Dc3immEILSE",
-      "title_vi": "Quy Trình Xây Dựng Kho B-Roll Dùng Suốt 1 Năm - @watch.gabe",
+      "title_vi": "Hướng dẫn gom cảnh sinh hoạt đời thật làm kho hình dùng cả năm",
       "quick_takeaway": "B-roll giá trị nhất là B-roll có hơi thở đời sống thật. Đừng quay nhát gừng từng shot ngắn, hãy quay theo chuỗi hành động trọn vẹn và đóng gói thành 10 phút footage tinh hoa trong 30 ngày.",
       "key_tech": "B-Roll Library System, Sequence Shooting vs Single Shots, Anti-Burnout Workflow, Everyday Life as Movie Scenes, Overshoot Multi-Angle Strategy, 30-Day Batch Challenge, Mini-Story Micro-Pacing, Retention Carousel Structure",
       "shooting_style": {
@@ -30400,7 +30479,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis",
       "shortcode": "Dc3ih_5jlqz_Carousel_Analysis",
-      "title_vi": "Showcase thị giác &amp; Thẩm mỹ — Kỹ Thuật Quay B-Roll &amp; Bố Cục (Gabe Harris)",
+      "title_vi": "Luyện 7 khung hình tĩnh kết hợp đủ góc rộng, góc trung và cận",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 7 phân cảnh.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
@@ -30465,7 +30544,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions",
       "shortcode": "DdBDvZph1od",
-      "title_vi": "Hoi An Natural Mask Transitions - @hey.lirules",
+      "title_vi": "Tận dụng người qua đường che ống kính để nối 11 cảnh phố cổ",
       "quick_takeaway": "Bí quyết chuyển cảnh che vật thể: Tận dụng dòng người qua đường đi sát ống kính để tạo 'màn nhung tự nhiên', đồng pha hướng di chuyển và đặt khung hình rực rỡ nhất ngay sau cú che tối để kích hoạt Dopamine người xem.",
       "key_tech": "Foreground Occlusion Mask Cut • Saccadic Masking • Parallax Z-Axis Depth • Chiaroscuro Shadow Art • Atmospheric B-Roll",
       "shooting_style": {
@@ -30549,7 +30628,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch",
       "shortcode": "Dc1w07upyNF",
-      "title_vi": "Nghệ Thuật Quay Đồ Ăn & Food Styling 4 Bước - @alena.feda - @alena.feda",
+      "title_vi": "Hướng dẫn 4 bước kê thớt và đặt đèn xiên để quay món ăn ngon mắt",
       "quick_takeaway": "Công thức quay video đồ ăn triệu view: 1. Đánh trúng nỗi đau quay vụng về ➔ 2. Bật đèn studio tạt nghiêng 45° tạo bóng đổ Chiaroscuro ➔ 3. Dùng thớt gỗ làm bục nâng đa tầng ➔ 4. Đưa màu đỏ/vàng mùa thu kích thích vị giác ➔ 5. Chuỗi B-roll giác quan: Dao bén cắt táo, caramel sôi bọt, gõ vỏ bánh mì giòn, miết phô mai lượn sóng, xếp táo vảy cá và cú rót mật ong đỉnh cao.",
       "key_tech": "4-Step Food Styling Framework • Directional Side Key Light 45° • Depth via Rustic Wood Riser • Autumn Color Palette Accent • Macro Knife Crunch • Sizzling Caramel Texture • Slow-Mo Honey Drizzle • Sensory Food ASMR",
       "shooting_style": {
@@ -30633,7 +30712,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
       "shortcode": "DcyS2KEm7-v",
-      "title_vi": "Ulanzi LA30 30W RGB Air Tube Light - @ulanzi.global",
+      "title_vi": "Mở hộp và thử ánh sáng đèn ống bơm hơi đổi màu Ulanzi LA30",
       "quick_takeaway": "Công thức video thương mại thiết bị công nghệ: Mở đầu bằng cú đập hộp dứt khoát 0.6s -> Điểm bùng nổ tính năng đột phá (bơm phồng đèn khí) -> Trình diễn công năng thực tế (RGB, nam châm, OLED) -> Kết bài khẳng định đẳng cấp thương hiệu.",
       "key_tech": "Auto-Inflation Showcase • Fast Unboxing Hook • Soft Air Diffusion • Magnetic Rigging • Dynamic RGB Lighting",
       "shooting_style": {
@@ -30716,7 +30795,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide",
       "shortcode": "DcoPBXdDPro",
-      "title_vi": "Quy Trình Setup Góc Quay Livestream & Đèn 2 Điểm Cực Nhanh - @inbex.id",
+      "title_vi": "Quy trình 7 cảnh lắp 2 đèn và chân máy biến phòng trống thành góc quay",
       "quick_takeaway": "Không cần dàn đèn đắt đỏ hay kỹ thuật phức tạp: 1 đèn chính Softbox 45 độ phía trước kết hợp 1 đèn ven sau gáy là đủ để biến mọi căn phòng đơn sơ thành studio livestream chuyên nghiệp.",
       "key_tech": "2-Point Studio Lighting • 45° Key Light Calibration • Rim Light Hair Separation • Negative Hook Visual Error Alert (Red X) • Eye-Level Camera Alignment • Pacing Bridge Subject Entry • Cinematic Portrait Payoff",
       "shooting_style": {
@@ -30800,7 +30879,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
       "shortcode": "DcyDbGmItDV",
-      "title_vi": "Triết Lý 1 Đèn Đánh Bại 5 Đèn: Nghệ Thuật Chiếu Sáng Chiaroscuro & Vòng Lặp Vô Tận - @shogentle",
+      "title_vi": "Ngồi chia sẻ cách dùng một cây đèn tạo chiều sâu cho gương mặt",
       "quick_takeaway": "Không phải càng nhiều đèn là càng đẹp. Chính bóng tối (Shadow) mới tạo nên độ nổi khối và cảm xúc điện ảnh. Hãy mạnh dạn tắt bớt đèn và để một nửa gương mặt chìm vào bóng tối.",
       "key_tech": "Chiaroscuro Lighting, Rembrandt Split Light, Pattern Interrupt, Proof Stacking, Infinite Narrative Loop, Staging Escalation",
       "shooting_style": {
@@ -30884,7 +30963,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01",
       "shortcode": "Dca9-aWotLM",
-      "title_vi": "Unboxing - Ulanzi LM01 - @_mubeenart",
+      "title_vi": "Mở hộp phụ kiện nhỏ trên bàn gỗ kết hợp đánh sáng tạo bóng",
       "quick_takeaway": "Quy trình đập hộp 17 bước chuẩn mực quốc tế: Mở đầu bằng Hero Silhouette ấn tượng, tăng tốc dopamine bằng chuỗi Gobo Staccato nhịp nhanh, hạ nhịp êm dịu bóc hộp trên mặt bàn gỗ mộc và đặc tả chi tiết cơ khí Macro 1:1.",
       "key_tech": "Cinematic ASMR Unboxing • Staccato Gobo Flash Montage • Macro Extreme Close-Up • Sunset Lamp Halo Silhouette • Optical Zoom Lens • Tactile Sound Design",
       "shooting_style": {
@@ -30968,7 +31047,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes",
       "shortcode": "DZXpNj_IveV",
-      "title_vi": "Giải Mã 5 Công Thức Visual Hook & Phễu Chuyển Đổi Inbound Triệu View - @alexboissetgrowth",
+      "title_vi": "Vừa chia sẻ kiến thức vừa tự đổi 5 góc đặt và cầm điện thoại",
       "quick_takeaway": "Sau khi giật sự chú ý bằng Visual Hook trong 5 giây đầu, lập tức gọi tên vấn đề nhức nhối (Reach - Retention) và dẫn dắt người xem vào hành động vi mô (bình luận 1 từ khóa) để kích hoạt phễu tự động ManyChat thu lead chất lượng cao.",
       "key_tech": "5 Visual Hooks Formula • Tactile Mic-Tap ASMR • Desk POV & Camera Lift • Direct-to-Camera Authority • Catalan Vault Architecture • Natural Daylight Aesthetics • Automated ManyChat Inbound Funnel • Single-Word Micro-Commitment CTA",
       "shooting_style": {
@@ -31053,7 +31132,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro",
       "shortcode": "DbVhTUiznEp",
-      "title_vi": "Quán Cà Phê San Euljiro - Tái Định Vị Thương Hiệu & B-Roll Không Gian Ẩm Thực Tối Giản - @cafe.pilgrim",
+      "title_vi": "Quay 10 góc tĩnh giới thiệu quán cà phê từ vỉa hè vào quầy pha chế",
       "quick_takeaway": "Sử dụng cửa sổ mở hất (Awning Window) làm mỏ neo thị giác kết nối đường phố và nội thất; quay cận cảnh dòng nước cà phê pour-over và đá viên để kích thích giác quan thèm muốn tức thì.",
       "key_tech": "Architectural Awning Window Framing • Artisanal Pour-Over Craftsmanship • Sensory Drip Ice ASMR Visual • Layered Marble Swirl Macro • Vaulted Plaster Arch One-Point Perspective • 1-Second Rhythmic Cadence • Urban Contrast Outro",
       "shooting_style": {
@@ -31138,7 +31217,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life",
       "shortcode": "DbJcoLdssK6",
-      "title_vi": "Quy Trình Chuẩn Bị Giải Đua 99 Laps & Nghệ Thuật Montage Nhịp Nhanh Thể Thao - @nicorauchenwald",
+      "title_vi": "Một ngày tập luyện từ bếp sớm ra đường rừng chuẩn bị giải chạy",
       "quick_takeaway": "Video thể thao ngắn đóng vai trò như một trailer cảm xúc dồn nén. Nhịp cắt chuẩn beat kết hợp sự tương phản giữa thiên nhiên hoang dã và không gian kỷ luật tạo sức hút mãnh liệt, thôi thúc khán giả tìm đến video dài trên YouTube.",
       "key_tech": "Beat-Synced Micro-Montage • Static Typography Visual Anchor • High-Contrast Juxtaposition • Low-Key Gym Silhouette • In-Field Tailgate Staging • Volumetric Steam God Rays • Open-Ended YouTube Bridge",
       "shooting_style": {
@@ -31223,7 +31302,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
       "shortcode": "Dc-6BFdi7bU",
-      "title_vi": "Nghệ Thuật Biến Vali Du Lịch Thành Chuỗi Thước Phim Điện Ảnh - @yegor.sky",
+      "title_vi": "Biến cảnh xếp vali ở nhà thành phim ngắn bằng 10 góc đặt máy lạ",
       "quick_takeaway": "Không cần thiết bị phức tạp, chỉ cần thay đổi góc nhìn (Eye level -> Top down -> Trunk POV -> Worm's eye view) và tận dụng nắp vali / quần áo tạo cú lau đen chuyển cảnh là có thể biến bất kỳ vật phẩm thường nhật nào thành thước phim điện ảnh cuốn hút.",
       "key_tech": "Cinematic Object Sequence • Multi-Angle Storytelling • Trunk POV (Inside-Suitcase Shot) • Occlusion Black Wipe & Match Cut • Macro Zipper Detail • Worm's Eye View Floor Tracking Parallax",
       "shooting_style": {
@@ -31307,7 +31386,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode",
       "shortcode": "DcgN1bsKUmi",
-      "title_vi": "Kỹ Thuật Motion Match Cut Chuyển Trạng Thái Vào Chế Độ Chạy Bộ - @etaemin",
+      "title_vi": "Vung chân đổi đồ công sở sang đồ chạy bộ và khởi động khớp nhạc",
       "quick_takeaway": "Cú vung chân đá tạo động lượng mạnh mẽ kết nối giữa hai thế giới: thường nhật và vận động. Chuỗi cắt cảnh khởi động khớp nhạc gián tiếp tạo cảm hứng bứt tốc cho khán giả.",
       "key_tech": "In-Place Motion Match Cut • Momentum Continuation Kick • Beat-Synced Dynamic Warm-Up Jump Cuts • Single-Leg Balance Anchor • High-Contrast Color Pop (Black to White) • Anticipation Peak Outro",
       "shooting_style": {
@@ -31393,7 +31472,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever",
       "shortcode": "Dc9LUXLAHkc",
-      "title_vi": "Getting Ready Faster Than Ever - @jesussropero",
+      "title_vi": "Dậm chân lên ống kính đặt dưới sàn để chuyển từ nhà ra phố",
       "quick_takeaway": "Kỹ thuật Match Cut dậm chân (Foot Stamp Wipe) kết hợp góc máy Low-Angle từ sàn nhà chuyển ra ngoài trời, biến chuỗi chuẩn bị trang phục hàng ngày thành một màn trình diễn thị giác đầy năng lượng trong đúng 6 giây.",
       "key_tech": "Fast-Paced Rhythm Cut, Match Cut Quần Áo, Foot Stamp Lens-Wipe, Ground-Level Low-Angle, Kinetic Typography, Camera Pickup Transition, 120 BPM Beat Sync, Hero Strut Walking",
       "shooting_style": {
@@ -31481,7 +31560,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds",
       "shortcode": "DbILcfyxZot",
-      "title_vi": "Layton • 6 Góc Máy Trong 60 Giây: Thao Lược B-Roll Thần Tốc Cầu Đi Bộ - @layton_video",
+      "title_vi": "Vừa đi vừa hướng dẫn cách lấy nhanh 6 góc cảnh đẹp trong một phút",
       "quick_takeaway": "Công thức 6 góc máy thần tốc: Thay đổi tiêu cự từ Macro đến Ultra-wide để tối ưu hóa địa điểm quay trong thời gian ngắn nhất.",
       "key_tech": "Speedrun Walk & Talk • Wide Establishing • High Wide Railing 45° • Overhead Symmetry • Frame Within A Frame Nan Gỗ • Low Medium Pacing • Worm's Eye View Parallax • Anticipation Countdown Riser • Fast Kinetic Multi-Angle Cut",
       "shooting_style": {
@@ -31565,7 +31644,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@wowshoebwow_Db_EEZtjJBI_Moving_Postcards_London_Trafalgar",
       "shortcode": "Db_EEZtjJBI",
-      "title_vi": "Moving Postcards From London: Quảng Trường Trafalgar - @wowshoebwow",
+      "title_vi": "Quay 3 khung hình tĩnh đón đàn chim và nắng chiều ngoài quảng trường",
       "quick_takeaway": "Chuỗi bưu thiếp chuyển động (Moving Postcards) ghi lại nhịp sống biểu tượng tại Quảng trường Trafalgar London: Khung hình tĩnh đón đàn chim bồ câu cất cánh, đài phun nước rực sáng dưới nắng chiều, và dòng người qua lại trên nền kiến trúc...",
       "key_tech": "Moving Postcards Frame, Pigeon Flock Kinetic Burst, Backlit Water Fountain, Grand Architecture Symmetry, London Cinematic Color",
       "shooting_style": {
@@ -31646,7 +31725,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@gogosapu_Db5TrGYlKbD_Still_vs_Moving_Frame_Story",
       "shortcode": "Db5TrGYlKbD",
-      "title_vi": "Khung Hình Tĩnh vs Khung Hình Chuyển Động - @gogosapu",
+      "title_vi": "Đặt cạnh ảnh chụp tĩnh và cảnh lia máy mượt để thấy sức hút video",
       "quick_takeaway": "A still frame captures a moment. A moving frame tells the story.",
       "key_tech": "Still vs Moving Frame Juxtaposition, Cinematic Street Panning, Leading Lines in Motion, Visual Depth Extension",
       "shooting_style": {
@@ -31727,7 +31806,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority",
       "shortcode": "DcOUP2PsMsP",
-      "title_vi": "Cấu Trúc Video Thương Mại Giới Thiệu Dịch Vụ Y Tế - @neolumo.uralsk",
+      "title_vi": "Giới thiệu phòng khám kết hợp chuyên gia tư vấn và máy móc hiện đại",
       "quick_takeaway": "Bóc tách chuẩn mực video quảng cáo thương mại (Commercial Video) cho phòng khám y tế: Ánh sáng High-key trong trẻo tạo niềm tin, chuyển động lia máy gimbal mượt mà qua thiết bị công nghệ sinh học, và nhịp dựng giới thiệu chuyên gia kèm C...",
       "key_tech": "High-key Clinical Trust Lighting, Smooth Tech Gimbal Glide, Expert Authority Positioning, Diagnostic B-roll Clarity, WhatsApp CTA",
       "shooting_style": {
@@ -31808,7 +31887,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
       "shortcode": "DcVzQCSP1MR",
-      "title_vi": "Nghệ Thuật Kể Chuyện Cuộc Sống Thường Nhật - @hena_film_vlog",
+      "title_vi": "Nhật ký trở về nhà buổi chiều với góc máy thấp và âm thanh mộc",
       "quick_takeaway": "Bóc tách phong cách vlog Hàn Quốc chữa lành (Healing Daily Vlog): Góc máy thấp đặt cạnh thềm cửa, ánh sáng tự nhiên ấm áp, âm thanh ASMR tiếng mở cửa, cởi giày, tiếng bước chân mộc mạc kết hợp phụ đề duyên dáng thu hút học viên.",
       "key_tech": "Threshold Floor-level Angle, ASMR Daily Soundscape, Warm Ambient Sunlight, Healing Narrative Rhythm, Interactive Engagement CTA",
       "shooting_style": {
@@ -31883,7 +31962,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro",
       "shortcode": "DcJIT4DzPhj",
-      "title_vi": "Khung Hình Điện Ảnh Tối Giản Về Kỷ Luật Bản Thân - @jackwebstter",
+      "title_vi": "Quay 4 cảnh tĩnh bàn làm việc tối giản kèm dòng chữ về sự kỷ luật",
       "quick_takeaway": "Phân tích nghệ thuật thị giác tối giản (Minimalist Cinematic): Ánh sáng tương phản cao Chiaroscuro trong phòng làm việc, nhịp cắt tĩnh lặng truyền tải thông điệp sâu sắc 'Cuộc đời bạn muốn nằm sau công việc bạn đang trốn tránh'.",
       "key_tech": "Chiaroscuro Shadow Carving, Deep Focus Work Silhouette, Minimalist Frame Geometry, Psychological Tension Pacing",
       "shooting_style": {
@@ -31964,7 +32043,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@srdtrv_DcbJDDNi7h8_Behind_The_Scenes_Directing_Mastery",
       "shortcode": "DcbJDDNi7h8",
-      "title_vi": "Bóc Tách Hậu Trường Quay Phim Điện Ảnh Thực Chiến - @srdtrv",
+      "title_vi": "Đối chiếu cảnh hậu trường đạo diễn cầm máy với thước phim thành phẩm",
       "quick_takeaway": "Phân tích video hậu trường (Behind The Scenes - BTS): Sự đối chiếu giữa góc nhìn thực tế của người cầm máy và thành phẩm điện ảnh xuất hiện trên màn hình monitor, bài học về cách điều phối chuyển động nhân vật và ánh sáng đèn ngoài trời.",
       "key_tech": "BTS vs Monitor Match Comparison, Real-world Gimbal Movement, Natural Daylight Diffusion, Subject Direction & Blocking",
       "shooting_style": {
@@ -32045,7 +32124,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@withgeorgy_Db7_3rpgK5c_Cinematic_Travel_iPhone_Mastery",
       "shortcode": "Db7_3rpgK5c",
-      "title_vi": "Kỹ Thuật Quay Video Du Lịch Bằng iPhone Đỉnh Cao - @withgeorgy",
+      "title_vi": "Quay cảnh du lịch lúc hoàng hôn bằng iPhone",
       "quick_takeaway": "Bóc tách chuỗi phân cảnh du lịch quay hoàn toàn bằng iPhone: Khai thác camera 5x Telephoto nén phong cảnh núi non, chuyển động đi bộ mượt mà Action Mode, và kỹ thuật phơi sáng vùng sáng (Highlight Roll-off) giữ trọn bầu trời hoàng hôn rự...",
       "key_tech": "iPhone 5x Telephoto Landscape Compression, Action Mode Smooth Walking, Highlight Roll-off Preservation, Golden Hour Mountain Glow",
       "shooting_style": {
@@ -32126,7 +32205,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bewoom__DcYxC8wvt1z_Sasohan_Daejeon_Hanok_Serenity",
       "shortcode": "DcYxC8wvt1z",
-      "title_vi": "Sasohan Daejeon: Nghệ Thuật Không Gian Gỗ Tĩnh Lặng - @bewoom_",
+      "title_vi": "Quay 11 cảnh tĩnh không gian quán gỗ mộc mạc và ấm trà bốc khói",
       "quick_takeaway": "Bóc tách các phân cảnh không gian kiến trúc gỗ truyền thống Hàn Quốc (Hanok Slow Living): Khung cửa gỗ thấp dẫn mắt, ánh nắng len qua khe liếp tre, góc quay tĩnh ngắm ấm trà bốc khói và nhịp thở an yên của không gian văn hóa Daejeon.",
       "key_tech": "Traditional Hanok Framing, Slanted Bamboo Sunlight Texture, Meditative Static Shot, Tea Steam Silhouette, Minimalist Wood Geometry",
       "shooting_style": {
@@ -32207,7 +32286,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@onethebaha_DcWEp8-swbB_Seamless_Spin_Whip_Pan_Tutorial",
       "shortcode": "DcWEp8-swbB",
-      "title_vi": "Kỹ Thuật Chuyển Cảnh Xoay Tròn Liền Mạch (Whip Pan Transition) - @onethebaha",
+      "title_vi": "Hướng dẫn xoay nhanh điện thoại cùng chiều để nối mượt hai bối cảnh",
       "quick_takeaway": "Bóc tách video hướng dẫn kỹ thuật chuyển cảnh xoay máy (Whip Pan / Spin Transition): Bí quyết đồng bộ tốc độ xoay camera giữa hai bối cảnh, giữ trục chân trời ổn định và kỹ thuật cắt giấu mép chuyển động (Motion Blur Masking) kết hợp hiệ...",
       "key_tech": "Whip Pan Rotation Sync, Motion Blur Match Cut, Horizon Line Lock, Whoosh SFX Integration, Dynamic Camera Whip",
       "shooting_style": {
@@ -32290,7 +32369,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@brandon.dtd_DcTbD0MR-V__Discipline_Motivation_Obsession",
       "shortcode": "DcTbD0MR-V",
-      "title_vi": "Nhịp Dựng Điện Ảnh Về Kỷ Luật & Ám Ảnh Thành Công - @brandon.dtd",
+      "title_vi": "Dựng 18 cảnh tập thể lực trong phòng tối cắt nhanh theo nhịp trống",
       "quick_takeaway": "Bóc tách video thể thao & rèn luyện thể lực: Nhịp dựng dồn dập (Fast-paced Montage) kết hợp âm bass trầm hùng, ánh sáng Low-key tương phản cao làm nổi khối cơ bắp và mồ hôi, truyền tải động lực mạnh mẽ về tính kỷ luật và sự kiên trì.",
       "key_tech": "Fast-paced Motivational Montage, Low-key Muscle Chiaroscuro, Sub-bass Audio Impact, Heavy Contrast Grading, Tenacity Narrative",
       "shooting_style": {
@@ -32375,7 +32454,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@photoknack.in_DcD30ThT7Zm_Small_Balcony_Big_Frame_Perspective",
       "shortcode": "DcD30ThT7Zm",
-      "title_vi": "Biến Ban Công Nhỏ Thành Khung Hình Điện Ảnh Triệu View - @photoknack.in",
+      "title_vi": "Cách tận dụng lan can ban công nhỏ tạo 4 góc quay có chiều sâu",
       "quick_takeaway": "Bóc tách tư duy khai thác không gian hạn chế của nhiếp ảnh gia và đạo diễn: Biến góc ban công nhỏ hẹp thành khung hình điện ảnh triệu view thông qua việc tận dụng lan can sắt làm tiền cảnh đóng khung (Framing Railing), bắt vệt nắng xiên ...",
       "key_tech": "Railing Foreground Natural Framing, Golden Hour Slanted Sunlight, Depth Compression in Small Space, Perspective Shift Technique",
       "shooting_style": {
@@ -32456,7 +32535,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@nana_icroom_Db-jmp6TXNT_5_Japanese_Vlog_Compositions",
       "shortcode": "Db-jmp6TXNT",
-      "title_vi": "5 Bố Cục Quay Vlog Chuẩn Phong Cách Nhật Bản - @nana_icroom",
+      "title_vi": "Luyện 5 góc đặt máy cố định trong phòng theo kiểu tối giản Nhật",
       "quick_takeaway": "Bóc tách 5 bố cục quay vlog phong cách Nhật Bản (Slow Living & Aesthetic Room): 1. Bố cục đối xứng trục cửa Shoji, 2.",
       "key_tech": "Shoji Door Symmetry, Waist-level Neutral Angle, Sheer Curtain Light Diffuser, Static Frame Entry, Layered Doorway Peeking",
       "shooting_style": {
@@ -32537,7 +32616,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lacapturevisuals_DZWRDtqMNWq_Coffee_Shop_Broll_Mastery",
       "shortcode": "DZWRDtqMNWq",
-      "title_vi": "6 Góc Quay B-Roll Quán Cà Phê Bắt Trọn Cảm Xúc - @lacapturevisuals",
+      "title_vi": "Mẫu 6 góc quay cảnh phụ dễ làm ngay trong một buổi đi cà phê",
       "quick_takeaway": "Bóc tách 6 góc quay B-roll quán cà phê chuẩn điện ảnh: Từ chi tiết rót sữa tạo hình Latte Art, hơi khói bốc lên từ ly espresso nóng, ánh sáng tự nhiên hắt qua rèm cửa sổ, đến thao tác gõ phím bên bàn gỗ mộc mạc và âm thanh ASMR tiếng máy...",
       "key_tech": "Latte Art Macro Pouring, Espresso Steam Lighting, Natural Window Side-light, Wooden Texture Contrast, ASMR Coffee Foley",
       "shooting_style": {
@@ -32618,7 +32697,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@pascal_blaurock_Dcd2VeyNJQx_iPhone_Cinema_Settings_Mastery",
       "shortcode": "Dcd2VeyNJQx",
-      "title_vi": "Tối Ưu Cài Đặt iPhone Để Quay Video Chuẩn Máy Ảnh Điện Ảnh - @pascal_blaurock",
+      "title_vi": "Hướng dẫn cài đặt thông số điện thoại và cách bước đi chống rung",
       "quick_takeaway": "Bóc tách trọn vẹn cẩm nang quay video điện ảnh chuyên nghiệp trên iPhone: Kỹ thuật khóa nét và phơi sáng (AE/AF Lock), thiết lập tốc độ màn trập chuẩn 180 độ (180° Shutter Rule), quay ProRes Log để kéo màu trên DaVinci Resolve, và tư thế...",
       "key_tech": "AE/AF Lock Exposure, 180-Degree Shutter Rule, Apple ProRes Log Grading, Ninja Walk Body Gimbal, Dynamic Range Optimization",
       "shooting_style": {
@@ -32699,7 +32778,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery",
       "shortcode": "DcdthwaTM3J",
-      "title_vi": "7 Góc Máy Điện Ảnh Cho B-Roll Bàn Làm Việc - @kortafilms",
+      "title_vi": "7 góc máy quay bàn làm việc có chiều sâu không cần lộ mặt",
       "quick_takeaway": "Bóc tách 8 phân cảnh chuẩn đạo diễn về 7 góc máy điện ảnh quay b-roll không gian làm việc sáng tạo (Desk Setup / Workspace Filmmaking): 1. Low Angle mở laptop hắt sáng màn hình, 2.",
       "key_tech": "Low Angle Laptop Opening • First-Person POV Storyboard • Macro Close-Up Typing • Over-The-Shoulder Depth • Top-Down 90° Desk Symmetry • Ground-Level Softbox Grid • High Angle 45° Mouse • Low Dutch Drawer CTA Outro",
       "shooting_style": {
@@ -32780,7 +32859,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow",
       "shortcode": "DY_0KNxvNJa",
-      "title_vi": "Hena Film Vlog • 5 Bố Cục Mở Hộp Unboxing Đồ Công Nghệ Chuẩn Điện Ảnh",
+      "title_vi": "5 góc máy mở hộp sản phẩm gọn đẹp ngay trên mặt bàn",
       "quick_takeaway": "Bóc tách 26 phân cảnh chuẩn đạo diễn về cấu trúc 5 nhịp điện ảnh cho video mở hộp unboxing & review sản phẩm (Action-hook, Top-down Flat Lay, Side Profile, List-shot Knolling, và In-Context Climax Ending) trên chiếc đèn bàn Ilkwang Light...",
       "key_tech": "Action-hook Xé Dán & Gia Tốc Hộp, Top-down Flat Lay Layered Unboxing, Side View Chiều Sâu 3D, List-shot Knolling Sắp Đặt, In-Context Climax Bật Sáng",
       "shooting_style": {
@@ -32861,7 +32940,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining",
       "shortcode": "DZFzj9YAAmG",
-      "title_vi": "Firewood KLCC • Nghệ Thuật Nấu Bếp Củi & Bản Lĩnh Nữ Bếp Trưởng - @firewood_klcc",
+      "title_vi": "Kể hành trình làm nghề 13 năm của nữ bếp trưởng bên bếp củi",
       "quick_takeaway": "Bóc tách 23 phân cảnh chuẩn đạo diễn trong thước phim ẩm thực tinh hoa của Firewood KLCC: Khám phá hành trình 13 năm trui rèn của Nữ Bếp trưởng Qaia Yew (từ Bread Street Kitchen của Gordon Ramsay đến Michelin Soigné), nghệ thuật điều khi...",
       "key_tech": "Woodfire Culinary Cinematography, Chiaroscuro Low-Key Lighting, Sizzling Flame Macro, Top-Down Match Cut, Artisan Plating Motion, Documentary Chef Storytelling",
       "shooting_style": {
@@ -32942,7 +33021,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@the.vantage.point_Dct9JzWKVFo_NYC_Morning_Light",
       "shortcode": "Dct9JzWKVFo",
-      "title_vi": "The Beauty of Static - NYC Morning Light",
+      "title_vi": "Đặt máy đứng yên bắt nắng sớm xiên qua góc phố và tòa nhà",
       "quick_takeaway": "Tuyệt tác thị giác tôn vinh 'Vẻ đẹp của sự Tĩnh Lặng' (The Beauty of Static) giữa nhịp sống hối hả của New York City buổi sớm. Tác giả đã bậc thầy sử dụng các góc máy khóa tĩnh (locked-off shots), kết hợp nguồn ánh sáng tự nhiên xiên góc...",
       "key_tech": "Static Cinematography, Early Morning Sunlight, Chiaroscuro Contrast, One-Point Perspective, Architectural Symmetry",
       "shooting_style": {
@@ -33017,7 +33096,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear",
       "shortcode": "Dc0zzrWj8Vu",
-      "title_vi": "Beixin • Sony Kando 2026: Thao Lược Ống Kính & Nghệ Thuật Kể Chuyện",
+      "title_vi": "Lồng ghép thiết bị máy ảnh vào cảnh đẹp văn hóa cung đình Huế",
       "quick_takeaway": "Bóc tách chuyên sâu album carousel 7 phân cảnh đỉnh cao của đạo diễn hình ảnh @beixin tại sự kiện Sony Kando Trip 2026. Phân tích chi tiết sự kết hợp hoàn mỹ giữa chất liệu văn hóa di sản cung đình Huế (Áo Dài, diều phượng hoàng, lọng ch...",
       "key_tech": "Sony A1 II & FX5 • FE 28-70mm F2 GM • Shutter Drag Motion Blur • Prism Lens Flare • Telephoto Compression Drift",
       "shooting_style": {
@@ -33098,7 +33177,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jsnhow_Dcz7nniBEFe_Unwinding",
       "shortcode": "Dcz7nniBEFe",
-      "title_vi": "Unwinding • Nhịp Điệu Chữa Lành Giữa Tự Nhiên & Nghệ Thuật Nén - Giãn Nhịp Phim - @jsnhow",
+      "title_vi": "Đan xen cảnh cắt nhanh theo nhạc và cảnh tĩnh dài giữa thiên nhiên",
       "quick_takeaway": "Bóc tách toàn diện phong cách điện ảnh 'Unwinding' của Jason How (@jsnhow). Video khai thác cấu trúc nén - giãn nhịp điệu (Compression & Expansion Pacing) tài tình: đan xen giữa các chuỗi montage chuyển cảnh dồn dập 6 micro-shots (0.3s -...",
       "key_tech": "Cấu trúc Co-Giãn Nhịp Phim (Compression & Expansion Pacing) • Tone Màu Deep Pine Film LUT • Kỹ thuật Bắt Sáng Tự Nhiên Komorebi Flare • Cắt Cảnh Rhythmic Cut theo Nhịp Âm Thanh Lofi",
       "shooting_style": {
@@ -33173,7 +33252,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sajad_machu_DcBjIwPMMfa_Creative_Block_Loop",
       "shortcode": "DcBjIwPMMfa",
-      "title_vi": "Vòng Lặp Bế Tắc Sáng Tạo: Bẫy Trì Hoãn & Nghệ Thuật Infinite Loop Đỉnh Cao - @sajad_machu",
+      "title_vi": "Kể chuyện bí ý tưởng rồi lướt điện thoại bằng cảnh nối vòng lặp",
       "quick_takeaway": "Bóc tách 14 phân cảnh chuẩn đạo diễn trong kiệt tác short-form của Sajad Machu: Nghệ thuật kể chuyện bẫy trì hoãn (Creative Block & The Endless Scroll), thủ pháp tương phản không gian (Create vs Consume), sự tha hóa nhận thức qua ánh mắt...",
       "key_tech": "Infinite Loop Editing, ASMR Tactile Sound, Stop-Motion Erasure, Macro Iris Reflection, Dutch Angle Spatial Contrast, Kinetic Typography Tracking",
       "shooting_style": {
@@ -33254,7 +33333,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@slaohuairen_DcLblxOy3tN_A_young_girl_in_linen",
       "shortcode": "DcLblxOy3tN",
-      "title_vi": "SlaoHuA • A Young Girl In Linen - Bóc Tách Điện Ảnh Thơ Váy Vóc - @slaohuairen",
+      "title_vi": "Quay trang phục vải lanh nhẹ nhàng với nắng cửa sổ và vườn cây",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu 13 phân cảnh chuẩn đạo diễn: Cú Long-Take 14s mở màn dũng cảm, ánh sáng ven cửa sổ tự nhiên, bố cục 1/3 cân bằng thân gỗ rêu phong, góc máy hướng thượng giải phóng tâm trí và cú tracking xuyên tâm vô tận.",
       "key_tech": "Extreme Close-Up Long-Take, Komorebi Dappled Light, Natural Side-Lighting, Natural Framing, Environmental Portraiture, Low-Angle Mind Liberation, One-Point Linear Perspective Tracking",
       "shooting_style": {
@@ -33335,7 +33414,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@gakuyen_Dc0MQfeEwp4_Carousel_Analysis",
       "shortcode": "Dc0MQfeEwp4_Carousel_Analysis",
-      "title_vi": "How to Sound Design SFX (Bóc Tách 10 Slide Thiết Kế Âm Thanh) - @gakuyen",
+      "title_vi": "Hướng dẫn thu và ghép tiếng động thật giúp video sống động hơn",
       "quick_takeaway": "Chuỗi bài giảng Carousel 10 slide kinh điển của @gakuyen giải mã toàn bộ bí quyết thiết kế âm thanh (Sound Design / SFX) đỉnh cao trong video ngắn. Tác giả vận dụng xuất sắc quy tắc \"Layering &amp; Keeping it simple\": Từ khâu quay footag...",
       "key_tech": "SFX Layering, Raw Cicada Contrast Bias, Picture Lock First, Synth Riser Anchor, 5-Layer Audio Stacking, 9-Track Timeline Architecture",
       "shooting_style": {
@@ -33416,7 +33495,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kyung6film_DakY2EST-Tm_Split_City_Shanghai",
       "shortcode": "DakY2EST-Tm",
-      "title_vi": "Split City: Shanghai (Bản Giao Hưởng Thượng Hải 3 Tầng Thời Không) - @kyung6film",
+      "title_vi": "Ghép 3 khung hình đường phố Thượng Hải chuyển cảnh đối xứng",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, kỹ thuật Kinetic Aspect Ratio Masking, Match Cut đối xứng và cấu trúc Split Screen Triptych 3 tầng thời không.",
       "key_tech": "Kinetic Masking, Triptych Split Screen, Symmetrical Anchor Pose, Match Cut, 3-Layer Urban Depth",
       "shooting_style": {
@@ -33492,7 +33571,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp",
       "shortcode": "Dcvxba1OvrD",
-      "title_vi": "Đèn Bàn Di Động Koti & Nghệ Thuật Ánh Sáng Hoàng Hôn (@by.bennnj)",
+      "title_vi": "Quay đèn bàn trang trí đổi sắc thái từ nắng chiều sang tối ấm",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng tự nhiên và bố cục tương tác phong cách sống 10 phân cảnh cho đèn Koti.",
       "key_tech": "Lifestyle Product Hook, Natural Backlighting, Touch Dimmer Macro, Foreground Wipe, Hygge Warmth",
       "shooting_style": {
@@ -33567,7 +33646,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@岳_🍜_GAKU_Dc0MHhTE9z0_Carousel_Analysis",
       "shortcode": "Dc0MHhTE9z0_Carousel_Analysis",
-      "title_vi": "@岳_🍜_GAKU - Video by gakuyen",
+      "title_vi": "Chuỗi 10 cảnh quay món ăn kết hợp đẩy máy tiến và góc qua vai",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 10 phân cảnh.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
@@ -33632,7 +33711,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
       "shortcode": "Dctj7NfNimM",
-      "title_vi": "3 Thói Quen Nhỏ Để Cảm Thấy Cuộc Sống Vào Nếp (3 Things That Make Life Feel Put Together) - @joshdiazfilms",
+      "title_vi": "Quay 3 việc nhỏ đầu ngày giúp cuộc sống gọn gàng vào nếp",
       "quick_takeaway": "Bóc tách 18 phân cảnh nhịp nhanh (Micro-beat Editing) mẫu mực về đời sống và năng suất cá nhân: Nghệ thuật dùng hành động vật lý dọn dẹp giường ngủ, pha cà phê và sắp xếp bàn làm việc để tạo cảm giác kiểm soát cuộc sống, kết hợp ánh sáng...",
       "key_tech": "Micro-beat Montage, Natural Daylight Ingestion, Kinetic Prop Action, Central 9:16 Framing, Warm Amber Aesthetic",
       "shooting_style": {
@@ -33713,7 +33792,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
       "shortcode": "DceDPc2yVm0",
-      "title_vi": "Nghệ Thuật Kể Chuyện 'Ngại Rep Tin Nhắn' & Năng Lượng Hướng Nội (Worst Person to Text) - @joshdiazfilms",
+      "title_vi": "Kể chuyện hài hước vì sao có thời gian rảnh vẫn ngại nhắn tin",
       "quick_takeaway": "Bóc tách 11 phân cảnh nghệ thuật tự sự chân thực và hài hước tinh tế về hội chứng ngại nhắn tin (Texting Anxiety / Social Battery): Bố cục tĩnh rộng lột tả sự tĩnh lặng, thủ pháp lật ngược kỳ vọng (Expectation Subversion) từ 'tôi không c...",
       "key_tech": "Expectation Subversion, Static Lock-off Framing, Narrative Voice-over, Moody Slate Palette, Candid Relatability",
       "shooting_style": {
@@ -33794,7 +33873,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
       "shortcode": "DcJjGy1tG7d",
-      "title_vi": "Unboxing DJI Drone & Ngôn Ngữ Điện Ảnh Bàn Làm Việc (First Drone Unboxing) - @joshdiazfilms",
+      "title_vi": "Mở hộp máy bay quay phim nhỏ gọn trên bàn rồi bay thử trong phòng",
       "quick_takeaway": "Bóc tách 7 phân cảnh mở hộp flycam DJI Mini 4 Pro phong cách điện ảnh bàn làm việc (Desk Cinematic Unboxing): Kỹ thuật đếm nhịp 1-2-3 mở màn năng lượng cao, hiệu ứng xé seal ASMR xúc giác, phô diễn chi tiết cơ khí cánh quạt gấp gọn và gó...",
       "key_tech": "Desk Cinematic Unboxing, ASMR Audio Design, Kinetic Spin Transition, Top-Down Mechanical Flatlay, High-Key Product Aesthetic",
       "shooting_style": {
@@ -33875,7 +33954,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
       "shortcode": "Db1hf_vO67m",
-      "title_vi": "Vẻ Đẹp Bình Yên Của Thói Quen Đời Thường & Nấu Bữa Tối (Simple Life Dinner Routine) - @joshdiazfilms",
+      "title_vi": "Ghi lại buổi tối tự nấu ăn bình yên ở nhà bằng 12 góc tĩnh",
       "quick_takeaway": "Bóc tách 12 phân cảnh điện ảnh đời thường phong cách Slow Living & Cinematic Comfort: Bắt trọn vẻ đẹp của những ngày bình dị, thói quen nấu bữa tối tại nhà, ánh đèn vàng ấm áp và âm thanh thực tế của căn bếp gia đình mang lại cảm giác bì...",
       "key_tech": "Slow Living Aesthetic, Warm Tungsten Lighting, Analog Film Texture, Diegetic Cooking Audio, Cozy Intimacy",
       "shooting_style": {
@@ -33956,7 +34035,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset",
       "shortcode": "Dbow9xKOCje",
-      "title_vi": "Chữa Lành Áp Lực Tự Thân 'Tôi Đang Bị Bỏ Lại Phía Sau' (Falling Behind Mindset) - @joshdiazfilms",
+      "title_vi": "Tâm sự chuyện áp lực tụt lại phía sau qua các góc quay chiều muộn",
       "quick_takeaway": "Bóc tách 12 phân cảnh điện ảnh tâm lý chữa lành (Cinematic Mindset Healing): Bóc trần cái bẫy so sánh và cảm giác bất an tự tạo 'mình đang tụt lại phía sau', sử dụng ánh sáng hoàng hôn vàng cam êm dịu, nhịp máy chậm rãi và thông điệp xoa...",
       "key_tech": "Mindset Narrative, Golden Hour Lighting, Reflective Pacing, Environmental Metaphor, Reassuring Climax",
       "shooting_style": {
@@ -34037,7 +34116,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@omgadrian_DcqzVfno5Al_Travel_Sequence_Formula",
       "shortcode": "DcqzVfno5Al",
-      "title_vi": "Công Thức Dựng Chuỗi Chuyển Đổi Không Gian Du Ký Triệu View (Travel Sequence Formula) - @omgadrian",
+      "title_vi": "Hướng dẫn công thức 5 cảnh quay dẫn người xem từ nơi này sang nơi khác",
       "quick_takeaway": "Bóc tách 34 phân cảnh bậc thầy hướng dẫn công thức kinh điển chuyển cảnh từ địa điểm này sang địa điểm khác (Location Transition Sequence Formula): Mô hình 5 bước Wide 1 ➔ Medium ➔ Moving Wide ➔ Chuỗi Close-up di chuyển (Implied Movement...",
       "key_tech": "5-Step Location Transition Formula, Kinetic Match Cut, Snap Zoom, Implied Movement Montage, Master Travel Storytelling",
       "shooting_style": {
@@ -34122,7 +34201,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Andrei_Kostromskikh_DctRlh0jZlj_Carousel_Analysis",
       "shortcode": "DctRlh0jZlj_Carousel_Analysis",
-      "title_vi": "Andrei Kostromskikh • Phân Tích Phân Cảnh Carousel Đa Video & Ngôn Ngữ Điện Ảnh - @Andrei_Kostromskikh",
+      "title_vi": "Luyện chuỗi 8 cảnh phụ kết hợp đẩy máy tiến và lia máy ngang",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng phân cảnh đa video của creator @Andrei_Kostromskikh.",
       "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm, Carousel Flow",
       "shooting_style": {
@@ -34197,7 +34276,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video",
       "shortcode": "DcJDJjVJGy6",
-      "title_vi": "How to Cook a Video: Ẩn dụ Chế biến Ẩm thực & Quy trình Hậu kỳ Chuẩn chỉ - @shogentle",
+      "title_vi": "Dùng việc sơ chế nấu ăn trong bếp để ví von quy trình dựng video",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy, thủ pháp ẩn dụ thị giác và nhịp dựng 14 phân cảnh đỉnh cao của creator @shogentle.",
       "key_tech": "Visual Metaphor, Momentum Continuity, Diegetic Typography, Match Action, Snap Zooms, SaaS Demo Storytelling",
       "shooting_style": {
@@ -34272,7 +34351,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@thomasmathewt2_DcgTj56Atlc_7_Kitchen_Film_Shots",
       "shortcode": "DcgTj56Atlc",
-      "title_vi": "7 Shots For Your Next Kitchen Film • @thomasmathewt2",
+      "title_vi": "Gợi ý 7 góc máy quay gian bếp có chiều sâu và bắt mắt",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 8 phân cảnh (Shoot-Through, Kinetic Movement, Overhead Flat Lay, In-Cabinet POV, Action POV, Macro Sizzle 90mm).",
       "key_tech": "Shoot-Through Foreground, Kinetic Toss, Spotify HUD, Overhead Flat Lay, In-Cabinet POV, Action Cam POV, 90mm Food Macro",
       "shooting_style": {
@@ -34353,7 +34432,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing",
       "shortcode": "Dcil1WWiXOC",
-      "title_vi": "Cinematic Unboxing Mastery - Lofree Mechanical Keyboard (@yegor.sky)",
+      "title_vi": "Mở hộp bàn phím cơ với 10 góc máy cận chi tiết và âm thanh thật",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, bóc tách 10 phân cảnh unbox chuẩn ASMR, ánh sáng và góc máy điện ảnh.",
       "key_tech": "Dirty Foreground Framing, Top-Down Flat Lay, Macro CNC Chamfer, Ice Blue Lighting, Kinetic ASMR",
       "shooting_style": {
@@ -34434,7 +34513,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@rubyscafe_Db-ylimPqMu_Summer_in_the_Village",
       "shortcode": "Db-ylimPqMu",
-      "title_vi": "Little Ruby's Cafe • Summer in West Village NYC & Nghệ Thuật Bối Cảnh F&B",
+      "title_vi": "Ghi lại không khí quán cà phê góc phố mùa hè trên nền nhạc êm",
       "quick_takeaway": "Bóc tách 14 phân cảnh mẫu mực trong video 16.3s của @rubyscafe: Nghệ thuật thiết lập bối cảnh văn hóa bản địa (Neighborhood Essence), nén tiêu cự One WTC, vòm cây xanh West Village, chân dung đạp xe Citi Bike với dứa tươi, bàn tiệc ẩm th...",
       "key_tech": "Local Cultural Hook, Perspective Telephoto Compression, Green Canopy Symmetrical Tunnel, Lifestyle Movement Beats, Food Styling Editorial Flat-Lay, Frame-in-Frame Window Look, NYC Yellow Cab Finale",
       "shooting_style": {
@@ -34515,7 +34594,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ethanbarber.co_DW_iQNYDjX7_Summer_in_NYC",
       "shortcode": "DW_iQNYDjX7",
-      "title_vi": "Summer in New York City • Nghệ Thuật Kể Chuyện POV & Nhịp Dựng Montage",
+      "title_vi": "Dạo phố mùa hè chuyển từ cảnh hồ tĩnh lặng sang nhịp cắt nhanh",
       "quick_takeaway": "Bóc tách chuyên sâu 26 phân cảnh đậm chất điện ảnh du ký Manhattan: Khởi đầu bằng ốc đảo tĩnh lặng The Lake tại Central Park, bùng nổ năng lượng với chuỗi Fast-cut Montage 6 frames (0.2s/shot) theo nhịp beat trống, khai thác nghệ thuật á...",
       "key_tech": "POV Storytelling, Fast-Cut Beat-Matched Montage (6 frames), Golden Hour Lens Flare, One-Point Perspective Leading Lines, Frame-in-Frame Canopy, Vintage Kodak Portra 400 Glow",
       "shooting_style": {
@@ -34590,7 +34669,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@chowyhh_DcTjYUftCcv_Art_of_Composition_London",
       "shortcode": "DcTjYUftCcv",
-      "title_vi": "The Art of Composition in London - @chowyhh (4 Quy Tắc Bố Cục Đô Thị)",
+      "title_vi": "4 cách căn bố cục đường thẳng và khung lồng khung ngoài đường phố",
       "quick_takeaway": "📋 Bóc Tách Chi Tiết (5)\n                🖼️ Lưới Soi Ảnh (5)",
       "key_tech": "4 Composition Rules, Symmetrical Subway, Diagonal Leading Lines, Multi-Level Layering, Natural Tunnel Framing, One-Point Perspective",
       "shooting_style": {
@@ -34665,7 +34744,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR",
       "shortcode": "DcL1W34I6lz",
-      "title_vi": "DJI Mic 3 • Nghệ Thuật ASMR Điện Ảnh & Sound Design Đỉnh Cao",
+      "title_vi": "Gắn mic thu âm sát dao bếp, bút viết và tách cà phê để bắt tiếng thật",
       "quick_takeaway": "Bóc tách trọn vẹn 14 phân cảnh mẫu mực trong video ASMR 11.3s của @valenti_k41: Nghệ thuật gắn micro siêu cận nguồn âm (Foley ASMR), liên hoàn ngàm hít nam châm (Magnetic Snap), cắt bánh mì giòn rụm, đổ mưa hạt cà phê, cuộn xoáy sữa tươi...",
       "key_tech": "Foley ASMR Sound Design, Satisfying Magnetic Snap, Macro Knife Rigging, Tactile Pen Scratching, Fluid Vortex Pouring, Top-Down Flat-Lay, Symmetrical Keyboard Typing, Circular Frame-in-Frame Finale",
       "shooting_style": {
@@ -34750,7 +34829,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@arturbr_DcOQSCMqho0_Personal_Cinema_Viture",
       "shortcode": "DcOQSCMqho0",
-      "title_vi": "Personal Cinema Wherever You Go - @arturbr",
+      "title_vi": "So sánh máy chiếu mờ ban ngày với việc đeo kính xem phim riêng",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy macro, thủ pháp so sánh Problem-Solution và nhịp dựng 18 phân cảnh rạp chiếu phim cá nhân VITURE XR.",
       "key_tech": "Macro POV, Micro-OLED Contrast, Whip Pan Liaison, High-Kinetic Montage, Problem-Solution Framework",
       "shooting_style": {
@@ -34831,7 +34910,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Visual_Storytelling_Carousel_@withyuee",
       "shortcode": "Visual_Storytelling_Carousel_@withyuee",
-      "title_vi": "Visual Storytelling Carousel • Cấu Trúc Kể Chuyện 5 Slide Đa Chiều",
+      "title_vi": "Cấu trúc 5 cảnh ngắn sắp xếp có lớp lang để kể một câu chuyện",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng phân cảnh.",
       "key_tech": "5-Slide Arc, Pacing Tension, Retention Loop, Multi-Aspect Ratio",
       "shooting_style": {
@@ -34906,7 +34985,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Hong_Kong_Urban_Transitions_@withyuee",
       "shortcode": "Hong_Kong_Urban_Transitions_@withyuee",
-      "title_vi": "Hong Kong Urban Transitions • Nghệ Thuật Chuyển Cảnh Mượt Mà Không Cần Kỹ Xảo",
+      "title_vi": "Chuỗi 21 cảnh đường phố Hồng Kông nối mượt bằng chuyển động máy",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng phân cảnh.",
       "key_tech": "In-Camera Match Cut, Whip Pan Transition, Foreground Obstacle Wipe, Optical Flow",
       "shooting_style": {
@@ -34989,7 +35068,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Hong_Kong_Cinematography_Guide_@withyuee",
       "shortcode": "Hong_Kong_Cinematography_Guide_@withyuee",
-      "title_vi": "Hong Kong Cinematography Guide • Hướng Dẫn Bố Cục & Ánh Sáng Điện Ảnh Đường Phố",
+      "title_vi": "Hướng dẫn chọn bố cục và ánh sáng khi quay cảnh đường phố",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng phân cảnh.",
       "key_tech": "Teal & Orange Grade, Natural Alley Chiaroscuro, Parallax Motion, Frame Within Frame",
       "shooting_style": {
@@ -35064,7 +35143,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Hong_Kong_Bamboo_Scaffolding_@withyuee",
       "shortcode": "Hong_Kong_Bamboo_Scaffolding_@withyuee",
-      "title_vi": "Hong Kong Bamboo Scaffolding (搭棚) • Nghệ Thuật Giàn Giáo Tre Đô Thị",
+      "title_vi": "Ghi lại nét độc đáo của giàn giáo tre trên phố Hồng Kông",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng phân cảnh.",
       "key_tech": "Geometric Symmetry, Urban Architectural Framing, Heritage Contrast, Vertical Pan",
       "shooting_style": {
@@ -35145,7 +35224,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@colecoppolino_DcJiRCrTlG1",
       "shortcode": "DcJiRCrTlG1",
-      "title_vi": "Kỷ Luật Thép & Bước Nhảy Lượng Tử Đổi Đời - @colecoppolino",
+      "title_vi": "Thử ống kính điện thoại qua chuyện rèn luyện kỷ luật cắt nhịp nhanh",
       "quick_takeaway": "Phân tích cấu trúc 30 shots cắt nhịp đập thần tốc (~0.53s/shot), nghệ thuật tương phản thị giác giữa khổ luyện và thăng hoa lượng tử.",
       "key_tech": "Fast Beat Pacing, Visual Juxtaposition, Low-Key Silhouette, Macro Detail, Hero Framing",
       "shooting_style": {
@@ -35226,7 +35305,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape",
       "shortcode": "DcTk0RGgtBO",
-      "title_vi": "August in Hong Kong • Bóc Tách 20 Phân Cảnh Đô Thị Điện Ảnh & Nghệ Thuật Khung Hình 16:9",
+      "title_vi": "17 góc quay đường phố Hồng Kông tháng tám theo khung hình ngang",
       "quick_takeaway": "Phân tích bóc tách 20 phân cảnh điện ảnh Hong Kong: nghệ thuật chọn góc quay khung hình ngang 16:9, màu sắc tương phản ấm/lạnh, phối cảnh ánh sáng tự nhiên và chuyển động máy mượt mà.",
       "key_tech": "Cinematic Widescreen 16:9, Color Grading, Parallax Motion, Natural Light Depth",
       "shooting_style": {
@@ -35301,7 +35380,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
       "shortcode": "Db7zNC0jPwV",
-      "title_vi": "Tokyo Slow Life: Nghệ Thuật Biến Khoảnh Khắc Thường Nhật Thành Thước Phim Điện Ảnh (9 Video Carousel Series)",
+      "title_vi": "Ghi lại khoảnh khắc đời thường êm đềm ở Tokyo dưới nắng chiều",
       "quick_takeaway": "Bóc tách 9 slide video Instagram Carousel phong cách Visual Diary / Slow Living tại Tokyo: Khung hình 3:2 ngang điện ảnh, chuyển động máy Pan/Tilt êm ái, khai thác nguồn sáng tự nhiên giờ vàng (Golden Hour Glow), chất liệu mộc Wabi-Sabi ...",
       "key_tech": "Visual Diary, 3:2 Cinematic Aspect Ratio, 24fps Motion Blur, Smooth Pan & Tilt, Golden Hour Glow, Natural Window Key, Wabi-Sabi Texture, Frame Within Frame, Teal & Amber Contrast",
       "shooting_style": {
@@ -35376,7 +35455,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@willwfit_DbRak0lsesY_The_Goal_Is_Simple",
       "shortcode": "DbRak0lsesY",
-      "title_vi": "The Goal Is Simple - Nghệ Thuật Ánh Sáng Low-Key Chiaroscuro & Flash Cut Thể Hình",
+      "title_vi": "Quay tập thể hình trong phòng tối kết hợp chuyển cảnh chớp sáng mạnh",
       "quick_takeaway": "Phân tích bóc tách 6 phân cảnh thể hình cinematic đỉnh cao, kỹ thuật chiếu sáng Low-Key Chiaroscuro tôn khối cơ bắp và cú chớp sáng White Flash Impact Cut chuyển cảnh.",
       "key_tech": "Low-Key Chiaroscuro, Top-Light Grid, Luma Impact Flash Cut, Seamless Loop, 9:16 Framing",
       "shooting_style": {
@@ -35457,7 +35536,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
       "shortcode": "DcYQVYJjHa-",
-      "title_vi": "Tokyo Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Diptych & Nhịp Thở Đời Thường",
+      "title_vi": "Kể nhịp sống một ngày từ 5 giờ sáng bằng khung hình ghép đôi",
       "quick_takeaway": "Phân tích nghệ thuật thị giác chuỗi 10 video Carousel: Bố cục ghép đôi Diptych 50/50, nghệ thuật bắt bóng đổ (Shadow Play), dòng thời gian 24h Routine từ 5am đến 19pm và nhịp sống Wabi-sabi Tokyo.",
       "key_tech": "Diptych Split-Screen, Shadow Play, 24h Routine Timeline, Komorebi Sunlight, Wabi-Sabi Aesthetics, Macro Culinary",
       "shooting_style": {
@@ -35532,7 +35611,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@iamlukeluquire_DbjCyKgxp8S_Aesthetic_Routine",
       "shortcode": "DbjCyKgxp8S",
-      "title_vi": "Luke Luquire • Routine Rèn Luyện & Phong Cách Thời Trang New Balance",
+      "title_vi": "Hành trình một ngày rèn luyện thể lực từ chạy bộ tới phòng tập",
       "quick_takeaway": "Phân tích 19 phân cảnh nhịp nhanh (Fast Montage ~0.5s/shot), nghệ thuật tương phản cỡ cảnh (ECU sang EWS), kỹ thuật Silhouette ngược sáng và cấu trúc kể chuyện tự chủ kỷ luật.",
       "key_tech": "Fast Montage Rhythm, ECU Macro Hook, Focal Length Contrast, Silhouette Window Framing, Action Match Cut",
       "shooting_style": {
@@ -35613,7 +35692,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva",
       "shortcode": "DcTqPjitJl1",
-      "title_vi": "Biến Ý Tưởng Thành Hiện Thực Cùng Canva",
+      "title_vi": "Kể quá trình biến ý tưởng phác thảo thành bản thiết kế hoàn chỉnh",
       "quick_takeaway": "Phân tích 31 phân cảnh quay dựng điện ảnh đời thường, nghệ thuật bóc tách ASMR giao diện và xây dựng Creative Brief trực quan.",
       "key_tech": "Following POV, Flat Lay 90 độ, Macro ASMR, UI Motion Graphics, Film Grain",
       "shooting_style": {
@@ -35694,7 +35773,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@withyuee_DUqQaPbkfcQ_Chinese_New_Year_Hong_Kong",
       "shortcode": "DUqQaPbkfcQ",
-      "title_vi": "Nghệ Thuật Quay Video Tết Đường Phố Bằng Điện Thoại (Chinese New Year in Hong Kong - Shot on iPhone)",
+      "title_vi": "Quay không khí Tết rộn ràng ngoài phố bằng điện thoại cắt theo nhạc",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\nTỔNG QUAN KỸ THUẬT &amp; PHONG CÁCH QUAY DỰNG\nVideo là một kiệt tác ghi lại không khí đón Tết Nguyên Đán tại Hong Kong với ngôn ngữ thị giác đậm chất điện ảnh đường phố: Nhịp cắt ...",
       "key_tech": "Worm's Eye Low Angle, One-Point Perspective, 1.4s Fast Cut Rhythm, 3-Layer Foreground Depth, Blue Hour Contrast, iPhone Mobile Filmmaking",
       "shooting_style": {
@@ -35769,7 +35848,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@withyuee_DO8arRxEZvh_Hong_Kong_Visual_Rhythm_Carousel",
       "shortcode": "DO8arRxEZvh",
-      "title_vi": "Chuỗi Thị Giác Hong Kong Trước Siêu Bão: Phản Chiếu Vũng Nước & Chiều Sâu Đô Thị",
+      "title_vi": "Tận dụng vũng nước mưa làm gương phản chiếu ánh đèn đường phố",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\nCốt lõi Ngôn ngữ Thị giác\n• Chất liệu phản chiếu (Wet Surface): Tận dụng mặt đường ướt mưa biến vỉa hè thành tấm gương nhân đôi nguồn sáng neon. • Bố cục Phối cảnh Một Điểm Tụ (O...",
       "key_tech": "Puddle Reflection, One-Point Perspective, Low-to-Ground 5cm, Blue Hour Teal & Orange, Orthogonal Symmetry, Multi-Layer Depth",
       "shooting_style": {
@@ -35844,7 +35923,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@withyuee_DVQ3Gh6Efk1_Spring_in_Hong_Kong",
       "shortcode": "DVQ3Gh6Efk1",
-      "title_vi": "Mùa Xuân Hong Kong - Bậc Thang Hoa Vàng U Lam Terrace & Sắc Hồng Anh Đào HKIA",
+      "title_vi": "Quay hoa mùa xuân trên phố bằng điện thoại với tiền cảnh có chiều sâu",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nPhân tích 10 phân cảnh mẫu mực quay bằng iPhone: Chuyển động Pedestal/Tilt mượt mà, kỹ thuật đóng khung tiền cảnh hoa 3D (Foreground Framing), nghệ thuật chuyển dịch bảng màu từ Và...",
       "key_tech": "Foreground Framing, Pedestal Down, Worm's-eye View, Palette Shift, Backlit Glow, Rim Light, Frame-within-Frame",
       "shooting_style": {
@@ -35919,7 +35998,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@samuelaitken__Da0eP_msVrm_Aesthetic_Routine",
       "shortcode": "Da0eP_msVrm",
-      "title_vi": "Setup Góc Quay & Ánh Sáng Routine Buổi Sáng Minimalist",
+      "title_vi": "Một ngày sống kỷ luật từ tắm lạnh, chuẩn bị bữa ăn tới tập tạ",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\nCẤU TRÚC KỂ CHUYỆN &amp; THÔNG ĐIỆP CỐT LÕI\nThông điệp: \"You are your own greatest project\" - Khắc họa một ngày hoàn hảo của lối sống tự chủ kỷ luật (Tỉnh giấc ➔ Tắm nước lạnh ➔ D...",
       "key_tech": "Low Table Angle, Window Motivated Lighting, ASMR Sound Sync, 3-Layer Depth",
       "shooting_style": {
@@ -35998,7 +36077,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic",
       "shortcode": "DbKauxkoJU_M",
-      "title_vi": "Bí Quyết Biến Máy Ảnh Nhập Môn Trông Như Phim Điện Ảnh (Sony ZV-E10)",
+      "title_vi": "Cách chỉnh thông số và ánh sáng để máy ảnh nhỏ quay đẹp như phim",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nHướng dẫn làm chủ quy tắc góc màn trập 180° (1/50s), khóa Manual Kelvin cân bằng trắng, sử dụng kính lọc Black Pro-Mist và bố trí ánh sáng tương phản.",
       "key_tech": "180° Shutter Rule, Manual White Balance, Black Diffusion Mist Filter, Dynamic Range",
       "shooting_style": {
@@ -36075,7 +36154,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jazziesillona_DXUG_1TjwJu_Carousel_Analysis",
       "shortcode": "DXUG_1TjwJu_Carousel_Analysis",
-      "title_vi": "Chuỗi Carousel 6 Slide Video: Kỹ Thuật Đẩy Nhanh Tiết Tấu Giữ Chân Khán Giả",
+      "title_vi": "Sáu cảnh quay trang phục từ dáng bước toàn thân tới cận chất vải",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n🎯 CHIẾN LƯỢC CẤU TRÚC CAROUSEL SERIES:\n    • Dạng bài: Tuyển tập chuỗi 6 video ngắn không lời thoại (Visual-first Lifestyle / Fashion Lookbook) kết hợp âm nhạc thịnh hành. • Công ...",
       "key_tech": "Carousel Retention Rate, 4:5 Mobile Ratio, Slide Transition Flow",
       "shooting_style": {
@@ -36160,7 +36239,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jazziesillona_DW8lBR9Dzop_Carousel_Analysis",
       "shortcode": "DW8lBR9Dzop_Carousel_Analysis",
-      "title_vi": "Nghệ Thuật Xây Dựng Nhịp Điệu Thị Giác Trong Chuỗi Video Carousel Đa Slide",
+      "title_vi": "8 góc phố quay tĩnh như tấm bưu thiếp sống động trên nền nhạc",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n🎯 Tổng Quan Nghệ Thuật (Art Direction): Tuyển tập 8 video phong cách \"Moving Postcards\" (Bưu thiếp động) đưa người xem qua từng góc nhìn văn hóa, nhịp sống và màu sắc Hong Kong. S...",
       "key_tech": "Visual Rhythm Carousel, Stopping Power, 9:16 Mobile Framing, Hook-to-CTA Pipeline",
       "shooting_style": {
@@ -36235,7 +36314,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Jazzie_DWnsVqWj2XN_Carousel_Analysis",
       "shortcode": "DWnsVqWj2XN_Carousel_Analysis",
-      "title_vi": "Album 7 Slide Video Dạo Phố & Nghệ Thuật Chọn Điểm Cắt Cảnh Tự Nhiên",
+      "title_vi": "7 cảnh dạo phố chiều hoàng hôn quay bằng điện thoại khóa sáng tay",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\nTỔNG QUAN HỆ THỐNG QUAY &amp; HẬU KỲ",
       "key_tech": "Natural Cut Point, Swipe Continuity, Eye-tracking Flow",
       "shooting_style": {
@@ -36310,7 +36389,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jazziesillona_DWrDUymD4_a_Carousel_Analysis",
       "shortcode": "DWrDUymD4_a_Carousel_Analysis",
-      "title_vi": "Bộ 4 Slide Video Thẩm Mỹ: Sự Kết Hợp Giữa Âm Nhạc & Chuyển Động Chậm",
+      "title_vi": "4 cảnh quay chậm bắt ánh nắng chiều lấp lánh trên trang phục",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nKhai thác chuyển động Slow-motion 60fps làm chậm 40%, bắt trọn ánh sáng hoàng hôn lấp lánh trên trang phục và phụ kiện thời trang.",
       "key_tech": "Slow Motion 60fps to 24fps, Sunset Rim Light, Texture Focus",
       "shooting_style": {
@@ -36385,7 +36464,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Jakarta_Videographer_Jacoub_Anwar_DbnwnkrAVQ9_Carousel_Analysis",
       "shortcode": "DbnwnkrAVQ9_Carousel_Analysis",
-      "title_vi": "7 Quy Tắc Vàng Quay Phim Đường Phố: Khung Hình Tĩnh & Thị Sai 3 Lớp",
+      "title_vi": "7 quy tắc giữ máy đứng yên lấy 3 lớp chiều sâu khi quay ngoài phố",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\nTriết Lý Cốt Lõi: \"Less Camera Movement Looks Better - Movement in Story, Not in Camera\"\n\n        Bộ bài giảng video đúc kết quy tắc vàng trong quay phim đường phố (Street Cinemat...",
       "key_tech": "Static Frame Mise-en-scène, Parallax 3 Lớp, Horizon Line Alignment, Sony Cinema FX30",
       "shooting_style": {
@@ -36466,7 +36545,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Jazzie_DU2CTKzEqvl_Carousel_Analysis",
       "shortcode": "DU2CTKzEqvl_Carousel_Analysis",
-      "title_vi": "Chuỗi 8 Slide Video Sáng Tạo Không Gian Sống & Bố Cục Tối Giản",
+      "title_vi": "8 góc quay không gian phòng tối giản với đường thẳng và đèn hắt ấm",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nPhong cách quay kiến trúc nội thất tối giản, đường nét thẳng đứng và ánh sáng gián tiếp từ đèn hắt tường tạo cảm giác ấm cúng.",
       "key_tech": "Interior Architecture Framing, Indirect Ambient Lighting, Clean Lines",
       "shooting_style": {
@@ -36547,7 +36626,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jazziesillona_DbIA2jwPHCV",
       "shortcode": "DbIA2jwPHCV",
-      "title_vi": "Nghệ Thuật Chuyển Đổi Video Ngang Sang Chuẩn Dọc 9:16 Không Mất Chi Tiết",
+      "title_vi": "Cách chuyển video ngang sang khung dọc 9:16 không mất chi tiết chính",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nQuy trình framing lại bố cục từ video gốc 16:9 sang 9:16 Reels/TikTok, tối ưu hóa điểm nhìn trung tâm và không gian chữ phụ đề.",
       "key_tech": "16:9 to 9:16 Re-framing, Safe Zone Typography, Center Attention",
       "shooting_style": {
@@ -36622,7 +36701,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "REMAKE_Byjxson_Quang_Cao_Dong_Ho_Bam_Gio",
       "shortcode": "Dong_Ho_Bam",
-      "title_vi": "Quảng Cáo Đồng Hồ Bấm Giờ: 'Làm Chủ 86.400 Giây' (Ánh Xạ @byjxson)",
+      "title_vi": "Quảng cáo đồng hồ bấm giờ nối mượt 6 bối cảnh từ phố về bàn học",
       "quick_takeaway": "Bản đồ ánh xạ bối cảnh thực chiến 15 phân cảnh: Chuyển thể vlog điện ảnh 13.8s của @byjxson sang 6 bối cảnh thực tế tại Times City & Home Studio để quay TVC/Reel quảng cáo đồng hồ bấm giờ Focus Timer Pro.",
       "key_tech": "Context Mapping 1-to-1, Batch Shooting Checklist, Foreground Object Wipe, Momentum Match Cut, Shoot-Through Foliage, Multi-Tier Pacing",
       "shooting_style": {
@@ -36687,7 +36766,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life",
       "shortcode": "Dad0d3xtv9E",
-      "title_vi": "The Beauty of Bangkok in Everyday Life - Nén Tiêu Cự & Đa Tầng Giao Thông Đô Thị - @intothethailand",
+      "title_vi": "Đứng trên cầu vượt quay nhịp giao thông nhiều tầng lúc hoàng hôn",
       "quick_takeaway": "Phân tích chuyên sâu 7 phân cảnh mẫu mực về nghệ thuật nén tiêu cự (Telephoto Lens Compression) và bố cục xếp lớp đa tầng giao thông tại Bangkok. Tác giả tận dụng cầu bộ hành và các góc máy trên cao để bắt trọn hai đoàn tàu BTS lướt ngượ...",
       "key_tech": "Telephoto Lens Compression, Multi-Tier Transit Layering, Match Cut Transition, S-Curve Rail Perspective",
       "shooting_style": {
@@ -36768,7 +36847,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
       "shortcode": "DcI-darjckz_Carousel_Analysis",
-      "title_vi": "Carousel Multi-Slide Retention Masterclass - Nghệ Thuật Giữ Chân Chuỗi Video Đa Slide - @Andrei_Kostromskikh",
+      "title_vi": "Cách chia nhịp 8 đoạn video ngắn giữ người xem vuốt hết bài đăng",
       "quick_takeaway": "Phân tích toàn diện album Carousel 8 slide video của đạo diễn hình ảnh Andrei Kostromskikh. Báo cáo mổ xẻ cấu trúc phân bổ thời lượng, nhịp điệu chuyển động giữa các slide và cách thiết lập điểm kích thích vuốt tiếp (Swipe Hook) để tối đ...",
       "key_tech": "Multi-Slide Carousel Architecture, Slide-by-Slide Retention Curve, Visual Consistency, Swipe Momentum",
       "shooting_style": {
@@ -36843,7 +36922,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries",
       "shortcode": "DbqCYu4DAz2",
-      "title_vi": "Kyoto Slow Life Visual Diaries • Nghệ Thuật Kể Chuyện Nhịp Thị Giác Chuỗi Carousel Đô Thị Cổ Kính - @ioana_iftode",
+      "title_vi": "10 cảnh nhật ký không lời ghi lại nhịp sống chậm nơi phố cổ Kyoto",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; TRIẾT LÝ NGHỆ THUẬT:\nChuỗi 10 video Carousel của đạo diễn Ioana Iftode là một tác phẩm mẫu mực về nghệ thuật Visual Storytelling không lời th...",
       "key_tech": "Visual Breathing Rhythm, 3:2 Film Aspect Ratio, Visual Anchor Cover Hook, One-Point Alley Perspective, Sunlit Velocity Contrast, Tactile Lifestyle Break, Zen Macro Contemplation, Frame-in-Frame Practical Light, Sunset Telephoto Compression, Hypnotic Chōchin Lantern Rhythm, Twilight Blue Hour Contrast, Nostalgic OTS Loop Closure",
       "shooting_style": {
@@ -36918,7 +36997,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@byjxson_Dal3RFpA5nI_Project_100_Day_01",
       "shortcode": "Dal3RFpA5nI",
-      "title_vi": "Project 100 Day 01 • Nghệ Thuật Kể Chuyện Đa Góc Máy Một Ngày Sáng Tạo - @byjxson",
+      "title_vi": "Kể một ngày làm việc sáng tạo bằng các cú cắt khớp chuyển động",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n⚡ 01. Nhịp Dựng Match-Cut &amp; Quán Tính\nSử dụng kỹ thuật cắt nối chuyển động (Momentum Match Cut) và gạt khung bằng vật thể tiền cảnh (Wipe Cut) để nối liền các địa điểm khác n...",
       "key_tech": "Car Wipe Transition, Momentum Match Cut, POV Immersion, Through-Glass Observer, Target Cart Wheel Cam, In-Cart Reverse Cam, Shoot-Through Shelf, Symmetrical Aisle Leading Lines, 3-Stage Jump Cut, Satisfying Key Foley Hook",
       "shooting_style": {
@@ -37003,7 +37082,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bryanhynes_DacaMHwzEm3_Visual_Sequence",
       "shortcode": "DacaMHwzEm3",
-      "title_vi": "The Art of Visual Sequence • 8 Quy Tắc Biến Điều Bình Thường Thành Điện Ảnh - @bryanhynes",
+      "title_vi": "8 mẹo chia nhỏ việc lặp lại hằng ngày thành chuỗi cảnh cuốn hút",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n🎬 Triết Lý Chuỗi Phân Cảnh (Sequence Theory)\n\"How do you make boring things interesting? You create a sequence.\" (Làm thế nào để biến những công việc nhàm chán hàng ngày trở nên ...",
       "key_tech": "Kinetic Movement Hook, Optical Lens Shoot-Through, Caricature Eye Magnification, 90° Overhead Flat Lay, Prop Action Linking, Match Cuts, Multisensory Looping CTA",
       "shooting_style": {
@@ -37084,7 +37163,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kenshoji.visuals_DZOzwweTc5a_The_Art_of_Static_Shot",
       "shortcode": "DZOzwweTc5a",
-      "title_vi": "Ken Shoji • The Art of Static Shot: Triết Lý Để Thế Giới Tự Chuyển Động",
+      "title_vi": "Đặt máy đứng yên giữa ga tàu và ngã tư để dòng người tự chuyển động",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBóc tách toàn diện 11 phân cảnh mẫu mực điện ảnh đô thị Tokyo: Nghệ thuật cố định máy quay tuyệt đối (Static Lock-off Framing), tương phản vận tốc (Velocity Contrast) giữa chủ thể ...",
       "key_tech": "Static Lock-off Framing, Velocity Contrast, One-Point Perspective, Architectural Frame-in-Frame, True Black Silhouette, Practical Neon Glow, Visual Stutter Pacing, Master Static Long Take",
       "shooting_style": {
@@ -37165,7 +37244,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mcjacoub_Db22SIxAVtJ_Camera_Angles_Mastery",
       "shortcode": "Db22SIxAVtJ",
-      "title_vi": "Camera Angles Mastery • 5 Góc Máy Điện Ảnh & Tâm Lý Học Thị Giác",
+      "title_vi": "Thử đổi 5 góc đặt máy quanh một người để thấy câu chuyện thay đổi",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n🎬 Triết Lý &amp; Thông Điệp Cốt Lõi\n\"Satu subject, beda angle, beda cerita\" (Cùng một chủ thể, đổi góc máy là đổi cả câu chuyện). Điểm mấu chốt tạo nên một cảnh quay cuốn hút (Ci...",
       "key_tech": "Dutch Angle (25° Tilt), Eye-Level Human Scale, 90° Side Profile Alignment, Ground-Level Worm's Eye View, Extreme Close-Up Bokeh, Tunnel Natural Framing, 4:3 UHD Retro Look",
       "shooting_style": {
@@ -37246,7 +37325,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
       "shortcode": "Dah8zTnNgq5",
-      "title_vi": "Ray-Ban Meta System • Nghệ Thuật Kể Chuyện Đa Góc Nhìn & Nhịp Dựng Hyperlapse Đỉnh Cao",
+      "title_vi": "Đeo kính gắn máy quay ghi lại chuỗi cảnh đối xứng và tua nhanh",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n🎨 Bố Cục Đối Xứng Wes Anderson &amp; Bảng Màu Pastel\nCấu trúc hình học hoàn hảo: Mở màn và kết thúc bằng các khung hình đối xứng trục dọc tuyệt đối (Cảnh 1 ban công, Cảnh 14 hành...",
       "key_tech": "Wes Anderson Symmetrical Framing, Multi-Perspective Split-Screen (2-Split & 3-Split), Kinetic Hyperlapse Speed Ramping, Hands-free Voice AI Control, 9:16 Vertical Cinema, Pastel Color Blocking, Deadpan Comedic Climax",
       "shooting_style": {
@@ -37331,7 +37410,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow",
       "shortcode": "DbdG7v1tjrz",
-      "title_vi": "Quy Trình Sáng Tạo Adobe Firefly • Mixed-Reality Spatial Workflow",
+      "title_vi": "Kết hợp cảnh bấm phím, lật sách thật với kỹ xảo mở rộng không gian ảo",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBóc tách toàn diện 25 phân cảnh mẫu mực điện ảnh thương mại: Nghệ thuật kết hợp giữa thực tế vật lý xúc giác (Tactile Realism - phím cơ, chuông, cassette, sách lật) và kỹ xảo không...",
       "key_tech": "Spatial Computing AR VFX, Directional Skylight Chiaroscuro, Tactile Foley Integration, Kinetic Fast-cut, 3D Camera Tracking, 9:16 Vertical UHD Cinema",
       "shooting_style": {
@@ -37412,7 +37491,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jeromememe_Db-zVchOXV7_People_of_Bhutan",
       "shortcode": "Db-zVchOXV7",
-      "title_vi": "Jerome Teo • People of Bhutan: Ngôn Ngữ Điện Ảnh & Hạnh Phúc Himalaya - @jeromememe",
+      "title_vi": "Khắc họa nụ cười và đôi tay lao động chân chất của người vùng cao",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n🏔️ Triết Lý 'People-First' &amp; Chân Dung Hạnh Phúc\nTrọng tâm con người: Không lạm dụng cảnh flycam phong cảnh đại trà, Jerome Teo tập trung toàn lực vào ánh mắt, nụ cười chân c...",
       "key_tech": "Static Lock-off Framing, Chiaroscuro Natural Light, Kinetic Match Cut, 4:3 Standard Aspect Ratio, Warm Amber & Kashaya Palette, Authentic Candid Portraits",
       "shooting_style": {
@@ -37493,7 +37572,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
       "shortcode": "DQuEXMbj8fT",
-      "title_vi": "People of Porto • Nghệ Thuật Quan Sát Phố Thị Sớm & Hơi Thở Đời Thường Bồ Đào Nha - @jeromememe",
+      "title_vi": "Quan sát buổi sáng yên bình từ mặt sông, ngõ nhỏ tới bàn cà phê",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBóc tách toàn diện 11 phân cảnh chuẩn mực điện ảnh: Nghệ thuật quan sát tĩnh (Static Observational Framing), ánh sáng vàng sớm trên sông Douro, bố cục chéo gạch men Azulejo, nhịp n...",
       "key_tech": "Static Observational Framing, Morning Golden Glow, Portuguese Azulejo Geometry, Douro River Depth, Slow Conversational Anchor, Sunset Silhouette Resolution",
       "shooting_style": {
@@ -37574,7 +37653,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
       "shortcode": "DQmKgPDEWgJ",
-      "title_vi": "Artisans of Venice • Bản Trường Ca Tôn Vinh Nghề Thủ Công Di Sản & Nghệ Thuật Điện Ảnh - @jeromememe",
+      "title_vi": "Tôn vinh bàn tay người thợ thủ công dưới ánh nắng xiên qua cửa sổ",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n🎨 1. Bảng Màu &amp; Ánh Sáng (Color &amp; Light)\n\n                Video khai thác nghệ thuật ánh sáng tương phản Chiaroscuro &amp; Nguồn sáng hội họa Baroque:\n            \n\nÁnh s...",
       "key_tech": "Chiaroscuro Workshop Lighting, 4:3 Classic Framing, Staccato Montage, Kinetic Match Cut, Rembrandt Lighting, Tactile Macro Sound Sync, Human Climax",
       "shooting_style": {
@@ -37655,7 +37734,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen",
       "shortcode": "DbGMt3oIaZm",
-      "title_vi": "Nghệ Thuật Quan Sát Cuộc Sống Mùa Hè Copenhagen & Tinh Thần Hygge - @jeromememe",
+      "title_vi": "Nhịp sống mùa hè ven kênh từ nắng trưa rực rỡ tới chiều ấm áp",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n🎨 1. Bảng Màu &amp; Ánh Sáng (Color &amp; Light)\n\n                Video khai thác triệt để ánh sáng tự nhiên mùa hè Bắc Âu:\n            \n\nTương phản Teal &amp; Orange tự nhiên: L...",
       "key_tech": "Static Observational Framing, Teal & Orange Harmony, Concept Match Cut, Foreground Occlusion Wipe, 3-Layer Depth, Hygge Atmosphere",
       "shooting_style": {
@@ -37736,7 +37815,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@saigonink_studio_DdNq5CxszVl_Bun_Bo_Hue_Tattoo",
       "shortcode": "DdNq5CxszVl",
-      "title_vi": "Nghệ Thuật Xăm Mini Tô Bún Bò Huế Thực Tế - Saigon Ink Tattoo (Artist Nikko) - @saigonink_studio",
+      "title_vi": "Đưa hình xăm tô bún bò Huế hoàn chỉnh lên đầu rồi kể chuyện làm nghề",
       "quick_takeaway": "Nghệ thuật làm video dịch vụ thủ công/nghệ thuật: Đừng chỉ quay người thợ đang làm việc, hãy đưa sản phẩm đỉnh cao nhất lên đầu, quay thật sâu vào cảm giác thỏa mãn thị giác (ASMR Wipe / Color Blending) và kết nối sản phẩm với một câu chuyện văn hóa cá nhân sâu sắc.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
@@ -37817,7 +37896,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DbF_D2MB6BR_Video_by_nemo_ooo",
       "shortcode": "DbF_D2MB6BR",
-      "title_vi": "Trải Nghiệm Triển Lãm Nghệ Thuật Số Arte Museum Busan.",
+      "title_vi": "Dẫn đi xem không gian triển lãm ánh sáng kết hợp giọng kể dí dỏm",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @nemo_ooo__ • Shared July 30 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -37896,7 +37975,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you’re_h",
       "shortcode": "DQ1DeeckxAZ",
-      "title_vi": "B-Roll Đặc Tả Túi Du Lịch Canvas",
+      "title_vi": "Quay B-Roll cận chất vải và sức chứa của túi xách du lịch",
       "quick_takeaway": "Một video B-roll chất lượng cao tôn vinh tính bền bỉ và không gian chứa đồ khổng lồ của chiếc túi xách du lịch.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -37973,7 +38052,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_@emergentlabs",
       "shortcode": "DPjD-CTE0iY",
-      "title_vi": "Giải Pháp Tạo App Bằng AI: Biến Nỗi Đau Thành Hành Động",
+      "title_vi": "Giới thiệu công cụ AI làm ứng dụng qua 21 cảnh tại văn phòng",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
       "shooting_style": {
@@ -38048,7 +38127,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide",
       "shortcode": "DO-oBZ4kzBA",
-      "title_vi": "Biến Ảnh Thành Figure 3D: Cú Đấm Thị Giác Bằng Công Nghệ AI",
+      "title_vi": "Cách chuyển ảnh chụp thành mô hình 3D chuyển động bằng công cụ AI",
       "quick_takeaway": "Biến bức ảnh bình thường thành mô hình 3D thực tế ảo với độ chi tiết cao, mở ra hướng ứng dụng AI cực mạnh trong thiết kế vật phẩm phái sinh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -38121,7 +38200,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
       "shortcode": "DNQLGoAyuYM",
-      "title_vi": "Giải mã cách tạo kỹ xảo Hollywood tại nhà với Ciney App",
+      "title_vi": "Hướng dẫn ghép kỹ xảo AR ngay tại nhà bằng ứng dụng điện thoại",
       "quick_takeaway": "Video hướng dẫn tạo kỹ xảo Hollywood (VFX) ngay trên điện thoại bằng app Ciney, sử dụng kỹ thuật AR Mesh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -38196,7 +38275,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DaH_rTUTe14_I’ve_always_been_someone_who_ends_up_taking_w",
       "shortcode": "DaH_rTUTe14",
-      "title_vi": "Mỏ Neo Tâm Lý Bằng Sự Tương Phản Góc Nhìn (POV)",
+      "title_vi": "So sánh góc nhìn POV đời thường và bố cục khung lồng trong khung",
       "quick_takeaway": "Phân tích sự khác biệt giữa góc nhìn người thường và Creator bằng kỹ thuật quay Dutch Angle và Frame in Frame.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • Wide Establishing Shot • High-key Lighting",
       "shooting_style": {
@@ -38267,7 +38346,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under",
       "shortcode": "DR3xJ1tE6mM",
-      "title_vi": "Nghệ Thuật Giới Thiệu Outfit Bằng Chuyển Cảnh & Bối Cảnh Thực Tế",
+      "title_vi": "Nối cảnh trang phục nam liên tục qua nhiều không gian ngoài đời",
       "quick_takeaway": "Video thời trang nam chuyển cảnh liên tục qua nhiều bối cảnh thực tế.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -38340,7 +38419,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DXJvcyqEyoF_Not_less._Just_better_)",
       "shortcode": "DXJvcyqEyoF",
-      "title_vi": "Nghệ Thuật Thiết Kế Balo Công Nghệ: Tối Ưu Trải Nghiệm Qua Từng Chi Tiết Nhỏ",
+      "title_vi": "Đánh giá balo công nghệ qua góc quay cận từng ngăn chứa nhỏ",
       "quick_takeaway": "Đánh giá chi tiết thiết kế thông minh của balo công nghệ qua từng tiểu tiết nhỏ nhất.",
       "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -38413,7 +38492,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DS17TKwE-Yg_When_your_backpack_goes_from_gym_buddy_to_par",
       "shortcode": "DS17TKwE-Yg",
-      "title_vi": "When your backpack goes from gym buddy to par",
+      "title_vi": "Kể chuyện dùng một chiếc balo từ phòng tập đến buổi hẹn tối",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -38490,7 +38569,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DcGbEVFznin_Everything_looks_better_in_closeup._Am_I_righ",
       "shortcode": "DcGbEVFznin",
-      "title_vi": "A Typical Saturday Routine - Sức Mạnh Của Cận Cảnh",
+      "title_vi": "Ghi lại nhịp sống ngày thứ bảy bằng chuỗi góc quay cận chi tiết",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -38563,7 +38642,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DU7mCyVE4EJ_Comment_“LUTS”_to_get_these_luts_in_your_DMs",
       "shortcode": "DU7mCyVE4EJ",
-      "title_vi": "Comment “LUTS” to get these luts in your DMs",
+      "title_vi": "Đối chiếu màu phim và đổi tốc độ qua 32 cảnh B-Roll",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 32 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -38628,7 +38707,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DaXdrAVzGcc_Some_days_you_don’t_need_more_motivation,_you",
       "shortcode": "DaXdrAVzGcc",
-      "title_vi": "Nghệ Thuật Kể Chuyện Bằng Nỗi Đau &amp; Tương Phản Màu Sắc",
+      "title_vi": "Kể chuyện vượt qua sự xao nhãng bằng tương phản màu lạnh và ấm",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 41 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -38693,7 +38772,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DbnlAB5Twrw_Stop_ruining_your_videos_with_these_3_mistake",
       "shortcode": "DbnlAB5Twrw",
-      "title_vi": "Kỹ Thuật Đổi Góc Thoại Liên Tục Bẻ Gãy Quán Tính",
+      "title_vi": "Đổi góc nói chuyện liên tục khi chỉ ra 3 lỗi làm hỏng video",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 33 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -38758,7 +38837,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DV73FCHk1Ej_Some_days_feel_lighter",
       "shortcode": "DV73FCHk1Ej",
-      "title_vi": "Fastrack Ease: Đánh Bật Giác Quan Bằng B-Roll Sản Phẩm Điện Ảnh",
+      "title_vi": "Quay cận chai nước hoa trong suốt và làn sương xịt dưới đèn ngược",
       "quick_takeaway": "Quảng cáo nước hoa nam Fastrack Ease với các cú máy macro sắc nét, đánh sáng đẹp khoe chất liệu trong suốt, và tia sương xịt bay bổng, tôn lên sự tươi mát.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -38833,7 +38912,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DZcSt_xzqBB_You_just_need_these_3_friends_in_your_life!",
       "shortcode": "DZcSt_xzqBB",
-      "title_vi": "xzqBB You just need these 3 friends in your life!",
+      "title_vi": "Dựng 34 cảnh B-Roll giàu tương phản sáng tối kể chuyện tình bạn",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 34 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -38898,7 +38977,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DYpArQyzs3G_Your_phone_videos_are_MEH…",
       "shortcode": "DYpArQyzs3G",
-      "title_vi": "Đòn Bẩy Thị Giác: Cú Mồi Mắt Đóng Khung Vấn Đề (Prop Anchor Hook)",
+      "title_vi": "Dùng đạo cụ cầm tay mở đầu video điện thoại để giữ người xem",
       "quick_takeaway": "Cách sử dụng đạo cụ vật lý trực quan để neo giữ sự chú ý ngay giây đầu tiên.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
       "shooting_style": {
@@ -38973,7 +39052,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DW8w1XNE-Ya_Important_meeting…_but_the_match_matters_more",
       "shortcode": "DW8w1XNE-Ya",
-      "title_vi": "Important meeting… but the match matters more",
+      "title_vi": "Kể tình huống họp căng thẳng nhưng lén xem bóng đá qua 23 cảnh",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 23 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -39038,7 +39117,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DUaii-skyis_Graded_with_my_Signature_LUTs-_LINK_IN_BIO",
       "shortcode": "DUaii-skyis",
-      "title_vi": "Kỹ Thuật Kể Chuyện Chậm (Slow Cinema): Tạo Khoảng Lặng Bằng Góc Cận Đồ Vật",
+      "title_vi": "Tạo khoảng lặng suy ngẫm bằng nhịp dựng chậm và góc cận đồ vật",
       "quick_takeaway": "Một góc nhìn điện ảnh chậm rãi, kéo gần khoảng cách qua text message, sau đó lùi lại suy ngẫm.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -39111,7 +39190,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DSe7DfDEz9L_Everything’s_perfect",
       "shortcode": "DSe7DfDEz9L",
-      "title_vi": "Quảng cáo Ứng Dụng Đỉnh Cao: Khơi Gợi Cảm Xúc & Kêu Gọi Hành Động Nhanh",
+      "title_vi": "Dựng quảng cáo đặt món ăn mùa lễ hội ấm áp và gọn nhịp",
       "quick_takeaway": "Quảng cáo Zomato mùa Giáng Sinh với hook ấm áp, dẫn dắt nhanh gọn đến giải pháp đồ ăn giao tận nhà.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -39182,7 +39261,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DYEyL_OT1_s_Make_boring_videos_Interesting_🧐",
       "shortcode": "DYEyL_OT1_s",
-      "title_vi": "Make Boring Videos Interesting",
+      "title_vi": "Chia nhỏ câu nói xen B-Roll cận cảnh cho bớt đơn điệu",
       "quick_takeaway": "Cách làm video bớt nhàm chán bằng kỹ thuật chia nhỏ câu nói và chèn B-roll cận cảnh theo nhịp hành động",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -39257,7 +39336,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DVYdxPpE7Ji_Make_BORING_videos_INTERESTING!",
       "shortcode": "DVYdxPpE7Ji",
-      "title_vi": "Bí Quyết Match Cut Kịch Tính Từ Mridul Sharma",
+      "title_vi": "Cách nối cảnh match cut bằng cử động tay và đồ vật quen thuộc",
       "quick_takeaway": "Bóc tách kỹ thuật quay chuyển cảnh (match cut) ấn tượng bằng cách tận dụng hành động và tĩnh vật.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -39332,7 +39411,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DQbUum4E5Pu_Don’t_let_storage_limits_stop_your_creativity",
       "shortcode": "DQbUum4E5Pu",
-      "title_vi": "Giải Pháp Lưu Trữ Cho iPhone Filmmaking Với SanDisk SSD",
+      "title_vi": "Quay ổ cứng rời gắn iPhone mở đầu bằng thao tác cất gọn nhanh",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -39405,7 +39484,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DBDkvXPyeSN_If_you_videos_are_boring,_try_these_3_sound_d",
       "shortcode": "DBDkvXPyeSN",
-      "title_vi": "Bí Quyết Thiết Kế Âm Thanh (Sound Design) Cứu Rỗi Video Nhàm Chán",
+      "title_vi": "Ba cách chèn tiếng động SFX và B-Roll giúp video bớt nhàm chán",
       "quick_takeaway": "Bí quyết cứu rỗi video nhàm chán bằng cách áp dụng 3 kỹ thuật Sound Design (Foley, Sound Effects) và thêm B-roll động lực học.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -39480,7 +39559,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DBl0O1RSMtU_Stop_thinking_and_start_creating!",
       "shortcode": "DBl0O1RSMtU",
-      "title_vi": "Động lực sáng tạo: Đừng nghĩ nữa, hãy làm đi",
+      "title_vi": "Xen kẽ cảnh thiên nhiên rộng và cận thiết bị nhắc bắt tay làm",
       "quick_takeaway": "Video truyền động lực sáng tạo nội dung, kết hợp giữa bối cảnh hùng vĩ và b-roll thiết bị chuyên nghiệp.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
       "shooting_style": {
@@ -39553,7 +39632,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DEcQIYAyLRq_Master_Cinematography_with_just_one_light!",
       "shortcode": "DEcQIYAyLRq",
-      "title_vi": "Kỹ Thuật Đánh Sáng 1 Đèn Chuẩn Điện Ảnh Cho Người Mới",
+      "title_vi": "Cách đánh sáng có chiều sâu chỉ bằng một cây đèn cho người mới",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -39628,7 +39707,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DHnKt0nxr3E_Get_studio_quality_voiceovers_without_a_mic!",
       "shortcode": "DHnKt0nxr3E",
-      "title_vi": "Cách Thu Âm Studio Bằng Điện Thoại & AI",
+      "title_vi": "Thu âm giọng đọc bằng điện thoại kết hợp AI lọc sạch tiếng ồn",
       "quick_takeaway": "Video hướng dẫn thu âm chất lượng studio bằng điện thoại thông qua AI khử ồn, không cần đầu tư micro đắt tiền.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -39701,7 +39780,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DK_9B30RrSD_Three_devices_walk_into_a_bar…_none_of_them_h",
       "shortcode": "DK_9B30RrSD",
-      "title_vi": "Giải Pháp Chống Sập Nguồn Cực Chill Từ Belkin",
+      "title_vi": "Giới thiệu pin dự phòng qua tình huống ba thiết bị cùng hết điện",
       "quick_takeaway": "Bán giải pháp (sự rảnh tay, an tâm) thay vì chỉ bán tính năng sạc dự phòng thông qua cách tiếp cận giải quyết nỗi đau hết pin trực tiếp.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
       "shooting_style": {
@@ -39776,7 +39855,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DEBzJUZyofd_Get_studio_quality_audio_on_your_phone_with_@",
       "shortcode": "DEBzJUZyofd",
-      "title_vi": "Giải mã cách biến âm thanh tạp âm thành Studio với AI",
+      "title_vi": "Đối chiếu tiếng thu lẫn tạp âm và bản lọc sạch ồn bằng AI",
       "quick_takeaway": "Video trình diễn sự lột xác của chất lượng âm thanh khi bật AI, sử dụng sự tương phản môi trường ồn ào và âm thanh studio mượt mà.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting • Wide Establishing Shot",
       "shooting_style": {
@@ -39849,7 +39928,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_C_ZzqHXS914_How_to_Master_cinematography_alone",
       "shortcode": "C_ZzqHXS914",
-      "title_vi": "Bí kíp Tự Quay Cinematography Bối Cảnh Lớn",
+      "title_vi": "Hướng dẫn tự đặt máy quay một mình ở không gian rộng đông người",
       "quick_takeaway": "Hướng dẫn quay phim một mình mượt mà với nhiều bối cảnh khác nhau (từ sân vận động đến booth sự kiện).",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -39922,7 +40001,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DJqXz8pxEh6_“No_words._Just_fear,_silence…_and_a_phone_ca",
       "shortcode": "DJqXz8pxEh6",
-      "title_vi": "“No words. Just fear, silence… and a phone ca",
+      "title_vi": "Kể tình huống hồi hộp không lời thoại bằng tiếng chuông điện thoại",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -39999,7 +40078,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DLW8fdfRG6w_Carousel_Analysis",
       "shortcode": "DLW8fdfRG6w_Carousel_Analysis",
-      "title_vi": "B-Roll Bằng Điện Thoại Đơn Giản Mà Đỉnh Cao",
+      "title_vi": "Cách dùng nền màu tương phản quay B-Roll bằng điện thoại",
       "quick_takeaway": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -40074,7 +40153,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time,",
       "shortcode": "Dd6G0lnI0zj",
-      "title_vi": "Kỹ Thuật B-Roll Góc Máy Lạ Mắt Trên Xe Hơi",
+      "title_vi": "Đặt điện thoại quay các góc B-Roll lạ mắt trên ô tô",
       "quick_takeaway": "Hướng dẫn cách tạo ra các góc quay B-Roll điện ảnh bằng điện thoại trên xe hơi.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -40149,7 +40228,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@local_creator_fb_ad_fb_ad",
       "shortcode": "IG_@local_creator_fb_ad_fb_ad",
-      "title_vi": "Kịch Bản Case Study & Bằng Chứng Số Liệu",
+      "title_vi": "Kịch bản giới thiệu khóa học bằng ví dụ và số liệu thật",
       "quick_takeaway": "Quảng cáo bán khóa học áp dụng cấu trúc bóc tách case study thực tế kết hợp từ khóa 'tự động hóa' để bẻ gãy sự hoài nghi và chốt sales mộc mạc.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -40222,7 +40301,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_Dc0tEcOIdwy_4_Cuts_Mastery",
       "shortcode": "Dc0tEcOIdwy",
-      "title_vi": "Mridupawan Sharma • 4 Kỹ Thuật Cắt Cảnh Nâng Tầm Video Điện Ảnh",
+      "title_vi": "Bốn kỹ thuật cắt giấu vết ghép giúp video dọc nối mượt tự nhiên",
       "quick_takeaway": "Bóc tách 24 phân cảnh chuẩn đạo diễn về 4 kỹ thuật cắt cảnh kinh điển của ngôn ngữ điện ảnh ứng dụng vào video dọc Instagram Reels/TikTok: 1. The Mask Cut (Cắt giấu mép bằng vật thể tự nhiên), 2.",
       "key_tech": "Mask Cut Natural Wipe, Match Cut Geometry & Object, L-Cut Dialogue Continuity, J-Cut Audio Anticipation, Infinite Audio-Visual Loop",
       "shooting_style": {
@@ -40307,7 +40386,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
       "shortcode": "DZwO5X6N_MS",
-      "title_vi": "Thêm mục chuyển cảnh — Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu (Jade Sheng)",
+      "title_vi": "Luyện lia máy whip pan và che ống kính qua 14 cảnh",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 14 phân cảnh.",
       "key_tech": "Thêm • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -40384,7 +40463,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@creator_DdSs5rahILb_Video_DdSs5rahILb",
       "shortcode": "DdSs5rahILb",
-      "title_vi": "@creator DdSs5rahILb Video DdSs5rahILb",
+      "title_vi": "Luyện đặt góc máy tĩnh lấy đủ cỡ cảnh toàn, trung, cận và POV",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
       "key_tech": "Instagram Liked 24h: Photo • 15 Of 18 • By @ru9vn • Shared September 14 • 2026 • Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
@@ -40464,7 +40543,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Caleb_Natale_Dcbn7Bix-X-_Video_by_calebnatale",
       "shortcode": "Dcbn7Bix-X-",
-      "title_vi": "X- Video by calebnatale • Director&#x27;s Report",
+      "title_vi": "Ghép cảnh đồ vật xuyên qua màn hình tivi bằng góc máy khóa tĩnh",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 8 phân cảnh.",
       "key_tech": "Macro Detail Shot • Tabletop Lighting • Food Cinematography • Side Lighting 45°",
       "shooting_style": {
@@ -40537,7 +40616,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon",
       "shortcode": "Dc-LDGRsCDN",
-      "title_vi": "allinB Coffee • Không Gian Quán & Vibe Thư Thái Sài Gòn - @allinbcoffee",
+      "title_vi": "Quay 12 cảnh B-Roll quán cà phê sân vườn tại Sài Gòn",
       "quick_takeaway": "Bóc tách 12 phân cảnh B-roll quán cà phê chuẩn điện ảnh tại allinB Coffee: Từ khoảng lặng sân vườn giếng trời, bố cục khung trong khung qua cầu thang xoắn, góc làm việc đón nắng tự nhiên đến cú Macro chiết xuất espresso thơm lừng và cử chỉ tay trẻ trung khép lại video.",
       "key_tech": "Courtyard Garden Establishing, Koi Water Flow Dynamic, Frame-within-a-Frame (Spiral Staircase), Japanese Lantern Layering, 1-Second Rhythmic Cadence, Deep Work Ambiance, Artisanal Tamping Precision, Sensory Espresso Macro Extraction",
       "shooting_style": {
@@ -40621,7 +40700,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling",
       "shortcode": "DbgtGKjNcH9",
-      "title_vi": "Nghệ Thuật Kể Chuyện Thử Thách 10 Tuần Sáng Tạo - @jade.got.curious",
+      "title_vi": "Kể chuyện 10 tuần xây kênh xen kẽ cảnh B-Roll đời thực",
       "quick_takeaway": "Bóc tách cấu trúc kịch bản tự sự (Narrative Storytelling) về hành trình vượt qua hoài nghi bản thân: Nhịp cắt xen kẽ giữa độc thoại trực diện camera và b-roll đời thực, kỹ thuật đặt câu hỏi móc nghẹt (Hook Question) và âm nhạc kích thích...",
       "key_tech": "Vulnerability Hook Question, Talking Head & B-Roll Weaving, Emotional Dynamic Arch, Fast-to-Slow Narrative Pacing",
       "shooting_style": {
@@ -40702,7 +40781,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Practice_Cinematic_Chay_0904_@vietmac",
       "shortcode": "Practice_Cinematic_Chay_0904_@vietmac",
-      "title_vi": "Phân Tích B-Roll Thể Thao, Cận Cảnh Bước Chân Hoa Tím & Kịch Bản 3 Hồi (0904)",
+      "title_vi": "Bài tập 27 cảnh chạy bộ qua tiền cảnh hoa tím tại Times City",
       "quick_takeaway": "Bóc tách 27 phân cảnh quay thử nghiệm chạy bộ công viên Times City: Đỉnh cao cận cảnh bước chân xuyên qua tiền cảnh hoa tím (S09), chân dung trực diện ý chí thép (S04), thao tác buộc dây giày Nike trắng và nghệ thuật nghỉ ngơi trên bục đ...",
       "key_tech": "Macro Low-Angle Lavender Bokeh, Frontal Hero Portrait, Shoelace Routine Hook, Granite Bench Rest, 3-Act Narrative Arc",
       "shooting_style": {
@@ -40777,7 +40856,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Practice_Cinematic_Chay_0903_2_@vietmac",
       "shortcode": "Practice_Cinematic_Chay_0903_2_@vietmac",
-      "title_vi": "Phân Tích Chạy Bộ Thể Thao Đời Thường & Đỉnh Cao Ánh Sáng Ngược V2 (0903-2)",
+      "title_vi": "Luyện quay chạy bộ ngược nắng hoàng hôn và nấp sau tán lá cây",
       "quick_takeaway": "Bản nâng cấp bứt phá 0903-2 bổ sung 4 phân cảnh đắt giá: Khoảnh khắc vàng hoàng hôn mặt đường dát vàng (S03), góc máy bám đuôi cởi trần (S05), tiền cảnh dơ nấp sau tán lá bắt trọn đoàn marathon áo cam (S07) và chân dung thể thao bùng nổ ...",
       "key_tech": "Kinetic Running Sequence, Specular Golden Road, Dirty Foliage Foreground, Backlit Silhouette, Eye Contact CTA",
       "shooting_style": {
@@ -40852,7 +40931,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "FB_@AnhSacAnh_1964049564715249_Thuong_Hieu_Ca_Nhan_Sinh_Loi",
       "shortcode": "FB_@AnhSacAnh_1964049564715249_Thuong_Hieu_Ca_Nhan_Sinh_Loi",
-      "title_vi": "Khóa Học Thương Hiệu Cá Nhân Sinh Lời • Nghệ Thuật Trám B-Roll & Kịch Bản Chuyển Đổi",
+      "title_vi": "Cách phủ 43 cảnh B-Roll che vết cắt lời nói tự nhiên",
       "quick_takeaway": "Bóc tách toàn diện 48 phân cảnh video viral bán workshop thực chiến: Nghệ thuật phủ 82.6% B-roll trám (43 shots) che giấu vết cắt giọng nói, cấu trúc Hook đảo ngược tâm lý 'người bình thường', 2 case study đột phá (anh Trung bán xe luxur...",
       "key_tech": "Cutaway B-Roll Layering (82.6%), Blackout Pattern Interrupt, Jump-Cut Disguise, Dual Real-World Proof, 3-Deliverable Framework, Direct Anchor Eye-Contact",
       "shooting_style": {
@@ -40933,7 +41012,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Practice_Cinematic_Chay_0903_@vietmac",
       "shortcode": "Practice_Cinematic_Chay_0903_@vietmac",
-      "title_vi": "Phân Tích Chạy Bộ Thể Thao Đời Thường & Đỉnh Cao Ánh Sáng Ngược (Practice Cinematic Chạy 0903)",
+      "title_vi": "Tám cảnh quay chạy bộ nhịp nhanh bắt ánh nắng ngược tại Times City",
       "quick_takeaway": "Bóc tách 8 phân cảnh chạy bộ thể thao dồn dập (Kinetic Running Sequence) và 1 phân đoạn đệm tại Times City: Bước nhảy vọt về làm chủ ánh sáng ngược (Backlit Specular Reflection), mặt đường dát bạc, viền sáng Rim Light tôn cơ bắp và kỹ th...",
       "key_tech": "Kinetic Running Sequence, High-Contrast Backlit, Specular Road Reflection, Golden Rim Light, Eye Contact CTA",
       "shooting_style": {
@@ -41008,7 +41087,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DF2sOsNyNlY_3_Hooks_Mastery",
       "shortcode": "DF2sOsNyNlY",
-      "title_vi": "3 Chiêu Mồi Câu Thị Giác (Hooks) Biến Video Trở Nên Cuốn Hút Ngay Tức Thì - @mridupawasharma",
+      "title_vi": "Ba cách mở đầu video bằng đổi góc nhanh và nối hình đồng dạng",
       "quick_takeaway": "Bóc tách 18 phân cảnh chuyên sâu về 3 loại Hook giữ chân triệu view: Pattern Interruption Hook (Cắt ngắt quãng đổi góc đột ngột phá vỡ sự nhàm chán), Visual Match Cut Hook (Giữ nguyên vật thể kết nối liền mạch hai không gian) và Story Ho...",
       "key_tech": "Pattern Interruption, Kinetic Match Cut Hook, Story B-Roll Ingestion, Dynamic A-Roll Pacing, High-Energy Short-Form Retention",
       "shooting_style": {
@@ -41089,7 +41168,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcgSonjgnkV_Carousel_Analysis",
       "shortcode": "DcgSonjgnkV_Carousel_Analysis",
-      "title_vi": "@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄 - Video by thomasmathewt2",
+      "title_vi": "Bố cục khung dọc 9:16 tận dụng ánh sáng tự nhiên ngoài trời",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
@@ -41158,7 +41237,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DWD7Lv4E8N8_SanDisk_Creator_SSD",
       "shortcode": "DWD7Lv4E8N8",
-      "title_vi": "SanDisk Creator Phone SSD • Quy Trình Quay Dựng 4K ProRes & Mobile Cinema Đỉnh Cao",
+      "title_vi": "Quy trình quay 4K ProRes lưu thẳng ổ cứng rời qua 34 cảnh ngắn",
       "quick_takeaway": "Bóc tách trọn vẹn 34 phân cảnh thực chiến trong video ngắn 38.8s của Mridupawan Sharma: Mở đầu bằng nỗi đau cạn kiệt dung lượng điện thoại (Ritual Hook), bùng nổ chuỗi Fast-Cut Delete Montage 14 clips xóa kỷ niệm xót xa, mở khóa giải phá...",
       "key_tech": "Pain-Point Hook (Ritual), Fast-Cut Delete Montage, 4K ProRes Direct SSD Recording, MagSafe Magnetic Rigging, Extreme Outdoor Durability Test, Zero-Latency On-The-Go Editing, Kinetic Transition Beats, Commercial Hero Product Showcase",
       "shooting_style": {
@@ -41239,7 +41318,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "BROLL_PLAN_20260827_TimesCity_Basketball",
       "shortcode": "BROLL_PLAN_20260827_TimesCity_Basketball",
-      "title_vi": "Kế Hoạch Quay B-Roll: Sân Bóng Rổ Times City",
+      "title_vi": "Sáu góc quay B-Roll ngoài trời tại sân bóng rổ Times City",
       "quick_takeaway": "Kế hoạch quay 6 shots B-roll tại TimesCity_Outdoor. Bổ sung archetype: Cutaway, Sequence, POV, In-Situ, Metaphor.",
       "key_tech": "B-Roll Plan, Cutaway, Sequence, POV, In-Situ, Metaphor",
       "shooting_style": {
@@ -41314,7 +41393,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast",
       "shortcode": "xnAU8Pazc6A",
-      "title_vi": "Phân Tích Đạo Diễn: Joe Rogan & Elon Musk Podcast | Master Breakdown - @Startup_TM",
+      "title_vi": "Cắt dựng 12 cảnh đối thoại podcast ngang tầm mắt xóa phông nhẹ",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
@@ -41389,7 +41468,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Practice_Cinematic_2508_@vietmac",
       "shortcode": "Practice_Cinematic_2508_@vietmac",
-      "title_vi": "Practice Cinematic 2508 - Nghệ Thuật Ánh Sáng Ngược & Nhịp Thở Đô Thị",
+      "title_vi": "Tự quay 19 cảnh bóng đổ dài dưới nắng chiều đô thị",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu 19 phân cảnh tự quay ngày 25/08 (24fps): kỳ quan ánh sáng ngược Golden Hour, bóng đổ dài silhouette, khắc họa sinh hoạt cộng đồng và kịch bản remake.",
       "key_tech": "Golden Hour Extreme Backlit, Silhouette Shadow Leading, Human Interest Documentary, 24fps Cinematic Motion Blur",
       "shooting_style": {
@@ -41464,7 +41543,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Practice_Cinematic_01_@vietmac",
       "shortcode": "Practice_Cinematic_01_@vietmac",
-      "title_vi": "Practice Cinematic 01 - Bóc Tách 25 Cảnh Tự Quay & Lộ Trình Nâng Cấp",
+      "title_vi": "Rút kinh nghiệm lỗi rung tay và sáng phẳng qua 25 cảnh Times City",
       "quick_takeaway": "Báo cáo phân tích toàn diện 25 phân cảnh tự quay ngoại cảnh Times City: đánh giá bố cục 2 chiều, khắc phục lỗi rung lắc & ánh sáng bẹt, đối chiếu 6 video mẫu điện ảnh và kịch bản remake.",
       "key_tech": "Low-Angle Worm's Eye, S-Curve Leading, Framing Depth, In-camera Body Wipe, Cinematic Remake Blueprint",
       "shooting_style": {
@@ -41539,7 +41618,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Bao_Cao_Boi_Canh_Thuc_Chien_R2",
       "shortcode": "Bao_Cao_Boi_Canh_Thuc_Chien_R2",
-      "title_vi": "Bản Đồ Bối Cảnh Thực Chiến 124 Vị Trí • Cloudflare R2 CDN Bank - @creator",
+      "title_vi": "Danh mục 124 bối cảnh quay kèm gợi ý tiêu cự ống kính",
       "quick_takeaway": "Kho dữ liệu 124 vị trí bối cảnh thực tế phục vụ quay dựng: Phân nhóm Hầm gửi xe, Sảnh chung cư, Công viên, Shop quần áo, Quán cafe, Bàn làm việc kèm thông số tiêu cự và góc quay.",
       "key_tech": "124 Locations CDN, Category Filtering, Visual Script Mapping, Lighting Specs",
       "shooting_style": {
@@ -41620,7 +41699,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "Chay_Bo_Times_City_Self_Practice",
       "shortcode": "Chay_Bo_Times_City_Self_Practice",
-      "title_vi": "Phân Tích Cảnh Tự Quay & 3 Kịch Bản Chạy Bộ Times City",
+      "title_vi": "Ba kịch bản dựng lại từ 20 cảnh tự quay chạy bộ Times City",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng phân cảnh.",
       "key_tech": "Practical Location Mapping, Home Ground Angles, Gimbal Tracking, Dawn Golden Hour",
       "shooting_style": {
@@ -41695,7 +41774,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "TikTok_@thodiahaiduongne_7350657143906913544_Mua_Sua_Do_Hai_Duong",
       "shortcode": "Do_Hai_Duong",
-      "title_vi": "Mùa Sứa Đỏ Hải Dương • Nghệ Thuật Phóng Sự Ẩm Thực Đường Phố Sống Động",
+      "title_vi": "Quay 15 cảnh sứa đỏ Hải Dương kèm tiếng giòn ASMR",
       "quick_takeaway": "Bóc tách 15 phân cảnh ẩm thực đặc sản sứa đỏ: cận cảnh texture mọng nước, kỹ thuật bắt âm thanh ASMR giòn tan, nhịp cắt nhanh và màu đỏ ruby kích thích vị giác người xem.",
       "key_tech": "Food Macro Close-Up, Tactile ASMR Sound, Vibrant Red Ruby Grading, Fast Food Cut",
       "shooting_style": {
@@ -41776,7 +41855,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@tinanguyen2004_7673468312290037012_Double_Day_luon_la_dip_de_khach_hang_lua_duoc",
       "shortcode": "Day_luon_la",
-      "title_vi": "Phân Tích Kịch Bản Phóng Sự Y Khoa & Flash Sale Double Day 8.8",
+      "title_vi": "Sáu cảnh giới thiệu ưu đãi phòng khám mở đầu bước vào",
       "quick_takeaway": "Tác phẩm video ngắn 43.80s gồm 6 phân cảnh được thiết kế theo cấu trúc phễu chuyển đổi dịch vụ y khoa - thẩm mỹ đỉnh cao: Bắt đầu bằng Visual Hook Walk-in định vị không gian và sự kiện sale -> Cảm giác bắt gặp tự nhiên qua vai -> Khai th...",
       "key_tech": "Medical Documentary Framing, Split Screen Contrast, Fast Transition Beat, Flash Sale CTA",
       "shooting_style": {
@@ -41860,7 +41939,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@madisonkjan_Da7V4egSQxv_Vietnam_Travel_Cinematic",
       "shortcode": "Da7V4egSQxv",
-      "title_vi": "The Next Station Is Vietnam - Hành Trình Du Lịch Điện Ảnh",
+      "title_vi": "Dựng 15 cảnh du lịch Việt Nam nối đường chân trời theo nhịp nhạc",
       "quick_takeaway": "Phân tích 15 phân cảnh du lịch điện ảnh Việt Nam: Kỹ thuật nhịp cắt Fast Montage đồng bộ beat nhạc, chuyển cảnh nối đường chân trời, góc quay flycam hẻm Tu Sản và nhịp thở thị giác phố cổ.",
       "key_tech": "Fast Montage Beat Sync, Leading Lines, Horizon Match Cut, Emotional Anchor, Flycam Aerial",
       "shooting_style": {
@@ -41934,7 +42013,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "FB_@KopDinh_1398467868829887_Lat_Cat_Cam_Xuc_Kop_Dinh",
       "shortcode": "1398467868829887",
-      "title_vi": "Lát Cắt Cảm Xúc • Nghệ Thuật Quay Tự Nhiên & Triết Lý Anti-Technique",
+      "title_vi": "Giữ máy tĩnh ghi lại 36 lát cắt đời thường không cần kỹ xảo",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBóc tách 36 phân cảnh với triết lý không kỹ xảo màu mè, tôn trọng nhịp thở đời thực (Real-time 24fps), cú máy tĩnh đỉnh cao 25.7s và nghệ thuật quan sát tĩnh lặng của Kop Dinh.",
       "key_tech": "Anti-Technique, Cắt cảnh Real-time 24fps, Cú máy tĩnh trường đoạn 25.7s, Bố cục 1/3 chân thực, Ánh sáng tự nhiên",
       "shooting_style": {
@@ -42009,7 +42088,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@by.bennnj_DbKauxkoJU_",
       "shortcode": "DbKauxkoJU",
-      "title_vi": "Phân Tích Chi Tiết Video IG_@by.bennnj_DbKauxkoJU_",
+      "title_vi": "Chỉnh tốc độ màn trập và cân bằng trắng cho máy ảnh phổ thông",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nHướng dẫn làm chủ quy tắc góc màn trập 180° (1/50s), khóa Manual Kelvin cân bằng trắng, sử dụng kính lọc Black Pro-Mist và bố trí ánh sáng tương phản.",
       "key_tech": "Cỡ cảnh, động tác máy, nhịp điệu thị giác",
       "shooting_style": {
@@ -42084,7 +42163,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@local_creator_video_video",
       "shortcode": "IG_@local_creator_video_video",
-      "title_vi": "Báo Cáo Phân Tích Phân Cảnh & Quay Dựng - @local_creator",
+      "title_vi": "Năm phân cảnh ngắn đan xen cỡ cảnh toàn, trung và cận gọn gàng",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 5 phân cảnh của tác phẩm IG_@local_creator_video_video.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
@@ -42159,7 +42238,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@local_creator_video_ig_video_ig",
       "shortcode": "IG_@local_creator_video_ig_video_ig",
-      "title_vi": "Báo Cáo Phân Tích Phân Cảnh & Quay Dựng - @local_creator_video",
+      "title_vi": "Chuỗi 14 cảnh dựng đan xen nhiều cỡ cảnh giữ nhịp trên khung dọc",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 14 phân cảnh của tác phẩm IG_@local_creator_video_ig_video_ig.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
@@ -42234,7 +42313,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@minhmigoi_Db0Sn3zvuHP_The_Power_of_Composition",
       "shortcode": "Db0Sn3zvuHP",
-      "title_vi": "The Power of Composition • Sức Mạnh Bố Cục Khung Hình Trong Nhiếp Ảnh & Điện Ảnh",
+      "title_vi": "So sánh cảnh đặt máy và khung hình kết quả chuẩn bố cục",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\n\n\n🌀 1. Cấu Trúc Nhịp Dựng 'Concept-to-Execution'\nCơ chế Ghép Đôi: Video xây dựng theo cấu trúc nhịp điệu hoàn hảo: mỗi kỹ thuật gồm 0.67s Biểu đồ đồ họa (Concept Diagram) trên nền ...",
       "key_tech": "Golden Ratio (Fibonacci Spiral), Central Axis Symmetry, Geometric Frame in Frame, Rule of Thirds Matrix, Minimalist Negative Space, Diagonal Leading Lines, Rhythm & Pattern Interruption, Monumental Scale Contrast, Audio-Visual Beat Sync, 16:9 Cinematic Widescreen",
       "shooting_style": {
@@ -42315,7 +42394,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
       "shortcode": "DXWKIztktTN",
-      "title_vi": "Saigon, Vietnam • Nghệ Thuật Kể Chuyện Thị Giác & Tình Cảm Hồi Hương",
+      "title_vi": "Ghi lại 21 cảnh phố phường Sài Gòn theo tỉ lệ 4:3",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBóc tách toàn diện 21 phân cảnh mẫu mực điện ảnh du ký: Bố cục tỷ lệ 4:3 cổ điển, bảng màu nhiệt đới Kodak Portra, 2 đợt cắt nhanh Fast-cut Montage 4-6 frames đồng bộ nhịp nhạc, ch...",
       "key_tech": "4:3 Classic Framing, Kodak Portra Color Grading, Fast-Cut Montage (4-6 frames), Beat-Sync Cutting, Bokeh Temporal Dilation, Heritage Architecture, Candid Portrait",
       "shooting_style": {
